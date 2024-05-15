@@ -117,6 +117,20 @@ bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
 	return true;
 }
 
+bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
+	volatile zrtos_task_scheduler_t *thiz = &zrtos_task_scheduler;
+	zrtos_task_t *active_task = thiz->active_task;
+	zrtos_task_t *prev = zrtos_task__get_previous_task(task);
+	bool ret = active_task != task;
+
+	if(ret){
+		prev->next = task->next;
+		task->next = task;
+	}
+
+	return ret;
+}
+
 bool _zrtos_task_scheduler__switch_task(void){
 	zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
 	zrtos_task_t *task = active_task;

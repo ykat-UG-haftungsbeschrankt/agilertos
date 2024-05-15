@@ -15,13 +15,13 @@ extern "C" {
 #include "zrtos_mem_chunk.h"
 
 
-#define ZRTOS_MEM__INIT(name,heap_size)           \
-  static struct{                                  \
-    unsigned char heap[heap_size];              \
+#define ZRTOS_MEM__INIT(name,heap_size)                 \
+  static struct{                                        \
+    unsigned char heap[heap_size];                      \
   }__attribute__((aligned(ZRTOS__BYTE_ALIGNMENT)))name;
 
 
-#define ZRTOS_MEM__GET(name)\
+#define ZRTOS_MEM__GET(name) \
   &(name.heap[0])
 
 typedef struct _zrtos_mem_t{
@@ -152,7 +152,11 @@ void zrtos_mem__memmove_left_overlapping(
 }
 #endif
 
-zrtos_mem_chunk_uid_t zrtos_mem__malloc(zrtos_mem_t *thiz,zrtos_mem_type_t type,size_t length){
+zrtos_mem_chunk_uid_t zrtos_mem__malloc(
+	 zrtos_mem_t *thiz
+	,zrtos_mem_type_t type
+	,size_t length
+){
 	size_t free_space = _zrtos_mem__get_free_space(thiz);
 	size_t length_total = sizeof(zrtos_mem_chunk_t) + length;
 	if(free_space >= length_total){
@@ -317,9 +321,9 @@ void zrtos_mem__page_out(
 	);
 }
 
-#define ZRTOS_MEM__EACH_BEGIN(thiz,type,value) \
-	for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){ \
-		zrtos_mem_chunk_t *value = &(((zrtos_mem_chunk_t*)(thiz))->ptr)[0];          \
+#define ZRTOS_MEM__EACH_BEGIN(thiz,type,value)                                 \
+	for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){                \
+		zrtos_mem_chunk_t *value = &(((zrtos_mem_chunk_t*)(thiz))->ptr)[0];    \
 		if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type))
 
 #define ZRTOS_MEM__EACH_END \

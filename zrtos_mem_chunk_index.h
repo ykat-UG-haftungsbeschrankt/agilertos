@@ -40,7 +40,10 @@ size_t zrtos_mem_chunk_index__get_heap_size(zrtos_mem_chunk_index_t *thiz){
 	return thiz->heap_size;
 }
 
-void zrtos_mem_chunk_index__set_heap_size(zrtos_mem_chunk_index_t *thiz,size_t heap_size){
+void zrtos_mem_chunk_index__set_heap_size(
+	 zrtos_mem_chunk_index_t *thiz
+	,size_t heap_size
+){
 	thiz->heap_size = heap_size;
 }
 

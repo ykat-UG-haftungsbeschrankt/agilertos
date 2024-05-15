@@ -90,13 +90,29 @@ void zrtos_task__set_heap(zrtos_mem_t *heap){
 
 zrtos_task_t *zrtos_task__get_next_task(zrtos_task_t *thiz){
 #ifdef ZRTOS_TASK__USE_MEM
-	return zrtos_mem__get_by_id(
+	zrtos_mem_chunk_t *chunk = zrtos_mem__get_by_id(
 		 zrtos_task__get_heap()
 		,thiz->next
+	);
+	return zrtos__ptr_add(
+		 zrtos_mem_chunk__get_ptr(chunk)
+		,zrtos_mem_chunk__get_length(chunk) - sizeof(zrtos_task_t)
 	);
 #else
 	return thiz->next;
 #endif
+}
+
+zrtos_task_t *zrtos_task__get_previous_task(zrtos_task_t *thiz){
+	zrtos_task_t *last;
+	zrtos_task_t *sentinel = thiz;
+	
+	do{
+		last = thiz;
+		thiz = zrtos_task__get_next_task(thiz);
+	}while(thiz != sentinel);
+
+	return ret;
 }
 
 void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_task_heap_t *stack_ptr){
