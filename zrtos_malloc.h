@@ -46,7 +46,7 @@ typedef struct _zrtos_malloc_internal_t{
 
 #define ZRTOS_MALLOC__GLOBAL_HEAP(name,len)                       \
     zrtos_malloc_t name[                                          \
-        len+sizeof(sizeof(zrtos_malloc_internal_t))               \
+        len+sizeof(zrtos_malloc_internal_t)                       \
     ];                                                            \
                                                                   \
     ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
@@ -64,7 +64,7 @@ typedef struct _zrtos_malloc_internal_t{
 
 #define ZRTOS_MALLOC__INIT(name,len)                              \
     zrtos_malloc_t name[                                          \
-        len + sizeof(sizeof(zrtos_malloc_internal_t))             \
+        len + sizeof(zrtos_malloc_internal_t)                     \
     ];                                                            \
                                                                   \
     ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
