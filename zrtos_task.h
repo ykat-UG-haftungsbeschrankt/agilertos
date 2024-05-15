@@ -94,7 +94,7 @@ zrtos_task_t *zrtos_task__get_next_task(zrtos_task_t *thiz){
 		 zrtos_task__get_heap()
 		,thiz->next
 	);
-	return zrtos__ptr_add(
+	return zrtos_types__ptr_add(
 		 zrtos_mem_chunk__get_ptr(chunk)
 		,zrtos_mem_chunk__get_length(chunk) - sizeof(zrtos_task_t)
 	);

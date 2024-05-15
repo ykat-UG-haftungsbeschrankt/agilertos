@@ -33,7 +33,7 @@ void *zrtos_mem_chunk_index__get_first_address(zrtos_mem_chunk_index_t *thiz){
 }
 
 void *zrtos_mem_chunk_index__get_last_address(zrtos_mem_chunk_index_t *thiz){
-	return zrtos__ptr_add(thiz->heap,thiz->heap_size);
+	return zrtos_types__ptr_add(thiz->heap,thiz->heap_size);
 }
 
 size_t zrtos_mem_chunk_index__get_heap_size(zrtos_mem_chunk_index_t *thiz){

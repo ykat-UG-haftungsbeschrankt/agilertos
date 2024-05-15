@@ -60,7 +60,7 @@ asm volatile ( "sei" :: );
 
 size_t zrtos__get_free_ram(){
 	extern int __heap_start;
-	return zrtos__ptr_get_byte_distance((void*)SP,(void*)&__heap_start);
+	return zrtos_types__ptr_get_byte_distance((void*)SP,(void*)&__heap_start);
 }
 
 zrtos_task_heap_t * pxPortInitialiseStack( zrtos_task_heap_t * pxTopOfStack,
@@ -156,7 +156,7 @@ zrtos_task_heap_t *zrtos_task_heap__init(
 		zrtos_debug__memset(thiz,(int)(pattern++),length);
 	);
 	return pxPortInitialiseStack(
-		 zrtos__ptr_add(thiz,length)-1
+		 zrtos_types__ptr_add(thiz,length)-1
         ,callback
         ,args
 	);
@@ -169,7 +169,7 @@ zrtos_task_heap_t *zrtos_task_heap__init(
 	,zrtos_task_callback_t callback
 	,void                  *args
 ){
-	zrtos_task_heap_t *pxTopOfStack = zrtos__ptr_add(thiz,length);
+	zrtos_task_heap_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
 	zrtos_task_heap_t *pxTopOfStackTmp = pxTopOfStack;
 	uint16_t usAddress = (uint16_t)callback;
 	zrtos_task_heap_signed_t usValue = -6;

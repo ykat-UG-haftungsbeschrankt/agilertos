@@ -63,7 +63,7 @@ void _zrtos_mem__swap_to_end(
 	uint8_t *src = buffer;
 	uint8_t *dest = src + length;
 	while(l--){
-		ZRTOS__SWAP_PTR_CONTENTS(src,dest);
+		ZRTOS_TYPES__SWAP_PTR_CONTENTS(src,dest);
 		src++;
 		dest++;
 		//_zrtos_mem__swap_uint8(src++,dest++);
@@ -71,7 +71,7 @@ void _zrtos_mem__swap_to_end(
 }
 
 void *zrtos_mem__get_last_address(zrtos_mem_t *thiz){
-	return zrtos__ptr_add(thiz->ptr,thiz->total_size);
+	return zrtos_types__ptr_add(thiz->ptr,thiz->total_size);
 }
 
 void *zrtos_mem__get_stack_ptr(zrtos_mem_t *thiz){
@@ -81,8 +81,8 @@ void *zrtos_mem__get_stack_ptr(zrtos_mem_t *thiz){
 size_t _zrtos_mem__get_free_space(zrtos_mem_t *thiz){
 	return
 		  thiz->ptr < zrtos_mem__get_stack_ptr(thiz)
-		? zrtos__ptr_get_byte_distance(
-			ZRTOS__MIN(
+		? zrtos_types__ptr_get_byte_distance(
+			ZRTOS_TYPES__MIN(
 				 zrtos_mem__get_stack_ptr(thiz)
 				,zrtos_mem__get_last_address(thiz)
 			)
@@ -215,13 +215,13 @@ void _zrtos_mem__free(zrtos_mem_t *thiz,zrtos_mem_chunk_t *chunk){
 	}
 
 	//1st loop delete index, 2nd loop delete element
-	sentinel = zrtos__ptr_add(chunk->ptr,sizeof(zrtos_mem_chunk_t));
+	sentinel = zrtos_types__ptr_add(chunk->ptr,sizeof(zrtos_mem_chunk_t));
 	do{
 		while(src < ((uint8_t*)sentinel)){
  			*dest++ = *src++;
 		}
 		src += length;
-		sentinel = zrtos__ptr_add(thiz->ptr,thiz->heap_size);
+		sentinel = zrtos_types__ptr_add(thiz->ptr,thiz->heap_size);
 	}while(lp--);
 
 	thiz->length--;
@@ -229,7 +229,7 @@ void _zrtos_mem__free(zrtos_mem_t *thiz,zrtos_mem_chunk_t *chunk){
 
 	ZRTOS__DEBUG_CODE(
 		zrtos_debug__memset(
-			 zrtos__ptr_add(thiz->ptr,thiz->heap_size)
+			 zrtos_types__ptr_add(thiz->ptr,thiz->heap_size)
 			,0xEE
 			,length_total
 		);
@@ -271,12 +271,12 @@ void *zrtos_mem__page_in(
 	,zrtos_mem_chunk_t *chunk
 ){
 	size_t index_length = (sizeof(zrtos_mem_chunk_t) * thiz->length);
-	void *ptr_index = zrtos__ptr_add(thiz->ptr,index_length);
+	void *ptr_index = zrtos_types__ptr_add(thiz->ptr,index_length);
 	void *ret = _zrtos_mem__swap_to_heap_end(
 		 ptr_index
 		,thiz->total_size - index_length
 		,thiz->heap_size - index_length
-		,zrtos__ptr_get_byte_distance(chunk->ptr,ptr_index)
+		,zrtos_types__ptr_get_byte_distance(chunk->ptr,ptr_index)
 		,chunk->length
 	);
 
@@ -293,10 +293,10 @@ void zrtos_mem__page_out(
 	,zrtos_mem_chunk_t *chunk
 	,size_t            length
 ){
-	uint8_t *heap_end_ptr = zrtos__ptr_add(thiz->ptr,thiz->heap_size);
+	uint8_t *heap_end_ptr = zrtos_types__ptr_add(thiz->ptr,thiz->heap_size);
 	zrtos_mem__memmove_left_overlapping(
 		 heap_end_ptr
-		,zrtos__ptr_add(thiz->ptr,thiz->total_size - length)
+		,zrtos_types__ptr_add(thiz->ptr,thiz->total_size - length)
 		,length
 	);
 
@@ -311,8 +311,8 @@ void zrtos_mem__page_out(
 	_zrtos_mem__swap_to_end(
 		 chunk
 		,sizeof(zrtos_mem_chunk_t)
-		,zrtos__ptr_get_byte_distance(
-			zrtos__ptr_add(
+		,zrtos_types__ptr_get_byte_distance(
+			zrtos_types__ptr_add(
 				 thiz->ptr
 				,index_length
 			)

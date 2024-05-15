@@ -10,14 +10,13 @@
 extern "C" {
 #endif
 
-
+#include "zrtos_types.h"
 #include "zrtos_debug.h"
 
 typedef uint8_t* zrtos_malloc_buffer_t;
 
 typedef struct _zrtos_malloc_heap_chunk_t{
-	//struct _zrtos_malloc_heap_chunk_t *next;
-	size_t                            length;
+	size_t  length;
 }zrtos_malloc_heap_chunk_t;
 
 typedef struct _zrtos_malloc_t{
@@ -64,19 +63,18 @@ bool zrtos_malloc__init(zrtos_malloc_t *thiz,void *ptr,size_t length){
 }
 
 zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
-	 zrtos_malloc_
-	 t *thiz
-	,size_t length
+	 zrtos_malloc_t *thiz
+	,size_t         length
 ){
 	zrtos_malloc_heap_chunk_t *chunk = (zrtos_malloc_heap_chunk_t *)thiz->heap;
-	zrtos_malloc_heap_chunk_t *last = zrtos__ptr_add(thiz->heap,thiz->length);
+	zrtos_malloc_heap_chunk_t *last = (zrtos_malloc_heap_chunk_t *)thiz->ptr;
 	length <<= 1;
 
 	while(chunk != last){
 		if(chunk->length == length){
 			return chunk;
 		}
-		chunk = zrtos__ptr_add(
+		chunk = zrtos_types__ptr_add(
 			 chunk
 			,sizeof(zrtos_malloc_heap_chunk_t) + (chunk->length>>1)
 		);
@@ -92,7 +90,13 @@ zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
 void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
 	zrtos_malloc_heap_chunk_t *chunk = 0;
 	size_t total_length = sizeof(zrtos_malloc_heap_chunk_t) + length;
-	bool has_free_space = thiz->length >= total_length;
+	bool has_free_space = (thiz->length
+	                    - zrtos_types__ptr_get_byte_distance(
+	                		 thiz->ptr
+	                		,thiz->heap
+	                    ))
+	                    >= total_length
+	;
 
 	if(length > (SIZE_MAX>>1)){
 		//out of bounds

@@ -8,46 +8,64 @@ typedef enum{
 	,true
 }bool;
 
+#define ZRTOS__BYTE_ALIGNMENT 1
 #define ZRTOS_DEBUG__ENABLED
+#define ZRTOS_CPU__ATMEGA328P
 
-#include "zrtos_malloc.h"
+#include "zrtos.h"
+#include "zrtos_mem.h"
+
+void _zrtos_task_scheduler__on_tick(void){
+}
+
+
+ZRTOS_MEM__INIT(heap,160);
 
 int main(void){
-	size_t length = 10,l;
-	void *ptr[10];
+	zrtos_mem_t mem;
+	
+	zrtos_mem__init(
+		 &mem
+		,ZRTOS_MEM__GET(heap)
+		,160
+	);
 
-	zrtos_malloc_buffer_t heap_buffer[160];
-	zrtos_malloc_t heap2;
-	zrtos_malloc__init(&heap2,heap_buffer,160);
+	zrtos_mem_chunk_uid_t chunka = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_mem_chunk_uid_t chunkb = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_mem_chunk_uid_t chunkc = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
 
-	ZRTOS_MALLOC__INIT_DEBUG(name,160);
+	zrtos_mem_chunk_t *chunkbb = zrtos_mem__get_by_id(
+		 &mem
+		,chunkb
+	);
 
-	for(l=0;l<length;l++){
-		ptr[l] = malloc(16-4);
-	}
-	for(l=0;l<length;l++){
-		free(ptr[l]);
-	}
-	for(l=0;l<length;l++){
-		ptr[l] = malloc(16-4);
-	}
-	for(l=0;l<length;l++){
-		free(ptr[l]);
-	}
+	zrtos_mem__page_in(
+		 &mem
+		,chunkbb
+	);
 
+	zrtos_mem_chunk_uid_t chunke = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
 
-	for(l=0;l<length;l++){
-		ptr[l] = zrtos_malloc__malloc(&heap2,16-4);
-	}
-	for(l=0;l<length;l++){
-		zrtos_malloc__free(ptr[l]);
-	}
-	for(l=0;l<length;l++){
-		ptr[l] = zrtos_malloc__malloc(&heap2,16-4);
-	}
-	for(l=0;l<length;l++){
-		zrtos_malloc__free(ptr[l]);
-	}
+	zrtos_mem__page_out(
+		 &mem
+		,chunkbb
+		,16
+	);
+
+	zrtos_mem_chunk_t *chunkee = zrtos_mem__get_by_id(
+		 &mem
+		,chunke
+	);
+
+	zrtos_mem__page_in(
+		 &mem
+		,chunkee
+	);
+
+	zrtos_mem__free(&mem,chunkb);
+	zrtos_mem__free(&mem,chunka);
+	zrtos_mem__free(&mem,chunkc);
+	zrtos_mem__free(&mem,chunke);
 
 	return 0;
 }

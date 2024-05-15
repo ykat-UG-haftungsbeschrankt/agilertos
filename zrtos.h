@@ -11,18 +11,6 @@ extern "C" {
 #endif
 
 
-void *zrtos__ptr_add(void *ptr,size_t byte_len){
-	return ((uint8_t*)ptr)+byte_len;
-}
-
-void *zrtos__ptr_subtract(void *ptr,size_t byte_len){
-	return ((uint8_t*)ptr)-byte_len;
-}
-
-size_t zrtos__ptr_get_byte_distance(void *bigger,void *smaller){
-	return ((uint8_t*)bigger)-((uint8_t*)smaller);
-}
-
 #include "zrtos_debug.h"
 #include "zrtos_cpu.h"
 
@@ -52,18 +40,7 @@ do{                                              \
 	}                                            \
 }while(0);
 
-#define ZRTOS__MIN(a,b) ((a)<(b)?(a):(b))
-#define ZRTOS__MAX(a,b) ((a)>(b)?(a):(b))
 
-#define ZRTOS__SWAP_PTR_CONTENTS(a,b) \
-	do{                               \
-		typeof(*a) a____ = *(a);      \
-		*(a) = *(b);                  \
-		*(b) = a____;                 \
-	}while(0);
-
-#define ZRTOS__NO_ADD_OVERFLOW(a,b) \
-  (((a + b ) >= a)))
 
 #if ZRTOS__BYTE_ALIGNMENT == 32
     #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x001f )
