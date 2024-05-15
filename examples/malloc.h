@@ -12,11 +12,13 @@ typedef enum{
 
 #include "zrtos_malloc.h"
 
-ZRTOS_MALLOC__INIT(name,160);
+ZRTOS_MALLOC__GLOBAL(name,160);
 
 int main(void){
 	size_t length = 10,l;
 	void *ptr[10];
+
+	ZRTOS_MALLOC__GLOBAL_INIT(name);
 
 	zrtos_malloc_buffer_t heap_buffer[160];
 	zrtos_malloc_t heap2;
