@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
+ *
+ * Permission for non-commercial use is hereby granted,
+ * free of charge, without warranty of any kind.
+ */
+#ifndef ZRTOS_H
+#define ZRTOS_H
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+void *zrtos__ptr_add(void *ptr,size_t byte_len){
+	return ((uint8_t*)ptr)+byte_len;
+}
+
+void *zrtos__ptr_subtract(void *ptr,size_t byte_len){
+	return ((uint8_t*)ptr)-byte_len;
+}
+
+size_t zrtos__ptr_get_byte_distance(void *bigger,void *smaller){
+	return ((uint8_t*)bigger)-((uint8_t*)smaller);
+}
+
+#include "zrtos_debug.h"
+#include "zrtos_cpu.h"
+
+size_t _zrtos__do_not_disturb = 0;
+#define ZRTOS__DO_NOT_DISTURB(code)    \
+do{                                    \
+	ZRTOS__INTERRUPTS_DISABLE();       \
+	_zrtos__do_not_disturb++;          \
+	do{                                \
+		code;                          \
+	}while(0);                         \
+	if(--_zrtos__do_not_disturb == 0){ \
+		ZRTOS__INTERRUPTS_ENABLE();    \
+	}                                  \
+}while(0);
+
+#define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
+do{                                              \
+	is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \
+	ZRTOS__INTERRUPTS_DISABLE();                 \
+	_zrtos__do_not_disturb++;                    \
+	do{                                          \
+		code;                                    \
+	}while(0);                                   \
+	if(--_zrtos__do_not_disturb == 0){           \
+		ZRTOS__INTERRUPTS_ENABLE();              \
+	}                                            \
+}while(0);
+
+#define ZRTOS__MIN(a,b) ((a)<(b)?(a):(b))
+#define ZRTOS__MAX(a,b) ((a)>(b)?(a):(b))
+
+#define ZRTOS__SWAP_PTR_CONTENTS(a,b) \
+	do{                               \
+		typeof(*a) a____ = *(a);      \
+		*(a) = *(b);                  \
+		*(b) = a____;                 \
+	}while(0);
+
+#define ZRTOS__NO_ADD_OVERFLOW(a,b) \
+  (((a + b ) >= a)))
+
+#if ZRTOS__BYTE_ALIGNMENT == 32
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x001f )
+#elif ZRTOS__BYTE_ALIGNMENT == 16
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x000f )
+#elif ZRTOS__BYTE_ALIGNMENT == 8
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0007 )
+#elif ZRTOS__BYTE_ALIGNMENT == 4
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0003 )
+#elif ZRTOS__BYTE_ALIGNMENT == 2
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0001 )
+#elif ZRTOS__BYTE_ALIGNMENT == 1
+    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0000 )
+#else /* if ZRTOS__BYTE_ALIGNMENT == 32 */
+    #error "Invalid ZRTOS__BYTE_ALIGNMENT definition"
+#endif /* if ZRTOS__BYTE_ALIGNMENT == 32 */
+
+
+#ifdef __cplusplus
+}
+#endif
+#endif
