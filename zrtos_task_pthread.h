@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -18,7 +18,7 @@ typedef struct{
 }pthread_attr_t;
 
 typedef struct{
-	zrtos_task_id_t id;
+	zrtos_mem_chunk_uid_t id;
 }pthread_t;
 
 typedef struct{
@@ -28,10 +28,10 @@ typedef struct{
 	zrtos_task_mutex_t mutex;
 }pthread_mutex_t;
 
-#define PTHREAD_MUTEX_INITIALIZER \
-  {                               \
-    .mutex = ZRTOS_MUTEX__INIT()  \
-  }
+#define PTHREAD_MUTEX_INITIALIZER    \
+    {                                \
+        .mutex = ZRTOS_MUTEX__INIT() \
+    }
 
 int pthread_attr_init(pthread_attr_t *attr){
 	return 0;

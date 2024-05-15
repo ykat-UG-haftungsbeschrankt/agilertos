@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -104,12 +104,12 @@ zrtos_mem_chunk_uid_t zrtos_mem_chunk_index__get_next_uid(
 }
 
 #define ZRTOS_MEM_CHUNK_INDEX__EACH_BEGIN(thiz,type,value)  \
-	for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){ \
-		zrtos_mem_chunk_t *value = &((thiz)->heap[l__]);          \
-		if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type))
+    for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){ \
+        zrtos_mem_chunk_t *value = &((thiz)->heap[l__]);          \
+        if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type))
 
 #define ZRTOS_MEM_CHUNK_INDEX__EACH_END\
-	}
+    }
 
 
 #ifdef __cplusplus

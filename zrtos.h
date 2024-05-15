@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -17,27 +17,27 @@ extern "C" {
 size_t _zrtos__do_not_disturb = 0;
 #define ZRTOS__DO_NOT_DISTURB(code)    \
 do{                                    \
-	ZRTOS__INTERRUPTS_DISABLE();       \
-	_zrtos__do_not_disturb++;          \
-	do{                                \
-		code;                          \
-	}while(0);                         \
-	if(--_zrtos__do_not_disturb == 0){ \
-		ZRTOS__INTERRUPTS_ENABLE();    \
-	}                                  \
+    ZRTOS__INTERRUPTS_DISABLE();       \
+    _zrtos__do_not_disturb++;          \
+    do{                                \
+        code;                          \
+    }while(0);                         \
+    if(--_zrtos__do_not_disturb == 0){ \
+        ZRTOS__INTERRUPTS_ENABLE();    \
+    }                                  \
 }while(0);
 
 #define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
 do{                                              \
-	is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \
-	ZRTOS__INTERRUPTS_DISABLE();                 \
-	_zrtos__do_not_disturb++;                    \
-	do{                                          \
-		code;                                    \
-	}while(0);                                   \
-	if(--_zrtos__do_not_disturb == 0){           \
-		ZRTOS__INTERRUPTS_ENABLE();              \
-	}                                            \
+    is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \
+    ZRTOS__INTERRUPTS_DISABLE();                 \
+    _zrtos__do_not_disturb++;                    \
+    do{                                          \
+        code;                                    \
+    }while(0);                                   \
+    if(--_zrtos__do_not_disturb == 0){           \
+        ZRTOS__INTERRUPTS_ENABLE();              \
+    }                                            \
 }while(0);
 
 

@@ -15,3 +15,4 @@ trash/zrtos_debug.h
 trash/zrtos_mem_chunk_index.h
 trash/zrtos_mem_chunk.h
 trash/zrtos_mem.h
+.vscode

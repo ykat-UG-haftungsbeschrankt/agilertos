@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -12,15 +12,15 @@ extern "C" {
 
 
 #define ZRTOS_ASSERT__STATIC_EX(cond,msg) \
-  typedef char static_assertion_##msg[    \
-    (cond)?1:-1                           \
-  ]__attribute__((unused));
+    typedef char static_assertion_##msg[  \
+        (cond)?1:-1                       \
+    ]__attribute__((unused));
 
-#define _ZRTOS_ASSERT__STATIC_HELPER(cond,line)  \
-  ZRTOS_ASSERT__STATIC_EX(cond,line)
+#define _ZRTOS_ASSERT__STATIC_HELPER(cond,line) \
+    ZRTOS_ASSERT__STATIC_EX(cond,line)
 
-#define ZRTOS_ASSERT__STATIC(cond)        \
-  _ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
+#define ZRTOS_ASSERT__STATIC(cond)                 \
+    _ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
 
 
 #ifdef __cplusplus

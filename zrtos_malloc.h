@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -14,6 +14,8 @@ extern "C" {
 #include "zrtos_types.h"
 #include "zrtos_debug.h"
 
+//@TODO implement ZRTOS__BYTE_ALIGNMENT
+
 typedef struct _zrtos_malloc_t{
 	uint8_t value;
 }__attribute__((packed))zrtos_malloc_t;
@@ -28,48 +30,48 @@ typedef struct _zrtos_malloc_internal_t{
 }zrtos_malloc_internal_t;
 
 #define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)                            \
-	zrtos_malloc__init(                                                 \
-		 name                                                           \
-		,sizeof(name) / sizeof(name[0])                                 \
-	);                                                                  \
-	                                                                    \
-	ZRTOS__DEBUG_CODE({                                                 \
-		zrtos_debug__memset(                                            \
-			 zrtos_types__ptr_add(name,sizeof(zrtos_malloc_internal_t)) \
-			,0xFF                                                       \
-			,(sizeof(name) / sizeof(name[0]))                           \
-			-sizeof(zrtos_malloc_internal_t)                            \
-		);                                                              \
-	});
+    zrtos_malloc__init(                                                 \
+         name                                                           \
+        ,sizeof(name) / sizeof(name[0])                                 \
+    );                                                                  \
+                                                                        \
+    ZRTOS__DEBUG_CODE({                                                 \
+        zrtos_debug__memset(                                            \
+             zrtos_types__ptr_add(name,sizeof(zrtos_malloc_internal_t)) \
+            ,0xFF                                                       \
+            ,(sizeof(name) / sizeof(name[0]))                           \
+            -sizeof(zrtos_malloc_internal_t)                            \
+        );                                                              \
+    });
 
 #define ZRTOS_MALLOC__GLOBAL_HEAP(name,len)                       \
-	zrtos_malloc_t name[                                          \
-		len+sizeof(sizeof(zrtos_malloc_internal_t))               \
-	];                                                            \
+    zrtos_malloc_t name[                                          \
+        len+sizeof(sizeof(zrtos_malloc_internal_t))               \
+    ];                                                            \
                                                                   \
-	ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
-	                                                              \
-	void *malloc(size_t length){                                  \
-		return zrtos_malloc__malloc(                              \
-			 name                                                 \
-			,length                                               \
-		);                                                        \
-	}                                                             \
-	                                                              \
-	void free(void *ptr){                                         \
-		zrtos_malloc__free(ptr);                                  \
-	}
+    ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
+                                                                  \
+    void *malloc(size_t length){                                  \
+        return zrtos_malloc__malloc(                              \
+             name                                                 \
+            ,length                                               \
+        );                                                        \
+    }                                                             \
+                                                                  \
+    void free(void *ptr){                                         \
+        zrtos_malloc__free(ptr);                                  \
+    }
 
 #define ZRTOS_MALLOC__INIT(name,len)                              \
-	zrtos_malloc_t name[                                          \
-		len + sizeof(sizeof(zrtos_malloc_internal_t))             \
-	];                                                            \
-	                                                              \
-	ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
-	zrtos_malloc__init(                                           \
-		 name                                                     \
-		,sizeof(name) / sizeof(name[0])                           \
-	)
+    zrtos_malloc_t name[                                          \
+        len + sizeof(sizeof(zrtos_malloc_internal_t))             \
+    ];                                                            \
+                                                                  \
+    ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
+    zrtos_malloc__init(                                           \
+         name                                                     \
+        ,sizeof(name) / sizeof(name[0])                           \
+    )
 
 
 bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){

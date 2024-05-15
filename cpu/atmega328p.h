@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -25,38 +25,37 @@ extern "C" {
 #define ZRTOS__FATAL() ((void(*)(void))0)();
 
 #define ZRTOS__GET_STACK_PTR() \
-	((void*)SP)
+    ((void*)SP)
 
-/* Critical section management. */
-#define ZRTOS__CRITICAL_ENTER() \
-asm volatile ( "in		__tmp_reg__, __SREG__" :: );	\
-asm volatile ( "cli" :: );								\
-asm volatile ( "push	__tmp_reg__" :: )
+#define ZRTOS__CRITICAL_ENTER()                            \
+    asm volatile ( "in        __tmp_reg__, __SREG__" :: ); \
+    asm volatile ( "cli" :: );                             \
+    asm volatile ( "push    __tmp_reg__" :: )
 
-#define ZRTOS__CRITICAL_EXIT()\
-asm volatile ( "pop		__tmp_reg__" :: );				\
-asm volatile ( "out		__SREG__, __tmp_reg__" :: )
+#define ZRTOS__CRITICAL_EXIT()                             \
+    asm volatile ( "pop        __tmp_reg__" :: );          \
+    asm volatile ( "out        __SREG__, __tmp_reg__" :: )
 
-#define ZRTOS__INTERRUPTS_IS_DISABLED()                 \
-	((SREG & 0x80) == 0)
+#define ZRTOS__INTERRUPTS_IS_DISABLED() \
+    ((SREG & 0x80) == 0)
 
-#define ZRTOS__INTERRUPTS_IS_ENABLED()                 \
-	((SREG & 0x80) > 0)
+#define ZRTOS__INTERRUPTS_IS_ENABLED() \
+    ((SREG & 0x80) > 0)
 
-#define ZRTOS__INTERRUPTS_DISABLE()  \
-asm volatile ( "cli" :: );
+#define ZRTOS__INTERRUPTS_DISABLE() \
+    asm volatile ( "cli" :: );
 
-#define ZRTOS__INTERRUPTS_ENABLE()   \
-asm volatile ( "sei" :: );
+#define ZRTOS__INTERRUPTS_ENABLE() \
+    asm volatile ( "sei" :: );
 
 #define ZRTOS__WATCH_DOG_START() \
-	wdt_enable(WDTO_8S);
+    wdt_enable(WDTO_8S);
 
 #define ZRTOS__WATCH_DOG_STOP() \
-	wdt_disable();
+    wdt_disable();
 
 #define ZRTOS__WATCH_DOG_RESET() \
-	wdt_reset();
+    wdt_reset();
 
 size_t zrtos__get_free_ram(){
 	extern int __heap_start;
@@ -157,8 +156,8 @@ zrtos_task_heap_t *zrtos_task_heap__init(
 	);
 	return pxPortInitialiseStack(
 		 zrtos_types__ptr_add(thiz,length)-1
-        ,callback
-        ,args
+		,callback
+		,args
 	);
 }
 
@@ -197,92 +196,92 @@ zrtos_task_heap_t *zrtos_task_heap__init(
 #endif
 
 #define _ZRTOS_TASK__SAVE(ptr)                                  \
-	;__asm__ __volatile__(                                      \
-		"push   __tmp_reg__                             \n\t"   \
-		"in     __tmp_reg__, __SREG__                   \n\t"   \
-		"cli                                            \n\t"   \
-		"push   __tmp_reg__                             \n\t"   \
-		"push   __zero_reg__                            \n\t"   \
-		"clr    __zero_reg__                            \n\t"   \
-		"push   r2                                      \n\t"   \
-		"push   r3                                      \n\t"   \
-		"push   r4                                      \n\t"   \
-		"push   r5                                      \n\t"   \
-		"push   r6                                      \n\t"   \
-		"push   r7                                      \n\t"   \
-		"push   r8                                      \n\t"   \
-		"push   r9                                      \n\t"   \
-		"push   r10                                     \n\t"   \
-		"push   r11                                     \n\t"   \
-		"push   r12                                     \n\t"   \
-		"push   r13                                     \n\t"   \
-		"push   r14                                     \n\t"   \
-		"push   r15                                     \n\t"   \
-		"push   r16                                     \n\t"   \
-		"push   r17                                     \n\t"   \
-		"push   r18                                     \n\t"   \
-		"push   r19                                     \n\t"   \
-		"push   r20                                     \n\t"   \
-		"push   r21                                     \n\t"   \
-		"push   r22                                     \n\t"   \
-		"push   r23                                     \n\t"   \
-		"push   r24                                     \n\t"   \
-		"push   r25                                     \n\t"   \
-		"push   r26                                     \n\t"   \
-		"push   r27                                     \n\t"   \
-		"push   r28                                     \n\t"   \
-		"push   r29                                     \n\t"   \
-		"push   r30                                     \n\t"   \
-		"push   r31                                     \n\t"   \
-		"in     __tmp_reg__, __SP_L__                   \n\t"   \
-		"sts    %0, __tmp_reg__                         \n\t"   \
-		"in     __tmp_reg__, __SP_H__                   \n\t"   \
-		"sts    %0 + 1, __tmp_reg__                     \n\t"   \
-		: "=m" (ptr)                                            \
-	);
+    ;__asm__ __volatile__(                                      \
+        "push   __tmp_reg__                             \n\t"   \
+        "in     __tmp_reg__, __SREG__                   \n\t"   \
+        "cli                                            \n\t"   \
+        "push   __tmp_reg__                             \n\t"   \
+        "push   __zero_reg__                            \n\t"   \
+        "clr    __zero_reg__                            \n\t"   \
+        "push   r2                                      \n\t"   \
+        "push   r3                                      \n\t"   \
+        "push   r4                                      \n\t"   \
+        "push   r5                                      \n\t"   \
+        "push   r6                                      \n\t"   \
+        "push   r7                                      \n\t"   \
+        "push   r8                                      \n\t"   \
+        "push   r9                                      \n\t"   \
+        "push   r10                                     \n\t"   \
+        "push   r11                                     \n\t"   \
+        "push   r12                                     \n\t"   \
+        "push   r13                                     \n\t"   \
+        "push   r14                                     \n\t"   \
+        "push   r15                                     \n\t"   \
+        "push   r16                                     \n\t"   \
+        "push   r17                                     \n\t"   \
+        "push   r18                                     \n\t"   \
+        "push   r19                                     \n\t"   \
+        "push   r20                                     \n\t"   \
+        "push   r21                                     \n\t"   \
+        "push   r22                                     \n\t"   \
+        "push   r23                                     \n\t"   \
+        "push   r24                                     \n\t"   \
+        "push   r25                                     \n\t"   \
+        "push   r26                                     \n\t"   \
+        "push   r27                                     \n\t"   \
+        "push   r28                                     \n\t"   \
+        "push   r29                                     \n\t"   \
+        "push   r30                                     \n\t"   \
+        "push   r31                                     \n\t"   \
+        "in     __tmp_reg__, __SP_L__                   \n\t"   \
+        "sts    %0, __tmp_reg__                         \n\t"   \
+        "in     __tmp_reg__, __SP_H__                   \n\t"   \
+        "sts    %0 + 1, __tmp_reg__                     \n\t"   \
+        : "=m" (ptr)                                            \
+    );
 
 #define _ZRTOS_TASK__RESTORE(ptr)                               \
-	;__asm__ __volatile__(                                      \
-		"lds    __tmp_reg__, %0                         \n\t"   \
-		"out    __SP_L__, __tmp_reg__                   \n\t"   \
-		"lds    __tmp_reg__, %0 + 1                     \n\t"   \
-		"out    __SP_H__, __tmp_reg__                   \n\t"   \
-		"pop    r31                                     \n\t"   \
-		"pop    r30                                     \n\t"   \
-		"pop    r29                                     \n\t"   \
-		"pop    r28                                     \n\t"   \
-		"pop    r27                                     \n\t"   \
-		"pop    r26                                     \n\t"   \
-		"pop    r25                                     \n\t"   \
-		"pop    r24                                     \n\t"   \
-		"pop    r23                                     \n\t"   \
-		"pop    r22                                     \n\t"   \
-		"pop    r21                                     \n\t"   \
-		"pop    r20                                     \n\t"   \
-		"pop    r19                                     \n\t"   \
-		"pop    r18                                     \n\t"   \
-		"pop    r17                                     \n\t"   \
-		"pop    r16                                     \n\t"   \
-		"pop    r15                                     \n\t"   \
-		"pop    r14                                     \n\t"   \
-		"pop    r13                                     \n\t"   \
-		"pop    r12                                     \n\t"   \
-		"pop    r11                                     \n\t"   \
-		"pop    r10                                     \n\t"   \
-		"pop    r9                                      \n\t"   \
-		"pop    r8                                      \n\t"   \
-		"pop    r7                                      \n\t"   \
-		"pop    r6                                      \n\t"   \
-		"pop    r5                                      \n\t"   \
-		"pop    r4                                      \n\t"   \
-		"pop    r3                                      \n\t"   \
-		"pop    r2                                      \n\t"   \
-		"pop    __zero_reg__                            \n\t"   \
-		"pop    __tmp_reg__                             \n\t"   \
-		"out    __SREG__, __tmp_reg__                   \n\t"   \
-		"pop    __tmp_reg__                             \n\t"   \
-		: : "m" (ptr)                                           \
-	);
+    ;__asm__ __volatile__(                                      \
+        "lds    __tmp_reg__, %0                         \n\t"   \
+        "out    __SP_L__, __tmp_reg__                   \n\t"   \
+        "lds    __tmp_reg__, %0 + 1                     \n\t"   \
+        "out    __SP_H__, __tmp_reg__                   \n\t"   \
+        "pop    r31                                     \n\t"   \
+        "pop    r30                                     \n\t"   \
+        "pop    r29                                     \n\t"   \
+        "pop    r28                                     \n\t"   \
+        "pop    r27                                     \n\t"   \
+        "pop    r26                                     \n\t"   \
+        "pop    r25                                     \n\t"   \
+        "pop    r24                                     \n\t"   \
+        "pop    r23                                     \n\t"   \
+        "pop    r22                                     \n\t"   \
+        "pop    r21                                     \n\t"   \
+        "pop    r20                                     \n\t"   \
+        "pop    r19                                     \n\t"   \
+        "pop    r18                                     \n\t"   \
+        "pop    r17                                     \n\t"   \
+        "pop    r16                                     \n\t"   \
+        "pop    r15                                     \n\t"   \
+        "pop    r14                                     \n\t"   \
+        "pop    r13                                     \n\t"   \
+        "pop    r12                                     \n\t"   \
+        "pop    r11                                     \n\t"   \
+        "pop    r10                                     \n\t"   \
+        "pop    r9                                      \n\t"   \
+        "pop    r8                                      \n\t"   \
+        "pop    r7                                      \n\t"   \
+        "pop    r6                                      \n\t"   \
+        "pop    r5                                      \n\t"   \
+        "pop    r4                                      \n\t"   \
+        "pop    r3                                      \n\t"   \
+        "pop    r2                                      \n\t"   \
+        "pop    __zero_reg__                            \n\t"   \
+        "pop    __tmp_reg__                             \n\t"   \
+        "out    __SREG__, __tmp_reg__                   \n\t"   \
+        "pop    __tmp_reg__                             \n\t"   \
+        : : "m" (ptr)                                           \
+    );
 
 void _zrtos_task_scheduler__isr_start(void){
 	ZRTOS__INTERRUPTS_DISABLE();
@@ -309,7 +308,7 @@ void _zrtos_task_scheduler__isr_stop(void){
 }
 
 #define ZRTOS_TASK_SCHEDULER__ISR_RETURN() \
-	__asm__ __volatile__("reti");
+    __asm__ __volatile__("reti");
 
 void _zrtos_task_scheduler__isr_reset_counter(void){
 	TCNT1  = 0;

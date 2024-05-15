@@ -1,4 +1,4 @@
-/* vim: noai:ts=4
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
@@ -31,14 +31,14 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 #define ZRTOS_TYPES__MAX(a,b) ((a)>(b)?(a):(b))
 
 #define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
-	do{                               \
-		typeof(*a) a____ = *(a);      \
-		*(a) = *(b);                  \
-		*(b) = a____;                 \
-	}while(0);
+    do{                                     \
+        typeof(*a) a____ = *(a);            \
+        *(a) = *(b);                        \
+        *(b) = a____;                       \
+    }while(0);
 
 #define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \
-  (((a + b ) >= a)))
+    (((a + b ) >= a)))
 
 
 #ifdef __cplusplus
