@@ -11,7 +11,16 @@ extern "C" {
 #endif
 
 
-#define ZRTOS_ASSERT__STATIC(cond) typedef char static_assertion_###__LINE__[(cond)?1:-1]
+#define ZRTOS_ASSERT__STATIC_EX(cond,msg) \
+  typedef char static_assertion_##msg[    \
+    (cond)?1:-1                           \
+  ]__attribute__((unused));
+
+#define _ZRTOS_ASSERT__STATIC_HELPER(cond,line)  \
+  ZRTOS_ASSERT__STATIC_EX(cond,line)
+
+#define ZRTOS_ASSERT__STATIC(cond)        \
+  _ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
 
 
 #ifdef __cplusplus
