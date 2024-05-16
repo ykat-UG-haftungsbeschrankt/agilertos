@@ -16,6 +16,7 @@ extern "C" {
 
 
 typedef struct{
+	size_t stacksize;
 }pthread_attr_t;
 
 typedef struct{
@@ -35,11 +36,18 @@ typedef struct{
     }
 
 int pthread_attr_init(pthread_attr_t *attr){
+	attr->stacksize = ZRTOS_CPU__GET_STATE_LENGTH()
+	                + ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+	;
 	return 0;
 }
 
 int pthread_attr_destroy(pthread_attr_t *attr){
 	return 0;
+}
+
+int pthread_attr_setstacksize(pthread_attr_t *attr, size_t stacksize){
+	attr->stacksize = stacksize;
 }
 
 int pthread_mutexattr_init(pthread_mutexattr_t *attr){
@@ -68,13 +76,21 @@ int pthread_create(
 	,void *(*start_routine)(void *)
 	,void *restrict arg
 ){
+	size_t stack_size_min = ZRTOS_CPU__GET_STATE_LENGTH()
+	                      + ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+	;
 	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
 	zrtos_mem_chunk_t *chunk = _zrtos_mem__malloc(
 		 mem
 		,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE
-		,sizeof(zrtos_task_t)
-		+ZRTOS_CPU__GET_STATE_LENGTH()
-		+ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+		,sizeof(zrtos_task_t) + (
+			  attr
+			? ZRTOS_TYPES__MAX(
+				 stack_size_min
+				,attr->stacksize
+			)
+			: stack_size_min
+		)
 	);
 	int ret = ENOMEM;
 
