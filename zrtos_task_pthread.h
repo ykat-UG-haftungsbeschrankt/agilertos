@@ -12,6 +12,7 @@ extern "C" {
 
 
 #include "zrtos_task_mutex.h"
+#include "zrtos_error.h"
 
 
 typedef struct{
@@ -60,14 +61,43 @@ int pthread_mutex_destroy(pthread_mutex_t *mutex){
 	zrtos_task_mutex__deinit(&mutex->mutex);
 	return 0;
 }
-/*
-int pthread_create(pthread_t *restrict thread,
-const pthread_attr_t *restrict attr,
-void *(*start_routine)(void *),
-void *restrict arg){
 
+int pthread_create(
+	 pthread_t *restrict thread
+	,const pthread_attr_t *restrict attr
+	,void *(*start_routine)(void *)
+	,void *restrict arg
+){
+	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
+	zrtos_mem_chunk_t *chunk = _zrtos_mem__malloc(
+		 mem
+		,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE
+		,sizeof(zrtos_task_t)
+		+ZRTOS_CPU__GET_STATE_LENGTH()
+		+ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+	);
+	int ret = ENOMEM;
+
+	if(chunk){
+		zrtos_task_t *task = zrtos_types__ptr_subtract(
+			zrtos_types__ptr_add(
+				zrtos_mem_chunk__get_ptr(chunk)
+				,zrtos_mem_chunk__get_length(chunk)
+			)
+			,sizeof(zrtos_task_t)
+		);
+		zrtos_task__init(
+			 task
+			,(zrtos_task_top_of_stack_t*)(task - 1)
+			,start_routine
+			,arg
+		);
+		ret = 0;
+	}
+
+	return ret;
 }
-*/
+
 int pthread_mutex_lock(pthread_mutex_t *mutex){
 	return zrtos_task_mutex__lock(&mutex->mutex);
 }

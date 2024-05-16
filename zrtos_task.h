@@ -23,14 +23,14 @@ typedef unsigned int zrtos_task_id_t;
 
 
 typedef struct _zrtos_task_t{
-	zrtos_task_heap_t    *stack_ptr;
+	zrtos_task_top_of_stack_t    *stack_ptr;
 	uint16_t             ticks;
 	errno_t              errno;
 }zrtos_task_t;
 
 bool zrtos_task__init(
 	 zrtos_task_t          *thiz
-	,zrtos_task_heap_t     *heap
+	,zrtos_task_top_of_stack_t     *heap
 	,size_t                heap_size
 	,zrtos_task_callback_t callback
 	,void                  *args
@@ -62,11 +62,14 @@ bool zrtos_task__is_idle(zrtos_task_t *thiz){
 	return thiz->ticks > 0;
 }
 
-void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_task_heap_t *stack_ptr){
+void zrtos_task__set_stack_ptr(
+	 zrtos_task_t *thiz
+	,zrtos_task_top_of_stack_t *stack_ptr
+){
 	thiz->stack_ptr = stack_ptr;
 }
 
-zrtos_task_heap_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
+zrtos_task_top_of_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
 	return thiz->stack_ptr;
 }
 

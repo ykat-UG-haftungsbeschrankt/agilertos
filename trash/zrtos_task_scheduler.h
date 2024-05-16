@@ -16,7 +16,7 @@ extern "C" {
 
 typedef struct _zrtos_task_scheduler_t{
 	zrtos_task_t      *active_task;
-	zrtos_task_heap_t *tmp_stack_ptr;
+	zrtos_task_top_of_stack_t *tmp_stack_ptr;
 }zrtos_task_scheduler_t;
 
 

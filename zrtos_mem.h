@@ -105,6 +105,19 @@ zrtos_mem_chunk_t *zrtos_mem__get_by_id(
 	return 0;
 }
 
+zrtos_mem_chunk_t *zrtos_mem__get_by_type(
+	 zrtos_mem_t *thiz
+	,zrtos_mem_chunk_type_t   type
+){
+	zrtos_mem_chunk_t *node = thiz->ptr;
+	for(size_t l = thiz->length;l--;node++){
+		if(node->type.type == type.type){
+			return node;
+		}
+	}
+	return 0;
+}
+
 zrtos_mem_chunk_uid_t zrtos_mem__get_next_uid(
 	zrtos_mem_t *thiz
 ){
@@ -158,15 +171,15 @@ void zrtos_mem__memmove_left_overlapping(
 }
 #endif
 
-zrtos_mem_chunk_uid_t zrtos_mem__malloc(
+zrtos_mem_chunk_t *_zrtos_mem__malloc(
 	 zrtos_mem_t *thiz
 	,zrtos_mem_type_t type
 	,size_t length
 ){
+	zrtos_mem_chunk_t *chunk = 0;
 	size_t free_space = _zrtos_mem__get_free_space(thiz);
 	size_t length_total = sizeof(zrtos_mem_chunk_t) + length;
 	if(free_space >= length_total){
-		zrtos_mem_chunk_t *chunk;
 		zrtos_mem_chunk_t *node;
 		size_t index_length = (sizeof(zrtos_mem_chunk_t) * thiz->length);
 		size_t heap_length = thiz->heap_size - index_length;
@@ -198,7 +211,21 @@ zrtos_mem_chunk_uid_t zrtos_mem__malloc(
 			static uint8_t pattern = 0xE0;
 			zrtos_debug__memset(chunk->ptr,(int)(pattern++),chunk->length);
 		);
+	}
+	return chunk;
+}
 
+zrtos_mem_chunk_uid_t zrtos_mem__malloc(
+	 zrtos_mem_t *thiz
+	,zrtos_mem_type_t type
+	,size_t length
+){
+	zrtos_mem_chunk_t *chunk = _zrtos_mem__malloc(
+		 thiz
+		,type
+		,length
+	);
+	if(chunk){
 		return chunk->uid;
 	}
 	return zrtos_mem_chunk_uid__error();

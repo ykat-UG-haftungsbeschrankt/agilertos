@@ -53,7 +53,5 @@ int main(void){
 	}
 
 	zrtos_task_scheduler__init();
-
-	while(1){}
 }
 

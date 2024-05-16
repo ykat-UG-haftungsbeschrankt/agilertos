@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 
-typedef uint8_t zrtos_task_heap_t;
+typedef uint8_t zrtos_task_top_of_stack_t;
 typedef int8_t zrtos_task_heap_signed_t;
 typedef uint16_t zrtos_task_delay_t;
 typedef void (*zrtos_task_callback_t)(void *arg);

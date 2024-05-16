@@ -57,7 +57,7 @@ size_t zrtos__get_free_ram(){
 	return zrtos_types__ptr_get_byte_distance((void*)SP,(void*)&__heap_start);
 }
 
-zrtos_task_heap_t * pxPortInitialiseStack( zrtos_task_heap_t * pxTopOfStack,
+zrtos_task_top_of_stack_t * pxPortInitialiseStack( zrtos_task_top_of_stack_t * pxTopOfStack,
                                      zrtos_task_callback_t pxCode,
                                      void * pvParameters )
 {
@@ -69,11 +69,11 @@ uint16_t usAddress;
     /* The start of the task code will be popped off the stack last, so place
      * it on first. */
     usAddress = ( uint16_t ) pxCode;
-    *pxTopOfStack = ( zrtos_task_heap_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
     usAddress >>= 8;
-    *pxTopOfStack = ( zrtos_task_heap_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
 #if defined(__AVR_3_BYTE_PC__)
@@ -96,7 +96,7 @@ uint16_t usAddress;
      * portSAVE_CONTEXT places the flags on the stack immediately after r0
      * to ensure the interrupts get disabled as soon as possible, and so ensuring
      *  the stack use is minimal should a context switch interrupt occur. */
-    *pxTopOfStack = ( zrtos_task_heap_t ) 0x00; /* R0 */
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00; /* R0 */
     pxTopOfStack--;
     *pxTopOfStack = 0x80;//enable interrupts
     pxTopOfStack--;
@@ -106,7 +106,7 @@ uint16_t usAddress;
     /* If we have an ATmega256x, we are also saving the EIND register.
      * We should default to 0.
      */
-    *pxTopOfStack = ( zrtos_task_heap_t ) 0x00;    /* EIND */
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* EIND */
     pxTopOfStack--;
 #endif
 
@@ -115,23 +115,23 @@ uint16_t usAddress;
     /* We are saving the RAMPZ register.
      * We should default to 0.
      */
-    *pxTopOfStack = ( zrtos_task_heap_t ) 0x00;    /* RAMPZ */
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* RAMPZ */
     pxTopOfStack--;
 #endif
 
     /* Now the remaining registers. The compiler expects R1 to be 0. */
-    *pxTopOfStack = ( zrtos_task_heap_t ) 0x00;    /* R1 */
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* R1 */
 
     /* Leave R2 - R23 untouched */
     pxTopOfStack -= 23;
 
     /* Place the parameter on the stack in the expected location. */
     usAddress = ( uint16_t ) pvParameters;
-    *pxTopOfStack = ( zrtos_task_heap_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
     usAddress >>= 8;
-    *pxTopOfStack = ( zrtos_task_heap_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
 
     /* Leave register R26 - R31 untouched */
     pxTopOfStack -= 7;
@@ -139,32 +139,34 @@ uint16_t usAddress;
     return pxTopOfStack;
 }
 
-zrtos_task_heap_t *zrtos_task_heap__init(
-	 zrtos_task_heap_t     *thiz
-	,size_t                length
+zrtos_task_top_of_stack_t *zrtos_task_heap__init(
+	 zrtos_task_top_of_stack_t     *thiz
+	//,size_t                length
 	,zrtos_task_callback_t callback
 	,void                  *args
 ){
+/*
 	ZRTOS__DEBUG_CODE(
 		static uint8_t pattern = 0xF0;
 		memset(thiz,(int)(pattern++),length);
 	);
+*/
 	return pxPortInitialiseStack(
-		 zrtos_types__ptr_add(thiz,length)-1
-        ,callback
-        ,args
+		 thiz
+		,callback
+		,args
 	);
 }
 
 #if 0
-zrtos_task_heap_t *zrtos_task_heap__init(
-	 zrtos_task_heap_t     *thiz
+zrtos_task_top_of_stack_t *zrtos_task_heap__init(
+	 zrtos_task_top_of_stack_t     *thiz
 	,size_t                length
 	,zrtos_task_callback_t callback
 	,void                  *args
 ){
-	zrtos_task_heap_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
-	zrtos_task_heap_t *pxTopOfStackTmp = pxTopOfStack;
+	zrtos_task_top_of_stack_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
+	zrtos_task_top_of_stack_t *pxTopOfStackTmp = pxTopOfStack;
 	uint16_t usAddress = (uint16_t)callback;
 	zrtos_task_heap_signed_t usValue = -6;
 
