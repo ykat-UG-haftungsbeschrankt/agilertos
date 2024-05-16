@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_CPU_H_
-#define ZRTOS_CPU_H_
+#ifndef ZRTOS_ARCH_H
+#define ZRTOS_ARCH_H
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -18,8 +18,8 @@ typedef void (*zrtos_task_callback_t)(void *arg);
 
 void _zrtos_task_scheduler__on_tick(void)__attribute__((naked));
 
-#include "cpu/atmega328p.h"
-#include "cpu/atmega2560.h"
+#include "arch/atmega328p.h"
+#include "arch/atmega2560.h"
 
 
 #ifdef __cplusplus

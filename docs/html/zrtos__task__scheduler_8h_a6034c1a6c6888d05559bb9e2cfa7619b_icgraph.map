@@ -1,0 +1,16 @@
+<map id="_zrtos_task_scheduler__get_active_task" name="_zrtos_task_scheduler__get_active_task">
+<area shape="rect" id="Node000001" title=" " alt="" coords="997,101,1149,144"/>
+<area shape="rect" id="Node000002" href="$zrtos__task__scheduler_8h.html#ab141ab1e8536c047745b2ba51c24d9f9" title=" " alt="" coords="797,72,949,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="981,112,949,107,950,102,982,107"/>
+<area shape="rect" id="Node000004" href="$zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,68,548,111"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="982,135,900,140,803,143,699,140,596,129,534,114,535,109,597,124,699,135,803,137,899,135,981,129"/>
+<area shape="rect" id="Node000003" href="$zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,5,749,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="792,69,738,51,740,46,794,64"/>
+<area shape="rect" id="Node000007" href="$zrtos__task__scheduler_8h.html#ac5728ece85f922ba706c1094388b0720" title=" " alt="" coords="600,72,745,115"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="781,96,746,96,746,91,781,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="590,56,545,70,544,65,588,51"/>
+<area shape="rect" id="Node000005" href="$zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,76,355,103"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="387,92,356,92,356,87,387,87"/>
+<area shape="rect" id="Node000006" href="$zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,76,144,103"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="176,92,144,92,144,87,176,87"/>
+</map>

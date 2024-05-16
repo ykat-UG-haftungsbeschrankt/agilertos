@@ -1,0 +1,9 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,55,83"/>
+<area shape="rect" id="Node000002" href="$task_8h.html#a112d5aff14f056516b2ecb36407c1fa2" title=" " alt="" coords="121,5,198,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="54,57,109,36,111,41,56,62"/>
+<area shape="rect" id="Node000003" href="$task_8h.html#af994c3d8aa48ac470d38532a356c532e" title=" " alt="" coords="121,56,198,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="55,67,106,67,106,72,55,72"/>
+<area shape="rect" id="Node000004" href="$zrtos__task_8h.html#a08e40fd6f477ca5ac7d4e452ec383018" title=" " alt="" coords="103,107,216,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="56,76,111,98,109,103,54,81"/>
+</map>

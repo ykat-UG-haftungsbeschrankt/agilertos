@@ -1,8 +1,13 @@
-/*
+/**
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
+ *
+ * @page my_errors My Errors
+ * @brief Errors page
+ * /page my_errors My Errors
+ * /brief Errors page
  */
 #ifndef ZRTOS_MALLOC_H
 #define ZRTOS_MALLOC_H
@@ -14,15 +19,15 @@ extern "C" {
 #include "zrtos_types.h"
 #include "zrtos_debug.h"
 
-//@TODO implement ZRTOS__BYTE_ALIGNMENT
-
 typedef struct _zrtos_malloc_t{
 	uint8_t value;
 }__attribute__((packed))zrtos_malloc_t;
 
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 typedef struct _zrtos_malloc_heap_chunk_t{
 	size_t  length;
 }zrtos_malloc_heap_chunk_t;
+#endif
 
 typedef struct _zrtos_malloc_internal_t{
 	uint8_t *ptr;
@@ -73,7 +78,11 @@ typedef struct _zrtos_malloc_internal_t{
         ,sizeof(name) / sizeof(name[0])                           \
     )
 
-
+///
+/// @page my_errors My Errors
+/// @brief Errors page
+/// /page my_errors My Errors
+/// /brief Errors page
 bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){
 	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
 	bool ret = false;
@@ -90,6 +99,7 @@ bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){
 	return ret;
 }
 
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
 	 zrtos_malloc_t *thiz
 	,size_t         length
@@ -111,12 +121,38 @@ zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
 
 	return 0;
 }
+#endif
 
 /*
-** either returns a recently freed memory block with the exact same
-** length or allocates a new memory block
+** defined(ZRTOS_MALLOC__CFG_DISABLE_FREE)
+** ? allocates a new memory block
+** : either returns a recently freed memory block with the exact same
+**   length or allocates a new memory block
 **/
 void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
+	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
+	void *ret = 0;
+	bool has_free_space = (thiz_->length
+	                    - zrtos_types__ptr_get_byte_distance(
+	                		 thiz_->ptr
+	                		,thiz_
+	                    ))
+	                    >= total_length
+	;
+
+	if(has_free_space){
+		ret = thiz_->ptr;
+		thiz_->ptr += length;
+	}
+
+	ZRTOS__DEBUG_CODE({
+		static uint8_t pattern = 0x20;
+		zrtos_debug__memset(ret,pattern++,length);
+	});
+
+	return ret;
+#else
 	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
 	zrtos_malloc_heap_chunk_t *chunk = 0;
 	size_t total_length = sizeof(zrtos_malloc_heap_chunk_t) + length;
@@ -150,12 +186,16 @@ void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
 
 L_OUT:
 	return chunk;
+#endif
 }
 
 /*
-** the memory adressed by the pointer will only be marked as unused
+** defined(ZRTOS_MALLOC__CFG_DISABLE_FREE)
+** ? noop
+** : the memory adressed by the pointer will only be marked as unused
 **/
 void zrtos_malloc__free(void *ptr){
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 	zrtos_malloc_heap_chunk_t *chunk = ptr;
 	--chunk;
 	chunk->length &= ~((size_t)1);
@@ -163,6 +203,7 @@ void zrtos_malloc__free(void *ptr){
 	ZRTOS__DEBUG_CODE({
 		zrtos_debug__memset(ptr,0xFF,(chunk->length >> 1));
 	});
+#endif
 }
 
 
