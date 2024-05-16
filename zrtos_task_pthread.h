@@ -48,6 +48,7 @@ int pthread_attr_destroy(pthread_attr_t *attr){
 
 int pthread_attr_setstacksize(pthread_attr_t *attr, size_t stacksize){
 	attr->stacksize = stacksize;
+	return 0;
 }
 
 int pthread_mutexattr_init(pthread_mutexattr_t *attr){
@@ -80,17 +81,18 @@ int pthread_create(
 	                      + ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
 	;
 	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
+	size_t stacksize_min = sizeof(zrtos_task_t) + (
+		  attr
+		? ZRTOS_TYPES__MAX(
+			 stack_size_min
+			,attr->stacksize
+		)
+		: stack_size_min
+	);
 	zrtos_mem_chunk_t *chunk = _zrtos_mem__malloc(
 		 mem
 		,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE
-		,sizeof(zrtos_task_t) + (
-			  attr
-			? ZRTOS_TYPES__MAX(
-				 stack_size_min
-				,attr->stacksize
-			)
-			: stack_size_min
-		)
+		,stacksize_min
 	);
 	int ret = ENOMEM;
 
@@ -105,6 +107,7 @@ int pthread_create(
 		zrtos_task__init(
 			 task
 			,(zrtos_task_top_of_stack_t*)(task - 1)
+			,stacksize_min
 			,start_routine
 			,arg
 		);

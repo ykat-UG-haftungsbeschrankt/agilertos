@@ -91,6 +91,23 @@ bool _zrtos_task_scheduler__set_active_task(
 	return true;
 }
 
+bool zrtos_task_scheduler__has_enough_stack_space(
+	 zrtos_task_t      *task
+	,zrtos_mem_chunk_t *chunk
+){
+	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
+	size_t stack_size_min = zrtos_task__get_stack_size_min(task);
+	if(_zrtos_mem__get_free_space(mem)
+	<=  ZRTOS_TYPES__MAX(
+		 zrtos_task__get_stack_size_min(task)
+		,zrtos_mem_chunk__get_length(chunk)
+	) - zrtos_mem_chunk__get_length(chunk)){
+		ZRTOS__FATAL();
+		return false;
+	}
+	return true;
+}
+
 #define ZRTOS_TASK_SCHEDULER__EACH_TASK_BEGIN(thiz,start_offset,pos,chunk,task)\
     ZRTOS_MEM__EACH_EX_BEGIN(                                                  \
          thiz                                                                  \
@@ -129,7 +146,9 @@ void _zrtos_task_scheduler__switch_task(void){
 			if(tmp){
 				zrtos_task__on_tick(task);
 			}else{
-				if(!zrtos_task__is_idle(task)){
+				if(!zrtos_task__is_idle(task)
+				&& zrtos_task_scheduler__has_enough_stack_space(task,chunk)
+				){
 					start_offset = pos+1;
 					start_offset = start_offset < chunk_count
 								? start_offset
