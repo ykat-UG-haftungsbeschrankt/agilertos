@@ -36,24 +36,17 @@ void zrtos_task_scheduler__set_heap(zrtos_mem_t *heap){
 zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 	return zrtos_types__ptr_subtract(
 		 zrtos_mem__get_last_address(zrtos_task_scheduler__get_heap())
-		,sizeof(zrtos_mem_chunk_t)
+		,sizeof(zrtos_task_t)
 	);
 }
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
-void _zrtos_task_scheduler__restore_task_helper(void){
+void _zrtos_task_scheduler__restore_task(void){
 	_ZRTOS_TASK__RESTORE(zrtos_task_scheduler.tmp_stack_ptr);
 	ZRTOS_TASK_SCHEDULER__ISR_RETURN();
 }
 #pragma GCC pop_options
-
-void _zrtos_task_scheduler__restore_task(void){
-	zrtos_task_scheduler.tmp_stack_ptr = _zrtos_task_scheduler__get_active_task(
-	                                   )->stack_ptr
-	;
-	_zrtos_task_scheduler__restore_task_helper();
-}
 
 void zrtos_task_scheduler__page_task_out(void){
 	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
@@ -196,7 +189,7 @@ void _zrtos_task_scheduler__on_tick(void){
 }
 #pragma GCC pop_options
 
-inline void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms){
+void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms){
 	zrtos_task__set_delay_ms(
 		 _zrtos_task_scheduler__get_active_task()
 		,ms

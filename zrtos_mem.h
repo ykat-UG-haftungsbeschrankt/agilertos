@@ -165,8 +165,8 @@ void _zrtos_mem__memmove_right_overlapping(
 	,uint8_t *src
 	,size_t length
 ){
-	dest += length;
-	src += length;
+	dest += --length;
+	src += length++;
 	while(length--){
 		*dest-- = *src--;
 	}
@@ -215,7 +215,7 @@ zrtos_mem_chunk_t *_zrtos_mem__malloc(
 
 		//update index
 		node = &((zrtos_mem_chunk_t*)thiz->ptr)[0];
-		while(++node < chunk){
+		for(;node < chunk;node++){
 			node->ptr += sizeof(zrtos_mem_chunk_t);
 		}
 
@@ -304,8 +304,8 @@ void *_zrtos_mem__swap_to_heap_end(
 		,used_length - chunk_offset
 	);
 	_zrtos_mem__memmove_right_overlapping(
-		 ret-1//buffer + heap_length - chunk_length
-		,buffer + used_length - chunk_length-1
+		 ret//buffer + heap_length - chunk_length
+		,buffer + used_length - chunk_length
 		,chunk_length
 	);
 	return ret;

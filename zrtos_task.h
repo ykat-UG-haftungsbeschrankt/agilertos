@@ -64,7 +64,7 @@ void zrtos_task__on_tick(zrtos_task_t *thiz){
 bool zrtos_task__is_idle(zrtos_task_t *thiz){
 	return thiz->ticks > 0;
 }
-
+/*
 void zrtos_task__set_stack_ptr(
 	 zrtos_task_t *thiz
 	,zrtos_task_top_of_stack_t *stack_ptr
@@ -75,7 +75,7 @@ void zrtos_task__set_stack_ptr(
 zrtos_task_top_of_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
 	return thiz->stack_ptr;
 }
-
+*/
 void zrtos_task__set_errno(zrtos_task_t *thiz,errno_t errno){
 	thiz->errno = errno;
 }

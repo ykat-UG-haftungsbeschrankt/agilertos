@@ -13,21 +13,23 @@ unsigned b = 0;
 void *callback0(void *args){
 	while(1){
 		a++;
+		zrtos_task_scheduler__delay_ms(1);
 	}
 }
 void *callback1(void *args){
 	while(1){
 		b++;
+		zrtos_task_scheduler__delay_ms(1);
 	}
 }
-
-ZRTOS_MEM__INIT(task_heap,300);
 
 int main(void){
 	pthread_t task0;
 	pthread_t task1;
+	zrtos_mem_t mem;  
+	zrtos_mem__init(&mem,0x200,16*20); 
 	
-	zrtos_task_scheduler__set_heap(ZRTOS_MEM__GET(task_heap));
+	zrtos_task_scheduler__set_heap(&mem);
 
 	if(pthread_create(
 		 &task0

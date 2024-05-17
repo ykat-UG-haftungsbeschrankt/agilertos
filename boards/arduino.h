@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+//https://android.googlesource.com/platform/external/arduino/+/d5790d78880d4bd60be277ee20e53a851aa8c116/hardware/arduino/cores/arduino/wiring.c
+
 /*
 // the prescaler is set so that timer0 ticks every 64 clock cycles, and the
 // the overflow handler is called every 256 ticks.
@@ -24,6 +26,21 @@ extern "C" {
 volatile unsigned long timer0_overflow_count = 0;
 volatile unsigned long timer0_millis = 0;
 static unsigned char timer0_fract = 0;
+*/
+
+/*
+Timer0: Timer0 is a 8bit timer. In the Arduino world Timer0 is been used for
+ the timer functions, like delay(), millis() and micros(). If you change
+ Timer0 registers, this may influence the Arduino timer function. So you 
+ should know what you are doing. Timer1: Timer1 is a 16bit timer. In the
+ Arduino world the Servo library uses Timer1 on Arduino Uno (Timer5 on
+ Arduino Mega). Timer2: Timer2 is a 8bit timer like Timer0. In 
+ the Arduino work the tone() function uses Timer2. Timer3, Timer4, Timer5:
+ Timer 3,4,5 are only available on Arduino Mega boards. These timers are
+ all 16bit timers. Timer Register You can change the Timer behaviour 
+ through the timer register. The most important timer registers are:
+
+ https://oscarliang.com/arduino-timer-and-interrupt-tutorial/
 */
 
 SIGNAL(TIMER0_OVF_vect){
