@@ -23,11 +23,11 @@ typedef struct _zrtos_malloc_t{
 	uint8_t value;
 }__attribute__((packed))zrtos_malloc_t;
 
-#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 typedef struct _zrtos_malloc_heap_chunk_t{
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 	size_t  length;
-}zrtos_malloc_heap_chunk_t;
 #endif
+}zrtos_malloc_heap_chunk_t;
 
 typedef struct _zrtos_malloc_internal_t{
 	uint8_t *ptr;
