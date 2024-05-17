@@ -3,6 +3,7 @@ var zrtos__malloc_8h =
     [ "_zrtos_malloc_t", "struct__zrtos__malloc__t.html", "struct__zrtos__malloc__t" ],
     [ "_zrtos_malloc_heap_chunk_t", "struct__zrtos__malloc__heap__chunk__t.html", "struct__zrtos__malloc__heap__chunk__t" ],
     [ "_zrtos_malloc_internal_t", "struct__zrtos__malloc__internal__t.html", "struct__zrtos__malloc__internal__t" ],
+    [ "ZRTOS_MALLOC__GET_REQUIRED_SIZE", "zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de", null ],
     [ "ZRTOS_MALLOC__GLOBAL_HEAP", "zrtos__malloc_8h.html#a04ec9557c3ef3580d3479162861c5d87", null ],
     [ "ZRTOS_MALLOC__GLOBAL_HEAP_INIT", "zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6", null ],
     [ "ZRTOS_MALLOC__INIT", "zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8", null ],

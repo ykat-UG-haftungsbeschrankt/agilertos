@@ -12,7 +12,7 @@ extern "C" {
 
 
 #include "zrtos_debug.h"
-#include "zrtos_cpu.h"
+#include "zrtos_arch.h"
 
 size_t _zrtos__do_not_disturb = 0;
 #define ZRTOS__DO_NOT_DISTURB(code)    \
@@ -29,7 +29,7 @@ do{                                    \
 
 #define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
 do{                                              \
-    is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \
+    is_locked = ZRTOS__INTERRUPTS_IS_DISABLED(); \
     ZRTOS__INTERRUPTS_DISABLE();                 \
     _zrtos__do_not_disturb++;                    \
     do{                                          \

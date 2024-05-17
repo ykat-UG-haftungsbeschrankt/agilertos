@@ -113,7 +113,7 @@ $(function(){initNavTree('zrtos_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos__debug_8h.html">zrtos_debug.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;zrtos_cpu.h&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos__arch_8h.html">zrtos_arch.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="zrtos_8h.html#acccc87b0006cdff87035d48fed4560bd">   17</a></span><span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos_8h.html#acccc87b0006cdff87035d48fed4560bd">_zrtos__do_not_disturb</a> = 0;</div>
 <div class="foldopen" id="foldopen00018" data-start="" data-end="">
@@ -133,7 +133,7 @@ $(function(){initNavTree('zrtos_8h_source.html',''); initResizable(); });
 <div class="foldopen" id="foldopen00030" data-start="" data-end="">
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="zrtos_8h.html#a7c171f253bd485621140ee57767d90b3">   30</a></span><span class="preprocessor">#define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">do{                                              \</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    is_locked = ZRTOS__INTERRUPTS_IS_DISABLED(); \</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">    ZRTOS__INTERRUPTS_DISABLE();                 \</span></div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">    _zrtos__do_not_disturb++;                    \</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    do{                                          \</span></div>
@@ -158,7 +158,7 @@ $(function(){initNavTree('zrtos_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#elif ZRTOS__BYTE_ALIGNMENT == 2</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0001 )</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#elif ZRTOS__BYTE_ALIGNMENT == 1</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0000 )</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="zrtos_8h.html#ac559aa528c411dd671f6ac346a9cdc38">   56</a></span><span class="preprocessor">    #define ZRTOS__BYTE_ALIGNMENT_MASK    ( 0x0000 )</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#else </span><span class="comment">/* if ZRTOS__BYTE_ALIGNMENT == 32 */</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    #error &quot;Invalid ZRTOS__BYTE_ALIGNMENT definition&quot;</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">/* if ZRTOS__BYTE_ALIGNMENT == 32 */</span><span class="preprocessor"></span></div>
@@ -169,6 +169,7 @@ $(function(){initNavTree('zrtos_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="azrtos_8h_html_acccc87b0006cdff87035d48fed4560bd"><div class="ttname"><a href="zrtos_8h.html#acccc87b0006cdff87035d48fed4560bd">_zrtos__do_not_disturb</a></div><div class="ttdeci">size_t _zrtos__do_not_disturb</div><div class="ttdef"><b>Definition</b> <a href="#l00017">zrtos.h:17</a></div></div>
+<div class="ttc" id="azrtos__arch_8h_html"><div class="ttname"><a href="zrtos__arch_8h.html">zrtos_arch.h</a></div></div>
 <div class="ttc" id="azrtos__debug_8h_html"><div class="ttname"><a href="zrtos__debug_8h.html">zrtos_debug.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

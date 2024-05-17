@@ -11,6 +11,7 @@ extern "C" {
 #endif
 
 
+#include "zrtos.h"
 #include "zrtos_error.h"
 
 
@@ -31,7 +32,7 @@ void zrtos_task_mutex__deinit(zrtos_task_mutex_t *thiz){
 
 int zrtos_task_mutex__try_lock(zrtos_task_mutex_t *thiz){
 	int ret = EBUSY;
-	ZRTOS__DO_NOT_DISTURB_EX({
+	ZRTOS__DO_NOT_DISTURB({
 		if(thiz->is_locked == false){
 			thiz->is_locked = true;
 			ret = 0;

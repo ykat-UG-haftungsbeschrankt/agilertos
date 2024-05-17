@@ -17,6 +17,7 @@ var zrtos__mem_8h =
     [ "zrtos_mem__free", "zrtos__mem_8h.html#a3a3223f615899e098496a41be2c29ef9", null ],
     [ "zrtos_mem__get_by_id", "zrtos__mem_8h.html#aafb2b26a11e7077908bf6279ec5656f1", null ],
     [ "zrtos_mem__get_by_type", "zrtos__mem_8h.html#a097834d51158eb56e95f43bc182778ba", null ],
+    [ "zrtos_mem__get_by_type_ex", "zrtos__mem_8h.html#a288039b3ffe4c79c983d14084b6c981a", null ],
     [ "zrtos_mem__get_chunk_count", "zrtos__mem_8h.html#a70abd4abfa1cc41786bbd397dca79c5b", null ],
     [ "zrtos_mem__get_last_address", "zrtos__mem_8h.html#a77b43047034e6cd492864f12f1757e9b", null ],
     [ "zrtos_mem__get_next_uid", "zrtos__mem_8h.html#a9a02ac033915735be128ca3e0e5338ca", null ],

@@ -34,6 +34,17 @@ typedef struct _zrtos_malloc_internal_t{
 	size_t  length;
 }zrtos_malloc_internal_t;
 
+#define ZRTOS_MALLOC__GET_REQUIRED_SIZE(type,count)                     \
+    ( sizeof(zrtos_malloc_internal_t)                                   \
+    +   (                                                               \
+            (                                                           \
+                  sizeof(zrtos_malloc_heap_chunk_t)                     \
+                + sizeof(type)                                          \
+            )                                                           \
+            * (count)                                                   \
+        )                                                               \
+    )
+
 #define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)                            \
     zrtos_malloc__init(                                                 \
          name                                                           \
@@ -51,7 +62,7 @@ typedef struct _zrtos_malloc_internal_t{
 
 #define ZRTOS_MALLOC__GLOBAL_HEAP(name,len)                       \
     zrtos_malloc_t name[                                          \
-        len + sizeof(zrtos_malloc_internal_t)                       \
+        (len)                                                     \
     ];                                                            \
                                                                   \
     ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
@@ -69,10 +80,11 @@ typedef struct _zrtos_malloc_internal_t{
 
 #define ZRTOS_MALLOC__INIT(name,len)                              \
     zrtos_malloc_t name[                                          \
-        len + sizeof(zrtos_malloc_internal_t)                     \
+        (len)                                                     \
     ];                                                            \
                                                                   \
     ZRTOS_ASSERT__STATIC(len >= sizeof(zrtos_malloc_internal_t)); \
+                                                                  \
     zrtos_malloc__init(                                           \
          name                                                     \
         ,sizeof(name) / sizeof(name[0])                           \
@@ -132,28 +144,6 @@ zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
 void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
 #ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
-	void *ret = 0;
-	bool has_free_space = (thiz_->length
-	                    - zrtos_types__ptr_get_byte_distance(
-	                		 thiz_->ptr
-	                		,thiz_
-	                    ))
-	                    >= total_length
-	;
-
-	if(has_free_space){
-		ret = thiz_->ptr;
-		thiz_->ptr += length;
-	}
-
-	ZRTOS__DEBUG_CODE({
-		static uint8_t pattern = 0x20;
-		zrtos_debug__memset(ret,pattern++,length);
-	});
-
-	return ret;
-#else
-	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
 	zrtos_malloc_heap_chunk_t *chunk = 0;
 	size_t total_length = sizeof(zrtos_malloc_heap_chunk_t) + length;
 	bool has_free_space = (thiz_->length
@@ -186,6 +176,28 @@ void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
 
 L_OUT:
 	return chunk;
+#else
+	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
+	void *ret = 0;
+	bool has_free_space = (thiz_->length
+	                    - zrtos_types__ptr_get_byte_distance(
+	                		 thiz_->ptr
+	                		,thiz_
+	                    ))
+	                    >= length
+	;
+
+	if(has_free_space){
+		ret = thiz_->ptr;
+		thiz_->ptr += length;
+	}
+
+	ZRTOS__DEBUG_CODE({
+		static uint8_t pattern = 0x20;
+		zrtos_debug__memset(ret,pattern++,length);
+	});
+
+	return ret;
 #endif
 }
 

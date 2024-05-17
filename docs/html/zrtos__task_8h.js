@@ -7,7 +7,7 @@ var zrtos__task_8h =
     [ "zrtos_task__get_errno", "zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610", null ],
     [ "zrtos_task__get_stack_ptr", "zrtos__task_8h.html#abfdb89e1aa01046c462b0c6bada26b13", null ],
     [ "zrtos_task__get_stack_size_min", "zrtos__task_8h.html#a61bd291e3b70a74e88eb2635006bd5ba", null ],
-    [ "zrtos_task__init", "zrtos__task_8h.html#a08e40fd6f477ca5ac7d4e452ec383018", null ],
+    [ "zrtos_task__init", "zrtos__task_8h.html#aa17916b5642bbea85d4f219a995240b5", null ],
     [ "zrtos_task__is_idle", "zrtos__task_8h.html#a642d4e9477deaba235d0a74ef58634a0", null ],
     [ "zrtos_task__on_tick", "zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9", null ],
     [ "zrtos_task__set_delay_ms", "zrtos__task_8h.html#ad7ba8c52c5853869213d0202496fd38a", null ],

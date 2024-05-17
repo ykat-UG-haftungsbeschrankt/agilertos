@@ -9,9 +9,11 @@
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="285,49,55,49,55,44,285,44"/>
 <area shape="rect" id="Node000005" href="$zrtos__mem_8h.html#a8dcbdf556460defe26abc174dc4b7340" title=" " alt="" coords="289,84,434,111"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="466,100,434,100,434,95,466,95"/>
-<area shape="rect" id="Node000006" href="$zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="118,84,226,111"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="273,100,226,100,226,95,273,95"/>
-<area shape="rect" id="Node000007" href="$zrtos__mem_8h.html#ac02c1b68c1f627ebdf0e2512e4ab091f" title=" " alt="" coords="103,135,241,161"/>
-<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="295,118,225,136,224,131,293,113"/>
-<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="109,130,101,125,65,93,39,62,43,58,69,89,104,120,112,125"/>
+<area shape="rect" id="Node000006" href="$zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="118,135,226,161"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="295,118,225,136,224,131,293,113"/>
+<area shape="rect" id="Node000008" href="$zrtos__mem_8h.html#ac02c1b68c1f627ebdf0e2512e4ab091f" title=" " alt="" coords="103,84,241,111"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="273,100,241,100,241,95,273,95"/>
+<area shape="rect" id="Node000007" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,135,55,161"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="103,151,55,151,55,145,103,145"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="117,81,54,58,56,53,119,76"/>
 </map>

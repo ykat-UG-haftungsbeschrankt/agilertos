@@ -32,7 +32,7 @@ typedef struct _zrtos_task_t{
 bool zrtos_task__init(
 	 zrtos_task_t              *thiz
 	,zrtos_task_top_of_stack_t *heap
-	,size_t                    heap_size
+	//,size_t                    heap_size
 	,size_t                    stacksize_min
 	,zrtos_task_callback_t     callback
 	,void                      *args
@@ -42,7 +42,7 @@ bool zrtos_task__init(
 	thiz->errno = 0;
 	thiz->stack_ptr = zrtos_task_heap__init(
 		 heap
-		,heap_size
+		//,heap_size
 		,callback
 		,args
 	);

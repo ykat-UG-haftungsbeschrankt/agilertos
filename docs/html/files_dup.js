@@ -1,11 +1,13 @@
 var files_dup =
 [
     [ "arch", "dir_ea9599923402ca8ab47fc3e495999dea.html", "dir_ea9599923402ca8ab47fc3e495999dea" ],
+    [ "boards", "dir_6c8313236d9db5b969ca7d150fe527de.html", "dir_6c8313236d9db5b969ca7d150fe527de" ],
     [ "examples", "dir_d28a4824dc47e487b107a5db32ef43c4.html", "dir_d28a4824dc47e487b107a5db32ef43c4" ],
     [ "main.c", "main_8c.html", "main_8c" ],
     [ "zrtos.h", "zrtos_8h.html", "zrtos_8h" ],
     [ "zrtos_arch.h", "zrtos__arch_8h.html", "zrtos__arch_8h" ],
     [ "zrtos_assert.h", "zrtos__assert_8h.html", "zrtos__assert_8h" ],
+    [ "zrtos_board.h", "zrtos__board_8h.html", null ],
     [ "zrtos_debug.h", "zrtos__debug_8h.html", "zrtos__debug_8h" ],
     [ "zrtos_error.h", "zrtos__error_8h.html", "zrtos__error_8h" ],
     [ "zrtos_malloc.h", "zrtos__malloc_8h.html", "zrtos__malloc_8h" ],

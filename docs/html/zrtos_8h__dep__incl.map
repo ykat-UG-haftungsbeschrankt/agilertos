@@ -1,7 +1,14 @@
 <map id="zrtos.h" name="zrtos.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="47,5,108,32"/>
-<area shape="rect" id="Node000002" href="$mem_8h.html" title=" " alt="" coords="5,80,67,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,47,45,81,41,78,60,44"/>
-<area shape="rect" id="Node000003" href="$task_8h.html" title=" " alt="" coords="91,80,149,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,44,115,78,110,81,90,47"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="69,5,130,32"/>
+<area shape="rect" id="Node000002" href="$main_8c.html" title=" " alt="" coords="15,229,75,256"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,42,35,59,18,81,11,100,8,121,13,162,26,200,40,228,35,230,21,202,8,163,3,121,6,99,13,79,31,55,55,38"/>
+<area shape="rect" id="Node000003" href="$mem_8h.html" title=" " alt="" coords="27,80,89,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="87,47,68,81,63,78,82,44"/>
+<area shape="rect" id="Node000004" href="$task_8h.html" title=" " alt="" coords="113,80,171,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="117,44,137,78,132,81,112,47"/>
+<area shape="rect" id="Node000005" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="195,80,332,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="143,36,236,77,234,82,141,41"/>
+<area shape="rect" id="Node000006" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="109,155,252,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="239,119,197,156,193,152,236,115"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="145,191,70,231,67,226,142,187"/>
 </map>

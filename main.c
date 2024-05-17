@@ -1,43 +1,52 @@
 #include <avr/io.h>
 
+
+#define ZRTOS_CPU__ATMEGA328P
 #define ZRTOS_DEBUG__ENABLED
 
-#include "zrtos_malloc.h"
+#include "zrtos.h"
+#include "zrtos_task_pthread.h"
 
-ZRTOS_MALLOC__GLOBAL_HEAP(heap,160);
+unsigned a = 0;
+unsigned b = 0;
+
+void *callback0(void *args){
+	while(1){
+		a++;
+	}
+}
+void *callback1(void *args){
+	while(1){
+		b++;
+	}
+}
+
+ZRTOS_MEM__INIT(task_heap,300);
 
 int main(void){
-	ZRTOS_MALLOC__GLOBAL_HEAP_INIT(heap);
-	ZRTOS_MALLOC__INIT(heap2,160);
+	pthread_t task0;
+	pthread_t task1;
+	
+	zrtos_task_scheduler__set_heap(ZRTOS_MEM__GET(task_heap));
 
-	size_t length = 10,l;
-	void *ptr[10];
-
-	for(l=0;l<=length;l++){
-		ptr[l] = malloc(16-4);
-	}
-	for(l=0;l<=length;l++){
-		free(ptr[l]);
-	}
-	for(l=0;l<=length;l++){
-		ptr[l] = malloc(16-4);
-	}
-	for(l=0;l<=length;l++){
-		free(ptr[l]);
+	if(pthread_create(
+		 &task0
+		,0
+		,callback0
+		,(void*)0xAFFE
+	)){
+		;
 	}
 
-	for(l=0;l<=length;l++){
-		ptr[l] = zrtos_malloc__malloc(heap2,16-4);
-	}
-	for(l=0;l<=length;l++){
-		zrtos_malloc__free(ptr[l]);
-	}
-	for(l=0;l<=length;l++){
-		ptr[l] = zrtos_malloc__malloc(heap2,16-4);
-	}
-	for(l=0;l<=length;l++){
-		zrtos_malloc__free(ptr[l]);
+	if(pthread_create(
+	   &task1
+	  ,0
+	  ,callback1
+	  ,(void*)0xCFFE
+	)){
+		;
 	}
 
-	return 0;
+	zrtos_task_scheduler__start();
 }
+

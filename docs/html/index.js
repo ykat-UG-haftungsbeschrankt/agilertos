@@ -1,6 +1,8 @@
 var index =
 [
-    [ "An h2 header", "index.html#autotoc_md0", [
-      [ "An h3 header", "index.html#autotoc_md1", null ]
+    [ "Examples", "index.html#autotoc_md0", [
+      [ "malloc() / free()", "index.html#autotoc_md1", null ],
+      [ "pthread", "index.html#autotoc_md2", null ],
+      [ "Supported Chips and Boards", "index.html#autotoc_md3", null ]
     ] ]
 ];

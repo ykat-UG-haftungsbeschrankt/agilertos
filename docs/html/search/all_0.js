@@ -21,8 +21,9 @@ var searchData=
   ['_5fzrtos_5ftask_5fscheduler_5f_5fget_5factive_5ftask_18',['_zrtos_task_scheduler__get_active_task',['../zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b',1,'zrtos_task_scheduler.h']]],
   ['_5fzrtos_5ftask_5fscheduler_5f_5fon_5ftick_19',['_zrtos_task_scheduler__on_tick',['../mem_8h.html#ab670d7e1ab8db82279714a56efc3c99a',1,'_zrtos_task_scheduler__on_tick(void):&#160;mem.h'],['../zrtos__arch_8h.html#ac7a393b0c20456d46b0ccb5a6da9e009',1,'_zrtos_task_scheduler__on_tick(void) __attribute__((naked)):&#160;mem.h'],['../zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a',1,'_zrtos_task_scheduler__on_tick(void):&#160;zrtos_task_scheduler.h']]],
   ['_5fzrtos_5ftask_5fscheduler_5f_5frestore_5ftask_20',['_zrtos_task_scheduler__restore_task',['../zrtos__task__scheduler_8h.html#ab141ab1e8536c047745b2ba51c24d9f9',1,'zrtos_task_scheduler.h']]],
-  ['_5fzrtos_5ftask_5fscheduler_5f_5fset_5factive_5ftask_21',['_zrtos_task_scheduler__set_active_task',['../zrtos__task__scheduler_8h.html#a52f08a59a695f78f1af0a4952228c501',1,'zrtos_task_scheduler.h']]],
-  ['_5fzrtos_5ftask_5fscheduler_5f_5fswitch_5ftask_22',['_zrtos_task_scheduler__switch_task',['../zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3',1,'zrtos_task_scheduler.h']]],
-  ['_5fzrtos_5ftask_5fscheduler_5ft_23',['_zrtos_task_scheduler_t',['../struct__zrtos__task__scheduler__t.html',1,'']]],
-  ['_5fzrtos_5ftask_5ft_24',['_zrtos_task_t',['../struct__zrtos__task__t.html',1,'']]]
+  ['_5fzrtos_5ftask_5fscheduler_5f_5frestore_5ftask_5fhelper_21',['_zrtos_task_scheduler__restore_task_helper',['../zrtos__task__scheduler_8h.html#a8b561da74fb8f408e348c8c061626efb',1,'zrtos_task_scheduler.h']]],
+  ['_5fzrtos_5ftask_5fscheduler_5f_5fset_5factive_5ftask_22',['_zrtos_task_scheduler__set_active_task',['../zrtos__task__scheduler_8h.html#ab937cbac354d855e126b3714805e9b8b',1,'zrtos_task_scheduler.h']]],
+  ['_5fzrtos_5ftask_5fscheduler_5f_5fswitch_5ftask_23',['_zrtos_task_scheduler__switch_task',['../zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3',1,'zrtos_task_scheduler.h']]],
+  ['_5fzrtos_5ftask_5fscheduler_5ft_24',['_zrtos_task_scheduler_t',['../struct__zrtos__task__scheduler__t.html',1,'']]],
+  ['_5fzrtos_5ftask_5ft_25',['_zrtos_task_t',['../struct__zrtos__task__t.html',1,'']]]
 ];

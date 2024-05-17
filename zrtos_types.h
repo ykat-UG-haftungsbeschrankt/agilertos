@@ -15,6 +15,15 @@ extern "C" {
 #include <stddef.h>
 
 
+typedef uint16_t size_t;
+typedef int16_t ssize_t;
+/*
+typedef enum{
+	false
+	,true
+}bool;
+*/
+
 void *zrtos_types__ptr_add(void *ptr,size_t byte_len){
 	return ((uint8_t*)ptr)+byte_len;
 }

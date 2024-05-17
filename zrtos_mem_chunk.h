@@ -34,8 +34,8 @@ zrtos_mem_chunk_uid_t zrtos_mem_chunk__get_uid(zrtos_mem_chunk_t *thiz){
 	return thiz->uid;
 }
 
-zrtos_mem_chunk_type_t zrtos_mem_chunk__get_type(zrtos_mem_chunk_t *thiz){
-	return thiz->type;
+zrtos_mem_chunk_type_t *zrtos_mem_chunk__get_type(zrtos_mem_chunk_t *thiz){
+	return &thiz->type;
 }
 
 

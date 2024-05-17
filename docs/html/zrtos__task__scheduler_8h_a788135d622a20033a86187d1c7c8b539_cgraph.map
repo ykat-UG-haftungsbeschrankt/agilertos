@@ -1,0 +1,27 @@
+<map id="zrtos_task_scheduler__page_task_in" name="zrtos_task_scheduler__page_task_in">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,151,197"/>
+<area shape="rect" id="Node000002" href="$zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="199,67,351,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,152,210,114,213,119,129,156"/>
+<area shape="rect" id="Node000005" href="$zrtos__task__scheduler_8h.html#a13be126364875f48623b5e51d68d88c9" title=" " alt="" coords="413,123,558,165"/>
+<area shape="poly" id="edge13_Node000001_Node000005" title=" " alt="" coords="151,168,397,148,397,154,151,173"/>
+<area shape="rect" id="Node000007" href="$zrtos__mem_8h.html#ab17afbb952357f6e92348738ce8a79ce" title=" " alt="" coords="202,189,348,216"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="151,183,187,188,187,193,151,188"/>
+<area shape="rect" id="Node000012" href="$zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610" title=" " alt="" coords="200,240,350,267"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="128,195,200,226,217,232,215,237,198,230,126,200"/>
+<area shape="rect" id="Node000003" href="$zrtos__mem_8h.html#a77b43047034e6cd492864f12f1757e9b" title=" " alt="" coords="412,5,558,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="350,63,396,50,398,55,351,69"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="352,106,398,118,397,123,350,111"/>
+<area shape="rect" id="Node000006" href="$zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537" title=" " alt="" coords="399,72,571,99"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="351,84,383,84,383,89,351,90"/>
+<area shape="rect" id="Node000004" href="$zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="638,87,784,113"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="554,46,654,79,652,84,552,51"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="348,202,455,197,513,189,570,175,629,150,677,120,680,125,631,154,572,180,514,194,455,202,348,208"/>
+<area shape="rect" id="Node000008" href="$zrtos__mem_8h.html#afeeae48ac68b6842cfc9a65aa6b9fbd9" title=" " alt="" coords="408,240,563,283"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="326,214,393,233,392,238,325,219"/>
+<area shape="rect" id="Node000011" href="$zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="414,307,557,349"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="332,214,353,226,369,243,378,260,386,276,401,293,406,296,403,301,397,297,381,279,373,262,365,246,349,230,329,219"/>
+<area shape="rect" id="Node000009" href="$zrtos__mem_8h.html#ae91647a03a2f1f32ac401ce42a484b02" title=" " alt="" coords="628,211,794,253"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="563,249,612,242,613,247,564,254"/>
+<area shape="rect" id="Node000010" href="$zrtos__mem_8h.html#a5c624e5d01ccd315a7e464a866f37ca2" title=" " alt="" coords="619,277,803,304"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="564,269,604,274,604,279,563,274"/>
+</map>

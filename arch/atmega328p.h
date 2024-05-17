@@ -198,6 +198,7 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
 #endif
 
 #define ZRTOS_CPU__GET_STATE_LENGTH() 33
+#define ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH() 10
 
 #define _ZRTOS_TASK__SAVE(ptr)                                  \
     ;__asm__ __volatile__(                                      \

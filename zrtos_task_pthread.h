@@ -11,8 +11,11 @@ extern "C" {
 #endif
 
 
-#include "zrtos_task_mutex.h"
 #include "zrtos_error.h"
+#include "zrtos_mem.h"
+#include "zrtos_task_scheduler.h"
+#include "zrtos_task_mutex.h"
+#include "zrtos_types.h"
 
 
 typedef struct{

@@ -11,10 +11,12 @@ extern "C" {
 #endif
 
 
+#include "zrtos_types.h"
+
 typedef uint8_t zrtos_task_top_of_stack_t;
 typedef int8_t zrtos_task_heap_signed_t;
 typedef uint16_t zrtos_task_delay_t;
-typedef void (*zrtos_task_callback_t)(void *arg);
+typedef void *(*zrtos_task_callback_t)(void *arg);
 
 void _zrtos_task_scheduler__on_tick(void)__attribute__((naked));
 

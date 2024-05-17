@@ -12,6 +12,8 @@ extern "C" {
 
 #ifdef ZRTOS_DEBUG__ENABLED
 
+#include "zrtos_types.h"
+
 #ifdef ZRTOS__USE_MEMSET
 #define zrtos_debug__memset memset
 #else

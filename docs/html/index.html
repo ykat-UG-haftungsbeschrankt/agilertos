@@ -95,85 +95,83 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2_rehkitz_01_gmb_h_2_documents_2_atmel_01_studio_27_80_2_gcc_application1_2_gcc_application1_2_r_e_a_d_m_e"></a></p>
-<p>Paragraphs are separated by a blank line.</p>
-<p>2nd paragraph. <em>Italic</em>, <b>bold</b>, and <code>monospace</code>. Itemized lists look like:</p>
-<ul>
-<li>this one</li>
-<li>that one</li>
-<li>the other one</li>
-</ul>
-<p>Note that &mdash; not considering the asterisk &mdash; the actual text content starts at 4-columns in.</p>
-<blockquote class="doxtable">
-<p>&zwj;Block quotes are written like so.</p>
-<p>They can span multiple paragraphs, if you like. </p>
-</blockquote>
-<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., "it's all
-in chapters 12--14"). Three dots ... will be converted to an ellipsis. Unicode is supported. ☺</p>
+<p>AgileRTOS can probably be a RTOS but mostly it is just a RAM saving malloc and pthread implementation for microcontroller without memory management unit.</p>
+<p>🔗 <a href="http://agilertos.com">Documentation</a></p>
+<p>🔗 <a href="https://github.com/ykat-UG-haftungsbeschrankt/agilertos">Repository</a></p>
 <h1><a class="anchor" id="autotoc_md0"></a>
-An h2 header</h1>
-<p>Here's a numbered list:</p>
-<ol type="1">
-<li>first item</li>
-<li>second item</li>
-<li>third item</li>
-</ol>
-<p>Note again how the actual text starts at 4 columns in (4 characters from the left side). Here's a code sample: </p><pre class="fragment"># Let me re-iterate ...
-for i in 1 .. 10 { do-something(i) }
-</pre><p> As you probably guessed, indented 4 spaces. By the way, instead of indenting the block, you can use delimited blocks, if you like:</p>
-<div class="fragment"><div class="line">define foobar() {</div>
-<div class="line">    print &quot;Welcome to flavor country!&quot;;</div>
+Examples</h1>
+<h2><a class="anchor" id="autotoc_md1"></a>
+malloc() / free()</h2>
+<p><a href="http://agilertos.com/zrtos__malloc_8h.html">Implementation details</a></p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><span class="comment"></span> </div>
+<div class="line"><span class="comment">/**</span></div>
+<div class="line"><span class="comment"> * If malloc and new is only used on boot without releasing the memory, code and</span></div>
+<div class="line"><span class="comment"> * ram usage can be further reduced by &#39;#define ZRTOS_MALLOC__CFG_DISABLE_FREE&#39;.</span></div>
+<div class="line"><span class="comment"> */</span></div>
+<div class="line"><span class="comment">//#define ZRTOS_MALLOC__CFG_DISABLE_FREE</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="zrtos__malloc_8h.html">zrtos_malloc.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// global heap for malloc()/free()</span></div>
+<div class="line"><a class="code hl_define" href="zrtos__malloc_8h.html#a04ec9557c3ef3580d3479162861c5d87">ZRTOS_MALLOC__GLOBAL_HEAP</a>(heap,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_function" href="malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>){</div>
+<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a>(heap);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// separate heap usable with zrtos_malloc__malloc()/zrtos_malloc__free()</span></div>
+<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap2,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// separate heap usable with zrtos_malloc__malloc()/zrtos_malloc__free()</span></div>
+<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap3,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 10,l;</div>
+<div class="line">    <span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[10];</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        free(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        free(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap3,16);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>(which makes copying &amp; pasting easier). You can optionally mark the delimited block for Pandoc to syntax highlight it:</p>
-<div class="fragment"><div class="line"><span class="keyword">import</span> time</div>
-<div class="line"><span class="comment"># Quick, count to ten!</span></div>
-<div class="line"><span class="keywordflow">for</span> i <span class="keywordflow">in</span> range(10):</div>
-<div class="line">    <span class="comment"># (but not *too* quick)</span></div>
-<div class="line">    time.sleep(0.5)</div>
-<div class="line">    <span class="keywordflow">print</span> i</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md1"></a>
-An h3 header</h2>
-<p>Now a nested list:</p>
-<ol type="1">
-<li>First, get these ingredients:<ul>
-<li>carrots</li>
-<li>celery</li>
-<li>lentils</li>
+<div class="ttc" id="amalloc_8h_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00009">malloc.h:9</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html"><div class="ttname"><a href="zrtos__malloc_8h.html">zrtos_malloc.h</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a04ec9557c3ef3580d3479162861c5d87"><div class="ttname"><a href="zrtos__malloc_8h.html#a04ec9557c3ef3580d3479162861c5d87">ZRTOS_MALLOC__GLOBAL_HEAP</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GLOBAL_HEAP(name, len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00063">zrtos_malloc.h:63</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a076a090db65c9c460026c6b5a743a2b8"><div class="ttname"><a href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__INIT(name, len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00081">zrtos_malloc.h:81</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a299a13aa87e9bdb9fb23fb30cc5b1c32"><div class="ttname"><a href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a></div><div class="ttdeci">void zrtos_malloc__free(void *ptr)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00209">zrtos_malloc.h:209</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a886b38a033247d17a6681a94b237aab7"><div class="ttname"><a href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a></div><div class="ttdeci">void * zrtos_malloc__malloc(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00144">zrtos_malloc.h:144</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a9f02437abeef6dc7e94a9b9f080584de"><div class="ttname"><a href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GET_REQUIRED_SIZE(type, count)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00037">zrtos_malloc.h:37</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_ae2e292b4f22bb68140eb76ba704eb5b6"><div class="ttname"><a href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00048">zrtos_malloc.h:48</a></div></div>
+<div class="ttc" id="azrtos__mem__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__mem__chunk_8h_source.html#l00000">zrtos_mem_chunk.h:0</a></div></div>
+<div class="ttc" id="azrtos__mem__chunk_8h_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="zrtos__mem__chunk_8h_source.html#l00001">zrtos_mem_chunk.h:1</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
+pthread</h2>
+<div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+Supported Chips and Boards</h2>
+<ul>
+<li>None </li>
 </ul>
-</li>
-<li>Boil some water.</li>
-<li>Dump everything in the pot and follow this algorithm: <pre class="fragment">find wooden spoon
-uncover pot
-stir
-cover pot
-balance wooden spoon precariously on pot handle
-wait 10 minutes
-goto first step (or shut off burner when done)
-</pre> Do not bump wooden spoon or it will fall.</li>
-</ol>
-<p>Notice again how text always lines up on 4-space indents (including that last line which continues item 3 above).</p>
-<p>Here's a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local doc</a>, and to a section heading in the current doc. Here's a footnote [^1].</p>
-<p>[^1]: Footnote text goes here.</p>
-<p>Tables can look like this:</p>
-<p>size material color </p><hr  />
-<p> 9 leather brown 10 hemp canvas natural 11 glass transparent</p>
-<p>Table: Shoes, their sizes, and what they're made of</p>
-<p>(The above is the caption for the table.) Pandoc also supports multi-line tables:</p>
-<hr  />
-<p> keyword text </p><hr  />
-<p> red Sunsets, apples, and other red or reddish things.</p>
-<p>green Leaves, grass, frogs and other things it's not easy being. </p><hr  />
-<p>A horizontal rule follows.</p>
-<hr  />
-<p>Here's a definition list:</p>
-<p>apples : Good for making applesauce. oranges : Citrus! tomatoes : There's no "e" in tomatoe.</p>
-<p>Again, text is indented 4 spaces. (Put a blank line between each term/definition pair to spread things out more.)</p>
-<p>Here's a "line block":</p>
-<p>| Line one | Line too | Line tree</p>
-<p>and images can be specified like so:</p>
-<p><img src="example-image.jpg" alt="example image" title="An exemplary image" class="inline"/></p>
-<p>Inline math equations go in like so: $\omega = d\phi / dt$. Display math should get its own line and be put in in double-dollarsigns:</p>
-<p>$$I = \int \rho R^{2} dV$$</p>
-<p>And note that you can backslash-escape any punctuation characters which you wish to be displayed literally, ex.: `foo`, *bar*, etc. </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->

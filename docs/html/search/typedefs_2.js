@@ -6,7 +6,7 @@ var searchData=
   ['zrtos_5fmem_5fchunk_5ftype_5ft_3',['zrtos_mem_chunk_type_t',['../zrtos__mem__chunk__type_8h.html#ab1c790bc1c27abfdeefbd5841f0ad1eb',1,'zrtos_mem_chunk_type.h']]],
   ['zrtos_5fmem_5fchunk_5fuid_5ft_4',['zrtos_mem_chunk_uid_t',['../zrtos__mem__chunk__uid_8h.html#a9526b5cd5fc428af8012678334e71c8a',1,'zrtos_mem_chunk_uid.h']]],
   ['zrtos_5fmem_5ft_5',['zrtos_mem_t',['../zrtos__mem_8h.html#a270c6a012d2f3e42166fb3a5fec26ca6',1,'zrtos_mem.h']]],
-  ['zrtos_5ftask_5fcallback_5ft_6',['zrtos_task_callback_t',['../zrtos__arch_8h.html#af1919e761227131c4a4e4018228d701f',1,'zrtos_arch.h']]],
+  ['zrtos_5ftask_5fcallback_5ft_6',['zrtos_task_callback_t',['../zrtos__arch_8h.html#a6aface9be35802be4022382407df806b',1,'zrtos_arch.h']]],
   ['zrtos_5ftask_5fdelay_5ft_7',['zrtos_task_delay_t',['../zrtos__arch_8h.html#af8454f1e70ada3ad2844aee8b751f6b8',1,'zrtos_arch.h']]],
   ['zrtos_5ftask_5fheap_5fsigned_5ft_8',['zrtos_task_heap_signed_t',['../zrtos__arch_8h.html#ac18bc0ac04ce9149cfe7438bf2d285d7',1,'zrtos_arch.h']]],
   ['zrtos_5ftask_5fid_5ft_9',['zrtos_task_id_t',['../zrtos__task_8h.html#af59d940f6b1b529d046c2799cdebfe87',1,'zrtos_task.h']]],

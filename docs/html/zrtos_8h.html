@@ -98,17 +98,27 @@ $(function(){initNavTree('zrtos_8h.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="zrtos__debug_8h_source.html">zrtos_debug.h</a>&quot;</code><br />
-<code>#include &quot;zrtos_cpu.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for zrtos.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos_8h__incl.png" border="0" usemap="#azrtos_8h" alt=""/></div>
 <map name="azrtos_8h" id="azrtos_8h">
-<area shape="rect" title=" " alt="" coords="86,5,148,32"/>
-<area shape="rect" href="zrtos__debug_8h.html" title=" " alt="" coords="5,80,109,107"/>
-<area shape="poly" title=" " alt="" coords="109,34,79,70,75,66,105,31"/>
-<area shape="rect" title=" " alt="" coords="132,80,222,107"/>
-<area shape="poly" title=" " alt="" coords="129,31,159,66,155,70,125,34"/>
+<area shape="rect" title=" " alt="" coords="137,5,199,32"/>
+<area shape="rect" href="zrtos__debug_8h.html" title=" " alt="" coords="55,80,158,107"/>
+<area shape="poly" title=" " alt="" coords="159,34,129,70,125,66,155,31"/>
+<area shape="rect" href="zrtos__arch_8h.html" title=" " alt="" coords="183,80,276,107"/>
+<area shape="poly" title=" " alt="" coords="181,31,211,66,207,70,176,34"/>
+<area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="39,155,139,181"/>
+<area shape="poly" title=" " alt="" coords="206,110,129,149,126,145,204,105"/>
+<area shape="rect" href="atmega328p_8h.html" title=" " alt="" coords="163,155,295,181"/>
+<area shape="poly" title=" " alt="" coords="232,107,232,139,227,139,227,107"/>
+<area shape="rect" href="atmega2560_8h.html" title=" " alt="" coords="319,155,451,181"/>
+<area shape="poly" title=" " alt="" coords="257,105,345,145,343,150,255,110"/>
+<area shape="rect" title=" " alt="" coords="5,229,80,256"/>
+<area shape="poly" title=" " alt="" coords="83,183,61,218,56,215,79,180"/>
+<area shape="rect" title=" " alt="" coords="104,229,171,256"/>
+<area shape="poly" title=" " alt="" coords="100,180,123,215,118,218,95,183"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -116,11 +126,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos_8h__dep__incl.png" border="0" usemap="#azrtos_8hdep" alt=""/></div>
 <map name="azrtos_8hdep" id="azrtos_8hdep">
-<area shape="rect" title=" " alt="" coords="47,5,108,32"/>
-<area shape="rect" href="mem_8h.html" title=" " alt="" coords="5,80,67,107"/>
-<area shape="poly" title=" " alt="" coords="65,47,45,81,41,78,60,44"/>
-<area shape="rect" href="task_8h.html" title=" " alt="" coords="91,80,149,107"/>
-<area shape="poly" title=" " alt="" coords="95,44,115,78,110,81,90,47"/>
+<area shape="rect" title=" " alt="" coords="69,5,130,32"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="15,229,75,256"/>
+<area shape="poly" title=" " alt="" coords="58,42,35,59,18,81,11,100,8,121,13,162,26,200,40,228,35,230,21,202,8,163,3,121,6,99,13,79,31,55,55,38"/>
+<area shape="rect" href="mem_8h.html" title=" " alt="" coords="27,80,89,107"/>
+<area shape="poly" title=" " alt="" coords="87,47,68,81,63,78,82,44"/>
+<area shape="rect" href="task_8h.html" title=" " alt="" coords="113,80,171,107"/>
+<area shape="poly" title=" " alt="" coords="117,44,137,78,132,81,112,47"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html" title=" " alt="" coords="195,80,332,107"/>
+<area shape="poly" title=" " alt="" coords="143,36,236,77,234,82,141,41"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="109,155,252,181"/>
+<area shape="poly" title=" " alt="" coords="239,119,197,156,193,152,236,115"/>
+<area shape="poly" title=" " alt="" coords="145,191,70,231,67,226,142,187"/>
 </map>
 </div>
 </div>
@@ -132,6 +149,8 @@ Macros</h2></td></tr>
 <tr class="separator:af4a84d1a3997f818a929cd6fab18b0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c171f253bd485621140ee57767d90b3" id="r_a7c171f253bd485621140ee57767d90b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c171f253bd485621140ee57767d90b3">ZRTOS__DO_NOT_DISTURB_EX</a>(is_locked,  code)</td></tr>
 <tr class="separator:a7c171f253bd485621140ee57767d90b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac559aa528c411dd671f6ac346a9cdc38" id="r_ac559aa528c411dd671f6ac346a9cdc38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac559aa528c411dd671f6ac346a9cdc38">ZRTOS__BYTE_ALIGNMENT_MASK</a>&#160;&#160;&#160;( 0x0000 )</td></tr>
+<tr class="separator:ac559aa528c411dd671f6ac346a9cdc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -139,6 +158,22 @@ Variables</h2></td></tr>
 <tr class="separator:acccc87b0006cdff87035d48fed4560bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac559aa528c411dd671f6ac346a9cdc38" name="ac559aa528c411dd671f6ac346a9cdc38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac559aa528c411dd671f6ac346a9cdc38">&#9670;&#160;</a></span>ZRTOS__BYTE_ALIGNMENT_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS__BYTE_ALIGNMENT_MASK&#160;&#160;&#160;( 0x0000 )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos_8h_source.html#l00056">56</a> of file <a class="el" href="zrtos_8h_source.html">zrtos.h</a>.</p>
+
+</div>
+</div>
 <a id="af4a84d1a3997f818a929cd6fab18b0d7" name="af4a84d1a3997f818a929cd6fab18b0d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4a84d1a3997f818a929cd6fab18b0d7">&#9670;&#160;</a></span>ZRTOS__DO_NOT_DISTURB</h2>
 
@@ -199,7 +234,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span>{                                              \</div>
-<div class="line">    is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \</div>
+<div class="line">    is_locked = ZRTOS__INTERRUPTS_IS_DISABLED(); \</div>
 <div class="line">    ZRTOS__INTERRUPTS_DISABLE();                 \</div>
 <div class="line">    <a class="code hl_variable" href="#acccc87b0006cdff87035d48fed4560bd">_zrtos__do_not_disturb</a>++;                    \</div>
 <div class="line">    <span class="keywordflow">do</span>{                                          \</div>
@@ -213,7 +248,7 @@ Variables</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="zrtos_8h_source.html#l00030">30</a> of file <a class="el" href="zrtos_8h_source.html">zrtos.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   30</span><span class="preprocessor">#define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \</span></div>
 <div class="line"><span class="lineno">   31</span><span class="preprocessor">do{                                              \</span></div>
-<div class="line"><span class="lineno">   32</span><span class="preprocessor">    is_locked = ZRTOS__INTERRUPTS_IS_DISBALED(); \</span></div>
+<div class="line"><span class="lineno">   32</span><span class="preprocessor">    is_locked = ZRTOS__INTERRUPTS_IS_DISABLED(); \</span></div>
 <div class="line"><span class="lineno">   33</span><span class="preprocessor">    ZRTOS__INTERRUPTS_DISABLE();                 \</span></div>
 <div class="line"><span class="lineno">   34</span><span class="preprocessor">    _zrtos__do_not_disturb++;                    \</span></div>
 <div class="line"><span class="lineno">   35</span><span class="preprocessor">    do{                                          \</span></div>

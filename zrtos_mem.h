@@ -17,12 +17,12 @@ extern "C" {
 
 #define ZRTOS_MEM__INIT(name,heap_size)                   \
     static struct{                                        \
-        unsigned char heap[heap_size];                    \
+        uint8_t heap[heap_size];                          \
     }__attribute__((aligned(ZRTOS__BYTE_ALIGNMENT)))name;
 
 
 #define ZRTOS_MEM__GET(name) \
-  &(name.heap[0])
+    ((zrtos_mem_t*)&(name.heap[0]))
 
 typedef struct _zrtos_mem_t{
 	void                    *ptr;
@@ -118,6 +118,18 @@ zrtos_mem_chunk_t *zrtos_mem__get_by_type(
 	return 0;
 }
 
+zrtos_mem_chunk_t *zrtos_mem__get_by_type_ex(
+	 zrtos_mem_t *thiz
+	,zrtos_mem_type_t   type
+){
+	zrtos_mem_chunk_type_t tmp;
+	zrtos_mem_chunk_type__init(&tmp,type);
+	return zrtos_mem__get_by_type(
+		 thiz
+		,tmp
+	);
+}
+
 zrtos_mem_chunk_uid_t zrtos_mem__get_next_uid(
 	zrtos_mem_t *thiz
 ){
@@ -141,7 +153,7 @@ zrtos_mem_chunk_uid_t zrtos_mem__get_next_uid(
 size_t zrtos_mem__get_chunk_count(
 	zrtos_mem_t *thiz
 ){
-	return this->length / sizeof(zrtos_mem_chunk_t);
+	return thiz->length / sizeof(zrtos_mem_chunk_t);
 }
 
 #ifdef ZRTOS__USE_MEMMOVE
@@ -356,16 +368,16 @@ void zrtos_mem__page_out(
 
 #define ZRTOS_MEM__EACH_EX_BEGIN(thiz,start_offset,l,type,value)               \
     for(size_t l = start_offset,len__=(thiz)->length;l < len__;l++){           \
-        zrtos_mem_chunk_t *value = &(((zrtos_mem_chunk_t*)(thiz))->ptr)[l];    \
-        if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type))
+        zrtos_mem_chunk_t *value = &((zrtos_mem_chunk_t*)((thiz)->ptr))[l];    \
+        if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type)){
 
 #define ZRTOS_MEM__EACH_EX_END \
-        }                   \
+        }                      \
     }
 
 #define ZRTOS_MEM__EACH_BEGIN(thiz,type,value)                                 \
     for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){                \
-        zrtos_mem_chunk_t *value = &(((zrtos_mem_chunk_t*)(thiz))->ptr)[l];    \
+        zrtos_mem_chunk_t *value = &((zrtos_mem_chunk_t*)((thiz)->ptr))[l];    \
         if(zrtos_mem_chunk_type__is_eq(zrtos_mem_chunk__get_type(value),type))
 
 #define ZRTOS_MEM__EACH_END \
