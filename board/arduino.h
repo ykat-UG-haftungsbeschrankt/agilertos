@@ -77,7 +77,7 @@ void delay(unsigned long ms)
 */
 
 #define ZRTOS_BOARD__TICK_PERIOD_MS\
-	(MICROSECONDS_PER_TIMER0_OVERFLOW/1000000)
+	(MICROSECONDS_PER_TIMER0_OVERFLOW/1000)
 
 void zrtos_board_arduino__on_ovf(void){
 	unsigned long m = timer0_millis;
@@ -98,8 +98,6 @@ void zrtos_board_arduino__on_ovf1(void){
 }
 */
 
-void (*zrtos_board__on_tick_naked)(void)__attribute__((naked));
-
 ISR(TIMER0_OVF_vect,ISR_NAKED){
 	//called every 16 ms
 	ZRTOS_ARCH__SAVE_CPU_STATE((void*)SP);
@@ -109,6 +107,7 @@ ISR(TIMER0_OVF_vect,ISR_NAKED){
 	//avr/time.h system_tick();
 	ZRTOS_ARCH__LOAD_CPU_STATE((void*)SP);
 	zrtos_board__on_tick_naked();
+	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 
 #define ZRTOS_BOARD__WATCH_DOG_START() \
@@ -121,7 +120,7 @@ ISR(TIMER0_OVF_vect,ISR_NAKED){
     wdt_reset();
 
 __attribute__((naked))ISR(WDT_vect){
-	ZRTOS_ARCH__FATAL();
+	ZRTOS_BOARD__ON_WATCH_DOG();
 }
 
 #endif

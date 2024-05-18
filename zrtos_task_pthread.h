@@ -35,7 +35,7 @@ typedef struct{
 
 #define PTHREAD_MUTEX_INITIALIZER    \
     {                                \
-        .mutex = ZRTOS_MUTEX__INIT() \
+        .mutex = ZRTOS_TASK_MUTEX__INIT() \
     }
 
 int pthread_attr_init(pthread_attr_t *attr){

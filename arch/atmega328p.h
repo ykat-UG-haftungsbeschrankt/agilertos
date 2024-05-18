@@ -14,8 +14,6 @@ extern "C" {
 #ifdef ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_ARCH__FOUND
 
-#include <avr/interrupt.h>
-#include <avr/wdt.h>
 
 typedef uint8_t zrtos_arch_stack_t;
 typedef int8_t zrtos_arch_stack_signed_t;
@@ -182,7 +180,7 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
 #define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH() 33
 #define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 10
 
-#define ZRTOS_ARCH__SAVE_CPU_STATE(ptr)                                  \
+#define ZRTOS_ARCH__SAVE_CPU_STATE()                            \
     ;__asm__ __volatile__(                                      \
         "push   __tmp_reg__                             \n\t"   \
         "in     __tmp_reg__, __SREG__                   \n\t"   \
@@ -220,6 +218,11 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
         "push   r29                                     \n\t"   \
         "push   r30                                     \n\t"   \
         "push   r31                                     \n\t"   \
+    );
+
+#define ZRTOS_ARCH__SAVE_CPU_STATE_EX(ptr)                      \
+    ZRTOS_ARCH__SAVE_CPU_STATE();                               \
+    ;__asm__ __volatile__(                                      \
         "in     __tmp_reg__, __SP_L__                   \n\t"   \
         "sts    %0, __tmp_reg__                         \n\t"   \
         "in     __tmp_reg__, __SP_H__                   \n\t"   \
@@ -227,12 +230,8 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
         : "=m" (ptr)                                            \
     );
 
-#define ZRTOS_ARCH__LOAD_CPU_STATE(ptr)                               \
+#define ZRTOS_ARCH__LOAD_CPU_STATE()                            \
     ;__asm__ __volatile__(                                      \
-        "lds    __tmp_reg__, %0                         \n\t"   \
-        "out    __SP_L__, __tmp_reg__                   \n\t"   \
-        "lds    __tmp_reg__, %0 + 1                     \n\t"   \
-        "out    __SP_H__, __tmp_reg__                   \n\t"   \
         "pop    r31                                     \n\t"   \
         "pop    r30                                     \n\t"   \
         "pop    r29                                     \n\t"   \
@@ -267,8 +266,17 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
         "pop    __tmp_reg__                             \n\t"   \
         "out    __SREG__, __tmp_reg__                   \n\t"   \
         "pop    __tmp_reg__                             \n\t"   \
-        : : "m" (ptr)                                           \
     );
+
+#define ZRTOS_ARCH__LOAD_CPU_STATE_EX(ptr)                      \
+    ;__asm__ __volatile__(                                      \
+        "lds    __tmp_reg__, %0                         \n\t"   \
+        "out    __SP_L__, __tmp_reg__                   \n\t"   \
+        "lds    __tmp_reg__, %0 + 1                     \n\t"   \
+        "out    __SP_H__, __tmp_reg__                   \n\t"   \
+        : : "m" (ptr)                                           \
+    );                                                          \
+	ZRTOS_ARCH__LOAD_CPU_STATE();
 
 #define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \
     __asm__ __volatile__("reti");

@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_ARCH_ATMEGA2560_H_
-#define ZRTOS_ARCH_ATMEGA2560_H_
+#ifndef ZRTOS_ARCH_ATMEGA2560_H
+#define ZRTOS_ARCH_ATMEGA2560_H
 #ifdef __cplusplus
 extern "C" {
 #endif

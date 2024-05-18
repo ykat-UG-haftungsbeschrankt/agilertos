@@ -68,6 +68,35 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
 #endif /* if ZRTOS_ARCH__BYTE_ALIGNMENT == 32 */
 
 
+size_t zrtos_arch__do_not_disturb = 0;
+#define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \
+    do{                                        \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \
+        zrtos_arch__do_not_disturb++;          \
+        do{                                    \
+            code;                              \
+        }while(0);                             \
+        if(--zrtos_arch__do_not_disturb == 0){ \
+            ZRTOS_ARCH__ENABLE_INTERRUPTS();   \
+        }                                      \
+    }while(0);
+
+
+#define ZRTOS_ARCH__DO_NOT_DISTURB_EX(is_locked,code)     \
+    do{                                                   \
+        is_locked = ZRTOS_ARCH__IS_INTERRUPTS_DISABLED(); \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();                 \
+        zrtos_arch__do_not_disturb++;                     \
+        do{                                               \
+            code;                                         \
+        }while(0);                                        \
+        if(--zrtos_arch__do_not_disturb == 0){            \
+            ZRTOS_ARCH__ENABLE_INTERRUPTS();              \
+        }                                                 \
+    }while(0);
+
+
+
 #ifdef __cplusplus
 }
 #endif

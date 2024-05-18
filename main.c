@@ -2,6 +2,8 @@
 
 
 #define ZRTOS_ARCH__ATMEGA328P
+#define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
+
 #define ZRTOS_DEBUG__CFG_ENABLED
 #define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
@@ -34,6 +36,8 @@ int main(void){
 	pthread_t task1;
 	zrtos_mem_t mem;   
 	zrtos_mem__init(&mem,(void*)0x300,16*70);
+
+	zrtos_board__start_tick_timer();
 	
 	zrtos_task_scheduler__set_heap(&mem);
 

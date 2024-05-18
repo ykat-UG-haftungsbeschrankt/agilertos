@@ -45,7 +45,7 @@ zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 void _zrtos_task_scheduler__restore_task(void){
-	ZRTOS_ARCH__LOAD_CPU_STATE(zrtos_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__LOAD_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 #pragma GCC pop_options
@@ -116,7 +116,6 @@ bool zrtos_task_scheduler__start(void){
 	);
 	if(chunk){
 		zrtos_task_scheduler__page_task_in(chunk);
-		_zrtos_task_scheduler__isr_start();
 		_zrtos_task_scheduler__restore_task();
 		while(true){}
 		return true;
@@ -148,9 +147,6 @@ bool zrtos_task_scheduler__start(void){
 void _zrtos_task_scheduler__switch_task(void){
 	uint8_t tmp = 1;
 	size_t offset = 0;
-	size_t chunk_count = zrtos_mem__get_chunk_count(
-		zrtos_task_scheduler__get_heap()
-	);
 	do{
 		ZRTOS_TASK_SCHEDULER__EACH_TASK_BEGIN(
 			 zrtos_task_scheduler__get_heap()
@@ -192,7 +188,7 @@ void _zrtos_task_scheduler__switch_task(void){
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 void _zrtos_task_scheduler__on_tick(void){
-	ZRTOS_ARCH__SAVE_CPU_STATE(zrtos_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__SAVE_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 
 	ZRTOS_DEBUG__CODE(
 		zrtos_debug__memset(

@@ -15,31 +15,24 @@ extern "C" {
 #include "zrtos_arch.h"
 #include "zrtos_board.h"
 
-size_t _zrtos__do_not_disturb = 0;
-#define ZRTOS__DO_NOT_DISTURB(code)    \
-do{                                    \
-    ZRTOS_ARCH__DISABLE_INTERRUPTS();       \
-    _zrtos__do_not_disturb++;          \
-    do{                                \
-        code;                          \
-    }while(0);                         \
-    if(--_zrtos__do_not_disturb == 0){ \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();    \
-    }                                  \
-}while(0);
 
-#define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
-do{                                              \
-    is_locked = ZRTOS_ARCH__IS_INTERRUPTS_DISABLED(); \
-    ZRTOS_ARCH__DISABLE_INTERRUPTS();                 \
-    _zrtos__do_not_disturb++;                    \
-    do{                                          \
-        code;                                    \
-    }while(0);                                   \
-    if(--_zrtos__do_not_disturb == 0){           \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();              \
-    }                                            \
-}while(0);
+#ifdef ZRTOS_TASK_SCHEDULER__CFG_ENABLED
+
+# define ZRTOS__DO_NOT_DISTURB(code) \
+    ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)
+
+# define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
+    ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,code)
+
+#else
+
+# define ZRTOS__DO_NOT_DISTURB(code) \
+    ZRTOS_ARCH__DO_NOT_DISTURB(code)
+
+# define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
+    ZRTOS_ARCH__DO_NOT_DISTURB_EX(is_locked,code)
+
+#endif
 
 
 #ifdef __cplusplus

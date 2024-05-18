@@ -10,28 +10,41 @@
 extern "C" {
 #endif
 
-void zrtos_board__on_tick(void){
+#define ZRTOS_BOARD__ON_TICK_CALLBACK(name,code) \
+    void name(void){                             \
+        code                                     \
+        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();     \
+    }
 
-}
+#define ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK(name,code) \
+    __attribute__((naked)) void name(void){            \
+        code                                           \
+        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();           \
+    }
 
-#define ZRTOS_BOARD__ON_TICK_CALLBACK(name,code)\
-void name(void){
-	code
-	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
-}__attribute__((naked));
+ZRTOS_BOARD__ON_TICK_CALLBACK(zrtos_board__empty_on_tick_callback,{
+	//empty callback
+});
 
-#ifdef ZRTOS_TASK_SCHEDULER__CFG_ENABLED
-void _zrtos_task_scheduler__on_tick(void)__attribute__((naked));
-#endif
+ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK(zrtos_board__empty_on_tick_naked_callback,{
+	//empty callback
+});
 
-__attribute__((naked)) void zrtos_board__on_tick_naked(void){
-#ifdef ZRTOS_TASK_SCHEDULER__CFG_ENABLED
-	_zrtos_task_scheduler__on_tick();
-#endif
-}
+void (*zrtos_board__on_tick)(void) = zrtos_board__empty_on_tick_callback;
+void (*zrtos_board__on_tick_naked)(void)__attribute__((naked)) = zrtos_board__empty_on_tick_naked_callback;
+
+#define ZRTOS_BOARD__SET_ON_TICK_CALLBACK(callback) \
+	zrtos_board__on_tick = callback;
+
+#define ZRTOS_BOARD__SET_ON_TICK_NAKED_CALLBACK(callback) \
+	zrtos_board__on_tick_naked = callback;
 
 /*
+#define ZRTOS_BOARD__FOUND
 #define ZRTOS_BOARD__TICK_PERIOD_MS
+#define ZRTOS_BOARD__ON_TICK()
+#define ZRTOS_BOARD__ON_TICK_NAKED()
+#define ZRTOS_BOARD__ON_WATCH_DOG()
 #define ZRTOS_BOARD__WATCH_DOG_START()
 #define ZRTOS_BOARD__WATCH_DOG_STOP()
 #define ZRTOS_BOARD__WATCH_DOG_RESET()
@@ -46,7 +59,9 @@ uint64_t zrtos_board__get_seconds();
 #error "ZRTOS_BOARD__FOUND defined"
 #endif
 
-#include "board/arduino.h"
+//#include "board/arduino.h"
+#include "board/avr_software_emulator.h"
+//#define ZRTOS_BOARD__FOUND
 
 #ifndef ZRTOS_BOARD__FOUND
 #error "board/*.h not found"
