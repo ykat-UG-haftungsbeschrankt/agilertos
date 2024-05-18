@@ -4,66 +4,48 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_CPU_ATMEGA328P_H_
-#define ZRTOS_CPU_ATMEGA328P_H_
+#ifndef ZRTOS_ARCH_ATMEGA328P_H_
+#define ZRTOS_ARCH_ATMEGA328P_H_
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-#ifdef ZRTOS_CPU__ATMEGA328P
+#ifdef ZRTOS_ARCH__ATMEGA328P
+#define ZRTOS_ARCH__FOUND
 
 #include <avr/interrupt.h>
 #include <avr/wdt.h>
 
-#define ZRTOS__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
-#define ZRTOS_TASK_SCHEDULER__TICK_RATE_HZ    1000
-#define ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS  1 //(1000 / ZRTOS_TASK_SCHEDULER__TICK_RATE_HZ)
+typedef uint8_t zrtos_arch_stack_t;
+typedef int8_t zrtos_arch_stack_signed_t;
 
-#define ZRTOS__BYTE_ALIGNMENT 1
+#define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
 
-#define ZRTOS__FATAL() ((void(*)(void))0)();
 
-#define ZRTOS__GET_STACK_PTR() \
+#define ZRTOS_ARCH__BYTE_ALIGNMENT 1
+
+#define ZRTOS_ARCH__FATAL() ((void(*)(void))0)();
+
+#define ZRTOS_ARCH__GET_STACK_PTR() \
     ((void*)SP)
 
-#define ZRTOS__CRITICAL_ENTER()                            \
-    asm volatile ( "in        __tmp_reg__, __SREG__" :: ); \
-    asm volatile ( "cli" :: );                             \
-    asm volatile ( "push    __tmp_reg__" :: )
-
-#define ZRTOS__CRITICAL_EXIT()                             \
-    asm volatile ( "pop        __tmp_reg__" :: );          \
-    asm volatile ( "out        __SREG__, __tmp_reg__" :: )
-
-#define ZRTOS__INTERRUPTS_IS_DISABLED() \
+#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED() \
     ((SREG & 0x80) == 0)
 
-#define ZRTOS__INTERRUPTS_IS_ENABLED() \
+#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED() \
     ((SREG & 0x80) > 0)
 
-#define ZRTOS__INTERRUPTS_DISABLE() \
+#define ZRTOS_ARCH__DISABLE_INTERRUPTS() \
     asm volatile ( "cli" :: );
 
-#define ZRTOS__INTERRUPTS_ENABLE() \
+#define ZRTOS_ARCH__ENABLE_INTERRUPTS() \
     asm volatile ( "sei" :: );
 
-#define ZRTOS__WATCH_DOG_START() \
-    wdt_enable(WDTO_8S);
 
-#define ZRTOS__WATCH_DOG_STOP() \
-    wdt_disable();
 
-#define ZRTOS__WATCH_DOG_RESET() \
-    wdt_reset();
-
-size_t zrtos__get_free_ram(){
-	extern int __heap_start;
-	return zrtos_types__ptr_get_byte_distance((void*)SP,(void*)&__heap_start);
-}
-
-zrtos_task_top_of_stack_t * pxPortInitialiseStack( zrtos_task_top_of_stack_t * pxTopOfStack,
-                                     zrtos_task_callback_t pxCode,
+zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper( zrtos_arch_stack_t * pxTopOfStack,
+                                     zrtos_arch_callback_t pxCode,
                                      void * pvParameters )
 {
 uint16_t usAddress;
@@ -74,11 +56,11 @@ uint16_t usAddress;
     /* The start of the task code will be popped off the stack last, so place
      * it on first. */
     usAddress = ( uint16_t ) pxCode;
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
     usAddress >>= 8;
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
 #if defined(__AVR_3_BYTE_PC__)
@@ -101,7 +83,7 @@ uint16_t usAddress;
      * portSAVE_CONTEXT places the flags on the stack immediately after r0
      * to ensure the interrupts get disabled as soon as possible, and so ensuring
      *  the stack use is minimal should a context switch interrupt occur. */
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00; /* R0 */
+    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00; /* R0 */
     pxTopOfStack--;
     *pxTopOfStack = 0x80;//enable interrupts
     pxTopOfStack--;
@@ -111,7 +93,7 @@ uint16_t usAddress;
     /* If we have an ATmega256x, we are also saving the EIND register.
      * We should default to 0.
      */
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* EIND */
+    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    /* EIND */
     pxTopOfStack--;
 #endif
 
@@ -120,23 +102,23 @@ uint16_t usAddress;
     /* We are saving the RAMPZ register.
      * We should default to 0.
      */
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* RAMPZ */
+    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    /* RAMPZ */
     pxTopOfStack--;
 #endif
 
     /* Now the remaining registers. The compiler expects R1 to be 0. */
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) 0x00;    /* R1 */
+    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    /* R1 */
 
     /* Leave R2 - R23 untouched */
     pxTopOfStack -= 23;
 
     /* Place the parameter on the stack in the expected location. */
     usAddress = ( uint16_t ) pvParameters;
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
     pxTopOfStack--;
 
     usAddress >>= 8;
-    *pxTopOfStack = ( zrtos_task_top_of_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
+    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress & ( uint16_t ) 0x00ff );
 
     /* Leave register R26 - R31 untouched */
     pxTopOfStack -= 7;
@@ -144,10 +126,10 @@ uint16_t usAddress;
     return pxTopOfStack;
 }
 
-zrtos_task_top_of_stack_t *zrtos_task_heap__init(
-	 zrtos_task_top_of_stack_t     *thiz
+zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
+	 zrtos_arch_stack_t     *thiz
 	//,size_t                length
-	,zrtos_task_callback_t callback
+	,zrtos_arch_callback_t callback
 	,void                  *args
 ){
 /*
@@ -156,7 +138,7 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
 		memset(thiz,(int)(pattern++),length);
 	);
 */
-	return pxPortInitialiseStack(
+	return zrtos_arch__cpu_state_init_helper(
 		 thiz
 		,callback
 		,args
@@ -164,16 +146,16 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
 }
 
 #if 0
-zrtos_task_top_of_stack_t *zrtos_task_heap__init(
-	 zrtos_task_top_of_stack_t     *thiz
+zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
+	 zrtos_arch_stack_t     *thiz
 	,size_t                length
-	,zrtos_task_callback_t callback
+	,zrtos_arch_callback_t callback
 	,void                  *args
 ){
-	zrtos_task_top_of_stack_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
-	zrtos_task_top_of_stack_t *pxTopOfStackTmp = pxTopOfStack;
+	zrtos_arch_stack_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
+	zrtos_arch_stack_t *pxTopOfStackTmp = pxTopOfStack;
 	uint16_t usAddress = (uint16_t)callback;
-	zrtos_task_heap_signed_t usValue = -6;
+	zrtos_arch_stack_signed_t usValue = -6;
 
 	for(;usValue < 0x32;){
 		if(usValue == 0x0A
@@ -197,10 +179,10 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
 }
 #endif
 
-#define ZRTOS_CPU__GET_STATE_LENGTH() 33
-#define ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH() 10
+#define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH() 33
+#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 10
 
-#define _ZRTOS_TASK__SAVE(ptr)                                  \
+#define ZRTOS_ARCH__SAVE_CPU_STATE(ptr)                                  \
     ;__asm__ __volatile__(                                      \
         "push   __tmp_reg__                             \n\t"   \
         "in     __tmp_reg__, __SREG__                   \n\t"   \
@@ -245,7 +227,7 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
         : "=m" (ptr)                                            \
     );
 
-#define _ZRTOS_TASK__RESTORE(ptr)                               \
+#define ZRTOS_ARCH__LOAD_CPU_STATE(ptr)                               \
     ;__asm__ __volatile__(                                      \
         "lds    __tmp_reg__, %0                         \n\t"   \
         "out    __SP_L__, __tmp_reg__                   \n\t"   \
@@ -288,44 +270,8 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
         : : "m" (ptr)                                           \
     );
 
-void _zrtos_task_scheduler__isr_start(void){
-	ZRTOS__INTERRUPTS_DISABLE();
-	// Clear registers
-	TCCR1A = 0;
-	TCCR1B = 0;
-	TCNT1 = 0;
-
-	// 1000 Hz (16000000/((249+1)*64))
-	OCR1A = 249;
-	// CTC
-	TCCR1B |= (1 << WGM12);
-	// Prescaler 64
-	TCCR1B |= (1 << CS11) | (1 << CS10);
-	// Output Compare Match A Interrupt Enable
-	TIMSK1 |= (1 << OCIE1A);
-	ZRTOS__INTERRUPTS_ENABLE();
-}
-
-void _zrtos_task_scheduler__isr_stop(void){
-	ZRTOS__INTERRUPTS_DISABLE();
-	TIMSK1 &= ~(1 << OCIE1A);
-	ZRTOS__INTERRUPTS_ENABLE();
-}
-
-#define ZRTOS_TASK_SCHEDULER__ISR_RETURN() \
+#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \
     __asm__ __volatile__("reti");
-
-void _zrtos_task_scheduler__isr_reset_counter(void){
-	TCNT1  = 0;
-}
-
-__attribute__((naked))ISR(TIMER1_COMPA_vect){
-	_zrtos_task_scheduler__on_tick();
-}
-
-__attribute__((naked))ISR(WDT_vect){
-	ZRTOS__FATAL();
-}
 
 #endif
 

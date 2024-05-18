@@ -17,7 +17,7 @@ extern "C" {
 
 
 typedef struct _zrtos_task_scheduler_t{
-	zrtos_task_top_of_stack_t *tmp_stack_ptr;
+	zrtos_arch_stack_t *tmp_stack_ptr;
 	zrtos_mem_t               *heap;
 	uint16_t                  ctx_switch_task_stack[50];
 	size_t                    start_offset;
@@ -45,8 +45,8 @@ zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 void _zrtos_task_scheduler__restore_task(void){
-	_ZRTOS_TASK__RESTORE(zrtos_task_scheduler.tmp_stack_ptr);
-	ZRTOS_TASK_SCHEDULER__ISR_RETURN();
+	ZRTOS_ARCH__LOAD_CPU_STATE(zrtos_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 #pragma GCC pop_options
 
@@ -102,7 +102,7 @@ bool zrtos_task_scheduler__has_enough_stack_space(
 		 zrtos_task__get_stack_size_min(task)
 		,zrtos_mem_chunk__get_length(chunk)
 	) - zrtos_mem_chunk__get_length(chunk)){
-		ZRTOS__FATAL();
+		ZRTOS_ARCH__FATAL();
 		return false;
 	}
 	return true;
@@ -192,7 +192,7 @@ void _zrtos_task_scheduler__switch_task(void){
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 void _zrtos_task_scheduler__on_tick(void){
-	_ZRTOS_TASK__SAVE(zrtos_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__SAVE_CPU_STATE(zrtos_task_scheduler.tmp_stack_ptr);
 
 	ZRTOS_DEBUG__CODE(
 		zrtos_debug__memset(

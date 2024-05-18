@@ -22,7 +22,7 @@ typedef struct _zrtos_mem_chunk_t{
 	zrtos_mem_chunk_type_t     type;
 	zrtos_mem_chunk_uid_t      uid;
 	char                    last[2];
-}__attribute__((aligned(ZRTOS__BYTE_ALIGNMENT)))zrtos_mem_chunk_t;
+}__attribute__((aligned(ZRTOS_ARCH__BYTE_ALIGNMENT)))zrtos_mem_chunk_t;
 
 void *zrtos_mem_chunk__get_ptr(zrtos_mem_chunk_t *thiz){
 	return thiz->ptr;

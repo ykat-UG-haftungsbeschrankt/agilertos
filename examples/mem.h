@@ -8,9 +8,9 @@ typedef enum{
 	,true
 }bool;
 
-#define ZRTOS__BYTE_ALIGNMENT 1
+#define ZRTOS_ARCH__BYTE_ALIGNMENT 1
 #define ZRTOS_DEBUG__CFG_ENABLED
-#define ZRTOS_CPU__ATMEGA328P
+#define ZRTOS_ARCH__ATMEGA328P
 
 #include "zrtos.h"
 #include "zrtos_mem.h"

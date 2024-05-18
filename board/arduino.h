@@ -10,6 +10,11 @@
 extern "C" {
 #endif
 
+
+#ifdef ZRTOS_BOARD__ARDUINO
+#define ZRTOS_BOARD__FOUND
+
+
 //https://android.googlesource.com/platform/external/arduino/+/d5790d78880d4bd60be277ee20e53a851aa8c116/hardware/arduino/cores/arduino/wiring.c
 
 /*
@@ -26,9 +31,7 @@ extern "C" {
 volatile unsigned long timer0_overflow_count = 0;
 volatile unsigned long timer0_millis = 0;
 static unsigned char timer0_fract = 0;
-*/
 
-/*
 Timer0: Timer0 is a 8bit timer. In the Arduino world Timer0 is been used for
  the timer functions, like delay(), millis() and micros(). If you change
  Timer0 registers, this may influence the Arduino timer function. So you 
@@ -41,7 +44,7 @@ Timer0: Timer0 is a 8bit timer. In the Arduino world Timer0 is been used for
  through the timer register. The most important timer registers are:
 
  https://oscarliang.com/arduino-timer-and-interrupt-tutorial/
-
+//https://deepbluembedded.com/arduino-timer-calculator-code-generator/
 
 
 
@@ -73,19 +76,10 @@ void delay(unsigned long ms)
 }
 */
 
-__attribute__((naked))void (*zrtos_board_arduino__timer0_empty_fn)(void){
+#define ZRTOS_BOARD__TICK_PERIOD_MS\
+	(MICROSECONDS_PER_TIMER0_OVERFLOW/1000000)
 
-};
-uint16_t zrtos_board_arduino__timer0_delay_start;
-__attribute__((naked))void (*zrtos_board_arduino__timer0_delay_fn)(void){
-	zrtos_board_arduino__timer0_delay_start += MILLIS_INC;
-};
-void (*zrtos_board_arduino__timer0)(void)__attribute__((naked)) = zrtos_board_arduino__timer0_empty_fn;
-void (*zrtos_board_arduino__timer0_last)(void)__attribute__((naked)) = 0;
-
-ISR(TIMER0_OVF_vect,ISR_NAKED){
-	// @todo save register on stack
-
+void zrtos_board_arduino__on_ovf(void){
 	unsigned long m = timer0_millis;
 	unsigned char f = timer0_fract;
 	m += MILLIS_INC;
@@ -97,59 +91,41 @@ ISR(TIMER0_OVF_vect,ISR_NAKED){
 	timer0_fract = f;
 	timer0_millis = m;
 	timer0_overflow_count++;
+}
+/*
+void zrtos_board_arduino__on_ovf1(void){
+	system_tick();
+}
+*/
 
-	// @todo pop register off stack
+void (*zrtos_board__on_tick_naked)(void)__attribute__((naked));
 
-	zrtos_board_arduino__timer0();
+ISR(TIMER0_OVF_vect,ISR_NAKED){
+	//called every 16 ms
+	ZRTOS_ARCH__SAVE_CPU_STATE((void*)SP);
+	// @todo save register on stack
+	zrtos_board_arduino__on_ovf(void);
+	zrtos_board__on_tick();
+	//avr/time.h system_tick();
+	ZRTOS_ARCH__LOAD_CPU_STATE((void*)SP);
+	zrtos_board__on_tick_naked();
 }
 
-void zrtos_board_arduino__timer0_push(
-	void (*callback)(void)
-){
-	zrtos_board_arduino__timer0_last = zrtos_board_arduino__timer0;
-	zrtos_board_arduino__timer0 = callback;
+#define ZRTOS_BOARD__WATCH_DOG_START() \
+    wdt_enable(WDTO_8S);
+
+#define ZRTOS_BOARD__WATCH_DOG_STOP() \
+    wdt_disable();
+
+#define ZRTOS_BOARD__WATCH_DOG_RESET() \
+    wdt_reset();
+
+__attribute__((naked))ISR(WDT_vect){
+	ZRTOS_ARCH__FATAL();
 }
 
-void zrtos_board_arduino__timer0_pop(){
-	zrtos_board_arduino__timer0 = zrtos_board_arduino__timer0_last;
-}
+#endif
 
-void zrtos_board__set_task_scheduler_callback(
-	void (*callback)(void)
-){
-	zrtos_board_arduino__timer0 = callback;
-}
-
-void zrtos_board__enable_task_scheduler(){
-	ZRTOS_ARCH__DO_NOT_INTERRUPT({
-		if(zrtos_board_arduino__timer0
-		!= zrtos_board_arduino__timer0_task_scheduler_fn){
-			zrtos_board_arduino__timer0 = zrtos_board_arduino__timer0_task_scheduler_fn;
-		}
-	});
-}
-
-void zrtos_board__disable_task_scheduler(){
-	ZRTOS_ARCH__DO_NOT_INTERRUPT({
-		if(zrtos_board_arduino__timer0
-		== zrtos_board_arduino__timer0_task_scheduler_fn){
-			zrtos_board_arduino__timer0 = zrtos_board_arduino__timer0_empty_fn;
-		}
-	});
-}
-
-void delay(unsigned long ms){
-	ZRTOS_ARCH__DO_NOT_INTERRUPT({
-	zrtos_board_arduino__timer0_push(zrtos_board_arduino__timer0_delay_fn);
-	zrtos_board_arduino__timer0_delay_start = 0;
-	});
-	while(zrtos_board_arduino__timer0_delay_start < ms){
-		//empty loop
-	}
-	ZRTOS_ARCH__DO_NOT_INTERRUPT({
-	zrtos_board_arduino__timer0_pop();
-	});
-}
 
 #ifdef __cplusplus
 }

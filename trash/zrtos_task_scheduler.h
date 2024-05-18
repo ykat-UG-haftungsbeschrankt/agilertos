@@ -16,7 +16,7 @@ extern "C" {
 
 typedef struct _zrtos_task_scheduler_t{
 	zrtos_task_t      *active_task;
-	zrtos_task_top_of_stack_t *tmp_stack_ptr;
+	zrtos_arch_stack_t *tmp_stack_ptr;
 }zrtos_task_scheduler_t;
 
 
@@ -96,7 +96,7 @@ bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
 		}
 	}else if(!zrtos_task__is_running(task)){
 		zrtos_task__set_running(task);
-		ZRTOS__INTERRUPTS_DISABLE();
+		ZRTOS_ARCH__DISABLE_INTERRUPTS();
 		_ZRTOS_TASK__RESTORE(heap);
 		asm volatile ( "ret" );
 	}

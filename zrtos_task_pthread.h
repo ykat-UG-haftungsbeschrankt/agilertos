@@ -39,8 +39,8 @@ typedef struct{
     }
 
 int pthread_attr_init(pthread_attr_t *attr){
-	attr->stacksize = ZRTOS_CPU__GET_STATE_LENGTH()
-	                + ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+	attr->stacksize = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
+	                + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
 	;
 	return 0;
 }
@@ -80,8 +80,8 @@ int pthread_create(
 	,void *(*start_routine)(void *)
 	,void *restrict arg
 ){
-	size_t stack_size_min = ZRTOS_CPU__GET_STATE_LENGTH()
-	                      + ZRTOS_CPU__GET_FN_CALL_STACK_LENGTH()
+	size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
+	                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
 	;
 	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
 	size_t stacksize_min = sizeof(zrtos_task_t) + (
@@ -109,7 +109,7 @@ int pthread_create(
 		);
 		zrtos_task__init(
 			 task
-			,(zrtos_task_top_of_stack_t*)(task - 1)
+			,(zrtos_arch_stack_t*)(task - 1)
 			,stacksize_min
 			,start_routine
 			,arg

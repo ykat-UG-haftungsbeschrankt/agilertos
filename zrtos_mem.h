@@ -18,7 +18,7 @@ extern "C" {
 #define ZRTOS_MEM__INIT(name,heap_size)                   \
     static struct{                                        \
         uint8_t heap[heap_size];                          \
-    }__attribute__((aligned(ZRTOS__BYTE_ALIGNMENT)))name;
+    }__attribute__((aligned(ZRTOS_ARCH__BYTE_ALIGNMENT)))name;
 
 
 #define ZRTOS_MEM__GET(name) \
@@ -75,7 +75,7 @@ void *zrtos_mem__get_last_address(zrtos_mem_t *thiz){
 }
 
 void *zrtos_mem__get_stack_ptr(zrtos_mem_t *thiz){
-	return ZRTOS__GET_STACK_PTR();
+	return ZRTOS_ARCH__GET_STACK_PTR();
 }
 
 size_t _zrtos_mem__get_free_space_ex(zrtos_mem_t *thiz,void *stack_ptr){

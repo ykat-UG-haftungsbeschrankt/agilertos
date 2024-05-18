@@ -1,7 +1,7 @@
 #include <avr/io.h>
 
 
-#define ZRTOS_CPU__ATMEGA328P
+#define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_DEBUG__CFG_ENABLED
 #define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 

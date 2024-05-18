@@ -3,3 +3,4 @@ GccApplication1.cproj
 Debug/
 trash/
 .vscode/
+trash/zrtos_task_scheduler.h
