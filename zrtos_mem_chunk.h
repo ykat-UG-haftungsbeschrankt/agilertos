@@ -16,10 +16,12 @@ extern "C" {
 
 
 typedef struct _zrtos_mem_chunk_t{
+	char                    first[2];
 	void                       *ptr;
 	size_t                     length;
-	zrtos_mem_chunk_uid_t      uid;
 	zrtos_mem_chunk_type_t     type;
+	zrtos_mem_chunk_uid_t      uid;
+	char                    last[2];
 }__attribute__((aligned(ZRTOS__BYTE_ALIGNMENT)))zrtos_mem_chunk_t;
 
 void *zrtos_mem_chunk__get_ptr(zrtos_mem_chunk_t *thiz){

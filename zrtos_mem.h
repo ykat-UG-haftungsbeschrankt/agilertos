@@ -36,7 +36,7 @@ bool zrtos_mem__init(
 	,void        *heap
 	,size_t      heap_size
 ){
-	ZRTOS__DEBUG_CODE(
+	ZRTOS_DEBUG__CODE(
 		zrtos_debug__memset(heap,0xEE,heap_size);
 	);
 
@@ -78,18 +78,25 @@ void *zrtos_mem__get_stack_ptr(zrtos_mem_t *thiz){
 	return ZRTOS__GET_STACK_PTR();
 }
 
-size_t _zrtos_mem__get_free_space(zrtos_mem_t *thiz){
+size_t _zrtos_mem__get_free_space_ex(zrtos_mem_t *thiz,void *stack_ptr){
 	return
-		  thiz->ptr < zrtos_mem__get_stack_ptr(thiz)
+		  thiz->ptr < stack_ptr
 		? zrtos_types__ptr_get_byte_distance(
 			ZRTOS_TYPES__MIN(
-				 zrtos_mem__get_stack_ptr(thiz)
+				 stack_ptr
 				,zrtos_mem__get_last_address(thiz)
 			)
 			,thiz->ptr
 		)
 		: 0
 	;
+}
+
+size_t _zrtos_mem__get_free_space(zrtos_mem_t *thiz){
+	return _zrtos_mem__get_free_space_ex(
+		 thiz
+		,zrtos_mem__get_stack_ptr(thiz)
+	);
 }
 
 zrtos_mem_chunk_t *zrtos_mem__get_by_id(
@@ -208,10 +215,15 @@ zrtos_mem_chunk_t *_zrtos_mem__malloc(
 		);
 
 		chunk = &((zrtos_mem_chunk_t*)thiz->ptr)[thiz->length++];
+	chunk->first[0] = 0x55;
+	chunk->first[1] = 0x55;
+
 		chunk->ptr = thiz->ptr + thiz->heap_size - length;
 		chunk->length = length;
 		chunk->uid = zrtos_mem__get_next_uid(thiz);
 		chunk->type.type = type;
+	chunk->last[0] = 0x66;
+	chunk->last[1] = 0x66;
 
 		//update index
 		node = &((zrtos_mem_chunk_t*)thiz->ptr)[0];
@@ -219,7 +231,7 @@ zrtos_mem_chunk_t *_zrtos_mem__malloc(
 			node->ptr += sizeof(zrtos_mem_chunk_t);
 		}
 
-		ZRTOS__DEBUG_CODE(
+		ZRTOS_DEBUG__CODE(
 			static uint8_t pattern = 0xE0;
 			zrtos_debug__memset(chunk->ptr,(int)(pattern++),chunk->length);
 		);
@@ -243,24 +255,33 @@ zrtos_mem_chunk_uid_t zrtos_mem__malloc(
 	return zrtos_mem_chunk_uid__error();
 }
 
+void _zrtos_mem__update_index_ptr(
+	 zrtos_mem_t       *thiz
+	,zrtos_mem_chunk_t *chunk
+	,size_t             sizeof_mem_chunk
+){
+	size_t length = chunk->length;
+	zrtos_mem_chunk_t *node = &((zrtos_mem_chunk_t*)thiz->ptr)[0];
+	zrtos_mem_chunk_t *sentinel = &((zrtos_mem_chunk_t*)thiz->ptr)[thiz->length];
+	for(;node < sentinel;node++){
+		node->ptr -= sizeof_mem_chunk/*sizeof(zrtos_mem_chunk_t)*/ + (node > chunk ? length : 0);
+	}
+}
+
 void _zrtos_mem__free(zrtos_mem_t *thiz,zrtos_mem_chunk_t *chunk){
 	uint8_t *dest = (uint8_t*)chunk;
 	uint8_t *src = dest + sizeof(zrtos_mem_chunk_t);
-	zrtos_mem_chunk_t *node;
 	zrtos_mem_chunk_t *sentinel;
 	size_t length = chunk->length;
 	size_t length_total = sizeof(zrtos_mem_chunk_t) + length;
 	int lp = 1;
+	void *chunk_ptr = chunk->ptr;
 
 	//update index
-	node = chunk;
-	sentinel = &((zrtos_mem_chunk_t*)thiz->ptr)[thiz->length];
-	while(++node < sentinel){
-		node->ptr -= length;
-	}
+	_zrtos_mem__update_index_ptr(thiz,chunk,sizeof(zrtos_mem_chunk_t));
 
 	//1st loop delete index, 2nd loop delete element
-	sentinel = zrtos_types__ptr_add(chunk->ptr,sizeof(zrtos_mem_chunk_t));
+	sentinel = chunk_ptr;//zrtos_types__ptr_add(chunk->ptr,sizeof(zrtos_mem_chunk_t));
 	do{
 		while(src < ((uint8_t*)sentinel)){
  			*dest++ = *src++;
@@ -272,7 +293,7 @@ void _zrtos_mem__free(zrtos_mem_t *thiz,zrtos_mem_chunk_t *chunk){
 	thiz->length--;
 	thiz->heap_size -= length_total;
 
-	ZRTOS__DEBUG_CODE(
+	ZRTOS_DEBUG__CODE(
 		zrtos_debug__memset(
 			 zrtos_types__ptr_add(thiz->ptr,thiz->heap_size)
 			,0xEE
@@ -317,11 +338,17 @@ void *zrtos_mem__page_in(
 ){
 	size_t index_length = (sizeof(zrtos_mem_chunk_t) * thiz->length);
 	void *ptr_index = zrtos_types__ptr_add(thiz->ptr,index_length);
-	void *ret = _zrtos_mem__swap_to_heap_end(
+	void *chunk_ptr = chunk->ptr;
+	void *ret;
+
+	//update index
+	_zrtos_mem__update_index_ptr(thiz,chunk,0);
+
+	ret = _zrtos_mem__swap_to_heap_end(
 		 ptr_index
 		,thiz->total_size - index_length
 		,thiz->heap_size - index_length
-		,zrtos_types__ptr_get_byte_distance(chunk->ptr,ptr_index)
+		,zrtos_types__ptr_get_byte_distance(chunk_ptr,ptr_index)
 		,chunk->length
 	);
 
@@ -363,6 +390,14 @@ void zrtos_mem__page_out(
 			)
 			,chunk
 		)
+	);
+
+	ZRTOS_DEBUG__CODE(
+		zrtos_debug__memset(
+			 zrtos_types__ptr_add(heap_end_ptr,length)
+			,0xEE
+			,thiz->total_size - thiz->heap_size
+		);
 	);
 }
 

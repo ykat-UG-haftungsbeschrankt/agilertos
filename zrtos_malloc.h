@@ -51,7 +51,7 @@ typedef struct _zrtos_malloc_internal_t{
         ,sizeof(name) / sizeof(name[0])                                 \
     );                                                                  \
                                                                         \
-    ZRTOS__DEBUG_CODE({                                                 \
+    ZRTOS_DEBUG__CODE({                                                 \
         zrtos_debug__memset(                                            \
              zrtos_types__ptr_add(name,sizeof(zrtos_malloc_internal_t)) \
             ,0xFF                                                       \
@@ -102,7 +102,7 @@ bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){
 		thiz_->ptr = zrtos_types__ptr_add(thiz,sizeof(zrtos_malloc_internal_t));
 		thiz_->length = length - sizeof(zrtos_malloc_internal_t);
 
-		ZRTOS__DEBUG_CODE({
+		ZRTOS_DEBUG__CODE({
 			zrtos_debug__memset(thiz_->ptr,0xFF,length);
 		});
 
@@ -169,7 +169,7 @@ void *zrtos_malloc__malloc(zrtos_malloc_t *thiz,size_t length){
 
 	chunk++;
 
-	ZRTOS__DEBUG_CODE({
+	ZRTOS_DEBUG__CODE({
 		static uint8_t pattern = 0x20;
 		zrtos_debug__memset(chunk,pattern++,length);
 	});
@@ -192,7 +192,7 @@ L_OUT:
 		thiz_->ptr += length;
 	}
 
-	ZRTOS__DEBUG_CODE({
+	ZRTOS_DEBUG__CODE({
 		static uint8_t pattern = 0x20;
 		zrtos_debug__memset(ret,pattern++,length);
 	});
@@ -212,7 +212,7 @@ void zrtos_malloc__free(void *ptr){
 	--chunk;
 	chunk->length &= ~((size_t)1);
 
-	ZRTOS__DEBUG_CODE({
+	ZRTOS_DEBUG__CODE({
 		zrtos_debug__memset(ptr,0xFF,(chunk->length >> 1));
 	});
 #endif

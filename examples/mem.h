@@ -9,7 +9,7 @@ typedef enum{
 }bool;
 
 #define ZRTOS__BYTE_ALIGNMENT 1
-#define ZRTOS_DEBUG__ENABLED
+#define ZRTOS_DEBUG__CFG_ENABLED
 #define ZRTOS_CPU__ATMEGA328P
 
 #include "zrtos.h"
@@ -33,10 +33,17 @@ int main(void){
 	zrtos_mem_chunk_uid_t chunka = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
 	zrtos_mem_chunk_uid_t chunkb = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
 	zrtos_mem_chunk_uid_t chunkc = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
-
+	zrtos_mem_chunk_t *chunkaa = zrtos_mem__get_by_id(
+	&mem
+	,chunka
+	);
 	zrtos_mem_chunk_t *chunkbb = zrtos_mem__get_by_id(
-		 &mem
-		,chunkb
+	&mem
+	,chunkb
+	);
+	zrtos_mem_chunk_t *chunkcc = zrtos_mem__get_by_id(
+	&mem
+	,chunkc
 	);
 
 	zrtos_mem__page_in(
@@ -46,13 +53,31 @@ int main(void){
 
 	zrtos_mem_chunk_uid_t chunke = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
 
+	zrtos_mem_chunk_t *chunkee = zrtos_mem__get_by_id(
+		 &mem
+		,chunke
+	);
+
 	zrtos_mem__page_out(
 		 &mem
 		,chunkbb
 		,16
 	);
 
-	zrtos_mem_chunk_t *chunkee = zrtos_mem__get_by_id(
+	chunkaa = zrtos_mem__get_by_id(
+		 &mem
+		,chunka
+	);
+	chunkbb = zrtos_mem__get_by_id(
+		 &mem
+		,chunkb
+	);
+	chunkcc = zrtos_mem__get_by_id(
+		 &mem
+		,chunkc
+	);
+
+	chunkee = zrtos_mem__get_by_id(
 		 &mem
 		,chunke
 	);
@@ -62,10 +87,40 @@ int main(void){
 		,chunkee
 	);
 
+	chunkaa = zrtos_mem__get_by_id(
+		 &mem
+		,chunka
+	);
+	chunkbb = zrtos_mem__get_by_id(
+		 &mem
+		,chunkb
+	);
+	chunkcc = zrtos_mem__get_by_id(
+		 &mem
+		,chunkc
+	);
+
+	chunkee = zrtos_mem__get_by_id(
+		 &mem
+		,chunke
+	);
+
 	zrtos_mem__free(&mem,chunkb);
+	chunkaa = zrtos_mem__get_by_id(
+		 &mem
+		,chunka
+	);
+	chunkcc = zrtos_mem__get_by_id(
+		 &mem
+		,chunkc
+	);
 	zrtos_mem__free(&mem,chunka);
+	chunkcc = zrtos_mem__get_by_id(
+		 &mem
+		,chunkc
+	);
 	zrtos_mem__free(&mem,chunkc);
-	zrtos_mem__free(&mem,chunke);
+	//zrtos_mem__free(&mem,chunke);
 
 	return 0;
 }

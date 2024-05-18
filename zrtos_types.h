@@ -49,6 +49,8 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 #define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \
     (((a + b ) >= a)))
 
+#define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \
+    (sizeof(arr)/sizeof((arr)[0]))
 
 #ifdef __cplusplus
 }

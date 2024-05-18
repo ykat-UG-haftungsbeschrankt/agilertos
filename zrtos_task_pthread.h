@@ -120,6 +120,10 @@ int pthread_create(
 	return ret;
 }
 
+int pthread_join(pthread_t thread, void **retval){
+	return 0;
+}
+
 int pthread_mutex_lock(pthread_mutex_t *mutex){
 	return zrtos_task_mutex__lock(&mutex->mutex);
 }

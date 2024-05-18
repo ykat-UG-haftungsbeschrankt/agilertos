@@ -151,7 +151,7 @@ zrtos_task_top_of_stack_t *zrtos_task_heap__init(
 	,void                  *args
 ){
 /*
-	ZRTOS__DEBUG_CODE(
+	ZRTOS_DEBUG__CODE(
 		static uint8_t pattern = 0xF0;
 		memset(thiz,(int)(pattern++),length);
 	);

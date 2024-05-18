@@ -1,6 +1,6 @@
 #include <avr/io.h>
 
-#define ZRTOS_DEBUG__ENABLED
+#define ZRTOS_DEBUG__CFG_ENABLED
 
 #include "zrtos_malloc.h"
 
