@@ -54,6 +54,7 @@ void zrtos_task_scheduler__page_task_out(void){
 	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
 	zrtos_task_t *task = _zrtos_task_scheduler__get_active_task();
 
+	zrtos_task__set_stack_ptr(task,zrtos_task_scheduler.tmp_stack_ptr);
 	zrtos_task__set_errno(task,errno);
 	zrtos_mem__page_out(
 		 heap
@@ -69,11 +70,14 @@ void zrtos_task_scheduler__page_task_in(
 	 /*zrtos_task_t      *task
 	,*/zrtos_mem_chunk_t *chunk
 ){
+	zrtos_task_t *task;
 	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
-	zrtos_task_scheduler.tmp_stack_ptr = zrtos_mem__page_in(
+	zrtos_mem__page_in(
 		 heap
 		,chunk
 	);
+	task = _zrtos_task_scheduler__get_active_task();
+	zrtos_task_scheduler.tmp_stack_ptr = zrtos_task__get_stack_ptr(task);
 	errno = zrtos_task__get_errno(_zrtos_task_scheduler__get_active_task());
 }
 
@@ -182,6 +186,7 @@ void _zrtos_task_scheduler__switch_task(void){
 						 /*task
 						,*/zrtos_mem_chunk__get_uid(chunk)
 					);
+					goto L_OUT;
 				}
 			}
 		}ZRTOS_TASK_SCHEDULER__EACH_TASK_END;
@@ -189,6 +194,7 @@ void _zrtos_task_scheduler__switch_task(void){
 		//offset = zrtos_task_scheduler.start_offset;
 	}while(tmp--);
 
+L_OUT:
 	_zrtos_task_scheduler__restore_task();
 }
 
@@ -197,7 +203,7 @@ void _zrtos_task_scheduler__switch_task(void){
 void _zrtos_task_scheduler__on_tick(void){
 	ZRTOS_ARCH__SAVE_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 
-	ZRTOS_DEBUG__CODE(
+	ZRTOS_DEBUG__CODE({
 		zrtos_debug__memset(
 			 (void*)zrtos_task_scheduler.ctx_switch_task_stack
 			,0xbb
@@ -205,7 +211,7 @@ void _zrtos_task_scheduler__on_tick(void){
 				zrtos_task_scheduler.ctx_switch_task_stack
 			)*sizeof(zrtos_task_scheduler.ctx_switch_task_stack[0])
 		);
-	);
+	});
 
 	SP = (typeof(SP))(zrtos_task_scheduler.ctx_switch_task_stack
 	   + ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(

@@ -100,11 +100,12 @@ int pthread_create(
 	int ret = ENOMEM;
 
 	if(chunk){
+		void *mem_chunk_last_address = zrtos_types__ptr_add(
+			 zrtos_mem_chunk__get_ptr(chunk)
+			,zrtos_mem_chunk__get_length(chunk)
+		);
 		zrtos_task_t *task = zrtos_types__ptr_subtract(
-			zrtos_types__ptr_add(
-				zrtos_mem_chunk__get_ptr(chunk)
-				,zrtos_mem_chunk__get_length(chunk)
-			)
+			 mem_chunk_last_address
 			,sizeof(zrtos_task_t)
 		);
 		zrtos_task__init(
@@ -113,6 +114,13 @@ int pthread_create(
 			,stacksize_min
 			,start_routine
 			,arg
+		);
+		task->stack_ptr = zrtos_types__ptr_subtract(
+			 zrtos_mem__get_last_address(mem)
+			,zrtos_types__ptr_get_byte_distance(
+				 mem_chunk_last_address
+				,task->stack_ptr
+			)
 		);
 		ret = 0;
 	}

@@ -176,7 +176,7 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init_a(
 	return pxTopOfStack;
 }
 
-#if 0
+#if 1
 # define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_a
 #else
 # define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_b

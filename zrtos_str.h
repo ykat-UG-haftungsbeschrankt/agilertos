@@ -13,6 +13,9 @@ extern "C" {
 
 #include <stdarg.h>
 
+#include "zrtos_types.h"
+
+
 void zrtos_str__swap(void *dest, void *src, size_t len){
 	uint8_t *tmp_dest = dest;
 	uint8_t *tmp_src = src;
@@ -23,7 +26,12 @@ void zrtos_str__swap(void *dest, void *src, size_t len){
 	}
 }
 
-void zrtos_str__swap_ex(void *str, size_t offest_dest, size_t offset_src, size_t len){
+void zrtos_str__swap_ex(
+	 void *str
+	,size_t offest_dest
+	,size_t offset_src
+	,size_t len
+){
 	zrtos_str__swap(str + offest_dest,str + offset_src,len);
 }
 
@@ -66,11 +74,13 @@ void zrtos_str__swap_to_end(
 		//_zrtos_mem__swap_uint8(src++,dest++);
 	}
 
-	zrtos_str__left_rotate(
-		 src
-		,length
-		,rest_block_length + length
-	);
+	if(rest_block_length){
+		zrtos_str__left_rotate(
+			 src
+			,length
+			,rest_block_length + length
+		);
+	}
 }
 
 #ifdef ZRTOS__USE_MEMMOVE

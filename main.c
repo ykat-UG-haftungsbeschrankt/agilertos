@@ -44,7 +44,7 @@ int main(void){
 		,7
 		,16
 	);
-
+ 
 
 	uint8_t *a = zrtos_arch__cpu_state_init_a(
 		 0x300
