@@ -91,22 +91,264 @@ $(function(){initNavTree('zrtos__board_8h.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">zrtos_board.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="arduino_8h_source.html">boards/arduino.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="avr__software__emulator_8h_source.html">board/avr_software_emulator.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for zrtos_board.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__board_8h__incl.png" border="0" usemap="#azrtos__board_8h" alt=""/></div>
 <map name="azrtos__board_8h" id="azrtos__board_8h">
-<area shape="rect" title=" " alt="" coords="14,5,114,32"/>
-<area shape="rect" href="arduino_8h.html" title=" " alt="" coords="5,80,123,107"/>
-<area shape="poly" title=" " alt="" coords="67,33,67,64,61,64,61,33"/>
+<area shape="rect" title=" " alt="" coords="19,5,120,32"/>
+<area shape="rect" href="avr__software__emulator_8h.html" title=" " alt="" coords="5,80,134,123"/>
+<area shape="poly" title=" " alt="" coords="72,33,72,65,67,65,67,33"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="zrtos__board_8h__dep__incl.png" border="0" usemap="#azrtos__board_8hdep" alt=""/></div>
+<map name="azrtos__board_8hdep" id="azrtos__board_8hdep">
+<area shape="rect" title=" " alt="" coords="68,5,168,32"/>
+<area shape="rect" href="zrtos_8h.html" title=" " alt="" coords="87,80,148,107"/>
+<area shape="poly" title=" " alt="" coords="120,48,120,80,115,80,115,48"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="65,304,125,331"/>
+<area shape="poly" title=" " alt="" coords="74,111,41,129,27,141,16,156,9,176,9,197,15,217,26,238,54,275,82,302,78,306,50,278,21,241,10,219,4,197,4,175,11,153,23,138,38,125,71,106"/>
+<area shape="rect" href="mem_8h.html" title=" " alt="" coords="26,155,87,181"/>
+<area shape="poly" title=" " alt="" coords="99,120,69,156,65,153,95,117"/>
+<area shape="rect" href="task_8h.html" title=" " alt="" coords="201,304,258,331"/>
+<area shape="poly" title=" " alt="" coords="164,98,217,116,242,132,261,153,271,173,274,194,269,237,255,276,240,305,235,302,250,274,264,236,269,194,265,174,257,156,238,136,215,121,163,103"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html" title=" " alt="" coords="111,155,247,181"/>
+<area shape="poly" title=" " alt="" coords="140,117,171,153,167,156,136,120"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="103,229,247,256"/>
+<area shape="poly" title=" " alt="" coords="180,197,179,229,173,229,175,197"/>
+<area shape="poly" title=" " alt="" coords="152,268,111,306,107,302,148,265"/>
+<area shape="poly" title=" " alt="" coords="196,267,223,302,218,305,192,270"/>
 </map>
 </div>
 </div>
 <p><a href="zrtos__board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a6002fc6b9df2ffa67ae7be2b1f0bde08" id="r_a6002fc6b9df2ffa67ae7be2b1f0bde08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6002fc6b9df2ffa67ae7be2b1f0bde08">ZRTOS_BOARD__ON_TICK_CALLBACK</a>(name,  code)</td></tr>
+<tr class="separator:a6002fc6b9df2ffa67ae7be2b1f0bde08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75500d2aba2a1320ffb9586f4328945a" id="r_a75500d2aba2a1320ffb9586f4328945a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75500d2aba2a1320ffb9586f4328945a">ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK</a>(name,  code)</td></tr>
+<tr class="separator:a75500d2aba2a1320ffb9586f4328945a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a475258210708ff317f3f9b19bbb63b85" id="r_a475258210708ff317f3f9b19bbb63b85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a475258210708ff317f3f9b19bbb63b85">ZRTOS_BOARD__SET_ON_TICK_CALLBACK</a>(callback)&#160;&#160;&#160;	<a class="el" href="#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a> = callback;</td></tr>
+<tr class="separator:a475258210708ff317f3f9b19bbb63b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d82a442501bf55a4fd7c6bec9bfcf8d" id="r_a7d82a442501bf55a4fd7c6bec9bfcf8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d82a442501bf55a4fd7c6bec9bfcf8d">ZRTOS_BOARD__SET_ON_TICK_NAKED_CALLBACK</a>(callback)&#160;&#160;&#160;	<a class="el" href="#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a> = callback;</td></tr>
+<tr class="separator:a7d82a442501bf55a4fd7c6bec9bfcf8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:add30304098804d7d007239eee890c11c" id="r_add30304098804d7d007239eee890c11c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add30304098804d7d007239eee890c11c">ZRTOS_BOARD__ON_TICK_CALLBACK</a> (zrtos_board__empty_on_tick_callback,{ })</td></tr>
+<tr class="separator:add30304098804d7d007239eee890c11c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151f2c836673112808b74ff4d0246e44" id="r_a151f2c836673112808b74ff4d0246e44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a151f2c836673112808b74ff4d0246e44">ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK</a> (zrtos_board__empty_on_tick_naked_callback,{ })</td></tr>
+<tr class="separator:a151f2c836673112808b74ff4d0246e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ad7e85a8be90115b03950e72b72e5c0d3" id="r_ad7e85a8be90115b03950e72b72e5c0d3"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a> )(void) = zrtos_board__empty_on_tick_callback</td></tr>
+<tr class="separator:ad7e85a8be90115b03950e72b72e5c0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127f4162e4e038fad16712033b457ff7" id="r_a127f4162e4e038fad16712033b457ff7"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a> )(void) <a class="el" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked)) = zrtos_board__empty_on_tick_naked_callback</td></tr>
+<tr class="separator:a127f4162e4e038fad16712033b457ff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6002fc6b9df2ffa67ae7be2b1f0bde08" name="a6002fc6b9df2ffa67ae7be2b1f0bde08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6002fc6b9df2ffa67ae7be2b1f0bde08">&#9670;&#160;</a></span>ZRTOS_BOARD__ON_TICK_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__ON_TICK_CALLBACK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">name, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">code</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordtype">void</span> name(<span class="keywordtype">void</span>){                             \</div>
+<div class="line">        code                                     \</div>
+<div class="line">        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();     \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00013">13</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   13</span><span class="preprocessor">#define ZRTOS_BOARD__ON_TICK_CALLBACK(name,code) \</span></div>
+<div class="line"><span class="lineno">   14</span><span class="preprocessor">    void name(void){                             \</span></div>
+<div class="line"><span class="lineno">   15</span><span class="preprocessor">        code                                     \</span></div>
+<div class="line"><span class="lineno">   16</span><span class="preprocessor">        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();     \</span></div>
+<div class="line"><span class="lineno">   17</span><span class="preprocessor">    }</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a75500d2aba2a1320ffb9586f4328945a" name="a75500d2aba2a1320ffb9586f4328945a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75500d2aba2a1320ffb9586f4328945a">&#9670;&#160;</a></span>ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">name, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">code</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked)) <span class="keywordtype">void</span> name(<span class="keywordtype">void</span>){            \</div>
+<div class="line">        code                                           \</div>
+<div class="line">        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();           \</div>
+<div class="line">    }</div>
+<div class="ttc" id="azrtos__malloc_8h_html_a5ee201559452ea4cb4900b743066214e"><div class="ttname"><a href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a></div><div class="ttdeci">struct _zrtos_malloc_t __attribute__((packed)) zrtos_malloc_t</div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00019">19</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span><span class="preprocessor">#define ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK(name,code) \</span></div>
+<div class="line"><span class="lineno">   20</span><span class="preprocessor">    __attribute__((naked)) void name(void){            \</span></div>
+<div class="line"><span class="lineno">   21</span><span class="preprocessor">        code                                           \</span></div>
+<div class="line"><span class="lineno">   22</span><span class="preprocessor">        ZRTOS_ARCH__RETURN_FROM_INTERRUPT();           \</span></div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">    }</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a475258210708ff317f3f9b19bbb63b85" name="a475258210708ff317f3f9b19bbb63b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a475258210708ff317f3f9b19bbb63b85">&#9670;&#160;</a></span>ZRTOS_BOARD__SET_ON_TICK_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__SET_ON_TICK_CALLBACK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">callback</span></td><td>)</td>
+          <td>&#160;&#160;&#160;	<a class="el" href="#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a> = callback;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00036">36</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span><span class="preprocessor">#define ZRTOS_BOARD__SET_ON_TICK_CALLBACK(callback) \</span></div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">    zrtos_board__on_tick = callback;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7d82a442501bf55a4fd7c6bec9bfcf8d" name="a7d82a442501bf55a4fd7c6bec9bfcf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d82a442501bf55a4fd7c6bec9bfcf8d">&#9670;&#160;</a></span>ZRTOS_BOARD__SET_ON_TICK_NAKED_CALLBACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__SET_ON_TICK_NAKED_CALLBACK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">callback</span></td><td>)</td>
+          <td>&#160;&#160;&#160;	<a class="el" href="#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a> = callback;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00039">39</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span><span class="preprocessor">#define ZRTOS_BOARD__SET_ON_TICK_NAKED_CALLBACK(callback) \</span></div>
+<div class="line"><span class="lineno">   40</span><span class="preprocessor">    zrtos_board__on_tick_naked = callback;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="add30304098804d7d007239eee890c11c" name="add30304098804d7d007239eee890c11c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add30304098804d7d007239eee890c11c">&#9670;&#160;</a></span>ZRTOS_BOARD__ON_TICK_CALLBACK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZRTOS_BOARD__ON_TICK_CALLBACK </td>
+          <td>(</td>
+          <td class="paramtype">zrtos_board__empty_on_tick_callback</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">{ }</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a151f2c836673112808b74ff4d0246e44" name="a151f2c836673112808b74ff4d0246e44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151f2c836673112808b74ff4d0246e44">&#9670;&#160;</a></span>ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK </td>
+          <td>(</td>
+          <td class="paramtype">zrtos_board__empty_on_tick_naked_callback</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">{ }</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad7e85a8be90115b03950e72b72e5c0d3" name="ad7e85a8be90115b03950e72b72e5c0d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e85a8be90115b03950e72b72e5c0d3">&#9670;&#160;</a></span>zrtos_board__on_tick</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* zrtos_board__on_tick) (void) </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> = zrtos_board__empty_on_tick_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00033">33</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+
+</div>
+</div>
+<a id="a127f4162e4e038fad16712033b457ff7" name="a127f4162e4e038fad16712033b457ff7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a127f4162e4e038fad16712033b457ff7">&#9670;&#160;</a></span>zrtos_board__on_tick_naked</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* zrtos_board__on_tick_naked) (void) <a class="el" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked)) </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> = zrtos_board__empty_on_tick_naked_callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__board_8h_source.html#l00034">34</a> of file <a class="el" href="zrtos__board_8h_source.html">zrtos_board.h</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

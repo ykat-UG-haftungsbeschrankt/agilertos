@@ -1,7 +1,7 @@
 var zrtos__task__mutex_8h =
 [
     [ "_zrtos_task_mutex_t", "struct__zrtos__task__mutex__t.html", "struct__zrtos__task__mutex__t" ],
-    [ "ZRTOS_MUTEX__INIT", "zrtos__task__mutex_8h.html#a2e0b6e7695a69359eff37206360ffd87", null ],
+    [ "ZRTOS_TASK_MUTEX__INIT", "zrtos__task__mutex_8h.html#ac4a448af15f1493064c0a24c3126880d", null ],
     [ "zrtos_task_mutex_t", "zrtos__task__mutex_8h.html#ab0828dd36732a1fb5d381a5ef993473f", null ],
     [ "zrtos_task_mutex__deinit", "zrtos__task__mutex_8h.html#a9ca9e0fff335226d7b106769025fed59", null ],
     [ "zrtos_task_mutex__init", "zrtos__task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7", null ],

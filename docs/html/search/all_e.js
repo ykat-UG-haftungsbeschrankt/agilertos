@@ -2,8 +2,9 @@ var searchData=
 [
   ['task_2eh_0',['task.h',['../task_8h.html',1,'']]],
   ['ticks_1',['ticks',['../struct__zrtos__task__t.html#ad6eb25cfc5e8954d0ed6a5c4f2566e80',1,'_zrtos_task_t']]],
-  ['tmp_5fstack_5fptr_2',['tmp_stack_ptr',['../struct__zrtos__task__scheduler__t.html#a6ff80d7c33a8902d4bce3353c503990a',1,'_zrtos_task_scheduler_t']]],
-  ['total_5fsize_3',['total_size',['../struct__zrtos__mem__t.html#a7e394ef1aa0254364e4df3b36fa5d1a2',1,'_zrtos_mem_t']]],
-  ['true_4',['true',['../mem_8h.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b',1,'true:&#160;mem.h'],['../task_8h.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b',1,'true:&#160;task.h']]],
-  ['type_5',['type',['../struct__zrtos__mem__chunk__t.html#a9eddaab28f7c486a8472ff4bab1ff6ae',1,'_zrtos_mem_chunk_t::type'],['../struct__zrtos__mem__chunk__type__t.html#abb7fa49a85b419328b7dd36c3ba9c2de',1,'_zrtos_mem_chunk_type_t::type'],['../zrtos__mem__chunk_8h.html#aaccbba14f230b2d8144b34d3d48c1b68',1,'type:&#160;zrtos_mem_chunk.h']]]
+  ['tmp_5fstack_5fptr_2',['tmp_stack_ptr',['../struct__zrtos__task__scheduler__t.html#a40f0dd229430234cb40e9b9716e46975',1,'_zrtos_task_scheduler_t']]],
+  ['total_5fsize_3',['total_size',['../struct__zrtos__vheap__t.html#a376351263b0637d0b6f638e4b0317ed2',1,'_zrtos_vheap_t']]],
+  ['trash_2farduino_2eh_4',['arduino.h',['../trash_2arduino_8h.html',1,'']]],
+  ['true_5',['true',['../mem_8h.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b',1,'mem.h']]],
+  ['type_6',['type',['../struct__zrtos__vheap__chunk__t.html#a17a5ef8a15dc39903eb3bc5c3ca5a839',1,'_zrtos_vheap_chunk_t::type'],['../struct__zrtos__vheap__chunk__type__t.html#a3761c8ab8fada3ff1e7970a2575b7c44',1,'_zrtos_vheap_chunk_type_t::type'],['../zrtos__vheap__chunk_8h.html#a51659e050bffd03a0b7fe7d01a4ea4d8',1,'type:&#160;zrtos_vheap_chunk.h']]]
 ];

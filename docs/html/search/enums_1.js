@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zrtos_5fmem_5ftype_5ft_0',['zrtos_mem_type_t',['../zrtos__mem__type_8h.html#a7dfa0812447f5f19097434db0c089c6e',1,'zrtos_mem_type.h']]]
+  ['zrtos_5fvheap_5ftype_5ft_0',['zrtos_vheap_type_t',['../zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1',1,'zrtos_vheap_type.h']]]
 ];

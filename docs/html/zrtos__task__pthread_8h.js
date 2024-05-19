@@ -9,6 +9,7 @@ var zrtos__task__pthread_8h =
     [ "pthread_attr_init", "zrtos__task__pthread_8h.html#a0b85ebb1e3aac081a4c0a5e85ae3cbe9", null ],
     [ "pthread_attr_setstacksize", "zrtos__task__pthread_8h.html#a812a9a455ae2ef2bb0dca4fff201a281", null ],
     [ "pthread_create", "zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286", null ],
+    [ "pthread_join", "zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b", null ],
     [ "pthread_mutex_destroy", "zrtos__task__pthread_8h.html#a3cf620ff3a40af11d79cf28901dc55e2", null ],
     [ "pthread_mutex_init", "zrtos__task__pthread_8h.html#ad185b286794a414258da98a3b75a5a62", null ],
     [ "pthread_mutex_lock", "zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573", null ],

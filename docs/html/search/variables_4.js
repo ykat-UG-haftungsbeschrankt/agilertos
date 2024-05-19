@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['heap_0',['heap',['../struct__zrtos__mem__chunk__index__t.html#a92c87a472ff484bdcc43e809e357c13a',1,'_zrtos_mem_chunk_index_t::heap'],['../struct__zrtos__task__scheduler__t.html#a1728ae59f7f594363c5541942265bb7e',1,'_zrtos_task_scheduler_t::heap']]],
-  ['heap_5fsize_1',['heap_size',['../struct__zrtos__mem__t.html#a43c0bcbfd7990d88eee902bbee4a2e2c',1,'_zrtos_mem_t::heap_size'],['../struct__zrtos__mem__chunk__index__t.html#a7f59241be684c31145c2331e8a808fb1',1,'_zrtos_mem_chunk_index_t::heap_size']]]
+  ['errno_0',['errno',['../struct__zrtos__task__t.html#affa353c475e56b603b396a2916bf55d1',1,'_zrtos_task_t::errno'],['../zrtos__error_8h.html#a0e7fc70ec4a312b8ee921a95245a3931',1,'errno:&#160;zrtos_error.h']]]
 ];

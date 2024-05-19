@@ -1,0 +1,19 @@
+<map id="avr_software_emulator.h" name="avr_software_emulator.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="38,5,198,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__board_8h.html" title=" " alt="" coords="68,80,168,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,48,120,80,115,80,115,48"/>
+<area shape="rect" id="Node000003" href="$zrtos_8h.html" title=" " alt="" coords="87,155,148,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="120,122,120,154,115,154,115,122"/>
+<area shape="rect" id="Node000004" href="$main_8c.html" title=" " alt="" coords="65,379,125,405"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="74,186,41,204,27,216,16,231,9,251,9,271,15,292,26,312,54,349,82,376,78,380,50,353,21,315,10,294,4,272,4,250,11,228,23,212,38,199,71,181"/>
+<area shape="rect" id="Node000005" href="$mem_8h.html" title=" " alt="" coords="26,229,87,256"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="99,195,69,231,65,227,95,192"/>
+<area shape="rect" id="Node000006" href="$task_8h.html" title=" " alt="" coords="201,379,258,405"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="164,173,217,191,242,206,261,228,271,247,274,269,269,311,255,350,240,379,235,377,250,348,264,310,269,269,265,249,257,231,238,211,215,195,163,178"/>
+<area shape="rect" id="Node000007" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="111,229,247,256"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="140,192,171,227,167,231,136,195"/>
+<area shape="rect" id="Node000008" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="103,304,247,331"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="180,272,179,304,173,303,175,272"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="152,343,111,380,107,376,148,339"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="196,342,223,377,218,380,192,345"/>
+</map>

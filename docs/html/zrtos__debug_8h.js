@@ -1,4 +1,5 @@
 var zrtos__debug_8h =
 [
-    [ "ZRTOS__DEBUG_CODE", "zrtos__debug_8h.html#aeccf5992acaf16010e8b0f7e2031ad83", null ]
+    [ "ZRTOS_DEBUG", "zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c", null ],
+    [ "ZRTOS_DEBUG__CODE", "zrtos__debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a", null ]
 ];

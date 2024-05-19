@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['ticks_0',['ticks',['../struct__zrtos__task__t.html#ad6eb25cfc5e8954d0ed6a5c4f2566e80',1,'_zrtos_task_t']]],
-  ['tmp_5fstack_5fptr_1',['tmp_stack_ptr',['../struct__zrtos__task__scheduler__t.html#a6ff80d7c33a8902d4bce3353c503990a',1,'_zrtos_task_scheduler_t']]],
-  ['total_5fsize_2',['total_size',['../struct__zrtos__mem__t.html#a7e394ef1aa0254364e4df3b36fa5d1a2',1,'_zrtos_mem_t']]],
-  ['type_3',['type',['../struct__zrtos__mem__chunk__t.html#a9eddaab28f7c486a8472ff4bab1ff6ae',1,'_zrtos_mem_chunk_t::type'],['../struct__zrtos__mem__chunk__type__t.html#abb7fa49a85b419328b7dd36c3ba9c2de',1,'_zrtos_mem_chunk_type_t::type'],['../zrtos__mem__chunk_8h.html#aaccbba14f230b2d8144b34d3d48c1b68',1,'type:&#160;zrtos_mem_chunk.h']]]
+  ['ptr_0',['ptr',['../struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b',1,'_zrtos_malloc_internal_t::ptr'],['../struct__zrtos__vheap__t.html#acd6cb0f8c2ef805ceec17546f5ff609a',1,'_zrtos_vheap_t::ptr'],['../struct__zrtos__vheap__chunk__t.html#a337d809a2134a475ebc2f361bef2dfc9',1,'_zrtos_vheap_chunk_t::ptr'],['../zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba',1,'ptr:&#160;zrtos_vheap_chunk.h']]]
 ];

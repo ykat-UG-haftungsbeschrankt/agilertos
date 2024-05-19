@@ -1,8 +1,8 @@
 var zrtos__arch_8h =
 [
-    [ "zrtos_task_callback_t", "zrtos__arch_8h.html#a6aface9be35802be4022382407df806b", null ],
-    [ "zrtos_task_delay_t", "zrtos__arch_8h.html#af8454f1e70ada3ad2844aee8b751f6b8", null ],
-    [ "zrtos_task_heap_signed_t", "zrtos__arch_8h.html#ac18bc0ac04ce9149cfe7438bf2d285d7", null ],
-    [ "zrtos_task_top_of_stack_t", "zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5", null ],
-    [ "_zrtos_task_scheduler__on_tick", "zrtos__arch_8h.html#ac7a393b0c20456d46b0ccb5a6da9e009", null ]
+    [ "ZRTOS_ARCH__BYTE_ALIGNMENT_MASK", "zrtos__arch_8h.html#a9a1978e2125e5395c9b0534f0352d258", null ],
+    [ "ZRTOS_ARCH__DO_NOT_DISTURB", "zrtos__arch_8h.html#aa730af234b5bed8f69b0a56f64b69a93", null ],
+    [ "ZRTOS_ARCH__DO_NOT_DISTURB_EX", "zrtos__arch_8h.html#a8156817b24b123def72780a3109ff101", null ],
+    [ "zrtos_arch_callback_t", "zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc", null ],
+    [ "zrtos_arch__do_not_disturb", "zrtos__arch_8h.html#ab86f625f4bb9f6aaddd33576b99359c1", null ]
 ];

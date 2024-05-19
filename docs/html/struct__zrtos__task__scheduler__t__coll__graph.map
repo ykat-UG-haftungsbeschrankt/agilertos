@@ -1,11 +1,12 @@
 <map id="_zrtos_task_scheduler_t" name="_zrtos_task_scheduler_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="13,219,176,245"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,128,66,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,169,39,193,50,206,64,216,61,220,46,210,34,196,29,171"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__mem__t.html" title=" " alt="" coords="101,128,205,155"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,170,126,196,107,220,103,217,121,193,137,167"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="85,5,138,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,46,151,127,146,128,118,48"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="162,5,229,32"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="189,48,160,128,155,127,184,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="144,224,307,251"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,131,147,157"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,167,134,198,184,221,182,226,132,202,95,171"/>
+<area shape="rect" id="Node000003" href="$struct__zrtos__vheap__t.html" title=" " alt="" coords="171,131,280,157"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,173,228,224,223,224,223,173"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="170,5,222,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,47,194,75,199,103,215,129,211,132,195,105,189,75,190,47"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="270,5,338,32"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="311,47,312,56,313,110,307,134,294,161,269,198,242,225,238,222,265,195,290,159,302,132,307,110,307,56,306,48"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="264,42,248,58,239,76,233,95,228,131,223,130,227,94,234,74,244,54,260,39"/>
 </map>

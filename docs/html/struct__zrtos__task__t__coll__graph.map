@@ -1,9 +1,9 @@
 <map id="_zrtos_task_t" name="_zrtos_task_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="75,112,175,139"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,66,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,46,52,67,64,86,78,99,95,109,92,114,75,104,59,90,47,69,39,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="91,5,159,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="128,47,128,112,122,112,122,47"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="224,5,263,32"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="240,48,231,70,216,90,197,104,176,114,174,109,195,99,212,86,226,67,235,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="154,112,254,139"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,147,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,42,142,86,180,109,177,114,139,90,94,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="170,5,238,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,47,207,112,201,112,201,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="303,5,342,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="319,48,310,70,295,90,276,104,256,114,253,109,274,99,291,86,305,67,314,46"/>
 </map>

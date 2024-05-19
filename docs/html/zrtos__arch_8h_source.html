@@ -114,28 +114,102 @@ $(function(){initNavTree('zrtos__arch_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos__types_8h.html">zrtos_types.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5">   16</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5">zrtos_task_top_of_stack_t</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#ac18bc0ac04ce9149cfe7438bf2d285d7">   17</a></span><span class="keyword">typedef</span> int8_t <a class="code hl_typedef" href="zrtos__arch_8h.html#ac18bc0ac04ce9149cfe7438bf2d285d7">zrtos_task_heap_signed_t</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#af8454f1e70ada3ad2844aee8b751f6b8">   18</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="zrtos__arch_8h.html#af8454f1e70ada3ad2844aee8b751f6b8">zrtos_task_delay_t</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#a6aface9be35802be4022382407df806b">   19</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*zrtos_task_callback_t)(<span class="keywordtype">void</span> *arg);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="zrtos__arch_8h.html#ac7a393b0c20456d46b0ccb5a6da9e009">_zrtos_task_scheduler__on_tick</a>(<span class="keywordtype">void</span>)<a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked));</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="atmega328p_8h.html">arch/atmega328p.h</a>&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="atmega2560_8h.html">arch/atmega2560.h</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc">   16</a></span><span class="keyword">typedef</span> <span class="keywordtype">void</span> *(*zrtos_arch_callback_t)(<span class="keywordtype">void</span> *arg);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">typedef uint8_t zrtos_arch_stack_t;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">typedef int8_t zrtos_arch_stack_signed_t;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">#define ZRTOS_ARCH__FOUND</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">#define ZRTOS_ARCH__CPU_CLOCK_HZ</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">#define ZRTOS_ARCH__BYTE_ALIGNMENT</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">#define ZRTOS_ARCH__FATAL()</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">#define ZRTOS_ARCH__SET_STACK_PTR(sp)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">#define ZRTOS_ARCH__GET_STACK_PTR()</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED()</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED()</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">#define ZRTOS_ARCH__DISABLE_INTERRUPTS()</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">#define ZRTOS_ARCH__ENABLE_INTERRUPTS()</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">zrtos_arch_stack_t *zrtos_arch__cpu_state_init(</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">     zrtos_arch_stack_t     *thiz</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">    //,size_t                length</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">    ,zrtos_arch_callback_t callback</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">    ,void                  *args</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">#define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">#define ZRTOS_ARCH__SAVE_CPU_STATE(ptr)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">#define ZRTOS_ARCH__LOAD_CPU_STATE(ptr)</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#ifdef ZRTOS_ARCH__FOUND</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#error &quot;ZRTOS_ARCH__FOUND defined&quot;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &quot;<a class="code" href="atmega328p_8h.html">arch/atmega328p.h</a>&quot;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &quot;<a class="code" href="atmega2560_8h.html">arch/atmega2560.h</a>&quot;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifndef ZRTOS_ARCH__FOUND</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#error &quot;arch/*.h not found&quot;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#if ZRTOS_ARCH__BYTE_ALIGNMENT == 32</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x001f )</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#elif ZRTOS_ARCH__BYTE_ALIGNMENT == 16</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x000f )</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#elif ZRTOS_ARCH__BYTE_ALIGNMENT == 8</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0007 )</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#elif ZRTOS_ARCH__BYTE_ALIGNMENT == 4</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0003 )</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#elif ZRTOS_ARCH__BYTE_ALIGNMENT == 2</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0001 )</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#elif ZRTOS_ARCH__BYTE_ALIGNMENT == 1</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#a9a1978e2125e5395c9b0534f0352d258">   66</a></span><span class="preprocessor">    #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0000 )</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#else </span><span class="comment">/* if ZRTOS_ARCH__BYTE_ALIGNMENT == 32 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">    #error &quot;Invalid ZRTOS_ARCH__BYTE_ALIGNMENT definition&quot;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#endif </span><span class="comment">/* if ZRTOS_ARCH__BYTE_ALIGNMENT == 32 */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#ab86f625f4bb9f6aaddd33576b99359c1">   72</a></span><span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos__arch_8h.html#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a> = 0;</div>
+<div class="foldopen" id="foldopen00073" data-start="" data-end="">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#aa730af234b5bed8f69b0a56f64b69a93">   73</a></span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">    do{                                        \</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;          \</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">        do{                                    \</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">            code;                              \</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">        }while(0);                             \</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){ \</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();   \</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">        }                                      \</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">    }while(0);</span></div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="" data-end="">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="zrtos__arch_8h.html#a8156817b24b123def72780a3109ff101">   86</a></span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB_EX(is_locked,code)     \</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">    do{                                                   \</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">        is_locked = ZRTOS_ARCH__IS_INTERRUPTS_DISABLED(); \</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();                 \</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;                     \</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">        do{                                               \</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">            code;                                         \</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">        }while(0);                                        \</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){            \</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();              \</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">        }                                                 \</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">    }while(0);</span></div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="aatmega2560_8h_html"><div class="ttname"><a href="atmega2560_8h.html">atmega2560.h</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html"><div class="ttname"><a href="atmega328p_8h.html">atmega328p.h</a></div></div>
-<div class="ttc" id="azrtos__arch_8h_html_ac18bc0ac04ce9149cfe7438bf2d285d7"><div class="ttname"><a href="zrtos__arch_8h.html#ac18bc0ac04ce9149cfe7438bf2d285d7">zrtos_task_heap_signed_t</a></div><div class="ttdeci">int8_t zrtos_task_heap_signed_t</div><div class="ttdef"><b>Definition</b> <a href="#l00017">zrtos_arch.h:17</a></div></div>
-<div class="ttc" id="azrtos__arch_8h_html_ac30431363a058b325bf0e778fd2f8ab5"><div class="ttname"><a href="zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5">zrtos_task_top_of_stack_t</a></div><div class="ttdeci">uint8_t zrtos_task_top_of_stack_t</div><div class="ttdef"><b>Definition</b> <a href="#l00016">zrtos_arch.h:16</a></div></div>
-<div class="ttc" id="azrtos__arch_8h_html_ac7a393b0c20456d46b0ccb5a6da9e009"><div class="ttname"><a href="zrtos__arch_8h.html#ac7a393b0c20456d46b0ccb5a6da9e009">_zrtos_task_scheduler__on_tick</a></div><div class="ttdeci">void _zrtos_task_scheduler__on_tick(void) __attribute__((naked))</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00018">mem.h:18</a></div></div>
-<div class="ttc" id="azrtos__arch_8h_html_af8454f1e70ada3ad2844aee8b751f6b8"><div class="ttname"><a href="zrtos__arch_8h.html#af8454f1e70ada3ad2844aee8b751f6b8">zrtos_task_delay_t</a></div><div class="ttdeci">uint16_t zrtos_task_delay_t</div><div class="ttdef"><b>Definition</b> <a href="#l00018">zrtos_arch.h:18</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_a5ee201559452ea4cb4900b743066214e"><div class="ttname"><a href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a></div><div class="ttdeci">struct _zrtos_malloc_t __attribute__((packed)) zrtos_malloc_t</div></div>
+<div class="ttc" id="azrtos__arch_8h_html_ab86f625f4bb9f6aaddd33576b99359c1"><div class="ttname"><a href="zrtos__arch_8h.html#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a></div><div class="ttdeci">size_t zrtos_arch__do_not_disturb</div><div class="ttdef"><b>Definition</b> <a href="#l00072">zrtos_arch.h:72</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html"><div class="ttname"><a href="zrtos__types_8h.html">zrtos_types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

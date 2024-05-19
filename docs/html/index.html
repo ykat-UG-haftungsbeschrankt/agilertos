@@ -124,33 +124,33 @@ malloc() / free()</h2>
 <div class="line">    <span class="comment">// separate heap usable with zrtos_malloc__malloc()/zrtos_malloc__free()</span></div>
 <div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap3,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 10,l;</div>
-<div class="line">    <span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[10];</div>
+<div class="line">    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 10,l;</div>
+<div class="line">    <span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[10];</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        free(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        free(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        free(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        free(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap3,16);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap3,16);</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
+<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
+<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
@@ -163,8 +163,8 @@ malloc() / free()</h2>
 <div class="ttc" id="azrtos__malloc_8h_html_a886b38a033247d17a6681a94b237aab7"><div class="ttname"><a href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a></div><div class="ttdeci">void * zrtos_malloc__malloc(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00144">zrtos_malloc.h:144</a></div></div>
 <div class="ttc" id="azrtos__malloc_8h_html_a9f02437abeef6dc7e94a9b9f080584de"><div class="ttname"><a href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GET_REQUIRED_SIZE(type, count)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00037">zrtos_malloc.h:37</a></div></div>
 <div class="ttc" id="azrtos__malloc_8h_html_ae2e292b4f22bb68140eb76ba704eb5b6"><div class="ttname"><a href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00048">zrtos_malloc.h:48</a></div></div>
-<div class="ttc" id="azrtos__mem__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__mem__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__mem__chunk_8h_source.html#l00000">zrtos_mem_chunk.h:0</a></div></div>
-<div class="ttc" id="azrtos__mem__chunk_8h_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="zrtos__mem__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="zrtos__mem__chunk_8h_source.html#l00001">zrtos_mem_chunk.h:1</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00001">zrtos_vheap_chunk.h:1</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk_8h_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00002">zrtos_vheap_chunk.h:2</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
 pthread</h2>
 <div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>

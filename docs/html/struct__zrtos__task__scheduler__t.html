@@ -103,37 +103,58 @@ Collaboration diagram for _zrtos_task_scheduler_t:</div>
 <div class="dyncontent">
 <div class="center"><img src="struct__zrtos__task__scheduler__t__coll__graph.png" border="0" usemap="#a__zrtos__task__scheduler__t_coll__map" alt="Collaboration graph"/></div>
 <map name="a__zrtos__task__scheduler__t_coll__map" id="a__zrtos__task__scheduler__t_coll__map">
-<area shape="rect" title=" " alt="" coords="13,219,176,245"/>
-<area shape="rect" title=" " alt="" coords="5,128,66,155"/>
-<area shape="poly" title=" " alt="" coords="34,169,39,193,50,206,64,216,61,220,46,210,34,196,29,171"/>
-<area shape="rect" href="struct__zrtos__mem__t.html" title=" " alt="" coords="101,128,205,155"/>
-<area shape="poly" title=" " alt="" coords="142,170,126,196,107,220,103,217,121,193,137,167"/>
-<area shape="rect" title=" " alt="" coords="85,5,138,32"/>
-<area shape="poly" title=" " alt="" coords="123,46,151,127,146,128,118,48"/>
-<area shape="rect" title=" " alt="" coords="162,5,229,32"/>
-<area shape="poly" title=" " alt="" coords="189,48,160,128,155,127,184,46"/>
+<area shape="rect" title=" " alt="" coords="144,224,307,251"/>
+<area shape="rect" title=" " alt="" coords="5,131,147,157"/>
+<area shape="poly" title=" " alt="" coords="98,167,134,198,184,221,182,226,132,202,95,171"/>
+<area shape="rect" href="struct__zrtos__vheap__t.html" title=" " alt="" coords="171,131,280,157"/>
+<area shape="poly" title=" " alt="" coords="228,173,228,224,223,224,223,173"/>
+<area shape="rect" title=" " alt="" coords="170,5,222,32"/>
+<area shape="poly" title=" " alt="" coords="195,47,194,75,199,103,215,129,211,132,195,105,189,75,190,47"/>
+<area shape="rect" title=" " alt="" coords="270,5,338,32"/>
+<area shape="poly" title=" " alt="" coords="311,47,312,56,313,110,307,134,294,161,269,198,242,225,238,222,265,195,290,159,302,132,307,110,307,56,306,48"/>
+<area shape="poly" title=" " alt="" coords="264,42,248,58,239,76,233,95,228,131,223,130,227,94,234,74,244,54,260,39"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a6ff80d7c33a8902d4bce3353c503990a" id="r_a6ff80d7c33a8902d4bce3353c503990a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5">zrtos_task_top_of_stack_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ff80d7c33a8902d4bce3353c503990a">tmp_stack_ptr</a></td></tr>
-<tr class="separator:a6ff80d7c33a8902d4bce3353c503990a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1728ae59f7f594363c5541942265bb7e" id="r_a1728ae59f7f594363c5541942265bb7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zrtos__mem_8h.html#a270c6a012d2f3e42166fb3a5fec26ca6">zrtos_mem_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1728ae59f7f594363c5541942265bb7e">heap</a></td></tr>
-<tr class="separator:a1728ae59f7f594363c5541942265bb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40f0dd229430234cb40e9b9716e46975" id="r_a40f0dd229430234cb40e9b9716e46975"><td class="memItemLeft" align="right" valign="top">zrtos_arch_stack_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40f0dd229430234cb40e9b9716e46975">tmp_stack_ptr</a></td></tr>
+<tr class="separator:a40f0dd229430234cb40e9b9716e46975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27fa8ef7103888d968fa8fe10d74746e" id="r_a27fa8ef7103888d968fa8fe10d74746e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zrtos__vheap_8h.html#aee38723ed590676c43e78ac8d2e03fe1">zrtos_vheap_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27fa8ef7103888d968fa8fe10d74746e">heap</a></td></tr>
+<tr class="separator:a27fa8ef7103888d968fa8fe10d74746e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3312906aa2d30f96299ed8ef3b58bc53" id="r_a3312906aa2d30f96299ed8ef3b58bc53"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3312906aa2d30f96299ed8ef3b58bc53">ctx_switch_task_stack</a> [100]</td></tr>
+<tr class="separator:a3312906aa2d30f96299ed8ef3b58bc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade35e59ce82f5ce91e9ea7e407926812" id="r_ade35e59ce82f5ce91e9ea7e407926812"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade35e59ce82f5ce91e9ea7e407926812">start_offset</a></td></tr>
+<tr class="separator:ade35e59ce82f5ce91e9ea7e407926812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="zrtos__task__scheduler_8h_source.html#l00019">19</a> of file <a class="el" href="zrtos__task__scheduler_8h_source.html">zrtos_task_scheduler.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="a1728ae59f7f594363c5541942265bb7e" name="a1728ae59f7f594363c5541942265bb7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1728ae59f7f594363c5541942265bb7e">&#9670;&#160;</a></span>heap</h2>
+<a id="a3312906aa2d30f96299ed8ef3b58bc53" name="a3312906aa2d30f96299ed8ef3b58bc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3312906aa2d30f96299ed8ef3b58bc53">&#9670;&#160;</a></span>ctx_switch_task_stack</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zrtos__mem_8h.html#a270c6a012d2f3e42166fb3a5fec26ca6">zrtos_mem_t</a>* _zrtos_task_scheduler_t::heap</td>
+          <td class="memname">uint16_t _zrtos_task_scheduler_t::ctx_switch_task_stack[100]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__task__scheduler_8h_source.html#l00022">22</a> of file <a class="el" href="zrtos__task__scheduler_8h_source.html">zrtos_task_scheduler.h</a>.</p>
+
+</div>
+</div>
+<a id="a27fa8ef7103888d968fa8fe10d74746e" name="a27fa8ef7103888d968fa8fe10d74746e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27fa8ef7103888d968fa8fe10d74746e">&#9670;&#160;</a></span>heap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="zrtos__vheap_8h.html#aee38723ed590676c43e78ac8d2e03fe1">zrtos_vheap_t</a>* _zrtos_task_scheduler_t::heap</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -142,14 +163,30 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ff80d7c33a8902d4bce3353c503990a" name="a6ff80d7c33a8902d4bce3353c503990a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ff80d7c33a8902d4bce3353c503990a">&#9670;&#160;</a></span>tmp_stack_ptr</h2>
+<a id="ade35e59ce82f5ce91e9ea7e407926812" name="ade35e59ce82f5ce91e9ea7e407926812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade35e59ce82f5ce91e9ea7e407926812">&#9670;&#160;</a></span>start_offset</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zrtos__arch_8h.html#ac30431363a058b325bf0e778fd2f8ab5">zrtos_task_top_of_stack_t</a>* _zrtos_task_scheduler_t::tmp_stack_ptr</td>
+          <td class="memname"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> _zrtos_task_scheduler_t::start_offset</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__task__scheduler_8h_source.html#l00023">23</a> of file <a class="el" href="zrtos__task__scheduler_8h_source.html">zrtos_task_scheduler.h</a>.</p>
+
+</div>
+</div>
+<a id="a40f0dd229430234cb40e9b9716e46975" name="a40f0dd229430234cb40e9b9716e46975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f0dd229430234cb40e9b9716e46975">&#9670;&#160;</a></span>tmp_stack_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">zrtos_arch_stack_t* _zrtos_task_scheduler_t::tmp_stack_ptr</td>
         </tr>
       </table>
 </div><div class="memdoc">
