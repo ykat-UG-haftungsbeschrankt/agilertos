@@ -13,12 +13,12 @@ extern "C" {
 
 #include "zrtos_types.h"
 #include "zrtos_task.h"
-#include "zrtos_mem.h"
+#include "zrtos_vheap.h"
 
 
 typedef struct _zrtos_task_scheduler_t{
 	zrtos_arch_stack_t *tmp_stack_ptr;
-	zrtos_mem_t               *heap;
+	zrtos_vheap_t               *heap;
 	uint16_t                  ctx_switch_task_stack[100];
 	size_t                    start_offset;
 }zrtos_task_scheduler_t;
@@ -27,17 +27,17 @@ typedef struct _zrtos_task_scheduler_t{
 volatile zrtos_task_scheduler_t zrtos_task_scheduler = {};
 
 
-zrtos_mem_t *zrtos_task_scheduler__get_heap(void){
+zrtos_vheap_t *zrtos_task_scheduler__get_heap(void){
 	return zrtos_task_scheduler.heap;
 }
 
-void zrtos_task_scheduler__set_heap(zrtos_mem_t *heap){
+void zrtos_task_scheduler__set_heap(zrtos_vheap_t *heap){
 	zrtos_task_scheduler.heap = heap;
 }
 
 zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 	return zrtos_types__ptr_subtract(
-		 zrtos_mem__get_last_address(zrtos_task_scheduler__get_heap())
+		 zrtos_vheap__get_last_address(zrtos_task_scheduler__get_heap())
 		,sizeof(zrtos_task_t)
 	);
 }
@@ -51,16 +51,16 @@ void _zrtos_task_scheduler__restore_task(void){
 #pragma GCC pop_options
 
 void zrtos_task_scheduler__page_task_out(void){
-	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
+	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
 	zrtos_task_t *task = _zrtos_task_scheduler__get_active_task();
 
 	zrtos_task__set_stack_ptr(task,zrtos_task_scheduler.tmp_stack_ptr);
 	zrtos_task__set_errno(task,errno);
-	zrtos_mem__page_out(
+	zrtos_vheap__page_out(
 		 heap
-		,zrtos_mem__get_by_type_ex(heap,ZRTOS_MEM_CHUNK_TYPE__TASK_ACTIVE)
+		,zrtos_vheap__get_by_type_ex(heap,ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE)
 		,zrtos_types__ptr_get_byte_distance(
-			 zrtos_mem__get_last_address(heap)
+			 zrtos_vheap__get_last_address(heap)
 			,zrtos_task_scheduler.tmp_stack_ptr
 		)
 	);
@@ -68,11 +68,11 @@ void zrtos_task_scheduler__page_task_out(void){
 
 void zrtos_task_scheduler__page_task_in(
 	 /*zrtos_task_t      *task
-	,*/zrtos_mem_chunk_t *chunk
+	,*/zrtos_vheap_chunk_t *chunk
 ){
 	zrtos_task_t *task;
-	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
-	zrtos_mem__page_in(
+	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
+	zrtos_vheap__page_in(
 		 heap
 		,chunk
 	);
@@ -83,13 +83,13 @@ void zrtos_task_scheduler__page_task_in(
 
 bool _zrtos_task_scheduler__set_active_task(
 	 /*zrtos_task_t      *task
-	,zrtos_mem_chunk_t *chunk*/
-	zrtos_mem_chunk_uid_t uid
+	,zrtos_vheap_chunk_t *chunk*/
+	zrtos_vheap_chunk_uid_t uid
 ){
-	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
-	zrtos_mem_chunk_t *chunk;
+	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
+	zrtos_vheap_chunk_t *chunk;
 	zrtos_task_scheduler__page_task_out();
-	chunk = zrtos_mem__get_by_id(
+	chunk = zrtos_vheap__get_by_id(
 		 heap
 		,uid
 	);
@@ -100,19 +100,19 @@ bool _zrtos_task_scheduler__set_active_task(
 
 bool zrtos_task_scheduler__has_enough_stack_space(
 	 zrtos_task_t      *task
-	,zrtos_mem_chunk_t *chunk
+	,zrtos_vheap_chunk_t *chunk
 ){
-	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
+	zrtos_vheap_t *mem = zrtos_task_scheduler__get_heap();
 	//@todo stack_size_min
 	//size_t stack_size_min = zrtos_task__get_stack_size_min(task);
-	if(_zrtos_mem__get_free_space_ex(
+	if(_zrtos_vheap__get_free_space_ex(
 		 mem
 		,zrtos_task_scheduler.tmp_stack_ptr
 	)
 	<=  ZRTOS_TYPES__MAX(
 		 zrtos_task__get_stack_size_min(task)
-		,zrtos_mem_chunk__get_length(chunk)
-	) - zrtos_mem_chunk__get_length(chunk)){
+		,zrtos_vheap_chunk__get_length(chunk)
+	) - zrtos_vheap_chunk__get_length(chunk)){
 		ZRTOS_ARCH__FATAL();
 		return false;
 	}
@@ -120,10 +120,10 @@ bool zrtos_task_scheduler__has_enough_stack_space(
 }
 
 bool zrtos_task_scheduler__start(void){ 
-	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
-	zrtos_mem_chunk_t *chunk = zrtos_mem__get_by_type_ex(
+	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
+	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_type_ex(
 		 heap
-		,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE
+		,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE
 	);
 	if(chunk){
 		zrtos_task_scheduler__page_task_in(chunk);
@@ -135,17 +135,17 @@ bool zrtos_task_scheduler__start(void){
 }
 
 #define ZRTOS_TASK_SCHEDULER__EACH_TASK_BEGIN(thiz,start_offset,pos,chunk,task)\
-    ZRTOS_MEM__EACH_EX_BEGIN(                                                  \
+    ZRTOS_VHEAP__EACH_EX_BEGIN(                                                  \
          thiz                                                                  \
         ,start_offset                                                          \
         ,pos                                                                   \
-        ,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE                                       \
+        ,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE                                       \
         ,chunk                                                                 \
     ){                                                                         \
         zrtos_task_t *task = zrtos_types__ptr_subtract(                        \
             zrtos_types__ptr_add(                                              \
-                 zrtos_mem_chunk__get_ptr(chunk)                               \
-                ,zrtos_mem_chunk__get_length(chunk)                            \
+                 zrtos_vheap_chunk__get_ptr(chunk)                               \
+                ,zrtos_vheap_chunk__get_length(chunk)                            \
             )                                                                  \
             ,sizeof(zrtos_task_t)                                              \
         );                                                                     \
@@ -153,7 +153,7 @@ bool zrtos_task_scheduler__start(void){
 
 #define ZRTOS_TASK_SCHEDULER__EACH_TASK_END \
         }                                   \
-     }ZRTOS_MEM__EACH_EX_END
+     }ZRTOS_VHEAP__EACH_EX_END
 
 void _zrtos_task_scheduler__switch_task(void){
 	uint8_t tmp = 1;
@@ -175,16 +175,19 @@ void _zrtos_task_scheduler__switch_task(void){
 					,chunk
 				)
 				){
-/*
+					/*size_t chunk_count = zrtos_vheap__get_chunk_count(
+						zrtos_task_scheduler__get_heap()
+					);
+
 					zrtos_task_scheduler.start_offset = pos+1;
 					zrtos_task_scheduler.start_offset = zrtos_task_scheduler.start_offset < chunk_count
 								? zrtos_task_scheduler.start_offset
 								: 0
-					;
-*/
+					;*/
+
 					_zrtos_task_scheduler__set_active_task(
 						 /*task
-						,*/zrtos_mem_chunk__get_uid(chunk)
+						,*/zrtos_vheap_chunk__get_uid(chunk)
 					);
 					goto L_OUT;
 				}
@@ -213,10 +216,13 @@ void _zrtos_task_scheduler__on_tick(void){
 		);
 	});
 
-	SP = (typeof(SP))(zrtos_task_scheduler.ctx_switch_task_stack
-	   + ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(
-		zrtos_task_scheduler.ctx_switch_task_stack
-	));
+	ZRTOS_ARCH__SET_STACK_PTR(
+		  zrtos_task_scheduler.ctx_switch_task_stack
+		+ ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(
+			zrtos_task_scheduler.ctx_switch_task_stack
+		)
+	);
+
 	_zrtos_task_scheduler__switch_task();
 }
 #pragma GCC pop_options

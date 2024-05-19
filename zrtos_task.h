@@ -39,7 +39,6 @@ bool zrtos_task__init(
 	,zrtos_arch_callback_t     callback
 	,void                      *args
 ){
-	zrtos_arch_stack_t *heap_stack_ptr = 
 	thiz->stacksize_min = stacksize_min;
 	thiz->ticks = 0;
 	thiz->errno = 0;

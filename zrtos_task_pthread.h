@@ -12,7 +12,7 @@ extern "C" {
 
 
 #include "zrtos_error.h"
-#include "zrtos_mem.h"
+#include "zrtos_vheap.h"
 #include "zrtos_task_scheduler.h"
 #include "zrtos_task_mutex.h"
 #include "zrtos_types.h"
@@ -23,7 +23,7 @@ typedef struct{
 }pthread_attr_t;
 
 typedef struct{
-	zrtos_mem_chunk_uid_t id;
+	zrtos_vheap_chunk_uid_t id;
 }pthread_t;
 
 typedef struct{
@@ -83,7 +83,7 @@ int pthread_create(
 	size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
 	                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
 	;
-	zrtos_mem_t *mem = zrtos_task_scheduler__get_heap();
+	zrtos_vheap_t *mem = zrtos_task_scheduler__get_heap();
 	size_t stacksize_min = sizeof(zrtos_task_t) + (
 		  attr
 		? ZRTOS_TYPES__MAX(
@@ -92,17 +92,17 @@ int pthread_create(
 		)
 		: stack_size_min
 	);
-	zrtos_mem_chunk_t *chunk = _zrtos_mem__malloc(
+	zrtos_vheap_chunk_t *chunk = _zrtos_vheap__malloc(
 		 mem
-		,ZRTOS_MEM_CHUNK_TYPE__TASK_IDLE
+		,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE
 		,stacksize_min
 	);
 	int ret = ENOMEM;
 
 	if(chunk){
 		void *mem_chunk_last_address = zrtos_types__ptr_add(
-			 zrtos_mem_chunk__get_ptr(chunk)
-			,zrtos_mem_chunk__get_length(chunk)
+			 zrtos_vheap_chunk__get_ptr(chunk)
+			,zrtos_vheap_chunk__get_length(chunk)
 		);
 		zrtos_task_t *task = zrtos_types__ptr_subtract(
 			 mem_chunk_last_address
@@ -116,7 +116,7 @@ int pthread_create(
 			,arg
 		);
 		task->stack_ptr = zrtos_types__ptr_subtract(
-			 zrtos_mem__get_last_address(mem)
+			 zrtos_vheap__get_last_address(mem)
 			,zrtos_types__ptr_get_byte_distance(
 				 mem_chunk_last_address
 				,task->stack_ptr

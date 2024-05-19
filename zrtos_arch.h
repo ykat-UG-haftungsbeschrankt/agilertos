@@ -22,6 +22,7 @@ typedef int8_t zrtos_arch_stack_signed_t;
 #define ZRTOS_ARCH__CPU_CLOCK_HZ
 #define ZRTOS_ARCH__BYTE_ALIGNMENT
 #define ZRTOS_ARCH__FATAL()
+#define ZRTOS_ARCH__SET_STACK_PTR(sp)
 #define ZRTOS_ARCH__GET_STACK_PTR()
 #define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED()
 #define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED()

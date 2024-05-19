@@ -19,7 +19,7 @@ void *callback0(void *args){
 	while(1){
 		a++;
 		//ZRTOS_DEBUG("callback0:%u;",a);
-		zrtos_task_scheduler__delay_ms(2);
+		zrtos_task_scheduler__delay_ms(20);
 	}
 }
 void *callback1(void *args){
@@ -39,7 +39,7 @@ int main(void){
 	}
 	//zrtos_str__left_rotate(buffer,7,16);
 
-	zrtos_str__swap_to_end(
+	zrtos_mem__left_rotate(
 		 buffer
 		,7
 		,16
@@ -60,14 +60,14 @@ int main(void){
 */
 	pthread_t task0;
 	pthread_t task1;
-	zrtos_mem_t mem;   
-	zrtos_mem__init(&mem,(void*)0x200,0x700-0x200);
+	zrtos_vheap_t mem;   
+	zrtos_vheap__init(&mem,(void*)0x200,0x700-0x200);
 
 	//zrtos_board__start_tick_timer();
 	
 	zrtos_task_scheduler__set_heap(&mem);
 
-	zrtos_mem_chunk_uid_t chunka = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task0
@@ -78,7 +78,7 @@ int main(void){
 	
 	}
 
-	zrtos_mem_chunk_uid_t chunkb = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task1
@@ -89,7 +89,7 @@ int main(void){
 		
 	}
 
-	zrtos_mem_chunk_uid_t chunkc = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
 
 	zrtos_task_scheduler__start();
 }

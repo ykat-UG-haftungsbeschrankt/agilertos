@@ -13,114 +13,114 @@ typedef enum{
 #define ZRTOS_ARCH__ATMEGA328P
 
 #include "zrtos.h"
-#include "zrtos_mem.h"
+#include "zrtos_vheap.h"
 
 void _zrtos_task_scheduler__on_tick(void){
 }
 
 
-ZRTOS_MEM__INIT(heap,160);
+ZRTOS_VHEAP__INIT(heap,160);
 
 int main(void){
-	zrtos_mem_t mem;
+	zrtos_vheap_t mem;
 	
-	zrtos_mem__init(
+	zrtos_vheap__init(
 		 &mem
-		,ZRTOS_MEM__GET(heap)
+		,ZRTOS_VHEAP__GET(heap)
 		,160
 	);
 
-	zrtos_mem_chunk_uid_t chunka = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
-	zrtos_mem_chunk_uid_t chunkb = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
-	zrtos_mem_chunk_uid_t chunkc = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
-	zrtos_mem_chunk_t *chunkaa = zrtos_mem__get_by_id(
+	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_t *chunkaa = zrtos_vheap__get_by_id(
 	&mem
 	,chunka
 	);
-	zrtos_mem_chunk_t *chunkbb = zrtos_mem__get_by_id(
+	zrtos_vheap_chunk_t *chunkbb = zrtos_vheap__get_by_id(
 	&mem
 	,chunkb
 	);
-	zrtos_mem_chunk_t *chunkcc = zrtos_mem__get_by_id(
+	zrtos_vheap_chunk_t *chunkcc = zrtos_vheap__get_by_id(
 	&mem
 	,chunkc
 	);
 
-	zrtos_mem__page_in(
+	zrtos_vheap__page_in(
 		 &mem
 		,chunkbb
 	);
 
-	zrtos_mem_chunk_uid_t chunke = zrtos_mem__malloc(&mem,ZRTOS_MEM_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunke = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
 
-	zrtos_mem_chunk_t *chunkee = zrtos_mem__get_by_id(
+	zrtos_vheap_chunk_t *chunkee = zrtos_vheap__get_by_id(
 		 &mem
 		,chunke
 	);
 
-	zrtos_mem__page_out(
+	zrtos_vheap__page_out(
 		 &mem
 		,chunkbb
 		,16
 	);
 
-	chunkaa = zrtos_mem__get_by_id(
+	chunkaa = zrtos_vheap__get_by_id(
 		 &mem
 		,chunka
 	);
-	chunkbb = zrtos_mem__get_by_id(
+	chunkbb = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkb
 	);
-	chunkcc = zrtos_mem__get_by_id(
+	chunkcc = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkc
 	);
 
-	chunkee = zrtos_mem__get_by_id(
+	chunkee = zrtos_vheap__get_by_id(
 		 &mem
 		,chunke
 	);
 
-	zrtos_mem__page_in(
+	zrtos_vheap__page_in(
 		 &mem
 		,chunkee
 	);
 
-	chunkaa = zrtos_mem__get_by_id(
+	chunkaa = zrtos_vheap__get_by_id(
 		 &mem
 		,chunka
 	);
-	chunkbb = zrtos_mem__get_by_id(
+	chunkbb = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkb
 	);
-	chunkcc = zrtos_mem__get_by_id(
+	chunkcc = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkc
 	);
 
-	chunkee = zrtos_mem__get_by_id(
+	chunkee = zrtos_vheap__get_by_id(
 		 &mem
 		,chunke
 	);
 
-	zrtos_mem__free(&mem,chunkb);
-	chunkaa = zrtos_mem__get_by_id(
+	zrtos_vheap__free(&mem,chunkb);
+	chunkaa = zrtos_vheap__get_by_id(
 		 &mem
 		,chunka
 	);
-	chunkcc = zrtos_mem__get_by_id(
+	chunkcc = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkc
 	);
-	zrtos_mem__free(&mem,chunka);
-	chunkcc = zrtos_mem__get_by_id(
+	zrtos_vheap__free(&mem,chunka);
+	chunkcc = zrtos_vheap__get_by_id(
 		 &mem
 		,chunkc
 	);
-	zrtos_mem__free(&mem,chunkc);
-	//zrtos_mem__free(&mem,chunke);
+	zrtos_vheap__free(&mem,chunkc);
+	//zrtos_vheap__free(&mem,chunke);
 
 	return 0;
 }

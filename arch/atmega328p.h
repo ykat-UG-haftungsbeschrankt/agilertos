@@ -25,6 +25,9 @@ typedef int8_t zrtos_arch_stack_signed_t;
 
 #define ZRTOS_ARCH__FATAL() ((void(*)(void))0)();
 
+#define ZRTOS_ARCH__SET_STACK_PTR(ptr) \
+    (SP = (uint16_t)(ptr))
+
 #define ZRTOS_ARCH__GET_STACK_PTR() \
     ((void*)SP)
 

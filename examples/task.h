@@ -49,7 +49,7 @@ int main(void){
 	for(size_t l=0;l<256;l++){
 		buffer[l] = l;
 	}
-	zrtos_str__swap_to_end(
+	zrtos_mem__left_rotate(
 		 buffer
 		,10
 		,100
@@ -57,8 +57,8 @@ int main(void){
 */
 	pthread_t task0;
 	pthread_t task1;
-	zrtos_mem_t mem;   
-	zrtos_mem__init(&mem,(void*)0x200,0x700-0x200);
+	zrtos_vheap_t mem;   
+	zrtos_vheap__init(&mem,(void*)0x200,0x700-0x200);
 
 	//zrtos_board__start_tick_timer();
 	
