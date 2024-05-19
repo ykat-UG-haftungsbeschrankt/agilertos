@@ -19,7 +19,7 @@ extern "C" {
 typedef struct _zrtos_task_scheduler_t{
 	zrtos_arch_stack_t *tmp_stack_ptr;
 	zrtos_mem_t               *heap;
-	uint16_t                  ctx_switch_task_stack[50];
+	uint16_t                  ctx_switch_task_stack[100];
 	size_t                    start_offset;
 }zrtos_task_scheduler_t;
 
@@ -79,9 +79,16 @@ void zrtos_task_scheduler__page_task_in(
 
 bool _zrtos_task_scheduler__set_active_task(
 	 /*zrtos_task_t      *task
-	,*/zrtos_mem_chunk_t *chunk
+	,zrtos_mem_chunk_t *chunk*/
+	zrtos_mem_chunk_uid_t uid
 ){
+	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
+	zrtos_mem_chunk_t *chunk;
 	zrtos_task_scheduler__page_task_out();
+	chunk = zrtos_mem__get_by_id(
+		 heap
+		,uid
+	);
 	zrtos_task_scheduler__page_task_in(/*task,*/chunk);
 
 	return true;
@@ -108,7 +115,7 @@ bool zrtos_task_scheduler__has_enough_stack_space(
 	return true;
 }
 
-bool zrtos_task_scheduler__start(void){
+bool zrtos_task_scheduler__start(void){ 
 	zrtos_mem_t *heap = zrtos_task_scheduler__get_heap();
 	zrtos_mem_chunk_t *chunk = zrtos_mem__get_by_type_ex(
 		 heap
@@ -173,7 +180,7 @@ void _zrtos_task_scheduler__switch_task(void){
 */
 					_zrtos_task_scheduler__set_active_task(
 						 /*task
-						,*/chunk
+						,*/zrtos_mem_chunk__get_uid(chunk)
 					);
 				}
 			}

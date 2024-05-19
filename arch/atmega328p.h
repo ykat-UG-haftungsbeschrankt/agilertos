@@ -41,7 +41,6 @@ typedef int8_t zrtos_arch_stack_signed_t;
     asm volatile ( "sei" :: );
 
 
-
 zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper( zrtos_arch_stack_t * pxTopOfStack,
                                      zrtos_arch_callback_t pxCode,
                                      void * pvParameters )
@@ -124,7 +123,7 @@ uint16_t usAddress;
     return pxTopOfStack;
 }
 
-zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
+zrtos_arch_stack_t *zrtos_arch__cpu_state_init_b(
 	 zrtos_arch_stack_t     *thiz
 	//,size_t                length
 	,zrtos_arch_callback_t callback
@@ -143,42 +142,48 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
 	);
 }
 
-#if 0
-zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
+zrtos_arch_stack_t *zrtos_arch__cpu_state_init_a(
 	 zrtos_arch_stack_t     *thiz
-	,size_t                length
+	//,size_t                length
 	,zrtos_arch_callback_t callback
 	,void                  *args
 ){
-	zrtos_arch_stack_t *pxTopOfStack = zrtos_types__ptr_add(thiz,length);
+	zrtos_arch_stack_t *pxTopOfStack = thiz;
 	zrtos_arch_stack_t *pxTopOfStackTmp = pxTopOfStack;
 	uint16_t usAddress = (uint16_t)callback;
-	zrtos_arch_stack_signed_t usValue = -6;
+	zrtos_arch_stack_signed_t usValue = 0;
 
-	for(;usValue < 0x32;){
-		if(usValue == 0x0A
+	pxTopOfStack -= 3;
+
+	for(;usValue < 32;){
+		/*if(usValue == 0x0A
 		|| usValue == 0x1A
 		|| usValue == 0x2A){
 			usValue+=6;
-		}
+		}*/
 		*pxTopOfStack-- = usValue++;
 	}
 
-	pxTopOfStackTmp[-3] = usAddress & 0x00ff;
-	pxTopOfStackTmp[-4] = (usAddress >> 8) & 0x00ff;
-	pxTopOfStackTmp[-5] = 0;
-	pxTopOfStackTmp[-6] = 0x80;//enable interrupts
-	pxTopOfStackTmp[-7] = 0;
+	pxTopOfStackTmp[0] = usAddress & 0x00ff;
+	pxTopOfStackTmp[-1] = (usAddress >> 8) & 0x00ff;
+	pxTopOfStackTmp[-2] = 0;
+	pxTopOfStackTmp[-3] = 0x80;//enable interrupts
+	pxTopOfStackTmp[-4] = 0;
 	usAddress = (uint16_t)args;
-	pxTopOfStackTmp[-30] = usAddress & 0x00ff;
-	pxTopOfStackTmp[-31] = (usAddress >> 8) & 0x00ff;
+	pxTopOfStackTmp[-27] = usAddress & 0x00ff;
+	pxTopOfStackTmp[-28] = (usAddress >> 8) & 0x00ff;
 
-	return ++pxTopOfStack;
+	return pxTopOfStack;
 }
+
+#if 0
+# define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_a
+#else
+# define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_b
 #endif
 
 #define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH() 33
-#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 10
+#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 20
 
 #define ZRTOS_ARCH__SAVE_CPU_STATE()                            \
     ;__asm__ __volatile__(                                      \

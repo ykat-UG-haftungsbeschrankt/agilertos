@@ -12,6 +12,7 @@ extern "C" {
 
 
 #include "zrtos_debug.h"
+#include "zrtos_str.h"
 #include "zrtos_mem_chunk.h"
 
 
@@ -46,28 +47,6 @@ bool zrtos_mem__init(
 	thiz->total_size = heap_size;
 
 	return true;
-}
-/*
-void _zrtos_mem__swap_uint8(uint8_t *src,uint8_t *dest){
-	uint8_t tmp = *src;
-	*src = *dest;
-	*dest = tmp;
-}
-*/
-void _zrtos_mem__swap_to_end(
-	 void *buffer
-	,size_t length
-	,size_t buffer_length
-){
-	size_t l = buffer_length - length;
-	uint8_t *src = buffer;
-	uint8_t *dest = src + length;
-	while(l--){
-		ZRTOS_TYPES__SWAP_PTR_CONTENTS(src,dest);
-		src++;
-		dest++;
-		//_zrtos_mem__swap_uint8(src++,dest++);
-	}
 }
 
 void *zrtos_mem__get_last_address(zrtos_mem_t *thiz){
@@ -163,33 +142,6 @@ size_t zrtos_mem__get_chunk_count(
 	return thiz->length / sizeof(zrtos_mem_chunk_t);
 }
 
-#ifdef ZRTOS__USE_MEMMOVE
-# define _zrtos_mem__memmove_right_overlapping memmove
-# define _zrtos_mem__memmove_left_overlapping memmove
-#else
-void _zrtos_mem__memmove_right_overlapping(
-	 uint8_t *dest
-	,uint8_t *src
-	,size_t length
-){
-	dest += --length;
-	src += length++;
-	while(length--){
-		*dest-- = *src--;
-	}
-}
-
-void zrtos_mem__memmove_left_overlapping(
-	  uint8_t *dest
-	 ,uint8_t *src
-	 ,size_t length
-){
-	while(length--){
-		*dest++ = *src++;
-	}
-}
-#endif
-
 zrtos_mem_chunk_t *_zrtos_mem__malloc(
 	 zrtos_mem_t *thiz
 	,zrtos_mem_type_t type
@@ -208,7 +160,7 @@ zrtos_mem_chunk_t *_zrtos_mem__malloc(
 
 		thiz->heap_size += length_total;
 
-		_zrtos_mem__memmove_right_overlapping(
+		zrtos_str__move_right_overlapping(
 			 dest - heap_length
 			,src - heap_length
 			,heap_length
@@ -319,12 +271,12 @@ void *_zrtos_mem__swap_to_heap_end(
 ){
 	uint8_t *buffer = heap;
 	void *ret = buffer + heap_length - chunk_length;
-	_zrtos_mem__swap_to_end(
+	zrtos_str__swap_to_end(
 		 buffer + chunk_offset
 		,chunk_length
 		,used_length - chunk_offset
 	);
-	_zrtos_mem__memmove_right_overlapping(
+	zrtos_str__move_right_overlapping(
 		 ret//buffer + heap_length - chunk_length
 		,buffer + used_length - chunk_length
 		,chunk_length
@@ -366,7 +318,7 @@ void zrtos_mem__page_out(
 	,size_t            length
 ){
 	uint8_t *heap_end_ptr = zrtos_types__ptr_add(thiz->ptr,thiz->heap_size);
-	zrtos_mem__memmove_left_overlapping(
+	zrtos_str__move_left_overlapping(
 		 heap_end_ptr
 		,zrtos_types__ptr_add(thiz->ptr,thiz->total_size - length)
 		,length
@@ -380,7 +332,7 @@ void zrtos_mem__page_out(
 
 	//move chunk to end of index
 	size_t index_length = (sizeof(zrtos_mem_chunk_t) * thiz->length);
-	_zrtos_mem__swap_to_end(
+	zrtos_str__swap_to_end(
 		 chunk
 		,sizeof(zrtos_mem_chunk_t)
 		,zrtos_types__ptr_get_byte_distance(
