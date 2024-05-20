@@ -91,11 +91,250 @@ $(function(){initNavTree('arduino_8h.html',''); initResizable(); });
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">arduino.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a href="arduino_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a7c67b7c18acb253dd4d349916b6d047e" id="r_a7c67b7c18acb253dd4d349916b6d047e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c67b7c18acb253dd4d349916b6d047e">ZRTOS_BOARD__FOUND</a></td></tr>
+<tr class="separator:a7c67b7c18acb253dd4d349916b6d047e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb4a3dada646b612ed29fb1bcd8b4a1" id="r_a7eb4a3dada646b612ed29fb1bcd8b4a1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7eb4a3dada646b612ed29fb1bcd8b4a1">ZRTOS_BOARD__TICK_PERIOD_MS</a>&#160;&#160;&#160;	(MICROSECONDS_PER_TIMER0_OVERFLOW/1000)</td></tr>
+<tr class="separator:a7eb4a3dada646b612ed29fb1bcd8b4a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ffd43f0752f95f1ccb4da627766ae0" id="r_a93ffd43f0752f95f1ccb4da627766ae0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93ffd43f0752f95f1ccb4da627766ae0">ZRTOS_BOARD__WATCH_DOG_START</a>()&#160;&#160;&#160;    wdt_enable(WDTO_8S);</td></tr>
+<tr class="separator:a93ffd43f0752f95f1ccb4da627766ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf9d1fb11e6b59a38b02bc38244d783" id="r_aabf9d1fb11e6b59a38b02bc38244d783"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabf9d1fb11e6b59a38b02bc38244d783">ZRTOS_BOARD__WATCH_DOG_STOP</a>()&#160;&#160;&#160;    wdt_disable();</td></tr>
+<tr class="separator:aabf9d1fb11e6b59a38b02bc38244d783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5014f03942cee2f0a4a02c5dd4462444" id="r_a5014f03942cee2f0a4a02c5dd4462444"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5014f03942cee2f0a4a02c5dd4462444">ZRTOS_BOARD__WATCH_DOG_RESET</a>()&#160;&#160;&#160;    wdt_reset();</td></tr>
+<tr class="separator:a5014f03942cee2f0a4a02c5dd4462444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8e093dc856bff2ca41d346f1dc8bc116" id="r_a8e093dc856bff2ca41d346f1dc8bc116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a> (void)</td></tr>
+<tr class="separator:a8e093dc856bff2ca41d346f1dc8bc116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c3e5f10628a4889944004c7791729c" id="r_ab8c3e5f10628a4889944004c7791729c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8c3e5f10628a4889944004c7791729c">ISR</a> (TIMER0_OVF_vect, ISR_NAKED)</td></tr>
+<tr class="separator:ab8c3e5f10628a4889944004c7791729c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43905d6fb5c4d433a49f527fa6ab811f" id="r_a43905d6fb5c4d433a49f527fa6ab811f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43905d6fb5c4d433a49f527fa6ab811f">ISR</a> (WDT_vect)</td></tr>
+<tr class="separator:a43905d6fb5c4d433a49f527fa6ab811f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7c67b7c18acb253dd4d349916b6d047e" name="a7c67b7c18acb253dd4d349916b6d047e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c67b7c18acb253dd4d349916b6d047e">&#9670;&#160;</a></span>ZRTOS_BOARD__FOUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__FOUND</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00014">14</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+
+</div>
+</div>
+<a id="a7eb4a3dada646b612ed29fb1bcd8b4a1" name="a7eb4a3dada646b612ed29fb1bcd8b4a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7eb4a3dada646b612ed29fb1bcd8b4a1">&#9670;&#160;</a></span>ZRTOS_BOARD__TICK_PERIOD_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__TICK_PERIOD_MS&#160;&#160;&#160;	(MICROSECONDS_PER_TIMER0_OVERFLOW/1000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00078">78</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span><span class="preprocessor">#define ZRTOS_BOARD__TICK_PERIOD_MS\</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">    (MICROSECONDS_PER_TIMER0_OVERFLOW/1000)</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5014f03942cee2f0a4a02c5dd4462444" name="a5014f03942cee2f0a4a02c5dd4462444"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5014f03942cee2f0a4a02c5dd4462444">&#9670;&#160;</a></span>ZRTOS_BOARD__WATCH_DOG_RESET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__WATCH_DOG_RESET</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td>&#160;&#160;&#160;    wdt_reset();</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00118">118</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span><span class="preprocessor">#define ZRTOS_BOARD__WATCH_DOG_RESET() \</span></div>
+<div class="line"><span class="lineno">  119</span><span class="preprocessor">    wdt_reset();</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a93ffd43f0752f95f1ccb4da627766ae0" name="a93ffd43f0752f95f1ccb4da627766ae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ffd43f0752f95f1ccb4da627766ae0">&#9670;&#160;</a></span>ZRTOS_BOARD__WATCH_DOG_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__WATCH_DOG_START</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td>&#160;&#160;&#160;    wdt_enable(WDTO_8S);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00112">112</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span><span class="preprocessor">#define ZRTOS_BOARD__WATCH_DOG_START() \</span></div>
+<div class="line"><span class="lineno">  113</span><span class="preprocessor">    wdt_enable(WDTO_8S);</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aabf9d1fb11e6b59a38b02bc38244d783" name="aabf9d1fb11e6b59a38b02bc38244d783"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf9d1fb11e6b59a38b02bc38244d783">&#9670;&#160;</a></span>ZRTOS_BOARD__WATCH_DOG_STOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_BOARD__WATCH_DOG_STOP</td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td>&#160;&#160;&#160;    wdt_disable();</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00115">115</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span><span class="preprocessor">#define ZRTOS_BOARD__WATCH_DOG_STOP() \</span></div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">    wdt_disable();</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ab8c3e5f10628a4889944004c7791729c" name="ab8c3e5f10628a4889944004c7791729c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c3e5f10628a4889944004c7791729c">&#9670;&#160;</a></span>ISR() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">TIMER0_OVF_vect</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ISR_NAKED</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00100">100</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                              {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="comment">//called every 16 ms</span></div>
+<div class="line"><span class="lineno">  102</span>    <a class="code hl_define" href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
+<div class="line"><span class="lineno">  103</span>    <span class="comment">// @todo save register on stack</span></div>
+<div class="line"><span class="lineno">  104</span>    <a class="code hl_function" href="#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><span class="lineno">  105</span>    <a class="code hl_variable" href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a>();</div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">//avr/time.h system_tick();</span></div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_define" href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
+<div class="line"><span class="lineno">  108</span>    <a class="code hl_variable" href="zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a>();</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_define" href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a>();</div>
+<div class="line"><span class="lineno">  110</span>}</div>
+<div class="ttc" id="aarduino_8h_html_a8e093dc856bff2ca41d346f1dc8bc116"><div class="ttname"><a href="#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a></div><div class="ttdeci">void zrtos_board_arduino__on_ovf(void)</div><div class="ttdef"><b>Definition</b> <a href="arduino_8h_source.html#l00081">arduino.h:81</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a1bb4fc060fe3f863a6209873f4b052f0"><div class="ttname"><a href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__LOAD_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00241">atmega328p.h:241</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a5147fe8b6fc6553050c0f115bf7091c0"><div class="ttname"><a href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a></div><div class="ttdeci">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00289">atmega328p.h:289</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00191">atmega328p.h:191</a></div></div>
+<div class="ttc" id="azrtos__board_8h_html_a42a3f8dd109dd5024a599bb69766a09b"><div class="ttname"><a href="zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a></div><div class="ttdeci">void(* zrtos_board__on_tick_naked)(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00034">zrtos_board.h:34</a></div></div>
+<div class="ttc" id="azrtos__board_8h_html_ad7e85a8be90115b03950e72b72e5c0d3"><div class="ttname"><a href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a></div><div class="ttdeci">void(* zrtos_board__on_tick)(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00033">zrtos_board.h:33</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arduino_8h_ab8c3e5f10628a4889944004c7791729c_cgraph.png" border="0" usemap="#aarduino_8h_ab8c3e5f10628a4889944004c7791729c_cgraph" alt=""/></div>
+<map name="aarduino_8h_ab8c3e5f10628a4889944004c7791729c_cgraph" id="aarduino_8h_ab8c3e5f10628a4889944004c7791729c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,48,40"/>
+<area shape="rect" href="arduino_8h.html#a8e093dc856bff2ca41d346f1dc8bc116" title=" " alt="" coords="96,5,234,48"/>
+<area shape="poly" title=" " alt="" coords="48,24,80,24,80,29,48,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a43905d6fb5c4d433a49f527fa6ab811f" name="a43905d6fb5c4d433a49f527fa6ab811f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43905d6fb5c4d433a49f527fa6ab811f">&#9670;&#160;</a></span>ISR() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ISR </td>
+          <td>(</td>
+          <td class="paramtype">WDT_vect</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00121">121</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>                                   {</div>
+<div class="line"><span class="lineno">  122</span>    ZRTOS_BOARD__ON_WATCH_DOG();</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8e093dc856bff2ca41d346f1dc8bc116" name="a8e093dc856bff2ca41d346f1dc8bc116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e093dc856bff2ca41d346f1dc8bc116">&#9670;&#160;</a></span>zrtos_board_arduino__on_ovf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_board_arduino__on_ovf </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="arduino_8h_source.html#l00081">81</a> of file <a class="el" href="arduino_8h_source.html">arduino.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                      {</div>
+<div class="line"><span class="lineno">   82</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m = timer0_millis;</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> f = timer0_fract;</div>
+<div class="line"><span class="lineno">   84</span>    m += MILLIS_INC;</div>
+<div class="line"><span class="lineno">   85</span>    f += FRACT_INC;</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span> (f &gt;= FRACT_MAX) {</div>
+<div class="line"><span class="lineno">   87</span>        f -= FRACT_MAX;</div>
+<div class="line"><span class="lineno">   88</span>        m += 1;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    timer0_fract = f;</div>
+<div class="line"><span class="lineno">   91</span>    timer0_millis = m;</div>
+<div class="line"><span class="lineno">   92</span>    timer0_overflow_count++;</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="arduino_8h_a8e093dc856bff2ca41d346f1dc8bc116_icgraph.png" border="0" usemap="#aarduino_8h_a8e093dc856bff2ca41d346f1dc8bc116_icgraph" alt=""/></div>
+<map name="aarduino_8h_a8e093dc856bff2ca41d346f1dc8bc116_icgraph" id="aarduino_8h_a8e093dc856bff2ca41d346f1dc8bc116_icgraph">
+<area shape="rect" title=" " alt="" coords="96,5,234,48"/>
+<area shape="rect" href="arduino_8h.html#ab8c3e5f10628a4889944004c7791729c" title=" " alt="" coords="5,13,48,40"/>
+<area shape="poly" title=" " alt="" coords="80,29,48,29,48,24,80,24"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

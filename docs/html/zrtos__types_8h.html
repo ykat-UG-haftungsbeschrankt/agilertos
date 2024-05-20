@@ -100,16 +100,19 @@ $(function(){initNavTree('zrtos__types_8h.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for zrtos_types.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__types_8h__incl.png" border="0" usemap="#azrtos__types_8h" alt=""/></div>
 <map name="azrtos__types_8h" id="azrtos__types_8h">
-<area shape="rect" title=" " alt="" coords="39,5,139,32"/>
+<area shape="rect" title=" " alt="" coords="87,5,187,32"/>
 <area shape="rect" title=" " alt="" coords="5,80,80,107"/>
-<area shape="poly" title=" " alt="" coords="83,34,61,68,56,66,79,31"/>
+<area shape="poly" title=" " alt="" coords="122,35,73,73,69,68,119,30"/>
 <area shape="rect" title=" " alt="" coords="104,80,171,107"/>
-<area shape="poly" title=" " alt="" coords="100,31,123,66,118,69,95,34"/>
+<area shape="poly" title=" " alt="" coords="140,33,140,64,135,64,135,33"/>
+<area shape="rect" title=" " alt="" coords="195,80,258,107"/>
+<area shape="poly" title=" " alt="" coords="154,30,201,68,198,72,151,35"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -117,40 +120,29 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__types_8h__dep__incl.png" border="0" usemap="#azrtos__types_8hdep" alt=""/></div>
 <map name="azrtos__types_8hdep" id="azrtos__types_8hdep">
-<area shape="rect" title=" " alt="" coords="480,5,580,32"/>
-<area shape="rect" href="zrtos__arch_8h.html" title=" " alt="" coords="186,80,279,107"/>
-<area shape="poly" title=" " alt="" coords="465,38,280,83,279,78,464,33"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="209,304,352,331"/>
-<area shape="poly" title=" " alt="" coords="542,45,554,92,561,150,560,180,554,209,543,235,524,258,485,285,441,302,396,313,353,318,353,313,395,308,439,297,482,280,520,254,538,232,549,207,555,179,556,150,549,93,537,47"/>
-<area shape="rect" href="zrtos__malloc_8h.html" title=" " alt="" coords="612,80,718,107"/>
-<area shape="poly" title=" " alt="" coords="568,37,642,77,640,82,565,42"/>
-<area shape="rect" href="zrtos__mem_8h.html" title=" " alt="" coords="437,80,535,107"/>
-<area shape="poly" title=" " alt="" coords="517,47,496,81,491,78,512,44"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html" title=" " alt="" coords="329,229,486,256"/>
-<area shape="poly" title=" " alt="" coords="477,41,449,58,427,81,410,120,404,161,405,200,408,228,402,229,399,200,399,161,405,118,422,79,446,54,474,37"/>
-<area shape="rect" href="zrtos__str_8h.html" title=" " alt="" coords="742,80,825,107"/>
-<area shape="poly" title=" " alt="" coords="589,34,742,78,741,83,588,39"/>
-<area shape="rect" href="zrtos_8h.html" title=" " alt="" coords="121,155,182,181"/>
-<area shape="poly" title=" " alt="" coords="209,119,167,156,164,152,205,115"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="105,379,166,405"/>
-<area shape="poly" title=" " alt="" coords="112,192,90,209,74,231,67,250,67,271,72,292,80,312,103,349,125,377,121,380,99,352,75,315,67,294,62,272,62,250,69,228,86,205,109,188"/>
-<area shape="rect" href="mem_8h.html" title=" " alt="" coords="243,229,305,256"/>
-<area shape="poly" title=" " alt="" coords="187,187,254,226,251,231,184,192"/>
-<area shape="rect" href="task_8h.html" title=" " alt="" coords="5,379,63,405"/>
-<area shape="poly" title=" " alt="" coords="108,191,82,208,62,231,44,270,36,311,34,349,35,378,30,378,29,349,31,311,39,268,57,228,79,204,105,186"/>
-<area shape="rect" href="zrtos__task__mutex_8h.html" title=" " alt="" coords="83,229,220,256"/>
-<area shape="poly" title=" " alt="" coords="154,197,154,229,149,229,149,197"/>
-<area shape="poly" title=" " alt="" coords="188,262,259,301,257,306,186,266"/>
-<area shape="poly" title=" " alt="" coords="243,340,162,380,160,376,241,335"/>
-<area shape="poly" title=" " alt="" coords="224,338,64,385,62,380,223,333"/>
-<area shape="rect" href="malloc_8h.html" title=" " alt="" coords="630,155,700,181"/>
-<area shape="poly" title=" " alt="" coords="667,122,667,154,662,154,662,122"/>
-<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="435,155,537,181"/>
-<area shape="poly" title=" " alt="" coords="489,122,489,154,483,154,483,122"/>
-<area shape="poly" title=" " alt="" coords="436,189,306,233,304,228,434,184"/>
-<area shape="poly" title=" " alt="" coords="502,195,509,226,507,243,500,258,477,275,440,288,353,308,352,303,439,283,474,270,496,254,502,241,503,227,496,197"/>
-<area shape="poly" title=" " alt="" coords="463,194,423,231,419,227,459,190"/>
-<area shape="poly" title=" " alt="" coords="374,266,304,306,302,301,371,262"/>
+<area shape="rect" title=" " alt="" coords="282,5,382,32"/>
+<area shape="rect" href="zrtos__arch_8h.html" title=" " alt="" coords="43,80,136,107"/>
+<area shape="poly" title=" " alt="" coords="276,39,133,82,131,77,275,34"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="145,304,288,331"/>
+<area shape="poly" title=" " alt="" coords="268,37,233,55,218,67,206,81,193,110,186,141,185,173,187,205,200,262,213,303,208,304,194,264,182,205,179,173,181,140,188,108,202,79,215,63,230,50,266,32"/>
+<area shape="rect" href="zrtos__malloc_8h.html" title=" " alt="" coords="216,80,323,107"/>
+<area shape="poly" title=" " alt="" coords="313,46,282,81,278,78,309,42"/>
+<area shape="rect" href="zrtos__mem_8h.html" title=" " alt="" coords="346,80,444,107"/>
+<area shape="poly" title=" " alt="" coords="355,42,386,78,382,81,351,46"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html" title=" " alt="" coords="303,229,460,256"/>
+<area shape="poly" title=" " alt="" coords="398,34,431,51,457,79,463,99,463,126,457,155,447,183,426,210,402,231,398,227,422,207,442,180,452,154,457,125,458,99,453,81,428,56,395,38"/>
+<area shape="rect" href="zrtos__str_8h.html" title=" " alt="" coords="519,80,602,107"/>
+<area shape="poly" title=" " alt="" coords="387,35,521,77,519,82,386,40"/>
+<area shape="rect" href="zrtos_8h.html" title=" " alt="" coords="48,155,110,181"/>
+<area shape="poly" title=" " alt="" coords="88,122,83,155,78,154,83,122"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html" title=" " alt="" coords="5,229,142,256"/>
+<area shape="poly" title=" " alt="" coords="79,197,77,229,72,229,74,197"/>
+<area shape="poly" title=" " alt="" coords="113,261,192,301,190,306,111,266"/>
+<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="331,155,432,181"/>
+<area shape="poly" title=" " alt="" coords="392,123,386,155,381,154,387,122"/>
+<area shape="poly" title=" " alt="" coords="347,192,293,231,255,271,227,306,223,302,251,267,289,227,344,188"/>
+<area shape="poly" title=" " alt="" coords="384,197,384,229,379,229,379,197"/>
+<area shape="poly" title=" " alt="" coords="340,265,246,306,244,301,338,260"/>
 </map>
 </div>
 </div>
@@ -158,13 +150,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2b31407f452e9602f42514f071d68386" id="r_a2b31407f452e9602f42514f071d68386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>,  <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)&#160;&#160;&#160;((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)&lt;(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)?(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>):(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>))</td></tr>
+<tr class="memitem:a2b31407f452e9602f42514f071d68386" id="r_a2b31407f452e9602f42514f071d68386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(a,  b)&#160;&#160;&#160;((a)&lt;(b)?(a):(b))</td></tr>
 <tr class="separator:a2b31407f452e9602f42514f071d68386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e8485e5ce88712e64a5a964f507cf8a" id="r_a1e8485e5ce88712e64a5a964f507cf8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a>(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>,  <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)&#160;&#160;&#160;((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)&gt;(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)?(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>):(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>))</td></tr>
+<tr class="memitem:a1e8485e5ce88712e64a5a964f507cf8a" id="r_a1e8485e5ce88712e64a5a964f507cf8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a>(a,  b)&#160;&#160;&#160;((a)&gt;(b)?(a):(b))</td></tr>
 <tr class="separator:a1e8485e5ce88712e64a5a964f507cf8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f4eaa4b4f1a02421779d9923bc8300d" id="r_a2f4eaa4b4f1a02421779d9923bc8300d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>,  <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)</td></tr>
+<tr class="memitem:a2f4eaa4b4f1a02421779d9923bc8300d" id="r_a2f4eaa4b4f1a02421779d9923bc8300d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(a,  b)</td></tr>
 <tr class="separator:a2f4eaa4b4f1a02421779d9923bc8300d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb224a2a8a72b40471541a17c4270ef0" id="r_acb224a2a8a72b40471541a17c4270ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb224a2a8a72b40471541a17c4270ef0">ZRTOS_TYPES__NO_ADD_OVERFLOW</a>(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>,  <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)&#160;&#160;&#160;    (((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a> + <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a> ) &gt;= <a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)))</td></tr>
+<tr class="memitem:acb224a2a8a72b40471541a17c4270ef0" id="r_acb224a2a8a72b40471541a17c4270ef0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb224a2a8a72b40471541a17c4270ef0">ZRTOS_TYPES__NO_ADD_OVERFLOW</a>(a,  b)&#160;&#160;&#160;    (((a + b ) &gt;= a)))</td></tr>
 <tr class="separator:acb224a2a8a72b40471541a17c4270ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a351fbba8d81ac528b75fe4431d0d9802" id="r_a351fbba8d81ac528b75fe4431d0d9802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a351fbba8d81ac528b75fe4431d0d9802">ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH</a>(arr)&#160;&#160;&#160;    (sizeof(arr)/sizeof((arr)[0]))</td></tr>
 <tr class="separator:a351fbba8d81ac528b75fe4431d0d9802"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,11 +170,11 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab0b4ddf54b9e9f4a54504f833babbc1c" id="r_ab0b4ddf54b9e9f4a54504f833babbc1c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a> (void *<a class="el" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>, <a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> byte_len)</td></tr>
+<tr class="memitem:ab0b4ddf54b9e9f4a54504f833babbc1c" id="r_ab0b4ddf54b9e9f4a54504f833babbc1c"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a> (void *ptr, <a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a> byte_len)</td></tr>
 <tr class="separator:ab0b4ddf54b9e9f4a54504f833babbc1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1824c547b5262eed148a0bfac2912537" id="r_a1824c547b5262eed148a0bfac2912537"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a> (void *<a class="el" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>, <a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> byte_len)</td></tr>
+<tr class="memitem:a1824c547b5262eed148a0bfac2912537" id="r_a1824c547b5262eed148a0bfac2912537"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a> (void *ptr, <a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a> byte_len)</td></tr>
 <tr class="separator:a1824c547b5262eed148a0bfac2912537"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbc4238237e656eb247fd49ffbfb1a6d" id="r_adbc4238237e656eb247fd49ffbfb1a6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a> (void *bigger, void *smaller)</td></tr>
+<tr class="memitem:adbc4238237e656eb247fd49ffbfb1a6d" id="r_adbc4238237e656eb247fd49ffbfb1a6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a> (void *bigger, void *smaller)</td></tr>
 <tr class="separator:adbc4238237e656eb247fd49ffbfb1a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -216,12 +208,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">#define ZRTOS_TYPES__MAX</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>, </span></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">a, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></span>&#160;)&#160;&#160;&#160;((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)&gt;(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)?(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>):(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>))</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">b</span>&#160;)&#160;&#160;&#160;((a)&gt;(b)?(a):(b))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -239,12 +231,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">#define ZRTOS_TYPES__MIN</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>, </span></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">a, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></span>&#160;)&#160;&#160;&#160;((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)&lt;(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>)?(<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>):(<a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>))</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">b</span>&#160;)&#160;&#160;&#160;((a)&lt;(b)?(a):(b))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -262,12 +254,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">#define ZRTOS_TYPES__NO_ADD_OVERFLOW</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>, </span></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">a, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></span>&#160;)&#160;&#160;&#160;    (((<a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a> + <a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a> ) &gt;= <a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>)))</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">b</span>&#160;)&#160;&#160;&#160;    (((a + b ) &gt;= a)))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -287,22 +279,20 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>, </span></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">a, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><a class="el" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">b</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>{                                     \</div>
-<div class="line">        typeof(*<a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>) a____ = *(<a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>);            \</div>
-<div class="line">        *(<a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>) = *(<a class="code hl_variable" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>);                        \</div>
-<div class="line">        *(<a class="code hl_variable" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>) = a____;                       \</div>
+<div class="line">        typeof(*a) a____ = *(a);            \</div>
+<div class="line">        *(a) = *(b);                        \</div>
+<div class="line">        *(b) = a____;                       \</div>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
-<div class="ttc" id="atask_8h_html_a43b6d2cb6d9260a7ffdd0b094aa9fcfc"><div class="ttname"><a href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a></div><div class="ttdeci">unsigned a</div><div class="ttdef"><b>Definition</b> <a href="task_8h_source.html#l00014">task.h:14</a></div></div>
-<div class="ttc" id="atask_8h_html_af17f0ab7a33d14841ab6217811a1de6b"><div class="ttname"><a href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></div><div class="ttdeci">unsigned b</div><div class="ttdef"><b>Definition</b> <a href="task_8h_source.html#l00015">task.h:15</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00042">42</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   42</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \</span></div>
@@ -322,7 +312,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint16_t <a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>
+          <td class="memname">typedef uint16_t <a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -338,7 +328,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef int16_t <a class="el" href="mem_8h.html#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a></td>
+          <td class="memname">typedef int16_t <a class="el" href="#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -362,104 +352,95 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>byte_len</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>byte_len</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00027">27</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   27</span>                                                     {</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> ((uint8_t*)<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>)+byte_len;</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)+byte_len;</div>
 <div class="line"><span class="lineno">   29</span>}</div>
-<div class="ttc" id="azrtos__vheap__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00001">zrtos_vheap_chunk.h:1</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__types_8h_ab0b4ddf54b9e9f4a54504f833babbc1c_icgraph.png" border="0" usemap="#azrtos__types_8h_ab0b4ddf54b9e9f4a54504f833babbc1c_icgraph" alt=""/></div>
 <map name="azrtos__types_8h_ab0b4ddf54b9e9f4a54504f833babbc1c_icgraph" id="azrtos__types_8h_ab0b4ddf54b9e9f4a54504f833babbc1c_icgraph">
-<area shape="rect" title=" " alt="" coords="2258,224,2404,251"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title=" " alt="" coords="2059,5,2191,32"/>
-<area shape="poly" title=" " alt="" coords="2316,211,2300,175,2276,133,2245,90,2208,53,2177,35,2179,30,2212,49,2249,87,2280,130,2304,172,2321,208"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="1237,216,1344,243"/>
-<area shape="poly" title=" " alt="" coords="2312,212,2270,159,2241,133,2209,113,2127,80,2055,60,1990,50,1927,50,1863,56,1795,67,1630,97,1536,120,1447,154,1371,189,1317,218,1314,213,1369,184,1445,149,1534,115,1628,92,1794,62,1862,51,1927,44,1990,45,2056,55,2129,75,2211,108,2245,129,2274,155,2316,209"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1" title=" " alt="" coords="2047,341,2203,384"/>
-<area shape="poly" title=" " alt="" coords="2305,263,2263,297,2211,332,2188,343,2186,338,2209,327,2259,293,2302,259"/>
-<area shape="rect" href="zrtos__malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f" title=" " alt="" coords="2062,408,2188,435"/>
-<area shape="poly" title=" " alt="" coords="2319,266,2277,332,2247,368,2212,398,2189,410,2187,405,2208,394,2243,364,2272,329,2314,263"/>
-<area shape="rect" href="zrtos__mem_8h.html#a76a7df82d207aef7d339f7ff95cce550" title=" " alt="" coords="2049,123,2201,149"/>
-<area shape="poly" title=" " alt="" coords="2294,218,2209,170,2165,152,2167,147,2211,166,2297,213"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289" title=" " alt="" coords="1432,173,1581,200"/>
-<area shape="poly" title=" " alt="" coords="2242,242,1968,239,1798,230,1629,215,1564,203,1565,198,1629,209,1799,225,1968,233,2242,236"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397" title=" " alt="" coords="1629,173,1786,200"/>
-<area shape="poly" title=" " alt="" coords="2242,225,2210,221,1979,202,1787,192,1787,187,1980,197,2210,216,2243,220"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a9cff4e6aefa63154b78bcb1a5f442d72" title=" " alt="" coords="2050,275,2200,317"/>
-<area shape="poly" title=" " alt="" coords="2268,258,2201,277,2200,272,2267,253"/>
-<area shape="rect" href="zrtos__vheap__chunk__index_8h.html#a4d8ec175fa301d78115a2768077d2525" title=" " alt="" coords="2040,459,2210,501"/>
-<area shape="poly" title=" " alt="" coords="2323,266,2307,306,2284,355,2252,405,2212,449,2195,460,2192,456,2208,445,2248,402,2279,352,2302,304,2318,264"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="1444,5,1569,32"/>
-<area shape="poly" title=" " alt="" coords="2043,21,1570,21,1570,16,2043,16"/>
-<area shape="rect" href="mem_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="1049,111,1098,137"/>
-<area shape="poly" title=" " alt="" coords="1428,20,1318,28,1257,38,1198,53,1168,66,1139,81,1094,112,1091,108,1137,77,1166,61,1196,48,1256,32,1317,22,1428,15"/>
-<area shape="rect" href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="50,351,99,377"/>
-<area shape="poly" title=" " alt="" coords="1222,239,1063,251,874,257,474,257,419,260,363,269,255,296,164,328,101,355,98,350,162,323,254,291,362,263,418,255,474,252,874,252,1063,245,1222,233"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="1839,560,1987,587"/>
-<area shape="poly" title=" " alt="" coords="2044,396,2042,398,2028,416,2022,433,2018,469,2015,505,2007,524,1994,543,1967,562,1964,557,1990,539,2003,522,2010,504,2013,468,2016,432,2024,413,2038,394,2040,392"/>
-<area shape="rect" href="malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="1683,560,1732,587"/>
-<area shape="poly" title=" " alt="" coords="1824,576,1733,576,1733,571,1824,571"/>
-<area shape="rect" href="zrtos__mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57" title=" " alt="" coords="1834,123,1992,149"/>
-<area shape="poly" title=" " alt="" coords="2033,139,1992,139,1992,133,2033,133"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a89842c4003afd30fbe7b90db0f9a7125" title=" " alt="" coords="1637,107,1778,149"/>
-<area shape="poly" title=" " alt="" coords="1819,135,1779,133,1779,128,1819,130"/>
-<area shape="poly" title=" " alt="" coords="1842,156,1765,175,1764,170,1840,151"/>
-<area shape="poly" title=" " alt="" coords="1623,155,1556,175,1554,170,1622,150"/>
-<area shape="poly" title=" " alt="" coords="1416,176,1098,130,1099,125,1417,171"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1218,317,1363,360"/>
-<area shape="poly" title=" " alt="" coords="1487,214,1443,261,1415,286,1385,308,1363,319,1361,314,1382,303,1412,282,1439,257,1483,210"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="997,443,1149,485"/>
-<area shape="poly" title=" " alt="" coords="1209,369,1199,374,1145,409,1101,444,1097,440,1142,405,1196,370,1206,364"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="800,317,946,360"/>
-<area shape="poly" title=" " alt="" coords="1202,341,946,341,946,336,1202,336"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,431,949,473"/>
-<area shape="poly" title=" " alt="" coords="981,461,949,459,949,454,982,456"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,431,749,473"/>
-<area shape="poly" title=" " alt="" coords="781,455,749,455,749,449,781,449"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,431,548,473"/>
-<area shape="poly" title=" " alt="" coords="581,455,549,455,549,449,581,449"/>
-<area shape="rect" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4" title=" " alt="" coords="235,376,312,403"/>
-<area shape="poly" title=" " alt="" coords="389,428,311,403,312,398,391,423"/>
-<area shape="rect" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2" title=" " alt="" coords="235,427,312,453"/>
-<area shape="poly" title=" " alt="" coords="388,449,312,445,312,440,388,444"/>
-<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,477,355,504"/>
-<area shape="poly" title=" " alt="" coords="389,471,347,479,346,474,388,466"/>
-<area shape="poly" title=" " alt="" coords="219,385,99,370,100,364,220,380"/>
-<area shape="poly" title=" " alt="" coords="219,427,191,417,98,378,101,373,193,412,221,422"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,477,144,504"/>
-<area shape="poly" title=" " alt="" coords="176,493,144,493,144,488,176,488"/>
-<area shape="poly" title=" " alt="" coords="785,344,100,366,100,361,785,339"/>
-<area shape="poly" title=" " alt="" coords="1627,172,1581,164,1482,149,1383,140,1220,131,1098,127,1098,122,1221,125,1384,135,1483,144,1581,159,1628,167"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1434,443,1579,485"/>
-<area shape="poly" title=" " alt="" coords="1690,214,1526,444,1521,441,1686,211"/>
-<area shape="poly" title=" " alt="" coords="1418,467,1150,467,1150,461,1418,461"/>
-<area shape="poly" title=" " alt="" coords="2034,292,1345,236,1345,231,2034,286"/>
-<area shape="poly" title=" " alt="" coords="2044,329,2042,331,2030,346,2024,360,2019,389,2014,419,2007,434,1993,449,1946,480,1894,501,1838,513,1780,517,1724,515,1670,508,1577,489,1578,483,1671,503,1724,509,1780,511,1837,507,1892,496,1944,476,1990,445,2002,431,2009,418,2014,389,2019,358,2026,343,2038,328,2040,325"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1632,443,1784,485"/>
-<area shape="poly" title=" " alt="" coords="2048,327,2041,331,2027,344,2018,357,2009,370,1993,382,1942,409,1887,429,1785,455,1784,450,1885,424,1939,404,1990,378,2005,366,2014,354,2023,341,2038,327,2045,323"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="1834,325,1992,368"/>
-<area shape="poly" title=" " alt="" coords="2035,320,1993,330,1992,325,2034,315"/>
-<area shape="poly" title=" " alt="" coords="1619,440,1363,363,1365,358,1620,435"/>
-<area shape="poly" title=" " alt="" coords="1618,492,1581,500,1437,521,1292,525,871,525,793,523,733,516,596,488,548,476,549,471,597,483,733,511,794,518,872,520,1292,520,1437,516,1581,495,1617,487"/>
-<area shape="poly" title=" " alt="" coords="1616,467,1580,467,1580,461,1616,461"/>
-<area shape="rect" href="zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="1629,325,1786,368"/>
-<area shape="poly" title=" " alt="" coords="1819,349,1787,349,1787,344,1819,344"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#aa79205b9c4c7a9ea0e2d0191f188da86" title=" " alt="" coords="1197,384,1384,427"/>
-<area shape="poly" title=" " alt="" coords="1825,375,1787,383,1679,396,1571,404,1384,409,1384,404,1570,399,1679,391,1786,377,1824,370"/>
-<area shape="rect" href="zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d" title=" " alt="" coords="1432,291,1581,317"/>
-<area shape="poly" title=" " alt="" coords="1613,329,1572,321,1573,315,1614,324"/>
-<area shape="poly" title=" " alt="" coords="1459,287,1383,257,1344,245,1345,240,1385,252,1461,282"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244" title=" " alt="" coords="1219,267,1362,293"/>
-<area shape="poly" title=" " alt="" coords="1416,297,1362,291,1362,285,1416,291"/>
-<area shape="poly" title=" " alt="" coords="1206,263,1196,257,1159,229,1126,196,1081,139,1086,136,1130,193,1162,225,1199,252,1209,258"/>
-<area shape="poly" title=" " alt="" coords="1182,415,997,433,950,441,949,435,997,428,1181,410"/>
+<area shape="rect" title=" " alt="" coords="2266,276,2412,303"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title=" " alt="" coords="2067,8,2199,35"/>
+<area shape="poly" title=" " alt="" coords="2326,262,2310,222,2286,171,2255,119,2216,71,2192,52,2166,38,2169,33,2195,48,2220,67,2259,116,2290,169,2315,219,2331,260"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1" title=" " alt="" coords="2055,392,2211,435"/>
+<area shape="poly" title=" " alt="" coords="2310,314,2219,376,2185,394,2182,389,2217,371,2307,310"/>
+<area shape="rect" href="zrtos__malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f" title=" " alt="" coords="2070,459,2196,485"/>
+<area shape="poly" title=" " alt="" coords="2327,318,2285,383,2255,419,2220,449,2197,461,2195,456,2216,444,2251,415,2280,380,2322,315"/>
+<area shape="rect" href="zrtos__mem_8h.html#a76a7df82d207aef7d339f7ff95cce550" title=" " alt="" coords="2057,205,2209,232"/>
+<area shape="poly" title=" " alt="" coords="2283,273,2173,235,2175,230,2284,268"/>
+<area shape="rect" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289" title=" " alt="" coords="1436,113,1585,140"/>
+<area shape="poly" title=" " alt="" coords="2314,267,2271,228,2245,210,2217,196,2133,167,2046,146,1957,132,1870,123,1710,118,1586,123,1585,117,1710,113,1870,118,1958,126,2047,141,2135,162,2219,191,2248,206,2275,224,2317,263"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397" title=" " alt="" coords="1637,75,1794,101"/>
+<area shape="poly" title=" " alt="" coords="2325,263,2309,229,2286,190,2255,152,2217,122,2164,98,2108,81,2050,71,1992,65,1882,67,1791,77,1790,71,1881,61,1992,60,2051,65,2109,76,2166,93,2219,118,2259,148,2290,187,2314,226,2330,261"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a9cff4e6aefa63154b78bcb1a5f442d72" title=" " alt="" coords="1641,268,1791,311"/>
+<area shape="poly" title=" " alt="" coords="2250,292,1791,292,1791,287,2250,287"/>
+<area shape="rect" href="zrtos__vheap__chunk_8h.html#aba957344872ae69126cf74e3c8941588" title=" " alt="" coords="1004,411,1143,453"/>
+<area shape="poly" title=" " alt="" coords="2251,302,1143,427,1143,422,2250,297"/>
+<area shape="rect" href="zrtos__vheap__chunk__index_8h.html#a4d8ec175fa301d78115a2768077d2525" title=" " alt="" coords="2048,509,2218,552"/>
+<area shape="poly" title=" " alt="" coords="2331,318,2315,358,2291,406,2260,456,2220,499,2203,511,2200,507,2216,495,2255,453,2287,404,2310,356,2326,316"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="610,25,735,52"/>
+<area shape="poly" title=" " alt="" coords="2051,19,1896,12,1717,8,1072,8,980,11,889,17,736,33,735,28,888,11,980,5,1072,3,1717,3,1897,6,2051,14"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="228,136,319,163"/>
+<area shape="poly" title=" " alt="" coords="608,59,320,140,318,134,606,54"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="1847,400,1995,427"/>
+<area shape="poly" title=" " alt="" coords="2040,416,1995,416,1995,411,2040,411"/>
+<area shape="rect" href="zrtos__mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57" title=" " alt="" coords="1842,184,2000,211"/>
+<area shape="poly" title=" " alt="" coords="2041,212,2000,208,2001,203,2042,207"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a89842c4003afd30fbe7b90db0f9a7125" title=" " alt="" coords="1645,176,1786,219"/>
+<area shape="poly" title=" " alt="" coords="1827,200,1787,200,1787,195,1827,195"/>
+<area shape="poly" title=" " alt="" coords="1879,179,1741,104,1744,99,1882,174"/>
+<area shape="poly" title=" " alt="" coords="1636,173,1551,143,1553,138,1638,168"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1218,109,1363,152"/>
+<area shape="poly" title=" " alt="" coords="1421,131,1364,132,1364,127,1421,126"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="997,43,1149,85"/>
+<area shape="poly" title=" " alt="" coords="1204,107,1145,89,1146,83,1206,102"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="1001,109,1146,152"/>
+<area shape="poly" title=" " alt="" coords="1202,133,1146,133,1146,128,1202,128"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,109,949,152"/>
+<area shape="poly" title=" " alt="" coords="994,93,940,111,939,106,992,88"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,109,749,152"/>
+<area shape="poly" title=" " alt="" coords="781,133,749,133,749,128,781,128"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,153,548,196"/>
+<area shape="poly" title=" " alt="" coords="582,154,549,161,548,156,581,148"/>
+<area shape="poly" title=" " alt="" coords="387,166,319,158,320,152,388,161"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,187,355,213"/>
+<area shape="poly" title=" " alt="" coords="388,188,356,192,355,187,388,183"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,187,144,213"/>
+<area shape="poly" title=" " alt="" coords="176,203,144,203,144,197,176,197"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1218,43,1363,85"/>
+<area shape="poly" title=" " alt="" coords="1621,85,1364,71,1364,65,1621,80"/>
+<area shape="poly" title=" " alt="" coords="1203,67,1150,67,1150,61,1203,61"/>
+<area shape="poly" title=" " alt="" coords="1675,261,1634,232,1588,205,1545,189,1508,183,1472,175,1430,154,1415,140,1405,126,1397,113,1382,99,1362,88,1365,84,1385,95,1401,109,1410,123,1419,137,1433,150,1474,170,1509,178,1546,184,1590,200,1637,227,1678,256"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1434,215,1587,257"/>
+<area shape="poly" title=" " alt="" coords="1625,268,1586,258,1588,253,1626,263"/>
+<area shape="rect" href="zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="1432,281,1589,324"/>
+<area shape="poly" title=" " alt="" coords="1625,298,1590,300,1589,295,1625,293"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="819,360,927,387"/>
+<area shape="poly" title=" " alt="" coords="1653,319,1590,339,1496,355,1400,367,1212,380,1047,382,927,379,927,373,1047,377,1211,374,1399,362,1495,350,1588,333,1651,314"/>
+<area shape="poly" title=" " alt="" coords="1452,209,1430,198,1382,173,1343,155,1345,150,1385,168,1433,194,1454,205"/>
+<area shape="poly" title=" " alt="" coords="1418,222,1383,217,1229,198,1162,194,1074,192,871,192,698,188,549,182,549,176,698,183,872,187,1075,187,1162,188,1230,193,1384,212,1419,217"/>
+<area shape="poly" title=" " alt="" coords="1441,208,1430,198,1412,172,1406,147,1399,123,1382,99,1362,86,1365,82,1386,95,1404,120,1411,145,1417,169,1434,194,1445,204"/>
+<area shape="rect" href="zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="1212,293,1369,336"/>
+<area shape="poly" title=" " alt="" coords="1416,310,1370,313,1370,308,1416,305"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#aa79205b9c4c7a9ea0e2d0191f188da86" title=" " alt="" coords="1197,227,1384,269"/>
+<area shape="poly" title=" " alt="" coords="1416,282,1378,273,1380,267,1417,277"/>
+<area shape="rect" href="zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d" title=" " alt="" coords="999,305,1148,332"/>
+<area shape="poly" title=" " alt="" coords="1196,319,1148,320,1148,315,1196,314"/>
+<area shape="poly" title=" " alt="" coords="1008,339,925,362,924,357,1006,334"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244" title=" " alt="" coords="802,305,944,332"/>
+<area shape="poly" title=" " alt="" coords="983,321,945,321,945,316,983,316"/>
+<area shape="poly" title=" " alt="" coords="1196,225,949,155,950,149,1198,219"/>
+<area shape="poly" title=" " alt="" coords="988,410,920,390,922,385,990,405"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a25b3029b9cae77d52af897192f1597ad" title=" " alt="" coords="412,308,540,335"/>
+<area shape="poly" title=" " alt="" coords="988,427,895,416,796,401,648,369,526,338,527,333,649,364,797,396,896,411,988,422"/>
+<area shape="poly" title=" " alt="" coords="457,296,415,236,386,204,354,177,318,161,320,156,356,172,390,200,419,232,461,293"/>
 </map>
 </div>
 
@@ -472,7 +453,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_types__ptr_get_byte_distance </td>
+          <td class="memname"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_types__ptr_get_byte_distance </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>bigger</em>, </span></td>
         </tr>
@@ -493,62 +474,49 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph.png" border="0" usemap="#azrtos__types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph" alt=""/></div>
 <map name="azrtos__types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph" id="azrtos__types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph">
-<area shape="rect" title=" " alt="" coords="1642,174,1785,217"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="1437,90,1594,133"/>
-<area shape="poly" title=" " alt="" coords="1646,170,1567,136,1569,131,1648,165"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="819,39,927,66"/>
-<area shape="poly" title=" " alt="" coords="1685,163,1644,120,1619,99,1593,80,1540,53,1495,38,1388,22,1279,10,1193,9,1107,17,997,30,928,42,927,37,997,25,1107,11,1193,4,1279,5,1389,17,1496,33,1542,48,1595,76,1623,94,1648,116,1688,160"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="1442,354,1589,381"/>
-<area shape="poly" title=" " alt="" coords="1682,230,1596,311,1538,356,1535,351,1592,307,1679,226"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1237,149,1383,191"/>
-<area shape="poly" title=" " alt="" coords="1626,193,1383,177,1383,172,1627,187"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289" title=" " alt="" coords="1441,270,1590,297"/>
-<area shape="poly" title=" " alt="" coords="1651,226,1548,272,1546,267,1649,221"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397" title=" " alt="" coords="1437,207,1594,234"/>
-<area shape="poly" title=" " alt="" coords="1627,209,1595,213,1594,208,1626,204"/>
-<area shape="rect" href="zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="1231,31,1389,74"/>
-<area shape="poly" title=" " alt="" coords="1423,88,1386,77,1388,72,1425,83"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#aa79205b9c4c7a9ea0e2d0191f188da86" title=" " alt="" coords="997,90,1183,133"/>
-<area shape="poly" title=" " alt="" coords="1421,114,1184,114,1184,109,1421,109"/>
-<area shape="rect" href="zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d" title=" " alt="" coords="1016,39,1165,66"/>
-<area shape="poly" title=" " alt="" coords="1216,55,1165,55,1165,50,1216,50"/>
-<area shape="poly" title=" " alt="" coords="1000,55,927,55,927,50,1000,50"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244" title=" " alt="" coords="802,98,944,125"/>
-<area shape="poly" title=" " alt="" coords="1024,73,926,100,924,95,1023,68"/>
-<area shape="rect" href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="50,190,99,217"/>
-<area shape="poly" title=" " alt="" coords="804,59,687,69,534,87,363,115,276,134,192,155,143,173,101,193,98,188,141,168,191,150,275,128,362,110,533,82,686,64,804,54"/>
-<area shape="rect" href="mem_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="648,157,697,183"/>
-<area shape="poly" title=" " alt="" coords="811,132,698,166,697,160,809,127"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,207,949,250"/>
-<area shape="poly" title=" " alt="" coords="1037,143,915,209,913,204,1034,138"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,207,749,250"/>
-<area shape="poly" title=" " alt="" coords="781,231,749,231,749,226,781,226"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,207,548,250"/>
-<area shape="poly" title=" " alt="" coords="581,231,549,231,549,226,581,226"/>
-<area shape="rect" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4" title=" " alt="" coords="235,165,312,191"/>
-<area shape="poly" title=" " alt="" coords="388,209,311,190,313,185,389,204"/>
-<area shape="rect" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2" title=" " alt="" coords="235,215,312,242"/>
-<area shape="poly" title=" " alt="" coords="387,231,312,231,312,226,387,226"/>
-<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,266,355,293"/>
-<area shape="poly" title=" " alt="" coords="389,253,330,268,329,263,388,248"/>
-<area shape="poly" title=" " alt="" coords="220,187,100,203,99,198,219,182"/>
-<area shape="poly" title=" " alt="" coords="219,225,99,209,100,204,220,219"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,266,144,293"/>
-<area shape="poly" title=" " alt="" coords="176,282,144,282,144,277,176,277"/>
-<area shape="rect" href="malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="1285,387,1335,414"/>
-<area shape="poly" title=" " alt="" coords="1427,384,1336,399,1335,394,1426,379"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="1014,207,1166,250"/>
-<area shape="poly" title=" " alt="" coords="1223,196,1168,211,1166,206,1222,191"/>
-<area shape="poly" title=" " alt="" coords="999,231,950,231,950,226,999,226"/>
-<area shape="poly" title=" " alt="" coords="1425,293,1271,301,1088,304,998,301,916,295,847,282,795,264,778,249,769,231,762,214,747,197,722,184,697,177,698,172,724,179,750,193,766,211,774,229,782,246,798,260,848,277,916,289,998,296,1088,299,1271,296,1425,288"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1237,321,1383,363"/>
-<area shape="poly" title=" " alt="" coords="1452,304,1384,324,1382,319,1451,299"/>
-<area shape="poly" title=" " alt="" coords="1252,316,1132,253,1135,248,1255,311"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="403,315,548,358"/>
-<area shape="poly" title=" " alt="" coords="1222,344,549,340,549,334,1222,339"/>
-<area shape="poly" title=" " alt="" coords="387,345,341,343,290,337,239,326,190,307,174,296,164,284,142,256,94,219,98,215,146,252,168,280,178,292,193,302,240,321,291,332,341,338,388,339"/>
-<area shape="poly" title=" " alt="" coords="1421,220,1231,206,1183,198,1039,186,898,178,698,173,698,168,898,173,1039,180,1184,193,1232,201,1421,215"/>
-<area shape="poly" title=" " alt="" coords="1443,206,1382,191,1384,185,1444,200"/>
+<area shape="rect" title=" " alt="" coords="1642,168,1785,210"/>
+<area shape="rect" href="zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="1437,84,1594,126"/>
+<area shape="poly" title=" " alt="" coords="1646,163,1567,129,1569,124,1648,159"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="819,28,927,54"/>
+<area shape="poly" title=" " alt="" coords="1687,157,1647,111,1621,90,1593,74,1503,43,1409,22,1314,11,1220,8,1131,10,1051,17,927,33,926,28,1050,11,1131,5,1220,3,1314,6,1410,17,1505,37,1595,69,1624,86,1651,108,1691,153"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="1442,150,1589,177"/>
+<area shape="poly" title=" " alt="" coords="1626,180,1589,176,1590,170,1627,175"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1237,268,1383,310"/>
+<area shape="poly" title=" " alt="" coords="1655,219,1595,242,1484,268,1384,284,1383,278,1483,263,1593,237,1653,214"/>
+<area shape="rect" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289" title=" " alt="" coords="1441,201,1590,228"/>
+<area shape="poly" title=" " alt="" coords="1627,203,1591,207,1590,202,1626,197"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397" title=" " alt="" coords="1437,302,1594,329"/>
+<area shape="poly" title=" " alt="" coords="1680,223,1641,255,1595,286,1557,304,1555,299,1593,281,1637,251,1677,218"/>
+<area shape="rect" href="zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="1231,77,1389,120"/>
+<area shape="poly" title=" " alt="" coords="1421,105,1389,103,1389,98,1421,99"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#aa79205b9c4c7a9ea0e2d0191f188da86" title=" " alt="" coords="997,134,1183,177"/>
+<area shape="poly" title=" " alt="" coords="1422,129,1389,134,1283,146,1184,154,1183,149,1282,141,1388,129,1421,123"/>
+<area shape="rect" href="zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d" title=" " alt="" coords="1016,82,1165,109"/>
+<area shape="poly" title=" " alt="" coords="1216,100,1165,99,1166,94,1216,94"/>
+<area shape="poly" title=" " alt="" coords="1019,80,926,57,928,52,1020,75"/>
+<area shape="rect" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244" title=" " alt="" coords="802,82,944,109"/>
+<area shape="poly" title=" " alt="" coords="1000,98,945,98,945,93,1000,93"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,201,949,244"/>
+<area shape="poly" title=" " alt="" coords="1005,184,946,203,944,198,1004,179"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,201,749,244"/>
+<area shape="poly" title=" " alt="" coords="781,225,749,225,749,220,781,220"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,201,548,244"/>
+<area shape="poly" title=" " alt="" coords="581,225,549,225,549,220,581,220"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="228,184,319,210"/>
+<area shape="poly" title=" " alt="" coords="387,214,319,205,320,200,388,209"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,234,355,261"/>
+<area shape="poly" title=" " alt="" coords="388,236,356,240,355,235,388,231"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,234,144,261"/>
+<area shape="poly" title=" " alt="" coords="176,250,144,250,144,245,176,245"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="1014,268,1166,310"/>
+<area shape="poly" title=" " alt="" coords="1222,292,1167,292,1167,286,1222,286"/>
+<area shape="poly" title=" " alt="" coords="1004,265,944,247,946,242,1005,260"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1237,201,1383,244"/>
+<area shape="poly" title=" " alt="" coords="1425,220,1383,222,1383,217,1425,215"/>
+<area shape="poly" title=" " alt="" coords="1224,251,1164,269,1162,264,1223,246"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="1018,201,1163,244"/>
+<area shape="poly" title=" " alt="" coords="1222,225,1163,225,1163,220,1222,220"/>
+<area shape="poly" title=" " alt="" coords="1421,306,1383,301,1384,296,1422,301"/>
 </map>
 </div>
 
@@ -568,54 +536,50 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>byte_len</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>byte_len</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00031">31</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   31</span>                                                          {</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> ((uint8_t*)<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>)-byte_len;</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)-byte_len;</div>
 <div class="line"><span class="lineno">   33</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__types_8h_a1824c547b5262eed148a0bfac2912537_icgraph.png" border="0" usemap="#azrtos__types_8h_a1824c547b5262eed148a0bfac2912537_icgraph" alt=""/></div>
 <map name="azrtos__types_8h_a1824c547b5262eed148a0bfac2912537_icgraph" id="azrtos__types_8h_a1824c547b5262eed148a0bfac2912537_icgraph">
-<area shape="rect" title=" " alt="" coords="1591,68,1763,95"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1391,89,1543,132"/>
-<area shape="poly" title=" " alt="" coords="1576,98,1544,103,1543,97,1576,93"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="819,5,927,32"/>
-<area shape="poly" title=" " alt="" coords="1575,71,1342,47,1111,31,927,23,927,18,1111,26,1343,41,1576,66"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,153,548,196"/>
-<area shape="poly" title=" " alt="" coords="1422,143,1385,163,1343,180,1270,199,1211,206,1074,205,871,205,697,199,549,185,549,180,698,193,872,200,1075,200,1210,200,1269,193,1342,175,1383,158,1420,138"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1197,56,1343,99"/>
-<area shape="poly" title=" " alt="" coords="1375,98,1343,92,1343,87,1376,93"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1197,123,1343,165"/>
-<area shape="poly" title=" " alt="" coords="1376,129,1343,134,1343,129,1375,123"/>
-<area shape="rect" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4" title=" " alt="" coords="235,161,312,188"/>
-<area shape="poly" title=" " alt="" coords="387,177,312,177,312,172,387,172"/>
-<area shape="rect" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2" title=" " alt="" coords="235,111,312,137"/>
-<area shape="poly" title=" " alt="" coords="388,155,311,136,313,131,389,150"/>
-<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,212,355,239"/>
-<area shape="poly" title=" " alt="" coords="389,199,330,214,329,209,388,194"/>
-<area shape="rect" href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="50,85,99,112"/>
-<area shape="poly" title=" " alt="" coords="219,162,191,152,98,112,101,107,193,147,221,157"/>
-<area shape="poly" title=" " alt="" coords="219,120,99,104,100,99,220,115"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,212,144,239"/>
-<area shape="poly" title=" " alt="" coords="176,228,144,228,144,223,176,223"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="997,123,1149,165"/>
-<area shape="poly" title=" " alt="" coords="1192,107,1139,125,1137,120,1190,102"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="600,56,745,99"/>
-<area shape="poly" title=" " alt="" coords="1182,80,745,80,745,75,1182,75"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,123,949,165"/>
-<area shape="poly" title=" " alt="" coords="981,147,949,147,949,141,981,141"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,123,749,165"/>
-<area shape="poly" title=" " alt="" coords="781,147,749,147,749,141,781,141"/>
-<area shape="poly" title=" " alt="" coords="581,161,549,166,548,161,581,156"/>
-<area shape="poly" title=" " alt="" coords="584,83,100,100,100,95,584,78"/>
-<area shape="poly" title=" " alt="" coords="1182,147,1150,147,1150,141,1182,141"/>
-<area shape="poly" title=" " alt="" coords="804,24,535,39,364,55,192,76,100,95,99,90,191,71,364,49,535,34,803,18"/>
+<area shape="rect" title=" " alt="" coords="1591,178,1763,205"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1391,78,1543,121"/>
+<area shape="poly" title=" " alt="" coords="1629,174,1517,124,1519,119,1631,169"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a25b3029b9cae77d52af897192f1597ad" title=" " alt="" coords="809,161,937,188"/>
+<area shape="poly" title=" " alt="" coords="1575,192,937,178,937,173,1575,187"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="1413,229,1521,256"/>
+<area shape="poly" title=" " alt="" coords="1604,212,1522,232,1520,227,1603,207"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20" title=" " alt="" coords="403,45,548,88"/>
+<area shape="poly" title=" " alt="" coords="1420,72,1383,52,1342,36,1269,17,1210,10,1075,10,872,10,733,15,597,36,548,47,547,42,596,30,733,9,871,5,1074,5,1211,5,1270,12,1343,31,1385,47,1422,68"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a000df44b8681d52f3ff64d4294695ed2" title=" " alt="" coords="1197,112,1343,154"/>
+<area shape="poly" title=" " alt="" coords="1376,118,1343,123,1343,118,1375,113"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac638113a25fdfcc674ba2aabfef850f6" title=" " alt="" coords="1197,45,1343,88"/>
+<area shape="poly" title=" " alt="" coords="1375,87,1343,81,1343,76,1376,82"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="228,108,319,134"/>
+<area shape="poly" title=" " alt="" coords="389,93,320,111,319,106,388,87"/>
+<area shape="rect" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,53,355,80"/>
+<area shape="poly" title=" " alt="" coords="387,69,356,69,356,64,387,64"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,53,144,80"/>
+<area shape="poly" title=" " alt="" coords="176,69,144,69,144,64,176,64"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a" title=" " alt="" coords="997,45,1149,88"/>
+<area shape="poly" title=" " alt="" coords="1190,109,1137,91,1139,86,1192,104"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467" title=" " alt="" coords="1001,112,1146,154"/>
+<area shape="poly" title=" " alt="" coords="1182,136,1146,136,1146,130,1182,130"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3" title=" " alt="" coords="797,45,949,88"/>
+<area shape="poly" title=" " alt="" coords="981,69,949,69,949,64,981,64"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="596,45,749,88"/>
+<area shape="poly" title=" " alt="" coords="781,69,749,69,749,64,781,64"/>
+<area shape="poly" title=" " alt="" coords="581,69,549,69,549,64,581,64"/>
+<area shape="poly" title=" " alt="" coords="1182,69,1150,69,1150,64,1182,64"/>
+<area shape="poly" title=" " alt="" coords="793,170,319,128,320,122,793,165"/>
 </map>
 </div>
 

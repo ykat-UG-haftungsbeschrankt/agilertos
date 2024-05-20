@@ -114,7 +114,7 @@ $(function(){initNavTree('zrtos__types_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;limits.h&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">   18</a></span><span class="keyword">typedef</span> uint16_t <a class="code hl_typedef" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742">   19</a></span><span class="keyword">typedef</span> int16_t <a class="code hl_typedef" href="zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a>;</div>
@@ -126,14 +126,14 @@ $(function(){initNavTree('zrtos__types_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">   27</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(<span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>,<span class="keywordtype">size_t</span> byte_len){</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> ((uint8_t*)<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>)+byte_len;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">   27</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(<span class="keywordtype">void</span> *ptr,<span class="keywordtype">size_t</span> byte_len){</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)+byte_len;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="foldopen" id="foldopen00031" data-start="{" data-end="}">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">   31</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a>(<span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>,<span class="keywordtype">size_t</span> byte_len){</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> ((uint8_t*)<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>)-byte_len;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">   31</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a>(<span class="keywordtype">void</span> *ptr,<span class="keywordtype">size_t</span> byte_len){</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)-byte_len;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
@@ -174,7 +174,6 @@ $(function(){initNavTree('zrtos__types_8h_source.html',''); initResizable(); });
 <div class="ttc" id="azrtos__types_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="#l00035">zrtos_types.h:35</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html_aedfaaad6745394d58a2fd37dbdc42742"><div class="ttname"><a href="zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a></div><div class="ttdeci">int16_t ssize_t</div><div class="ttdef"><b>Definition</b> <a href="#l00019">zrtos_types.h:19</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html_af5439e19eec032e96a3561505be8ec35"><div class="ttname"><a href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></div><div class="ttdeci">uint16_t size_t</div><div class="ttdef"><b>Definition</b> <a href="#l00018">zrtos_types.h:18</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00001">zrtos_vheap_chunk.h:1</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

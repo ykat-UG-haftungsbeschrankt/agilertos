@@ -179,17 +179,17 @@ $(function(){initNavTree('trash_2arduino_8h_source.html',''); initResizable(); }
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#define ZRTOS_BOARD__TICK_PERIOD_MS\</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">    (MICROSECONDS_PER_TIMER0_OVERFLOW/1000000)</span></div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked))void (*zrtos_board_arduino__timer0_empty_fn)(void){</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked))void (*zrtos_board_arduino__timer0_empty_fn)(void){</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>uint16_t zrtos_board_arduino__timer0_delay_start;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked))void (*zrtos_board_arduino__timer0_delay_fn)(void){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked))void (*zrtos_board_arduino__timer0_delay_fn)(void){</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    zrtos_board_arduino__timer0_delay_start += MILLIS_INC;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>void (*zrtos_board_arduino__timer0)(void)<a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked)) = zrtos_board_arduino__timer0_empty_fn;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>void (*zrtos_board_arduino__timer0_last)(void)<a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked)) = 0;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>void (*zrtos_board_arduino__timer0)(void)<a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked)) = zrtos_board_arduino__timer0_empty_fn;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>void (*zrtos_board_arduino__timer0_last)(void)<a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked)) = 0;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> zrtos_board_arduino__on_ovf(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="keywordtype">void</span> <a class="code hl_function" href="arduino_8h.html#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a>(<span class="keywordtype">void</span>){</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> m = timer0_millis;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> f = timer0_fract;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    m += MILLIS_INC;</div>
@@ -208,23 +208,23 @@ $(function(){initNavTree('trash_2arduino_8h_source.html',''); initResizable(); }
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">}</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">*/</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>void (*<a class="code hl_variable" href="zrtos__board_8h.html#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a>)(void)<a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked));</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>void (*<a class="code hl_variable" href="zrtos__board_8h.html#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a>)(void)<a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked));</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#define ZRTOS_BOARD__ON_TICK_CALLBACK(name,code)\</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">void name(void){</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    code</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    ZRTOS_ARCH__RETURN_FROM_INTERRUPT();</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}<a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked));</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_define" href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}<a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked));</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>ISR(TIMER0_OVF_vect,ISR_NAKED){</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><a class="code hl_function" href="arduino_8h.html#ab8c3e5f10628a4889944004c7791729c">ISR</a>(TIMER0_OVF_vect,ISR_NAKED){</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="comment">//called every 16 ms</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    ZRTOS_ARCH__SAVE_CPU_STATE((<span class="keywordtype">void</span>*)SP);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <a class="code hl_define" href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// @todo save register on stack</span></div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    zrtos_board_arduino__on_ovf(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_function" href="arduino_8h.html#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_variable" href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a>();</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">//avr/time.h system_tick();</span></div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="comment">//zrtos_board_arduino__on_ovf(void);</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    ZRTOS_ARCH__LOAD_CPU_STATE((<span class="keywordtype">void</span>*)SP);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_define" href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <a class="code hl_variable" href="zrtos__board_8h.html#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a>();</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">//ZRTOS_ARCH__RETURN_FROM_INTERRUPT();</span></div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">// @todo pop register off stack</span></div>
@@ -290,8 +290,8 @@ $(function(){initNavTree('trash_2arduino_8h_source.html',''); initResizable(); }
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#define ZRTOS_BOARD__WATCH_DOG_RESET() \</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="preprocessor">    wdt_reset();</span></div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><a class="code hl_function" href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a>((naked))ISR(WDT_vect){</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    ZRTOS_ARCH__FATAL();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><a class="code hl_function" href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a>((naked))<a class="code hl_function" href="arduino_8h.html#ab8c3e5f10628a4889944004c7791729c">ISR</a>(WDT_vect){</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_define" href="atmega328p_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a>();</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="preprocessor">#endif</span></div>
@@ -301,9 +301,15 @@ $(function(){initNavTree('trash_2arduino_8h_source.html',''); initResizable(); }
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aarduino_8h_html_a20115f2209bbcafcb4afcfacc5f05a6a"><div class="ttname"><a href="arduino_8h.html#a20115f2209bbcafcb4afcfacc5f05a6a">__attribute__</a></div><div class="ttdeci">__attribute__((naked)) ISR(WDT_vect)</div><div class="ttdef"><b>Definition</b> <a href="arduino_8h_source.html#l00121">arduino.h:121</a></div></div>
+<div class="ttc" id="aarduino_8h_html_a8e093dc856bff2ca41d346f1dc8bc116"><div class="ttname"><a href="arduino_8h.html#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a></div><div class="ttdeci">void zrtos_board_arduino__on_ovf(void)</div><div class="ttdef"><b>Definition</b> <a href="arduino_8h_source.html#l00081">arduino.h:81</a></div></div>
+<div class="ttc" id="aarduino_8h_html_ab8c3e5f10628a4889944004c7791729c"><div class="ttname"><a href="arduino_8h.html#ab8c3e5f10628a4889944004c7791729c">ISR</a></div><div class="ttdeci">ISR(TIMER0_OVF_vect, ISR_NAKED)</div><div class="ttdef"><b>Definition</b> <a href="arduino_8h_source.html#l00100">arduino.h:100</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a1bb4fc060fe3f863a6209873f4b052f0"><div class="ttname"><a href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__LOAD_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00241">atmega328p.h:241</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a5147fe8b6fc6553050c0f115bf7091c0"><div class="ttname"><a href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a></div><div class="ttdeci">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00289">atmega328p.h:289</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a6f0738e44b5c061f62d7f6957c06c23f"><div class="ttname"><a href="atmega328p_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a></div><div class="ttdeci">#define ZRTOS_ARCH__FATAL()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00026">atmega328p.h:26</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00191">atmega328p.h:191</a></div></div>
 <div class="ttc" id="azrtos__board_8h_html_a127f4162e4e038fad16712033b457ff7"><div class="ttname"><a href="zrtos__board_8h.html#a127f4162e4e038fad16712033b457ff7">zrtos_board__on_tick_naked</a></div><div class="ttdeci">void(* zrtos_board__on_tick_naked)(void) __attribute__((naked))</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00034">zrtos_board.h:34</a></div></div>
 <div class="ttc" id="azrtos__board_8h_html_ad7e85a8be90115b03950e72b72e5c0d3"><div class="ttname"><a href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a></div><div class="ttdeci">void(* zrtos_board__on_tick)(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00033">zrtos_board.h:33</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_a5ee201559452ea4cb4900b743066214e"><div class="ttname"><a href="zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e">__attribute__</a></div><div class="ttdeci">struct _zrtos_malloc_t __attribute__((packed)) zrtos_malloc_t</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

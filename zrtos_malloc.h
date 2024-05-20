@@ -1,13 +1,8 @@
-/**
+/*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
- *
- * @page my_errors My Errors
- * @brief Errors page
- * /page my_errors My Errors
- * /brief Errors page
  */
 #ifndef ZRTOS_MALLOC_H
 #define ZRTOS_MALLOC_H
@@ -90,11 +85,6 @@ typedef struct _zrtos_malloc_internal_t{
         ,sizeof(name) / sizeof(name[0])                           \
     )
 
-///
-/// @page my_errors My Errors
-/// @brief Errors page
-/// /page my_errors My Errors
-/// /brief Errors page
 bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){
 	zrtos_malloc_internal_t *thiz_ = (zrtos_malloc_internal_t *)thiz;
 	bool ret = false;

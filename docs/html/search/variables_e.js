@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['uid_0',['uid',['../struct__zrtos__vheap__chunk__t.html#a0a1c1462aa50279ca3b247e4e85d39d1',1,'_zrtos_vheap_chunk_t::uid'],['../struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9',1,'_zrtos_vheap_chunk_uid_t::uid'],['../zrtos__vheap__chunk_8h.html#a6ffa28afbc6a7f4a5a2f8e78f9e53250',1,'uid:&#160;zrtos_vheap_chunk.h']]]
+  ['zrtos_5farch_5f_5fdo_5fnot_5fdisturb_0',['zrtos_arch__do_not_disturb',['../zrtos__arch_8h.html#ab86f625f4bb9f6aaddd33576b99359c1',1,'zrtos_arch.h']]],
+  ['zrtos_5fboard_5f_5fon_5ftick_1',['zrtos_board__on_tick',['../zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3',1,'zrtos_board.h']]],
+  ['zrtos_5fboard_5f_5fon_5ftick_5fnaked_2',['zrtos_board__on_tick_naked',['../zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b',1,'zrtos_board.h']]],
+  ['zrtos_5ftask_5fscheduler_3',['zrtos_task_scheduler',['../zrtos__task__scheduler_8h.html#a7f40354160873dc4194613b1bc978968',1,'zrtos_task_scheduler.h']]]
 ];

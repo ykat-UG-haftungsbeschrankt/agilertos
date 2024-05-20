@@ -1,21 +1,27 @@
 <map id="zrtos.h" name="zrtos.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="245,5,307,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__debug_8h.html" title=" " alt="" coords="102,80,205,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="256,35,189,74,187,69,253,30"/>
-<area shape="rect" id="Node000003" href="$zrtos__arch_8h.html" title=" " alt="" coords="229,80,323,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,33,279,64,273,64,273,33"/>
-<area shape="rect" id="Node000009" href="$zrtos__board_8h.html" title=" " alt="" coords="442,80,542,107"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="308,28,440,72,439,77,306,33"/>
-<area shape="rect" id="Node000004" href="$zrtos__types_8h.html" title=" " alt="" coords="39,163,139,189"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,110,133,159,131,154,246,105"/>
-<area shape="rect" id="Node000007" href="$atmega328p_8h.html" title=" " alt="" coords="163,163,295,189"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="271,109,246,151,241,148,266,106"/>
-<area shape="rect" id="Node000008" href="$atmega2560_8h.html" title=" " alt="" coords="319,163,451,189"/>
-<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="294,105,358,151,354,155,291,109"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="293,5,355,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__debug_8h.html" title=" " alt="" coords="150,80,253,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,35,237,74,235,69,301,30"/>
+<area shape="rect" id="Node000003" href="$zrtos__arch_8h.html" title=" " alt="" coords="277,80,371,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="327,33,327,64,321,64,321,33"/>
+<area shape="rect" id="Node000010" href="$zrtos__board_8h.html" title=" " alt="" coords="490,80,590,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="356,28,488,72,487,77,354,33"/>
+<area shape="rect" id="Node000004" href="$zrtos__types_8h.html" title=" " alt="" coords="87,163,187,189"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="296,110,181,159,179,154,294,105"/>
+<area shape="rect" id="Node000008" href="$atmega328p_8h.html" title=" " alt="" coords="211,163,343,189"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="319,109,294,151,289,148,314,106"/>
+<area shape="rect" id="Node000009" href="$atmega2560_8h.html" title=" " alt="" coords="367,163,499,189"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="342,105,406,151,402,155,339,109"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="5,245,80,272"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="84,191,59,234,55,231,80,188"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="124,192,70,237,67,233,121,188"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="104,245,171,272"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="99,188,124,231,120,234,94,191"/>
-<area shape="rect" id="Node000010" href="$avr__software__emulator_8h.html" title=" " alt="" coords="476,155,604,197"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="502,106,522,140,518,143,497,109"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="140,190,140,230,135,230,135,190"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="195,245,258,272"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="153,188,203,233,200,237,149,192"/>
+<area shape="rect" id="Node000011" href="$avr__software__emulator_8h.html" title=" " alt="" coords="524,155,652,197"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="550,106,570,140,566,143,545,109"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="484,245,583,272"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="576,199,552,234,548,231,572,196"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="606,245,679,272"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="604,196,628,231,623,234,600,199"/>
 </map>

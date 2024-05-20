@@ -112,40 +112,53 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifdef ZRTOS_ARCH__ATMEGA328P</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define ZRTOS_ARCH__FOUND</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if defined(ZRTOS_ARCH__ATMEGA328P) || defined(__DOXYGEN__)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#aa605b670ce0b7269b3296a51f7746a27">   15</a></span><span class="preprocessor">#define ZRTOS_ARCH__FOUND</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">typedef</span> uint8_t zrtos_arch_stack_t;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">typedef</span> int8_t zrtos_arch_stack_signed_t;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">   18</a></span><span class="keyword">typedef</span> uint8_t <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319">   19</a></span><span class="keyword">typedef</span> int8_t <a class="code hl_typedef" href="atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          </span><span class="comment">// thiz F_CPU variable set by the environment</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a52712692b0ac48d8b86b36066406785b">   21</a></span><span class="preprocessor">#define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          </span><span class="comment">// thiz F_CPU variable set by the environment</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define ZRTOS_ARCH__BYTE_ALIGNMENT 1</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a04f2f242c34f581faf5b31331d0d6bdb">   24</a></span><span class="preprocessor">#define ZRTOS_ARCH__BYTE_ALIGNMENT 1</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ZRTOS_ARCH__FATAL() ((void(*)(void))0)();</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">   26</a></span><span class="preprocessor">#define ZRTOS_ARCH__FATAL() ((void(*)(void))0)();</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define ZRTOS_ARCH__SET_STACK_PTR(ptr) \</span></div>
+<div class="foldopen" id="foldopen00028" data-start="" data-end="">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a310e49b72283b2f2ab15e13a32f4fc06">   28</a></span><span class="preprocessor">#define ZRTOS_ARCH__SET_STACK_PTR(ptr) \</span></div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">    (SP = (uint16_t)(ptr))</span></div>
+</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#define ZRTOS_ARCH__GET_STACK_PTR() \</span></div>
+<div class="foldopen" id="foldopen00031" data-start="" data-end="">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#abd14fa9c78d9b548ab767f5e38b7f345">   31</a></span><span class="preprocessor">#define ZRTOS_ARCH__GET_STACK_PTR() \</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">    ((void*)SP)</span></div>
+</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED() \</span></div>
+<div class="foldopen" id="foldopen00034" data-start="" data-end="">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a2fcf5dd5b0924d6a448ca76d6945104d">   34</a></span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED() \</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    ((SREG &amp; 0x80) == 0)</span></div>
+</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED() \</span></div>
+<div class="foldopen" id="foldopen00037" data-start="" data-end="">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a09a52a942e2bf819c2b87029a58826c3">   37</a></span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED() \</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    ((SREG &amp; 0x80) &gt; 0)</span></div>
+</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#define ZRTOS_ARCH__DISABLE_INTERRUPTS() \</span></div>
+<div class="foldopen" id="foldopen00040" data-start="" data-end="">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#ad5a640e25694a864d28136fc49133f62">   40</a></span><span class="preprocessor">#define ZRTOS_ARCH__DISABLE_INTERRUPTS() \</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    asm volatile ( &quot;cli&quot; :: );</span></div>
+</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#define ZRTOS_ARCH__ENABLE_INTERRUPTS() \</span></div>
+<div class="foldopen" id="foldopen00043" data-start="" data-end="">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#ac6b5c40219e3521c23691efdfc83755a">   43</a></span><span class="preprocessor">#define ZRTOS_ARCH__ENABLE_INTERRUPTS() \</span></div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">    asm volatile ( &quot;sei&quot; :: );</span></div>
+</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper( zrtos_arch_stack_t * pxTopOfStack,</div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">   47</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> * <a class="code hl_function" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a>( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> * pxTopOfStack,</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                     <a class="code hl_typedef" href="zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc">zrtos_arch_callback_t</a> pxCode,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                     <span class="keywordtype">void</span> * pvParameters )</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
@@ -157,11 +170,11 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">/* The start of the task code will be popped off the stack last, so place</span></div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">     * it on first. */</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    usAddress = ( uint16_t ) pxCode;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    usAddress &gt;&gt;= 8;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#if defined(__AVR_3_BYTE_PC__)</span></div>
@@ -184,7 +197,7 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">     * portSAVE_CONTEXT places the flags on the stack immediately after r0</span></div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">     * to ensure the interrupts get disabled as soon as possible, and so ensuring</span></div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">     *  the stack use is minimal should a context switch interrupt occur. */</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00; <span class="comment">/* R0 */</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00; <span class="comment">/* R0 */</span></div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    *pxTopOfStack = 0x80;<span class="comment">//enable interrupts</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    pxTopOfStack--;</div>
@@ -194,7 +207,7 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">/* If we have an ATmega256x, we are also saving the EIND register.</span></div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">     * We should default to 0.</span></div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    <span class="comment">/* EIND */</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* EIND */</span></div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
@@ -203,32 +216,34 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="comment">/* We are saving the RAMPZ register.</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">     * We should default to 0.</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">     */</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    <span class="comment">/* RAMPZ */</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* RAMPZ */</span></div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">/* Now the remaining registers. The compiler expects R1 to be 0. */</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) 0x00;    <span class="comment">/* R1 */</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* R1 */</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">/* Leave R2 - R23 untouched */</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    pxTopOfStack -= 23;</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="comment">/* Place the parameter on the stack in the expected location. */</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    usAddress = ( uint16_t ) pvParameters;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    pxTopOfStack--;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    usAddress &gt;&gt;= 8;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    *pxTopOfStack = ( zrtos_arch_stack_t ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">/* Leave register R26 - R31 untouched */</span></div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    pxTopOfStack -= 7;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}</div>
+</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>zrtos_arch_stack_t *zrtos_arch__cpu_state_init_b(</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>     zrtos_arch_stack_t     *thiz</div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">  129</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_function" href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">zrtos_arch__cpu_state_init_b</a>(</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>     <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>     *thiz</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">//,size_t                length</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    ,<a class="code hl_typedef" href="zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc">zrtos_arch_callback_t</a> callback</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    ,<span class="keywordtype">void</span>                  *args</div>
@@ -239,23 +254,25 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="comment">        memset(thiz,(int)(pattern++),length);</span></div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">    );</span></div>
 <div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> zrtos_arch__cpu_state_init_helper(</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a>(</div>
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>         thiz</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        ,callback</div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        ,args</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    );</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}</div>
+</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>zrtos_arch_stack_t *zrtos_arch__cpu_state_init_a(</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>     zrtos_arch_stack_t     *thiz</div>
+<div class="foldopen" id="foldopen00148" data-start="{" data-end="}">
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">  148</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_function" href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">zrtos_arch__cpu_state_init_a</a>(</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>     <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>     *thiz</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">//,size_t                length</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    ,<a class="code hl_typedef" href="zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc">zrtos_arch_callback_t</a> callback</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    ,<span class="keywordtype">void</span>                  *args</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>){</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    zrtos_arch_stack_t *pxTopOfStack = thiz;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    zrtos_arch_stack_t *pxTopOfStackTmp = pxTopOfStack;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStack = thiz;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStackTmp = pxTopOfStack;</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    uint16_t usAddress = (uint16_t)callback;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    zrtos_arch_stack_signed_t usValue = 0;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <a class="code hl_typedef" href="atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a> usValue = 0;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    pxTopOfStack -= 3;</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
@@ -279,17 +296,19 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
 <div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
+</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">#if 1</span></div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span><span class="preprocessor"># define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_a</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#af0a24f4af1f5fddd9b171d6ddc51d9b3">  183</a></span><span class="preprocessor"># define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_a</span></div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor"># define zrtos_arch__cpu_state_init zrtos_arch__cpu_state_init_b</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="preprocessor">#define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH() 33</span></div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 20</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#abe71c47403848ec837ab4694267a0b54">  188</a></span><span class="preprocessor">#define ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH() 33</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a5e12069408a95bac028981da8630aed1">  189</a></span><span class="preprocessor">#define ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH() 20</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE()                            \</span></div>
+<div class="foldopen" id="foldopen00191" data-start="" data-end="">
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">  191</a></span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE()                            \</span></div>
 <div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">        &quot;push   __tmp_reg__                             \n\t&quot;   \</span></div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SREG__                   \n\t&quot;   \</span></div>
@@ -328,8 +347,10 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="preprocessor">        &quot;push   r30                                     \n\t&quot;   \</span></div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="preprocessor">        &quot;push   r31                                     \n\t&quot;   \</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="preprocessor">    );</span></div>
+</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE_EX(ptr)                      \</span></div>
+<div class="foldopen" id="foldopen00231" data-start="" data-end="">
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#ae7e942b41a42ef0069c4faa084e8ce16">  231</a></span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE_EX(ptr)                      \</span></div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">    ZRTOS_ARCH__SAVE_CPU_STATE();                               \</span></div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SP_L__                   \n\t&quot;   \</span></div>
@@ -338,8 +359,10 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">        &quot;sts    %0 + 1, __tmp_reg__                     \n\t&quot;   \</span></div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">        : &quot;=m&quot; (ptr)                                            \</span></div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">    );</span></div>
+</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE()                            \</span></div>
+<div class="foldopen" id="foldopen00241" data-start="" data-end="">
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">  241</a></span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE()                            \</span></div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">        &quot;pop    r31                                     \n\t&quot;   \</span></div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">        &quot;pop    r30                                     \n\t&quot;   \</span></div>
@@ -376,8 +399,10 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">        &quot;out    __SREG__, __tmp_reg__                   \n\t&quot;   \</span></div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">        &quot;pop    __tmp_reg__                             \n\t&quot;   \</span></div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">    );</span></div>
+</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE_EX(ptr)                      \</span></div>
+<div class="foldopen" id="foldopen00279" data-start="" data-end="">
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#ab50b4df4cb26859ddb0b7ffd34876506">  279</a></span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE_EX(ptr)                      \</span></div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">        &quot;lds    __tmp_reg__, %0                         \n\t&quot;   \</span></div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">        &quot;out    __SP_L__, __tmp_reg__                   \n\t&quot;   \</span></div>
@@ -386,9 +411,12 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">        : : &quot;m&quot; (ptr)                                           \</span></div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="preprocessor">    );                                                          \</span></div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span><span class="preprocessor">    ZRTOS_ARCH__LOAD_CPU_STATE();</span></div>
+</div>
 <div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="preprocessor">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \</span></div>
+<div class="foldopen" id="foldopen00289" data-start="" data-end="">
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">  289</a></span><span class="preprocessor">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \</span></div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="preprocessor">    __asm__ __volatile__(&quot;reti&quot;);</span></div>
+</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
 <div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
@@ -397,6 +425,11 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aatmega328p_8h_html_a0a7f99406f33a248301b9f008bf58ca9"><div class="ttname"><a href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">zrtos_arch__cpu_state_init_a</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_a(zrtos_arch_stack_t *thiz, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00148">atmega328p.h:148</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a10f065b40729c7ec718bfcb83bfcb96a"><div class="ttname"><a href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper(zrtos_arch_stack_t *pxTopOfStack, zrtos_arch_callback_t pxCode, void *pvParameters)</div><div class="ttdef"><b>Definition</b> <a href="#l00047">atmega328p.h:47</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a5599edd96083ebf96ce87853d5f408f2"><div class="ttname"><a href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">zrtos_arch__cpu_state_init_b</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_b(zrtos_arch_stack_t *thiz, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00129">atmega328p.h:129</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_a7456b566c8ab6b738a5795f419b0f319"><div class="ttname"><a href="atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a></div><div class="ttdeci">int8_t zrtos_arch_stack_signed_t</div><div class="ttdef"><b>Definition</b> <a href="#l00019">atmega328p.h:19</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="#l00018">atmega328p.h:18</a></div></div>
 <div class="ttc" id="azrtos__arch_8h_html_a8190ea23006e23334ee262f2489480cc"><div class="ttname"><a href="zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc">zrtos_arch_callback_t</a></div><div class="ttdeci">void *(* zrtos_arch_callback_t)(void *arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__arch_8h_source.html#l00016">zrtos_arch.h:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

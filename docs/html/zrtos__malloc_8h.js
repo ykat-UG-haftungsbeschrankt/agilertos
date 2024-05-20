@@ -9,10 +9,9 @@ var zrtos__malloc_8h =
     [ "ZRTOS_MALLOC__INIT", "zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8", null ],
     [ "zrtos_malloc_heap_chunk_t", "zrtos__malloc_8h.html#a9f7d16c747e7f4fca50c77155eebc5ed", null ],
     [ "zrtos_malloc_internal_t", "zrtos__malloc_8h.html#ad2e8348b810cf8e8c6066c66568b67a2", null ],
-    [ "__attribute__", "zrtos__malloc_8h.html#a5ee201559452ea4cb4900b743066214e", null ],
+    [ "zrtos_malloc_t", "zrtos__malloc_8h.html#ab3e4b0fe1ed4eeddbd0b169e44340a62", null ],
     [ "zrtos_malloc__free", "zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32", null ],
     [ "zrtos_malloc__get_free_chunk", "zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1", null ],
     [ "zrtos_malloc__init", "zrtos__malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f", null ],
-    [ "zrtos_malloc__malloc", "zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7", null ],
-    [ "value", "zrtos__malloc_8h.html#a638e4503e0ae6ce655b7ad2e17e8f0ad", null ]
+    [ "zrtos_malloc__malloc", "zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7", null ]
 ];

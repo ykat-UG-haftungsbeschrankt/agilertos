@@ -100,9 +100,8 @@ int pthread_create(
 	int ret = ENOMEM;
 
 	if(chunk){
-		void *mem_chunk_last_address = zrtos_types__ptr_add(
-			 zrtos_vheap_chunk__get_ptr(chunk)
-			,zrtos_vheap_chunk__get_length(chunk)
+		void *mem_chunk_last_address = zrtos_vheap_chunk__get_last_address(
+			chunk
 		);
 		zrtos_task_t *task = zrtos_types__ptr_subtract(
 			 mem_chunk_last_address
@@ -128,8 +127,51 @@ int pthread_create(
 	return ret;
 }
 
-int pthread_join(pthread_t thread, void **retval){
+int pthread_equal(pthread_t t1, pthread_t t2){
+	return zrtos_vheap_chunk_uid__cmp(&t1.id,&t2.id);
+}
+
+zrtos_task_t *pthread__get_task(pthread_t thread){
+	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_id(
+		zrtos_task_scheduler__get_heap()
+		,thread.id
+	);
+	if(chunk){
+		return zrtos_types__ptr_subtract(
+			 zrtos_vheap_chunk__get_last_address(
+				chunk
+			)
+			,sizeof(zrtos_task_t)
+		);
+	}
 	return 0;
+}
+
+int pthread_join(pthread_t thread, void **retval){
+	int ret = ESRCH;
+
+	do{
+		zrtos_task_t *task = pthread__get_task(thread);
+		if(task){
+			if(!zrtos_task__is_done(task)){
+				zrtos_task_scheduler__delay_ms(0);
+				continue;
+			}
+			*retval = zrtos_task__get_return_value(task);
+			zrtos_vheap__free(
+				 zrtos_task_scheduler__get_heap()
+				,thread.id
+			);
+			ret = 0;
+		}
+		break;
+	}while(1);
+
+	return ret;
+}
+
+pthread_t pthread_self(void){
+
 }
 
 int pthread_mutex_lock(pthread_mutex_t *mutex){

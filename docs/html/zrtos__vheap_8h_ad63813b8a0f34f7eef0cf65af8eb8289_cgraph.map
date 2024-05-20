@@ -14,7 +14,7 @@
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="349,75,385,75,385,80,349,80"/>
 <area shape="rect" id="Node000004" href="$zrtos__mem_8h.html#a76a7df82d207aef7d339f7ff95cce550" title=" " alt="" coords="611,23,763,49"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="561,23,596,26,596,31,561,28"/>
-<area shape="rect" id="Node000005" href="$zrtos__mem_8h.html#af7e65258e9f403545514aa561c040c71" title=" " alt="" coords="819,23,949,49"/>
+<area shape="rect" id="Node000005" href="$zrtos__mem_8h.html#af7e65258e9f403545514aa561c040c71" title="Swap len bytes of dest and src inplace." alt="" coords="819,23,949,49"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="763,33,804,33,804,39,763,39"/>
 <area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="730,47,828,81,827,86,728,52"/>
 </map>

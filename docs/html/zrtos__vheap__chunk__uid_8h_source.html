@@ -119,36 +119,46 @@ $(function(){initNavTree('zrtos__vheap__chunk__uid_8h_source.html',''); initResi
 </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="foldopen" id="foldopen00018" data-start="{" data-end="}">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">   18</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a>(<a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *thiz){</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> = 0;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#a5ea1de04848149211440781876259490">   18</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#a5ea1de04848149211440781876259490">zrtos_vheap_chunk_uid__cmp</a>(</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>     <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *a</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ,<a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *b</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>){</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> a-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> == b-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> ? 0 : -1;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">   22</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">zrtos_vheap_chunk_uid__is_error</a>(<a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *thiz){</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> == 0;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a>(<a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *thiz){</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
 </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">   26</a></span><a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(<span class="keywordtype">void</span>){</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> ret;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a>(&amp;ret);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">   29</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">zrtos_vheap_chunk_uid__is_error</a>(<a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> *thiz){</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">uid</a> == 0;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">   33</a></span><a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> ret;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a>(&amp;ret);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astruct__zrtos__vheap__chunk__uid__t_html"><div class="ttname"><a href="struct__zrtos__vheap__chunk__uid__t.html">_zrtos_vheap_chunk_uid_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00014">zrtos_vheap_chunk_uid.h:14</a></div></div>
 <div class="ttc" id="astruct__zrtos__vheap__chunk__uid__t_html_adb2b0eb9ec2f78e592c204caff1460d9"><div class="ttname"><a href="struct__zrtos__vheap__chunk__uid__t.html#adb2b0eb9ec2f78e592c204caff1460d9">_zrtos_vheap_chunk_uid_t::uid</a></div><div class="ttdeci">uint8_t uid</div><div class="ttdef"><b>Definition</b> <a href="#l00015">zrtos_vheap_chunk_uid.h:15</a></div></div>
 <div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_a13b394f830fc9ad4981c98c8e7cd9667"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#a13b394f830fc9ad4981c98c8e7cd9667">zrtos_vheap_chunk_uid_t</a></div><div class="ttdeci">struct _zrtos_vheap_chunk_uid_t zrtos_vheap_chunk_uid_t</div></div>
-<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_a25e30e50f03ae38e8c9a0aab47b04f6c"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a></div><div class="ttdeci">void zrtos_vheap_chunk_uid__set_error(zrtos_vheap_chunk_uid_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">zrtos_vheap_chunk_uid.h:18</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_ac28b650d7254ba9c46f2e53368c5c17d"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap_chunk_uid__error(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00026">zrtos_vheap_chunk_uid.h:26</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_ac50ee32dbda817d2aa16f77611110a61"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">zrtos_vheap_chunk_uid__is_error</a></div><div class="ttdeci">bool zrtos_vheap_chunk_uid__is_error(zrtos_vheap_chunk_uid_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">zrtos_vheap_chunk_uid.h:22</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_a25e30e50f03ae38e8c9a0aab47b04f6c"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c">zrtos_vheap_chunk_uid__set_error</a></div><div class="ttdeci">void zrtos_vheap_chunk_uid__set_error(zrtos_vheap_chunk_uid_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00025">zrtos_vheap_chunk_uid.h:25</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_a5ea1de04848149211440781876259490"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#a5ea1de04848149211440781876259490">zrtos_vheap_chunk_uid__cmp</a></div><div class="ttdeci">int zrtos_vheap_chunk_uid__cmp(zrtos_vheap_chunk_uid_t *a, zrtos_vheap_chunk_uid_t *b)</div><div class="ttdef"><b>Definition</b> <a href="#l00018">zrtos_vheap_chunk_uid.h:18</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_ac28b650d7254ba9c46f2e53368c5c17d"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap_chunk_uid__error(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00033">zrtos_vheap_chunk_uid.h:33</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_ac50ee32dbda817d2aa16f77611110a61"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#ac50ee32dbda817d2aa16f77611110a61">zrtos_vheap_chunk_uid__is_error</a></div><div class="ttdeci">bool zrtos_vheap_chunk_uid__is_error(zrtos_vheap_chunk_uid_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">zrtos_vheap_chunk_uid.h:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

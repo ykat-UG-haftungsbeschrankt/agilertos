@@ -26,6 +26,7 @@ typedef unsigned int zrtos_task_id_t;
 
 typedef struct _zrtos_task_t{
 	zrtos_arch_stack_t           *stack_ptr;
+	void                         *return_value;
 	size_t                       stacksize_min;
 	uint16_t                     ticks;
 	errno_t                      errno;
@@ -39,15 +40,17 @@ bool zrtos_task__init(
 	,zrtos_arch_callback_t     callback
 	,void                      *args
 ){
-	thiz->stacksize_min = stacksize_min;
-	thiz->ticks = 0;
-	thiz->errno = 0;
 	thiz->stack_ptr = zrtos_arch__cpu_state_init(
 		 heap
 		//,heap_size
 		,callback
 		,args
 	);
+	thiz->return_value = 0;
+	thiz->stacksize_min = stacksize_min;
+	thiz->ticks = 0;
+	thiz->errno = 0;
+
 	return true;
 }
 
@@ -88,6 +91,29 @@ errno_t zrtos_task__get_errno(zrtos_task_t *thiz){
 
 size_t zrtos_task__get_stack_size_min(zrtos_task_t *thiz){
 	return thiz->stacksize_min;
+}
+
+void zrtos_task__set_return_value(zrtos_task_t *thiz,void *return_value){
+	thiz->return_value = return_value;
+}
+
+void *zrtos_task__get_return_value(zrtos_task_t *thiz){
+	return thiz->return_value;
+}
+
+void zrtos_task__set_state_running(zrtos_task_t *thiz){
+	//thiz->return_value = return_value;
+}
+
+void zrtos_task__set_state_done(zrtos_task_t *thiz){
+	//thiz->return_value = return_value;
+}
+
+void zrtos_task__trampoline_cb(zrtos_task_t *thiz,void *(*callback)(void *args),void *args){
+	zrtos_task__set_state_running(thiz);
+	void *ret = callback(args);
+	zrtos_task__set_return_value(thiz,ret);
+	zrtos_task__set_state_done(thiz);
 }
 
 #ifdef __cplusplus

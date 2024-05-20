@@ -2,8 +2,6 @@ var files_dup =
 [
     [ "arch", "dir_ea9599923402ca8ab47fc3e495999dea.html", "dir_ea9599923402ca8ab47fc3e495999dea" ],
     [ "board", "dir_7149141a7e3af1ee95dfb0598e371427.html", "dir_7149141a7e3af1ee95dfb0598e371427" ],
-    [ "examples", "dir_d28a4824dc47e487b107a5db32ef43c4.html", "dir_d28a4824dc47e487b107a5db32ef43c4" ],
-    [ "main.c", "main_8c.html", "main_8c" ],
     [ "zrtos.h", "zrtos_8h.html", "zrtos_8h" ],
     [ "zrtos_arch.h", "zrtos__arch_8h.html", "zrtos__arch_8h" ],
     [ "zrtos_assert.h", "zrtos__assert_8h.html", "zrtos__assert_8h" ],
@@ -18,6 +16,7 @@ var files_dup =
     [ "zrtos_task_mutex.h", "zrtos__task__mutex_8h.html", "zrtos__task__mutex_8h" ],
     [ "zrtos_task_pthread.h", "zrtos__task__pthread_8h.html", "zrtos__task__pthread_8h" ],
     [ "zrtos_task_scheduler.h", "zrtos__task__scheduler_8h.html", "zrtos__task__scheduler_8h" ],
+    [ "zrtos_time.h", "zrtos__time_8h.html", "zrtos__time_8h" ],
     [ "zrtos_types.h", "zrtos__types_8h.html", "zrtos__types_8h" ],
     [ "zrtos_vheap.h", "zrtos__vheap_8h.html", "zrtos__vheap_8h" ],
     [ "zrtos_vheap_chunk.h", "zrtos__vheap__chunk_8h.html", "zrtos__vheap__chunk_8h" ],

@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 
-#ifdef ZRTOS_ARCH__ATMEGA328P
+#if defined(ZRTOS_ARCH__ATMEGA328P) || defined(__DOXYGEN__)
 #define ZRTOS_ARCH__FOUND
 
 

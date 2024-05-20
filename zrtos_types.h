@@ -13,7 +13,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <stddef.h>
-
+#include <limits.h>
 
 typedef uint16_t size_t;
 typedef int16_t ssize_t;

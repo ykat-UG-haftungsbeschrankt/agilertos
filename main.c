@@ -16,19 +16,12 @@ unsigned b = 0;
 
 void *callback0(void *args){
 	static uint64_t a = 0;
-	while(1){
-		a++;
-		//ZRTOS_DEBUG("callback0:%u;",a);
-		zrtos_task_scheduler__delay_ms(20);
-	}
+	return 1;
 }
-void *callback1(void *args){
-	static uint64_t b = 0;
-	while(1){
-		b++;
-		//ZRTOS_DEBUG("callback1:%u;",b);
-		zrtos_task_scheduler__delay_ms(2);
-	}
+
+void *callback0(void *args){
+	static uint64_t a = 0;
+	return 1;
 }
 
 int main(void){
@@ -44,7 +37,6 @@ int main(void){
 		,7
 		,16
 	);
- 
 
 	uint8_t *a = zrtos_arch__cpu_state_init_a(
 		 0x300
@@ -57,6 +49,8 @@ int main(void){
 		,callback0
 		,0xCAFE
 	);
+
+ 
 */
 	pthread_t task0;
 	pthread_t task1;

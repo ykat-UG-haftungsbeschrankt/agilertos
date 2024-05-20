@@ -14,6 +14,15 @@ extern "C" {
 #include "zrtos_types.h"
 
 
+/**
+ * Swap \p len bytes of \p dest and \p src inplace.
+ * 
+ * @param[in] dest destination
+ * @param[in] src source
+ * @param[in] len byte length to swap
+ * 
+ * @return Nothing
+ */
 void zrtos_mem__swap(void *dest, void *src, size_t len){
 	uint8_t *tmp_dest = dest;
 	uint8_t *tmp_src = src;

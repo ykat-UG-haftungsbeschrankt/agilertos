@@ -101,24 +101,18 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__vheap__type_8h__dep__incl.png" border="0" usemap="#azrtos__vheap__type_8hdep" alt=""/></div>
 <map name="azrtos__vheap__type_8hdep" id="azrtos__vheap__type_8hdep">
-<area shape="rect" title=" " alt="" coords="37,5,171,32"/>
-<area shape="rect" href="zrtos__vheap__chunk__type_8h.html" title=" " alt="" coords="16,80,192,107"/>
-<area shape="poly" title=" " alt="" coords="107,48,107,80,101,80,101,48"/>
-<area shape="rect" href="zrtos__vheap__chunk_8h.html" title=" " alt="" coords="32,155,176,181"/>
-<area shape="poly" title=" " alt="" coords="107,122,107,154,101,154,101,122"/>
-<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="53,229,155,256"/>
-<area shape="poly" title=" " alt="" coords="107,197,107,229,101,229,101,197"/>
-<area shape="rect" href="mem_8h.html" title=" " alt="" coords="5,304,67,331"/>
-<area shape="poly" title=" " alt="" coords="84,269,50,305,46,302,80,266"/>
-<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="90,379,233,405"/>
-<area shape="poly" title=" " alt="" coords="113,270,132,330,156,377,151,379,127,332,108,272"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html" title=" " alt="" coords="142,304,298,331"/>
-<area shape="poly" title=" " alt="" coords="139,262,201,301,198,306,136,267"/>
-<area shape="rect" href="main_8c.html" title=" " alt="" coords="90,453,150,480"/>
-<area shape="poly" title=" " alt="" coords="149,420,129,454,125,452,144,418"/>
-<area shape="rect" href="task_8h.html" title=" " alt="" coords="174,453,231,480"/>
-<area shape="poly" title=" " alt="" coords="178,418,198,452,193,454,174,420"/>
-<area shape="poly" title=" " alt="" coords="202,345,174,380,169,377,198,341"/>
+<area shape="rect" title=" " alt="" coords="26,5,160,32"/>
+<area shape="rect" href="zrtos__vheap__chunk__type_8h.html" title=" " alt="" coords="5,80,181,107"/>
+<area shape="poly" title=" " alt="" coords="96,48,96,80,90,80,90,48"/>
+<area shape="rect" href="zrtos__vheap__chunk_8h.html" title=" " alt="" coords="21,155,165,181"/>
+<area shape="poly" title=" " alt="" coords="96,122,96,154,90,154,90,122"/>
+<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="42,229,144,256"/>
+<area shape="poly" title=" " alt="" coords="96,197,96,229,90,229,90,197"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html" title=" " alt="" coords="21,379,165,405"/>
+<area shape="poly" title=" " alt="" coords="78,271,64,305,63,324,68,344,86,377,81,379,63,346,57,325,58,303,73,268"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html" title=" " alt="" coords="74,304,230,331"/>
+<area shape="poly" title=" " alt="" coords="115,267,144,302,139,305,111,270"/>
+<area shape="poly" title=" " alt="" coords="134,345,105,380,101,377,130,341"/>
 </map>
 </div>
 </div>
@@ -134,6 +128,8 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="#a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8">ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE</a> = 0x22
 , <br />
 &#160;&#160;<a class="el" href="#a66b34d8062a0c2e163e00077f3caa1f1abf160b369a85ae585f5ca58946219488">ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE</a> = 0x33
+, <br />
+&#160;&#160;<a class="el" href="#a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69">ZRTOS_VHEAP_CHUNK_TYPE__TASK_DONE</a> = 0x44
 <br />
  }</td></tr>
 <tr class="separator:a66b34d8062a0c2e163e00077f3caa1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +151,7 @@ Enumerations</h2></td></tr>
 <tr><td class="fieldname"><a id="a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b" name="a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b"></a>ZRTOS_VHEAP_CHUNK_TYPE__MALLOC&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8" name="a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8"></a>ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a66b34d8062a0c2e163e00077f3caa1f1abf160b369a85ae585f5ca58946219488" name="a66b34d8062a0c2e163e00077f3caa1f1abf160b369a85ae585f5ca58946219488"></a>ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69" name="a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69"></a>ZRTOS_VHEAP_CHUNK_TYPE__TASK_DONE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="zrtos__vheap__type_8h_source.html#l00014">14</a> of file <a class="el" href="zrtos__vheap__type_8h_source.html">zrtos_vheap_type.h</a>.</p>
@@ -163,8 +160,10 @@ Enumerations</h2></td></tr>
 <div class="line"><span class="lineno">   16</span>    ,<a class="code hl_enumvalue" href="#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>      = 0x11</div>
 <div class="line"><span class="lineno">   17</span>    ,<a class="code hl_enumvalue" href="#a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8">ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE</a>   = 0x22</div>
 <div class="line"><span class="lineno">   18</span>    ,<a class="code hl_enumvalue" href="#a66b34d8062a0c2e163e00077f3caa1f1abf160b369a85ae585f5ca58946219488">ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE</a> = 0x33</div>
-<div class="line"><span class="lineno">   19</span>}<a class="code hl_enumeration" href="#a66b34d8062a0c2e163e00077f3caa1f1">zrtos_vheap_type_t</a>;</div>
+<div class="line"><span class="lineno">   19</span>    ,<a class="code hl_enumvalue" href="#a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69">ZRTOS_VHEAP_CHUNK_TYPE__TASK_DONE</a>   = 0x44</div>
+<div class="line"><span class="lineno">   20</span>}<a class="code hl_enumeration" href="#a66b34d8062a0c2e163e00077f3caa1f1">zrtos_vheap_type_t</a>;</div>
 <div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1"><div class="ttname"><a href="#a66b34d8062a0c2e163e00077f3caa1f1">zrtos_vheap_type_t</a></div><div class="ttdeci">zrtos_vheap_type_t</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00014">zrtos_vheap_type.h:14</a></div></div>
+<div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69"><div class="ttname"><a href="#a66b34d8062a0c2e163e00077f3caa1f1a48f7f3a03813c9f6823621b0995fbf69">ZRTOS_VHEAP_CHUNK_TYPE__TASK_DONE</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__TASK_DONE</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00020">zrtos_vheap_type.h:19</a></div></div>
 <div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b"><div class="ttname"><a href="#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00017">zrtos_vheap_type.h:16</a></div></div>
 <div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1a6ebc1e614609fb71499347d66d38c644"><div class="ttname"><a href="#a66b34d8062a0c2e163e00077f3caa1f1a6ebc1e614609fb71499347d66d38c644">ZRTOS_VHEAP_CHUNK_TYPE__UNUSED</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__UNUSED</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00016">zrtos_vheap_type.h:15</a></div></div>
 <div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8"><div class="ttname"><a href="#a66b34d8062a0c2e163e00077f3caa1f1abb130330ffa153657efbd8425d238ed8">ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00018">zrtos_vheap_type.h:17</a></div></div>

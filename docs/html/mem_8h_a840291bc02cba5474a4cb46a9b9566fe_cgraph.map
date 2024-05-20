@@ -52,7 +52,7 @@
 <area shape="rect" id="Node000022" href="$zrtos__mem_8h.html#a76a7df82d207aef7d339f7ff95cce550" title=" " alt="" coords="955,779,1106,806"/>
 <area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="847,702,988,770,986,774,845,707"/>
 <area shape="poly" id="edge26_Node000022_Node000005" title=" " alt="" coords="1078,776,1105,758,1130,728,1152,695,1186,622,1207,554,1219,500,1224,501,1212,555,1190,624,1157,697,1134,731,1108,762,1081,780"/>
-<area shape="rect" id="Node000023" href="$zrtos__mem_8h.html#af7e65258e9f403545514aa561c040c71" title=" " alt="" coords="1162,779,1293,806"/>
+<area shape="rect" id="Node000023" href="$zrtos__mem_8h.html#af7e65258e9f403545514aa561c040c71" title="swap len bytes of dest and src inplace" alt="" coords="1162,779,1293,806"/>
 <area shape="poly" id="edge25_Node000022_Node000023" title=" " alt="" coords="1107,790,1147,790,1147,795,1107,795"/>
 <area shape="poly" id="edge34_Node000024_Node000005" title=" " alt="" coords="643,702,698,713,765,721,836,722,907,714,967,699,1013,682,1055,658,1105,621,1137,591,1165,558,1208,497,1213,501,1170,562,1141,595,1108,625,1058,662,1015,687,968,704,907,719,836,728,764,726,697,718,642,708"/>
 <area shape="poly" id="edge35_Node000024_Node000012" title=" " alt="" coords="648,674,943,607,944,612,649,680"/>

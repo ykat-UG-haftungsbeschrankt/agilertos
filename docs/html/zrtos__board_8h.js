@@ -7,5 +7,5 @@ var zrtos__board_8h =
     [ "ZRTOS_BOARD__ON_TICK_CALLBACK", "zrtos__board_8h.html#add30304098804d7d007239eee890c11c", null ],
     [ "ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK", "zrtos__board_8h.html#a151f2c836673112808b74ff4d0246e44", null ],
     [ "zrtos_board__on_tick", "zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3", null ],
-    [ "zrtos_board__on_tick_naked", "zrtos__board_8h.html#a127f4162e4e038fad16712033b457ff7", null ]
+    [ "zrtos_board__on_tick_naked", "zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b", null ]
 ];

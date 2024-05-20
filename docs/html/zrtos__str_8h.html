@@ -110,10 +110,12 @@ Include dependency graph for zrtos_str.h:</div>
 <area shape="poly" title=" " alt="" coords="86,34,60,69,56,66,81,31"/>
 <area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="97,80,198,107"/>
 <area shape="poly" title=" " alt="" coords="104,31,131,66,127,69,100,34"/>
-<area shape="rect" title=" " alt="" coords="62,155,137,181"/>
-<area shape="poly" title=" " alt="" coords="141,109,118,143,114,140,137,106"/>
-<area shape="rect" title=" " alt="" coords="161,155,228,181"/>
-<area shape="poly" title=" " alt="" coords="158,106,180,140,176,143,153,109"/>
+<area shape="rect" title=" " alt="" coords="16,155,90,181"/>
+<area shape="poly" title=" " alt="" coords="133,109,83,147,80,143,129,105"/>
+<area shape="rect" title=" " alt="" coords="114,155,181,181"/>
+<area shape="poly" title=" " alt="" coords="150,107,150,139,145,139,145,107"/>
+<area shape="rect" title=" " alt="" coords="205,155,269,181"/>
+<area shape="poly" title=" " alt="" coords="165,105,211,143,208,147,161,109"/>
 </map>
 </div>
 </div>
@@ -131,13 +133,13 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee390913b90918b21b4a44f1e07d7189" id="r_aee390913b90918b21b4a44f1e07d7189"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a> (uint64_t <a class="el" href="zrtos__malloc_8h.html#a638e4503e0ae6ce655b7ad2e17e8f0ad">value</a>, char *str, int radix)</td></tr>
+<tr class="memitem:aee390913b90918b21b4a44f1e07d7189" id="r_aee390913b90918b21b4a44f1e07d7189"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a> (uint64_t value, char *str, int radix)</td></tr>
 <tr class="separator:aee390913b90918b21b4a44f1e07d7189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ff8817cd245afeb25b4528cbaa6a10d" id="r_a5ff8817cd245afeb25b4528cbaa6a10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a> (void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</td></tr>
 <tr class="separator:a5ff8817cd245afeb25b4528cbaa6a10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c0f562bd4cb716ffdf422d957df885e" id="r_a6c0f562bd4cb716ffdf422d957df885e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c0f562bd4cb716ffdf422d957df885e">zrtos_str__vsnprintf_cb</a> (void *args_, char ch)</td></tr>
 <tr class="separator:a6c0f562bd4cb716ffdf422d957df885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af64b95fd53da061e4bde68dddbe02232" id="r_af64b95fd53da061e4bde68dddbe02232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64b95fd53da061e4bde68dddbe02232">zrtos_str__vsnprintf</a> (char *dest, <a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, char const *fmt,...)</td></tr>
+<tr class="memitem:af64b95fd53da061e4bde68dddbe02232" id="r_af64b95fd53da061e4bde68dddbe02232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64b95fd53da061e4bde68dddbe02232">zrtos_str__vsnprintf</a> (char *dest, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, char const *fmt,...)</td></tr>
 <tr class="separator:af64b95fd53da061e4bde68dddbe02232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -185,7 +187,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   20</span>    <span class="keywordtype">char</span> tmp[65];</div>
 <div class="line"><span class="lineno">   21</span>    <span class="keywordtype">char</span> *tp = tmp;</div>
 <div class="line"><span class="lineno">   22</span>    int64_t i;</div>
-<div class="line"><span class="lineno">   23</span>    uint64_t v = <a class="code hl_variable" href="zrtos__malloc_8h.html#a638e4503e0ae6ce655b7ad2e17e8f0ad">value</a>;</div>
+<div class="line"><span class="lineno">   23</span>    uint64_t v = value;</div>
 <div class="line"><span class="lineno">   24</span>    <span class="keywordtype">char</span> *sp;</div>
 <div class="line"><span class="lineno">   25</span> </div>
 <div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span>(str == NULL){</div>
@@ -214,7 +216,6 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   49</span> </div>
 <div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> str;</div>
 <div class="line"><span class="lineno">   51</span>}</div>
-<div class="ttc" id="azrtos__malloc_8h_html_a638e4503e0ae6ce655b7ad2e17e8f0ad"><div class="ttname"><a href="zrtos__malloc_8h.html#a638e4503e0ae6ce655b7ad2e17e8f0ad">value</a></div><div class="ttdeci">uint8_t value</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00000">zrtos_malloc.h:0</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -244,7 +245,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="mem_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em>, </span></td>
+          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -405,7 +406,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   91</span>                        tmp = -tmp;</div>
 <div class="line"><span class="lineno">   92</span>                    }</div>
 <div class="line"><span class="lineno">   93</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
-<div class="line"><span class="lineno">   94</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a> = buffer;(ch = *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>++);){</div>
+<div class="line"><span class="lineno">   94</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
 <div class="line"><span class="lineno">   95</span>                        putc(putc_args,ch);</div>
 <div class="line"><span class="lineno">   96</span>                    }</div>
 <div class="line"><span class="lineno">   97</span>                }</div>
@@ -414,7 +415,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  100</span>                    <span class="keywordtype">char</span> buffer[64];</div>
 <div class="line"><span class="lineno">  101</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
 <div class="line"><span class="lineno">  102</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
-<div class="line"><span class="lineno">  103</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a> = buffer;(ch = *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>++);){</div>
+<div class="line"><span class="lineno">  103</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
 <div class="line"><span class="lineno">  104</span>                        putc(putc_args,ch);</div>
 <div class="line"><span class="lineno">  105</span>                    }</div>
 <div class="line"><span class="lineno">  106</span>                }</div>
@@ -423,7 +424,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  109</span>                    <span class="keywordtype">char</span> buffer[64];</div>
 <div class="line"><span class="lineno">  110</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
 <div class="line"><span class="lineno">  111</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 16);</div>
-<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a> = buffer;(ch = *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>++);){</div>
+<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
 <div class="line"><span class="lineno">  113</span>                        putc(putc_args,ch);</div>
 <div class="line"><span class="lineno">  114</span>                    }</div>
 <div class="line"><span class="lineno">  115</span>                }</div>
@@ -437,7 +438,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  123</span>    }</div>
 <div class="line"><span class="lineno">  124</span>}</div>
 <div class="ttc" id="azrtos__str_8h_html_aee390913b90918b21b4a44f1e07d7189"><div class="ttname"><a href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a></div><div class="ttdeci">char * zrtos_str__ultoa(uint64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00019">zrtos_str.h:19</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00001">zrtos_vheap_chunk.h:1</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

@@ -31,10 +31,10 @@ char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 		return 0;
 	}
 
-	while (v || tp == tmp){
+	while(v || tp == tmp){
 		i = v % radix;
 		v = v / radix;
-		if (i < 10){
+		if(i < 10){
 			*tp++ = i+'0';
 		}else{
 			*tp++ = i + 'a' - 10;

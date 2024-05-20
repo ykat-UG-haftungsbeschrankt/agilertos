@@ -40,6 +40,12 @@ zrtos_vheap_chunk_type_t *zrtos_vheap_chunk__get_type(zrtos_vheap_chunk_t *thiz)
 	return &thiz->type;
 }
 
+void *zrtos_vheap_chunk__get_last_address(zrtos_vheap_chunk_t *thiz){
+	return zrtos_types__ptr_add(
+		 zrtos_vheap_chunk__get_ptr(thiz)
+		,zrtos_vheap_chunk__get_length(thiz)
+	);
+}
 
 #ifdef __cplusplus
 }

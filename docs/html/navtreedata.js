@@ -26,7 +26,6 @@ var NAVTREE =
 [
   [ "AgileRTOS (zrtos)", "index.html", [
     [ "Documentation", "index.html", "index" ],
-    [ "My Errors", "my_errors.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -53,7 +52,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"zrtos__error_8h.html#aa0f602f3fd369a6fede82190710b9c5c"
+"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629abbaf73e419ff754319cf3f5661165a04"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

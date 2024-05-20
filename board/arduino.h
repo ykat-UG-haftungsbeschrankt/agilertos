@@ -10,8 +10,7 @@
 extern "C" {
 #endif
 
-
-#ifdef ZRTOS_BOARD__ARDUINO
+#if defined(ZRTOS_BOARD__ARDUINO) || defined(__DOXYGEN__)
 #define ZRTOS_BOARD__FOUND
 
 

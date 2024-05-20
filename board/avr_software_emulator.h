@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 
-#ifdef ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
+#if defined(ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR) || defined(__DOXYGEN__)
 #define ZRTOS_BOARD__FOUND
 
 

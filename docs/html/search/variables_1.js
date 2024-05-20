@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['b_0',['b',['../task_8h.html#af17f0ab7a33d14841ab6217811a1de6b',1,'b:&#160;task.h'],['../main_8c.html#af17f0ab7a33d14841ab6217811a1de6b',1,'b:&#160;main.c']]]
+  ['dest_0',['dest',['../struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7',1,'_zrtos_str__vsnprintf_cb_args_t']]]
 ];

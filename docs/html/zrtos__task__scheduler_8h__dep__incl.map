@@ -2,8 +2,4 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,5,162,32"/>
 <area shape="rect" id="Node000002" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="12,80,155,107"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,48,86,80,81,80,81,48"/>
-<area shape="rect" id="Node000003" href="$main_8c.html" title=" " alt="" coords="12,155,72,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="71,122,52,156,47,153,67,119"/>
-<area shape="rect" id="Node000004" href="$task_8h.html" title=" " alt="" coords="96,155,154,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="100,119,120,153,115,156,96,122"/>
 </map>
