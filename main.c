@@ -61,7 +61,7 @@ int main(void){
 	
 	zrtos_task_scheduler__set_heap(&mem);
 
-	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task0
@@ -72,7 +72,7 @@ int main(void){
 	
 	}
 
-	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task1
@@ -83,7 +83,7 @@ int main(void){
 		
 	}
 
-	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	zrtos_task_scheduler__start();
 }

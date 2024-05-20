@@ -31,12 +31,10 @@ typedef struct _zrtos_task_t{
 	size_t                       stacksize_min;
 	uint16_t                     ticks;
 	errno_t                      errno;
-	zrtos_vheap_chunk_uid_t      parent;
 }zrtos_task_t;
 
 bool zrtos_task__init(
 	 zrtos_task_t              *thiz
-	,zrtos_vheap_chunk_uid_t   parent
 	,zrtos_arch_stack_t        *heap
 	//,size_t                    heap_size
 	,size_t                    stacksize_min
@@ -53,7 +51,6 @@ bool zrtos_task__init(
 	thiz->stacksize_min = stacksize_min;
 	thiz->ticks = 0;
 	thiz->errno = 0;
-	thiz->parent = parent;
 
 	return true;
 }

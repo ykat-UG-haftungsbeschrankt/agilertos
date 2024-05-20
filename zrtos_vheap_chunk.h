@@ -21,6 +21,7 @@ typedef struct _zrtos_vheap_chunk_t{
 	size_t                     length;
 	zrtos_vheap_chunk_type_t     type;
 	zrtos_vheap_chunk_uid_t      uid;
+	zrtos_vheap_chunk_uid_t   parent;
 	char                    last[2];
 }__attribute__((aligned(ZRTOS_ARCH__BYTE_ALIGNMENT)))zrtos_vheap_chunk_t;
 

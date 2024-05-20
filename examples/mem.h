@@ -30,9 +30,9 @@ int main(void){
 		,160
 	);
 
-	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
-	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
-	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 	zrtos_vheap_chunk_t *chunkaa = zrtos_vheap__get_by_id(
 	&mem
 	,chunka
@@ -51,7 +51,7 @@ int main(void){
 		,chunkbb
 	);
 
-	zrtos_vheap_chunk_uid_t chunke = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunke = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	zrtos_vheap_chunk_t *chunkee = zrtos_vheap__get_by_id(
 		 &mem

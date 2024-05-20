@@ -107,6 +107,7 @@ int pthread_create(
 	);
 	zrtos_vheap_chunk_t *chunk = _zrtos_vheap__malloc(
 		 mem
+		,pthread_self().id
 		,ZRTOS_VHEAP_TYPE__TASK_IDLE
 		,stacksize_min
 	);
@@ -122,7 +123,6 @@ int pthread_create(
 		);
 		zrtos_task__init(
 			 task
-			,pthread_self().id
 			,(zrtos_arch_stack_t*)(task - 1)
 			,stacksize_min
 			,start_routine

@@ -144,6 +144,7 @@ size_t zrtos_vheap__get_chunk_count(
 
 zrtos_vheap_chunk_t *_zrtos_vheap__malloc(
 	 zrtos_vheap_t *thiz
+	,zrtos_vheap_chunk_uid_t   parent
 	,zrtos_vheap_type_t type
 	,size_t length
 ){
@@ -173,6 +174,7 @@ zrtos_vheap_chunk_t *_zrtos_vheap__malloc(
 		chunk->ptr = thiz->ptr + thiz->heap_size - length;
 		chunk->length = length;
 		chunk->uid = zrtos_vheap__get_next_uid(thiz);
+		chunk->parent = parent;
 		chunk->type.type = type;
 	chunk->last[0] = 0x66;
 	chunk->last[1] = 0x66;
@@ -193,11 +195,13 @@ zrtos_vheap_chunk_t *_zrtos_vheap__malloc(
 
 zrtos_vheap_chunk_uid_t zrtos_vheap__malloc(
 	 zrtos_vheap_t *thiz
+	,zrtos_vheap_chunk_uid_t   parent
 	,zrtos_vheap_type_t type
 	,size_t length
 ){
 	zrtos_vheap_chunk_t *chunk = _zrtos_vheap__malloc(
 		 thiz
+		,parent
 		,type
 		,length
 	);
