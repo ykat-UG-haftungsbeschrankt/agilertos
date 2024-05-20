@@ -224,10 +224,21 @@ static void _zrtos_vheap__update_index_ptr(
 	}
 }
 
-/**
- * @todo free all child allocations
- */
-void _zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
+zrtos_vheap_chunk_t *zrtos_vheap__get_child(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
+	zrtos_vheap_chunk_t *node = &((zrtos_vheap_chunk_t*)thiz->ptr)[0];
+	zrtos_vheap_chunk_t *sentinel = &((zrtos_vheap_chunk_t*)thiz->ptr)[thiz->length];
+	zrtos_vheap_chunk_t *ret = 0;
+	for(;node < sentinel;node++){
+		if(zrtos_vheap_chunk_uid__cmp(&chunk->uid,&node->parent)){
+			ret = node;
+			break;
+		}
+	}
+	return ret;
+}
+
+void zrtos_vheap__free_helper(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
+	/// @todo cancel running task...
 	uint8_t *dest = (uint8_t*)chunk;
 	uint8_t *src = dest + sizeof(zrtos_vheap_chunk_t);
 	zrtos_vheap_chunk_t *sentinel;
@@ -259,6 +270,22 @@ void _zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
 			,length_total
 		);
 	);
+}
+
+void _zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
+	while(true){
+		zrtos_vheap_chunk_t *node = zrtos_vheap__get_child(thiz,chunk);
+		if(node){
+			zrtos_vheap_chunk_t *last = node;
+			while((node = zrtos_vheap__get_child(thiz,node))){
+				last = node;
+			}
+			_zrtos_vheap__free_helper(thiz,last);
+		}else{
+			break;
+		}
+	}
+	_zrtos_vheap__free_helper(thiz,chunk);
 }
 
 void zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_uid_t uid){
