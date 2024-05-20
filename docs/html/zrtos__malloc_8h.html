@@ -158,8 +158,8 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aea3a0d9fb100dd121406ff2cb6d61f3f" id="r_aea3a0d9fb100dd121406ff2cb6d61f3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3a0d9fb100dd121406ff2cb6d61f3f">zrtos_malloc__init</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
 <tr class="separator:aea3a0d9fb100dd121406ff2cb6d61f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f184ee2100bd4929491ac7b273dcae1" id="r_a3f184ee2100bd4929491ac7b273dcae1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f184ee2100bd4929491ac7b273dcae1">zrtos_malloc__get_free_chunk</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
-<tr class="separator:a3f184ee2100bd4929491ac7b273dcae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ada475abfd239fff5f30f68f5ca3cb" id="r_a92ada475abfd239fff5f30f68f5ca3cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:a92ada475abfd239fff5f30f68f5ca3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a886b38a033247d17a6681a94b237aab7" id="r_a886b38a033247d17a6681a94b237aab7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
 <tr class="separator:a886b38a033247d17a6681a94b237aab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299a13aa87e9bdb9fb23fb30cc5b1c32" id="r_a299a13aa87e9bdb9fb23fb30cc5b1c32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a> (void *ptr)</td></tr>
@@ -438,14 +438,17 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3f184ee2100bd4929491ac7b273dcae1" name="a3f184ee2100bd4929491ac7b273dcae1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f184ee2100bd4929491ac7b273dcae1">&#9670;&#160;</a></span>zrtos_malloc__get_free_chunk()</h2>
+<a id="a92ada475abfd239fff5f30f68f5ca3cb" name="a92ada475abfd239fff5f30f68f5ca3cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ada475abfd239fff5f30f68f5ca3cb">&#9670;&#160;</a></span>zrtos_malloc__get_free_chunk()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> * zrtos_malloc__get_free_chunk </td>
+          <td class="memname">static <a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> * zrtos_malloc__get_free_chunk </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
         </tr>
@@ -455,6 +458,11 @@ Functions</h2></td></tr>
           <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="zrtos__malloc_8h_source.html#l00105">105</a> of file <a class="el" href="zrtos__malloc_8h_source.html">zrtos_malloc.h</a>.</p>
@@ -480,8 +488,8 @@ Functions</h2></td></tr>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="zrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_cgraph.png" border="0" usemap="#azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_cgraph" alt=""/></div>
-<map name="azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_cgraph" id="azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_cgraph">
+<div class="center"><img src="zrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_cgraph.png" border="0" usemap="#azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_cgraph" alt=""/></div>
+<map name="azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_cgraph" id="azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,161,48"/>
 <area shape="rect" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="209,13,355,40"/>
 <area shape="poly" title=" " alt="" coords="161,24,193,24,193,29,161,29"/>
@@ -490,8 +498,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="zrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_icgraph.png" border="0" usemap="#azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_icgraph" alt=""/></div>
-<map name="azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_icgraph" id="azrtos__malloc_8h_a3f184ee2100bd4929491ac7b273dcae1_icgraph">
+<div class="center"><img src="zrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_icgraph.png" border="0" usemap="#azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_icgraph" alt=""/></div>
+<map name="azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_icgraph" id="azrtos__malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_icgraph">
 <area shape="rect" title=" " alt="" coords="201,5,356,48"/>
 <area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="5,13,153,40"/>
 <area shape="poly" title=" " alt="" coords="185,29,153,29,153,24,185,24"/>
@@ -585,7 +593,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  147</span>    <span class="keywordflow">if</span>(length &gt; (SIZE_MAX&gt;&gt;1)){</div>
 <div class="line"><span class="lineno">  148</span>        <span class="comment">//out of bounds</span></div>
 <div class="line"><span class="lineno">  149</span>        <span class="keywordflow">goto</span> L_OUT;</div>
-<div class="line"><span class="lineno">  150</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>((chunk = <a class="code hl_function" href="#a3f184ee2100bd4929491ac7b273dcae1">zrtos_malloc__get_free_chunk</a>(thiz,length))){</div>
+<div class="line"><span class="lineno">  150</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>((chunk = <a class="code hl_function" href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a>(thiz,length))){</div>
 <div class="line"><span class="lineno">  151</span>        chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> |= 1;</div>
 <div class="line"><span class="lineno">  152</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(has_free_space){</div>
 <div class="line"><span class="lineno">  153</span>        chunk = (<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a>*)thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a>;</div>
@@ -628,7 +636,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  190</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">  191</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">  192</span>}</div>
-<div class="ttc" id="azrtos__malloc_8h_html_a3f184ee2100bd4929491ac7b273dcae1"><div class="ttname"><a href="#a3f184ee2100bd4929491ac7b273dcae1">zrtos_malloc__get_free_chunk</a></div><div class="ttdeci">zrtos_malloc_heap_chunk_t * zrtos_malloc__get_free_chunk(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00105">zrtos_malloc.h:105</a></div></div>
+<div class="ttc" id="azrtos__malloc_8h_html_a92ada475abfd239fff5f30f68f5ca3cb"><div class="ttname"><a href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a></div><div class="ttdeci">static zrtos_malloc_heap_chunk_t * zrtos_malloc__get_free_chunk(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00105">zrtos_malloc.h:105</a></div></div>
 <div class="ttc" id="azrtos__malloc_8h_html_a9f7d16c747e7f4fca50c77155eebc5ed"><div class="ttname"><a href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a></div><div class="ttdeci">struct _zrtos_malloc_heap_chunk_t zrtos_malloc_heap_chunk_t</div></div>
 <div class="ttc" id="azrtos__types_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00035">zrtos_types.h:35</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -637,7 +645,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="zrtos__malloc_8h_a886b38a033247d17a6681a94b237aab7_cgraph.png" border="0" usemap="#azrtos__malloc_8h_a886b38a033247d17a6681a94b237aab7_cgraph" alt=""/></div>
 <map name="azrtos__malloc_8h_a886b38a033247d17a6681a94b237aab7_cgraph" id="azrtos__malloc_8h_a886b38a033247d17a6681a94b237aab7_cgraph">
 <area shape="rect" title=" " alt="" coords="5,47,153,73"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1" title=" " alt="" coords="201,5,356,48"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a92ada475abfd239fff5f30f68f5ca3cb" title=" " alt="" coords="201,5,356,48"/>
 <area shape="poly" title=" " alt="" coords="153,45,185,40,185,45,153,50"/>
 <area shape="rect" href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="207,72,350,115"/>
 <area shape="poly" title=" " alt="" coords="153,70,192,76,191,81,153,75"/>

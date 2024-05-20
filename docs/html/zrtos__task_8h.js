@@ -9,14 +9,11 @@ var zrtos__task_8h =
     [ "zrtos_task__get_return_value", "zrtos__task_8h.html#a78c2f34f21226b507aa91afa0092cc49", null ],
     [ "zrtos_task__get_stack_ptr", "zrtos__task_8h.html#a57ff82492e8cb164a83c79630497defd", null ],
     [ "zrtos_task__get_stack_size_min", "zrtos__task_8h.html#a61bd291e3b70a74e88eb2635006bd5ba", null ],
-    [ "zrtos_task__init", "zrtos__task_8h.html#a44cf7f7a11d3a0db22181658ab9ed9df", null ],
+    [ "zrtos_task__init", "zrtos__task_8h.html#a57eec052bd1973b8c86d895af7947551", null ],
     [ "zrtos_task__is_idle", "zrtos__task_8h.html#a642d4e9477deaba235d0a74ef58634a0", null ],
     [ "zrtos_task__on_tick", "zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9", null ],
     [ "zrtos_task__set_delay_ms", "zrtos__task_8h.html#ad7ba8c52c5853869213d0202496fd38a", null ],
     [ "zrtos_task__set_errno", "zrtos__task_8h.html#a1eb9de02feef88464630df59b2b5aca8", null ],
     [ "zrtos_task__set_return_value", "zrtos__task_8h.html#af347ad95ac58571ed81869a276c3c27c", null ],
-    [ "zrtos_task__set_stack_ptr", "zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e", null ],
-    [ "zrtos_task__set_state_done", "zrtos__task_8h.html#a67e257f5d9a405023725ef7adaa09746", null ],
-    [ "zrtos_task__set_state_running", "zrtos__task_8h.html#a20f3346850186630e5756b04af1b01b8", null ],
-    [ "zrtos_task__trampoline_cb", "zrtos__task_8h.html#aed134b57e796c3adbe544b97b949028d", null ]
+    [ "zrtos_task__set_stack_ptr", "zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e", null ]
 ];

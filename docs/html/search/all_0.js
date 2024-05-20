@@ -8,8 +8,8 @@ var searchData=
   ['_5fzrtos_5ftask_5fmutex_5ft_5',['_zrtos_task_mutex_t',['../struct__zrtos__task__mutex__t.html',1,'']]],
   ['_5fzrtos_5ftask_5fscheduler_5f_5fget_5factive_5ftask_6',['_zrtos_task_scheduler__get_active_task',['../zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b',1,'zrtos_task_scheduler.h']]],
   ['_5fzrtos_5ftask_5fscheduler_5f_5fon_5ftick_7',['_zrtos_task_scheduler__on_tick',['../zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a',1,'zrtos_task_scheduler.h']]],
-  ['_5fzrtos_5ftask_5fscheduler_5f_5frestore_5ftask_8',['_zrtos_task_scheduler__restore_task',['../zrtos__task__scheduler_8h.html#ab141ab1e8536c047745b2ba51c24d9f9',1,'zrtos_task_scheduler.h']]],
-  ['_5fzrtos_5ftask_5fscheduler_5f_5fset_5factive_5ftask_9',['_zrtos_task_scheduler__set_active_task',['../zrtos__task__scheduler_8h.html#add6beaa79e1790e675441c5b9205755a',1,'zrtos_task_scheduler.h']]],
+  ['_5fzrtos_5ftask_5fscheduler_5f_5frestore_5ftask_8',['_zrtos_task_scheduler__restore_task',['../zrtos__task__scheduler_8h.html#a1181e9fe3ce0af5a0fd68e6ec6b914d1',1,'zrtos_task_scheduler.h']]],
+  ['_5fzrtos_5ftask_5fscheduler_5f_5fset_5factive_5ftask_9',['_zrtos_task_scheduler__set_active_task',['../zrtos__task__scheduler_8h.html#a2004674413bcf2297a5823060be0819f',1,'zrtos_task_scheduler.h']]],
   ['_5fzrtos_5ftask_5fscheduler_5f_5fswitch_5ftask_10',['_zrtos_task_scheduler__switch_task',['../zrtos__task__scheduler_8h.html#a789e1719b7fc3834c87cbe37a3473bc3',1,'zrtos_task_scheduler.h']]],
   ['_5fzrtos_5ftask_5fscheduler_5ft_11',['_zrtos_task_scheduler_t',['../struct__zrtos__task__scheduler__t.html',1,'']]],
   ['_5fzrtos_5ftask_5ft_12',['_zrtos_task_t',['../struct__zrtos__task__t.html',1,'']]],
@@ -19,11 +19,10 @@ var searchData=
   ['_5fzrtos_5fvheap_5f_5fget_5ffree_5fspace_16',['_zrtos_vheap__get_free_space',['../zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e',1,'zrtos_vheap.h']]],
   ['_5fzrtos_5fvheap_5f_5fget_5ffree_5fspace_5fex_17',['_zrtos_vheap__get_free_space_ex',['../zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e',1,'zrtos_vheap.h']]],
   ['_5fzrtos_5fvheap_5f_5fmalloc_18',['_zrtos_vheap__malloc',['../zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d',1,'zrtos_vheap.h']]],
-  ['_5fzrtos_5fvheap_5f_5fswap_5fto_5fheap_5fend_19',['_zrtos_vheap__swap_to_heap_end',['../zrtos__vheap_8h.html#a89842c4003afd30fbe7b90db0f9a7125',1,'zrtos_vheap.h']]],
-  ['_5fzrtos_5fvheap_5f_5fupdate_5findex_5fptr_20',['_zrtos_vheap__update_index_ptr',['../zrtos__vheap_8h.html#ac51ec4f9bd14da10a2ee484711333ce3',1,'zrtos_vheap.h']]],
-  ['_5fzrtos_5fvheap_5fchunk_5findex_5ft_21',['_zrtos_vheap_chunk_index_t',['../struct__zrtos__vheap__chunk__index__t.html',1,'']]],
-  ['_5fzrtos_5fvheap_5fchunk_5ft_22',['_zrtos_vheap_chunk_t',['../struct__zrtos__vheap__chunk__t.html',1,'']]],
-  ['_5fzrtos_5fvheap_5fchunk_5ftype_5ft_23',['_zrtos_vheap_chunk_type_t',['../struct__zrtos__vheap__chunk__type__t.html',1,'']]],
-  ['_5fzrtos_5fvheap_5fchunk_5fuid_5ft_24',['_zrtos_vheap_chunk_uid_t',['../struct__zrtos__vheap__chunk__uid__t.html',1,'']]],
-  ['_5fzrtos_5fvheap_5ft_25',['_zrtos_vheap_t',['../struct__zrtos__vheap__t.html',1,'']]]
+  ['_5fzrtos_5fvheap_5f_5fswap_5fto_5fheap_5fend_19',['_zrtos_vheap__swap_to_heap_end',['../zrtos__vheap_8h.html#a807e6713ecdd9d455cb0d90d68a1b4ad',1,'zrtos_vheap.h']]],
+  ['_5fzrtos_5fvheap_5f_5fupdate_5findex_5fptr_20',['_zrtos_vheap__update_index_ptr',['../zrtos__vheap_8h.html#a53d9ca47afe3a2f353e12566c3c82a1d',1,'zrtos_vheap.h']]],
+  ['_5fzrtos_5fvheap_5fchunk_5ft_21',['_zrtos_vheap_chunk_t',['../struct__zrtos__vheap__chunk__t.html',1,'']]],
+  ['_5fzrtos_5fvheap_5fchunk_5ftype_5ft_22',['_zrtos_vheap_chunk_type_t',['../struct__zrtos__vheap__chunk__type__t.html',1,'']]],
+  ['_5fzrtos_5fvheap_5fchunk_5fuid_5ft_23',['_zrtos_vheap_chunk_uid_t',['../struct__zrtos__vheap__chunk__uid__t.html',1,'']]],
+  ['_5fzrtos_5fvheap_5ft_24',['_zrtos_vheap_t',['../struct__zrtos__vheap__t.html',1,'']]]
 ];

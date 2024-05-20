@@ -9,7 +9,6 @@ var annotated_dup =
     [ "_zrtos_task_t", "struct__zrtos__task__t.html", "struct__zrtos__task__t" ],
     [ "_zrtos_time_t", "struct__zrtos__time__t.html", "struct__zrtos__time__t" ],
     [ "_zrtos_time_ticks_t", "struct__zrtos__time__ticks__t.html", "struct__zrtos__time__ticks__t" ],
-    [ "_zrtos_vheap_chunk_index_t", "struct__zrtos__vheap__chunk__index__t.html", "struct__zrtos__vheap__chunk__index__t" ],
     [ "_zrtos_vheap_chunk_t", "struct__zrtos__vheap__chunk__t.html", "struct__zrtos__vheap__chunk__t" ],
     [ "_zrtos_vheap_chunk_type_t", "struct__zrtos__vheap__chunk__type__t.html", "struct__zrtos__vheap__chunk__type__t" ],
     [ "_zrtos_vheap_chunk_uid_t", "struct__zrtos__vheap__chunk__uid__t.html", "struct__zrtos__vheap__chunk__uid__t" ],

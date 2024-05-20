@@ -66,12 +66,25 @@ int pthread_mutex_init(
 	 pthread_mutex_t *restrict mutex
 	,const pthread_mutexattr_t *restrict attr
 ){
-	return !zrtos_task_mutex__init(&mutex->mutex);
+	return zrtos_task_mutex__init(&mutex->mutex) ? 0 : EINVAL;
 }
 
 int pthread_mutex_destroy(pthread_mutex_t *mutex){
 	zrtos_task_mutex__deinit(&mutex->mutex);
 	return 0;
+}
+
+pthread_t pthread_self(void){
+	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_type_ex(
+		 zrtos_task_scheduler__get_heap()
+		,ZRTOS_VHEAP_TYPE__TASK_ACTIVE
+	);
+	pthread_t ret;
+	ret.id = chunk
+	       ? zrtos_vheap_chunk__get_uid(chunk)
+	       : zrtos_vheap_chunk_uid__error()
+	;
+	return ret;
 }
 
 int pthread_create(
@@ -94,7 +107,7 @@ int pthread_create(
 	);
 	zrtos_vheap_chunk_t *chunk = _zrtos_vheap__malloc(
 		 mem
-		,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE
+		,ZRTOS_VHEAP_TYPE__TASK_IDLE
 		,stacksize_min
 	);
 	int ret = ENOMEM;
@@ -109,6 +122,7 @@ int pthread_create(
 		);
 		zrtos_task__init(
 			 task
+			,pthread_self().id
 			,(zrtos_arch_stack_t*)(task - 1)
 			,stacksize_min
 			,start_routine
@@ -131,36 +145,35 @@ int pthread_equal(pthread_t t1, pthread_t t2){
 	return zrtos_vheap_chunk_uid__cmp(&t1.id,&t2.id);
 }
 
-zrtos_task_t *pthread__get_task(pthread_t thread){
-	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_id(
-		zrtos_task_scheduler__get_heap()
-		,thread.id
-	);
-	if(chunk){
-		return zrtos_types__ptr_subtract(
-			 zrtos_vheap_chunk__get_last_address(
-				chunk
-			)
-			,sizeof(zrtos_task_t)
-		);
-	}
-	return 0;
-}
-
 int pthread_join(pthread_t thread, void **retval){
 	int ret = ESRCH;
 
 	do{
-		zrtos_task_t *task = pthread__get_task(thread);
-		if(task){
-			if(!zrtos_task__is_done(task)){
+		zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_id(
+			 zrtos_task_scheduler__get_heap()
+			,thread.id
+		);
+		if(chunk){
+			zrtos_task_t *task;
+
+			if(!zrtos_vheap_chunk__is_type_eq(
+				 chunk
+				,ZRTOS_VHEAP_TYPE__TASK_DONE
+			)){
 				zrtos_task_scheduler__delay_ms(0);
 				continue;
 			}
+
+			task = zrtos_types__ptr_subtract(
+				zrtos_vheap_chunk__get_last_address(
+					chunk
+				)
+				,sizeof(zrtos_task_t)
+			);
 			*retval = zrtos_task__get_return_value(task);
-			zrtos_vheap__free(
+			_zrtos_vheap__free(
 				 zrtos_task_scheduler__get_heap()
-				,thread.id
+				,chunk
 			);
 			ret = 0;
 		}
@@ -168,10 +181,6 @@ int pthread_join(pthread_t thread, void **retval){
 	}while(1);
 
 	return ret;
-}
-
-pthread_t pthread_self(void){
-
 }
 
 int pthread_mutex_lock(pthread_mutex_t *mutex){

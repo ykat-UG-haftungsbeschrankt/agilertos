@@ -13,6 +13,8 @@ extern "C" {
 
 #include <limits.h>
 
+#include "zrtos_assert.h"
+
 
 typedef enum{
 	 EMIN             = INT_MIN ///< Minimum value of errno_t
@@ -143,6 +145,8 @@ typedef enum{
 }errno_t;
 
 volatile errno_t errno = 0;
+
+ZRTOS_ASSERT__STATIC(sizeof(errno_t) == sizeof(int));
 
 
 #ifdef __cplusplus

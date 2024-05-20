@@ -135,10 +135,10 @@ Typedefs</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:aee390913b90918b21b4a44f1e07d7189" id="r_aee390913b90918b21b4a44f1e07d7189"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a> (uint64_t value, char *str, int radix)</td></tr>
 <tr class="separator:aee390913b90918b21b4a44f1e07d7189"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff8817cd245afeb25b4528cbaa6a10d" id="r_a5ff8817cd245afeb25b4528cbaa6a10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a> (void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</td></tr>
-<tr class="separator:a5ff8817cd245afeb25b4528cbaa6a10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c0f562bd4cb716ffdf422d957df885e" id="r_a6c0f562bd4cb716ffdf422d957df885e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c0f562bd4cb716ffdf422d957df885e">zrtos_str__vsnprintf_cb</a> (void *args_, char ch)</td></tr>
-<tr class="separator:a6c0f562bd4cb716ffdf422d957df885e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253e58778bc61b2ca7b51d761ea914b4" id="r_a253e58778bc61b2ca7b51d761ea914b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a> (void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</td></tr>
+<tr class="separator:a253e58778bc61b2ca7b51d761ea914b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61cc952b30f32a264a5ba3c3749f7646" id="r_a61cc952b30f32a264a5ba3c3749f7646"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a> (void *args_, char ch)</td></tr>
+<tr class="separator:a61cc952b30f32a264a5ba3c3749f7646"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af64b95fd53da061e4bde68dddbe02232" id="r_af64b95fd53da061e4bde68dddbe02232"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af64b95fd53da061e4bde68dddbe02232">zrtos_str__vsnprintf</a> (char *dest, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, char const *fmt,...)</td></tr>
 <tr class="separator:af64b95fd53da061e4bde68dddbe02232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -182,47 +182,47 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00019">19</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span>                                                            {</div>
-<div class="line"><span class="lineno">   20</span>    <span class="keywordtype">char</span> tmp[65];</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keywordtype">char</span> *tp = tmp;</div>
-<div class="line"><span class="lineno">   22</span>    int64_t i;</div>
-<div class="line"><span class="lineno">   23</span>    uint64_t v = value;</div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">char</span> *sp;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <span class="keywordflow">if</span>(str == NULL){</div>
-<div class="line"><span class="lineno">   27</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   28</span>    }</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">if</span>(radix &gt; 36 || radix &lt;= 1){</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">while</span> (v || tp == tmp){</div>
-<div class="line"><span class="lineno">   35</span>        i = v % radix;</div>
-<div class="line"><span class="lineno">   36</span>        v = v / radix;</div>
-<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">if</span> (i &lt; 10){</div>
-<div class="line"><span class="lineno">   38</span>            *tp++ = i+<span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno">   39</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   40</span>            *tp++ = i + <span class="charliteral">&#39;a&#39;</span> - 10;</div>
-<div class="line"><span class="lineno">   41</span>        }</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="line"><span class="lineno">   43</span> </div>
-<div class="line"><span class="lineno">   44</span>    sp = str;</div>
-<div class="line"><span class="lineno">   45</span>    <span class="keywordflow">while</span>(tp &gt; tmp){</div>
-<div class="line"><span class="lineno">   46</span>        *sp++ = *--tp;</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>    *sp = 0;</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> str;</div>
-<div class="line"><span class="lineno">   51</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00026">26</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                            {</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span> tmp[65];</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span> *tp = tmp;</div>
+<div class="line"><span class="lineno">   29</span>    int64_t i;</div>
+<div class="line"><span class="lineno">   30</span>    uint64_t v = value;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="keywordtype">char</span> *sp;</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">if</span>(str == NULL){</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   35</span>    }</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">if</span>(radix &gt; 36 || radix &lt;= 1){</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">while</span>(v || tp == tmp){</div>
+<div class="line"><span class="lineno">   42</span>        i = v % radix;</div>
+<div class="line"><span class="lineno">   43</span>        v = v / radix;</div>
+<div class="line"><span class="lineno">   44</span>        <span class="keywordflow">if</span>(i &lt; 10){</div>
+<div class="line"><span class="lineno">   45</span>            *tp++ = i+<span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">   46</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   47</span>            *tp++ = i + <span class="charliteral">&#39;a&#39;</span> - 10;</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    sp = str;</div>
+<div class="line"><span class="lineno">   52</span>    <span class="keywordflow">while</span>(tp &gt; tmp){</div>
+<div class="line"><span class="lineno">   53</span>        *sp++ = *--tp;</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span>    *sp = 0;</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> str;</div>
+<div class="line"><span class="lineno">   58</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__str_8h_aee390913b90918b21b4a44f1e07d7189_icgraph.png" border="0" usemap="#azrtos__str_8h_aee390913b90918b21b4a44f1e07d7189_icgraph" alt=""/></div>
 <map name="azrtos__str_8h_aee390913b90918b21b4a44f1e07d7189_icgraph" id="azrtos__str_8h_aee390913b90918b21b4a44f1e07d7189_icgraph">
 <area shape="rect" title=" " alt="" coords="368,13,482,40"/>
-<area shape="rect" href="zrtos__str_8h.html#a5ff8817cd245afeb25b4528cbaa6a10d" title=" " alt="" coords="187,5,320,48"/>
+<area shape="rect" href="zrtos__str_8h.html#a253e58778bc61b2ca7b51d761ea914b4" title=" " alt="" coords="187,5,320,48"/>
 <area shape="poly" title=" " alt="" coords="352,29,320,29,320,24,352,24"/>
 <area shape="rect" href="zrtos__str_8h.html#af64b95fd53da061e4bde68dddbe02232" title=" " alt="" coords="5,13,139,40"/>
 <area shape="poly" title=" " alt="" coords="171,29,139,29,139,24,171,24"/>
@@ -260,37 +260,37 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00140">140</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  140</span>                                                                    {</div>
-<div class="line"><span class="lineno">  141</span>    va_list arg;</div>
-<div class="line"><span class="lineno">  142</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> args = {</div>
-<div class="line"><span class="lineno">  143</span>         .<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a> = dest</div>
-<div class="line"><span class="lineno">  144</span>        ,.len = len</div>
-<div class="line"><span class="lineno">  145</span>    };</div>
-<div class="line"><span class="lineno">  146</span>    va_start(arg, fmt);</div>
-<div class="line"><span class="lineno">  147</span>    <a class="code hl_function" href="#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a>(</div>
-<div class="line"><span class="lineno">  148</span>         <a class="code hl_function" href="#a6c0f562bd4cb716ffdf422d957df885e">zrtos_str__vsnprintf_cb</a></div>
-<div class="line"><span class="lineno">  149</span>        ,&amp;args</div>
-<div class="line"><span class="lineno">  150</span>        ,fmt</div>
-<div class="line"><span class="lineno">  151</span>        ,arg</div>
-<div class="line"><span class="lineno">  152</span>    );</div>
-<div class="line"><span class="lineno">  153</span>    va_end(arg);</div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">return</span> args.<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>;</div>
-<div class="line"><span class="lineno">  155</span>}</div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html">_zrtos_str__vsnprintf_cb_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00126">zrtos_str.h:126</a></div></div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_a3a6aee5791c5a29d7562e06881136af7"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">_zrtos_str__vsnprintf_cb_args_t::dest</a></div><div class="ttdeci">char * dest</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00127">zrtos_str.h:127</a></div></div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_ac93661e7158589be8164eef3a95bf391"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">_zrtos_str__vsnprintf_cb_args_t::ret</a></div><div class="ttdeci">size_t ret</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00129">zrtos_str.h:129</a></div></div>
-<div class="ttc" id="azrtos__str_8h_html_a5ff8817cd245afeb25b4528cbaa6a10d"><div class="ttname"><a href="#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00053">zrtos_str.h:53</a></div></div>
-<div class="ttc" id="azrtos__str_8h_html_a6c0f562bd4cb716ffdf422d957df885e"><div class="ttname"><a href="#a6c0f562bd4cb716ffdf422d957df885e">zrtos_str__vsnprintf_cb</a></div><div class="ttdeci">void zrtos_str__vsnprintf_cb(void *args_, char ch)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00132">zrtos_str.h:132</a></div></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00141">141</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                                                                    {</div>
+<div class="line"><span class="lineno">  142</span>    va_list arg;</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> args = {</div>
+<div class="line"><span class="lineno">  144</span>         .<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a> = dest</div>
+<div class="line"><span class="lineno">  145</span>        ,.len = len</div>
+<div class="line"><span class="lineno">  146</span>    };</div>
+<div class="line"><span class="lineno">  147</span>    va_start(arg, fmt);</div>
+<div class="line"><span class="lineno">  148</span>    <a class="code hl_function" href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a>(</div>
+<div class="line"><span class="lineno">  149</span>         <a class="code hl_function" href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div>
+<div class="line"><span class="lineno">  150</span>        ,&amp;args</div>
+<div class="line"><span class="lineno">  151</span>        ,fmt</div>
+<div class="line"><span class="lineno">  152</span>        ,arg</div>
+<div class="line"><span class="lineno">  153</span>    );</div>
+<div class="line"><span class="lineno">  154</span>    va_end(arg);</div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">return</span> args.<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>;</div>
+<div class="line"><span class="lineno">  156</span>}</div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html">_zrtos_str__vsnprintf_cb_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00019">zrtos_str.h:19</a></div></div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_a3a6aee5791c5a29d7562e06881136af7"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">_zrtos_str__vsnprintf_cb_args_t::dest</a></div><div class="ttdeci">char * dest</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00020">zrtos_str.h:20</a></div></div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_ac93661e7158589be8164eef3a95bf391"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">_zrtos_str__vsnprintf_cb_args_t::ret</a></div><div class="ttdeci">size_t ret</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00022">zrtos_str.h:22</a></div></div>
+<div class="ttc" id="azrtos__str_8h_html_a253e58778bc61b2ca7b51d761ea914b4"><div class="ttname"><a href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00060">zrtos_str.h:60</a></div></div>
+<div class="ttc" id="azrtos__str_8h_html_a61cc952b30f32a264a5ba3c3749f7646"><div class="ttname"><a href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_cb(void *args_, char ch)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00133">zrtos_str.h:133</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__str_8h_af64b95fd53da061e4bde68dddbe02232_cgraph.png" border="0" usemap="#azrtos__str_8h_af64b95fd53da061e4bde68dddbe02232_cgraph" alt=""/></div>
 <map name="azrtos__str_8h_af64b95fd53da061e4bde68dddbe02232_cgraph" id="azrtos__str_8h_af64b95fd53da061e4bde68dddbe02232_cgraph">
 <area shape="rect" title=" " alt="" coords="5,35,139,61"/>
-<area shape="rect" href="zrtos__str_8h.html#a6c0f562bd4cb716ffdf422d957df885e" title=" " alt="" coords="187,5,341,32"/>
+<area shape="rect" href="zrtos__str_8h.html#a61cc952b30f32a264a5ba3c3749f7646" title=" " alt="" coords="187,5,341,32"/>
 <area shape="poly" title=" " alt="" coords="139,35,171,30,172,35,139,40"/>
-<area shape="rect" href="zrtos__str_8h.html#a5ff8817cd245afeb25b4528cbaa6a10d" title=" " alt="" coords="197,56,331,99"/>
+<area shape="rect" href="zrtos__str_8h.html#a253e58778bc61b2ca7b51d761ea914b4" title=" " alt="" coords="197,56,331,99"/>
 <area shape="poly" title=" " alt="" coords="139,56,183,62,182,68,139,61"/>
 <area shape="rect" href="zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189" title=" " alt="" coords="389,64,503,91"/>
 <area shape="poly" title=" " alt="" coords="331,75,373,75,373,80,331,80"/>
@@ -299,14 +299,17 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a6c0f562bd4cb716ffdf422d957df885e" name="a6c0f562bd4cb716ffdf422d957df885e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c0f562bd4cb716ffdf422d957df885e">&#9670;&#160;</a></span>zrtos_str__vsnprintf_cb()</h2>
+<a id="a61cc952b30f32a264a5ba3c3749f7646" name="a61cc952b30f32a264a5ba3c3749f7646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61cc952b30f32a264a5ba3c3749f7646">&#9670;&#160;</a></span>zrtos_str__vsnprintf_cb()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zrtos_str__vsnprintf_cb </td>
+          <td class="memname">static void zrtos_str__vsnprintf_cb </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>args_</em>, </span></td>
         </tr>
@@ -316,22 +319,27 @@ Here is the call graph for this function:</div>
           <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>ch</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00132">132</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  132</span>                                                 {</div>
-<div class="line"><span class="lineno">  133</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> *args = (<a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a>*)args_;</div>
-<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">if</span>(args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">len</a>--){</div>
-<div class="line"><span class="lineno">  135</span>        *args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a>++ = ch;</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
-<div class="line"><span class="lineno">  137</span>    args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>++;</div>
-<div class="line"><span class="lineno">  138</span>}</div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_afad63d6f731f92e95b299f922da3de07"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">_zrtos_str__vsnprintf_cb_args_t::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00128">zrtos_str.h:128</a></div></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00133">133</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>                                                        {</div>
+<div class="line"><span class="lineno">  134</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> *args = (<a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a>*)args_;</div>
+<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">if</span>(args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">len</a>--){</div>
+<div class="line"><span class="lineno">  136</span>        *args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a>++ = ch;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>    args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>++;</div>
+<div class="line"><span class="lineno">  139</span>}</div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_afad63d6f731f92e95b299f922da3de07"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">_zrtos_str__vsnprintf_cb_args_t::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00021">zrtos_str.h:21</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="zrtos__str_8h_a6c0f562bd4cb716ffdf422d957df885e_icgraph.png" border="0" usemap="#azrtos__str_8h_a6c0f562bd4cb716ffdf422d957df885e_icgraph" alt=""/></div>
-<map name="azrtos__str_8h_a6c0f562bd4cb716ffdf422d957df885e_icgraph" id="azrtos__str_8h_a6c0f562bd4cb716ffdf422d957df885e_icgraph">
+<div class="center"><img src="zrtos__str_8h_a61cc952b30f32a264a5ba3c3749f7646_icgraph.png" border="0" usemap="#azrtos__str_8h_a61cc952b30f32a264a5ba3c3749f7646_icgraph" alt=""/></div>
+<map name="azrtos__str_8h_a61cc952b30f32a264a5ba3c3749f7646_icgraph" id="azrtos__str_8h_a61cc952b30f32a264a5ba3c3749f7646_icgraph">
 <area shape="rect" title=" " alt="" coords="187,5,341,32"/>
 <area shape="rect" href="zrtos__str_8h.html#af64b95fd53da061e4bde68dddbe02232" title=" " alt="" coords="5,5,139,32"/>
 <area shape="poly" title=" " alt="" coords="171,21,139,21,139,16,171,16"/>
@@ -340,14 +348,17 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5ff8817cd245afeb25b4528cbaa6a10d" name="a5ff8817cd245afeb25b4528cbaa6a10d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ff8817cd245afeb25b4528cbaa6a10d">&#9670;&#160;</a></span>zrtos_str__vsnprintf_internal()</h2>
+<a id="a253e58778bc61b2ca7b51d761ea914b4" name="a253e58778bc61b2ca7b51d761ea914b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253e58778bc61b2ca7b51d761ea914b4">&#9670;&#160;</a></span>zrtos_str__vsnprintf_internal()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zrtos_str__vsnprintf_internal </td>
+          <td class="memname">static void zrtos_str__vsnprintf_internal </td>
           <td>(</td>
           <td class="paramtype">void(*)(void *args, char c)</td>          <td class="paramname"><span class="paramname"><em>putc</em>, </span></td>
         </tr>
@@ -367,82 +378,87 @@ Here is the caller graph for this function:</div>
           <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00053">53</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span> {</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordtype">char</span> ch;</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">while</span>((ch = *fmt++)){</div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span>(ch == <span class="charliteral">&#39;%&#39;</span>){</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">switch</span>((ch = *fmt++)){</div>
-<div class="line"><span class="lineno">   63</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span>:</div>
-<div class="line"><span class="lineno">   64</span>                    putc(putc_args,<span class="charliteral">&#39;%&#39;</span>);</div>
-<div class="line"><span class="lineno">   65</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   66</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:{</div>
-<div class="line"><span class="lineno">   67</span>                    <span class="keywordtype">int</span> tmp = va_arg(arg,<span class="keywordtype">int</span>);</div>
-<div class="line"><span class="lineno">   68</span>                    putc(putc_args,(<span class="keywordtype">char</span>)tmp);</div>
-<div class="line"><span class="lineno">   69</span>                }</div>
-<div class="line"><span class="lineno">   70</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   71</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:{</div>
-<div class="line"><span class="lineno">   72</span>                    <span class="keywordtype">char</span> *tmp = va_arg(arg,<span class="keywordtype">char</span>*);</div>
-<div class="line"><span class="lineno">   73</span>                    <span class="keywordflow">while</span>((ch = *tmp++)){</div>
-<div class="line"><span class="lineno">   74</span>                        putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">   75</span>                    }</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__str_8h_source.html#l00060">60</a> of file <a class="el" href="zrtos__str_8h_source.html">zrtos_str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span> {</div>
+<div class="line"><span class="lineno">   66</span>    <span class="keywordtype">char</span> ch;</div>
+<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">while</span>((ch = *fmt++)){</div>
+<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">if</span>(ch == <span class="charliteral">&#39;%&#39;</span>){</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordflow">switch</span>((ch = *fmt++)){</div>
+<div class="line"><span class="lineno">   70</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span>:</div>
+<div class="line"><span class="lineno">   71</span>                    putc(putc_args,<span class="charliteral">&#39;%&#39;</span>);</div>
+<div class="line"><span class="lineno">   72</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:{</div>
+<div class="line"><span class="lineno">   74</span>                    <span class="keywordtype">int</span> tmp = va_arg(arg,<span class="keywordtype">int</span>);</div>
+<div class="line"><span class="lineno">   75</span>                    putc(putc_args,(<span class="keywordtype">char</span>)tmp);</div>
 <div class="line"><span class="lineno">   76</span>                }</div>
 <div class="line"><span class="lineno">   77</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   78</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:{</div>
+<div class="line"><span class="lineno">   78</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:{</div>
 <div class="line"><span class="lineno">   79</span>                    <span class="keywordtype">char</span> *tmp = va_arg(arg,<span class="keywordtype">char</span>*);</div>
-<div class="line"><span class="lineno">   80</span>                    <span class="keywordtype">size_t</span> len = va_arg(arg,<span class="keywordtype">size_t</span>);</div>
-<div class="line"><span class="lineno">   81</span>                    <span class="keywordflow">while</span>(len--){</div>
-<div class="line"><span class="lineno">   82</span>                        putc(putc_args,*tmp++);</div>
-<div class="line"><span class="lineno">   83</span>                    }</div>
-<div class="line"><span class="lineno">   84</span>                }</div>
-<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   86</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:{</div>
-<div class="line"><span class="lineno">   87</span>                    <span class="keywordtype">char</span> buffer[64];</div>
-<div class="line"><span class="lineno">   88</span>                    int64_t tmp = va_arg(arg, int64_t);</div>
-<div class="line"><span class="lineno">   89</span>                    <span class="keywordflow">if</span>(tmp &lt; 0){</div>
-<div class="line"><span class="lineno">   90</span>                        putc(putc_args,<span class="charliteral">&#39;-&#39;</span>);</div>
-<div class="line"><span class="lineno">   91</span>                        tmp = -tmp;</div>
-<div class="line"><span class="lineno">   92</span>                    }</div>
-<div class="line"><span class="lineno">   93</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
-<div class="line"><span class="lineno">   94</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
-<div class="line"><span class="lineno">   95</span>                        putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">   96</span>                    }</div>
-<div class="line"><span class="lineno">   97</span>                }</div>
-<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;u&#39;</span>:{</div>
-<div class="line"><span class="lineno">  100</span>                    <span class="keywordtype">char</span> buffer[64];</div>
-<div class="line"><span class="lineno">  101</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
-<div class="line"><span class="lineno">  102</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
-<div class="line"><span class="lineno">  103</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
-<div class="line"><span class="lineno">  104</span>                        putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">  105</span>                    }</div>
-<div class="line"><span class="lineno">  106</span>                }</div>
-<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  108</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:{</div>
-<div class="line"><span class="lineno">  109</span>                    <span class="keywordtype">char</span> buffer[64];</div>
-<div class="line"><span class="lineno">  110</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
-<div class="line"><span class="lineno">  111</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 16);</div>
-<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
-<div class="line"><span class="lineno">  113</span>                        putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">  114</span>                    }</div>
-<div class="line"><span class="lineno">  115</span>                }</div>
-<div class="line"><span class="lineno">  116</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">  118</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  119</span>            }</div>
-<div class="line"><span class="lineno">  120</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">  121</span>            putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">  122</span>        }</div>
-<div class="line"><span class="lineno">  123</span>    }</div>
-<div class="line"><span class="lineno">  124</span>}</div>
-<div class="ttc" id="azrtos__str_8h_html_aee390913b90918b21b4a44f1e07d7189"><div class="ttname"><a href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a></div><div class="ttdeci">char * zrtos_str__ultoa(uint64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00019">zrtos_str.h:19</a></div></div>
+<div class="line"><span class="lineno">   80</span>                    <span class="keywordflow">while</span>((ch = *tmp++)){</div>
+<div class="line"><span class="lineno">   81</span>                        putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">   82</span>                    }</div>
+<div class="line"><span class="lineno">   83</span>                }</div>
+<div class="line"><span class="lineno">   84</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   85</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:{</div>
+<div class="line"><span class="lineno">   86</span>                    <span class="keywordtype">char</span> *tmp = va_arg(arg,<span class="keywordtype">char</span>*);</div>
+<div class="line"><span class="lineno">   87</span>                    <span class="keywordtype">size_t</span> len = va_arg(arg,<span class="keywordtype">size_t</span>);</div>
+<div class="line"><span class="lineno">   88</span>                    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">   89</span>                        putc(putc_args,*tmp++);</div>
+<div class="line"><span class="lineno">   90</span>                    }</div>
+<div class="line"><span class="lineno">   91</span>                }</div>
+<div class="line"><span class="lineno">   92</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   93</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:{</div>
+<div class="line"><span class="lineno">   94</span>                    <span class="keywordtype">char</span> buffer[64];</div>
+<div class="line"><span class="lineno">   95</span>                    int64_t tmp = va_arg(arg, int64_t);</div>
+<div class="line"><span class="lineno">   96</span>                    <span class="keywordflow">if</span>(tmp &lt; 0){</div>
+<div class="line"><span class="lineno">   97</span>                        putc(putc_args,<span class="charliteral">&#39;-&#39;</span>);</div>
+<div class="line"><span class="lineno">   98</span>                        tmp = -tmp;</div>
+<div class="line"><span class="lineno">   99</span>                    }</div>
+<div class="line"><span class="lineno">  100</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
+<div class="line"><span class="lineno">  101</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
+<div class="line"><span class="lineno">  102</span>                        putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">  103</span>                    }</div>
+<div class="line"><span class="lineno">  104</span>                }</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  106</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;u&#39;</span>:{</div>
+<div class="line"><span class="lineno">  107</span>                    <span class="keywordtype">char</span> buffer[64];</div>
+<div class="line"><span class="lineno">  108</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
+<div class="line"><span class="lineno">  109</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 10);</div>
+<div class="line"><span class="lineno">  110</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
+<div class="line"><span class="lineno">  111</span>                        putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">  112</span>                    }</div>
+<div class="line"><span class="lineno">  113</span>                }</div>
+<div class="line"><span class="lineno">  114</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:{</div>
+<div class="line"><span class="lineno">  116</span>                    <span class="keywordtype">char</span> buffer[64];</div>
+<div class="line"><span class="lineno">  117</span>                    uint64_t tmp = va_arg(arg, uint64_t);</div>
+<div class="line"><span class="lineno">  118</span>                    <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(tmp, buffer, 16);</div>
+<div class="line"><span class="lineno">  119</span>                    <span class="keywordflow">for</span>(<span class="keywordtype">char</span> *ptr = buffer;(ch = *ptr++);){</div>
+<div class="line"><span class="lineno">  120</span>                        putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">  121</span>                    }</div>
+<div class="line"><span class="lineno">  122</span>                }</div>
+<div class="line"><span class="lineno">  123</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  126</span>            }</div>
+<div class="line"><span class="lineno">  127</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  128</span>            putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">  129</span>        }</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="line"><span class="lineno">  131</span>}</div>
+<div class="ttc" id="azrtos__str_8h_html_aee390913b90918b21b4a44f1e07d7189"><div class="ttname"><a href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a></div><div class="ttdeci">char * zrtos_str__ultoa(uint64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00026">zrtos_str.h:26</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="zrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_cgraph.png" border="0" usemap="#azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_cgraph" alt=""/></div>
-<map name="azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_cgraph" id="azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_cgraph">
+<div class="center"><img src="zrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_cgraph.png" border="0" usemap="#azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_cgraph" alt=""/></div>
+<map name="azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_cgraph" id="azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_cgraph">
 <area shape="rect" title=" " alt="" coords="5,5,139,48"/>
 <area shape="rect" href="zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189" title=" " alt="" coords="187,13,301,40"/>
 <area shape="poly" title=" " alt="" coords="139,24,171,24,171,29,139,29"/>
@@ -451,8 +467,8 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="zrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_icgraph.png" border="0" usemap="#azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_icgraph" alt=""/></div>
-<map name="azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_icgraph" id="azrtos__str_8h_a5ff8817cd245afeb25b4528cbaa6a10d_icgraph">
+<div class="center"><img src="zrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_icgraph.png" border="0" usemap="#azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_icgraph" alt=""/></div>
+<map name="azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_icgraph" id="azrtos__str_8h_a253e58778bc61b2ca7b51d761ea914b4_icgraph">
 <area shape="rect" title=" " alt="" coords="187,5,320,48"/>
 <area shape="rect" href="zrtos__str_8h.html#af64b95fd53da061e4bde68dddbe02232" title=" " alt="" coords="5,13,139,40"/>
 <area shape="poly" title=" " alt="" coords="171,29,139,29,139,24,171,24"/>

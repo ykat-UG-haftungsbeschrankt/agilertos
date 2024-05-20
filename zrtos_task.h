@@ -17,6 +17,7 @@ extern "C" {
 
 
 #include "zrtos_error.h"
+#include "zrtos_vheap_chunk_uid.h"
 
 
 typedef uint16_t zrtos_task_delay_t;
@@ -30,10 +31,12 @@ typedef struct _zrtos_task_t{
 	size_t                       stacksize_min;
 	uint16_t                     ticks;
 	errno_t                      errno;
+	zrtos_vheap_chunk_uid_t      parent;
 }zrtos_task_t;
 
 bool zrtos_task__init(
 	 zrtos_task_t              *thiz
+	,zrtos_vheap_chunk_uid_t   parent
 	,zrtos_arch_stack_t        *heap
 	//,size_t                    heap_size
 	,size_t                    stacksize_min
@@ -50,6 +53,7 @@ bool zrtos_task__init(
 	thiz->stacksize_min = stacksize_min;
 	thiz->ticks = 0;
 	thiz->errno = 0;
+	thiz->parent = parent;
 
 	return true;
 }
@@ -99,21 +103,6 @@ void zrtos_task__set_return_value(zrtos_task_t *thiz,void *return_value){
 
 void *zrtos_task__get_return_value(zrtos_task_t *thiz){
 	return thiz->return_value;
-}
-
-void zrtos_task__set_state_running(zrtos_task_t *thiz){
-	//thiz->return_value = return_value;
-}
-
-void zrtos_task__set_state_done(zrtos_task_t *thiz){
-	//thiz->return_value = return_value;
-}
-
-void zrtos_task__trampoline_cb(zrtos_task_t *thiz,void *(*callback)(void *args),void *args){
-	zrtos_task__set_state_running(thiz);
-	void *ret = callback(args);
-	zrtos_task__set_return_value(thiz,ret);
-	zrtos_task__set_state_done(thiz);
 }
 
 #ifdef __cplusplus

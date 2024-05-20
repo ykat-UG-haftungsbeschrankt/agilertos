@@ -20,7 +20,6 @@ var files_dup =
     [ "zrtos_types.h", "zrtos__types_8h.html", "zrtos__types_8h" ],
     [ "zrtos_vheap.h", "zrtos__vheap_8h.html", "zrtos__vheap_8h" ],
     [ "zrtos_vheap_chunk.h", "zrtos__vheap__chunk_8h.html", "zrtos__vheap__chunk_8h" ],
-    [ "zrtos_vheap_chunk_index.h", "zrtos__vheap__chunk__index_8h.html", "zrtos__vheap__chunk__index_8h" ],
     [ "zrtos_vheap_chunk_type.h", "zrtos__vheap__chunk__type_8h.html", "zrtos__vheap__chunk__type_8h" ],
     [ "zrtos_vheap_chunk_uid.h", "zrtos__vheap__chunk__uid_8h.html", "zrtos__vheap__chunk__uid_8h" ],
     [ "zrtos_vheap_type.h", "zrtos__vheap__type_8h.html", "zrtos__vheap__type_8h" ]

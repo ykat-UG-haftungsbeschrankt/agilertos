@@ -16,6 +16,13 @@ extern "C" {
 #include "zrtos_types.h"
 
 
+typedef struct _zrtos_str__vsnprintf_cb_args_t{
+	char *dest;
+	size_t len;
+	size_t ret;
+}zrtos_str__vsnprintf_cb_args_t;
+
+
 char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 	char tmp[65];
 	char *tp = tmp;
@@ -50,7 +57,7 @@ char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 	return str;
 }
 
-void zrtos_str__vsnprintf_internal(
+static void zrtos_str__vsnprintf_internal(
 	 void (*putc)(void *args,char c)
 	,void *putc_args
 	,char const *fmt
@@ -123,13 +130,7 @@ void zrtos_str__vsnprintf_internal(
 	}
 }
 
-typedef struct _zrtos_str__vsnprintf_cb_args_t{
-	char *dest;
-	size_t len;
-	size_t ret;
-}zrtos_str__vsnprintf_cb_args_t;
-
-void zrtos_str__vsnprintf_cb(void *args_,char ch){
+static void zrtos_str__vsnprintf_cb(void *args_,char ch){
 	zrtos_str__vsnprintf_cb_args_t *args = (zrtos_str__vsnprintf_cb_args_t*)args_;
 	if(args->len--){
 		*args->dest++ = ch;

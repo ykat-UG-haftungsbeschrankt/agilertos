@@ -137,7 +137,7 @@ $(function(){initNavTree('zrtos__debug__console_8h_source.html',''); initResizab
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    *thiz-&gt;ptr++ = c;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>}</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">void</span> zrtos_debug_console__printf_callback(<span class="keywordtype">void</span> *args,<span class="keywordtype">char</span> c){</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">static</span> <span class="keywordtype">void</span> zrtos_debug_console__printf_callback(<span class="keywordtype">void</span> *args,<span class="keywordtype">char</span> c){</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    zrtos_debug_console__put_char((zrtos_debug_console_t *)args,c);</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
@@ -148,7 +148,7 @@ $(function(){initNavTree('zrtos__debug__console_8h_source.html',''); initResizab
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>){</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    va_list arg;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    va_start(arg, fmt);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="zrtos__str_8h.html#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a>(</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="zrtos__str_8h.html#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a>(</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>         zrtos_debug_console__printf_callback</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        ,(<span class="keywordtype">void</span>*)thiz</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        ,fmt</div>
@@ -164,7 +164,7 @@ $(function(){initNavTree('zrtos__debug__console_8h_source.html',''); initResizab
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="azrtos__str_8h_html"><div class="ttname"><a href="zrtos__str_8h.html">zrtos_str.h</a></div></div>
-<div class="ttc" id="azrtos__str_8h_html_a5ff8817cd245afeb25b4528cbaa6a10d"><div class="ttname"><a href="zrtos__str_8h.html#a5ff8817cd245afeb25b4528cbaa6a10d">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00053">zrtos_str.h:53</a></div></div>
+<div class="ttc" id="azrtos__str_8h_html_a253e58778bc61b2ca7b51d761ea914b4"><div class="ttname"><a href="zrtos__str_8h.html#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__str_8h_source.html#l00060">zrtos_str.h:60</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html"><div class="ttname"><a href="zrtos__types_8h.html">zrtos_types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

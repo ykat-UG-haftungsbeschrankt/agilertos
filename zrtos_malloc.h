@@ -102,7 +102,7 @@ bool zrtos_malloc__init(zrtos_malloc_t *thiz,size_t length){
 }
 
 #ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
-zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
+static zrtos_malloc_heap_chunk_t *zrtos_malloc__get_free_chunk(
 	 zrtos_malloc_t *thiz
 	,size_t         length
 ){

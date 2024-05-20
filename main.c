@@ -4,7 +4,7 @@
 #define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
-#define ZRTOS_DEBUG__CFG_ENABLED
+//#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
 #include "zrtos.h"
@@ -19,7 +19,7 @@ void *callback0(void *args){
 	return 1;
 }
 
-void *callback0(void *args){
+void *callback1(void *args){
 	static uint64_t a = 0;
 	return 1;
 }
@@ -61,7 +61,7 @@ int main(void){
 	
 	zrtos_task_scheduler__set_heap(&mem);
 
-	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task0
@@ -72,7 +72,7 @@ int main(void){
 	
 	}
 
-	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkb = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	if(pthread_create(
 		 &task1
@@ -83,7 +83,7 @@ int main(void){
 		
 	}
 
-	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_CHUNK_TYPE__MALLOC,16);
+	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,ZRTOS_VHEAP_TYPE__MALLOC,16);
 
 	zrtos_task_scheduler__start();
 }

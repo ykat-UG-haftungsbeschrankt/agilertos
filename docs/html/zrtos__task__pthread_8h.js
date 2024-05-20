@@ -5,7 +5,6 @@ var zrtos__task__pthread_8h =
     [ "pthread_mutexattr_t", "structpthread__mutexattr__t.html", null ],
     [ "pthread_mutex_t", "structpthread__mutex__t.html", "structpthread__mutex__t" ],
     [ "PTHREAD_MUTEX_INITIALIZER", "zrtos__task__pthread_8h.html#a84e55100366a6a8338a2af3b3f279686", null ],
-    [ "pthread__get_task", "zrtos__task__pthread_8h.html#a25b3029b9cae77d52af897192f1597ad", null ],
     [ "pthread_attr_destroy", "zrtos__task__pthread_8h.html#a4bcdbf47c17c7dcc51e9f05f5cb56d81", null ],
     [ "pthread_attr_init", "zrtos__task__pthread_8h.html#a0b85ebb1e3aac081a4c0a5e85ae3cbe9", null ],
     [ "pthread_attr_setstacksize", "zrtos__task__pthread_8h.html#a812a9a455ae2ef2bb0dca4fff201a281", null ],

@@ -44,13 +44,13 @@ zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
-void _zrtos_task_scheduler__restore_task(void){
+static void _zrtos_task_scheduler__restore_task(void){
 	ZRTOS_ARCH__LOAD_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 #pragma GCC pop_options
 
-void zrtos_task_scheduler__page_task_out(void){
+static void zrtos_task_scheduler__page_task_out(void){
 	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
 	zrtos_task_t *task = _zrtos_task_scheduler__get_active_task();
 
@@ -58,7 +58,7 @@ void zrtos_task_scheduler__page_task_out(void){
 	zrtos_task__set_errno(task,errno);
 	zrtos_vheap__page_out(
 		 heap
-		,zrtos_vheap__get_by_type_ex(heap,ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE)
+		,zrtos_vheap__get_by_type_ex(heap,ZRTOS_VHEAP_TYPE__TASK_ACTIVE)
 		,zrtos_types__ptr_get_byte_distance(
 			 zrtos_vheap__get_last_address(heap)
 			,zrtos_task_scheduler.tmp_stack_ptr
@@ -66,7 +66,7 @@ void zrtos_task_scheduler__page_task_out(void){
 	);
 }
 
-void zrtos_task_scheduler__page_task_in(
+static void zrtos_task_scheduler__page_task_in(
 	 /*zrtos_task_t      *task
 	,*/zrtos_vheap_chunk_t *chunk
 ){
@@ -81,7 +81,7 @@ void zrtos_task_scheduler__page_task_in(
 	errno = zrtos_task__get_errno(_zrtos_task_scheduler__get_active_task());
 }
 
-bool _zrtos_task_scheduler__set_active_task(
+static bool _zrtos_task_scheduler__set_active_task(
 	 /*zrtos_task_t      *task
 	,zrtos_vheap_chunk_t *chunk*/
 	zrtos_vheap_chunk_uid_t uid
@@ -123,7 +123,7 @@ bool zrtos_task_scheduler__start(void){
 	zrtos_vheap_t *heap = zrtos_task_scheduler__get_heap();
 	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_type_ex(
 		 heap
-		,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE
+		,ZRTOS_VHEAP_TYPE__TASK_IDLE
 	);
 	if(chunk){
 		zrtos_task_scheduler__page_task_in(chunk);
@@ -139,7 +139,7 @@ bool zrtos_task_scheduler__start(void){
          thiz                                                                  \
         ,start_offset                                                          \
         ,pos                                                                   \
-        ,ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE                                       \
+        ,ZRTOS_VHEAP_TYPE__TASK_IDLE                                       \
         ,chunk                                                                 \
     ){                                                                         \
         zrtos_task_t *task = zrtos_types__ptr_subtract(                        \
@@ -235,6 +235,26 @@ void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms){
 	_zrtos_task_scheduler__on_tick();
 }
 
+__attribute__((noreturn)) void zrtos_task_scheduler__trampoline_cb(
+	 zrtos_task_t *thiz
+	,void *(*callback)(void *args)
+	,void *args
+){
+	void *ret = callback(args);
+	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_type_ex(
+		 zrtos_task_scheduler__get_heap()
+		,ZRTOS_VHEAP_TYPE__TASK_ACTIVE
+	);
+	zrtos_task__set_return_value(thiz,ret);
+	zrtos_vheap_chunk__set_type(chunk,ZRTOS_VHEAP_TYPE__TASK_DONE);
+
+	_zrtos_task_scheduler__on_tick();
+
+	__builtin_unreachable();
+	while(1){
+		//should not return
+	}
+}
 
 #ifdef __cplusplus
 }

@@ -11,7 +11,7 @@ var zrtos__malloc_8h =
     [ "zrtos_malloc_internal_t", "zrtos__malloc_8h.html#ad2e8348b810cf8e8c6066c66568b67a2", null ],
     [ "zrtos_malloc_t", "zrtos__malloc_8h.html#ab3e4b0fe1ed4eeddbd0b169e44340a62", null ],
     [ "zrtos_malloc__free", "zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32", null ],
-    [ "zrtos_malloc__get_free_chunk", "zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1", null ],
+    [ "zrtos_malloc__get_free_chunk", "zrtos__malloc_8h.html#a92ada475abfd239fff5f30f68f5ca3cb", null ],
     [ "zrtos_malloc__init", "zrtos__malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f", null ],
     [ "zrtos_malloc__malloc", "zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7", null ]
 ];

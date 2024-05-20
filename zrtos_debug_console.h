@@ -36,7 +36,7 @@ void zrtos_debug_console__put_char(zrtos_debug_console_t *thiz,char c){
 	*thiz->ptr++ = c;
 }
 
-void zrtos_debug_console__printf_callback(void *args,char c){
+static void zrtos_debug_console__printf_callback(void *args,char c){
 	zrtos_debug_console__put_char((zrtos_debug_console_t *)args,c);
 }
 

@@ -116,7 +116,7 @@ zrtos_vheap_chunk_t *zrtos_vheap__get_by_type_ex(
 	);
 }
 
-zrtos_vheap_chunk_uid_t zrtos_vheap__get_next_uid(
+static zrtos_vheap_chunk_uid_t zrtos_vheap__get_next_uid(
 	zrtos_vheap_t *thiz
 ){
 	static zrtos_vheap_chunk_uid_t uid = {
@@ -207,7 +207,7 @@ zrtos_vheap_chunk_uid_t zrtos_vheap__malloc(
 	return zrtos_vheap_chunk_uid__error();
 }
 
-void _zrtos_vheap__update_index_ptr(
+static void _zrtos_vheap__update_index_ptr(
 	 zrtos_vheap_t       *thiz
 	,zrtos_vheap_chunk_t *chunk
 	,size_t             sizeof_mem_chunk
@@ -220,6 +220,9 @@ void _zrtos_vheap__update_index_ptr(
 	}
 }
 
+/**
+ * @todo if type is ZRTOS_VHEAP_TYPE__TASK_* also free all child tasks
+ */
 void _zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
 	uint8_t *dest = (uint8_t*)chunk;
 	uint8_t *src = dest + sizeof(zrtos_vheap_chunk_t);
@@ -262,7 +265,7 @@ void zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_uid_t uid){
 	_zrtos_vheap__free(thiz,chunk);
 }
 
-void *_zrtos_vheap__swap_to_heap_end(
+static void *_zrtos_vheap__swap_to_heap_end(
 	 void   *heap
 	,size_t heap_length
 	,size_t used_length
@@ -307,7 +310,7 @@ void *zrtos_vheap__page_in(
 	thiz->heap_size -= chunk->length;
 	//chunk->ptr = 0;
 	chunk->length = 0;
-	chunk->type.type = ZRTOS_VHEAP_CHUNK_TYPE__TASK_ACTIVE;
+	zrtos_vheap_chunk__set_type(chunk,ZRTOS_VHEAP_TYPE__TASK_ACTIVE);
 
 	return ret;
 }
@@ -328,7 +331,14 @@ void zrtos_vheap__page_out(
 
 	chunk->ptr = heap_end_ptr;
 	chunk->length = length;
-	chunk->type.type = ZRTOS_VHEAP_CHUNK_TYPE__TASK_IDLE;
+	zrtos_vheap_chunk__set_type(
+		 chunk
+		,(
+			  chunk->type.type == ZRTOS_VHEAP_TYPE__TASK_ACTIVE
+			? ZRTOS_VHEAP_TYPE__TASK_IDLE
+			: chunk->type.type
+		)
+	);
 
 	//move chunk to end of index
 	size_t index_length = (sizeof(zrtos_vheap_chunk_t) * thiz->length);
@@ -356,7 +366,7 @@ void zrtos_vheap__page_out(
 #define ZRTOS_VHEAP__EACH_EX_BEGIN(thiz,start_offset,l,type,value)               \
     for(size_t l = start_offset,len__=(thiz)->length;l < len__;l++){           \
         zrtos_vheap_chunk_t *value = &((zrtos_vheap_chunk_t*)((thiz)->ptr))[l];    \
-        if(zrtos_vheap_chunk_type__is_eq(zrtos_vheap_chunk__get_type(value),type)){
+        if(zrtos_vheap_chunk__is_type_eq(value,type)){
 
 #define ZRTOS_VHEAP__EACH_EX_END \
         }                      \
@@ -365,7 +375,7 @@ void zrtos_vheap__page_out(
 #define ZRTOS_VHEAP__EACH_BEGIN(thiz,type,value)                                 \
     for(size_t l__ = 0,len__=(thiz)->length;l__ < len__;l__++){                \
         zrtos_vheap_chunk_t *value = &((zrtos_vheap_chunk_t*)((thiz)->ptr))[l];    \
-        if(zrtos_vheap_chunk_type__is_eq(zrtos_vheap_chunk__get_type(value),type))
+        if(zrtos_vheap_chunk__is_type_eq(value,type))
 
 #define ZRTOS_VHEAP__EACH_END \
         }                   \

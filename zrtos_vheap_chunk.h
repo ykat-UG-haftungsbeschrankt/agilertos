@@ -36,14 +36,33 @@ zrtos_vheap_chunk_uid_t zrtos_vheap_chunk__get_uid(zrtos_vheap_chunk_t *thiz){
 	return thiz->uid;
 }
 
-zrtos_vheap_chunk_type_t *zrtos_vheap_chunk__get_type(zrtos_vheap_chunk_t *thiz){
+zrtos_vheap_chunk_type_t *zrtos_vheap_chunk__get_type(
+	zrtos_vheap_chunk_t *thiz
+){
 	return &thiz->type;
+}
+
+void zrtos_vheap_chunk__set_type(
+	 zrtos_vheap_chunk_t *thiz
+	,zrtos_vheap_type_t type
+){
+	thiz->type.type = type;
 }
 
 void *zrtos_vheap_chunk__get_last_address(zrtos_vheap_chunk_t *thiz){
 	return zrtos_types__ptr_add(
 		 zrtos_vheap_chunk__get_ptr(thiz)
 		,zrtos_vheap_chunk__get_length(thiz)
+	);
+}
+
+bool zrtos_vheap_chunk__is_type_eq(
+	 zrtos_vheap_chunk_t *thiz
+	,zrtos_vheap_type_t type
+){
+	return zrtos_vheap_chunk_type__is_eq(
+		 zrtos_vheap_chunk__get_type(thiz)
+		,type
 	);
 }
 

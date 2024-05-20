@@ -6,5 +6,7 @@ var zrtos__vheap__chunk_8h =
     [ "zrtos_vheap_chunk__get_length", "zrtos__vheap__chunk_8h.html#a26bcd8779d88d67764f563058787008a", null ],
     [ "zrtos_vheap_chunk__get_ptr", "zrtos__vheap__chunk_8h.html#a1297a66f589ee6ebd3fa69639f5fac6e", null ],
     [ "zrtos_vheap_chunk__get_type", "zrtos__vheap__chunk_8h.html#a3978314ac8798dae3dcc70fd39f49ade", null ],
-    [ "zrtos_vheap_chunk__get_uid", "zrtos__vheap__chunk_8h.html#a9e677451890886104ec8623e0c5757af", null ]
+    [ "zrtos_vheap_chunk__get_uid", "zrtos__vheap__chunk_8h.html#a9e677451890886104ec8623e0c5757af", null ],
+    [ "zrtos_vheap_chunk__is_type_eq", "zrtos__vheap__chunk_8h.html#a8f0dfff420b36ebdadd0d3ff20886da4", null ],
+    [ "zrtos_vheap_chunk__set_type", "zrtos__vheap__chunk_8h.html#a50f3da740523a69829e865dcaa7d77ad", null ]
 ];
