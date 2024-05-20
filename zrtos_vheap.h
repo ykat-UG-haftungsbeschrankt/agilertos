@@ -225,7 +225,7 @@ static void _zrtos_vheap__update_index_ptr(
 }
 
 /**
- * @todo if type is ZRTOS_VHEAP_TYPE__TASK_* also free all child tasks
+ * @todo free all child allocations
  */
 void _zrtos_vheap__free(zrtos_vheap_t *thiz,zrtos_vheap_chunk_t *chunk){
 	uint8_t *dest = (uint8_t*)chunk;
