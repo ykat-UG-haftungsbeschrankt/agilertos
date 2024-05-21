@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_TASK_MUTEX_H_
-#define ZRTOS_TASK_MUTEX_H_
+#ifndef ZRTOS_TASK_MUTEX_H
+#define ZRTOS_TASK_MUTEX_H
 #ifdef __cplusplus
 extern "C" {
 #endif

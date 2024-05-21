@@ -1,10 +1,14 @@
 <map id="zrtos_mem.h" name="zrtos_mem.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,146,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__vheap_8h.html" title=" " alt="" coords="46,80,148,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,100,80,94,80,94,48"/>
-<area shape="rect" id="Node000003" href="$zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="5,229,189,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,120,65,137,57,155,56,175,62,195,86,227,82,230,58,197,50,176,52,154,61,134,72,117"/>
-<area shape="rect" id="Node000004" href="$zrtos__vheap__task__scheduler_8h.html" title=" " alt="" coords="67,155,263,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="121,116,155,152,151,156,117,120"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="145,195,111,231,107,227,141,191"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="93,5,190,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__progmem_8h.html" title=" " alt="" coords="12,80,135,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,45,87,81,83,78,117,42"/>
+<area shape="rect" id="Node000004" href="$zrtos__vheap_8h.html" title=" " alt="" coords="159,80,260,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,42,200,78,196,81,162,45"/>
+<area shape="rect" id="Node000003" href="$zrtos__event__index_8h.html" title=" " alt="" coords="5,155,142,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="76,122,76,154,71,154,71,122"/>
+<area shape="rect" id="Node000005" href="$zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="170,229,353,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="212,122,214,151,221,180,235,206,252,227,248,231,231,209,216,182,209,152,206,122"/>
+<area shape="rect" id="Node000006" href="$zrtos__vheap__task__scheduler_8h.html" title=" " alt="" coords="231,155,428,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="245,113,310,152,307,156,242,117"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="309,195,275,231,271,227,305,191"/>
 </map>

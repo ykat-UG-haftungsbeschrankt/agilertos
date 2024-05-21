@@ -1,11 +1,9 @@
 <map id="zrtos_assert.h" name="zrtos_assert.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="421,5,525,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="342,5,446,32"/>
 <area shape="rect" id="Node000002" href="$zrtos__error_8h.html" title=" " alt="" coords="286,80,380,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="436,42,359,82,356,77,434,37"/>
-<area shape="rect" id="Node000009" href="$zrtos__event__index_8h.html" title=" " alt="" coords="405,80,541,107"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="476,48,476,80,470,80,470,48"/>
-<area shape="rect" id="Node000010" href="$zrtos__malloc_8h.html" title=" " alt="" coords="565,80,671,107"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="513,37,594,77,591,82,510,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,46,345,81,341,78,372,42"/>
+<area shape="rect" id="Node000009" href="$zrtos__malloc_8h.html" title=" " alt="" coords="404,80,510,107"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="417,42,448,78,444,81,413,46"/>
 <area shape="rect" id="Node000003" href="$zrtos__task_8h.html" title=" " alt="" coords="108,155,201,181"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,115,187,157,185,152,287,110"/>
 <area shape="rect" id="Node000005" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="186,229,322,256"/>
