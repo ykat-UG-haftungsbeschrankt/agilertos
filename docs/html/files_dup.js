@@ -11,6 +11,7 @@ var files_dup =
     [ "zrtos_debug_console.h", "zrtos__debug__console_8h.html", null ],
     [ "zrtos_error.h", "zrtos__error_8h.html", "zrtos__error_8h" ],
     [ "zrtos_event.h", "zrtos__event_8h.html", "zrtos__event_8h" ],
+    [ "zrtos_event_handler.h", "zrtos__event__handler_8h.html", "zrtos__event__handler_8h" ],
     [ "zrtos_event_index.h", "zrtos__event__index_8h.html", "zrtos__event__index_8h" ],
     [ "zrtos_event_message.h", "zrtos__event__message_8h.html", "zrtos__event__message_8h" ],
     [ "zrtos_event_type.h", "zrtos__event__type_8h.html", "zrtos__event__type_8h" ],

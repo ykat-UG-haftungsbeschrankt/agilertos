@@ -166,57 +166,107 @@ malloc() / free()</h2>
 events</h2>
 <p><a href="http://agilertos.com/zrtos__event_8h.html">Implementation details</a></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
-<div class="line"><span class="comment"></span> </div>
-<div class="line"><span class="comment">/**</span></div>
-<div class="line"><span class="comment"> * If malloc and new is only used on boot without releasing the memory, code and</span></div>
-<div class="line"><span class="comment"> * ram usage can be further reduced by &#39;#define ZRTOS_MALLOC__CFG_DISABLE_FREE&#39;.</span></div>
-<div class="line"><span class="comment"> */</span></div>
-<div class="line"><span class="comment">//#define ZRTOS_MALLOC__CFG_DISABLE_FREE</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="zrtos__malloc_8h.html">zrtos_malloc.h</a>&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// global heap for malloc()/free()</span></div>
-<div class="line"><a class="code hl_define" href="zrtos__malloc_8h.html#a04ec9557c3ef3580d3479162861c5d87">ZRTOS_MALLOC__GLOBAL_HEAP</a>(heap,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line"><span class="preprocessor">#define ZRTOS_DEBUG__CFG_ENABLED</span></div>
+<div class="line"><span class="preprocessor">#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span>{</div>
+<div class="line">     ZRTOS_EVENT_TYPE__ANY = 0</div>
+<div class="line">    ,EVENT_CODE_A</div>
+<div class="line">    ,EVENT_CODE_B</div>
+<div class="line">}zrtos_event_type_t;</div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="zrtos__event__index_8h.html">zrtos_event_index.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="zrtos__debug_8h.html">zrtos_debug.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> handler_a(</div>
+<div class="line">     <a class="code hl_struct" href="struct__zrtos__event__handler__t.html">zrtos_event_handler_t</a> *thiz</div>
+<div class="line">    ,<a class="code hl_struct" href="struct__zrtos__event__t.html">zrtos_event_t</a>         *args</div>
+<div class="line">){</div>
+<div class="line">    <a class="code hl_define" href="zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c">ZRTOS_DEBUG</a>(<span class="stringliteral">&quot;#%s&quot;</span>,<span class="stringliteral">&quot;fn_a,&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> handler_b(</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__event__handler__t.html">zrtos_event_handler_t</a> *thiz</div>
+<div class="line">    ,<a class="code hl_struct" href="struct__zrtos__event__t.html">zrtos_event_t</a>         *args</div>
+<div class="line">){</div>
+<div class="line">    <a class="code hl_define" href="zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c">ZRTOS_DEBUG</a>(<span class="stringliteral">&quot;#%s&quot;</span>,<span class="stringliteral">&quot;fn_b,&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> handler_bb(</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__event__handler__t.html">zrtos_event_handler_t</a> *thiz</div>
+<div class="line">    ,<a class="code hl_struct" href="struct__zrtos__event__t.html">zrtos_event_t</a>         *args</div>
+<div class="line">){</div>
+<div class="line">    <a class="code hl_define" href="zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c">ZRTOS_DEBUG</a>(<span class="stringliteral">&quot;#%s&quot;</span>,<span class="stringliteral">&quot;fn_bb,&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">bool</span> handler_c(</div>
+<div class="line">     <a class="code hl_struct" href="struct__zrtos__event__handler__t.html">zrtos_event_handler_t</a> *thiz</div>
+<div class="line">    ,<a class="code hl_struct" href="struct__zrtos__event__t.html">zrtos_event_t</a>         *args</div>
+<div class="line">){</div>
+<div class="line">    <a class="code hl_define" href="zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c">ZRTOS_DEBUG</a>(<span class="stringliteral">&quot;#%s&quot;</span>,<span class="stringliteral">&quot;fn_c,&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="zrtos__event__index_8h.html#a729c415d853654676675a9cf00f5453f">ZRTOS_EVENT_INDEX</a>(global_events,</div>
+<div class="line">    <a class="code hl_define" href="zrtos__event__handler_8h.html#af91b8814060bfdab50c1b3b2a94482c6">ZRTOS_EVENT_HANDLER</a>(</div>
+<div class="line">         handler_a</div>
+<div class="line">        ,EVENT_CODE_A</div>
+<div class="line">        ,0</div>
+<div class="line">    )</div>
+<div class="line">    ,<a class="code hl_define" href="zrtos__event__handler_8h.html#af91b8814060bfdab50c1b3b2a94482c6">ZRTOS_EVENT_HANDLER</a>(</div>
+<div class="line">        handler_b</div>
+<div class="line">        ,EVENT_CODE_B</div>
+<div class="line">        ,0</div>
+<div class="line">    )</div>
+<div class="line">    ,<a class="code hl_define" href="zrtos__event__handler_8h.html#af91b8814060bfdab50c1b3b2a94482c6">ZRTOS_EVENT_HANDLER</a>(</div>
+<div class="line">        handler_bb</div>
+<div class="line">        ,EVENT_CODE_B</div>
+<div class="line">        ,0</div>
+<div class="line">    )</div>
+<div class="line">    ,<a class="code hl_define" href="zrtos__event__handler_8h.html#af91b8814060bfdab50c1b3b2a94482c6">ZRTOS_EVENT_HANDLER</a>(</div>
+<div class="line">         handler_c</div>
+<div class="line">        ,ZRTOS_EVENT_TYPE__ANY</div>
+<div class="line">        ,0</div>
+<div class="line">    )</div>
+<div class="line">);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>){</div>
-<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a>(heap);</div>
+<div class="line">    <a class="code hl_function" href="zrtos__event__index_8h.html#a277119da46b89046d630364ed727b6eb">zrtos_event_index__invoke</a>(</div>
+<div class="line">         global_events</div>
+<div class="line">        ,ZRTOS_EVENT_TYPE__ANY</div>
+<div class="line">        ,<span class="stringliteral">&quot;test&quot;</span></div>
+<div class="line">        ,5</div>
+<div class="line">    );</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// separate heap usable with zrtos_malloc__malloc()/zrtos_malloc__free()</span></div>
-<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap2,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line">    <a class="code hl_function" href="zrtos__event__index_8h.html#a277119da46b89046d630364ed727b6eb">zrtos_event_index__invoke</a>(</div>
+<div class="line">         global_events</div>
+<div class="line">        ,EVENT_CODE_A</div>
+<div class="line">        ,<span class="stringliteral">&quot;test&quot;</span></div>
+<div class="line">        ,5</div>
+<div class="line">    );</div>
 <div class="line"> </div>
-<div class="line">    <span class="comment">// separate heap usable with zrtos_malloc__malloc()/zrtos_malloc__free()</span></div>
-<div class="line">    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap3,<a class="code hl_define" href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(<span class="keywordtype">char</span>,160));</div>
+<div class="line">    <a class="code hl_function" href="zrtos__event__index_8h.html#a277119da46b89046d630364ed727b6eb">zrtos_event_index__invoke</a>(</div>
+<div class="line">         global_events</div>
+<div class="line">        ,EVENT_CODE_B</div>
+<div class="line">        ,<span class="stringliteral">&quot;test&quot;</span></div>
+<div class="line">        ,5</div>
+<div class="line">    );</div>
 <div class="line"> </div>
-<div class="line">    <span class="keywordtype">size_t</span> length = 10,l;</div>
-<div class="line">    <span class="keywordtype">void</span> *ptr[10];</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        ptr[l] = malloc(16);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        free(ptr[l]);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        ptr[l] = malloc(16);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        free(ptr[l]);</div>
-<div class="line">    }</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        ptr[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(ptr[l]);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        ptr[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap3,16);</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">for</span>(l=0;l&lt;=length;l++){</div>
-<div class="line">        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(ptr[l]);</div>
-<div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
+<div class="ttc" id="astruct__zrtos__event__handler__t_html"><div class="ttname"><a href="struct__zrtos__event__handler__t.html">_zrtos_event_handler_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__handler_8h_source.html#l00024">zrtos_event_handler.h:24</a></div></div>
+<div class="ttc" id="astruct__zrtos__event__t_html"><div class="ttname"><a href="struct__zrtos__event__t.html">_zrtos_event_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__event_8h_source.html#l00020">zrtos_event.h:20</a></div></div>
+<div class="ttc" id="azrtos__debug_8h_html"><div class="ttname"><a href="zrtos__debug_8h.html">zrtos_debug.h</a></div></div>
+<div class="ttc" id="azrtos__debug_8h_html_a13ef7f601284c8f0de29baba4f2a7d1c"><div class="ttname"><a href="zrtos__debug_8h.html#a13ef7f601284c8f0de29baba4f2a7d1c">ZRTOS_DEBUG</a></div><div class="ttdeci">#define ZRTOS_DEBUG(fmt,...)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__debug_8h_source.html#l00048">zrtos_debug.h:48</a></div></div>
+<div class="ttc" id="azrtos__event__handler_8h_html_af91b8814060bfdab50c1b3b2a94482c6"><div class="ttname"><a href="zrtos__event__handler_8h.html#af91b8814060bfdab50c1b3b2a94482c6">ZRTOS_EVENT_HANDLER</a></div><div class="ttdeci">#define ZRTOS_EVENT_HANDLER(callback_, type_, ctx_)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__handler_8h_source.html#l00030">zrtos_event_handler.h:30</a></div></div>
+<div class="ttc" id="azrtos__event__index_8h_html"><div class="ttname"><a href="zrtos__event__index_8h.html">zrtos_event_index.h</a></div></div>
+<div class="ttc" id="azrtos__event__index_8h_html_a277119da46b89046d630364ed727b6eb"><div class="ttname"><a href="zrtos__event__index_8h.html#a277119da46b89046d630364ed727b6eb">zrtos_event_index__invoke</a></div><div class="ttdeci">bool zrtos_event_index__invoke(zrtos_event_index_t *thiz, zrtos_event_type_t type, void *data, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__index_8h_source.html#l00056">zrtos_event_index.h:56</a></div></div>
+<div class="ttc" id="azrtos__event__index_8h_html_a729c415d853654676675a9cf00f5453f"><div class="ttname"><a href="zrtos__event__index_8h.html#a729c415d853654676675a9cf00f5453f">ZRTOS_EVENT_INDEX</a></div><div class="ttdeci">#define ZRTOS_EVENT_INDEX(name,...)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__index_8h_source.html#l00023">zrtos_event_index.h:23</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 pthread</h2>
 <div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
