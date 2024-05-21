@@ -8,7 +8,7 @@
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
 #include "zrtos.h"
-#include "zrtos_task_pthread.h"
+#include "zrtos_vheap_task_pthread.h"
 #include "zrtos_debug.h"
 
 unsigned a = 0;
@@ -19,7 +19,7 @@ void *callback0(void *args){
 	while(1){
 		a++;
 		//ZRTOS_DEBUG("callback0:%u;",a);
-		zrtos_task_scheduler__delay_ms(20);
+		zrtos_vheap_task_scheduler__delay_ms(20);
 	}
 }
 void *callback1(void *args){
@@ -27,7 +27,7 @@ void *callback1(void *args){
 	while(1){
 		b++;
 		//ZRTOS_DEBUG("callback1:%u;",b);
-		zrtos_task_scheduler__delay_ms(2);
+		zrtos_vheap_task_scheduler__delay_ms(2);
 	}
 }
 
@@ -65,7 +65,7 @@ int main(void){
 
 	//zrtos_board__start_tick_timer();
 	
-	zrtos_task_scheduler__set_heap(&mem);
+	zrtos_vheap_task_scheduler__set_heap(&mem);
 
 	zrtos_vheap_chunk_uid_t chunka = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
@@ -91,6 +91,6 @@ int main(void){
 
 	zrtos_vheap_chunk_uid_t chunkc = zrtos_vheap__malloc(&mem,zrtos_vheap_chunk_uid__error(),ZRTOS_VHEAP_TYPE__MALLOC,16);
 
-	zrtos_task_scheduler__start();
+	zrtos_vheap_task_scheduler__start();
 }
 

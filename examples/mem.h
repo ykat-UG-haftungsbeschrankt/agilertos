@@ -15,7 +15,7 @@ typedef enum{
 #include "zrtos.h"
 #include "zrtos_vheap.h"
 
-void _zrtos_task_scheduler__on_tick(void){
+void _zrtos_vheap_task_scheduler__on_tick(void){
 }
 
 

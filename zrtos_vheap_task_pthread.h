@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_TASK_PTHREAD_H
-#define ZRTOS_TASK_PTHREAD_H
+#ifndef ZRTOS_VHEAP_TASK_PTHREAD_H
+#define ZRTOS_VHEAP_TASK_PTHREAD_H
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -13,7 +13,7 @@ extern "C" {
 
 #include "zrtos_error.h"
 #include "zrtos_vheap.h"
-#include "zrtos_task_scheduler.h"
+#include "zrtos_vheap_task_scheduler.h"
 #include "zrtos_task_mutex.h"
 #include "zrtos_types.h"
 
@@ -76,7 +76,7 @@ int pthread_mutex_destroy(pthread_mutex_t *mutex){
 
 pthread_t pthread_self(void){
 	zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_type_ex(
-		 zrtos_task_scheduler__get_heap()
+		 zrtos_vheap_task_scheduler__get_heap()
 		,ZRTOS_VHEAP_TYPE__TASK_ACTIVE
 	);
 	pthread_t ret;
@@ -96,8 +96,8 @@ int pthread_create(
 	size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
 	                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
 	;
-	zrtos_vheap_t *mem = zrtos_task_scheduler__get_heap();
-	size_t stacksize_min = sizeof(zrtos_task_t) + (
+	zrtos_vheap_t *mem = zrtos_vheap_task_scheduler__get_heap();
+	size_t stacksize_min = sizeof(zrtos_vheap_task_t) + (
 		  attr
 		? ZRTOS_TYPES__MAX(
 			 stack_size_min
@@ -117,11 +117,11 @@ int pthread_create(
 		void *mem_chunk_last_address = zrtos_vheap_chunk__get_last_address(
 			chunk
 		);
-		zrtos_task_t *task = zrtos_types__ptr_subtract(
+		zrtos_vheap_task_t *task = zrtos_types__ptr_subtract(
 			 mem_chunk_last_address
-			,sizeof(zrtos_task_t)
+			,sizeof(zrtos_vheap_task_t)
 		);
-		zrtos_task__init(
+		zrtos_vheap_task__init(
 			 task
 			,(zrtos_arch_stack_t*)(task - 1)
 			,stacksize_min
@@ -150,17 +150,17 @@ int pthread_join(pthread_t thread, void **retval){
 
 	do{
 		zrtos_vheap_chunk_t *chunk = zrtos_vheap__get_by_id(
-			 zrtos_task_scheduler__get_heap()
+			 zrtos_vheap_task_scheduler__get_heap()
 			,thread.id
 		);
 		if(chunk){
-			zrtos_task_t *task;
+			zrtos_vheap_task_t *task;
 
 			if(!zrtos_vheap_chunk__is_type_eq(
 				 chunk
 				,ZRTOS_VHEAP_TYPE__TASK_DONE
 			)){
-				zrtos_task_scheduler__delay_ms(0);
+				zrtos_vheap_task_scheduler__delay_ms(0);
 				continue;
 			}
 
@@ -168,11 +168,11 @@ int pthread_join(pthread_t thread, void **retval){
 				zrtos_vheap_chunk__get_last_address(
 					chunk
 				)
-				,sizeof(zrtos_task_t)
+				,sizeof(zrtos_vheap_task_t)
 			);
-			*retval = zrtos_task__get_return_value(task);
+			*retval = zrtos_vheap_task__get_return_value(task);
 			_zrtos_vheap__free(
-				 zrtos_task_scheduler__get_heap()
+				 zrtos_vheap_task_scheduler__get_heap()
 				,chunk
 			);
 			ret = 0;

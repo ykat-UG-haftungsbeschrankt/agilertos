@@ -16,13 +16,13 @@ extern "C" {
 #include "zrtos_board.h"
 
 
-#ifdef ZRTOS_TASK_SCHEDULER__CFG_ENABLED
+#ifdef ZRTOS_VHEAP_TASK_SCHEDULER__CFG_ENABLED
 
 # define ZRTOS__DO_NOT_DISTURB(code) \
-    ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)
+    ZRTOS_VHEAP_TASK_SCHEDULER__DO_NOT_DISTURB(code)
 
 # define ZRTOS__DO_NOT_DISTURB_EX(is_locked,code) \
-    ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,code)
+    ZRTOS_VHEAP_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,code)
 
 #else
 

@@ -53,7 +53,7 @@ int zrtos_task_mutex__lock(zrtos_task_mutex_t *thiz){
 			}
 		});
 		if(ret){
-			zrtos_task_scheduler__delay_ms(0);
+			zrtos_vheap_task_scheduler__delay_ms(0);
 		}
 	}while(ret && !is_locked && limit--);
 	return ret;
