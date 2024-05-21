@@ -36,6 +36,15 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 	return ((uint8_t*)bigger)-((uint8_t*)smaller);
 }
 
+#define zrtos_types__get_offset_of(type,member) \
+    __builtin_offsetof(type,member)
+
+#define zrtos_types__get_container_of(ptr, type, member)                    \
+    ({                                                                      \
+        const typeof( ((type *)0)->member ) *__mptr = (ptr);                \
+        (type *)((char *)__mptr - zrtos_types__get_offset_of(type,member)); \
+    })
+
 #define ZRTOS_TYPES__MIN(a,b) ((a)<(b)?(a):(b))
 #define ZRTOS_TYPES__MAX(a,b) ((a)>(b)?(a):(b))
 
@@ -47,7 +56,7 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
     }while(0);
 
 #define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \
-    (((a + b ) >= a)))
+    (((a + b ) >= a))
 
 #define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \
     (sizeof(arr)/sizeof((arr)[0]))

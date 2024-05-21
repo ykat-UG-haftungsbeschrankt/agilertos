@@ -101,6 +101,64 @@ void zrtos_mem__move_left_overlapping(
 }
 #endif
 
+void *zrtos_mem__search(const void *key, const void *base, size_t /* nmemb */ high,
+			  size_t size, int (*compar)(const void *, const void *))
+{
+	register char *p;
+	size_t low;
+	size_t mid;
+	int r;
+
+	if (size > 0) {				/* TODO: change this to an assert?? */
+		low = 0;
+		while (low < high) {
+			mid = low + ((high - low) >> 1); /* Avoid possible overflow here. */
+			p = ((char *)base) + mid * size; /* Could overflow here... */
+			r = (*compar)(key, p); /* but that's an application problem! */
+			if (r > 0) {
+				low = mid + 1;
+			} else if (r < 0) {
+				high = mid;
+			} else {
+				return p;
+			}
+		}
+	}
+	return NULL;
+}
+
+void zrtos_mem__sort(void  *base,
+           size_t nel,
+           size_t width,
+           int (*comp)(const void *, const void *))
+{
+	size_t wnel, gap, wgap, i, j, k;
+	char *a, *b, tmp;
+
+	wnel = width * nel;
+	for (gap = 0; ++gap < nel;)
+		gap *= 3;
+	while ((gap /= 3) != 0) {
+		wgap = width * gap;
+		for (i = wgap; i < wnel; i += width) {
+			for (j = i - wgap; ;j -= wgap) {
+				a = j + (char *)base;
+				b = a + wgap;
+				if ((*comp)(a, b) <= 0)
+					break;
+				k = width;
+				do {
+					tmp = *a;
+					*a++ = *b;
+					*b++ = tmp;
+				} while (--k);
+				if (j < wgap)
+					break;
+			}
+		}
+	}
+}
+
 
 #ifdef __cplusplus
 }

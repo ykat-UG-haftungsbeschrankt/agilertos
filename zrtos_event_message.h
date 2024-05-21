@@ -20,12 +20,12 @@ typedef struct _zrtos_event_message_t{
 
 bool zrtos_event_message__init(
 	 zrtos_event_message_t *thiz
-	,void *data
-	,size_t length
+	,void                  *data
+	,size_t                length
 ){
 	return zrtos_string__init(
 		 &thiz->data
-		,data
+		,(char*)data
 		,length
 	);
 }

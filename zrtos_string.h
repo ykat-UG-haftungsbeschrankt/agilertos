@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_EVENT_MESSAGE_H
-#define ZRTOS_EVENT_MESSAGE_H
+#ifndef ZRTOS_STRING_H
+#define ZRTOS_STRING_H
 #ifdef __cplusplus
 extern "C" {
 #endif
