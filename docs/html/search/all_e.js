@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['ticks_0',['ticks',['../struct__zrtos__task__t.html#ad6eb25cfc5e8954d0ed6a5c4f2566e80',1,'_zrtos_task_t::ticks'],['../struct__zrtos__time__ticks__t.html#a96cb51081f0efade4765189423c60294',1,'_zrtos_time_ticks_t::ticks']]],
-  ['tmp_5fstack_5fptr_1',['tmp_stack_ptr',['../struct__zrtos__task__scheduler__t.html#a40f0dd229430234cb40e9b9716e46975',1,'_zrtos_task_scheduler_t']]],
-  ['todo_20list_2',['Todo List',['../todo.html',1,'']]],
-  ['total_5fsize_3',['total_size',['../struct__zrtos__vheap__t.html#a376351263b0637d0b6f638e4b0317ed2',1,'_zrtos_vheap_t']]],
-  ['ts_4',['ts',['../struct__zrtos__time__t.html#a171ecd08eacf68da0541c954d3537143',1,'_zrtos_time_t']]],
-  ['type_5',['type',['../struct__zrtos__vheap__chunk__t.html#a17a5ef8a15dc39903eb3bc5c3ca5a839',1,'_zrtos_vheap_chunk_t::type'],['../struct__zrtos__vheap__chunk__type__t.html#a3761c8ab8fada3ff1e7970a2575b7c44',1,'_zrtos_vheap_chunk_type_t::type']]]
+  ['size_5ft_0',['size_t',['../zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35',1,'zrtos_types.h']]],
+  ['ssize_5ft_1',['ssize_t',['../zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742',1,'zrtos_types.h']]],
+  ['stack_5fptr_2',['stack_ptr',['../struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79',1,'_zrtos_task_t::stack_ptr'],['../struct__zrtos__vheap__task__t.html#af55d49b9520c3bcdb23771f7975ee3d5',1,'_zrtos_vheap_task_t::stack_ptr']]],
+  ['stacksize_3',['stacksize',['../structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6',1,'pthread_attr_t']]],
+  ['stacksize_5fmin_4',['stacksize_min',['../struct__zrtos__vheap__task__t.html#aaae06b6b48cd8ab190302cba766e1ee3',1,'_zrtos_vheap_task_t']]],
+  ['start_5foffset_5',['start_offset',['../struct__zrtos__vheap__task__scheduler__t.html#a5ab9fb5bdd08564f1c0aa5db90c336ab',1,'_zrtos_vheap_task_scheduler_t']]],
+  ['supported_20chips_20and_20boards_6',['Supported Chips and Boards',['../index.html#autotoc_md4',1,'']]]
 ];

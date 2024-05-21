@@ -1,5 +1,5 @@
 <map id="zrtos_task_mutex__init" name="zrtos_task_mutex__init">
 <area shape="rect" id="Node000001" title=" " alt="" coords="185,5,341,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__task__pthread_8h.html#ad185b286794a414258da98a3b75a5a62" title=" " alt="" coords="5,5,137,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__vheap__task__pthread_8h.html#ad185b286794a414258da98a3b75a5a62" title=" " alt="" coords="5,5,137,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,21,137,21,137,16,169,16"/>
 </map>

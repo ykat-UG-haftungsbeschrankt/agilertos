@@ -1,0 +1,21 @@
+<map id="_zrtos_vheap__malloc" name="_zrtos_vheap__malloc">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,143,155,169"/>
+<area shape="rect" id="Node000002" href="$zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="213,68,371,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,139,206,113,208,118,126,145"/>
+<area shape="rect" id="Node000008" href="$zrtos__mem_8h.html#a1590269d1001c17c2c99725ef85f6386" title=" " alt="" coords="211,135,373,177"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="155,153,195,153,195,159,155,159"/>
+<area shape="rect" id="Node000009" href="$zrtos__vheap_8h.html#a8681e975680d07e73d260e73bac6e74a" title=" " alt="" coords="203,201,381,228"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="132,167,227,194,226,199,130,172"/>
+<area shape="rect" id="Node000003" href="$zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="442,39,599,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="371,77,426,69,427,75,371,82"/>
+<area shape="rect" id="Node000007" href="$zrtos__vheap_8h.html#a8db165ab2eef6113422d6f72c9321ea9" title=" " alt="" coords="429,105,612,132"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="371,97,414,102,413,108,371,102"/>
+<area shape="rect" id="Node000004" href="$zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="664,5,807,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="599,45,648,38,649,43,600,50"/>
+<area shape="rect" id="Node000005" href="$zrtos__vheap_8h.html#a9cff4e6aefa63154b78bcb1a5f442d72" title=" " alt="" coords="660,72,811,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="600,70,645,77,645,82,599,75"/>
+<area shape="rect" id="Node000006" href="$zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="859,80,1005,107"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="811,91,844,91,844,96,811,96"/>
+<area shape="rect" id="Node000010" href="$zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886" title=" " alt="" coords="441,201,601,228"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="381,212,425,212,425,217,381,217"/>
+</map>

@@ -69,12 +69,7 @@ bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
 		zrtos_task__set_errno(thiz->active_task,errno);
 		errno = zrtos_task__get_errno(task);
 
-#ifdef ZRTOS_TASK__USE_MEM
-		zrtos_mem__swap_task_out(thiz->active_task);
-		thiz->active_task = zrtos_mem__swap_task_in(task);
-#else
 		thiz->active_task = task;
-#endif
 		//@todo move old 
 
 	//}

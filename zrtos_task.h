@@ -23,13 +23,9 @@ typedef unsigned int zrtos_task_id_t;
 
 
 typedef struct _zrtos_task_t{
-#ifdef ZRTOS_TASK__USE_MEM
-	zrtos_mem_chunk_uid_t next;
-#else
 	struct _zrtos_task_t  *next;
-#endif
-	//zrtos_task_top_of_stack_t    *heap;
-	zrtos_task_top_of_stack_t    *stack_ptr;
+	//zrtos_arch_stack_t    *heap;
+	zrtos_arch_stack_t    *stack_ptr;
 	//size_t               heap_size;
 	uint16_t             ticks;
 	//bool               is_running;
@@ -38,9 +34,9 @@ typedef struct _zrtos_task_t{
 
 bool zrtos_task__init(
 	 zrtos_task_t          *thiz
-	,zrtos_task_top_of_stack_t     *heap
+	,zrtos_arch_stack_t     *heap
 	,size_t                heap_size
-	,zrtos_task_callback_t callback
+	,zrtos_arch_callback_t callback
 	,void                  *args
 ){
 	thiz->next = thiz;
@@ -76,31 +72,20 @@ bool zrtos_task__is_idle(zrtos_task_t *thiz){
 
 #ifdef ZRTOS_TASK__USE_MEM
 
-static volatile zrtos_mem_t *zrtos_task__heap = 0;
+static volatile zrtos_malloc_t *zrtos_task__heap = 0;
 
-zrtos_mem_t *zrtos_task__get_heap(){
+zrtos_malloc_t *zrtos_task__get_heap(){
 	return zrtos_task__heap;
 }
 
-void zrtos_task__set_heap(zrtos_mem_t *heap){
+void zrtos_task__set_heap(zrtos_malloc_t *heap){
 	zrtos_task__heap = heap;
 }
 
 #endif
 
 zrtos_task_t *zrtos_task__get_next_task(zrtos_task_t *thiz){
-#ifdef ZRTOS_TASK__USE_MEM
-	zrtos_mem_chunk_t *chunk = zrtos_mem__get_by_id(
-		 zrtos_task__get_heap()
-		,thiz->next
-	);
-	return zrtos_types__ptr_add(
-		 zrtos_mem_chunk__get_ptr(chunk)
-		,zrtos_mem_chunk__get_length(chunk) - sizeof(zrtos_task_t)
-	);
-#else
 	return thiz->next;
-#endif
 }
 
 zrtos_task_t *zrtos_task__get_previous_task(zrtos_task_t *thiz){
@@ -115,11 +100,11 @@ zrtos_task_t *zrtos_task__get_previous_task(zrtos_task_t *thiz){
 	return ret;
 }
 
-void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_task_top_of_stack_t *stack_ptr){
+void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_arch_stack_t *stack_ptr){
 	thiz->stack_ptr = stack_ptr;
 }
 
-zrtos_task_top_of_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
+zrtos_arch_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
 	return thiz->stack_ptr;
 }
 

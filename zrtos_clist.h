@@ -11,6 +11,9 @@ extern "C" {
 #endif
 
 
+#include "zrtos_types.h"
+
+
 typedef struct _zrtos_clist_node_t{
 	struct _zrtos_clist_node_t *next;
 }zrtos_clist_node_t;

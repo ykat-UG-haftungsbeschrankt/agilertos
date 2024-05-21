@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['size_5ft_0',['size_t',['../zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35',1,'zrtos_types.h']]],
-  ['ssize_5ft_1',['ssize_t',['../zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742',1,'zrtos_types.h']]],
-  ['stack_5fptr_2',['stack_ptr',['../struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79',1,'_zrtos_task_t']]],
-  ['stacksize_3',['stacksize',['../structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6',1,'pthread_attr_t']]],
-  ['stacksize_5fmin_4',['stacksize_min',['../struct__zrtos__task__t.html#a0fa609e401d505605fe16a8d34760bb1',1,'_zrtos_task_t']]],
-  ['start_5foffset_5',['start_offset',['../struct__zrtos__task__scheduler__t.html#ade35e59ce82f5ce91e9ea7e407926812',1,'_zrtos_task_scheduler_t']]],
-  ['supported_20chips_20and_20boards_6',['Supported Chips and Boards',['../index.html#autotoc_md3',1,'']]]
+  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['ret_1',['ret',['../struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391',1,'_zrtos_str__vsnprintf_cb_args_t']]],
+  ['return_5fvalue_2',['return_value',['../struct__zrtos__vheap__task__t.html#a8c0b0db088f00759c8f4be67f682bac1',1,'_zrtos_vheap_task_t']]],
+  ['root_3',['root',['../struct__zrtos__clist__t.html#a9fbc6dbf03fad6212b6e99c1f5ae3469',1,'_zrtos_clist_t::root'],['../struct__zrtos__event__index__t.html#a28e1cb098c8886fda6c962cd17f5fbd2',1,'_zrtos_event_index_t::root']]]
 ];

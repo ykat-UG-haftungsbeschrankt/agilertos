@@ -1,0 +1,12 @@
+<map id="zrtos_event_index__add_handler" name="zrtos_event_index__add_handler">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,138,65"/>
+<area shape="rect" id="Node000002" href="$zrtos__clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="186,31,309,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,41,170,41,170,47,138,47"/>
+<area shape="rect" id="Node000003" href="$zrtos__clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="357,5,533,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,33,341,29,342,35,310,39"/>
+<area shape="rect" id="Node000005" href="$zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="611,56,754,83"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="309,45,596,62,596,67,309,50"/>
+<area shape="rect" id="Node000004" href="$zrtos__clist_8h.html#ac6f3c237c6e4690d3c94c7d4a9acf5e6" title=" " alt="" coords="581,5,784,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,16,566,16,566,21,534,21"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="512,30,603,50,601,55,511,35"/>
+</map>

@@ -1,5 +1,7 @@
 var zrtos__types_8h =
 [
+    [ "zrtos_types__get_container_of", "zrtos__types_8h.html#aac2bdc28e0ef47f8fcd14cd44cf1eb35", null ],
+    [ "zrtos_types__get_offset_of", "zrtos__types_8h.html#a5cad3edf3d078710c83349e149e0666b", null ],
     [ "ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH", "zrtos__types_8h.html#a351fbba8d81ac528b75fe4431d0d9802", null ],
     [ "ZRTOS_TYPES__MAX", "zrtos__types_8h.html#a1e8485e5ce88712e64a5a964f507cf8a", null ],
     [ "ZRTOS_TYPES__MIN", "zrtos__types_8h.html#a2b31407f452e9602f42514f071d68386", null ],

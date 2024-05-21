@@ -1,12 +1,13 @@
 <map id="_zrtos_task_scheduler_t" name="_zrtos_task_scheduler_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="71,224,235,251"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,131,66,157"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="44,171,50,186,60,198,78,211,98,221,96,226,75,216,56,202,46,188,39,174"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__vheap__t.html" title=" " alt="" coords="93,131,202,157"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,173,155,223,149,224,146,173"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="92,5,144,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="117,47,117,75,122,103,138,129,133,132,117,105,111,75,112,47"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="193,5,260,32"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="234,47,236,75,234,104,221,157,191,202,169,225,165,222,187,198,216,155,229,104,230,75,228,48"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="186,42,171,58,161,76,155,95,150,131,145,130,150,94,156,74,166,54,182,39"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,169,213"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__task__t.html" title=" " alt="" coords="148,96,248,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,135,104,188,101,184,169,130"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="265,101,274,109,266,118,249,120,248,115,264,113,269,109,262,105"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="36,5,96,32"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="58,47,49,83,48,103,51,122,64,157,81,185,76,188,59,159,45,123,43,103,44,82,53,45"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="93,40,132,70,173,93,170,98,129,74,89,44"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="156,5,223,32"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="195,47,199,95,194,96,190,48"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="247,5,308,32"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="259,46,234,74,212,97,208,94,230,70,255,42"/>
 </map>

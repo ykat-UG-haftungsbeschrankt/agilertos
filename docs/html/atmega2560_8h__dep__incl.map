@@ -1,11 +1,11 @@
 <map id="atmega2560.h" name="atmega2560.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="25,5,129,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__arch_8h.html" title=" " alt="" coords="30,80,124,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,48,80,80,74,80,74,48"/>
-<area shape="rect" id="Node000003" href="$zrtos_8h.html" title=" " alt="" coords="46,155,108,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="80,122,80,154,74,154,74,122"/>
-<area shape="rect" id="Node000004" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="9,229,145,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,197,80,229,74,229,74,197"/>
-<area shape="rect" id="Node000005" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="5,304,149,331"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="80,272,80,304,74,304,74,272"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="45,5,149,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__arch_8h.html" title=" " alt="" coords="50,80,144,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,48,100,80,94,80,94,48"/>
+<area shape="rect" id="Node000003" href="$zrtos_8h.html" title=" " alt="" coords="66,155,128,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,122,100,154,94,154,94,122"/>
+<area shape="rect" id="Node000004" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="29,229,165,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="100,197,100,229,94,229,94,197"/>
+<area shape="rect" id="Node000005" href="$zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="5,304,189,331"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="100,272,100,304,94,304,94,272"/>
 </map>

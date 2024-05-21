@@ -108,7 +108,7 @@ var searchData=
   ['eremoteio_105',['EREMOTEIO',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a242ce46c71c5eacd0f68da99ff8c62b9',1,'zrtos_error.h']]],
   ['erestart_106',['ERESTART',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629af5ae61d8c3eb7b3bb2384680ca918a99',1,'zrtos_error.h']]],
   ['erofs_107',['EROFS',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a56198247acea7520ae5c6005fbe76a31',1,'zrtos_error.h']]],
-  ['errno_108',['errno',['../struct__zrtos__task__t.html#affa353c475e56b603b396a2916bf55d1',1,'_zrtos_task_t::errno'],['../zrtos__error_8h.html#a0e7fc70ec4a312b8ee921a95245a3931',1,'errno:&#160;zrtos_error.h']]],
+  ['errno_108',['errno',['../struct__zrtos__task__t.html#affa353c475e56b603b396a2916bf55d1',1,'_zrtos_task_t::errno'],['../struct__zrtos__vheap__task__t.html#ab1c2b3cae90ca3e76412c574d1ee8194',1,'_zrtos_vheap_task_t::errno'],['../zrtos__error_8h.html#a0e7fc70ec4a312b8ee921a95245a3931',1,'errno:&#160;zrtos_error.h']]],
   ['errno_5ft_109',['errno_t',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629',1,'zrtos_error.h']]],
   ['eshutdown_110',['ESHUTDOWN',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a0e47b1caed7e030ed169741c9e576235',1,'zrtos_error.h']]],
   ['esocktnosupport_111',['ESOCKTNOSUPPORT',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629ac5b07d649f80674c49ee3a812e1fe4b2',1,'zrtos_error.h']]],
@@ -124,8 +124,9 @@ var searchData=
   ['euclean_121',['EUCLEAN',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629acd8ef993448d67c3a9b8cf74804acfa1',1,'zrtos_error.h']]],
   ['eunatch_122',['EUNATCH',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a63b8aab6ea680b89079a8038ae5b5c52',1,'zrtos_error.h']]],
   ['eusers_123',['EUSERS',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a5848f1440c7c5298d5f022e8a14624c0',1,'zrtos_error.h']]],
-  ['ewouldblock_124',['EWOULDBLOCK',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a53ef8719226a5fd7be8af74be6de2bfc',1,'zrtos_error.h']]],
-  ['examples_125',['Examples',['../index.html#autotoc_md0',1,'']]],
-  ['exdev_126',['EXDEV',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a953d85d9cf4a55d49811d920c169eded',1,'zrtos_error.h']]],
-  ['exfull_127',['EXFULL',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a8ea87e94fc7f547d1e9ff249575b9c10',1,'zrtos_error.h']]]
+  ['events_124',['events',['../index.html#autotoc_md2',1,'']]],
+  ['ewouldblock_125',['EWOULDBLOCK',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a53ef8719226a5fd7be8af74be6de2bfc',1,'zrtos_error.h']]],
+  ['examples_126',['Examples',['../index.html#autotoc_md0',1,'']]],
+  ['exdev_127',['EXDEV',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a953d85d9cf4a55d49811d920c169eded',1,'zrtos_error.h']]],
+  ['exfull_128',['EXFULL',['../zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a8ea87e94fc7f547d1e9ff249575b9c10',1,'zrtos_error.h']]]
 ];
