@@ -49,7 +49,7 @@ void zrtos_str__reverse(char *str){
  * @param radix 
  * @return char* 
  */
-char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
+char *zrtos_str__ultoa(uint64_t value, char *str, int radix){
 	char *tp = str;
 	uint64_t i;
 	uint64_t v = value;
@@ -58,7 +58,7 @@ char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 		i = v % radix;
 		v = v / radix;
 		if(i < 10){
-			*tp++ = i+'0';
+			*tp++ = i + '0';
 		}else{
 			*tp++ = i + 'a' - 10;
 		}
@@ -74,24 +74,24 @@ char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 	return tp;
 }
 
-#define ZRTOS_STR__DTOA_PRECISION 1000000
-
-char* zrtos_str__dtoa(double val,char *str){
-	char buffer[65];
-	char *tmp = buffer;
-
-	if(val < 0){
-		val = -val;
-		*tmp++ = '-';
+char *zrtos_str__ltoa(int64_t value, char *str, int radix){
+	if(value < 0){
+		value = -value;
+		*str++ = '-';
 	}
+	return *zrtos_str__ultoa(value,str,radix);
+}
 
-	uint64_t c = (val * ZRTOS_STR__DTOA_PRECISION) + .5;
-	uint64_t d = c / ZRTOS_STR__DTOA_PRECISION;
-	uint64_t f = c - (d * ZRTOS_STR__DTOA_PRECISION);
+#define ZRTOS_STR__CFG_DTOA_PRECISION 1000000
 
-	tmp = zrtos_str__ultoa(d,tmp,10);
-	*tmp++ = '.';
-	return zrtos_str__ultoa(f,tmp,10);
+char *zrtos_str__dtoa(double val,char *str){
+	int64_t c = (val * ZRTOS_STR__CFG_DTOA_PRECISION) + .5;
+	int64_t d = c / ZRTOS_STR__CFG_DTOA_PRECISION;
+	uint64_t f = c - (d * ZRTOS_STR__CFG_DTOA_PRECISION);
+
+	str = zrtos_str__ltoa(d,str,10);
+	*str++ = '.';
+	return zrtos_str__ultoa(f,str,10);
 }
 
 static void zrtos_str__vsnprintf_internal(

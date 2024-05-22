@@ -114,9 +114,9 @@ void zrtos_mem__reverse(void *dest,size_t len){
 	uint8_t *tmp_src = tmp_dest + len;
 	len>>=1;
 	while(len--){
+		--tmp_src;
 		ZRTOS_TYPES__SWAP_PTR_CONTENTS(tmp_dest,tmp_src);
 		tmp_dest++;
-		tmp_src--;
 	}
 }
 
