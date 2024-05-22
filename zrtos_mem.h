@@ -109,6 +109,17 @@ void zrtos_mem__cpy(
 	zrtos_mem__move_left_overlapping(dest,src,length);
 }
 
+void zrtos_mem__reverse(void *dest,size_t len){
+	uint8_t *tmp_dest = dest;
+	uint8_t *tmp_src = tmp_dest + len;
+	len>>=1;
+	while(len--){
+		ZRTOS_TYPES__SWAP_PTR_CONTENTS(tmp_dest,tmp_src);
+		tmp_dest++;
+		tmp_src--;
+	}
+}
+
 void *zrtos_mem__search(const void *key, const void *base, size_t /* nmemb */ high,
 			  size_t size, int (*compar)(const void *, const void *))
 {
