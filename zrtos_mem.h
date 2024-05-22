@@ -101,6 +101,14 @@ void zrtos_mem__move_left_overlapping(
 }
 #endif
 
+void zrtos_mem__cpy(
+	  void *dest
+	 ,void *src
+	 ,size_t length
+){
+	zrtos_mem__move_left_overlapping(dest,src,length);
+}
+
 void *zrtos_mem__search(const void *key, const void *base, size_t /* nmemb */ high,
 			  size_t size, int (*compar)(const void *, const void *))
 {

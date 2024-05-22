@@ -12,37 +12,36 @@ extern "C" {
 
 
 #include "zrtos_types.h"
-#include "zrtos_event_message.h"
 #include "zrtos_event_type.h"
 
 struct _zrtos_event_index_t;
 
 typedef struct _zrtos_event_t{
 	zrtos_event_type_t          type;
-	zrtos_event_message_t       *msg;
+	void                        *data;
 }zrtos_event_t;
 
 bool zrtos_event__init(
 	 zrtos_event_t               *thiz
 	,zrtos_event_type_t          type
-	,zrtos_event_message_t       *msg
+	,void                        *data
 ){
 	thiz->type = type;
-	thiz->msg = msg;
+	thiz->data = data;
 
 	return true;
 }
 
-zrtos_event_type_t *zrtos_event__get_type(
+zrtos_event_type_t zrtos_event__get_type(
 	zrtos_event_t *thiz
 ){
-	return &thiz->type;
+	return thiz->type;
 }
 
-zrtos_event_message_t *zrtos_event__get_msg(
+void *zrtos_event__get_data(
 	zrtos_event_t *thiz
 ){
-	return thiz->msg;
+	return thiz->data;
 }
 
 #ifdef __cplusplus

@@ -13,12 +13,11 @@ extern "C" {
 
 #include "zrtos_types.h"
 #include "zrtos_progmem.h"
-#include "zrtos_event_message.h"
 #include "zrtos_event_type.h"
 #include "zrtos_event_handler.h"
 #include "zrtos_event.h"
 
-
+//#define ZRTOS_EVENT_INDEX__CFG_ENABLE_PROGMEM
 #define ZRTOS_EVENT_INDEX(name,...) \
 zrtos_event_handler_t name[] ZRTOS_PROGMEM = { \
 	 __VA_ARGS__ \
@@ -27,17 +26,29 @@ zrtos_event_handler_t name[] ZRTOS_PROGMEM = { \
 
 typedef zrtos_event_handler_t zrtos_event_index_t;
 
-bool zrtos_event_index__invoke_ex(
+bool zrtos_event_index__invoke(
 	 zrtos_event_index_t   *thiz
 	,zrtos_event_type_t    type
-	,zrtos_event_message_t *msg
+	,void                  *data
 ){
 	zrtos_event_t event;
 	if(zrtos_event__init(
 		 &event
 		,type
-		,msg
+		,data
 	)){
+#ifndef ZRTOS_EVENT_INDEX__CFG_ENABLE_PROGMEM
+		zrtos_event_handler_t *handler = (zrtos_event_handler_t *)thiz;
+		for(;handler->callback;handler++){
+			if(zrtos_event_type__is_any(&handler->type)
+			|| 0 == zrtos_event_type__cmp(&handler->type,&event.type)){
+				if(!handler->callback(handler,&event)){
+					break;
+				}
+			}
+		}
+		return true;
+#else
 		zrtos_event_handler_t *phandler = (zrtos_event_handler_t *)thiz;
 		while(1){
 			zrtos_event_handler_t handler;
@@ -54,26 +65,9 @@ bool zrtos_event_index__invoke_ex(
 			}
 		}
 		return true;
+#endif
 	}
 	return false;
-}
-
-bool zrtos_event_index__invoke(
-	 zrtos_event_index_t *thiz
-	,zrtos_event_type_t  type
-	,void                *data
-	,size_t              length
-){
-	zrtos_event_message_t msg;
-	return zrtos_event_message__init(
-		 &msg
-		,data
-		,length
-	) && zrtos_event_index__invoke_ex(
-		 thiz
-		,type
-		,&msg
-	);
 }
 
 

@@ -94,7 +94,8 @@ $(function(){initNavTree('zrtos__event__handler_8h.html',''); initResizable(); }
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">zrtos_event_handler.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -144,6 +145,11 @@ Typedefs</h2></td></tr>
 <tr class="separator:a119b544cb59f6b19070281011bec38e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98d512d4aa2cec1054da5e4e7a018a3b" id="r_a98d512d4aa2cec1054da5e4e7a018a3b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__event__handler__t.html">_zrtos_event_handler_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d512d4aa2cec1054da5e4e7a018a3b">zrtos_event_handler_t</a></td></tr>
 <tr class="separator:a98d512d4aa2cec1054da5e4e7a018a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6dce62316d841da677d974ad23e799b8" id="r_a6dce62316d841da677d974ad23e799b8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dce62316d841da677d974ad23e799b8">zrtos_event_handler__get_context</a> (<a class="el" href="#a98d512d4aa2cec1054da5e4e7a018a3b">zrtos_event_handler_t</a> *thiz)</td></tr>
+<tr class="separator:a6dce62316d841da677d974ad23e799b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="af91b8814060bfdab50c1b3b2a94482c6" name="af91b8814060bfdab50c1b3b2a94482c6"></a>
@@ -214,6 +220,30 @@ Typedefs</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a6dce62316d841da677d974ad23e799b8" name="a6dce62316d841da677d974ad23e799b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dce62316d841da677d974ad23e799b8">&#9670;&#160;</a></span>zrtos_event_handler__get_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * zrtos_event_handler__get_context </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a98d512d4aa2cec1054da5e4e7a018a3b">zrtos_event_handler_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__event__handler_8h_source.html#l00037">37</a> of file <a class="el" href="zrtos__event__handler_8h_source.html">zrtos_event_handler.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span> {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137">ctx</a>;</div>
+<div class="line"><span class="lineno">   41</span>}</div>
+<div class="ttc" id="astruct__zrtos__event__handler__t_html_acfb1492aaf23ba15e675d8b7b5a92137"><div class="ttname"><a href="struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137">_zrtos_event_handler_t::ctx</a></div><div class="ttdeci">void * ctx</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__handler_8h_source.html#l00027">zrtos_event_handler.h:27</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

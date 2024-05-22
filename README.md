@@ -77,7 +77,7 @@ int main(void){
 #include <avr/io.h>
 
 #define ZRTOS_DEBUG__CFG_ENABLED
-#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
+#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 400
 
 typedef enum{
 	 ZRTOS_EVENT_TYPE__ANY = 0
@@ -92,7 +92,13 @@ bool handler_a(
 	 zrtos_event_handler_t *thiz
 	,zrtos_event_t         *args
 ){
-	ZRTOS_DEBUG("#%s","fn_a,");
+	ZRTOS_DEBUG(
+		 "{fn:%s,ctx:%p,data:%p,type:%d(EVENT_CODE_A)}  "
+		,"handler_a"
+		,zrtos_event_handler__get_context(thiz)
+		,zrtos_event__get_data(args)
+		,(int)zrtos_event__get_type(args)
+	);
 	return true;
 }
 
@@ -100,7 +106,14 @@ bool handler_b(
 	zrtos_event_handler_t *thiz
 	,zrtos_event_t         *args
 ){
-	ZRTOS_DEBUG("#%s","fn_b,");
+	char *data = zrtos_event__get_data(args);
+	ZRTOS_DEBUG(
+		 "{fn:%s,ctx:%p,data:'%c',type:%d(EVENT_CODE_B)}  "
+		,"handler_b"
+		,zrtos_event_handler__get_context(thiz)
+		,*data
+		,(int)zrtos_event__get_type(args)
+	);
 	return true;
 }
 
@@ -108,7 +121,14 @@ bool handler_bb(
 	zrtos_event_handler_t *thiz
 	,zrtos_event_t         *args
 ){
-	ZRTOS_DEBUG("#%s","fn_bb,");
+	char *data = zrtos_event__get_data(args);
+	ZRTOS_DEBUG(
+		 "{fn:%s,ctx:%p,data:'%c',type:%d(EVENT_CODE_B)}  "
+		,"handler_bb"
+		,zrtos_event_handler__get_context(thiz)
+		,*data
+		,(int)zrtos_event__get_type(args)
+	);
 	return true;
 }
 
@@ -116,7 +136,26 @@ bool handler_c(
 	 zrtos_event_handler_t *thiz
 	,zrtos_event_t         *args
 ){
-	ZRTOS_DEBUG("#%s","fn_c,");
+	void *data = zrtos_event__get_data(args);
+	ZRTOS_DEBUG(
+		 "{fn:%s,ctx:%p,data:%p,type:%d("
+		,"handler_c"
+		,zrtos_event_handler__get_context(thiz)
+		,data
+		,(int)zrtos_event__get_type(args)
+	);
+	switch(zrtos_event__get_type(args)){
+		case EVENT_CODE_A:
+			ZRTOS_DEBUG("%s(%p)","EVENT_CODE_A",data);
+		break;
+		case EVENT_CODE_B:
+			ZRTOS_DEBUG("%s(%c)","EVENT_CODE_B",((char*)data)[0]);
+		break;
+		default:
+			ZRTOS_DEBUG("%s(%s)","EVENT_CODE_ANY",(char*)data);
+		break;
+	}
+	ZRTOS_DEBUG(")}  ");
 	return true;
 }
 
@@ -139,35 +178,36 @@ ZRTOS_EVENT_INDEX(global_events,
 	,ZRTOS_EVENT_HANDLER(
 		 handler_c
 		,ZRTOS_EVENT_TYPE__ANY
-		,0
+		,(void*)0xFFAA
 	)
 );
 
 int main(void){
+	void *ptr = (void*) 0xFAFA;
+	char val = 'Z';
+
 	zrtos_event_index__invoke(
 		 global_events
 		,ZRTOS_EVENT_TYPE__ANY
 		,"test"
-		,5
 	);
 
 	zrtos_event_index__invoke(
 		 global_events
 		,EVENT_CODE_A
-		,"test"
-		,5
+		,ptr
 	);
 
 	zrtos_event_index__invoke(
 		 global_events
 		,EVENT_CODE_B
-		,"test"
-		,5
+		,&val
 	);
 
 
 	return 0;
 }
+
 ```
 
 ### pthread ###

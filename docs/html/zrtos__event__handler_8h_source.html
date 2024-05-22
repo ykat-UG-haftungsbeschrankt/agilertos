@@ -139,17 +139,25 @@ $(function(){initNavTree('zrtos__event__handler_8h_source.html',''); initResizab
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">    }</span></div>
 </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="zrtos__event__handler_8h.html#a6dce62316d841da677d974ad23e799b8">   37</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="zrtos__event__handler_8h.html#a6dce62316d841da677d974ad23e799b8">zrtos_event_handler__get_context</a>(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_struct" href="struct__zrtos__event__handler__t.html">zrtos_event_handler_t</a> *thiz</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>){</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137">ctx</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astruct__zrtos__event__handler__t_html"><div class="ttname"><a href="struct__zrtos__event__handler__t.html">_zrtos_event_handler_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00024">zrtos_event_handler.h:24</a></div></div>
 <div class="ttc" id="astruct__zrtos__event__handler__t_html_a3865706147ec9e8518f94f441f47c65a"><div class="ttname"><a href="struct__zrtos__event__handler__t.html#a3865706147ec9e8518f94f441f47c65a">_zrtos_event_handler_t::callback</a></div><div class="ttdeci">zrtos_event_handler_callback_t callback</div><div class="ttdef"><b>Definition</b> <a href="#l00025">zrtos_event_handler.h:25</a></div></div>
 <div class="ttc" id="astruct__zrtos__event__handler__t_html_acfb1492aaf23ba15e675d8b7b5a92137"><div class="ttname"><a href="struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137">_zrtos_event_handler_t::ctx</a></div><div class="ttdeci">void * ctx</div><div class="ttdef"><b>Definition</b> <a href="#l00027">zrtos_event_handler.h:27</a></div></div>
 <div class="ttc" id="astruct__zrtos__event__handler__t_html_af7a93fbc731fd08d9e73bacd62a6f591"><div class="ttname"><a href="struct__zrtos__event__handler__t.html#af7a93fbc731fd08d9e73bacd62a6f591">_zrtos_event_handler_t::type</a></div><div class="ttdeci">zrtos_event_type_t type</div><div class="ttdef"><b>Definition</b> <a href="#l00026">zrtos_event_handler.h:26</a></div></div>
-<div class="ttc" id="astruct__zrtos__event__t_html"><div class="ttname"><a href="struct__zrtos__event__t.html">_zrtos_event_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__event_8h_source.html#l00020">zrtos_event.h:20</a></div></div>
+<div class="ttc" id="astruct__zrtos__event__t_html"><div class="ttname"><a href="struct__zrtos__event__t.html">_zrtos_event_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__event_8h_source.html#l00019">zrtos_event.h:19</a></div></div>
 <div class="ttc" id="azrtos__event__handler_8h_html_a119b544cb59f6b19070281011bec38e5"><div class="ttname"><a href="zrtos__event__handler_8h.html#a119b544cb59f6b19070281011bec38e5">zrtos_event_handler_callback_t</a></div><div class="ttdeci">bool(* zrtos_event_handler_callback_t)(struct _zrtos_event_handler_t *thiz, struct _zrtos_event_t *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00019">zrtos_event_handler.h:19</a></div></div>
+<div class="ttc" id="azrtos__event__handler_8h_html_a6dce62316d841da677d974ad23e799b8"><div class="ttname"><a href="zrtos__event__handler_8h.html#a6dce62316d841da677d974ad23e799b8">zrtos_event_handler__get_context</a></div><div class="ttdeci">void * zrtos_event_handler__get_context(zrtos_event_handler_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00037">zrtos_event_handler.h:37</a></div></div>
 <div class="ttc" id="azrtos__event__handler_8h_html_a98d512d4aa2cec1054da5e4e7a018a3b"><div class="ttname"><a href="zrtos__event__handler_8h.html#a98d512d4aa2cec1054da5e4e7a018a3b">zrtos_event_handler_t</a></div><div class="ttdeci">struct _zrtos_event_handler_t zrtos_event_handler_t</div></div>
 <div class="ttc" id="azrtos__types_8h_html"><div class="ttname"><a href="zrtos__types_8h.html">zrtos_types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

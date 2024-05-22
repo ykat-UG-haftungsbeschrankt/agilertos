@@ -34,6 +34,11 @@ typedef struct _zrtos_event_handler_t{
         ,.ctx=ctx_                                \
     }
 
+void *zrtos_event_handler__get_context(
+	zrtos_event_handler_t *thiz
+){
+	return thiz->ctx;
+}
 
 #ifdef __cplusplus
 }

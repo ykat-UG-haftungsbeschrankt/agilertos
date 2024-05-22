@@ -57,6 +57,12 @@ char* zrtos_str__ultoa(uint64_t value, char *str, int radix){
 	return str;
 }
 
+size_t zrtos_str__len(char *str){
+	char *tmp = str+1;
+	while(*str++){}
+	return zrtos_types__ptr_get_byte_distance(str,tmp);
+}
+
 static void zrtos_str__vsnprintf_internal(
 	 void (*putc)(void *args,char c)
 	,void *putc_args
@@ -64,68 +70,75 @@ static void zrtos_str__vsnprintf_internal(
 	,va_list arg
 ){
 	char ch;
+	uint8_t out_mod;
+	char *out_str;
+	size_t out_len;
+	uint64_t out_num;
+	uint8_t out_radix;
+	char buffer[64];
+
 	while((ch = *fmt++)){
+		out_mod = 0x1;
 		if(ch == '%'){
 			switch((ch = *fmt++)){
-				case '%':
-					putc(putc_args,'%');
+				case 'c':
+					out_mod = 0x1;
+					ch = va_arg(arg,int);
 				break;
-				case 'c':{
-					int tmp = va_arg(arg,int);
-					putc(putc_args,(char)tmp);
-				}
+				case 's':
+					out_mod = 0x4 | 0x2;
+					out_str = va_arg(arg,char*);
 				break;
-				case 's':{
-					char *tmp = va_arg(arg,char*);
-					while((ch = *tmp++)){
-						putc(putc_args,ch);
-					}
-				}
-				break;
-				case 'S':{
-					char *tmp = va_arg(arg,char*);
-					size_t len = va_arg(arg,size_t);
-					while(len--){
-						putc(putc_args,*tmp++);
-					}
-				}
+				case 'S':
+					out_mod = 0x4;
+					out_len = va_arg(arg,size_t);
+					out_str = va_arg(arg,char*);
 				break;
 				case 'd':{
-					char buffer[64];
-					int64_t tmp = va_arg(arg, int64_t);
+					int tmp = va_arg(arg, int);
+					out_num = (uint64_t)tmp;
+					out_mod = 0x8 | 0x4 | 0x2;
+					out_radix = 10;
 					if(tmp < 0){
-						putc(putc_args,'-');
-						tmp = -tmp;
-					}
-					zrtos_str__ultoa(tmp, buffer, 10);
-					for(char *ptr = buffer;(ch = *ptr++);){
-						putc(putc_args,ch);
+						ch = '-';
+						out_mod |= 0x1;
 					}
 				}
 				break;
 				case 'u':{
-					char buffer[64];
-					uint64_t tmp = va_arg(arg, uint64_t);
-					zrtos_str__ultoa(tmp, buffer, 10);
-					for(char *ptr = buffer;(ch = *ptr++);){
-						putc(putc_args,ch);
-					}
+					out_num = (uint64_t)va_arg(arg, int);
+					out_mod = 0x8 | 0x4 | 0x2;
+					out_radix = 10;
 				}
 				break;
-				case 'x':{
-					char buffer[64];
-					uint64_t tmp = va_arg(arg, uint64_t);
-					zrtos_str__ultoa(tmp, buffer, 16);
-					for(char *ptr = buffer;(ch = *ptr++);){
-						putc(putc_args,ch);
-					}
-				}
+				case 'p':
+					out_num = (uint64_t)va_arg(arg,uintptr_t);
+					goto L_PRINT_HEX;
+				case 'x':
+					out_num = va_arg(arg,uint64_t);
+L_PRINT_HEX:
+					out_mod = 0x8 | 0x4 | 0x2;
+					out_radix = 16;
 				break;
 				case 0:
 				return;
 			}
-		}else{
+		}
+
+		if(out_mod & 0x1){
 			putc(putc_args,ch);
+		}
+		if(out_mod & 0x8){
+			zrtos_str__ultoa(out_num, buffer, out_radix);
+			out_str = buffer;
+		}
+		if(out_mod & 0x2){
+			out_len = zrtos_str__len(out_str);
+		}
+		if(out_mod & 0x4){
+			while(out_len--){
+				putc(putc_args,*out_str++);
+			}
 		}
 	}
 }

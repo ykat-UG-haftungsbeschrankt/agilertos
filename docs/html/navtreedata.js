@@ -53,8 +53,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a63b8aab6ea680b89079a8038ae5b5c52",
-"zrtos__vheap__chunk__type_8h.html#a85dd3ca5f0a4d10ef1d290110cb1e675"
+"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a5848f1440c7c5298d5f022e8a14624c0",
+"zrtos__vheap__chunk__type_8h.html#a258bcb11ffc79b5a7b55e1b46abe7717"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

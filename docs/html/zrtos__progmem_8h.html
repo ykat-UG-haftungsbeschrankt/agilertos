@@ -183,17 +183,29 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="zrtos__progmem_8h_source.html#l00017">17</a> of file <a class="el" href="zrtos__progmem_8h_source.html">zrtos_progmem.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   17</span>                                                        {</div>
-<div class="line"><span class="lineno">   18</span>    memcpy(dest,src,len);</div>
-<div class="line"><span class="lineno">   19</span>}</div>
+<div class="line"><span class="lineno">   18</span>    <a class="code hl_function" href="zrtos__mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78">zrtos_mem__cpy</a>(dest,src,len);</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   20</span>}</div>
+<div class="ttc" id="azrtos__mem_8h_html_ac36c32ce5585de38fd4b77b2a322ac78"><div class="ttname"><a href="zrtos__mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78">zrtos_mem__cpy</a></div><div class="ttdeci">void zrtos_mem__cpy(void *dest, void *src, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__mem_8h_source.html#l00104">zrtos_mem.h:104</a></div></div>
 </div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="zrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_cgraph.png" border="0" usemap="#azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_cgraph" alt=""/></div>
+<map name="azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_cgraph" id="azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,152,40"/>
+<area shape="rect" href="zrtos__mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="200,13,321,40"/>
+<area shape="poly" title=" " alt="" coords="152,24,184,24,184,29,152,29"/>
+<area shape="rect" href="zrtos__mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="369,5,523,48"/>
+<area shape="poly" title=" " alt="" coords="322,24,353,24,353,29,322,29"/>
+</map>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_icgraph.png" border="0" usemap="#azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_icgraph" alt=""/></div>
 <map name="azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_icgraph" id="azrtos__progmem_8h_a7185db18272b8514d094ac443ad989eb_icgraph">
-<area shape="rect" title=" " alt="" coords="366,13,512,40"/>
-<area shape="rect" href="zrtos__event__index_8h.html#ac35057619481cbd639e88dd343afbbcd" title=" " alt="" coords="186,5,318,48"/>
-<area shape="poly" title=" " alt="" coords="350,29,318,29,318,24,350,24"/>
-<area shape="rect" href="zrtos__event__index_8h.html#a277119da46b89046d630364ed727b6eb" title=" " alt="" coords="5,5,138,48"/>
+<area shape="rect" title=" " alt="" coords="186,13,332,40"/>
+<area shape="rect" href="zrtos__event__index_8h.html#a103b54fae27100dc5d48347a3110f51c" title=" " alt="" coords="5,5,138,48"/>
 <area shape="poly" title=" " alt="" coords="170,29,138,29,138,24,170,24"/>
 </map>
 </div>

@@ -1,5 +1,9 @@
 <map id="zrtos_str__vsnprintf_internal" name="zrtos_str__vsnprintf_internal">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,139,48"/>
-<area shape="rect" id="Node000002" href="$zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189" title=" " alt="" coords="187,13,301,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,24,171,24,171,29,139,29"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,139,73"/>
+<area shape="rect" id="Node000002" href="$zrtos__str_8h.html#a0bbbf024b181a2c7d5ec9056efb84743" title=" " alt="" coords="192,13,296,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,39,176,34,177,39,140,45"/>
+<area shape="rect" id="Node000004" href="$zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189" title=" " alt="" coords="187,64,301,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,59,172,64,171,69,139,65"/>
+<area shape="rect" id="Node000003" href="$zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="349,5,492,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,24,334,24,334,29,296,29"/>
 </map>

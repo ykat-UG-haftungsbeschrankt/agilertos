@@ -3,7 +3,6 @@ var annotated_dup =
     [ "_zrtos_clist_node_t", "struct__zrtos__clist__node__t.html", "struct__zrtos__clist__node__t" ],
     [ "_zrtos_clist_t", "struct__zrtos__clist__t.html", "struct__zrtos__clist__t" ],
     [ "_zrtos_event_handler_t", "struct__zrtos__event__handler__t.html", "struct__zrtos__event__handler__t" ],
-    [ "_zrtos_event_message_t", "struct__zrtos__event__message__t.html", "struct__zrtos__event__message__t" ],
     [ "_zrtos_event_t", "struct__zrtos__event__t.html", "struct__zrtos__event__t" ],
     [ "_zrtos_malloc_heap_chunk_t", "struct__zrtos__malloc__heap__chunk__t.html", "struct__zrtos__malloc__heap__chunk__t" ],
     [ "_zrtos_malloc_internal_t", "struct__zrtos__malloc__internal__t.html", "struct__zrtos__malloc__internal__t" ],
