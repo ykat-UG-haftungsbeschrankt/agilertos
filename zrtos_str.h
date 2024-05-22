@@ -34,19 +34,9 @@ void zrtos_str__reverse(char *str){
 }
 
 /**
- * @brief 
- * 
- * 	if(str == NULL){
- * 		return 0;
- * 	}
- * 
- * 	if(radix > 36 || radix <= 1){
- * 		return 0;
- * 	}
- * 
  * @param value 
- * @param str 
- * @param radix 
+ * @param str must be str != NULL
+ * @param radix must be radix < 36 && radix >= 1
  * @return char* 
  */
 char *zrtos_str__ultoa(uint64_t value, char *str, int radix){
@@ -69,7 +59,7 @@ char *zrtos_str__ultoa(uint64_t value, char *str, int radix){
 		,zrtos_types__ptr_get_byte_distance(tp,str)
 	);
 
-	*tp++ = 0;
+	*tp = 0;
 
 	return tp;
 }

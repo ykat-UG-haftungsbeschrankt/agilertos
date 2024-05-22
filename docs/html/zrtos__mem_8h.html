@@ -118,18 +118,20 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__mem_8h__dep__incl.png" border="0" usemap="#azrtos__mem_8hdep" alt=""/></div>
 <map name="azrtos__mem_8hdep" id="azrtos__mem_8hdep">
-<area shape="rect" title=" " alt="" coords="93,5,190,32"/>
+<area shape="rect" title=" " alt="" coords="152,5,249,32"/>
 <area shape="rect" href="zrtos__progmem_8h.html" title=" " alt="" coords="12,80,135,107"/>
-<area shape="poly" title=" " alt="" coords="121,45,87,81,83,78,117,42"/>
-<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="159,80,260,107"/>
-<area shape="poly" title=" " alt="" coords="166,42,200,78,196,81,162,45"/>
+<area shape="poly" title=" " alt="" coords="166,42,97,82,94,77,164,38"/>
+<area shape="rect" href="zrtos__str_8h.html" title=" " alt="" coords="159,80,242,107"/>
+<area shape="poly" title=" " alt="" coords="203,48,203,80,198,80,198,48"/>
+<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="266,80,367,107"/>
+<area shape="poly" title=" " alt="" coords="235,38,297,77,294,82,232,43"/>
 <area shape="rect" href="zrtos__event__index_8h.html" title=" " alt="" coords="5,155,142,181"/>
 <area shape="poly" title=" " alt="" coords="76,122,76,154,71,154,71,122"/>
-<area shape="rect" href="zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="170,229,353,256"/>
-<area shape="poly" title=" " alt="" coords="212,122,214,151,221,180,235,206,252,227,248,231,231,209,216,182,209,152,206,122"/>
-<area shape="rect" href="zrtos__vheap__task__scheduler_8h.html" title=" " alt="" coords="231,155,428,181"/>
-<area shape="poly" title=" " alt="" coords="245,113,310,152,307,156,242,117"/>
-<area shape="poly" title=" " alt="" coords="309,195,275,231,271,227,305,191"/>
+<area shape="rect" href="zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="225,229,408,256"/>
+<area shape="poly" title=" " alt="" coords="296,120,285,137,276,155,275,175,281,195,305,227,301,230,277,197,270,176,271,154,280,134,292,117"/>
+<area shape="rect" href="zrtos__vheap__task__scheduler_8h.html" title=" " alt="" coords="286,155,482,181"/>
+<area shape="poly" title=" " alt="" coords="340,116,374,152,371,156,337,120"/>
+<area shape="poly" title=" " alt="" coords="364,195,330,231,326,227,360,191"/>
 </map>
 </div>
 </div>
@@ -149,6 +151,8 @@ Functions</h2></td></tr>
 <tr class="separator:a9054cc3824c6ffdaf4ed24fde2f80f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac36c32ce5585de38fd4b77b2a322ac78" id="r_ac36c32ce5585de38fd4b77b2a322ac78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac36c32ce5585de38fd4b77b2a322ac78">zrtos_mem__cpy</a> (void *dest, void *src, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
 <tr class="separator:ac36c32ce5585de38fd4b77b2a322ac78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d701c04fc9475a1e6cd8d5b14d6534b" id="r_a3d701c04fc9475a1e6cd8d5b14d6534b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a> (void *dest, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:a3d701c04fc9475a1e6cd8d5b14d6534b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab5ba8aca3f57d2f28ec20b9ae5dceaf" id="r_aab5ba8aca3f57d2f28ec20b9ae5dceaf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a> (const void *key, const void *base, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> high, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> size, int(*compar)(const void *, const void *))</td></tr>
 <tr class="separator:aab5ba8aca3f57d2f28ec20b9ae5dceaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2512a95e0df7c3af1ce69001c256ee3" id="r_af2512a95e0df7c3af1ce69001c256ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2512a95e0df7c3af1ce69001c256ee3">zrtos_mem__sort</a> (void *base, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> nel, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> width, int(*comp)(const void *, const void *))</td></tr>
@@ -452,6 +456,62 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3d701c04fc9475a1e6cd8d5b14d6534b" name="a3d701c04fc9475a1e6cd8d5b14d6534b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d701c04fc9475a1e6cd8d5b14d6534b">&#9670;&#160;</a></span>zrtos_mem__reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__reverse </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__mem_8h_source.html#l00112">112</a> of file <a class="el" href="zrtos__mem_8h_source.html">zrtos_mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>                                              {</div>
+<div class="line"><span class="lineno">  113</span>    uint8_t *tmp_dest = dest;</div>
+<div class="line"><span class="lineno">  114</span>    uint8_t *tmp_src = tmp_dest + len;</div>
+<div class="line"><span class="lineno">  115</span>    len&gt;&gt;=1;</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  117</span>        --tmp_src;</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_define" href="zrtos__types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_dest,tmp_src);</div>
+<div class="line"><span class="lineno">  119</span>        tmp_dest++;</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="line"><span class="lineno">  121</span>}</div>
+<div class="ttc" id="azrtos__types_8h_html_a2f4eaa4b4f1a02421779d9923bc8300d"><div class="ttname"><a href="zrtos__types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a></div><div class="ttdeci">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a, b)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00051">zrtos_types.h:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="zrtos__mem_8h_a3d701c04fc9475a1e6cd8d5b14d6534b_icgraph.png" border="0" usemap="#azrtos__mem_8h_a3d701c04fc9475a1e6cd8d5b14d6534b_icgraph" alt=""/></div>
+<map name="azrtos__mem_8h_a3d701c04fc9475a1e6cd8d5b14d6534b_icgraph" id="azrtos__mem_8h_a3d701c04fc9475a1e6cd8d5b14d6534b_icgraph">
+<area shape="rect" title=" " alt="" coords="858,31,999,57"/>
+<area shape="rect" href="zrtos__str_8h.html#a1d32a5a8a6bb91bef6370f6f5b03513f" title=" " alt="" coords="683,5,810,32"/>
+<area shape="poly" title=" " alt="" coords="842,35,810,30,811,25,843,29"/>
+<area shape="rect" href="zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189" title=" " alt="" coords="689,56,804,83"/>
+<area shape="poly" title=" " alt="" coords="843,59,804,64,803,59,842,53"/>
+<area shape="rect" href="zrtos__str_8h.html#adcf77443fdcd0ba7a3a37438f6ee3855" title=" " alt="" coords="368,56,479,83"/>
+<area shape="poly" title=" " alt="" coords="680,55,634,47,581,42,528,47,471,58,470,53,527,41,581,37,635,41,681,49"/>
+<area shape="rect" href="zrtos__str_8h.html#a253e58778bc61b2ca7b51d761ea914b4" title=" " alt="" coords="187,73,320,116"/>
+<area shape="poly" title=" " alt="" coords="681,89,635,97,550,104,465,106,320,102,321,96,465,100,550,99,634,92,680,84"/>
+<area shape="rect" href="zrtos__str_8h.html#a0f900e1b206fe39cd1b56fb61c1802b6" title=" " alt="" coords="527,56,635,83"/>
+<area shape="poly" title=" " alt="" coords="674,72,635,72,635,67,674,67"/>
+<area shape="poly" title=" " alt="" coords="353,83,321,87,320,82,352,77"/>
+<area shape="rect" href="zrtos__str_8h.html#af64b95fd53da061e4bde68dddbe02232" title=" " alt="" coords="5,81,139,108"/>
+<area shape="poly" title=" " alt="" coords="171,97,139,97,139,92,171,92"/>
+<area shape="poly" title=" " alt="" coords="512,72,480,72,480,67,512,67"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aab5ba8aca3f57d2f28ec20b9ae5dceaf" name="aab5ba8aca3f57d2f28ec20b9ae5dceaf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab5ba8aca3f57d2f28ec20b9ae5dceaf">&#9670;&#160;</a></span>zrtos_mem__search()</h2>
 
@@ -486,30 +546,30 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__mem_8h_source.html#l00112">112</a> of file <a class="el" href="zrtos__mem_8h_source.html">zrtos_mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>{</div>
-<div class="line"><span class="lineno">  115</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> *p;</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordtype">size_t</span> low;</div>
-<div class="line"><span class="lineno">  117</span>    <span class="keywordtype">size_t</span> mid;</div>
-<div class="line"><span class="lineno">  118</span>    <span class="keywordtype">int</span> r;</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">if</span> (size &gt; 0) {             <span class="comment">/* TODO: change this to an assert?? */</span></div>
-<div class="line"><span class="lineno">  121</span>        low = 0;</div>
-<div class="line"><span class="lineno">  122</span>        <span class="keywordflow">while</span> (low &lt; high) {</div>
-<div class="line"><span class="lineno">  123</span>            mid = low + ((high - low) &gt;&gt; 1); <span class="comment">/* Avoid possible overflow here. */</span></div>
-<div class="line"><span class="lineno">  124</span>            p = ((<span class="keywordtype">char</span> *)base) + mid * size; <span class="comment">/* Could overflow here... */</span></div>
-<div class="line"><span class="lineno">  125</span>            r = (*compar)(key, p); <span class="comment">/* but that&#39;s an application problem! */</span></div>
-<div class="line"><span class="lineno">  126</span>            <span class="keywordflow">if</span> (r &gt; 0) {</div>
-<div class="line"><span class="lineno">  127</span>                low = mid + 1;</div>
-<div class="line"><span class="lineno">  128</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &lt; 0) {</div>
-<div class="line"><span class="lineno">  129</span>                high = mid;</div>
-<div class="line"><span class="lineno">  130</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  131</span>                <span class="keywordflow">return</span> p;</div>
-<div class="line"><span class="lineno">  132</span>            }</div>
-<div class="line"><span class="lineno">  133</span>        }</div>
-<div class="line"><span class="lineno">  134</span>    }</div>
-<div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  136</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__mem_8h_source.html#l00123">123</a> of file <a class="el" href="zrtos__mem_8h_source.html">zrtos_mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> *p;</div>
+<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">size_t</span> low;</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordtype">size_t</span> mid;</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordtype">int</span> r;</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> (size &gt; 0) {             <span class="comment">/* TODO: change this to an assert?? */</span></div>
+<div class="line"><span class="lineno">  132</span>        low = 0;</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">while</span> (low &lt; high) {</div>
+<div class="line"><span class="lineno">  134</span>            mid = low + ((high - low) &gt;&gt; 1); <span class="comment">/* Avoid possible overflow here. */</span></div>
+<div class="line"><span class="lineno">  135</span>            p = ((<span class="keywordtype">char</span> *)base) + mid * size; <span class="comment">/* Could overflow here... */</span></div>
+<div class="line"><span class="lineno">  136</span>            r = (*compar)(key, p); <span class="comment">/* but that&#39;s an application problem! */</span></div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (r &gt; 0) {</div>
+<div class="line"><span class="lineno">  138</span>                low = mid + 1;</div>
+<div class="line"><span class="lineno">  139</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &lt; 0) {</div>
+<div class="line"><span class="lineno">  140</span>                high = mid;</div>
+<div class="line"><span class="lineno">  141</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  142</span>                <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">  143</span>            }</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="line"><span class="lineno">  146</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  147</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -542,34 +602,34 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__mem_8h_source.html#l00138">138</a> of file <a class="el" href="zrtos__mem_8h_source.html">zrtos_mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>{</div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordtype">size_t</span> wnel, gap, wgap, i, j, k;</div>
-<div class="line"><span class="lineno">  144</span>    <span class="keywordtype">char</span> *a, *b, tmp;</div>
-<div class="line"><span class="lineno">  145</span> </div>
-<div class="line"><span class="lineno">  146</span>    wnel = width * nel;</div>
-<div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (gap = 0; ++gap &lt; nel;)</div>
-<div class="line"><span class="lineno">  148</span>        gap *= 3;</div>
-<div class="line"><span class="lineno">  149</span>    <span class="keywordflow">while</span> ((gap /= 3) != 0) {</div>
-<div class="line"><span class="lineno">  150</span>        wgap = width * gap;</div>
-<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">for</span> (i = wgap; i &lt; wnel; i += width) {</div>
-<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">for</span> (j = i - wgap; ;j -= wgap) {</div>
-<div class="line"><span class="lineno">  153</span>                a = j + (<span class="keywordtype">char</span> *)base;</div>
-<div class="line"><span class="lineno">  154</span>                b = a + wgap;</div>
-<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">if</span> ((*comp)(a, b) &lt;= 0)</div>
-<div class="line"><span class="lineno">  156</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  157</span>                k = width;</div>
-<div class="line"><span class="lineno">  158</span>                <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  159</span>                    tmp = *a;</div>
-<div class="line"><span class="lineno">  160</span>                    *a++ = *b;</div>
-<div class="line"><span class="lineno">  161</span>                    *b++ = tmp;</div>
-<div class="line"><span class="lineno">  162</span>                } <span class="keywordflow">while</span> (--k);</div>
-<div class="line"><span class="lineno">  163</span>                <span class="keywordflow">if</span> (j &lt; wgap)</div>
-<div class="line"><span class="lineno">  164</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  165</span>            }</div>
-<div class="line"><span class="lineno">  166</span>        }</div>
-<div class="line"><span class="lineno">  167</span>    }</div>
-<div class="line"><span class="lineno">  168</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__mem_8h_source.html#l00149">149</a> of file <a class="el" href="zrtos__mem_8h_source.html">zrtos_mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">size_t</span> wnel, gap, wgap, i, j, k;</div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordtype">char</span> *a, *b, tmp;</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span>    wnel = width * nel;</div>
+<div class="line"><span class="lineno">  158</span>    <span class="keywordflow">for</span> (gap = 0; ++gap &lt; nel;)</div>
+<div class="line"><span class="lineno">  159</span>        gap *= 3;</div>
+<div class="line"><span class="lineno">  160</span>    <span class="keywordflow">while</span> ((gap /= 3) != 0) {</div>
+<div class="line"><span class="lineno">  161</span>        wgap = width * gap;</div>
+<div class="line"><span class="lineno">  162</span>        <span class="keywordflow">for</span> (i = wgap; i &lt; wnel; i += width) {</div>
+<div class="line"><span class="lineno">  163</span>            <span class="keywordflow">for</span> (j = i - wgap; ;j -= wgap) {</div>
+<div class="line"><span class="lineno">  164</span>                a = j + (<span class="keywordtype">char</span> *)base;</div>
+<div class="line"><span class="lineno">  165</span>                b = a + wgap;</div>
+<div class="line"><span class="lineno">  166</span>                <span class="keywordflow">if</span> ((*comp)(a, b) &lt;= 0)</div>
+<div class="line"><span class="lineno">  167</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  168</span>                k = width;</div>
+<div class="line"><span class="lineno">  169</span>                <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  170</span>                    tmp = *a;</div>
+<div class="line"><span class="lineno">  171</span>                    *a++ = *b;</div>
+<div class="line"><span class="lineno">  172</span>                    *b++ = tmp;</div>
+<div class="line"><span class="lineno">  173</span>                } <span class="keywordflow">while</span> (--k);</div>
+<div class="line"><span class="lineno">  174</span>                <span class="keywordflow">if</span> (j &lt; wgap)</div>
+<div class="line"><span class="lineno">  175</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  176</span>            }</div>
+<div class="line"><span class="lineno">  177</span>        }</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+<div class="line"><span class="lineno">  179</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -618,7 +678,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   32</span>        tmp_dest++;</div>
 <div class="line"><span class="lineno">   33</span>    }</div>
 <div class="line"><span class="lineno">   34</span>}</div>
-<div class="ttc" id="azrtos__types_8h_html_a2f4eaa4b4f1a02421779d9923bc8300d"><div class="ttname"><a href="zrtos__types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a></div><div class="ttdeci">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a, b)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00051">zrtos_types.h:51</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

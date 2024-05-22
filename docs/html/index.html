@@ -163,6 +163,98 @@ malloc() / free()</h2>
 <div class="ttc" id="azrtos__malloc_8h_html_a9f02437abeef6dc7e94a9b9f080584de"><div class="ttname"><a href="zrtos__malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GET_REQUIRED_SIZE(type, count)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00032">zrtos_malloc.h:32</a></div></div>
 <div class="ttc" id="azrtos__malloc_8h_html_ae2e292b4f22bb68140eb76ba704eb5b6"><div class="ttname"><a href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00043">zrtos_malloc.h:43</a></div></div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md2"></a>
+vheap</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="zrtos__vheap_8h.html">zrtos_vheap.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="zrtos__vheap_8h.html#ab7f994687b99d6cc4a3d83749b5fdaae">ZRTOS_VHEAP__INIT</a>(heap,160);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>){</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__t.html">zrtos_vheap_t</a> mem;</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,<a class="code hl_define" href="zrtos__vheap_8h.html#a47e3e00912f5bdee05169955edb5ce0b">ZRTOS_VHEAP__GET</a>(heap)</div>
+<div class="line">        ,160</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunka = <a class="code hl_function" href="zrtos__vheap_8h.html#a869860bdef21c42bb4afe71995ca995b">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(),<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6">ZRTOS_VHEAP_TYPE__MALLOC</a>,16);</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkb = <a class="code hl_function" href="zrtos__vheap_8h.html#a869860bdef21c42bb4afe71995ca995b">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(),<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6">ZRTOS_VHEAP_TYPE__MALLOC</a>,16);</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkc = <a class="code hl_function" href="zrtos__vheap_8h.html#a869860bdef21c42bb4afe71995ca995b">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(),<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6">ZRTOS_VHEAP_TYPE__MALLOC</a>,16);</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__t.html">zrtos_vheap_chunk_t</a> *chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunka</div>
+<div class="line">    );</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__t.html">zrtos_vheap_chunk_t</a> *chunkbb = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkb</div>
+<div class="line">    );</div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__t.html">zrtos_vheap_chunk_t</a> *chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkc</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkd = <a class="code hl_function" href="zrtos__vheap_8h.html#a869860bdef21c42bb4afe71995ca995b">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_function" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a>(),<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6">ZRTOS_VHEAP_TYPE__MALLOC</a>,16);</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__t.html">zrtos_vheap_chunk_t</a> *chunkdd = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkd</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunka</div>
+<div class="line">    );</div>
+<div class="line">    chunkbb = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkb</div>
+<div class="line">    );</div>
+<div class="line">    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkc</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    chunkdd = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkd</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunkb);</div>
+<div class="line"> </div>
+<div class="line">    chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunka</div>
+<div class="line">    );</div>
+<div class="line">    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkc</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunka);</div>
+<div class="line"> </div>
+<div class="line">    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
+<div class="line">         &amp;mem</div>
+<div class="line">        ,chunkc</div>
+<div class="line">    );</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunkc);</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="astruct__zrtos__vheap__chunk__t_html"><div class="ttname"><a href="struct__zrtos__vheap__chunk__t.html">_zrtos_vheap_chunk_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00018">zrtos_vheap_chunk.h:18</a></div></div>
+<div class="ttc" id="astruct__zrtos__vheap__chunk__uid__t_html"><div class="ttname"><a href="struct__zrtos__vheap__chunk__uid__t.html">_zrtos_vheap_chunk_uid_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk__uid_8h_source.html#l00014">zrtos_vheap_chunk_uid.h:14</a></div></div>
+<div class="ttc" id="astruct__zrtos__vheap__t_html"><div class="ttname"><a href="struct__zrtos__vheap__t.html">_zrtos_vheap_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00028">zrtos_vheap.h:28</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html"><div class="ttname"><a href="zrtos__vheap_8h.html">zrtos_vheap.h</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_a47e3e00912f5bdee05169955edb5ce0b"><div class="ttname"><a href="zrtos__vheap_8h.html#a47e3e00912f5bdee05169955edb5ce0b">ZRTOS_VHEAP__GET</a></div><div class="ttdeci">#define ZRTOS_VHEAP__GET(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00025">zrtos_vheap.h:25</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_a869860bdef21c42bb4afe71995ca995b"><div class="ttname"><a href="zrtos__vheap_8h.html#a869860bdef21c42bb4afe71995ca995b">zrtos_vheap__malloc</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap__malloc(zrtos_vheap_t *thiz, zrtos_vheap_chunk_uid_t parent, zrtos_vheap_type_t type, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00196">zrtos_vheap.h:196</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_a8cb25649260ebcdadebc5cc733e01254"><div class="ttname"><a href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a></div><div class="ttdeci">void zrtos_vheap__free(zrtos_vheap_t *thiz, zrtos_vheap_chunk_uid_t uid)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00291">zrtos_vheap.h:291</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_a8eac080ec3d734b3a5eda8d7b45f13fd"><div class="ttname"><a href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a></div><div class="ttdeci">bool zrtos_vheap__init(zrtos_vheap_t *thiz, void *heap, size_t heap_size)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00035">zrtos_vheap.h:35</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_ab7f994687b99d6cc4a3d83749b5fdaae"><div class="ttname"><a href="zrtos__vheap_8h.html#ab7f994687b99d6cc4a3d83749b5fdaae">ZRTOS_VHEAP__INIT</a></div><div class="ttdeci">#define ZRTOS_VHEAP__INIT(name, heap_size)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00019">zrtos_vheap.h:19</a></div></div>
+<div class="ttc" id="azrtos__vheap_8h_html_abe149f8bc1f24a77d03fb3e5e92a3886"><div class="ttname"><a href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a></div><div class="ttdeci">zrtos_vheap_chunk_t * zrtos_vheap__get_by_id(zrtos_vheap_t *thiz, zrtos_vheap_chunk_uid_t uid)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00081">zrtos_vheap.h:81</a></div></div>
+<div class="ttc" id="azrtos__vheap__chunk__uid_8h_html_ac28b650d7254ba9c46f2e53368c5c17d"><div class="ttname"><a href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d">zrtos_vheap_chunk_uid__error</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap_chunk_uid__error(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk__uid_8h_source.html#l00033">zrtos_vheap_chunk_uid.h:33</a></div></div>
+<div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6"><div class="ttname"><a href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1aea97c015e0b51e843e1a7070c4bdb7a6">ZRTOS_VHEAP_TYPE__MALLOC</a></div><div class="ttdeci">@ ZRTOS_VHEAP_TYPE__MALLOC</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00017">zrtos_vheap_type.h:16</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 events</h2>
 <p><a href="http://agilertos.com/zrtos__event_8h.html">Implementation details</a></p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
@@ -309,9 +401,9 @@ events</h2>
 <div class="ttc" id="azrtos__event__index_8h_html"><div class="ttname"><a href="zrtos__event__index_8h.html">zrtos_event_index.h</a></div></div>
 <div class="ttc" id="azrtos__event__index_8h_html_a103b54fae27100dc5d48347a3110f51c"><div class="ttname"><a href="zrtos__event__index_8h.html#a103b54fae27100dc5d48347a3110f51c">zrtos_event_index__invoke</a></div><div class="ttdeci">bool zrtos_event_index__invoke(zrtos_event_index_t *thiz, zrtos_event_type_t type, void *data)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__index_8h_source.html#l00029">zrtos_event_index.h:29</a></div></div>
 <div class="ttc" id="azrtos__event__index_8h_html_a729c415d853654676675a9cf00f5453f"><div class="ttname"><a href="zrtos__event__index_8h.html#a729c415d853654676675a9cf00f5453f">ZRTOS_EVENT_INDEX</a></div><div class="ttdeci">#define ZRTOS_EVENT_INDEX(name,...)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__event__index_8h_source.html#l00021">zrtos_event_index.h:21</a></div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
 pthread</h2>
-<div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+<div class="fragment"></div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
 Supported Chips and Boards</h2>
 <ul>
 <li>None </li>
