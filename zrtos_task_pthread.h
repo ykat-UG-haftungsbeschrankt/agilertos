@@ -33,6 +33,12 @@ typedef struct{
 	zrtos_task_mutex_t mutex;
 }pthread_mutex_t;
 
+typedef struct{
+	void *(*callback)(void*args);
+	void *args;
+	void *return_value;
+}zrtos_task_pthread__trampoline_cb_args_t;
+
 #define PTHREAD_MUTEX_INITIALIZER    \
     {                                \
         .mutex = ZRTOS_TASK_MUTEX__INIT() \
@@ -91,6 +97,23 @@ pthread_t pthread_self(void){
 	return ret;
 }
 
+__attribute__((noreturn)) void zrtos_task_pthread__trampoline_cb(void *args){
+	zrtos_task_pthread__trampoline_cb_args_t *tmp_args = args;
+	zrtos_task_t *task = zrtos_types__ptr_subtract(
+		 tmp_args
+		,sizeof(zrtos_task_t)
+	);;
+	tmp_args->return_value = tmp_args->callback(tmp_args->args);
+	zrtos_task__set_done(task);
+
+	_zrtos_task_scheduler__on_tick();
+
+	__builtin_unreachable();
+	while(1){
+		//should not return
+	}
+}
+
 int pthread_create(
 	 pthread_t *restrict thread
 	,const pthread_attr_t *restrict attr
@@ -101,7 +124,9 @@ int pthread_create(
 	                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
 	;
 	zrtos_malloc_t *mem = (zrtos_malloc_t*)zrtos_task_pthread__get_heap();
-	size_t stacksize_min = sizeof(zrtos_task_t) + (
+	size_t stacksize_min = sizeof(zrtos_task_t)
+	                     + sizeof(zrtos_task_pthread__trampoline_cb_args_t)
+	                     + (
 		  attr
 		? ZRTOS_TYPES__MAX(
 			 stack_size_min
@@ -109,26 +134,28 @@ int pthread_create(
 		)
 		: stack_size_min
 	);
-	zrtos_task_t *chunk = zrtos_malloc__malloc(
+	zrtos_task_t *task = zrtos_malloc__malloc(
 		 mem
 		,stacksize_min
 	);
 	int ret = ENOMEM;
 
-	if(chunk){
+	if(task){
 		void *mem_chunk_last_address = zrtos_types__ptr_add(
-			 chunk
+			 task
 			,stacksize_min
 		);
-		zrtos_task_t *task = zrtos_types__ptr_subtract(
-			 mem_chunk_last_address
+		zrtos_task_pthread__trampoline_cb_args_t *args = zrtos_types__ptr_add(
+			 task
 			,sizeof(zrtos_task_t)
 		);
+		args->callback = start_routine;
+		args->args = arg;
 		zrtos_task__init_ex(
 			 task
-			,(zrtos_arch_stack_t*)(task - 1)
-			,start_routine
-			,arg
+			,(zrtos_arch_stack_t*)mem_chunk_last_address
+			,zrtos_task_pthread__trampoline_cb
+			,args
 		);
 		zrtos_task_scheduler__add_task(task);
 		ret = 0;
@@ -151,8 +178,10 @@ int pthread_join(pthread_t thread, void **retval){
 				zrtos_vheap_task_scheduler__delay_ms(0);
 				continue;
 			}
-
-			*retval = zrtos_task__get_return_value(task);
+			zrtos_task_pthread__trampoline_cb_args_t *args = 
+				(zrtos_task_pthread__trampoline_cb_args_t *)(task+1)
+			;
+			*retval = args->return_value;
 			zrtos_malloc__free(task);
 			thread.task = 0;
 			ret = 0;

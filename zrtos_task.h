@@ -36,7 +36,6 @@ typedef struct _zrtos_task_t{
 	zrtos_clist_node_t           node;
 	zrtos_clist_t                children;
 	zrtos_arch_stack_t           *stack_ptr;
-	void                         *return_value;
 	zrtos_task_tick_t            ticks;
 	errno_t                      error_code;
 }zrtos_task_t;
@@ -48,7 +47,6 @@ bool zrtos_task__init(
 	if(zrtos_clist_node__init(&thiz->node)
 	&& zrtos_clist__init(&thiz->children)){
 		thiz->stack_ptr = stack_ptr;
-		thiz->return_value = 0;
 		thiz->ticks = 0;
 		thiz->error_code = 0;
 		return true;
