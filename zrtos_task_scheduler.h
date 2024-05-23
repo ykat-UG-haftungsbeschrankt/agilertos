@@ -11,163 +11,126 @@ extern "C" {
 #endif
 
 
+#include "zrtos.h"
+#include "zrtos_types.h"
+#include "zrtos_clist.h"
+#include "zrtos_error.h"
 #include "zrtos_task.h"
 
 
 typedef struct _zrtos_task_scheduler_t{
-	zrtos_task_t      *active_task;
+	zrtos_clist_t      root;
+	zrtos_task_t       sleep_task;
 	zrtos_arch_stack_t *tmp_stack_ptr;
 }zrtos_task_scheduler_t;
 
 
-volatile zrtos_task_scheduler_t zrtos_task_scheduler = {};
+zrtos_task_scheduler_t zrtos_task_scheduler = {};
 
-/*
- * Manual context switch.  The first thing we do is save the registers so we
- * can use a naked attribute.
- */
-#pragma GCC push_options
-#pragma GCC optimize ("O0")
-void _zrtos_task_scheduler__restore_task(zrtos_task_t *task){
-	zrtos_task_scheduler.tmp_stack_ptr = zrtos_task_scheduler.active_task->stack_ptr;
-	_ZRTOS_TASK__RESTORE(zrtos_task_scheduler.tmp_stack_ptr);
-	ZRTOS_TASK_SCHEDULER__ISR_RETURN();
-/*
-	if(!zrtos_task__is_running(zrtos_task_scheduler.active_task)){
-		zrtos_task__set_running(zrtos_task_scheduler.active_task);
-		
-	}
-*/
-}
-#pragma GCC pop_options
-
-void zrtos_task_scheduler__init(void){
-	_zrtos_task_scheduler__isr_start();
-	_zrtos_task_scheduler__restore_task(zrtos_task_scheduler.active_task);
-}
-
-/*
- * Manual context switch.  The first thing we do is save the registers so we
- * can use a naked attribute.
- */
-void zrtos_task_scheduler__start(void){
-	_zrtos_task_scheduler__isr_start();
-}
-
-void zrtos_task_scheduler__stop(void){
-	_zrtos_task_scheduler__isr_stop();
-}
-
-zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
-	volatile zrtos_task_scheduler_t *thiz = &zrtos_task_scheduler;
-	return thiz->active_task;
-}
-
-bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
-	volatile zrtos_task_scheduler_t *thiz = &zrtos_task_scheduler;
-	//if(thiz->active_task != task){
-		zrtos_task__set_errno(thiz->active_task,errno);
-		errno = zrtos_task__get_errno(task);
-
-		thiz->active_task = task;
-		//@todo move old 
-
-	//}
-/*
-	if(thiz->active_task != task){
-		if(zrtos_task__is_running(thiz->active_task)){
-			_ZRTOS_TASK__SAVE(heap);
-			zrtos_task__set_stack_ptr(thiz->active_task,heap);
-		}
-
-		heap = zrtos_task__get_stack_ptr(task);
-		thiz->active_task = task;
-
-		if(zrtos_task__is_running(task)){
-			_ZRTOS_TASK__RESTORE(heap);
-		}else{
-			_ZRTOS_TASK__RESTORE(heap);
-			asm volatile ( "ret" );
-		}
-	}else if(!zrtos_task__is_running(task)){
-		zrtos_task__set_running(task);
-		ZRTOS_ARCH__DISABLE_INTERRUPTS();
-		_ZRTOS_TASK__RESTORE(heap);
-		asm volatile ( "ret" );
-	}
-*/
-	return true;
-}
 
 bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
-	volatile zrtos_task_scheduler_t *thiz = &zrtos_task_scheduler;
-	zrtos_task_t *active_task = thiz->active_task;
-	if(active_task){
-		task->next = active_task->next;
-		active_task->next = task;
-	}else{
-		thiz->active_task = task;
-	}
-
-	return true;
+	return zrtos_clist__push(&zrtos_task_scheduler.root,&task->node);
 }
 
 bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
-	volatile zrtos_task_scheduler_t *thiz = &zrtos_task_scheduler;
-	zrtos_task_t *active_task = thiz->active_task;
-	zrtos_task_t *prev = zrtos_task__get_previous_task(task);
-	bool ret = active_task != task;
-
-	if(ret){
-		prev->next = task->next;
-		task->next = task;
-	}
-
-	return ret;
+	return zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
 }
 
-bool _zrtos_task_scheduler__switch_task(void){
+void zrtos_task_scheduler__init(
+	size_t                min_stack_size
+){
+	zrtos_clist__init(&zrtos_task_scheduler.root);
+	zrtos_task__init(
+		 &zrtos_task_scheduler.sleep_task
+		,0
+		,min_stack_size
+	);
+	zrtos_task_scheduler__add_task(&zrtos_task_scheduler.sleep_task);
+	zrtos_task_scheduler.tmp_stack_ptr = 0;
+}
+
+void zrtos_task_scheduler__start(void){
+	//_zrtos_task_scheduler__isr_start();
+}
+
+void zrtos_task_scheduler__stop(void){
+	//_zrtos_task_scheduler__isr_stop();
+}
+
+zrtos_task_t *_zrtos_task_scheduler__get_sleep_task(void){
+	return &zrtos_task_scheduler.sleep_task;
+}
+
+zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
+	zrtos_clist_node_t *node = zrtos_clist__get_root(
+		&zrtos_task_scheduler.root
+	);
+	return zrtos_types__get_container_of(node,zrtos_task_t,node);
+}
+
+static void zrtos_task_scheduler__page_task_out(void){
+	zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
+	zrtos_task__set_stack_ptr(
+		 active_task
+		,zrtos_task_scheduler.tmp_stack_ptr
+	);
+	zrtos_task__set_errno(active_task,errno);
+}
+
+static void zrtos_task_scheduler__page_task_in(
+	 zrtos_task_t      *task
+){
+	zrtos_clist__set_root(&zrtos_task_scheduler.root,&task->node);
+	zrtos_task_scheduler.tmp_stack_ptr = zrtos_task__get_stack_ptr(task);
+	errno = zrtos_task__get_errno(task);
+}
+
+bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
+	zrtos_task_scheduler__page_task_out();
+	zrtos_task_scheduler__page_task_in(task);
+	return true;
+}
+
+static bool _zrtos_task_scheduler__switch_task(void){
 	zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
 	zrtos_task_t *task = active_task;
-	if(task){
-		do{
-			zrtos_task__on_tick(task);
-			task = zrtos_task__get_next_task(task);
-		}while(task != active_task);
 
-		task = active_task;
-		do{
-			task = zrtos_task__get_next_task(task);
-			if(!zrtos_task__is_idle(task)){
-				return _zrtos_task_scheduler__set_active_task(task);
-			}
-		}while(task != active_task);
-	}
+	do{
+		zrtos_task__on_tick(task);
+		task = zrtos_task__get_next_task(task);
+	}while(task != active_task);
+
+	task = active_task;
+	do{
+		task = zrtos_task__get_next_task(task);
+		if(zrtos_task__is_ready(task)){
+			return _zrtos_task_scheduler__set_active_task(task);
+		}
+	}while(task != active_task);
+
+	_zrtos_task_scheduler__set_active_task(
+		_zrtos_task_scheduler__get_sleep_task()
+	);
+
 	return true;
 }
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
 void _zrtos_task_scheduler__on_tick(void){
-	_ZRTOS_TASK__SAVE(zrtos_task_scheduler.tmp_stack_ptr);
-	zrtos_task_scheduler.active_task->stack_ptr = zrtos_task_scheduler.tmp_stack_ptr;
-	_zrtos_task_scheduler__isr_reset_counter();
-	if(!_zrtos_task_scheduler__switch_task()){
-		ZRTOS__FATAL();
-	}
-	_zrtos_task_scheduler__restore_task(zrtos_task_scheduler.active_task);
+	ZRTOS_ARCH__SAVE_CPU_STATE_EX(zrtos_vheap_task_scheduler.tmp_stack_ptr);
+	_zrtos_task_scheduler__switch_task();
+	ZRTOS_ARCH__LOAD_CPU_STATE_EX(zrtos_vheap_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 #pragma GCC pop_options
 
 inline void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms){
-	zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
-	if(active_task){
-		zrtos_task__set_delay_ms(
-			 active_task
-			,ms
-		);
-		_zrtos_task_scheduler__on_tick();
-	}
+	zrtos_task__set_delay_ms(
+		 _zrtos_task_scheduler__get_active_task()
+		,ms
+	);
+	_zrtos_task_scheduler__on_tick();
 }
 
 

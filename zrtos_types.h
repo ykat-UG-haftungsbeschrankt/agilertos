@@ -24,6 +24,10 @@ typedef enum{
 }bool;
 */
 
+int zrtos_types__ptr_cmp(void *a,void *b){
+	return ((ptrdiff_t)a)-((ptrdiff_t)b);
+}
+
 void *zrtos_types__ptr_add(void *ptr,size_t byte_len){
 	return ((uint8_t*)ptr)+byte_len;
 }

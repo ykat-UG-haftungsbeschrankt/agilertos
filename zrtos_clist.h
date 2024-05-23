@@ -26,19 +26,23 @@ zrtos_clist_node_t *zrtos_clist__get_root(zrtos_clist_t *thiz){
 	return thiz->root;
 }
 
+void zrtos_clist__set_root(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
+	thiz->root = node;
+}
+
 bool zrtos_clist_node__init(zrtos_clist_node_t *thiz){
 	thiz->next = thiz;
 	return true;
 }
 
-bool zrtos_clist__init(zrtos_clist_t *thiz){
-	thiz->root = 0;
-	return true;
+zrtos_clist_node_t *zrtos_clist_node__get_next_node(
+	zrtos_clist_node_t *node
+){
+	return node->next;
 }
 
-zrtos_clist_node_t *zrtos_clist__get_previous_node(
-	 zrtos_clist_t *thiz
-	,zrtos_clist_node_t *node
+zrtos_clist_node_t *zrtos_clist_node__get_previous_node(
+	zrtos_clist_node_t *node
 ){
 	zrtos_clist_node_t *ret = node;
 	zrtos_clist_node_t *next;
@@ -48,12 +52,17 @@ zrtos_clist_node_t *zrtos_clist__get_previous_node(
 	return ret;
 }
 
+bool zrtos_clist__init(zrtos_clist_t *thiz){
+	thiz->root = 0;
+	return true;
+}
+
 zrtos_clist_node_t *zrtos_clist__get_first_node(zrtos_clist_t *thiz){
 	return thiz->root;
 }
 
 zrtos_clist_node_t *zrtos_clist__get_last_node(zrtos_clist_t *thiz){
-	return zrtos_clist__get_previous_node(thiz,zrtos_clist__get_root(thiz));
+	return zrtos_clist_node__get_previous_node(zrtos_clist__get_root(thiz));
 }
 
 bool zrtos_clist__push(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
@@ -69,7 +78,7 @@ bool zrtos_clist__push(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
 }
 
 bool zrtos_clist__delete(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
-	zrtos_clist_node_t *prev = zrtos_clist__get_previous_node(thiz,node);
+	zrtos_clist_node_t *prev = zrtos_clist_node__get_previous_node(node);
 
 	if(prev != node){
 		prev->next = node->next;

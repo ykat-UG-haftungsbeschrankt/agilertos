@@ -17,44 +17,63 @@ extern "C" {
 
 
 #include "zrtos_error.h"
+#include "zrtos_clist.h"
 
-typedef unsigned int zrtos_task_tick_type_t;
+
+typedef unsigned int zrtos_task_tick_t;
 typedef unsigned int zrtos_task_id_t;
+
+typedef enum{
+	 ZRTOS_TASK_STATE__READY   = 0x0000
+	,ZRTOS_TASK_STATE__RUNNING = 1 << (sizeof(zrtos_task_tick_t) * 8 - 2)
+	,ZRTOS_TASK_STATE__DONE    = 1 << (sizeof(zrtos_task_tick_t) * 8 - 1)
+	,ZRTOS_TASK_STATE__MASK    = ZRTOS_TASK_STATE__RUNNING
+	                           | ZRTOS_TASK_STATE__DONE
+}zrtos_task_state_t;
 
 
 typedef struct _zrtos_task_t{
-	struct _zrtos_task_t  *next;
-	//zrtos_arch_stack_t    *heap;
-	zrtos_arch_stack_t    *stack_ptr;
-	//size_t               heap_size;
-	uint16_t             ticks;
-	//bool               is_running;
-	errno_t              errno;
+	zrtos_clist_node_t           node;
+	zrtos_clist_t                children;
+	zrtos_arch_stack_t           *stack_ptr;
+	void                         *return_value;
+	zrtos_task_tick_t            ticks;
+	errno_t                      error_code;
 }zrtos_task_t;
 
 bool zrtos_task__init(
 	 zrtos_task_t          *thiz
-	,zrtos_arch_stack_t     *heap
-	,size_t                heap_size
+	,zrtos_arch_stack_t    *stack_ptr
+){
+	if(zrtos_clist_node__init(&thiz->node)
+	&& zrtos_clist__init(&thiz->children)){
+		thiz->stack_ptr = stack_ptr;
+		thiz->return_value = 0;
+		thiz->ticks = 0;
+		thiz->error_code = 0;
+		return true;
+	}
+	return false;
+}
+
+bool zrtos_task__init_ex(
+	 zrtos_task_t          *thiz
+	,zrtos_arch_stack_t    *heap
 	,zrtos_arch_callback_t callback
 	,void                  *args
 ){
-	thiz->next = thiz;
-	thiz->ticks = 0;
-	thiz->errno = 0;
-	//thiz->is_running = false;
-	//thiz->heap = heap;
-	//thiz->heap_size = heap_size;
-	thiz->stack_ptr = zrtos_task_heap__init(
-		 heap
-		,heap_size
-		,callback
-		,args
+	return zrtos_task__init(
+		 thiz
+		,zrtos_arch__cpu_state_init(
+			heap
+			//,heap_size
+			,callback
+			,args
+		)
 	);
-	return true;
 }
 
-void zrtos_task__set_delay_ms(zrtos_task_t *thiz,zrtos_task_tick_type_t ms){
+void zrtos_task__set_delay_ms(zrtos_task_t *thiz,zrtos_task_tick_t ms){
 #if ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS == 1
 	thiz->ticks = ms;
 #else
@@ -63,41 +82,44 @@ void zrtos_task__set_delay_ms(zrtos_task_t *thiz,zrtos_task_tick_type_t ms){
 }
 
 void zrtos_task__on_tick(zrtos_task_t *thiz){
-	thiz->ticks -= (thiz->ticks > 0);
+	zrtos_task_tick_t val  = thiz->ticks;
+	if(0 == (val & ZRTOS_TASK_STATE__MASK)){
+		thiz->ticks -= (val > 0);
+	}
 }
 
-bool zrtos_task__is_idle(zrtos_task_t *thiz){
-	return thiz->ticks > 0;
+bool zrtos_task__is_ready(zrtos_task_t *thiz){
+	return thiz->ticks == 0;
 }
 
-#ifdef ZRTOS_TASK__USE_MEM
-
-static volatile zrtos_malloc_t *zrtos_task__heap = 0;
-
-zrtos_malloc_t *zrtos_task__get_heap(){
-	return zrtos_task__heap;
+bool zrtos_task__is_running(zrtos_task_t *thiz){
+	return (thiz->ticks & ZRTOS_TASK_STATE__RUNNING) > 0;
 }
 
-void zrtos_task__set_heap(zrtos_malloc_t *heap){
-	zrtos_task__heap = heap;
+bool zrtos_task__is_done(zrtos_task_t *thiz){
+	return (thiz->ticks & ZRTOS_TASK_STATE__DONE) > 0;
 }
 
-#endif
+void zrtos_task__set_ready(zrtos_task_t *thiz){
+	thiz->ticks ^= (thiz->ticks & ZRTOS_TASK_STATE__MASK);
+}
+
+void zrtos_task__set_running(zrtos_task_t *thiz){
+	thiz->ticks |= ZRTOS_TASK_STATE__RUNNING;
+}
+
+void zrtos_task__set_done(zrtos_task_t *thiz){
+	thiz->ticks |= ZRTOS_TASK_STATE__DONE;
+}
 
 zrtos_task_t *zrtos_task__get_next_task(zrtos_task_t *thiz){
-	return thiz->next;
+	zrtos_clist_node_t *node = zrtos_clist_node__get_next_node(&thiz->node);
+	return zrtos_types__get_container_of(node,zrtos_task_t,node);
 }
 
 zrtos_task_t *zrtos_task__get_previous_task(zrtos_task_t *thiz){
-	zrtos_task_t *last;
-	zrtos_task_t *sentinel = thiz;
-	
-	do{
-		last = thiz;
-		thiz = zrtos_task__get_next_task(thiz);
-	}while(thiz != sentinel);
-
-	return ret;
+	zrtos_clist_node_t *node = zrtos_clist_node__get_previous_node(&thiz->node);
+	return zrtos_types__get_container_of(node,zrtos_task_t,node);
 }
 
 void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_arch_stack_t *stack_ptr){
@@ -108,22 +130,13 @@ zrtos_arch_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
 	return thiz->stack_ptr;
 }
 
-void zrtos_task__set_errno(zrtos_task_t *thiz,errno_t errno){
-	thiz->errno = errno;
+void zrtos_task__set_errno(zrtos_task_t *thiz,errno_t error_code){
+	thiz->error_code = error_code;
 }
 
 errno_t zrtos_task__get_errno(zrtos_task_t *thiz){
-	return thiz->errno;
+	return thiz->error_code;
 }
-/*
-bool zrtos_task__is_running(zrtos_task_t *thiz){
-	return thiz->is_running;
-}
-
-void zrtos_task__set_running(zrtos_task_t *thiz){
-	thiz->is_running = true;
-}
-*/
 
 
 #ifdef __cplusplus
