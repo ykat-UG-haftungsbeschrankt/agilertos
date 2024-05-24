@@ -55,8 +55,8 @@ var NAVTREEINDEX0 =
 "files.html":[3,0],
 "functions.html":[2,2,0],
 "functions_vars.html":[2,2,1],
-"globals.html":[3,1,0],
 "globals.html":[3,1,0,0],
+"globals.html":[3,1,0],
 "globals_defs.html":[3,1,6],
 "globals_e.html":[3,1,0,1],
 "globals_enum.html":[3,1,4],
@@ -77,6 +77,7 @@ var NAVTREEINDEX0 =
 "index.html#autotoc_md4":[0,0,3],
 "index.html#autotoc_md5":[0,0,4],
 "index.html#autotoc_md6":[0,0,5],
+"index.html#autotoc_md7":[0,0,6],
 "pages.html":[],
 "struct__zrtos__clist__node__t.html":[2,0,0],
 "struct__zrtos__clist__node__t.html#a44a56a7c4adcff3de156ab4ce469cfb2":[2,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a321006da98fc55c478824c20f277e8a9":[3,0,10,0,102],
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a32b6f198494024989c8fc04700962321":[3,0,10,0,43],
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a33c5638b3a362c1af68aa98500fa0028":[3,0,10,0,56],
-"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3d9f70d8ebd10e9d4aa420b9cb22cb53":[3,0,10,0,28],
-"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3eda2505450d72e77bd7ac7ed184fb25":[3,0,10,0,66]
+"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3d9f70d8ebd10e9d4aa420b9cb22cb53":[3,0,10,0,28]
 };

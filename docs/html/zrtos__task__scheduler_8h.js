@@ -12,6 +12,7 @@ var zrtos__task__scheduler_8h =
     [ "_zrtos_task_scheduler__switch_task", "zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032", null ],
     [ "zrtos_task_scheduler__add_task", "zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035", null ],
     [ "zrtos_task_scheduler__delay_ms", "zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f", null ],
+    [ "zrtos_task_scheduler__has_task", "zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b", null ],
     [ "zrtos_task_scheduler__init", "zrtos__task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2", null ],
     [ "zrtos_task_scheduler__page_task_in", "zrtos__task__scheduler_8h.html#ac7d131d142e0c3285a06b925e1d39fe1", null ],
     [ "zrtos_task_scheduler__page_task_out", "zrtos__task__scheduler_8h.html#ac07ede37ac8af0c3d77478c3362c5098", null ],
