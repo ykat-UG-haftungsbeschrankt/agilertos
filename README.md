@@ -374,7 +374,7 @@ int main(void){
 
 ```
 
-### pthread ###
+### static pthread ###
 ```C
 #include <avr/io.h>
 
@@ -445,6 +445,12 @@ int main(void){
 }
 
 ```
+
+### scripting ###
+```C
+
+```
+
 
 ### Supported Chips and Boards ###
 

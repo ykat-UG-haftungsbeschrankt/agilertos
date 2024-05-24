@@ -37,6 +37,19 @@ bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
 	return zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
 }
 
+bool zrtos_task_scheduler__has_task(zrtos_task_t *task){
+	zrtos_task_t *node = _zrtos_task_scheduler__get_active_task();
+
+	while(node){
+		if(node == task){
+			return true;
+		}
+		node = zrtos_task__get_next_task(node);
+	}
+
+	return false;
+}
+
 zrtos_task_t *_zrtos_task_scheduler__get_sleep_task(void){
 	return &zrtos_task_scheduler.sleep_task;
 }

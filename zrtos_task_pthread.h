@@ -171,11 +171,12 @@ int pthread_equal(pthread_t t1, pthread_t t2){
 }
 
 int pthread_join(pthread_t thread, void **retval){
-	int ret = ESRCH;
+	int ret;
 
-	do{
+	while(true){
 		zrtos_task_t *task = thread.task;
-		if(task){
+		ret = ESRCH;
+		if(zrtos_task_scheduler__has_task(task)){
 			if(!zrtos_task__is_done(task)){
 				_zrtos_task_scheduler__on_tick_ex();
 				continue;
@@ -189,7 +190,7 @@ int pthread_join(pthread_t thread, void **retval){
 			ret = 0;
 		}
 		break;
-	}while(1);
+	}
 
 	return ret;
 }
