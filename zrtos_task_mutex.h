@@ -32,7 +32,7 @@ void zrtos_task_mutex__deinit(zrtos_task_mutex_t *thiz){
 
 int zrtos_task_mutex__try_lock(zrtos_task_mutex_t *thiz){
 	int ret = EBUSY;
-	ZRTOS__DO_NOT_DISTURB({
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
 		if(thiz->is_locked == false){
 			thiz->is_locked = true;
 			ret = 0;
@@ -46,21 +46,21 @@ int zrtos_task_mutex__lock(zrtos_task_mutex_t *thiz){
 	bool is_locked;
 	uint8_t limit = 0xFF;
 	do{
-		ZRTOS__DO_NOT_DISTURB_EX(is_locked,{
+		ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,{
 			if(thiz->is_locked == false){
 				thiz->is_locked = true;
 				ret = false;
 			}
 		});
 		if(ret){
-			zrtos_vheap_task_scheduler__delay_ms(0);
+			zrtos_task_scheduler__delay_ms(0);
 		}
 	}while(ret && !is_locked && limit--);
 	return ret;
 }
 
 int zrtos_task_mutex__unlock(zrtos_task_mutex_t *thiz){
-	ZRTOS__DO_NOT_DISTURB({
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
 		thiz->is_locked = false;
 	});
 	return 0;

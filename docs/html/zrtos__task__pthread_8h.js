@@ -21,7 +21,7 @@ var zrtos__task__pthread_8h =
     [ "pthread_mutexattr_init", "zrtos__task__pthread_8h.html#af98f6b6c483077a39d1400b1de1577b8", null ],
     [ "pthread_self", "zrtos__task__pthread_8h.html#a4c4f5f3b4f8f45d9d897847d53b11aaa", null ],
     [ "zrtos_task_pthread__get_heap", "zrtos__task__pthread_8h.html#ab1dbb5f44799a4b2814f03d4271a1f20", null ],
+    [ "zrtos_task_pthread__set_heap", "zrtos__task__pthread_8h.html#a8f1bcaefbea8779ce0feb3767f6f9c74", null ],
     [ "zrtos_task_pthread__trampoline_cb", "zrtos__task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750", null ],
-    [ "zrtos_vheap_task_scheduler__set_heap", "zrtos__task__pthread_8h.html#a5d8d00d140875d1e3ab531b72e7aa07b", null ],
     [ "zrtos_task_pthread__heap", "zrtos__task__pthread_8h.html#a6699bb88fb0969aeab1803c32d7c7e53", null ]
 ];

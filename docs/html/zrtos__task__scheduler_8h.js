@@ -1,6 +1,8 @@
 var zrtos__task__scheduler_8h =
 [
     [ "_zrtos_task_scheduler_t", "struct__zrtos__task__scheduler__t.html", "struct__zrtos__task__scheduler__t" ],
+    [ "ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB", "zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e", null ],
+    [ "ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX", "zrtos__task__scheduler_8h.html#afd43ca9ce1575630f912763ccc88cc6d", null ],
     [ "zrtos_task_scheduler_t", "zrtos__task__scheduler_8h.html#a692a24780a3ee56fd87f25de93c238b1", null ],
     [ "_zrtos_task_scheduler__get_active_task", "zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b", null ],
     [ "_zrtos_task_scheduler__get_sleep_task", "zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8", null ],

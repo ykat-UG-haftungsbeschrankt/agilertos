@@ -1,19 +1,15 @@
 <map id="zrtos_vheap_task__get_stack_size_min" name="zrtos_vheap_task__get_stack_size_min">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1351,56,1506,99"/>
-<area shape="rect" id="Node000002" href="$zrtos__vheap__task__scheduler_8h.html#a99d7655ba93c186077c9de6a6f310c43" title=" " alt="" coords="1117,56,1303,99"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1336,80,1304,80,1304,75,1336,75"/>
-<area shape="rect" id="Node000003" href="$zrtos__vheap__task__scheduler_8h.html#a1a1be02692a671c368f4e2335179a042" title=" " alt="" coords="877,56,1069,99"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1101,80,1070,80,1070,75,1101,75"/>
-<area shape="rect" id="Node000004" href="$zrtos__vheap__task__scheduler_8h.html#acd810187c2b0b8d63548170c9da4b73d" title=" " alt="" coords="636,56,829,99"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="861,80,829,80,829,75,861,75"/>
-<area shape="rect" id="Node000005" href="$zrtos__vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title=" " alt="" coords="403,23,588,65"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="620,64,588,60,589,54,621,59"/>
-<area shape="rect" id="Node000009" href="$zrtos__vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title=" " alt="" coords="403,89,588,132"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="621,96,589,100,588,95,620,90"/>
-<area shape="rect" id="Node000006" href="$zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="228,5,319,32"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="387,34,319,26,320,21,388,29"/>
-<area shape="rect" id="Node000007" href="$zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,56,355,83"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="388,59,356,63,355,57,387,54"/>
-<area shape="rect" id="Node000008" href="$zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,56,144,83"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="176,72,144,72,144,67,176,67"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="1093,39,1247,81"/>
+<area shape="rect" id="Node000002" href="$zrtos__vheap__task__scheduler_8h.html#a99d7655ba93c186077c9de6a6f310c43" title=" " alt="" coords="859,39,1045,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1078,63,1046,63,1046,57,1078,57"/>
+<area shape="rect" id="Node000003" href="$zrtos__vheap__task__scheduler_8h.html#a1a1be02692a671c368f4e2335179a042" title=" " alt="" coords="618,39,811,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="843,63,811,63,811,57,843,57"/>
+<area shape="rect" id="Node000004" href="$zrtos__vheap__task__scheduler_8h.html#acd810187c2b0b8d63548170c9da4b73d" title=" " alt="" coords="378,39,570,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="603,63,571,63,571,57,603,57"/>
+<area shape="rect" id="Node000005" href="$zrtos__vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title=" " alt="" coords="145,5,330,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="362,47,330,42,331,37,363,42"/>
+<area shape="rect" id="Node000007" href="$zrtos__vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title=" " alt="" coords="145,72,330,115"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="363,78,331,83,330,78,362,73"/>
+<area shape="rect" id="Node000006" href="$zrtos__vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,13,97,40"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="129,29,97,29,97,24,129,24"/>
 </map>

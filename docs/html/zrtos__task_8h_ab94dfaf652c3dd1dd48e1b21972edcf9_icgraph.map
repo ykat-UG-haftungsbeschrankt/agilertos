@@ -1,7 +1,9 @@
 <map id="zrtos_task__set_delay_ms" name="zrtos_task__set_delay_ms">
-<area shape="rect" id="Node000001" title=" " alt="" coords="392,13,569,40"/>
-<area shape="rect" id="Node000002" href="$zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f" title=" " alt="" coords="199,5,344,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="376,29,344,29,344,24,376,24"/>
-<area shape="rect" id="Node000003" href="$zrtos__task__scheduler_8h.html#ac5728ece85f922ba706c1094388b0720" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="183,29,151,29,151,24,183,24"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="596,13,774,40"/>
+<area shape="rect" id="Node000002" href="$zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f" title=" " alt="" coords="403,5,548,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="581,29,549,29,549,24,581,24"/>
+<area shape="rect" id="Node000003" href="$zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,13,355,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,29,356,29,356,24,387,24"/>
+<area shape="rect" id="Node000004" href="$zrtos__task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,13,144,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="176,29,144,29,144,24,176,24"/>
 </map>

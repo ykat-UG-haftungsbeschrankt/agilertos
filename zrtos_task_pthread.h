@@ -51,7 +51,7 @@ void *zrtos_task_pthread__get_heap(void){
 	return zrtos_task_pthread__heap;
 }
 
-void zrtos_vheap_task_scheduler__set_heap(void *heap){
+void zrtos_task_pthread__set_heap(void *heap){
 	zrtos_task_pthread__heap = heap;
 }
 
@@ -106,7 +106,7 @@ __attribute__((noreturn)) void zrtos_task_pthread__trampoline_cb(void *args){
 	tmp_args->return_value = tmp_args->callback(tmp_args->args);
 	zrtos_task__set_done(task);
 
-	_zrtos_task_scheduler__on_tick();
+	_zrtos_task_scheduler__on_tick_ex();
 
 	__builtin_unreachable();
 	while(1){
@@ -143,7 +143,7 @@ int pthread_create(
 	if(task){
 		void *mem_chunk_last_address = zrtos_types__ptr_add(
 			 task
-			,stacksize_min
+			,stacksize_min-1
 		);
 		zrtos_task_pthread__trampoline_cb_args_t *args = zrtos_types__ptr_add(
 			 task
@@ -158,6 +158,8 @@ int pthread_create(
 			,args
 		);
 		zrtos_task_scheduler__add_task(task);
+
+		thread->task = task;
 		ret = 0;
 	}
 
@@ -175,7 +177,7 @@ int pthread_join(pthread_t thread, void **retval){
 		zrtos_task_t *task = thread.task;
 		if(task){
 			if(!zrtos_task__is_done(task)){
-				zrtos_vheap_task_scheduler__delay_ms(0);
+				_zrtos_task_scheduler__on_tick_ex();
 				continue;
 			}
 			zrtos_task_pthread__trampoline_cb_args_t *args = 

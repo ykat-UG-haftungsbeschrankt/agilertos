@@ -68,8 +68,8 @@ var NAVTREEINDEX0 =
 "globals_type.html":[3,1,3],
 "globals_vars.html":[3,1,2],
 "globals_z.html":[3,1,0,5],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "index.html#autotoc_md0":[0,0],
 "index.html#autotoc_md1":[0,0,0],
 "index.html#autotoc_md2":[0,0,1],
@@ -106,9 +106,10 @@ var NAVTREEINDEX0 =
 "struct__zrtos__task__mutex__t.html":[2,0,9],
 "struct__zrtos__task__mutex__t.html#a5ed5d37c291ecd611668c6eb7471170c":[2,0,9,0],
 "struct__zrtos__task__scheduler__t.html":[2,0,10],
-"struct__zrtos__task__scheduler__t.html#a1f9d27b1d9a88dea381af2a632cbcb3c":[2,0,10,0],
-"struct__zrtos__task__scheduler__t.html#a40f0dd229430234cb40e9b9716e46975":[2,0,10,2],
-"struct__zrtos__task__scheduler__t.html#ae86526d24890c94e38aedba3d481d225":[2,0,10,1],
+"struct__zrtos__task__scheduler__t.html#a1f9d27b1d9a88dea381af2a632cbcb3c":[2,0,10,1],
+"struct__zrtos__task__scheduler__t.html#a40f0dd229430234cb40e9b9716e46975":[2,0,10,3],
+"struct__zrtos__task__scheduler__t.html#a946f04f742de47e9f1a9a0f0affe1538":[2,0,10,0],
+"struct__zrtos__task__scheduler__t.html#ae86526d24890c94e38aedba3d481d225":[2,0,10,2],
 "struct__zrtos__task__t.html":[2,0,11],
 "struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1":[2,0,11,2],
 "struct__zrtos__task__t.html#a559ef3548440d28479a66ad4aae7fb97":[2,0,11,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a32b6f198494024989c8fc04700962321":[3,0,10,0,43],
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a33c5638b3a362c1af68aa98500fa0028":[3,0,10,0,56],
 "zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3d9f70d8ebd10e9d4aa420b9cb22cb53":[3,0,10,0,28],
-"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3eda2505450d72e77bd7ac7ed184fb25":[3,0,10,0,66],
-"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3ffb99860526d55ef132365553694c3d":[3,0,10,0,35]
+"zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a3eda2505450d72e77bd7ac7ed184fb25":[3,0,10,0,66]
 };

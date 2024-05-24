@@ -7,69 +7,62 @@
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos_task_scheduler.h"
+#include "zrtos_task_pthread.h"
 
-__attribute__((noreturn)) void callback_a(void *args){
-	static size_t a = 0;
-	while(true){
-		a++;
-		zrtos_task_scheduler__delay_ms(0);
-	}
-	__builtin_unreachable();
+void *callback_a(void *args){
+	return (void*)0xA0A1;
 }
 
-__attribute__((noreturn)) void callback_b(void *args){
-	static size_t b = 0;
-	while(true){
-		b++;
-		zrtos_task_scheduler__delay_ms(0);
-	}
-	__builtin_unreachable();
+void *callback_b(void *args){
+	return (void*)0xB0B1;
 }
 
-__attribute__((noreturn)) void callback_c(void *args){
-	static size_t c = 0;
-	while(true){
-		c++;
-		zrtos_task_scheduler__delay_ms(0);
-	}
-	__builtin_unreachable();
+void *callback_c(void *args){
+	return (void*)0xC0C1;
 }
 
 int main(void){
-	zrtos_arch_stack_t heap_a[160];
-	zrtos_arch_stack_t heap_b[160];
-	zrtos_arch_stack_t heap_c[160];
-	zrtos_task_t task_a;
-	zrtos_task_t task_b;
-	zrtos_task_t task_c;
+	pthread_t thread_a;
+	pthread_t thread_b;
+	pthread_t thread_c;
+	void      *retval;
+
+	ZRTOS_MALLOC__INIT(heap,ZRTOS_MALLOC__GET_REQUIRED_SIZE(zrtos_arch_stack_t,160*3));
 
 	zrtos_task_scheduler__init();
+	
+	zrtos_task_pthread__set_heap(heap);
 
-	zrtos_task__init_ex(
-		 &task_a
-		,heap_a+159
-		,callback_a
-		,(void*)0xAAAA
-	);
-	zrtos_task_scheduler__add_task(&task_a);
+	pthread_attr_t attr;
+	if(pthread_attr_init(&attr)==0){
+		pthread_attr_setstacksize(&attr,159);
+		
+		pthread_create(
+			 &thread_a
+			,&attr
+			,callback_a
+			,(void*)0xAAAA
+		);
 
-	zrtos_task__init_ex(
-		 &task_b
-		,heap_b+159
-		,callback_b
-		,(void*)0xAAAA
-	);
-	zrtos_task_scheduler__add_task(&task_b);
+		pthread_create(
+			 &thread_b
+			,&attr
+			,callback_b
+			,(void*)0xAAAA
+		);
 
-	zrtos_task__init_ex(
-		 &task_c
-		,heap_c+159
-		,callback_c
-		,(void*)0xAAAA
-	);
-	zrtos_task_scheduler__add_task(&task_c);
+		pthread_create(
+			 &thread_c
+			,&attr
+			,callback_c
+			,(void*)0xAAAA
+		);
 
-	zrtos_task_scheduler__start();
+		pthread_join(thread_a,&retval);
+		pthread_join(thread_b,&retval);
+		pthread_join(thread_c,&retval);
+
+		pthread_attr_destroy(&attr);
+	}
 }
 
