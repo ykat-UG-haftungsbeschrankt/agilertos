@@ -369,6 +369,7 @@ int main(void){
 
 	zrtos_task_scheduler__start();
 }
+
 ```
 
 ### pthread ###
