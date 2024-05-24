@@ -69,7 +69,7 @@ char *zrtos_str__ltoa(int64_t value, char *str, int radix){
 		value = -value;
 		*str++ = '-';
 	}
-	return *zrtos_str__ultoa(value,str,radix);
+	return zrtos_str__ultoa(value,str,radix);
 }
 
 #define ZRTOS_STR__CFG_DTOA_PRECISION 1000000
@@ -96,7 +96,6 @@ static void zrtos_str__vsnprintf_internal(
 	size_t out_len;
 	uint64_t out_num;
 	uint8_t out_radix;
-	double out_double;
 	char buffer[64];
 
 	while((ch = *fmt++)){
@@ -134,13 +133,7 @@ static void zrtos_str__vsnprintf_internal(
 				}
 				break;
 				case 'f':{
-					out_double = (double)va_arg(arg, float);
-					goto L_PRINT_DOUBLE;
-				}
-				break;
-				case 'F':{
-					out_double = (uint64_t)va_arg(arg, double);
-L_PRINT_DOUBLE:
+					double out_double = va_arg(arg, double);
 					zrtos_str__dtoa(out_double,buffer);
 					out_mod = 0x4 | 0x2;
 					out_str = buffer;

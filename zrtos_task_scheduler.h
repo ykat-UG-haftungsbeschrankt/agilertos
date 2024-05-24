@@ -36,25 +36,14 @@ bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
 	return zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
 }
 
-void zrtos_task_scheduler__init(
-	size_t                min_stack_size
-){
+void zrtos_task_scheduler__init(){
 	zrtos_clist__init(&zrtos_task_scheduler.root);
 	zrtos_task__init(
 		 &zrtos_task_scheduler.sleep_task
-		,0
-		,min_stack_size
+		,(zrtos_arch_stack_t*)0
 	);
 	zrtos_task_scheduler__add_task(&zrtos_task_scheduler.sleep_task);
-	zrtos_task_scheduler.tmp_stack_ptr = 0;
-}
-
-void zrtos_task_scheduler__start(void){
-	//_zrtos_task_scheduler__isr_start();
-}
-
-void zrtos_task_scheduler__stop(void){
-	//_zrtos_task_scheduler__isr_stop();
+	//zrtos_task_scheduler.tmp_stack_ptr = 0;
 }
 
 zrtos_task_t *_zrtos_task_scheduler__get_sleep_task(void){
@@ -85,7 +74,7 @@ static void zrtos_task_scheduler__page_task_in(
 	errno = zrtos_task__get_errno(task);
 }
 
-bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
+static bool _zrtos_task_scheduler__set_active_task(zrtos_task_t *task){
 	zrtos_task_scheduler__page_task_out();
 	zrtos_task_scheduler__page_task_in(task);
 	return true;
@@ -117,21 +106,36 @@ static bool _zrtos_task_scheduler__switch_task(void){
 
 #pragma GCC push_options
 #pragma GCC optimize ("O0")
-void _zrtos_task_scheduler__on_tick(void){
-	ZRTOS_ARCH__SAVE_CPU_STATE_EX(zrtos_vheap_task_scheduler.tmp_stack_ptr);
+__attribute__((naked)) void _zrtos_task_scheduler__on_tick(void){
+	ZRTOS_ARCH__SAVE_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 	_zrtos_task_scheduler__switch_task();
-	ZRTOS_ARCH__LOAD_CPU_STATE_EX(zrtos_vheap_task_scheduler.tmp_stack_ptr);
+	ZRTOS_ARCH__LOAD_CPU_STATE_EX(zrtos_task_scheduler.tmp_stack_ptr);
 	ZRTOS_ARCH__RETURN_FROM_INTERRUPT();
 }
 #pragma GCC pop_options
 
-inline void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms){
+static void _zrtos_task_scheduler__on_tick_ex(void){
+	_zrtos_task_scheduler__on_tick();
+}
+
+void zrtos_task_scheduler__delay_ms(zrtos_task_tick_t ms){
 	zrtos_task__set_delay_ms(
 		 _zrtos_task_scheduler__get_active_task()
 		,ms
 	);
-	_zrtos_task_scheduler__on_tick();
+	_zrtos_task_scheduler__on_tick_ex();
 }
+
+void zrtos_task_scheduler__start(void){
+	while(true){
+		zrtos_task_scheduler__delay_ms(0);
+	}
+}
+
+void zrtos_task_scheduler__stop(void){
+	//_zrtos_task_scheduler__isr_stop();
+}
+
 
 
 #ifdef __cplusplus

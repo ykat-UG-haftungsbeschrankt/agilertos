@@ -11,8 +11,8 @@ extern "C" {
 #endif
 
 
-#ifndef ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS
-#error "Please define ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS"
+#ifndef ZRTOS_BOARD__TICK_PERIOD_MS
+#error "Please define ZRTOS_BOARD__TICK_PERIOD_MS"
 #endif
 
 
@@ -72,10 +72,10 @@ bool zrtos_task__init_ex(
 }
 
 void zrtos_task__set_delay_ms(zrtos_task_t *thiz,zrtos_task_tick_t ms){
-#if ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS == 1
+#if ZRTOS_BOARD__TICK_PERIOD_MS == 1
 	thiz->ticks = ms;
 #else
-	thiz->ticks = ms ? (ms / ZRTOS_TASK_SCHEDULER__TICK_PERIOD_MS) : 0;
+	thiz->ticks = ms ? (ms / ZRTOS_BOARD__TICK_PERIOD_MS) : 0;
 #endif
 }
 

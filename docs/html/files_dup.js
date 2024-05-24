@@ -22,6 +22,7 @@ var files_dup =
     [ "zrtos_string.h", "zrtos__string_8h.html", "zrtos__string_8h" ],
     [ "zrtos_task.h", "zrtos__task_8h.html", "zrtos__task_8h" ],
     [ "zrtos_task_mutex.h", "zrtos__task__mutex_8h.html", "zrtos__task__mutex_8h" ],
+    [ "zrtos_task_pthread.h", "zrtos__task__pthread_8h.html", "zrtos__task__pthread_8h" ],
     [ "zrtos_task_scheduler.h", "zrtos__task__scheduler_8h.html", "zrtos__task__scheduler_8h" ],
     [ "zrtos_time.h", "zrtos__time_8h.html", "zrtos__time_8h" ],
     [ "zrtos_types.h", "zrtos__types_8h.html", "zrtos__types_8h" ],

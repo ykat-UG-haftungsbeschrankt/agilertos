@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['zrtos_5farch_5fcallback_5ft_0',['zrtos_arch_callback_t',['../zrtos__arch_8h.html#a8190ea23006e23334ee262f2489480cc',1,'zrtos_arch.h']]],
+  ['zrtos_5farch_5fcallback_5ft_0',['zrtos_arch_callback_t',['../zrtos__arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3',1,'zrtos_arch.h']]],
   ['zrtos_5farch_5fstack_5fsigned_5ft_1',['zrtos_arch_stack_signed_t',['../atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319',1,'atmega328p.h']]],
   ['zrtos_5farch_5fstack_5ft_2',['zrtos_arch_stack_t',['../atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9',1,'atmega328p.h']]],
   ['zrtos_5fclist_5fnode_5ft_3',['zrtos_clist_node_t',['../zrtos__clist_8h.html#a921cd9ebc04b75a84bd34f4406fc174a',1,'zrtos_clist.h']]],
@@ -18,7 +18,7 @@ var searchData=
   ['zrtos_5ftask_5fmutex_5ft_15',['zrtos_task_mutex_t',['../zrtos__task__mutex_8h.html#ab0828dd36732a1fb5d381a5ef993473f',1,'zrtos_task_mutex.h']]],
   ['zrtos_5ftask_5fscheduler_5ft_16',['zrtos_task_scheduler_t',['../zrtos__task__scheduler_8h.html#a692a24780a3ee56fd87f25de93c238b1',1,'zrtos_task_scheduler.h']]],
   ['zrtos_5ftask_5ft_17',['zrtos_task_t',['../zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4',1,'zrtos_task.h']]],
-  ['zrtos_5ftask_5ftick_5ftype_5ft_18',['zrtos_task_tick_type_t',['../zrtos__task_8h.html#a1f5224caa7b637420786d942ab0ce4d7',1,'zrtos_task.h']]],
+  ['zrtos_5ftask_5ftick_5ft_18',['zrtos_task_tick_t',['../zrtos__task_8h.html#a0a980ca1d36245017c5c67113434fa44',1,'zrtos_task.h']]],
   ['zrtos_5ftime_5ft_19',['zrtos_time_t',['../zrtos__time_8h.html#a665e816a85be4ddfe8dac97abc353509',1,'zrtos_time.h']]],
   ['zrtos_5ftime_5fticks_5ft_20',['zrtos_time_ticks_t',['../zrtos__time_8h.html#a33fbcad17d4e46048dd3c1de9455c49d',1,'zrtos_time.h']]],
   ['zrtos_5fvheap_5fchunk_5ft_21',['zrtos_vheap_chunk_t',['../zrtos__vheap__chunk_8h.html#ab00c7ce8bf40ae87f8561be316db4ffc',1,'zrtos_vheap_chunk.h']]],

@@ -1,7 +1,8 @@
 var struct__zrtos__task__t =
 [
-    [ "errno", "struct__zrtos__task__t.html#affa353c475e56b603b396a2916bf55d1", null ],
-    [ "next", "struct__zrtos__task__t.html#a3ccc961516cd71b7aed9544ae026d3c6", null ],
+    [ "children", "struct__zrtos__task__t.html#a5c08d7cf4e67ab3ce9b16f0d2da72604", null ],
+    [ "error_code", "struct__zrtos__task__t.html#a559ef3548440d28479a66ad4aae7fb97", null ],
+    [ "node", "struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1", null ],
     [ "stack_ptr", "struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79", null ],
-    [ "ticks", "struct__zrtos__task__t.html#ad6eb25cfc5e8954d0ed6a5c4f2566e80", null ]
+    [ "ticks", "struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838", null ]
 ];

@@ -10,6 +10,7 @@ var zrtos__types_8h =
     [ "size_t", "zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35", null ],
     [ "ssize_t", "zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742", null ],
     [ "zrtos_types__ptr_add", "zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c", null ],
+    [ "zrtos_types__ptr_cmp", "zrtos__types_8h.html#aee2e623cc539d0a4a2d1ba5c4750f7c6", null ],
     [ "zrtos_types__ptr_get_byte_distance", "zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d", null ],
     [ "zrtos_types__ptr_subtract", "zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537", null ]
 ];

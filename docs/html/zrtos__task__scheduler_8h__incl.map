@@ -1,11 +1,42 @@
 <map id="zrtos_task_scheduler.h" name="zrtos_task_scheduler.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="12,5,169,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__task_8h.html" title=" " alt="" coords="44,80,137,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,33,93,64,88,64,88,33"/>
-<area shape="rect" id="Node000003" href="$zrtos__error_8h.html" title=" " alt="" coords="43,155,138,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="93,107,93,139,88,139,88,107"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,229,69,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="83,183,57,218,53,215,79,180"/>
-<area shape="rect" id="Node000005" href="$zrtos__assert_8h.html" title=" " alt="" coords="93,229,197,256"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="102,180,128,215,124,218,98,183"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="435,5,591,32"/>
+<area shape="rect" id="Node000002" href="$zrtos_8h.html" title=" " alt="" coords="284,80,345,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,35,360,78,358,73,477,30"/>
+<area shape="rect" id="Node000005" href="$zrtos__types_8h.html" title=" " alt="" coords="480,237,580,264"/>
+<area shape="poly" id="edge14_Node000001_Node000005" title=" " alt="" coords="510,33,500,60,490,97,485,139,490,181,500,203,512,224,508,226,495,206,485,182,480,139,485,96,495,59,505,31"/>
+<area shape="rect" id="Node000015" href="$zrtos__clist_8h.html" title=" " alt="" coords="500,155,592,181"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="518,32,543,139,537,140,513,33"/>
+<area shape="rect" id="Node000016" href="$zrtos__error_8h.html" title=" " alt="" coords="626,155,720,181"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="578,30,621,48,641,62,658,78,672,108,676,139,671,140,667,110,653,82,637,66,618,53,576,35"/>
+<area shape="rect" id="Node000018" href="$zrtos__task_8h.html" title=" " alt="" coords="550,80,644,107"/>
+<area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="529,31,573,68,569,72,526,35"/>
+<area shape="rect" id="Node000003" href="$zrtos__debug_8h.html" title=" " alt="" coords="79,155,182,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,109,177,151,175,146,282,104"/>
+<area shape="rect" id="Node000004" href="$zrtos__arch_8h.html" title=" " alt="" coords="206,155,300,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="306,109,275,145,271,141,301,105"/>
+<area shape="rect" id="Node000011" href="$zrtos__board_8h.html" title=" " alt="" coords="324,155,424,181"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="327,106,356,141,352,145,323,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="297,179,473,230,471,235,295,184"/>
+<area shape="rect" id="Node000009" href="$atmega328p_8h.html" title=" " alt="" coords="5,237,138,264"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="226,184,114,233,112,228,223,179"/>
+<area shape="rect" id="Node000010" href="$atmega2560_8h.html" title=" " alt="" coords="161,237,294,264"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="251,183,239,223,233,222,246,181"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="533,320,607,347"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="539,263,560,305,555,307,534,266"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="442,320,509,347"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="524,266,494,309,490,306,519,263"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="632,320,695,347"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="552,262,631,309,628,314,550,267"/>
+<area shape="rect" id="Node000012" href="$avr__software__emulator_8h.html" title=" " alt="" coords="318,229,446,272"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="378,182,381,214,376,214,373,182"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="223,320,323,347"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="356,275,304,313,300,309,352,270"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="346,320,418,347"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="385,273,385,304,380,304,380,273"/>
+<area shape="poly" id="edge16_Node000015_Node000005" title=" " alt="" coords="546,182,538,223,533,222,541,181"/>
+<area shape="poly" id="edge18_Node000016_Node000008" title=" " alt="" coords="675,182,668,304,662,304,669,181"/>
+<area shape="rect" id="Node000017" href="$zrtos__assert_8h.html" title=" " alt="" coords="701,237,805,264"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="687,180,732,225,728,228,683,184"/>
+<area shape="poly" id="edge22_Node000018_Node000015" title=" " alt="" coords="590,109,566,144,561,141,586,106"/>
+<area shape="poly" id="edge21_Node000018_Node000016" title=" " alt="" coords="612,105,651,142,647,146,608,109"/>
 </map>

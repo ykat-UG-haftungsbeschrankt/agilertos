@@ -1,133 +1,75 @@
 #include <avr/io.h>
 
-#define ZRTOS_DEBUG__CFG_ENABLED
-#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 400
 
-typedef enum{
-	 ZRTOS_EVENT_TYPE__ANY = 0
-	,EVENT_CODE_A
-	,EVENT_CODE_B
-}zrtos_event_type_t;
+#define ZRTOS_ARCH__ATMEGA328P
+#define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
-#include "zrtos_event_index.h"
-#include "zrtos_debug.h"
+//#define ZRTOS_DEBUG__CFG_ENABLED
+//#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-bool handler_a(
-	 zrtos_event_handler_t *thiz
-	,zrtos_event_t         *args
-){
-	ZRTOS_DEBUG(
-		 "{fn:%s,ctx:%p,data:%p,type:%d(EVENT_CODE_A)}  "
-		,"handler_a"
-		,zrtos_event_handler__get_context(thiz)
-		,zrtos_event__get_data(args)
-		,(int)zrtos_event__get_type(args)
-	);
-	return true;
-}
+#include "zrtos_task_scheduler.h"
 
-bool handler_b(
-	zrtos_event_handler_t *thiz
-	,zrtos_event_t         *args
-){
-	char *data = zrtos_event__get_data(args);
-	ZRTOS_DEBUG(
-		 "{fn:%s,ctx:%p,data:'%c',type:%d(EVENT_CODE_B)}  "
-		,"handler_b"
-		,zrtos_event_handler__get_context(thiz)
-		,*data
-		,(int)zrtos_event__get_type(args)
-	);
-	return true;
-}
-
-bool handler_bb(
-	zrtos_event_handler_t *thiz
-	,zrtos_event_t         *args
-){
-	char *data = zrtos_event__get_data(args);
-	ZRTOS_DEBUG(
-		 "{fn:%s,ctx:%p,data:'%c',type:%d(EVENT_CODE_B)}  "
-		,"handler_bb"
-		,zrtos_event_handler__get_context(thiz)
-		,*data
-		,(int)zrtos_event__get_type(args)
-	);
-	return true;
-}
-
-bool handler_c(
-	 zrtos_event_handler_t *thiz
-	,zrtos_event_t         *args
-){
-	void *data = zrtos_event__get_data(args);
-	ZRTOS_DEBUG(
-		 "{fn:%s,ctx:%p,data:%p,type:%d("
-		,"handler_c"
-		,zrtos_event_handler__get_context(thiz)
-		,data
-		,(int)zrtos_event__get_type(args)
-	);
-	switch(zrtos_event__get_type(args)){
-		case EVENT_CODE_A:
-			ZRTOS_DEBUG("%s(%p)","EVENT_CODE_A",data);
-		break;
-		case EVENT_CODE_B:
-			ZRTOS_DEBUG("%s(%c)","EVENT_CODE_B",((char*)data)[0]);
-		break;
-		default:
-			ZRTOS_DEBUG("%s(%s)","EVENT_CODE_ANY",(char*)data);
-		break;
+__attribute__((noreturn)) void callback_a(void *args){
+	static size_t a = 0;
+	while(true){
+		a++;
+		zrtos_task_scheduler__delay_ms(0);
 	}
-	ZRTOS_DEBUG(")}  ");
-	return true;
+	__builtin_unreachable();
 }
 
-ZRTOS_EVENT_INDEX(global_events,
-	ZRTOS_EVENT_HANDLER(
-		 handler_a
-		,EVENT_CODE_A
-		,0
-	)
-	,ZRTOS_EVENT_HANDLER(
-		handler_b
-		,EVENT_CODE_B
-		,0
-	)
-	,ZRTOS_EVENT_HANDLER(
-		handler_bb
-		,EVENT_CODE_B
-		,0
-	)
-	,ZRTOS_EVENT_HANDLER(
-		 handler_c
-		,ZRTOS_EVENT_TYPE__ANY
-		,(void*)0xFFAA
-	)
-);
+__attribute__((noreturn)) void callback_b(void *args){
+	static size_t b = 0;
+	while(true){
+		b++;
+		zrtos_task_scheduler__delay_ms(0);
+	}
+	__builtin_unreachable();
+}
+
+__attribute__((noreturn)) void callback_c(void *args){
+	static size_t c = 0;
+	while(true){
+		c++;
+		zrtos_task_scheduler__delay_ms(0);
+	}
+	__builtin_unreachable();
+}
 
 int main(void){
-	void *ptr = (void*) 0xFAFA;
-	char val = 'Z';
+	zrtos_arch_stack_t heap_a[160];
+	zrtos_arch_stack_t heap_b[160];
+	zrtos_arch_stack_t heap_c[160];
+	zrtos_task_t task_a;
+	zrtos_task_t task_b;
+	zrtos_task_t task_c;
 
-	zrtos_event_index__invoke(
-		 global_events
-		,ZRTOS_EVENT_TYPE__ANY
-		,"test"
+	zrtos_task_scheduler__init();
+
+	zrtos_task__init_ex(
+		 &task_a
+		,heap_a+159
+		,callback_a
+		,(void*)0xAAAA
 	);
+	zrtos_task_scheduler__add_task(&task_a);
 
-	zrtos_event_index__invoke(
-		 global_events
-		,EVENT_CODE_A
-		,ptr
+	zrtos_task__init_ex(
+		 &task_b
+		,heap_b+159
+		,callback_b
+		,(void*)0xAAAA
 	);
+	zrtos_task_scheduler__add_task(&task_b);
 
-	zrtos_event_index__invoke(
-		 global_events
-		,EVENT_CODE_B
-		,&val
+	zrtos_task__init_ex(
+		 &task_c
+		,heap_c+159
+		,callback_c
+		,(void*)0xAAAA
 	);
+	zrtos_task_scheduler__add_task(&task_c);
 
-
-	return 0;
+	zrtos_task_scheduler__start();
 }
+

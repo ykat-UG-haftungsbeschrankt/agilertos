@@ -1,5 +1,5 @@
 <map id="zrtos_malloc__free" name="zrtos_malloc__free">
-<area shape="rect" id="Node000001" title=" " alt="" coords="103,5,233,32"/>
-<area shape="rect" id="Node000002" href="$malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,55,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="145,5,275,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,5,97,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,21,97,21,97,16,129,16"/>
 </map>

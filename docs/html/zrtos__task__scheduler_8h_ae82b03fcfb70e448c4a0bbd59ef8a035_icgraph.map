@@ -1,0 +1,7 @@
+<map id="zrtos_task_scheduler__add_task" name="zrtos_task_scheduler__add_task">
+<area shape="rect" id="Node000001" title=" " alt="" coords="199,27,344,69"/>
+<area shape="rect" id="Node000002" href="$zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="24,5,132,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,37,132,29,133,24,184,32"/>
+<area shape="rect" id="Node000003" href="$zrtos__task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="5,56,151,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,64,152,69,151,64,183,59"/>
+</map>

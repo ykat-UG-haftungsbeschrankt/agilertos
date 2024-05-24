@@ -13,7 +13,7 @@ extern "C" {
 
 #include "zrtos_types.h"
 
-typedef void *(*zrtos_arch_callback_t)(void *arg);
+typedef void (*zrtos_arch_callback_t)(void *arg);
 
 /*
 typedef uint8_t zrtos_arch_stack_t;

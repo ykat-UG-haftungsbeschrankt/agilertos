@@ -23,5 +23,6 @@ var annotated_dup =
     [ "pthread_attr_t", "structpthread__attr__t.html", "structpthread__attr__t" ],
     [ "pthread_mutex_t", "structpthread__mutex__t.html", "structpthread__mutex__t" ],
     [ "pthread_mutexattr_t", "structpthread__mutexattr__t.html", null ],
-    [ "pthread_t", "structpthread__t.html", "structpthread__t" ]
+    [ "pthread_t", "structpthread__t.html", "structpthread__t" ],
+    [ "zrtos_task_pthread__trampoline_cb_args_t", "structzrtos__task__pthread____trampoline__cb__args__t.html", "structzrtos__task__pthread____trampoline__cb__args__t" ]
 ];

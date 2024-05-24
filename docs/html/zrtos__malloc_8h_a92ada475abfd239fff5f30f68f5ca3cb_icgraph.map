@@ -1,5 +1,7 @@
 <map id="zrtos_malloc__get_free_chunk" name="zrtos_malloc__get_free_chunk">
-<area shape="rect" id="Node000001" title=" " alt="" coords="201,5,356,48"/>
-<area shape="rect" id="Node000002" href="$zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="5,13,153,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,29,153,29,153,24,185,24"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="356,5,511,48"/>
+<area shape="rect" id="Node000002" href="$zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="161,13,308,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="341,29,309,29,309,24,341,24"/>
+<area shape="rect" id="Node000003" href="$zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="5,13,113,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,29,113,29,113,24,145,24"/>
 </map>

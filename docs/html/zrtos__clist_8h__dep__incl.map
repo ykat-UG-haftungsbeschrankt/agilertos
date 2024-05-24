@@ -1,5 +1,10 @@
 <map id="zrtos_clist.h" name="zrtos_clist.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="27,5,120,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__event__index_8h.html" title=" " alt="" coords="5,80,142,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,48,76,80,71,80,71,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="47,5,140,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__task_8h.html" title=" " alt="" coords="5,80,99,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,47,61,81,57,78,76,44"/>
+<area shape="rect" id="Node000003" href="$zrtos__task__scheduler_8h.html" title=" " alt="" coords="15,155,172,181"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="105,46,113,80,111,121,101,155,96,154,106,120,108,80,100,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,119,89,153,84,156,64,122"/>
+<area shape="rect" id="Node000004" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="22,229,165,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="96,197,96,229,91,229,91,197"/>
 </map>
