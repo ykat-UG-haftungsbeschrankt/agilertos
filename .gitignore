@@ -4,3 +4,4 @@ Debug/
 trash/
 .vscode/
 trash/zrtos_task_scheduler.h
+zrtos_script.h

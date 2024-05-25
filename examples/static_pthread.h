@@ -9,11 +9,49 @@
 
 #include "zrtos_task_pthread.h"
 
+pthread_attr_t attr;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+
+void *callback_aa(void *args){
+	return (void*)0xA0A1;
+}
+
 void *callback_a(void *args){
+	pthread_t thread_aa;
+	void      *retval;
+
+	pthread_create(
+		 &thread_aa
+		,0
+		,callback_aa
+		,(void*)0xAAAA
+	);
+
+	pthread_join(thread_aa,&retval);
+
+	return (void*)0xA0A1;
+}
+
+void *callback_bb(void *args){
+	pthread_mutex_unlock(&mutex);
+	while(1){
+	}
 	return (void*)0xA0A1;
 }
 
 void *callback_b(void *args){
+	pthread_t thread_bb;
+
+	pthread_create(
+		 &thread_bb
+		,0
+		,callback_bb
+		,(void*)0xAAAA
+	);
+
+	pthread_mutex_lock(&mutex);
+	pthread_mutex_lock(&mutex);
+
 	return (void*)0xB0B1;
 }
 
@@ -33,7 +71,6 @@ int main(void){
 	
 	zrtos_task_pthread__set_heap(heap);
 
-	pthread_attr_t attr;
 	if(pthread_attr_init(&attr)==0){
 		pthread_attr_setstacksize(&attr,159);
 		

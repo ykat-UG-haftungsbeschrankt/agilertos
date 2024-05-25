@@ -29,36 +29,85 @@ typedef struct _zrtos_task_scheduler_t{
 zrtos_task_scheduler_t zrtos_task_scheduler = {};
 
 
-bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
-	return zrtos_clist__push(&zrtos_task_scheduler.root,&task->node);
-}
+#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)       \
+    do{                                        \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \
+        zrtos_task_scheduler.do_not_disturb++; \
+        ZRTOS_ARCH__ENABLE_INTERRUPTS();       \
+        do{                                    \
+            code;                              \
+        }while(0);                             \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \
+        zrtos_task_scheduler.do_not_disturb--; \
+        ZRTOS_ARCH__ENABLE_INTERRUPTS();       \
+    }while(0);
 
-bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
-	return zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
-}
 
-bool zrtos_task_scheduler__has_task(zrtos_task_t *task){
-	zrtos_task_t *node = _zrtos_task_scheduler__get_active_task();
+#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,code) \
+    do{                                                         \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();                       \
+        is_locked = (zrtos_task_scheduler.do_not_disturb == 0); \
+        zrtos_task_scheduler.do_not_disturb++;                  \
+        ZRTOS_ARCH__ENABLE_INTERRUPTS();                        \
+        do{                                                     \
+            code;                                               \
+        }while(0);                                              \
+        ZRTOS_ARCH__DISABLE_INTERRUPTS();                       \
+        zrtos_task_scheduler.do_not_disturb--;                  \
+        ZRTOS_ARCH__ENABLE_INTERRUPTS();                        \
+    }while(0);
 
-	while(node){
-		if(node == task){
-			return true;
-		}
-		node = zrtos_task__get_next_task(node);
-	}
-
-	return false;
-}
-
-zrtos_task_t *_zrtos_task_scheduler__get_sleep_task(void){
-	return &zrtos_task_scheduler.sleep_task;
-}
 
 zrtos_task_t *_zrtos_task_scheduler__get_active_task(void){
 	zrtos_clist_node_t *node = zrtos_clist__get_root(
 		&zrtos_task_scheduler.root
 	);
 	return zrtos_types__get_container_of(node,zrtos_task_t,node);
+}
+
+bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
+		zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
+
+		zrtos_task__set_parent(task,active_task);
+		zrtos_clist__push(&active_task->children,&task->child_node);
+		zrtos_clist__push(&zrtos_task_scheduler.root,&task->node);
+	});
+
+	return true;
+}
+
+bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
+		zrtos_task__set_parent(task,0);
+		zrtos_clist__delete(&parent->children,&task->child_node);
+		zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
+	});
+
+	return true;
+}
+
+bool zrtos_task_scheduler__has_task(zrtos_task_t *task){
+	bool ret = false;
+
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
+		zrtos_task_t *node = _zrtos_task_scheduler__get_active_task();
+		zrtos_task_t *sentinel = node;
+
+		do{
+			if(node == task){
+				ret = true;
+				break;
+			}
+			node = zrtos_task__get_next_task(node);
+		}while(node != sentinel);
+	});
+
+	return ret;
+}
+
+static zrtos_task_t *_zrtos_task_scheduler__get_sleep_task(void){
+	return &zrtos_task_scheduler.sleep_task;
 }
 
 static void zrtos_task_scheduler__page_task_out(void){
@@ -151,40 +200,18 @@ void zrtos_task_scheduler__init(){
 		 &zrtos_task_scheduler.sleep_task
 		,(zrtos_arch_stack_t*)0
 	);
-	zrtos_task_scheduler__add_task(&zrtos_task_scheduler.sleep_task);
+	zrtos_clist__push(
+		 &zrtos_task_scheduler.root
+		,&zrtos_task_scheduler.sleep_task.node
+	);
+	//zrtos_task_scheduler__add_task(&zrtos_task_scheduler.sleep_task);
 	//zrtos_task_scheduler.tmp_stack_ptr = 0;
 	zrtos_task_scheduler.do_not_disturb = 0;
 	_zrtos_task_scheduler__on_tick_ex();
 }
 
 
-#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)       \
-    do{                                        \
-        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \
-        zrtos_task_scheduler.do_not_disturb++; \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();       \
-        do{                                    \
-            code;                              \
-        }while(0);                             \
-        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \
-        zrtos_task_scheduler.do_not_disturb--; \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();       \
-    }while(0);
 
-
-#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked,code) \
-    do{                                                         \
-        ZRTOS_ARCH__DISABLE_INTERRUPTS();                       \
-        is_locked = (zrtos_task_scheduler.do_not_disturb == 0); \
-        zrtos_task_scheduler.do_not_disturb++;                  \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();                        \
-        do{                                                     \
-            code;                                               \
-        }while(0);                                              \
-        ZRTOS_ARCH__DISABLE_INTERRUPTS();                       \
-        zrtos_task_scheduler.do_not_disturb--;                  \
-        ZRTOS_ARCH__ENABLE_INTERRUPTS();                        \
-    }while(0);
 
 #ifdef __cplusplus
 }

@@ -49,6 +49,9 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
         (type *)((char *)__mptr - zrtos_types__get_offset_of(type,member)); \
     })
 
+#define zrtos_types__get_container_of_ex(ptr, type, member)                 \
+    ((ptr) ? zrtos_types__get_container_of(ptr, type, member) : 0)          \
+
 #define ZRTOS_TYPES__MIN(a,b) ((a)<(b)?(a):(b))
 #define ZRTOS_TYPES__MAX(a,b) ((a)>(b)?(a):(b))
 

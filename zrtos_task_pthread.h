@@ -120,48 +120,50 @@ int pthread_create(
 	,void *(*start_routine)(void *)
 	,void *restrict arg
 ){
-	size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
-	                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
-	;
-	zrtos_malloc_t *mem = (zrtos_malloc_t*)zrtos_task_pthread__get_heap();
-	size_t stacksize_min = sizeof(zrtos_task_t)
-	                     + sizeof(zrtos_task_pthread__trampoline_cb_args_t)
-	                     + (
-		  attr
-		? ZRTOS_TYPES__MAX(
-			 stack_size_min
-			,attr->stacksize
-		)
-		: stack_size_min
-	);
-	zrtos_task_t *task = zrtos_malloc__malloc(
-		 mem
-		,stacksize_min
-	);
 	int ret = ENOMEM;
 
-	if(task){
-		void *mem_chunk_last_address = zrtos_types__ptr_add(
-			 task
-			,stacksize_min-1
+	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
+		size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
+		                      + ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH()
+		;
+		zrtos_malloc_t *mem = (zrtos_malloc_t*)zrtos_task_pthread__get_heap();
+		size_t stacksize_min = sizeof(zrtos_task_t)
+		                     + sizeof(zrtos_task_pthread__trampoline_cb_args_t)
+		                     + (
+			attr
+			? ZRTOS_TYPES__MAX(
+				stack_size_min
+				,attr->stacksize
+			)
+			: stack_size_min
 		);
-		zrtos_task_pthread__trampoline_cb_args_t *args = zrtos_types__ptr_add(
-			 task
-			,sizeof(zrtos_task_t)
+		zrtos_task_t *task = zrtos_malloc__malloc(
+			mem
+			,stacksize_min
 		);
-		args->callback = start_routine;
-		args->args = arg;
-		zrtos_task__init_ex(
-			 task
-			,(zrtos_arch_stack_t*)mem_chunk_last_address
-			,zrtos_task_pthread__trampoline_cb
-			,args
-		);
-		zrtos_task_scheduler__add_task(task);
+		if(task){
+			void *mem_chunk_last_address = zrtos_types__ptr_add(
+				 task
+				,stacksize_min-1
+			);
+			zrtos_task_pthread__trampoline_cb_args_t *args = zrtos_types__ptr_add(
+				 task
+				,sizeof(zrtos_task_t)
+			);
+			args->callback = start_routine;
+			args->args = arg;
+			zrtos_task__init_ex(
+				 task
+				,(zrtos_arch_stack_t*)mem_chunk_last_address
+				,zrtos_task_pthread__trampoline_cb
+				,args
+			);
+			zrtos_task_scheduler__add_task(task);
 
-		thread->task = task;
-		ret = 0;
-	}
+			thread->task = task;
+			ret = 0;
+		}
+	});
 
 	return ret;
 }
@@ -171,25 +173,33 @@ int pthread_equal(pthread_t t1, pthread_t t2){
 }
 
 int pthread_join(pthread_t thread, void **retval){
-	int ret;
+	int ret = EAGAIN;
+	zrtos_task_t *task = thread.task;
 
 	while(true){
-		zrtos_task_t *task = thread.task;
-		ret = ESRCH;
-		if(zrtos_task_scheduler__has_task(task)){
-			if(!zrtos_task__is_done(task)){
-				_zrtos_task_scheduler__on_tick_ex();
-				continue;
+		ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
+			if(zrtos_task_scheduler__has_task(task)){
+				if(zrtos_task__is_done(task)){
+					zrtos_task_pthread__trampoline_cb_args_t *args = 
+						(zrtos_task_pthread__trampoline_cb_args_t *)(task+1)
+					;
+					if(retval){
+						*retval = args->return_value;
+					}
+					zrtos_task_scheduler__remove_task(task);
+					zrtos_malloc__free(task);
+					ret = 0;
+				}
+			}else{
+				ret = ESRCH;
 			}
-			zrtos_task_pthread__trampoline_cb_args_t *args = 
-				(zrtos_task_pthread__trampoline_cb_args_t *)(task+1)
-			;
-			*retval = args->return_value;
-			zrtos_malloc__free(task);
-			thread.task = 0;
-			ret = 0;
+		});
+		
+		if(ret == EAGAIN){
+			_zrtos_task_scheduler__on_tick_ex();
+		}else{
+			break;
 		}
-		break;
 	}
 
 	return ret;
