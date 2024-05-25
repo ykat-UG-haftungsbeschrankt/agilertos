@@ -79,9 +79,10 @@ bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
 
 bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
 	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
-		zrtos_task__set_parent(task,0);
+		zrtos_task_t *parent = zrtos_task__get_parent(task);
 		zrtos_clist__delete(&parent->children,&task->child_node);
 		zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
+		zrtos_task__set_parent(task,0);
 	});
 
 	return true;

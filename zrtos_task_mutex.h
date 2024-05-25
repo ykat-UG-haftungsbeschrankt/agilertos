@@ -19,7 +19,7 @@ typedef struct _zrtos_task_mutex_t{
 	bool is_locked;
 }zrtos_task_mutex_t;
 
-#define ZRTOS_TASK_MUTEX__INIT() {.is_locked = 0};
+#define ZRTOS_TASK_MUTEX__INITIALIZER {.is_locked = 0}
 
 bool zrtos_task_mutex__init(zrtos_task_mutex_t *thiz){
 	thiz->is_locked = false;

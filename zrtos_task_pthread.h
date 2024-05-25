@@ -39,9 +39,9 @@ typedef struct{
 	void *return_value;
 }zrtos_task_pthread__trampoline_cb_args_t;
 
-#define PTHREAD_MUTEX_INITIALIZER    \
-    {                                \
-        .mutex = ZRTOS_TASK_MUTEX__INIT() \
+#define PTHREAD_MUTEX_INITIALIZER              \
+    {                                          \
+        .mutex = ZRTOS_TASK_MUTEX__INITIALIZER \
     }
 
 	
@@ -172,6 +172,20 @@ int pthread_equal(pthread_t t1, pthread_t t2){
 	return zrtos_types__ptr_cmp(t1.task,t1.task);
 }
 
+static void zrtos_task_pthread__free(zrtos_task_t *task){
+	zrtos_task_t *child = zrtos_task__get_first_child(task);
+	zrtos_task_t *sentinel = child;
+	if(child){
+		do{
+			zrtos_task_t *next = zrtos_task__get_next_sibling(child);
+			zrtos_task_pthread__free(child);
+			child = next;
+		}while(child != sentinel);
+	}
+	zrtos_task_scheduler__remove_task(task);
+	zrtos_malloc__free(task);
+}
+
 int pthread_join(pthread_t thread, void **retval){
 	int ret = EAGAIN;
 	zrtos_task_t *task = thread.task;
@@ -186,8 +200,7 @@ int pthread_join(pthread_t thread, void **retval){
 					if(retval){
 						*retval = args->return_value;
 					}
-					zrtos_task_scheduler__remove_task(task);
-					zrtos_malloc__free(task);
+					zrtos_task_pthread__free(task);
 					ret = 0;
 				}
 			}else{
