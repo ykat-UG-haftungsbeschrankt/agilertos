@@ -18,7 +18,6 @@ var files_dup =
     [ "zrtos_malloc.h", "zrtos__malloc_8h.html", "zrtos__malloc_8h" ],
     [ "zrtos_mem.h", "zrtos__mem_8h.html", "zrtos__mem_8h" ],
     [ "zrtos_progmem.h", "zrtos__progmem_8h.html", "zrtos__progmem_8h" ],
-    [ "zrtos_script.h", "zrtos__script_8h.html", null ],
     [ "zrtos_str.h", "zrtos__str_8h.html", "zrtos__str_8h" ],
     [ "zrtos_string.h", "zrtos__string_8h.html", "zrtos__string_8h" ],
     [ "zrtos_task.h", "zrtos__task_8h.html", "zrtos__task_8h" ],

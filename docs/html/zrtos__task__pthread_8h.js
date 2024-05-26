@@ -20,6 +20,7 @@ var zrtos__task__pthread_8h =
     [ "pthread_mutexattr_destroy", "zrtos__task__pthread_8h.html#a2321aabf58224b06021185708d0f9658", null ],
     [ "pthread_mutexattr_init", "zrtos__task__pthread_8h.html#af98f6b6c483077a39d1400b1de1577b8", null ],
     [ "pthread_self", "zrtos__task__pthread_8h.html#a4c4f5f3b4f8f45d9d897847d53b11aaa", null ],
+    [ "zrtos_task_pthread__free", "zrtos__task__pthread_8h.html#a138580b425fd21586b4efd4ab448d593", null ],
     [ "zrtos_task_pthread__get_heap", "zrtos__task__pthread_8h.html#ab1dbb5f44799a4b2814f03d4271a1f20", null ],
     [ "zrtos_task_pthread__set_heap", "zrtos__task__pthread_8h.html#a8f1bcaefbea8779ce0feb3767f6f9c74", null ],
     [ "zrtos_task_pthread__trampoline_cb", "zrtos__task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750", null ],

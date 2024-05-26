@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parent_0',['parent',['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t']]],
+  ['parent_0',['parent',['../struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd',1,'_zrtos_task_t::parent'],['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t::parent']]],
   ['pthread_1',['static pthread',['../index.html#autotoc_md5',1,'']]],
   ['pthread_5fattr_5fdestroy_2',['pthread_attr_destroy',['../zrtos__task__pthread_8h.html#a4bcdbf47c17c7dcc51e9f05f5cb56d81',1,'pthread_attr_destroy(pthread_attr_t *attr):&#160;zrtos_task_pthread.h'],['../zrtos__vheap__task__pthread_8h.html#a4bcdbf47c17c7dcc51e9f05f5cb56d81',1,'pthread_attr_destroy(pthread_attr_t *attr):&#160;zrtos_vheap_task_pthread.h']]],
   ['pthread_5fattr_5finit_3',['pthread_attr_init',['../zrtos__task__pthread_8h.html#a0b85ebb1e3aac081a4c0a5e85ae3cbe9',1,'pthread_attr_init(pthread_attr_t *attr):&#160;zrtos_task_pthread.h'],['../zrtos__vheap__task__pthread_8h.html#a0b85ebb1e3aac081a4c0a5e85ae3cbe9',1,'pthread_attr_init(pthread_attr_t *attr):&#160;zrtos_vheap_task_pthread.h']]],

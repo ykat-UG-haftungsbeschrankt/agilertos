@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
   </td>
  </tr>
@@ -186,6 +186,8 @@ Macros</h2></td></tr>
 <tr class="separator:a5cad3edf3d078710c83349e149e0666b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2bdc28e0ef47f8fcd14cd44cf1eb35" id="r_aac2bdc28e0ef47f8fcd14cd44cf1eb35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a>(ptr,  type,  member)</td></tr>
 <tr class="separator:aac2bdc28e0ef47f8fcd14cd44cf1eb35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5762fc078a77bd5258e055e44f6d10c8" id="r_a5762fc078a77bd5258e055e44f6d10c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5762fc078a77bd5258e055e44f6d10c8">zrtos_types__get_container_of_ex</a>(ptr,  type,  member)&#160;&#160;&#160;    ((ptr) ? <a class="el" href="#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a>(ptr, type, member) : 0)          \</td></tr>
+<tr class="separator:a5762fc078a77bd5258e055e44f6d10c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b31407f452e9602f42514f071d68386" id="r_a2b31407f452e9602f42514f071d68386"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(a,  b)&#160;&#160;&#160;((a)&lt;(b)?(a):(b))</td></tr>
 <tr class="separator:a2b31407f452e9602f42514f071d68386"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e8485e5ce88712e64a5a964f507cf8a" id="r_a1e8485e5ce88712e64a5a964f507cf8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a>(a,  b)&#160;&#160;&#160;((a)&gt;(b)?(a):(b))</td></tr>
@@ -254,6 +256,37 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a5762fc078a77bd5258e055e44f6d10c8" name="a5762fc078a77bd5258e055e44f6d10c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5762fc078a77bd5258e055e44f6d10c8">&#9670;&#160;</a></span>zrtos_types__get_container_of_ex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define zrtos_types__get_container_of_ex</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">ptr, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">type, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">member</span>&#160;)&#160;&#160;&#160;    ((ptr) ? <a class="el" href="#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a>(ptr, type, member) : 0)          \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00052">52</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span><span class="preprocessor">#define zrtos_types__get_container_of_ex(ptr, type, member)                 \</span></div>
+<div class="line"><span class="lineno">   53</span><span class="preprocessor">    ((ptr) ? zrtos_types__get_container_of(ptr, type, member) : 0)          \</span></div>
+<div class="line"><span class="lineno">   54</span><span class="preprocessor"></span> </div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a5cad3edf3d078710c83349e149e0666b" name="a5cad3edf3d078710c83349e149e0666b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cad3edf3d078710c83349e149e0666b">&#9670;&#160;</a></span>zrtos_types__get_offset_of</h2>
 
@@ -294,9 +327,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00065">65</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   65</span><span class="preprocessor">#define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \</span></div>
-<div class="line"><span class="lineno">   66</span><span class="preprocessor">    (sizeof(arr)/sizeof((arr)[0]))</span></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00068">68</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span><span class="preprocessor">#define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \</span></div>
+<div class="line"><span class="lineno">   69</span><span class="preprocessor">    (sizeof(arr)/sizeof((arr)[0]))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -319,7 +352,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00053">53</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00056">56</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
 
 </div>
 </div>
@@ -342,7 +375,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00052">52</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00055">55</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
 
 </div>
 </div>
@@ -365,9 +398,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00062">62</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span><span class="preprocessor">#define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \</span></div>
-<div class="line"><span class="lineno">   63</span><span class="preprocessor">    (((a + b ) &gt;= a))</span></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00065">65</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span><span class="preprocessor">#define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \</span></div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">    (((a + b ) &gt;= a))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -395,13 +428,13 @@ Functions</h2></td></tr>
 <div class="line">        *(b) = a____;                       \</div>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00055">55</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   55</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \</span></div>
-<div class="line"><span class="lineno">   56</span><span class="preprocessor">    do{                                     \</span></div>
-<div class="line"><span class="lineno">   57</span><span class="preprocessor">        typeof(*a) a____ = *(a);            \</span></div>
-<div class="line"><span class="lineno">   58</span><span class="preprocessor">        *(a) = *(b);                        \</span></div>
-<div class="line"><span class="lineno">   59</span><span class="preprocessor">        *(b) = a____;                       \</span></div>
-<div class="line"><span class="lineno">   60</span><span class="preprocessor">    }while(0);</span></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__types_8h_source.html#l00058">58</a> of file <a class="el" href="zrtos__types_8h_source.html">zrtos_types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \</span></div>
+<div class="line"><span class="lineno">   59</span><span class="preprocessor">    do{                                     \</span></div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">        typeof(*a) a____ = *(a);            \</span></div>
+<div class="line"><span class="lineno">   61</span><span class="preprocessor">        *(a) = *(b);                        \</span></div>
+<div class="line"><span class="lineno">   62</span><span class="preprocessor">        *(b) = a____;                       \</span></div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">    }while(0);</span></div>
 </div><!-- fragment -->
 </div>
 </div>

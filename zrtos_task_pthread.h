@@ -173,15 +173,17 @@ int pthread_equal(pthread_t t1, pthread_t t2){
 }
 
 static void zrtos_task_pthread__free(zrtos_task_t *task){
-	zrtos_task_t *child = zrtos_task__get_first_child(task);
-	zrtos_task_t *sentinel = child;
-	if(child){
-		do{
-			zrtos_task_t *next = zrtos_task__get_next_sibling(child);
-			zrtos_task_pthread__free(child);
-			child = next;
-		}while(child != sentinel);
+	zrtos_task_t *child;
+
+	while((child = zrtos_task_scheduler__get_any_child(task))){
+		zrtos_task_t *last = child;
+		while((child = zrtos_task_scheduler__get_any_child(child))){
+			last = child;
+		}
+		zrtos_task_scheduler__remove_task(last);
+		zrtos_malloc__free(last);
 	}
+
 	zrtos_task_scheduler__remove_task(task);
 	zrtos_malloc__free(task);
 }

@@ -70,7 +70,7 @@ bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
 		zrtos_task_t *active_task = _zrtos_task_scheduler__get_active_task();
 
 		zrtos_task__set_parent(task,active_task);
-		zrtos_clist__push(&active_task->children,&task->child_node);
+		//zrtos_clist__push(&active_task->children,&task->child_node);
 		zrtos_clist__push(&zrtos_task_scheduler.root,&task->node);
 	});
 
@@ -79,8 +79,8 @@ bool zrtos_task_scheduler__add_task(zrtos_task_t *task){
 
 bool zrtos_task_scheduler__remove_task(zrtos_task_t *task){
 	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
-		zrtos_task_t *parent = zrtos_task__get_parent(task);
-		zrtos_clist__delete(&parent->children,&task->child_node);
+		//zrtos_task_t *parent = zrtos_task__get_parent(task);
+		//zrtos_clist__delete(&parent->children,&task->child_node);
 		zrtos_clist__delete(&zrtos_task_scheduler.root,&task->node);
 		zrtos_task__set_parent(task,0);
 	});
@@ -211,7 +211,26 @@ void zrtos_task_scheduler__init(){
 	_zrtos_task_scheduler__on_tick_ex();
 }
 
+#define ZRTOS_TASK_SCHEDULER__EACH_TASK(node) \
+    for(\
+		zrtos_task_t *node = _zrtos_task_scheduler__get_active_task()\
+		,*sentinel = node\
+		,*next\
+		;({\
+			next = zrtos_task__get_next_task(node);\
+			node != sentinel;\
+		})\
+		;node = next\
+	)
 
+static zrtos_task_t *zrtos_task_scheduler__get_any_child(zrtos_task_t *task){
+	ZRTOS_TASK_SCHEDULER__EACH_TASK(node){
+		if(zrtos_task__get_parent(node) == task){
+			return node;
+		}
+	}
+	return 0;
+}
 
 
 #ifdef __cplusplus

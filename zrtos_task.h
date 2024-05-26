@@ -35,8 +35,10 @@ typedef enum{
 typedef struct _zrtos_task_t{
 	zrtos_clist_node_t           node;
 	struct _zrtos_task_t         *parent;
+	/*
 	zrtos_clist_t                children;
 	zrtos_clist_node_t           child_node;
+	*/
 	zrtos_arch_stack_t           *stack_ptr;
 	zrtos_task_tick_t            ticks;
 	errno_t                      error_code;
@@ -47,8 +49,8 @@ bool zrtos_task__init(
 	,zrtos_arch_stack_t    *stack_ptr
 ){
 	if(zrtos_clist_node__init(&thiz->node)
-	&& zrtos_clist_node__init(&thiz->child_node)
-	&& zrtos_clist__init(&thiz->children)){
+	&& /*zrtos_clist_node__init(&thiz->child_node)
+	&& zrtos_clist__init(&thiz->children)*/){
 		thiz->parent = 0;
 		thiz->stack_ptr = stack_ptr;
 		thiz->ticks = 0;
@@ -123,7 +125,7 @@ zrtos_task_t *zrtos_task__get_previous_task(zrtos_task_t *thiz){
 	zrtos_clist_node_t *node = zrtos_clist_node__get_previous_node(&thiz->node);
 	return zrtos_types__get_container_of(node,zrtos_task_t,node);
 }
-
+/*
 zrtos_task_t *zrtos_task__get_first_child(zrtos_task_t *thiz){
 	zrtos_clist_node_t *node = zrtos_clist__get_root(
 		&thiz->children
@@ -135,7 +137,7 @@ zrtos_task_t *zrtos_task__get_next_sibling(zrtos_task_t *thiz){
 	zrtos_clist_node_t *node = zrtos_clist_node__get_next_node(&thiz->child_node);
 	return zrtos_types__get_container_of(node,zrtos_task_t,child_node);
 }
-
+*/
 void zrtos_task__set_stack_ptr(zrtos_task_t *thiz,zrtos_arch_stack_t *stack_ptr){
 	thiz->stack_ptr = stack_ptr;
 }

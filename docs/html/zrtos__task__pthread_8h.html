@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
   </td>
  </tr>
@@ -213,6 +213,8 @@ Functions</h2></td></tr>
 <tr class="separator:a091adcef6201bebbf231763328c15286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98ec817164a6641eda2341de473b659d" id="r_a98ec817164a6641eda2341de473b659d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98ec817164a6641eda2341de473b659d">pthread_equal</a> (<a class="el" href="structpthread__t.html">pthread_t</a> t1, <a class="el" href="structpthread__t.html">pthread_t</a> t2)</td></tr>
 <tr class="separator:a98ec817164a6641eda2341de473b659d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138580b425fd21586b4efd4ab448d593" id="r_a138580b425fd21586b4efd4ab448d593"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a138580b425fd21586b4efd4ab448d593">zrtos_task_pthread__free</a> (<a class="el" href="zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a> *task)</td></tr>
+<tr class="separator:a138580b425fd21586b4efd4ab448d593"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28a15bba47cab57cbc9f5dac9af99c8b" id="r_a28a15bba47cab57cbc9f5dac9af99c8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28a15bba47cab57cbc9f5dac9af99c8b">pthread_join</a> (<a class="el" href="structpthread__t.html">pthread_t</a> thread, void **retval)</td></tr>
 <tr class="separator:a28a15bba47cab57cbc9f5dac9af99c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12809c44718c21544ceb280dc1a53573" id="r_a12809c44718c21544ceb280dc1a53573"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12809c44718c21544ceb280dc1a53573">pthread_mutex_lock</a> (<a class="el" href="structpthread__mutex__t.html">pthread_mutex_t</a> *mutex)</td></tr>
@@ -239,15 +241,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    {                                \</div>
-<div class="line">        .mutex = <a class="code hl_define" href="zrtos__task__mutex_8h.html#ac4a448af15f1493064c0a24c3126880d">ZRTOS_TASK_MUTEX__INIT</a>() \</div>
+<b>Value:</b><div class="fragment"><div class="line">    {                                          \</div>
+<div class="line">        .mutex = <a class="code hl_define" href="zrtos__task__mutex_8h.html#aac94811f231ae0a8e84630118bf9806d">ZRTOS_TASK_MUTEX__INITIALIZER</a> \</div>
 <div class="line">    }</div>
-<div class="ttc" id="azrtos__task__mutex_8h_html_ac4a448af15f1493064c0a24c3126880d"><div class="ttname"><a href="zrtos__task__mutex_8h.html#ac4a448af15f1493064c0a24c3126880d">ZRTOS_TASK_MUTEX__INIT</a></div><div class="ttdeci">#define ZRTOS_TASK_MUTEX__INIT()</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__mutex_8h_source.html#l00022">zrtos_task_mutex.h:22</a></div></div>
+<div class="ttc" id="azrtos__task__mutex_8h_html_aac94811f231ae0a8e84630118bf9806d"><div class="ttname"><a href="zrtos__task__mutex_8h.html#aac94811f231ae0a8e84630118bf9806d">ZRTOS_TASK_MUTEX__INITIALIZER</a></div><div class="ttdeci">#define ZRTOS_TASK_MUTEX__INITIALIZER</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__mutex_8h_source.html#l00022">zrtos_task_mutex.h:22</a></div></div>
 </div><!-- fragment -->
 <p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00042">42</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span><span class="preprocessor">#define PTHREAD_MUTEX_INITIALIZER    \</span></div>
-<div class="line"><span class="lineno">   43</span><span class="preprocessor">    {                                \</span></div>
-<div class="line"><span class="lineno">   44</span><span class="preprocessor">        .mutex = ZRTOS_TASK_MUTEX__INIT() \</span></div>
+<div class="fragment"><div class="line"><span class="lineno">   42</span><span class="preprocessor">#define PTHREAD_MUTEX_INITIALIZER              \</span></div>
+<div class="line"><span class="lineno">   43</span><span class="preprocessor">    {                                          \</span></div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">        .mutex = ZRTOS_TASK_MUTEX__INITIALIZER \</span></div>
 <div class="line"><span class="lineno">   45</span><span class="preprocessor">    }</span></div>
 </div><!-- fragment -->
 </div>
@@ -361,51 +363,53 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00117">117</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  122</span> {</div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordtype">size_t</span> stack_size_min = <a class="code hl_define" href="atmega328p_8h.html#abe71c47403848ec837ab4694267a0b54">ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH</a>()</div>
-<div class="line"><span class="lineno">  124</span>                          + <a class="code hl_define" href="atmega328p_8h.html#a5e12069408a95bac028981da8630aed1">ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH</a>()</div>
-<div class="line"><span class="lineno">  125</span>    ;</div>
-<div class="line"><span class="lineno">  126</span>    <a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a> *mem = (<a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a>*)<a class="code hl_function" href="#ab1dbb5f44799a4b2814f03d4271a1f20">zrtos_task_pthread__get_heap</a>();</div>
-<div class="line"><span class="lineno">  127</span>    <span class="keywordtype">size_t</span> stacksize_min = <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a>)</div>
-<div class="line"><span class="lineno">  128</span>                         + <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a>)</div>
-<div class="line"><span class="lineno">  129</span>                         + (</div>
-<div class="line"><span class="lineno">  130</span>          attr</div>
-<div class="line"><span class="lineno">  131</span>        ? <a class="code hl_define" href="zrtos__types_8h.html#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a>(</div>
-<div class="line"><span class="lineno">  132</span>             stack_size_min</div>
-<div class="line"><span class="lineno">  133</span>            ,attr-&gt;<a class="code hl_variable" href="structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6">stacksize</a></div>
-<div class="line"><span class="lineno">  134</span>        )</div>
-<div class="line"><span class="lineno">  135</span>        : stack_size_min</div>
-<div class="line"><span class="lineno">  136</span>    );</div>
-<div class="line"><span class="lineno">  137</span>    <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *task = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(</div>
-<div class="line"><span class="lineno">  138</span>         mem</div>
-<div class="line"><span class="lineno">  139</span>        ,stacksize_min</div>
-<div class="line"><span class="lineno">  140</span>    );</div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordtype">int</span> ret = <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629aec0aa1bb79e2e55ed6d8c165e0611eca">ENOMEM</a>;</div>
-<div class="line"><span class="lineno">  142</span> </div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span>(task){</div>
-<div class="line"><span class="lineno">  144</span>        <span class="keywordtype">void</span> *mem_chunk_last_address = <a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(</div>
-<div class="line"><span class="lineno">  145</span>             task</div>
-<div class="line"><span class="lineno">  146</span>            ,stacksize_min-1</div>
-<div class="line"><span class="lineno">  147</span>        );</div>
-<div class="line"><span class="lineno">  148</span>        <a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *args = <a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(</div>
-<div class="line"><span class="lineno">  149</span>             task</div>
-<div class="line"><span class="lineno">  150</span>            ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>)</div>
-<div class="line"><span class="lineno">  151</span>        );</div>
-<div class="line"><span class="lineno">  152</span>        args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#a5bbe7970bfba5910eb204feb6dbb3c8f">callback</a> = start_routine;</div>
-<div class="line"><span class="lineno">  153</span>        args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#a2a1961a07e7468c7f91ecc4721242950">args</a> = arg;</div>
-<div class="line"><span class="lineno">  154</span>        <a class="code hl_function" href="zrtos__task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a>(</div>
-<div class="line"><span class="lineno">  155</span>             task</div>
-<div class="line"><span class="lineno">  156</span>            ,(<a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>*)mem_chunk_last_address</div>
-<div class="line"><span class="lineno">  157</span>            ,<a class="code hl_function" href="#ace168cf0d23cd4b085a2da31b881c750">zrtos_task_pthread__trampoline_cb</a></div>
-<div class="line"><span class="lineno">  158</span>            ,args</div>
-<div class="line"><span class="lineno">  159</span>        );</div>
-<div class="line"><span class="lineno">  160</span>        <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035">zrtos_task_scheduler__add_task</a>(task);</div>
-<div class="line"><span class="lineno">  161</span> </div>
-<div class="line"><span class="lineno">  162</span>        thread-&gt;<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a> = task;</div>
-<div class="line"><span class="lineno">  163</span>        ret = 0;</div>
-<div class="line"><span class="lineno">  164</span>    }</div>
-<div class="line"><span class="lineno">  165</span> </div>
-<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">  167</span>}</div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordtype">int</span> ret = <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629aec0aa1bb79e2e55ed6d8c165e0611eca">ENOMEM</a>;</div>
+<div class="line"><span class="lineno">  124</span> </div>
+<div class="line"><span class="lineno">  125</span>    <a class="code hl_define" href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a>({</div>
+<div class="line"><span class="lineno">  126</span>        <span class="keywordtype">size_t</span> stack_size_min = <a class="code hl_define" href="atmega328p_8h.html#abe71c47403848ec837ab4694267a0b54">ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH</a>()</div>
+<div class="line"><span class="lineno">  127</span>                              + <a class="code hl_define" href="atmega328p_8h.html#a5e12069408a95bac028981da8630aed1">ZRTOS_ARCH__GET_FN_CALL_STACK_LENGTH</a>()</div>
+<div class="line"><span class="lineno">  128</span>        ;</div>
+<div class="line"><span class="lineno">  129</span>        <a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a> *mem = (<a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a>*)<a class="code hl_function" href="#ab1dbb5f44799a4b2814f03d4271a1f20">zrtos_task_pthread__get_heap</a>();</div>
+<div class="line"><span class="lineno">  130</span>        <span class="keywordtype">size_t</span> stacksize_min = <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a>)</div>
+<div class="line"><span class="lineno">  131</span>                             + <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a>)</div>
+<div class="line"><span class="lineno">  132</span>                             + (</div>
+<div class="line"><span class="lineno">  133</span>            attr</div>
+<div class="line"><span class="lineno">  134</span>            ? <a class="code hl_define" href="zrtos__types_8h.html#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a>(</div>
+<div class="line"><span class="lineno">  135</span>                stack_size_min</div>
+<div class="line"><span class="lineno">  136</span>                ,attr-&gt;<a class="code hl_variable" href="structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6">stacksize</a></div>
+<div class="line"><span class="lineno">  137</span>            )</div>
+<div class="line"><span class="lineno">  138</span>            : stack_size_min</div>
+<div class="line"><span class="lineno">  139</span>        );</div>
+<div class="line"><span class="lineno">  140</span>        <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *task = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(</div>
+<div class="line"><span class="lineno">  141</span>            mem</div>
+<div class="line"><span class="lineno">  142</span>            ,stacksize_min</div>
+<div class="line"><span class="lineno">  143</span>        );</div>
+<div class="line"><span class="lineno">  144</span>        <span class="keywordflow">if</span>(task){</div>
+<div class="line"><span class="lineno">  145</span>            <span class="keywordtype">void</span> *mem_chunk_last_address = <a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(</div>
+<div class="line"><span class="lineno">  146</span>                 task</div>
+<div class="line"><span class="lineno">  147</span>                ,stacksize_min-1</div>
+<div class="line"><span class="lineno">  148</span>            );</div>
+<div class="line"><span class="lineno">  149</span>            <a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *args = <a class="code hl_function" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(</div>
+<div class="line"><span class="lineno">  150</span>                 task</div>
+<div class="line"><span class="lineno">  151</span>                ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>)</div>
+<div class="line"><span class="lineno">  152</span>            );</div>
+<div class="line"><span class="lineno">  153</span>            args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#a5bbe7970bfba5910eb204feb6dbb3c8f">callback</a> = start_routine;</div>
+<div class="line"><span class="lineno">  154</span>            args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#a2a1961a07e7468c7f91ecc4721242950">args</a> = arg;</div>
+<div class="line"><span class="lineno">  155</span>            <a class="code hl_function" href="zrtos__task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a>(</div>
+<div class="line"><span class="lineno">  156</span>                 task</div>
+<div class="line"><span class="lineno">  157</span>                ,(<a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>*)mem_chunk_last_address</div>
+<div class="line"><span class="lineno">  158</span>                ,<a class="code hl_function" href="#ace168cf0d23cd4b085a2da31b881c750">zrtos_task_pthread__trampoline_cb</a></div>
+<div class="line"><span class="lineno">  159</span>                ,args</div>
+<div class="line"><span class="lineno">  160</span>            );</div>
+<div class="line"><span class="lineno">  161</span>            <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035">zrtos_task_scheduler__add_task</a>(task);</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>            thread-&gt;<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a> = task;</div>
+<div class="line"><span class="lineno">  164</span>            ret = 0;</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span>    });</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  169</span>}</div>
 <div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00018">atmega328p.h:18</a></div></div>
 <div class="ttc" id="astruct__zrtos__malloc__t_html"><div class="ttname"><a href="struct__zrtos__malloc__t.html">_zrtos_malloc_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00017">zrtos_malloc.h:17</a></div></div>
 <div class="ttc" id="astruct__zrtos__task__t_html"><div class="ttname"><a href="struct__zrtos__task__t.html">_zrtos_task_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00035">zrtos_task.h:35</a></div></div>
@@ -415,12 +419,13 @@ Variables</h2></td></tr>
 <div class="ttc" id="astructzrtos__task__pthread____trampoline__cb__args__t_html_a5bbe7970bfba5910eb204feb6dbb3c8f"><div class="ttname"><a href="structzrtos__task__pthread____trampoline__cb__args__t.html#a5bbe7970bfba5910eb204feb6dbb3c8f">zrtos_task_pthread__trampoline_cb_args_t::callback</a></div><div class="ttdeci">void *(* callback)(void *args)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00037">zrtos_task_pthread.h:37</a></div></div>
 <div class="ttc" id="azrtos__error_8h_html_a8033c616a948b43efc809ee3233d7629aec0aa1bb79e2e55ed6d8c165e0611eca"><div class="ttname"><a href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629aec0aa1bb79e2e55ed6d8c165e0611eca">ENOMEM</a></div><div class="ttdeci">@ ENOMEM</div><div class="ttdoc">Out of memory.</div><div class="ttdef"><b>Definition</b> <a href="zrtos__error_8h_source.html#l00034">zrtos_error.h:33</a></div></div>
 <div class="ttc" id="azrtos__malloc_8h_html_a886b38a033247d17a6681a94b237aab7"><div class="ttname"><a href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a></div><div class="ttdeci">void * zrtos_malloc__malloc(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00134">zrtos_malloc.h:134</a></div></div>
-<div class="ttc" id="azrtos__task_8h_html_a6834fca580b85c21da7be34f815f5f50"><div class="ttname"><a href="zrtos__task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a></div><div class="ttdeci">bool zrtos_task__init_ex(zrtos_task_t *thiz, zrtos_arch_stack_t *heap, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00057">zrtos_task.h:57</a></div></div>
+<div class="ttc" id="azrtos__task_8h_html_a6834fca580b85c21da7be34f815f5f50"><div class="ttname"><a href="zrtos__task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a></div><div class="ttdeci">bool zrtos_task__init_ex(zrtos_task_t *thiz, zrtos_arch_stack_t *heap, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00061">zrtos_task.h:61</a></div></div>
 <div class="ttc" id="azrtos__task_8h_html_ae059dfbd36f892064673fe603633e2d4"><div class="ttname"><a href="zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a></div><div class="ttdeci">struct _zrtos_task_t zrtos_task_t</div></div>
 <div class="ttc" id="azrtos__task__pthread_8h_html_ab1dbb5f44799a4b2814f03d4271a1f20"><div class="ttname"><a href="#ab1dbb5f44799a4b2814f03d4271a1f20">zrtos_task_pthread__get_heap</a></div><div class="ttdeci">void * zrtos_task_pthread__get_heap(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00050">zrtos_task_pthread.h:50</a></div></div>
 <div class="ttc" id="azrtos__task__pthread_8h_html_ace168cf0d23cd4b085a2da31b881c750"><div class="ttname"><a href="#ace168cf0d23cd4b085a2da31b881c750">zrtos_task_pthread__trampoline_cb</a></div><div class="ttdeci">void zrtos_task_pthread__trampoline_cb(void *args)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00100">zrtos_task_pthread.h:100</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ae82b03fcfb70e448c4a0bbd59ef8a035"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035">zrtos_task_scheduler__add_task</a></div><div class="ttdeci">bool zrtos_task_scheduler__add_task(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00032">zrtos_task_scheduler.h:32</a></div></div>
-<div class="ttc" id="azrtos__types_8h_html_a1e8485e5ce88712e64a5a964f507cf8a"><div class="ttname"><a href="zrtos__types_8h.html#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a></div><div class="ttdeci">#define ZRTOS_TYPES__MAX(a, b)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00053">zrtos_types.h:53</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a08a59e34a3796f777c960d9b841bca9e"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00032">zrtos_task_scheduler.h:32</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_ae82b03fcfb70e448c4a0bbd59ef8a035"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035">zrtos_task_scheduler__add_task</a></div><div class="ttdeci">bool zrtos_task_scheduler__add_task(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00068">zrtos_task_scheduler.h:68</a></div></div>
+<div class="ttc" id="azrtos__types_8h_html_a1e8485e5ce88712e64a5a964f507cf8a"><div class="ttname"><a href="zrtos__types_8h.html#a1e8485e5ce88712e64a5a964f507cf8a">ZRTOS_TYPES__MAX</a></div><div class="ttdeci">#define ZRTOS_TYPES__MAX(a, b)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00056">zrtos_types.h:56</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00031">zrtos_types.h:31</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -430,76 +435,79 @@ Here is the call graph for this function:</div>
 <area shape="rect" title=" " alt="" coords="5,219,113,245"/>
 <area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="161,80,308,107"/>
 <area shape="poly" title=" " alt="" coords="70,216,108,176,159,131,189,112,192,117,162,135,112,180,74,220"/>
-<area shape="rect" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="579,123,726,149"/>
-<area shape="poly" title=" " alt="" coords="79,216,115,194,160,175,267,150,376,136,478,131,564,130,564,135,478,136,376,142,268,155,161,180,118,199,81,220"/>
+<area shape="rect" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="579,115,726,141"/>
+<area shape="poly" title=" " alt="" coords="79,216,115,194,160,175,267,149,376,134,478,126,564,124,564,129,478,131,376,139,268,154,162,180,118,199,81,220"/>
 <area shape="rect" href="zrtos__task_8h.html#a6834fca580b85c21da7be34f815f5f50" title=" " alt="" coords="167,189,302,216"/>
 <area shape="poly" title=" " alt="" coords="113,220,151,214,152,219,114,226"/>
 <area shape="rect" href="zrtos__task__pthread_8h.html#ab1dbb5f44799a4b2814f03d4271a1f20" title=" " alt="" coords="168,240,301,283"/>
 <area shape="poly" title=" " alt="" coords="114,238,153,245,152,250,113,244"/>
 <area shape="rect" href="zrtos__task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title=" " alt="" coords="168,307,301,349"/>
 <area shape="poly" title=" " alt="" coords="82,244,162,292,171,297,168,302,159,297,80,248"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035" title=" " alt="" coords="780,445,926,488"/>
-<area shape="poly" title=" " alt="" coords="69,245,104,301,130,333,162,359,236,398,316,428,399,449,482,463,563,471,639,474,765,472,765,477,639,480,563,477,482,469,398,455,315,433,234,403,159,364,126,337,99,304,65,247"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035" title=" " alt="" coords="994,461,1139,504"/>
+<area shape="poly" title=" " alt="" coords="70,244,105,300,131,332,162,359,232,407,292,436,357,452,441,456,654,456,827,461,978,472,978,477,827,467,654,461,441,461,356,457,291,441,230,411,159,363,127,335,101,303,65,247"/>
 <area shape="rect" href="zrtos__malloc_8h.html#a92ada475abfd239fff5f30f68f5ca3cb" title=" " alt="" coords="365,5,520,48"/>
 <area shape="poly" title=" " alt="" coords="278,77,358,51,360,56,280,82"/>
 <area shape="rect" href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="371,72,514,115"/>
 <area shape="poly" title=" " alt="" coords="309,91,355,91,355,96,309,96"/>
-<area shape="poly" title=" " alt="" coords="505,46,530,58,620,111,617,116,527,62,502,51"/>
+<area shape="poly" title=" " alt="" coords="503,46,529,58,616,104,614,109,527,62,501,51"/>
 <area shape="rect" href="zrtos__task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6" title=" " alt="" coords="386,189,499,216"/>
 <area shape="poly" title=" " alt="" coords="302,200,370,200,370,205,302,205"/>
-<area shape="rect" href="zrtos__clist_8h.html#ab31fe788595eec286d76a972ddad6b88" title=" " alt="" coords="596,224,709,251"/>
-<area shape="poly" title=" " alt="" coords="500,209,581,223,580,228,499,215"/>
-<area shape="rect" href="zrtos__clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a" title=" " alt="" coords="579,173,726,200"/>
-<area shape="poly" title=" " alt="" coords="499,196,563,191,564,196,499,201"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73" title=" " alt="" coords="366,349,518,392"/>
-<area shape="poly" title=" " alt="" coords="302,339,352,349,350,355,301,344"/>
-<area shape="rect" href="zrtos__task_8h.html#a347af015cd8a024798feccbe5fbf1a39" title=" " alt="" coords="368,248,517,275"/>
-<area shape="poly" title=" " alt="" coords="297,304,355,284,378,277,379,282,357,289,299,309"/>
-<area shape="rect" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537" title=" " alt="" coords="356,299,528,325"/>
-<area shape="poly" title=" " alt="" coords="301,320,340,317,341,322,301,326"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="576,300,729,343"/>
-<area shape="poly" title=" " alt="" coords="518,350,561,340,562,345,519,355"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="777,293,929,336"/>
-<area shape="poly" title=" " alt="" coords="729,316,761,315,761,320,729,321"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1412,137,1564,180"/>
-<area shape="poly" title=" " alt="" coords="872,291,916,249,945,229,976,212,1029,193,1085,178,1199,159,1306,151,1396,151,1396,156,1306,156,1199,164,1086,183,1031,198,978,217,948,233,919,254,875,295"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8" title=" " alt="" coords="990,227,1142,269"/>
-<area shape="poly" title=" " alt="" coords="922,290,980,272,982,277,924,295"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="990,293,1142,336"/>
-<area shape="poly" title=" " alt="" coords="930,312,974,312,974,317,930,317"/>
-<area shape="rect" href="zrtos__task_8h.html#a007a26e54f32157b572c217857c9c190" title=" " alt="" coords="977,360,1155,387"/>
-<area shape="poly" title=" " alt="" coords="930,333,1001,353,1000,358,929,338"/>
-<area shape="rect" href="zrtos__task_8h.html#a886f2c097ab9830c80f6d0137c7bd526" title=" " alt="" coords="994,411,1139,437"/>
-<area shape="poly" title=" " alt="" coords="882,334,926,366,978,396,994,403,991,408,976,401,923,370,879,338"/>
-<area shape="rect" href="zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9" title=" " alt="" coords="997,125,1135,152"/>
-<area shape="poly" title=" " alt="" coords="865,291,909,231,940,198,975,168,998,156,1000,161,979,173,944,202,914,235,870,295"/>
-<area shape="rect" href="zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="1627,453,1769,480"/>
-<area shape="poly" title=" " alt="" coords="1562,178,1578,190,1604,219,1626,251,1660,320,1682,386,1694,438,1689,439,1677,387,1655,322,1621,254,1599,222,1574,194,1559,183"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac7d131d142e0c3285a06b925e1d39fe1" title=" " alt="" coords="1205,297,1350,340"/>
-<area shape="poly" title=" " alt="" coords="1143,313,1189,314,1189,320,1143,319"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac07ede37ac8af0c3d77478c3362c5098" title=" " alt="" coords="1205,228,1350,271"/>
-<area shape="poly" title=" " alt="" coords="1137,290,1191,273,1193,278,1138,295"/>
-<area shape="rect" href="zrtos__clist_8h.html#aa49bd33d74422329134a7793b1284e80" title=" " alt="" coords="1417,305,1559,332"/>
-<area shape="poly" title=" " alt="" coords="1350,316,1401,316,1401,321,1350,321"/>
-<area shape="rect" href="zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610" title=" " alt="" coords="1413,356,1563,383"/>
-<area shape="poly" title=" " alt="" coords="1351,334,1415,349,1414,354,1350,339"/>
-<area shape="rect" href="zrtos__task_8h.html#a57ff82492e8cb164a83c79630497defd" title=" " alt="" coords="1400,407,1576,433"/>
-<area shape="poly" title=" " alt="" coords="1333,338,1353,350,1377,372,1387,382,1401,392,1413,398,1410,403,1398,397,1383,386,1373,376,1350,354,1330,343"/>
-<area shape="poly" title=" " alt="" coords="1322,225,1399,190,1412,184,1414,189,1401,194,1324,230"/>
-<area shape="rect" href="zrtos__task_8h.html#a7fd17250fc30dec72d0aac60dd9c2802" title=" " alt="" coords="1413,204,1563,231"/>
-<area shape="poly" title=" " alt="" coords="1350,236,1397,228,1398,234,1351,241"/>
-<area shape="rect" href="zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e" title=" " alt="" coords="1400,255,1576,281"/>
-<area shape="poly" title=" " alt="" coords="1351,253,1385,256,1384,262,1350,258"/>
-<area shape="rect" href="zrtos__clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c" title=" " alt="" coords="1203,364,1352,407"/>
-<area shape="poly" title=" " alt="" coords="1156,376,1188,378,1188,383,1156,381"/>
-<area shape="rect" href="zrtos__clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="1216,461,1339,488"/>
-<area shape="poly" title=" " alt="" coords="926,465,1200,471,1200,476,926,471"/>
-<area shape="poly" title=" " alt="" coords="1340,471,1611,466,1611,471,1340,476"/>
-<area shape="rect" href="zrtos__clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="1400,508,1576,535"/>
-<area shape="poly" title=" " alt="" coords="1340,486,1410,501,1409,507,1339,491"/>
-<area shape="poly" title=" " alt="" coords="1541,505,1629,482,1630,487,1543,510"/>
-<area shape="rect" href="zrtos__clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="1624,504,1772,547"/>
-<area shape="poly" title=" " alt="" coords="1577,520,1609,521,1609,526,1577,526"/>
+<area shape="rect" href="zrtos__clist_8h.html#ab31fe788595eec286d76a972ddad6b88" title=" " alt="" coords="596,216,709,243"/>
+<area shape="poly" title=" " alt="" coords="499,207,581,218,580,223,499,212"/>
+<area shape="rect" href="zrtos__clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a" title=" " alt="" coords="579,165,726,192"/>
+<area shape="poly" title=" " alt="" coords="499,194,563,186,564,191,499,199"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73" title=" " alt="" coords="366,353,518,396"/>
+<area shape="poly" title=" " alt="" coords="302,340,352,352,350,357,301,345"/>
+<area shape="rect" href="zrtos__task_8h.html#a347af015cd8a024798feccbe5fbf1a39" title=" " alt="" coords="368,252,517,279"/>
+<area shape="poly" title=" " alt="" coords="300,305,355,288,378,281,380,286,357,293,301,310"/>
+<area shape="rect" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537" title=" " alt="" coords="356,303,528,329"/>
+<area shape="poly" title=" " alt="" coords="301,322,340,319,341,325,301,327"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="576,292,729,335"/>
+<area shape="poly" title=" " alt="" coords="517,350,562,337,563,342,519,355"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="777,280,929,323"/>
+<area shape="poly" title=" " alt="" coords="729,306,761,304,761,309,729,311"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1421,401,1573,444"/>
+<area shape="poly" title=" " alt="" coords="883,321,926,350,978,375,1033,391,1090,403,1206,419,1314,425,1405,425,1405,430,1314,430,1205,424,1089,408,1032,396,976,380,923,355,880,325"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a5b02c899435ad102d853bf4fec32cc7b" title=" " alt="" coords="990,221,1142,264"/>
+<area shape="poly" title=" " alt="" coords="929,278,974,265,976,270,930,283"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="990,155,1142,197"/>
+<area shape="poly" title=" " alt="" coords="877,277,922,242,976,207,985,202,988,207,978,212,925,246,881,281"/>
+<area shape="rect" href="zrtos__task_8h.html#a007a26e54f32157b572c217857c9c190" title=" " alt="" coords="977,288,1155,315"/>
+<area shape="poly" title=" " alt="" coords="930,299,961,299,961,304,930,304"/>
+<area shape="rect" href="zrtos__task_8h.html#a886f2c097ab9830c80f6d0137c7bd526" title=" " alt="" coords="994,339,1139,365"/>
+<area shape="poly" title=" " alt="" coords="930,317,993,332,992,337,929,322"/>
+<area shape="rect" href="zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9" title=" " alt="" coords="997,104,1135,131"/>
+<area shape="poly" title=" " alt="" coords="863,278,906,210,938,173,975,141,984,135,987,140,979,145,941,176,910,214,867,281"/>
+<area shape="rect" href="zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="1636,487,1778,513"/>
+<area shape="poly" title=" " alt="" coords="1558,442,1655,478,1653,483,1556,447"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac7d131d142e0c3285a06b925e1d39fe1" title=" " alt="" coords="1209,147,1355,189"/>
+<area shape="poly" title=" " alt="" coords="1143,171,1193,169,1194,174,1143,176"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac07ede37ac8af0c3d77478c3362c5098" title=" " alt="" coords="1209,239,1355,281"/>
+<area shape="poly" title=" " alt="" coords="1127,195,1156,207,1214,230,1212,235,1154,212,1125,200"/>
+<area shape="rect" href="zrtos__clist_8h.html#aa49bd33d74422329134a7793b1284e80" title=" " alt="" coords="1426,196,1568,223"/>
+<area shape="poly" title=" " alt="" coords="1356,179,1411,190,1410,195,1355,185"/>
+<area shape="rect" href="zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610" title=" " alt="" coords="1422,95,1572,121"/>
+<area shape="poly" title=" " alt="" coords="1354,145,1431,123,1433,129,1356,150"/>
+<area shape="rect" href="zrtos__task_8h.html#a57ff82492e8cb164a83c79630497defd" title=" " alt="" coords="1409,145,1585,172"/>
+<area shape="poly" title=" " alt="" coords="1355,162,1393,160,1394,166,1355,168"/>
+<area shape="poly" title=" " alt="" coords="1342,280,1362,291,1465,388,1461,392,1359,295,1339,284"/>
+<area shape="rect" href="zrtos__task_8h.html#a7fd17250fc30dec72d0aac60dd9c2802" title=" " alt="" coords="1422,247,1572,273"/>
+<area shape="poly" title=" " alt="" coords="1355,257,1406,257,1406,263,1355,263"/>
+<area shape="rect" href="zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e" title=" " alt="" coords="1409,297,1585,324"/>
+<area shape="poly" title=" " alt="" coords="1356,275,1423,291,1422,296,1355,280"/>
+<area shape="rect" href="zrtos__clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c" title=" " alt="" coords="1208,305,1356,348"/>
+<area shape="poly" title=" " alt="" coords="1156,309,1192,313,1192,319,1155,314"/>
+<area shape="poly" title=" " alt="" coords="1139,470,1405,433,1406,438,1140,475"/>
+<area shape="rect" href="zrtos__clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="1220,541,1344,568"/>
+<area shape="poly" title=" " alt="" coords="1132,502,1204,527,1224,533,1222,538,1202,532,1130,507"/>
+<area shape="rect" href="zrtos__task_8h.html#a34aca34833e1ab06a5e0d26fda080286" title=" " alt="" coords="1203,491,1361,517"/>
+<area shape="poly" title=" " alt="" coords="1139,487,1188,492,1188,497,1139,492"/>
+<area shape="poly" title=" " alt="" coords="1344,538,1408,527,1518,513,1620,503,1621,509,1519,518,1409,532,1345,544"/>
+<area shape="rect" href="zrtos__clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="1409,541,1585,568"/>
+<area shape="poly" title=" " alt="" coords="1344,552,1393,552,1393,557,1344,557"/>
+<area shape="poly" title=" " alt="" coords="1550,538,1638,515,1639,520,1552,543"/>
+<area shape="rect" href="zrtos__clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="1633,537,1781,580"/>
+<area shape="poly" title=" " alt="" coords="1586,554,1618,554,1618,560,1586,559"/>
 </map>
 </div>
 
@@ -524,10 +532,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00169">169</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  169</span>                                             {</div>
-<div class="line"><span class="lineno">  170</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__types_8h.html#aee2e623cc539d0a4a2d1ba5c4750f7c6">zrtos_types__ptr_cmp</a>(t1.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>,t1.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>);</div>
-<div class="line"><span class="lineno">  171</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00171">171</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>                                             {</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__types_8h.html#aee2e623cc539d0a4a2d1ba5c4750f7c6">zrtos_types__ptr_cmp</a>(t1.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>,t1.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>);</div>
+<div class="line"><span class="lineno">  173</span>}</div>
 <div class="ttc" id="azrtos__types_8h_html_aee2e623cc539d0a4a2d1ba5c4750f7c6"><div class="ttname"><a href="zrtos__types_8h.html#aee2e623cc539d0a4a2d1ba5c4750f7c6">zrtos_types__ptr_cmp</a></div><div class="ttdeci">int zrtos_types__ptr_cmp(void *a, void *b)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00027">zrtos_types.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -561,88 +569,110 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00173">173</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  173</span>                                                 {</div>
-<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">int</span> ret;</div>
-<div class="line"><span class="lineno">  175</span> </div>
-<div class="line"><span class="lineno">  176</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
-<div class="line"><span class="lineno">  177</span>        <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *task = thread.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>;</div>
-<div class="line"><span class="lineno">  178</span>        ret = <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4e376a13d0c1557d399f473218915625">ESRCH</a>;</div>
-<div class="line"><span class="lineno">  179</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b">zrtos_task_scheduler__has_task</a>(task)){</div>
-<div class="line"><span class="lineno">  180</span>            <span class="keywordflow">if</span>(!<a class="code hl_function" href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a>(task)){</div>
-<div class="line"><span class="lineno">  181</span>                <a class="code hl_function" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73">_zrtos_task_scheduler__on_tick_ex</a>();</div>
-<div class="line"><span class="lineno">  182</span>                <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">  183</span>            }</div>
-<div class="line"><span class="lineno">  184</span>            <a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *args = </div>
-<div class="line"><span class="lineno">  185</span>                (<a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *)(task+1)</div>
-<div class="line"><span class="lineno">  186</span>            ;</div>
-<div class="line"><span class="lineno">  187</span>            *retval = args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#ac894d85e5ccfe9cfd7c6a7dcf79736eb">return_value</a>;</div>
-<div class="line"><span class="lineno">  188</span>            <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(task);</div>
-<div class="line"><span class="lineno">  189</span>            thread.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a> = 0;</div>
-<div class="line"><span class="lineno">  190</span>            ret = 0;</div>
-<div class="line"><span class="lineno">  191</span>        }</div>
-<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  193</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00191">191</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>                                                 {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordtype">int</span> ret = <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4bde0de54c0b708a605ed5095959c14e">EAGAIN</a>;</div>
+<div class="line"><span class="lineno">  193</span>    <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *task = thread.<a class="code hl_variable" href="structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f">task</a>;</div>
 <div class="line"><span class="lineno">  194</span> </div>
-<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">  196</span>}</div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><span class="lineno">  196</span>        <a class="code hl_define" href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a>({</div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b">zrtos_task_scheduler__has_task</a>(task)){</div>
+<div class="line"><span class="lineno">  198</span>                <span class="keywordflow">if</span>(<a class="code hl_function" href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a>(task)){</div>
+<div class="line"><span class="lineno">  199</span>                    <a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *args = </div>
+<div class="line"><span class="lineno">  200</span>                        (<a class="code hl_struct" href="structzrtos__task__pthread____trampoline__cb__args__t.html">zrtos_task_pthread__trampoline_cb_args_t</a> *)(task+1)</div>
+<div class="line"><span class="lineno">  201</span>                    ;</div>
+<div class="line"><span class="lineno">  202</span>                    <span class="keywordflow">if</span>(retval){</div>
+<div class="line"><span class="lineno">  203</span>                        *retval = args-&gt;<a class="code hl_variable" href="structzrtos__task__pthread____trampoline__cb__args__t.html#ac894d85e5ccfe9cfd7c6a7dcf79736eb">return_value</a>;</div>
+<div class="line"><span class="lineno">  204</span>                    }</div>
+<div class="line"><span class="lineno">  205</span>                    <a class="code hl_function" href="#a138580b425fd21586b4efd4ab448d593">zrtos_task_pthread__free</a>(task);</div>
+<div class="line"><span class="lineno">  206</span>                    ret = 0;</div>
+<div class="line"><span class="lineno">  207</span>                }</div>
+<div class="line"><span class="lineno">  208</span>            }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  209</span>                ret = <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4e376a13d0c1557d399f473218915625">ESRCH</a>;</div>
+<div class="line"><span class="lineno">  210</span>            }</div>
+<div class="line"><span class="lineno">  211</span>        });</div>
+<div class="line"><span class="lineno">  212</span>        </div>
+<div class="line"><span class="lineno">  213</span>        <span class="keywordflow">if</span>(ret == <a class="code hl_enumvalue" href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4bde0de54c0b708a605ed5095959c14e">EAGAIN</a>){</div>
+<div class="line"><span class="lineno">  214</span>            <a class="code hl_function" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73">_zrtos_task_scheduler__on_tick_ex</a>();</div>
+<div class="line"><span class="lineno">  215</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  216</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  217</span>        }</div>
+<div class="line"><span class="lineno">  218</span>    }</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  221</span>}</div>
 <div class="ttc" id="astructzrtos__task__pthread____trampoline__cb__args__t_html_ac894d85e5ccfe9cfd7c6a7dcf79736eb"><div class="ttname"><a href="structzrtos__task__pthread____trampoline__cb__args__t.html#ac894d85e5ccfe9cfd7c6a7dcf79736eb">zrtos_task_pthread__trampoline_cb_args_t::return_value</a></div><div class="ttdeci">void * return_value</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00039">zrtos_task_pthread.h:39</a></div></div>
+<div class="ttc" id="azrtos__error_8h_html_a8033c616a948b43efc809ee3233d7629a4bde0de54c0b708a605ed5095959c14e"><div class="ttname"><a href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4bde0de54c0b708a605ed5095959c14e">EAGAIN</a></div><div class="ttdeci">@ EAGAIN</div><div class="ttdoc">Try again.</div><div class="ttdef"><b>Definition</b> <a href="zrtos__error_8h_source.html#l00033">zrtos_error.h:32</a></div></div>
 <div class="ttc" id="azrtos__error_8h_html_a8033c616a948b43efc809ee3233d7629a4e376a13d0c1557d399f473218915625"><div class="ttname"><a href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a4e376a13d0c1557d399f473218915625">ESRCH</a></div><div class="ttdeci">@ ESRCH</div><div class="ttdoc">No such process.</div><div class="ttdef"><b>Definition</b> <a href="zrtos__error_8h_source.html#l00025">zrtos_error.h:24</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_a299a13aa87e9bdb9fb23fb30cc5b1c32"><div class="ttname"><a href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a></div><div class="ttdeci">void zrtos_malloc__free(void *ptr)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00199">zrtos_malloc.h:199</a></div></div>
-<div class="ttc" id="azrtos__task_8h_html_a56a77b15f26b91d18a628aa1881b20df"><div class="ttname"><a href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a></div><div class="ttdeci">bool zrtos_task__is_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00097">zrtos_task.h:97</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_a8f15f366e9ce3328539ee562fd4c1e73"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73">_zrtos_task_scheduler__on_tick_ex</a></div><div class="ttdeci">static void _zrtos_task_scheduler__on_tick_ex(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00123">zrtos_task_scheduler.h:123</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ae5915a01574e06572708120eaea79d3b"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b">zrtos_task_scheduler__has_task</a></div><div class="ttdeci">bool zrtos_task_scheduler__has_task(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00040">zrtos_task_scheduler.h:40</a></div></div>
+<div class="ttc" id="azrtos__task_8h_html_a56a77b15f26b91d18a628aa1881b20df"><div class="ttname"><a href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a></div><div class="ttdeci">bool zrtos_task__is_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00101">zrtos_task.h:101</a></div></div>
+<div class="ttc" id="azrtos__task__pthread_8h_html_a138580b425fd21586b4efd4ab448d593"><div class="ttname"><a href="#a138580b425fd21586b4efd4ab448d593">zrtos_task_pthread__free</a></div><div class="ttdeci">static void zrtos_task_pthread__free(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00175">zrtos_task_pthread.h:175</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a8f15f366e9ce3328539ee562fd4c1e73"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73">_zrtos_task_scheduler__on_tick_ex</a></div><div class="ttdeci">static void _zrtos_task_scheduler__on_tick_ex(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00173">zrtos_task_scheduler.h:173</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_ae5915a01574e06572708120eaea79d3b"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b">zrtos_task_scheduler__has_task</a></div><div class="ttdeci">bool zrtos_task_scheduler__has_task(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00091">zrtos_task_scheduler.h:91</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__task__pthread_8h_a28a15bba47cab57cbc9f5dac9af99c8b_cgraph.png" border="0" usemap="#azrtos__task__pthread_8h_a28a15bba47cab57cbc9f5dac9af99c8b_cgraph" alt=""/></div>
 <map name="azrtos__task__pthread_8h_a28a15bba47cab57cbc9f5dac9af99c8b_cgraph" id="azrtos__task__pthread_8h_a28a15bba47cab57cbc9f5dac9af99c8b_cgraph">
-<area shape="rect" title=" " alt="" coords="5,244,97,271"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73" title=" " alt="" coords="145,152,297,195"/>
-<area shape="poly" title=" " alt="" coords="75,241,143,204,154,199,156,204,146,209,78,246"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32" title=" " alt="" coords="156,219,286,245"/>
-<area shape="poly" title=" " alt="" coords="97,248,140,241,141,247,98,253"/>
-<area shape="rect" href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df" title=" " alt="" coords="150,269,292,296"/>
-<area shape="poly" title=" " alt="" coords="98,261,136,267,135,273,97,267"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b" title=" " alt="" coords="549,312,694,355"/>
-<area shape="poly" title=" " alt="" coords="73,269,106,289,145,305,248,327,352,337,450,340,533,337,534,343,450,345,352,343,247,332,144,311,103,294,70,273"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="345,152,497,195"/>
-<area shape="poly" title=" " alt="" coords="297,171,330,171,330,176,297,176"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="545,152,698,195"/>
-<area shape="poly" title=" " alt="" coords="498,171,530,171,530,176,498,176"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1180,275,1332,317"/>
-<area shape="poly" title=" " alt="" coords="665,193,704,210,746,225,1164,282,1164,287,745,231,702,215,663,198"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8" title=" " alt="" coords="759,107,911,149"/>
-<area shape="poly" title=" " alt="" coords="698,154,743,145,744,150,699,160"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="759,173,911,216"/>
-<area shape="poly" title=" " alt="" coords="699,178,744,183,743,188,698,184"/>
-<area shape="rect" href="zrtos__task_8h.html#a007a26e54f32157b572c217857c9c190" title=" " alt="" coords="746,299,924,325"/>
-<area shape="poly" title=" " alt="" coords="648,193,693,231,747,270,785,290,783,294,744,274,689,235,645,197"/>
-<area shape="rect" href="zrtos__task_8h.html#a886f2c097ab9830c80f6d0137c7bd526" title=" " alt="" coords="762,5,908,32"/>
-<area shape="poly" title=" " alt="" coords="636,150,680,96,710,67,744,42,755,36,757,41,747,46,714,71,684,99,640,153"/>
-<area shape="rect" href="zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9" title=" " alt="" coords="766,56,904,83"/>
-<area shape="poly" title=" " alt="" coords="650,149,694,120,745,92,761,86,763,90,747,97,696,125,653,154"/>
-<area shape="rect" href="zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="1392,283,1534,309"/>
-<area shape="poly" title=" " alt="" coords="1333,293,1376,293,1376,299,1333,299"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac7d131d142e0c3285a06b925e1d39fe1" title=" " alt="" coords="974,85,1119,128"/>
-<area shape="poly" title=" " alt="" coords="894,170,923,159,983,132,986,137,925,164,896,175"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#ac07ede37ac8af0c3d77478c3362c5098" title=" " alt="" coords="974,173,1119,216"/>
-<area shape="poly" title=" " alt="" coords="912,192,958,192,958,197,912,197"/>
-<area shape="rect" href="zrtos__clist_8h.html#aa49bd33d74422329134a7793b1284e80" title=" " alt="" coords="1185,21,1327,48"/>
-<area shape="poly" title=" " alt="" coords="1100,82,1167,57,1190,50,1191,55,1169,63,1102,87"/>
-<area shape="rect" href="zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610" title=" " alt="" coords="1181,72,1331,99"/>
-<area shape="poly" title=" " alt="" coords="1119,97,1165,92,1166,97,1120,102"/>
-<area shape="rect" href="zrtos__task_8h.html#a57ff82492e8cb164a83c79630497defd" title=" " alt="" coords="1168,123,1344,149"/>
-<area shape="poly" title=" " alt="" coords="1120,114,1153,119,1153,124,1119,119"/>
-<area shape="poly" title=" " alt="" coords="1089,214,1122,232,1170,260,1181,266,1179,271,1167,265,1119,237,1086,219"/>
-<area shape="rect" href="zrtos__task_8h.html#a7fd17250fc30dec72d0aac60dd9c2802" title=" " alt="" coords="1181,173,1331,200"/>
-<area shape="poly" title=" " alt="" coords="1119,189,1165,187,1165,193,1119,195"/>
-<area shape="rect" href="zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e" title=" " alt="" coords="1168,224,1344,251"/>
-<area shape="poly" title=" " alt="" coords="1120,207,1172,218,1171,223,1119,212"/>
-<area shape="rect" href="zrtos__clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c" title=" " alt="" coords="972,291,1120,333"/>
-<area shape="poly" title=" " alt="" coords="925,309,957,309,957,315,925,315"/>
-<area shape="poly" title=" " alt="" coords="695,341,782,350,888,357,1004,355,1120,343,1157,333,1193,321,1195,326,1159,339,1121,348,1005,361,888,362,781,356,694,347"/>
-<area shape="poly" title=" " alt="" coords="694,323,730,320,730,325,695,329"/>
+<area shape="rect" title=" " alt="" coords="5,320,97,347"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73" title=" " alt="" coords="145,215,297,257"/>
+<area shape="poly" title=" " alt="" coords="75,317,168,263,170,268,78,322"/>
+<area shape="rect" href="zrtos__task_8h.html#a56a77b15f26b91d18a628aa1881b20df" title=" " alt="" coords="150,345,292,372"/>
+<area shape="poly" title=" " alt="" coords="98,337,136,343,135,349,97,343"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a138580b425fd21586b4efd4ab448d593" title=" " alt="" coords="155,404,287,447"/>
+<area shape="poly" title=" " alt="" coords="79,345,168,394,165,398,76,350"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b" title=" " alt="" coords="551,287,697,329"/>
+<area shape="poly" title=" " alt="" coords="97,329,536,309,536,315,97,334"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title=" " alt="" coords="345,200,497,243"/>
+<area shape="poly" title=" " alt="" coords="297,228,329,225,330,231,298,233"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="548,173,700,216"/>
+<area shape="poly" title=" " alt="" coords="497,209,532,204,533,209,498,214"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1185,275,1337,317"/>
+<area shape="poly" title=" " alt="" coords="701,214,751,225,1170,282,1169,287,750,231,700,219"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a5b02c899435ad102d853bf4fec32cc7b" title=" " alt="" coords="764,5,916,48"/>
+<area shape="poly" title=" " alt="" coords="638,171,684,116,715,85,749,58,757,53,759,58,752,62,718,89,688,119,642,175"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="764,173,916,216"/>
+<area shape="poly" title=" " alt="" coords="700,192,748,192,748,197,700,197"/>
+<area shape="rect" href="zrtos__task_8h.html#a007a26e54f32157b572c217857c9c190" title=" " alt="" coords="751,295,929,321"/>
+<area shape="poly" title=" " alt="" coords="659,214,752,270,788,286,785,291,749,274,656,219"/>
+<area shape="rect" href="zrtos__task_8h.html#a886f2c097ab9830c80f6d0137c7bd526" title=" " alt="" coords="767,72,913,99"/>
+<area shape="poly" title=" " alt="" coords="651,171,696,139,749,108,765,102,767,107,752,113,698,143,654,175"/>
+<area shape="rect" href="zrtos__task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9" title=" " alt="" coords="771,123,909,149"/>
+<area shape="poly" title=" " alt="" coords="700,171,773,151,774,156,701,177"/>
+<area shape="rect" href="zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="1397,283,1539,309"/>
+<area shape="poly" title=" " alt="" coords="1338,293,1381,293,1381,299,1338,299"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac7d131d142e0c3285a06b925e1d39fe1" title=" " alt="" coords="979,85,1124,128"/>
+<area shape="poly" title=" " alt="" coords="899,170,928,159,988,132,991,137,930,164,901,175"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ac07ede37ac8af0c3d77478c3362c5098" title=" " alt="" coords="979,173,1124,216"/>
+<area shape="poly" title=" " alt="" coords="917,192,963,192,963,197,917,197"/>
+<area shape="rect" href="zrtos__clist_8h.html#aa49bd33d74422329134a7793b1284e80" title=" " alt="" coords="1190,21,1332,48"/>
+<area shape="poly" title=" " alt="" coords="1105,82,1172,57,1195,50,1196,55,1174,63,1107,87"/>
+<area shape="rect" href="zrtos__task_8h.html#a6b16ee9fd24740ab1123dff4eb364610" title=" " alt="" coords="1186,72,1336,99"/>
+<area shape="poly" title=" " alt="" coords="1124,97,1170,92,1171,97,1125,102"/>
+<area shape="rect" href="zrtos__task_8h.html#a57ff82492e8cb164a83c79630497defd" title=" " alt="" coords="1173,123,1349,149"/>
+<area shape="poly" title=" " alt="" coords="1125,114,1158,119,1158,124,1124,119"/>
+<area shape="poly" title=" " alt="" coords="1094,214,1127,232,1175,260,1186,266,1184,271,1172,265,1124,237,1091,219"/>
+<area shape="rect" href="zrtos__task_8h.html#a7fd17250fc30dec72d0aac60dd9c2802" title=" " alt="" coords="1186,173,1336,200"/>
+<area shape="poly" title=" " alt="" coords="1124,189,1170,187,1170,193,1124,195"/>
+<area shape="rect" href="zrtos__task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e" title=" " alt="" coords="1173,224,1349,251"/>
+<area shape="poly" title=" " alt="" coords="1125,207,1177,218,1176,223,1124,212"/>
+<area shape="rect" href="zrtos__clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c" title=" " alt="" coords="977,291,1125,333"/>
+<area shape="poly" title=" " alt="" coords="930,307,962,308,962,313,930,312"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32" title=" " alt="" coords="356,479,486,505"/>
+<area shape="poly" title=" " alt="" coords="288,445,365,471,363,476,286,450"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab5fb4268c9b1d31bf964f6757baba24a" title=" " alt="" coords="349,345,494,388"/>
+<area shape="poly" title=" " alt="" coords="287,403,333,390,334,395,288,409"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27" title=" " alt="" coords="349,412,494,455"/>
+<area shape="poly" title=" " alt="" coords="288,425,333,427,333,432,287,431"/>
+<area shape="rect" href="zrtos__task_8h.html#a96c19c6a70a0f448bbdc65a637bdeafb" title=" " alt="" coords="545,353,703,380"/>
+<area shape="poly" title=" " alt="" coords="494,364,530,364,530,369,494,369"/>
+<area shape="rect" href="zrtos__clist_8h.html#a383b927f3eeb7f78f5ae9929138a635f" title=" " alt="" coords="559,463,689,489"/>
+<area shape="poly" title=" " alt="" coords="495,446,545,457,543,462,494,451"/>
+<area shape="rect" href="zrtos__task_8h.html#a34aca34833e1ab06a5e0d26fda080286" title=" " alt="" coords="545,412,703,439"/>
+<area shape="poly" title=" " alt="" coords="494,428,530,426,530,432,494,433"/>
+<area shape="rect" href="zrtos__clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="766,455,914,497"/>
+<area shape="poly" title=" " alt="" coords="689,473,750,473,750,479,689,479"/>
+<area shape="poly" title=" " alt="" coords="698,322,784,337,891,350,1008,354,1067,350,1125,343,1162,333,1198,321,1200,326,1164,339,1126,348,1068,356,1009,359,891,355,784,343,697,327"/>
+<area shape="poly" title=" " alt="" coords="697,305,735,305,735,311,697,311"/>
 </map>
 </div>
 
@@ -736,10 +766,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00198">198</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>                                              {</div>
-<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
-<div class="line"><span class="lineno">  200</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00223">223</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>                                              {</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
+<div class="line"><span class="lineno">  225</span>}</div>
 <div class="ttc" id="azrtos__task__mutex_8h_html_a123e93e1f2eac3befe64178fba0bbcbd"><div class="ttname"><a href="zrtos__task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a></div><div class="ttdeci">int zrtos_task_mutex__lock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__mutex_8h_source.html#l00044">zrtos_task_mutex.h:44</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -764,7 +794,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="1022,144,1174,187"/>
 <area shape="poly" title=" " alt="" coords="975,131,1008,140,1006,145,974,137"/>
 <area shape="poly" title=" " alt="" coords="1173,141,1222,129,1334,109,1447,92,1641,70,1641,75,1448,98,1335,114,1223,135,1174,146"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8" title=" " alt="" coords="1235,144,1388,187"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a5b02c899435ad102d853bf4fec32cc7b" title=" " alt="" coords="1235,144,1388,187"/>
 <area shape="poly" title=" " alt="" coords="1175,163,1220,163,1220,168,1175,168"/>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="1235,211,1388,253"/>
 <area shape="poly" title=" " alt="" coords="1169,185,1227,203,1225,208,1168,190"/>
@@ -811,10 +841,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00202">202</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  202</span>                                                 {</div>
-<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a91915cc06d940c619ab4c0a96c63afb5">zrtos_task_mutex__try_lock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
-<div class="line"><span class="lineno">  204</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00227">227</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                                 {</div>
+<div class="line"><span class="lineno">  228</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a91915cc06d940c619ab4c0a96c63afb5">zrtos_task_mutex__try_lock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
+<div class="line"><span class="lineno">  229</span>}</div>
 <div class="ttc" id="azrtos__task__mutex_8h_html_a91915cc06d940c619ab4c0a96c63afb5"><div class="ttname"><a href="zrtos__task__mutex_8h.html#a91915cc06d940c619ab4c0a96c63afb5">zrtos_task_mutex__try_lock</a></div><div class="ttdeci">int zrtos_task_mutex__try_lock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__mutex_8h_source.html#l00033">zrtos_task_mutex.h:33</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -844,10 +874,10 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00206">206</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  206</span>                                                {</div>
-<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
-<div class="line"><span class="lineno">  208</span>}</div>
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00231">231</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                {</div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a>(&amp;mutex-&gt;<a class="code hl_variable" href="structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95">mutex</a>);</div>
+<div class="line"><span class="lineno">  233</span>}</div>
 <div class="ttc" id="azrtos__task__mutex_8h_html_a7f508255a1ffb900d7b0da403be75e0d"><div class="ttname"><a href="zrtos__task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a></div><div class="ttdeci">int zrtos_task_mutex__unlock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__mutex_8h_source.html#l00062">zrtos_task_mutex.h:62</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -928,7 +958,7 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   98</span>}</div>
 <div class="ttc" id="astructpthread__t_html"><div class="ttname"><a href="structpthread__t.html">pthread_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00025">zrtos_task_pthread.h:25</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_a6034c1a6c6888d05559bb9e2cfa7619b"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b">_zrtos_task_scheduler__get_active_task</a></div><div class="ttdeci">zrtos_task_t * _zrtos_task_scheduler__get_active_task(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00057">zrtos_task_scheduler.h:57</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a6034c1a6c6888d05559bb9e2cfa7619b"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b">_zrtos_task_scheduler__get_active_task</a></div><div class="ttdeci">zrtos_task_t * _zrtos_task_scheduler__get_active_task(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00061">zrtos_task_scheduler.h:61</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -939,6 +969,83 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="97,24,129,24,129,29,97,29"/>
 <area shape="rect" href="zrtos__clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="345,13,487,40"/>
 <area shape="poly" title=" " alt="" coords="297,24,330,24,330,29,297,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a138580b425fd21586b4efd4ab448d593" name="a138580b425fd21586b4efd4ab448d593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a138580b425fd21586b4efd4ab448d593">&#9670;&#160;</a></span>zrtos_task_pthread__free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zrtos_task_pthread__free </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="zrtos__task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a> *</td>          <td class="paramname"><span class="paramname"><em>task</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="zrtos__task__pthread_8h_source.html#l00175">175</a> of file <a class="el" href="zrtos__task__pthread_8h_source.html">zrtos_task_pthread.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                                                        {</div>
+<div class="line"><span class="lineno">  176</span>    <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *child;</div>
+<div class="line"><span class="lineno">  177</span> </div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">while</span>((child = <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ab5fb4268c9b1d31bf964f6757baba24a">zrtos_task_scheduler__get_any_child</a>(task))){</div>
+<div class="line"><span class="lineno">  179</span>        <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *last = child;</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">while</span>((child = <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ab5fb4268c9b1d31bf964f6757baba24a">zrtos_task_scheduler__get_any_child</a>(child))){</div>
+<div class="line"><span class="lineno">  181</span>            last = child;</div>
+<div class="line"><span class="lineno">  182</span>        }</div>
+<div class="line"><span class="lineno">  183</span>        <a class="code hl_function" href="zrtos__task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27">zrtos_task_scheduler__remove_task</a>(last);</div>
+<div class="line"><span class="lineno">  184</span>        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(last);</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_function" href="zrtos__task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27">zrtos_task_scheduler__remove_task</a>(task);</div>
+<div class="line"><span class="lineno">  188</span>    <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(task);</div>
+<div class="line"><span class="lineno">  189</span>}</div>
+<div class="ttc" id="azrtos__malloc_8h_html_a299a13aa87e9bdb9fb23fb30cc5b1c32"><div class="ttname"><a href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a></div><div class="ttdeci">void zrtos_malloc__free(void *ptr)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00199">zrtos_malloc.h:199</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a8eaf55f184537faea5e8e9641ed4ad27"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27">zrtos_task_scheduler__remove_task</a></div><div class="ttdeci">bool zrtos_task_scheduler__remove_task(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00080">zrtos_task_scheduler.h:80</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_ab5fb4268c9b1d31bf964f6757baba24a"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ab5fb4268c9b1d31bf964f6757baba24a">zrtos_task_scheduler__get_any_child</a></div><div class="ttdeci">static zrtos_task_t * zrtos_task_scheduler__get_any_child(zrtos_task_t *task)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00226">zrtos_task_scheduler.h:226</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="zrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_cgraph.png" border="0" usemap="#azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_cgraph" alt=""/></div>
+<map name="azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_cgraph" id="azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,138,99"/>
+<area shape="rect" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32" title=" " alt="" coords="193,5,324,32"/>
+<area shape="poly" title=" " alt="" coords="137,54,198,35,200,40,139,59"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#ab5fb4268c9b1d31bf964f6757baba24a" title=" " alt="" coords="186,56,331,99"/>
+<area shape="poly" title=" " alt="" coords="138,75,170,75,170,80,138,80"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27" title=" " alt="" coords="186,123,331,165"/>
+<area shape="poly" title=" " alt="" coords="134,97,183,114,182,120,132,102"/>
+<area shape="rect" href="zrtos__task_8h.html#a96c19c6a70a0f448bbdc65a637bdeafb" title=" " alt="" coords="379,64,536,91"/>
+<area shape="poly" title=" " alt="" coords="331,75,363,75,363,80,331,80"/>
+<area shape="rect" href="zrtos__clist_8h.html#a383b927f3eeb7f78f5ae9929138a635f" title=" " alt="" coords="393,123,523,149"/>
+<area shape="poly" title=" " alt="" coords="331,138,377,137,377,142,331,144"/>
+<area shape="rect" href="zrtos__task_8h.html#a34aca34833e1ab06a5e0d26fda080286" title=" " alt="" coords="379,173,536,200"/>
+<area shape="poly" title=" " alt="" coords="332,157,378,167,377,172,331,162"/>
+<area shape="rect" href="zrtos__clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="584,115,733,157"/>
+<area shape="poly" title=" " alt="" coords="523,133,569,133,569,139,523,139"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="zrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_icgraph.png" border="0" usemap="#azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_icgraph" alt=""/></div>
+<map name="azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_icgraph" id="azrtos__task__pthread_8h_a138580b425fd21586b4efd4ab448d593_icgraph">
+<area shape="rect" title=" " alt="" coords="145,5,277,48"/>
+<area shape="rect" href="zrtos__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,13,97,40"/>
+<area shape="poly" title=" " alt="" coords="129,29,97,29,97,24,129,24"/>
 </map>
 </div>
 
@@ -1031,7 +1138,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  113</span>        <span class="comment">//should not return</span></div>
 <div class="line"><span class="lineno">  114</span>    }</div>
 <div class="line"><span class="lineno">  115</span>}</div>
-<div class="ttc" id="azrtos__task_8h_html_a347af015cd8a024798feccbe5fbf1a39"><div class="ttname"><a href="zrtos__task_8h.html#a347af015cd8a024798feccbe5fbf1a39">zrtos_task__set_done</a></div><div class="ttdeci">void zrtos_task__set_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00109">zrtos_task.h:109</a></div></div>
+<div class="ttc" id="azrtos__task_8h_html_a347af015cd8a024798feccbe5fbf1a39"><div class="ttname"><a href="zrtos__task_8h.html#a347af015cd8a024798feccbe5fbf1a39">zrtos_task__set_done</a></div><div class="ttdeci">void zrtos_task__set_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task_8h_source.html#l00113">zrtos_task.h:113</a></div></div>
 <div class="ttc" id="azrtos__types_8h_html_a1824c547b5262eed148a0bfac2912537"><div class="ttname"><a href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a></div><div class="ttdeci">void * zrtos_types__ptr_subtract(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00035">zrtos_types.h:35</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -1051,7 +1158,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="559,208,591,208,591,213,559,213"/>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="1241,5,1393,48"/>
 <area shape="poly" title=" " alt="" coords="695,187,739,131,770,102,805,79,858,57,913,40,970,28,1026,20,1134,14,1225,16,1225,21,1134,19,1027,25,971,33,915,45,860,62,808,84,773,106,743,135,699,190"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8" title=" " alt="" coords="820,160,972,203"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a5b02c899435ad102d853bf4fec32cc7b" title=" " alt="" coords="820,160,972,203"/>
 <area shape="poly" title=" " alt="" coords="759,198,804,191,805,197,760,203"/>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="820,93,972,136"/>
 <area shape="poly" title=" " alt="" coords="723,187,806,146,819,140,821,145,808,150,725,191"/>

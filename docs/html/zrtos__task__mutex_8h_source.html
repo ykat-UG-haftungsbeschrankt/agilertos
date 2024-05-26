@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
   </td>
  </tr>
@@ -122,7 +122,7 @@ $(function(){initNavTree('zrtos__task__mutex_8h_source.html',''); initResizable(
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="zrtos__task__mutex_8h.html#ab0828dd36732a1fb5d381a5ef993473f">   20</a></span>}<a class="code hl_typedef" href="zrtos__task__mutex_8h.html#ab0828dd36732a1fb5d381a5ef993473f">zrtos_task_mutex_t</a>;</div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="zrtos__task__mutex_8h.html#ac4a448af15f1493064c0a24c3126880d">   22</a></span><span class="preprocessor">#define ZRTOS_TASK_MUTEX__INIT() {.is_locked = 0};</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="zrtos__task__mutex_8h.html#aac94811f231ae0a8e84630118bf9806d">   22</a></span><span class="preprocessor">#define ZRTOS_TASK_MUTEX__INITIALIZER {.is_locked = 0}</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="zrtos__task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">   24</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="zrtos__task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">zrtos_task_mutex__init</a>(<a class="code hl_struct" href="struct__zrtos__task__mutex__t.html">zrtos_task_mutex_t</a> *thiz){</div>
@@ -195,9 +195,9 @@ $(function(){initNavTree('zrtos__task__mutex_8h_source.html',''); initResizable(
 <div class="ttc" id="azrtos__task__mutex_8h_html_a91915cc06d940c619ab4c0a96c63afb5"><div class="ttname"><a href="zrtos__task__mutex_8h.html#a91915cc06d940c619ab4c0a96c63afb5">zrtos_task_mutex__try_lock</a></div><div class="ttdeci">int zrtos_task_mutex__try_lock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00033">zrtos_task_mutex.h:33</a></div></div>
 <div class="ttc" id="azrtos__task__mutex_8h_html_a9ca9e0fff335226d7b106769025fed59"><div class="ttname"><a href="zrtos__task__mutex_8h.html#a9ca9e0fff335226d7b106769025fed59">zrtos_task_mutex__deinit</a></div><div class="ttdeci">void zrtos_task_mutex__deinit(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00029">zrtos_task_mutex.h:29</a></div></div>
 <div class="ttc" id="azrtos__task__mutex_8h_html_ab0828dd36732a1fb5d381a5ef993473f"><div class="ttname"><a href="zrtos__task__mutex_8h.html#ab0828dd36732a1fb5d381a5ef993473f">zrtos_task_mutex_t</a></div><div class="ttdeci">struct _zrtos_task_mutex_t zrtos_task_mutex_t</div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_a08a59e34a3796f777c960d9b841bca9e"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00161">zrtos_task_scheduler.h:161</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ae070a60f724cc39d3a4118b57004e82f"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f">zrtos_task_scheduler__delay_ms</a></div><div class="ttdeci">void zrtos_task_scheduler__delay_ms(zrtos_task_tick_t ms)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00127">zrtos_task_scheduler.h:127</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_afd43ca9ce1575630f912763ccc88cc6d"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#afd43ca9ce1575630f912763ccc88cc6d">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked, code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00175">zrtos_task_scheduler.h:175</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a08a59e34a3796f777c960d9b841bca9e"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00032">zrtos_task_scheduler.h:32</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_ae070a60f724cc39d3a4118b57004e82f"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f">zrtos_task_scheduler__delay_ms</a></div><div class="ttdeci">void zrtos_task_scheduler__delay_ms(zrtos_task_tick_t ms)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00177">zrtos_task_scheduler.h:177</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_afd43ca9ce1575630f912763ccc88cc6d"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#afd43ca9ce1575630f912763ccc88cc6d">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked, code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00046">zrtos_task_scheduler.h:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

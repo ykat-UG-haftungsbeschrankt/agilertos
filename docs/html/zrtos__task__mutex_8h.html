@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.2.0</span>
+   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
   </td>
  </tr>
@@ -162,8 +162,8 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac4a448af15f1493064c0a24c3126880d" id="r_ac4a448af15f1493064c0a24c3126880d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a448af15f1493064c0a24c3126880d">ZRTOS_TASK_MUTEX__INIT</a>()&#160;&#160;&#160;{.is_locked = 0};</td></tr>
-<tr class="separator:ac4a448af15f1493064c0a24c3126880d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac94811f231ae0a8e84630118bf9806d" id="r_aac94811f231ae0a8e84630118bf9806d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac94811f231ae0a8e84630118bf9806d">ZRTOS_TASK_MUTEX__INITIALIZER</a>&#160;&#160;&#160;{.is_locked = 0}</td></tr>
+<tr class="separator:aac94811f231ae0a8e84630118bf9806d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -184,17 +184,14 @@ Functions</h2></td></tr>
 <tr class="separator:a7f508255a1ffb900d7b0da403be75e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ac4a448af15f1493064c0a24c3126880d" name="ac4a448af15f1493064c0a24c3126880d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4a448af15f1493064c0a24c3126880d">&#9670;&#160;</a></span>ZRTOS_TASK_MUTEX__INIT</h2>
+<a id="aac94811f231ae0a8e84630118bf9806d" name="aac94811f231ae0a8e84630118bf9806d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac94811f231ae0a8e84630118bf9806d">&#9670;&#160;</a></span>ZRTOS_TASK_MUTEX__INITIALIZER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ZRTOS_TASK_MUTEX__INIT</td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td>&#160;&#160;&#160;{.is_locked = 0};</td>
+          <td class="memname">#define ZRTOS_TASK_MUTEX__INITIALIZER&#160;&#160;&#160;{.is_locked = 0}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -318,8 +315,8 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   58</span>    }<span class="keywordflow">while</span>(ret &amp;&amp; !is_locked &amp;&amp; limit--);</div>
 <div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   60</span>}</div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ae070a60f724cc39d3a4118b57004e82f"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f">zrtos_task_scheduler__delay_ms</a></div><div class="ttdeci">void zrtos_task_scheduler__delay_ms(zrtos_task_tick_t ms)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00127">zrtos_task_scheduler.h:127</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_afd43ca9ce1575630f912763ccc88cc6d"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#afd43ca9ce1575630f912763ccc88cc6d">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked, code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00175">zrtos_task_scheduler.h:175</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_ae070a60f724cc39d3a4118b57004e82f"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f">zrtos_task_scheduler__delay_ms</a></div><div class="ttdeci">void zrtos_task_scheduler__delay_ms(zrtos_task_tick_t ms)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00177">zrtos_task_scheduler.h:177</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_afd43ca9ce1575630f912763ccc88cc6d"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#afd43ca9ce1575630f912763ccc88cc6d">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB_EX(is_locked, code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00046">zrtos_task_scheduler.h:46</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -341,7 +338,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title=" " alt="" coords="836,144,988,187"/>
 <area shape="poly" title=" " alt="" coords="789,131,821,140,820,145,787,137"/>
 <area shape="poly" title=" " alt="" coords="987,141,1035,129,1148,109,1261,92,1454,70,1455,75,1262,98,1149,114,1037,135,988,146"/>
-<area shape="rect" href="zrtos__task__scheduler_8h.html#a78c48181e079e6c27843db8cef1fd9d8" title=" " alt="" coords="1049,144,1201,187"/>
+<area shape="rect" href="zrtos__task__scheduler_8h.html#a5b02c899435ad102d853bf4fec32cc7b" title=" " alt="" coords="1049,144,1201,187"/>
 <area shape="poly" title=" " alt="" coords="989,163,1033,163,1033,168,989,168"/>
 <area shape="rect" href="zrtos__task__scheduler_8h.html#ae6c8c745afe69110cc85c56bff00689a" title=" " alt="" coords="1049,211,1201,253"/>
 <area shape="poly" title=" " alt="" coords="983,185,1041,203,1039,208,981,190"/>
@@ -410,7 +407,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">   42</span>}</div>
 <div class="ttc" id="azrtos__error_8h_html_a8033c616a948b43efc809ee3233d7629a9e2f813a51a5763a892f4b1783778e4b"><div class="ttname"><a href="zrtos__error_8h.html#a8033c616a948b43efc809ee3233d7629a9e2f813a51a5763a892f4b1783778e4b">EBUSY</a></div><div class="ttdeci">@ EBUSY</div><div class="ttdoc">Device or resource busy.</div><div class="ttdef"><b>Definition</b> <a href="zrtos__error_8h_source.html#l00038">zrtos_error.h:37</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_a08a59e34a3796f777c960d9b841bca9e"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00161">zrtos_task_scheduler.h:161</a></div></div>
+<div class="ttc" id="azrtos__task__scheduler_8h_html_a08a59e34a3796f777c960d9b841bca9e"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#a08a59e34a3796f777c960d9b841bca9e">ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB</a></div><div class="ttdeci">#define ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB(code)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00032">zrtos_task_scheduler.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
