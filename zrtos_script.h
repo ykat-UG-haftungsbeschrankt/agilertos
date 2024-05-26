@@ -11,19 +11,26 @@ extern "C" {
 #endif
 
 typedef enum{
-	 ZRTOS_SCRIPT_TYPE__INT8    = 0x00
-	,ZRTOS_SCRIPT_TYPE__INT16   = 0x01
-	,ZRTOS_SCRIPT_TYPE__INT32   = 0x02
-	,ZRTOS_SCRIPT_TYPE__INT64   = 0x03
-	,ZRTOS_SCRIPT_TYPE__UINT8   = 0x04
-	,ZRTOS_SCRIPT_TYPE__UINT16  = 0x05
-	,ZRTOS_SCRIPT_TYPE__UINT32  = 0x06
-	,ZRTOS_SCRIPT_TYPE__UINT64  = 0x07
-	,ZRTOS_SCRIPT_TYPE__FLOAT   = 0x08
-	,ZRTOS_SCRIPT_TYPE__DOUBLE  = 0x09
-	,ZRTOS_SCRIPT_TYPE__PTR     = 0x0A
-	,ZRTOS_SCRIPT_TYPE__BYTES   = 0x0B
-	,ZRTOS_SCRIPT_TYPE__BOOLEAN = 0x0C
+	 ZRTOS_SCRIPT_IO_SOURCE__A_NONE          = 0x00
+	,ZRTOS_SCRIPT_IO_SOURCE__A_STACK         = 0x10
+	,ZRTOS_SCRIPT_IO_SOURCE__A_PC            = 0x20
+	,ZRTOS_SCRIPT_IO_SOURCE__B_NONE          = (0x00 << 2)
+	,ZRTOS_SCRIPT_IO_SOURCE__B_STACK         = (0x10 << 2)
+	,ZRTOS_SCRIPT_IO_SOURCE__B_PC            = (0x20 << 2)
+}zrtos_script_io_source_t;
+
+typedef enum{
+	 ZRTOS_SCRIPT_TYPE__INT8    = 0x01
+	,ZRTOS_SCRIPT_TYPE__INT16   = 0x02
+	,ZRTOS_SCRIPT_TYPE__INT32   = 0x03
+	,ZRTOS_SCRIPT_TYPE__INT64   = 0x04
+	,ZRTOS_SCRIPT_TYPE__UINT8   = 0x05
+	,ZRTOS_SCRIPT_TYPE__UINT16  = 0x06
+	,ZRTOS_SCRIPT_TYPE__UINT32  = 0x07
+	,ZRTOS_SCRIPT_TYPE__UINT64  = 0x08
+	,ZRTOS_SCRIPT_TYPE__FLOAT   = 0x09
+	,ZRTOS_SCRIPT_TYPE__DOUBLE  = 0x0A
+	,ZRTOS_SCRIPT_TYPE__MASK    = 0x0F
 }zrtos_script_type_t;
 
 typedef enum{
@@ -39,6 +46,7 @@ typedef enum{
 	,ZRTOS_SCRIPT_OP__SUB     = 0x50
 	,ZRTOS_SCRIPT_OP__MUL     = 0x60
 	,ZRTOS_SCRIPT_OP__DIV     = 0x70
+	,ZRTOS_SCRIPT_OP__1D      = 0x80
 	,ZRTOS_SCRIPT_OP__2D      = 0x80
 	,ZRTOS_SCRIPT_OP__3D      = 0x90
 
@@ -80,7 +88,8 @@ typedef struct _zrtos_script_value_t{
 		uint8_t  *bytes;
 
 		bool     boolean;
-	}data;
+		zrtos_script_value_jump_t jump:
+	}value;
 	zrtos_script_type_t type;
 }zrtos_script_value_t;
 
@@ -140,139 +149,203 @@ typedef struct _zrtos_script_value_t{
 		break;\
 		case ZRTOS_SCRIPT_TYPE__UINT64:\
 			a.value.boolean = a.value.u64 op b.value.u64;\
-		break;\
-		case ZRTOS_SCRIPT_TYPE__FLOAT:\
-			a.value.boolean = a.value.f4 op b.value.f4;\
-		break;\
-		case ZRTOS_SCRIPT_TYPE__DOUBLE:\
-			a.value.boolean = a.value.f8 op b.value.f8;\
 		break;
 
 bool zrtos_script_runtime__run(zrtos_script_runtime_t *thiz){
+	zrtos_script_value_t *pc;
 	zrtos_script_value_t a;
 	zrtos_script_value_t b;
 	zrtos_script_type_t type = (op & 0x0F);
+	size_t length;
+	uint8_t io;
+	uint8_t op;
+	uint8_t io_src;
+	void *src;
+	void *dest;
+	void *jump_target;
 
-	switch(op & 0xF0){
-		case ZRTOS_SCRIPT_OP__PUSH:
-			switch(op & 0x0F){
-				case ZRTOS_SCRIPT_TYPE__BYTES:
-				break;
-				default:
-				break;
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__POP:
-			switch(op & 0x0F){
-				case ZRTOS_SCRIPT_TYPE__BYTES:
-				break;
-				default:
-				break;
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__LOAD:
-			switch(op & 0x0F){
-				case ZRTOS_SCRIPT_TYPE__BYTES:
-				break;
-				default:
-				break;
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__STORE:
-		
-			switch(op & 0x0F){
-				case ZRTOS_SCRIPT_TYPE__BYTES:
-				break;
-				default:
-				break;
-			}
-		break;
+	while((io = pc->value.u8)){
+		pc = zrtos_types__ptr_add(pc,1);
+		op = zrtos_types__ptr_add(pc,1);
 
-		case ZRTOS_SCRIPT_OP__ADD:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP(+)
+		length = zrtos_script_type__get_length(io & ZRTOS_SCRIPT_TYPE__MASK);
+		//load values
+		io_src = io & ZRTOS_SCRIPT_IO_SOURCE__MASK;
+		dest = &a;
+		while(io_src){
+			if((io & ZRTOS_SCRIPT_IO_SOURCE__A_PC) > 0){
+				src = pc;
+				pc = zrtos_types__ptr_add(pc,length);
+			}else if((io & ZRTOS_SCRIPT_IO_SOURCE__A_STACK) > 0){
+				src = stack;
+				stack = zrtos_types__ptr_add(stack,length);
+			}else{
+				goto L_NEXT;
 			}
-		break;
-		case ZRTOS_SCRIPT_OP__SUB:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP(+)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__MUL:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP(+)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__DIV:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP(+)
-			}
-		break;
+			memcpy(dest,src,length);
+L_NEXT:
+			dest = &b;
+			io_src >>= 2;
+		}
 
-		case ZRTOS_SCRIPT_OP__EQ:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(==)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__LT:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(<)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__GT:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(>)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__LE:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(<=)
-			}
-		break;
-		case ZRTOS_SCRIPT_OP__GE:
-			switch(type){
-				ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(>=)
-			}
-		break;
+		io &= ZRTOS_SCRIPT_TYPE__MASK;
+		//compute values
+		switch(op){
+			case ZRTOS_SCRIPT_OP__PUSH:
+				switch(op){
+					case ZRTOS_SCRIPT_TYPE__BYTES:
+						length
+					break;
+					default:
+						length = ;
+					break;
+				}
+				memcpy(
+					zrtos_script_runtime__get_stack_ptr(thiz->stack)
+					,zrtos_script_runtime__get_programm_ptr(thiz->stack)
+					,zrtos_script_type__get_length(type)
+				);
+			break;
+			case ZRTOS_SCRIPT_OP__POP:
+				memcpy(
+					zrtos_script_runtime__get_stack_ptr(thiz->stack)
+					,zrtos_script_runtime__get_programm_ptr(thiz->stack)
+					,zrtos_script_type__get_length(type)
+				);
+			break;
 
-		case ZRTOS_SCRIPT_OP__AND:
-			a.value.u64 &= b.value.u64;
-		break;
-		case ZRTOS_SCRIPT_OP__OR:
-			a.value.u64 |= b.value.u64;
-		break;
-		case ZRTOS_SCRIPT_OP__XOR:
-			a.value.u64 ^= b.value.u64;
-		break;
-		case ZRTOS_SCRIPT_OP__NEG:
-			a.value.u64 = ~a.value.u64;
-		break;
-		case ZRTOS_SCRIPT_OP__SHL:
-			a.value.u64 <<= b.value.u8;
-		break;
-		case ZRTOS_SCRIPT_OP__SHR:
-			a.value.u64 >>= b.value.u8;
-		break;
-		case ZRTOS_SCRIPT_OP__ROL:
-			a.value.u64 = (a.value.u64 & b.value.u64);
-		break;
-		case ZRTOS_SCRIPT_OP__ROR:
-			a.value.u64 = (a.value.u64 & b.value.u64);
-		break;
-		case ZRTOS_SCRIPT_OP__CLZ:
-			a.value.u64 = __builtin_clzll(a.value.u64);
-		break;
-		case ZRTOS_SCRIPT_OP__CTZ:
-			a.value.u64 = __builtin_ctzll(a.value.u64);
-		break;
-		case ZRTOS_SCRIPT_OP__POPCOUNT:
-			a.value.u64 = __builtin_popcountll(a.value.u64);
-		break;
-		case ZRTOS_SCRIPT_OP__FFS:
-			a.value.u64 = (a.value.u64 & b.value.u64);
-		break;
-		case 0xF0:
-		break;
+			case ZRTOS_SCRIPT_OP__LOAD:
+				switch(op){
+					case ZRTOS_SCRIPT_TYPE__BYTES:
+						length
+					break;
+					default:
+						length = ;
+					break;
+				}
+				memcpy(
+					zrtos_script_runtime__get_stack_ptr(thiz->stack)
+					,zrtos_script_runtime__get_programm_ptr(thiz->stack)
+					,zrtos_script_type__get_length(type)
+				);
+			break;
+			case ZRTOS_SCRIPT_OP__STORE:
+				memcpy(
+					zrtos_script_runtime__get_stack_ptr(thiz->stack)
+					,zrtos_script_runtime__get_programm_ptr(thiz->stack)
+					,zrtos_script_type__get_length(type)
+				);
+			break;
+			
+			case ZRTOS_SCRIPT_OP__ADD:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP(+)
+				}
+			goto L_PUSH_TYPE;
+			case ZRTOS_SCRIPT_OP__SUB:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP(-)
+				}
+			goto L_PUSH_TYPE;
+			case ZRTOS_SCRIPT_OP__MUL:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP(*)
+				}
+			goto L_PUSH_TYPE;
+			case ZRTOS_SCRIPT_OP__DIV:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP(/)
+				}
+			goto L_PUSH_TYPE;
+
+			case ZRTOS_SCRIPT_OP__EQ:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(==)
+				}
+			goto L_PUSH_BOOL;
+			case ZRTOS_SCRIPT_OP__LT:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(<)
+				}
+			goto L_PUSH_BOOL;
+			case ZRTOS_SCRIPT_OP__GT:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(>)
+				}
+			goto L_PUSH_BOOL;
+			case ZRTOS_SCRIPT_OP__LE:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(<=)
+				}
+			goto L_PUSH_BOOL;
+			case ZRTOS_SCRIPT_OP__GE:
+				switch(type){
+					ZRTOS_SCRIPT_RUNTIME_OP_BOOLEAN(>=)
+				}
+			goto L_PUSH_BOOL;
+
+			case ZRTOS_SCRIPT_OP__AND:
+				a.value.u64 &= b.value.u64;
+			goto;
+			case ZRTOS_SCRIPT_OP__OR:
+				a.value.u64 |= b.value.u64;
+			break;
+			case ZRTOS_SCRIPT_OP__XOR:
+				a.value.u64 ^= b.value.u64;
+			break;
+			case ZRTOS_SCRIPT_OP__NEG:
+				a.value.u64 = ~a.value.u64;
+			break;
+			case ZRTOS_SCRIPT_OP__SHL:
+				a.value.u64 <<= b.value.u8;
+			break;
+			case ZRTOS_SCRIPT_OP__SHR:
+				a.value.u64 >>= b.value.u8;
+			break;
+			case ZRTOS_SCRIPT_OP__ROL:
+				a.value.u64 = (a.value.u64 & b.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__ROR:
+				a.value.u64 = (a.value.u64 & b.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__CLZ:
+				a.value.u64 = __builtin_clzll(a.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__CTZ:
+				a.value.u64 = __builtin_ctzll(a.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__POPCOUNT:
+				a.value.u64 = __builtin_popcountll(a.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__FFS:
+				a.value.u64 = (a.value.u64 & b.value.u64);
+			break;
+			case ZRTOS_SCRIPT_OP__CALL:
+				zrtos_script_runtime__stack_push_ptr(
+					thiz
+					,zrtos_script_runtime__pc_pop_ptr(thiz)
+				);
+			case ZRTOS_SCRIPT_OP__RET:
+				zrtos_script_runtime__set_pc(
+					thiz
+					,zrtos_script_runtime__stack_pop_ptr(thiz)
+				);
+			goto L_PUSH_NOTHING;
+		}
+
+		continue;
+		//store values
+L_PUSH_BOOL:
+		a.type = ZRTOS_SCRIPT_TYPE__BOOLEAN;
+L_PUSH_TPYE:
+		length = zrtos_script_type__get_length(a.type);
+		memcpy(
+			 stack
+			,&a
+			,length
+		);
+		stack += length;
+L_PUSH_NOTHING:
 	}
 }
 
