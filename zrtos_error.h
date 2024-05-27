@@ -17,7 +17,7 @@ extern "C" {
 
 
 typedef enum{
-	 EMIN             = INT_MIN ///< Minimum value of errno_t
+	 EMIN             = INT_MIN ///< Minimum value of zrtos_error_t
 	,EFIRST           = 1       ///< Smallest error code
 	,EPERM            = 1       ///< Operation not permitted
 	,ENOENT           = 2       ///< No such file or directory
@@ -141,12 +141,12 @@ typedef enum{
 	,EISNAM           = 120     ///< Is a named type file
 	,EREMOTEIO        = 121     ///< Remote I/O error
 	,ELAST            = 121     ///< Greatest error code
-	,EMAX             = INT_MAX ///< Maximum value of errno_t
-}errno_t;
+	,EMAX             = INT_MAX ///< Maximum value of zrtos_error_t
+}zrtos_error_t;
 
-volatile errno_t errno = 0;
+volatile zrtos_error_t errno = 0;
 
-ZRTOS_ASSERT__STATIC(sizeof(errno_t) == sizeof(int));
+ZRTOS_ASSERT__STATIC(sizeof(zrtos_error_t) == sizeof(int));
 
 
 #ifdef __cplusplus

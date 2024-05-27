@@ -30,7 +30,7 @@ typedef struct _zrtos_vheap_task_t{
 	void                         *return_value;
 	size_t                       stacksize_min;
 	uint16_t                     ticks;
-	errno_t                      errno;
+	zrtos_error_t                      errno;
 }zrtos_vheap_task_t;
 
 bool zrtos_vheap_task__init(
@@ -82,11 +82,11 @@ zrtos_arch_stack_t *zrtos_vheap_task__get_stack_ptr(zrtos_vheap_task_t *thiz){
 	return thiz->stack_ptr;
 }
 
-void zrtos_vheap_task__set_errno(zrtos_vheap_task_t *thiz,errno_t errno){
+void zrtos_vheap_task__set_errno(zrtos_vheap_task_t *thiz,zrtos_error_t errno){
 	thiz->errno = errno;
 }
 
-errno_t zrtos_vheap_task__get_errno(zrtos_vheap_task_t *thiz){
+zrtos_error_t zrtos_vheap_task__get_errno(zrtos_vheap_task_t *thiz){
 	return thiz->errno;
 }
 

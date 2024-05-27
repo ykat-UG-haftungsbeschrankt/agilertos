@@ -37,7 +37,7 @@ typedef struct _zrtos_task_t{
 	struct _zrtos_task_t         *parent;
 	zrtos_arch_stack_t           *stack_ptr;
 	zrtos_task_tick_t            ticks;
-	errno_t                      error_code;
+	zrtos_error_t                      error_code;
 }zrtos_task_t;
 
 bool zrtos_task__init(
@@ -128,11 +128,11 @@ zrtos_arch_stack_t *zrtos_task__get_stack_ptr(zrtos_task_t *thiz){
 	return thiz->stack_ptr;
 }
 
-void zrtos_task__set_errno(zrtos_task_t *thiz,errno_t error_code){
+void zrtos_task__set_errno(zrtos_task_t *thiz,zrtos_error_t error_code){
 	thiz->error_code = error_code;
 }
 
-errno_t zrtos_task__get_errno(zrtos_task_t *thiz){
+zrtos_error_t zrtos_task__get_errno(zrtos_task_t *thiz){
 	return thiz->error_code;
 }
 
