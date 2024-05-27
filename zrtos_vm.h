@@ -22,6 +22,7 @@ typedef enum{
 	,ZRTOS_VM_IO_SOURCE__B_NONE          = (0x00 << 2)
 	,ZRTOS_VM_IO_SOURCE__B_STACK         = (0x10 << 2)
 	,ZRTOS_VM_IO_SOURCE__B_PC            = (0x20 << 2)
+	,ZRTOS_VM_IO_SOURCE__MASK            = 0xF0
 }zrtos_vm_io_source_t;
 
 typedef enum{
