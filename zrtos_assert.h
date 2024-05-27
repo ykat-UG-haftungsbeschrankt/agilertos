@@ -16,11 +16,11 @@ extern "C" {
         (cond)?1:-1                       \
     ]__attribute__((unused));
 
-#define _ZRTOS_ASSERT__STATIC_HELPER(cond,line) \
+#define ZRTOS_ASSERT__STATIC_HELPER(cond,line) \
     ZRTOS_ASSERT__STATIC_EX(cond,line)
 
 #define ZRTOS_ASSERT__STATIC(cond)                 \
-    _ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
+    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
 
 
 #ifdef __cplusplus
