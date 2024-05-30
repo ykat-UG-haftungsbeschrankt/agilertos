@@ -120,6 +120,16 @@ void zrtos_mem__reverse(void *dest,size_t len){
 	}
 }
 
+void zrtos_mem__set(void *dest,uint8_t value,size_t len){
+	while(len--){
+		*dest++ = value;
+	}
+}
+
+void zrtos_mem__zero(void *dest,size_t len){
+	zrtos_mem__set(dest,0,len);
+}
+
 void *zrtos_mem__search(const void *key, const void *base, size_t /* nmemb */ high,
 			  size_t size, int (*compar)(const void *, const void *))
 {
@@ -155,24 +165,27 @@ void zrtos_mem__sort(void  *base,
 	char *a, *b, tmp;
 
 	wnel = width * nel;
-	for (gap = 0; ++gap < nel;)
+	for (gap = 0; ++gap < nel;){
 		gap *= 3;
+	}
 	while ((gap /= 3) != 0) {
 		wgap = width * gap;
 		for (i = wgap; i < wnel; i += width) {
 			for (j = i - wgap; ;j -= wgap) {
 				a = j + (char *)base;
 				b = a + wgap;
-				if ((*comp)(a, b) <= 0)
+				if ((*comp)(a, b) <= 0){
 					break;
+				}
 				k = width;
 				do {
 					tmp = *a;
 					*a++ = *b;
 					*b++ = tmp;
 				} while (--k);
-				if (j < wgap)
+				if (j < wgap){
 					break;
+				}
 			}
 		}
 	}

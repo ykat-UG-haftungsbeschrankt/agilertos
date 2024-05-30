@@ -18,7 +18,7 @@ extern "C" {
 
 typedef struct _zrtos_stack_t{
 	void    *data;
-	size_t  pos;
+	size_t  offset;
 	size_t  length;
 }zrtos_stack_t;
 
@@ -28,9 +28,63 @@ bool zrtos_stack__init(
 	,size_t length
 ){
 	thiz->data = data;
-	thiz->pos = 0;
+	thiz->offset = 0;
 	thiz->length = 0;
 	return true;
+}
+
+static bool _zrtos_stack__cpy(
+	 zrtos_stack_t *thiz
+	,void *dest
+	,void *src
+	,size_t length
+	,size_t offset_plus_length
+){
+	if(offset_plus_length <= thiz->length){
+		zrtos_mem__cpy(
+			 dest
+			,src
+			,length
+		);
+		return true;
+	}
+	return false;
+}
+
+bool zrtos_stack__read(
+	 zrtos_stack_t *thiz
+	,void *data
+	,size_t length
+	,size_t offset
+){
+	return _zrtos_stack__cpy(
+		 thiz
+		,data
+		,zrtos_types__ptr_add(
+			 thiz->data
+			,offset
+		)
+		,length
+		,offset + length
+	);
+}
+
+bool zrtos_stack__write(
+	 zrtos_stack_t *thiz
+	,void *data
+	,size_t length
+	,size_t offset
+){
+	return _zrtos_stack__cpy(
+		 thiz
+		,zrtos_types__ptr_add(
+			 thiz->data
+			,offset
+		)
+		,data
+		,length
+		,offset + length
+	);
 }
 
 bool zrtos_stack__push(
@@ -38,20 +92,21 @@ bool zrtos_stack__push(
 	,void *data
 	,size_t length
 ){
-	size_t pos = thiz->pos;
-	if((thiz->length - pos) >= length){
-		zrtos_mem__cpy(
-			 data
-			,zrtos_types__ptr_add(
-				 thiz->data
-				,pos
-			)
-			,length
-		);
-		thiz->pos += length;
-		return true;
+	size_t offset = thiz->offset;
+	bool ret = _zrtos_stack__cpy(
+		 thiz
+		,zrtos_types__ptr_add(
+			 thiz->data
+			,offset
+		)
+		,data
+		,length
+		,offset + length
+	);
+	if(ret){
+		thiz->offset += length;
 	}
-	return false;
+	return ret;
 }
 
 bool zrtos_stack__pop(
@@ -59,14 +114,14 @@ bool zrtos_stack__pop(
 	,void *data
 	,size_t length
 ){
-	size_t pos = thiz->pos;
-	if(pos >= length){
-		pos = (thiz->pos = pos - length);
+	size_t offset = thiz->offset;
+	if(offset >= length){
+		offset = (thiz->offset = offset - length);
 		zrtos_mem__cpy(
 			 data
 			,zrtos_types__ptr_add(
 				 thiz->data
-				,pos
+				,offset
 			)
 			,length
 		);
@@ -75,16 +130,21 @@ bool zrtos_stack__pop(
 	return false;
 }
 
-bool zrtos_stack__set_pos(
+bool zrtos_stack__set_offset(
 	 zrtos_stack_t *thiz
-	,size_t pos
+	,size_t offset
 ){
-	if(0 <= pos
-	&& pos <= length){
-		thiz->pos = pos;
+	if(offset <= length){
+		thiz->offset = offset;
 		return true;
 	}
 	return false;
+}
+
+size_t zrtos_stack__get_offset(
+	 zrtos_stack_t *thiz
+){
+	return thiz->offset;
 }
 
 
