@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.3.0</span>
+   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -120,13 +120,13 @@ $(function(){initNavTree('zrtos__assert_8h_source.html',''); initResizable(); })
 </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="foldopen" id="foldopen00019" data-start="" data-end="">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="zrtos__assert_8h.html#a136a10b10cef19bbf5ea4238f4dee031">   19</a></span><span class="preprocessor">#define _ZRTOS_ASSERT__STATIC_HELPER(cond,line) \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="zrtos__assert_8h.html#a47cb68b5e1a36b5ff3cbb2d7d0ae1509">   19</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_HELPER(cond,line) \</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_EX(cond,line)</span></div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="foldopen" id="foldopen00022" data-start="" data-end="">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="zrtos__assert_8h.html#a20d599d3e5a1a30c54d24c50af02b571">   22</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond)                 \</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    _ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>

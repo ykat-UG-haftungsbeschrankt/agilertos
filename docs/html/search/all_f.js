@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['task_0',['task',['../structpthread__t.html#a10ef6053c9ab71cfc8fa1c6d9369d46f',1,'pthread_t']]],
-  ['tasks_1',['static tasks',['../index.html#autotoc_md4',1,'']]],
-  ['ticks_2',['ticks',['../struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838',1,'_zrtos_task_t::ticks'],['../struct__zrtos__time__ticks__t.html#a96cb51081f0efade4765189423c60294',1,'_zrtos_time_ticks_t::ticks'],['../struct__zrtos__vheap__task__t.html#acc7140504f21cf5a99ea943a8699160c',1,'_zrtos_vheap_task_t::ticks']]],
-  ['tmp_5fstack_5fptr_3',['tmp_stack_ptr',['../struct__zrtos__task__scheduler__t.html#a40f0dd229430234cb40e9b9716e46975',1,'_zrtos_task_scheduler_t::tmp_stack_ptr'],['../struct__zrtos__vheap__task__scheduler__t.html#ace4f461bf364d7204231d37739cf5913',1,'_zrtos_vheap_task_scheduler_t::tmp_stack_ptr']]],
-  ['todo_20list_4',['Todo List',['../todo.html',1,'']]],
-  ['total_5fsize_5',['total_size',['../struct__zrtos__vheap__t.html#a376351263b0637d0b6f638e4b0317ed2',1,'_zrtos_vheap_t']]],
-  ['ts_6',['ts',['../struct__zrtos__time__t.html#a171ecd08eacf68da0541c954d3537143',1,'_zrtos_time_t']]],
-  ['type_7',['type',['../struct__zrtos__event__t.html#aa686d5419d22d5a52842ad40a91c16b6',1,'_zrtos_event_t::type'],['../struct__zrtos__event__handler__t.html#af7a93fbc731fd08d9e73bacd62a6f591',1,'_zrtos_event_handler_t::type'],['../struct__zrtos__vheap__chunk__t.html#a17a5ef8a15dc39903eb3bc5c3ca5a839',1,'_zrtos_vheap_chunk_t::type'],['../struct__zrtos__vheap__chunk__type__t.html#a3761c8ab8fada3ff1e7970a2575b7c44',1,'_zrtos_vheap_chunk_type_t::type']]]
+  ['scripting_0',['scripting',['../index.html#autotoc_md6',1,'']]],
+  ['size_5ft_1',['size_t',['../zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35',1,'zrtos_types.h']]],
+  ['sleep_5ftask_2',['sleep_task',['../struct__zrtos__task__scheduler__t.html#ae86526d24890c94e38aedba3d481d225',1,'_zrtos_task_scheduler_t']]],
+  ['ssize_5ft_3',['ssize_t',['../zrtos__types_8h.html#aedfaaad6745394d58a2fd37dbdc42742',1,'zrtos_types.h']]],
+  ['stack_4',['stack',['../struct__zrtos__vm__t.html#ac9cf91e748c372fba030e842451e558c',1,'_zrtos_vm_t']]],
+  ['stack_5fptr_5',['stack_ptr',['../struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79',1,'_zrtos_task_t::stack_ptr'],['../struct__zrtos__vheap__task__t.html#af55d49b9520c3bcdb23771f7975ee3d5',1,'_zrtos_vheap_task_t::stack_ptr']]],
+  ['stacksize_6',['stacksize',['../structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6',1,'pthread_attr_t']]],
+  ['stacksize_5fmin_7',['stacksize_min',['../struct__zrtos__vheap__task__t.html#aaae06b6b48cd8ab190302cba766e1ee3',1,'_zrtos_vheap_task_t']]],
+  ['start_5foffset_8',['start_offset',['../struct__zrtos__vheap__task__scheduler__t.html#a5ab9fb5bdd08564f1c0aa5db90c336ab',1,'_zrtos_vheap_task_scheduler_t']]],
+  ['static_20pthread_9',['static pthread',['../index.html#autotoc_md5',1,'']]],
+  ['static_20tasks_10',['static tasks',['../index.html#autotoc_md4',1,'']]],
+  ['supported_20chips_20and_20boards_11',['Supported Chips and Boards',['../index.html#autotoc_md7',1,'']]]
 ];

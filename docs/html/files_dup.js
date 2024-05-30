@@ -18,6 +18,7 @@ var files_dup =
     [ "zrtos_malloc.h", "zrtos__malloc_8h.html", "zrtos__malloc_8h" ],
     [ "zrtos_mem.h", "zrtos__mem_8h.html", "zrtos__mem_8h" ],
     [ "zrtos_progmem.h", "zrtos__progmem_8h.html", "zrtos__progmem_8h" ],
+    [ "zrtos_stack.h", "zrtos__stack_8h.html", "zrtos__stack_8h" ],
     [ "zrtos_str.h", "zrtos__str_8h.html", "zrtos__str_8h" ],
     [ "zrtos_string.h", "zrtos__string_8h.html", "zrtos__string_8h" ],
     [ "zrtos_task.h", "zrtos__task_8h.html", "zrtos__task_8h" ],
@@ -33,5 +34,9 @@ var files_dup =
     [ "zrtos_vheap_task.h", "zrtos__vheap__task_8h.html", "zrtos__vheap__task_8h" ],
     [ "zrtos_vheap_task_pthread.h", "zrtos__vheap__task__pthread_8h.html", "zrtos__vheap__task__pthread_8h" ],
     [ "zrtos_vheap_task_scheduler.h", "zrtos__vheap__task__scheduler_8h.html", "zrtos__vheap__task__scheduler_8h" ],
-    [ "zrtos_vheap_type.h", "zrtos__vheap__type_8h.html", "zrtos__vheap__type_8h" ]
+    [ "zrtos_vheap_type.h", "zrtos__vheap__type_8h.html", "zrtos__vheap__type_8h" ],
+    [ "zrtos_vm.h", "zrtos__vm_8h.html", "zrtos__vm_8h" ],
+    [ "zrtos_vm_function.h", "zrtos__vm__function_8h.html", "zrtos__vm__function_8h" ],
+    [ "zrtos_vm_function_index.h", "zrtos__vm__function__index_8h.html", "zrtos__vm__function__index_8h" ],
+    [ "zrtos_vm_io.h", "zrtos__vm__io_8h.html", "zrtos__vm__io_8h" ]
 ];

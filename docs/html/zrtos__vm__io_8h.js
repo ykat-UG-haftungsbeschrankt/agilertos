@@ -1,0 +1,55 @@
+var zrtos__vm__io_8h =
+[
+    [ "_zrtos_vm_io_source_address_t", "struct__zrtos__vm__io__source__address__t.html", "struct__zrtos__vm__io__source__address__t" ],
+    [ "zrtos_vm_io_address_t", "zrtos__vm__io_8h.html#a2e1e3f025228d28746b8dd3ca91f583b", null ],
+    [ "zrtos_vm_io_address_type_t", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530", [
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__MIN", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a3dba62c9742b1930a2205b0b1d318c2b", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_ABSOLUTE", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a225be0a27552f76de4867aa6b9d89cc7", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_RELATIVE", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530acc65c8f62dfb256766691cf4f56b7208", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_MASK", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a4ad7acebe272f368f14f873b87aef7c7", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__IS_NEGATIVE", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a7d54dec1de36171fdf136dc1450718e0", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_PROGRAM", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530aa2f6a746ae7f14201410fb82cb105262", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_STACK", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a72bcf02c47153039192ae20cac74d0d5", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_MASK", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530aa9ed4285c908dc7f85e882ce85ad84da", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_1", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a5425c7796df60cac690bcfc88dbf97a4", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_2", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530afeb945b0368848d620a74e3cfb197574", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_4", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530ab04b00618abe35f473119ef8cc854b26", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_8", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a3692de25e494c729a1bc35bd6ab7953f", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_MASK", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a377067b2d9f85e44190e6b3e03dc206a", null ],
+      [ "ZRTOS_VM_IO_ADDRESS_TYPE__MAX", "zrtos__vm__io_8h.html#ac9a5dd83860c8fbb054c480c025d5530a46d55edea2ec48739e197f4c960c9ff1", null ]
+    ] ],
+    [ "zrtos_vm_io_source_t", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9ab", [
+      [ "ZRTOS_VM_IO_SOURCE__A_NONE", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abad5d9628ce361c2f603ed830b8ed56f6b", null ],
+      [ "ZRTOS_VM_IO_SOURCE__A_STACK", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9aba064ee4442475bb3612b8545d3d2f13aa", null ],
+      [ "ZRTOS_VM_IO_SOURCE__A_PROGRAM", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abaa7caf1442ae73b83eeb036232ef79af2", null ],
+      [ "ZRTOS_VM_IO_SOURCE__A_ADDRESS", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abad608f7836fb8071528ede55735d55287", null ],
+      [ "ZRTOS_VM_IO_SOURCE__B_NONE", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abaa9d236aa23c7c894c1f31f9400da3b40", null ],
+      [ "ZRTOS_VM_IO_SOURCE__B_STACK", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9aba5f700a67b1915c1ea2e6175cee5bc5a2", null ],
+      [ "ZRTOS_VM_IO_SOURCE__B_PROGRAM", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abab9465a994515725bd7f5bb288b94f351", null ],
+      [ "ZRTOS_VM_IO_SOURCE__B_ADDRESS", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9abaf5784960b38fa8bed1844a9b5af93f43", null ],
+      [ "ZRTOS_VM_IO_SOURCE__MASK", "zrtos__vm__io_8h.html#abe6ee1fbdc94cc65113001d93cb9b9aba875545bd99ab0610d26d9d0469a030c1", null ]
+    ] ],
+    [ "zrtos_vm_io_type_t", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0b", [
+      [ "ZRTOS_VM_IO_TYPE__UINT8", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba276d1d6a3377a6ada2e11381b566bd79", null ],
+      [ "ZRTOS_VM_IO_TYPE__UINT16", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0baac9c798f780ad9a54a0b221da98c2584", null ],
+      [ "ZRTOS_VM_IO_TYPE__UINT32", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba8993dbb99b5080c47c434ec5e49c5753", null ],
+      [ "ZRTOS_VM_IO_TYPE__UINT64", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0bae788bcd4054bc3e1d7719929ef218cdc", null ],
+      [ "ZRTOS_VM_IO_TYPE__INT8", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0babfcb2f257bf697266cc7fe9cc9ecd40d", null ],
+      [ "ZRTOS_VM_IO_TYPE__INT16", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0badb88ac65730ef10db1a2edfdabb50413", null ],
+      [ "ZRTOS_VM_IO_TYPE__INT32", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba6590f1da81602bc2e57ac81ef08df5b3", null ],
+      [ "ZRTOS_VM_IO_TYPE__FLOAT", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba54c6faece0c5f521b5855c19015b72d2", null ],
+      [ "ZRTOS_VM_IO_TYPE__DOUBLE", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0baaff703482d59b817af5e537b7840179b", null ],
+      [ "ZRTOS_VM_IO_TYPE__INT64", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba384e016d465dfc62e4faa092707602cc", null ],
+      [ "ZRTOS_VM_IO_TYPE__MASK", "zrtos__vm__io_8h.html#a945416b95502bd404891a56da2ce4e0ba31aa4310bc4dfbe9adceebd7cdfc74fc", null ]
+    ] ],
+    [ "zrtos_vm_io_address__get_address", "zrtos__vm__io_8h.html#a581782f38288fa9545fdaf0c32101282", null ],
+    [ "zrtos_vm_io_address__get_length", "zrtos__vm__io_8h.html#ae8085a938db3644b1d203c7a97075ee4", null ],
+    [ "zrtos_vm_io_address__is_negative", "zrtos__vm__io_8h.html#aa44d39d9d3471d0c5ac788886e27205c", null ],
+    [ "zrtos_vm_io_address__is_relative", "zrtos__vm__io_8h.html#a16aeb1659f779bbbf1a7b532250f9bc7", null ],
+    [ "zrtos_vm_io_address__is_source_program", "zrtos__vm__io_8h.html#a55cb1947a25262aa6d3eca53b6111f0e", null ],
+    [ "zrtos_vm_io_type__get_length", "zrtos__vm__io_8h.html#a03a5efea6b7115ee25f68b60f64ad142", null ],
+    [ "zrtos_vm_io_type__is_double", "zrtos__vm__io_8h.html#a51fe4f3c24e6ae218f750206da475e2a", null ],
+    [ "zrtos_vm_io_type__is_float", "zrtos__vm__io_8h.html#a1dc761a384d966ef488ff60984295b4c", null ],
+    [ "zrtos_vm_io_type__is_int", "zrtos__vm__io_8h.html#a2b9468363db5a2628edfa9e33acf987e", null ],
+    [ "zrtos_vm_io_type__is_uint", "zrtos__vm__io_8h.html#a4cfb8b4267f40fa8392d7bbeb36581d2", null ]
+];

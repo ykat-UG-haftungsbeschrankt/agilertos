@@ -1,21 +1,18 @@
 <map id="pthread_t" name="pthread_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="373,299,449,325"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__task__t.html" title=" " alt="" coords="258,200,359,227"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,236,400,296,396,300,331,239"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="376,204,385,213,377,223,359,226,358,221,374,218,380,213,372,208"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="36,5,170,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,45,137,86,167,126,194,149,223,169,278,197,276,202,220,173,190,153,163,130,132,89,111,48"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="187,10,197,19,189,27,171,29,170,24,186,22,192,19,184,15"/>
-<area shape="rect" id="Node000004" href="$struct__zrtos__clist__t.html" title=" " alt="" coords="5,99,105,125"/>
-<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="92,47,64,99,59,97,87,45"/>
-<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="66,139,75,154,86,166,116,179,160,190,258,204,257,210,159,195,114,184,83,170,70,157,61,141"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="476,99,536,125"/>
-<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="477,136,419,170,345,202,343,197,416,166,474,132"/>
-<area shape="rect" id="Node000008" href="$struct__zrtos__vheap__chunk__uid__t.html" title=" " alt="" coords="456,192,595,235"/>
-<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="514,140,524,191,519,192,509,141"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="243,99,334,125"/>
-<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="290,141,292,167,304,199,299,201,287,169,284,141"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="358,99,419,125"/>
-<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="368,139,355,154,319,201,315,198,351,150,364,135"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="492,247,428,300,424,296,488,243"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="121,203,197,229"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__task__t.html" title=" " alt="" coords="169,104,269,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,146,169,204,164,201,201,143"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="287,108,296,117,288,127,270,130,269,125,285,122,291,117,283,112"/>
+<area shape="rect" id="Node000003" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="395,5,529,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="426,42,355,74,263,106,262,101,353,70,424,37"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="546,10,555,19,547,27,530,29,529,24,545,22,550,19,543,15"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="65,5,125,32"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="118,41,149,70,197,101,194,106,146,74,115,45"/>
+<area shape="rect" id="Node000007" href="$struct__zrtos__vheap__chunk__uid__t.html" title=" " alt="" coords="5,96,145,139"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="83,47,79,57,76,96,71,95,74,55,78,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="160,5,251,32"/>
+<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="212,47,220,103,215,104,207,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="276,5,370,32"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="300,45,234,106,230,102,296,41"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="105,148,150,200,146,204,100,152"/>
 </map>
