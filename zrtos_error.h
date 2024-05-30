@@ -18,6 +18,8 @@ extern "C" {
 
 typedef enum{
 	 EMIN             = INT_MIN ///< Minimum value of zrtos_error_t
+	,EXIT_SUCCESS     = 0       ///< Successful program execution status
+	,EXIT_FAILURE     = 1       ///< Unsuccessful program execution status
 	,EFIRST           = 1       ///< Smallest error code
 	,EPERM            = 1       ///< Operation not permitted
 	,ENOENT           = 2       ///< No such file or directory

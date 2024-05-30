@@ -19,9 +19,11 @@ typedef enum{
 	 ZRTOS_VM_IO_SOURCE__A_NONE          = 0x00
 	,ZRTOS_VM_IO_SOURCE__A_STACK         = 0x10
 	,ZRTOS_VM_IO_SOURCE__A_PC            = 0x20
+	,ZRTOS_VM_IO_SOURCE__A_ADDRESS       = 0x40
 	,ZRTOS_VM_IO_SOURCE__B_NONE          = (0x00 << 2)
 	,ZRTOS_VM_IO_SOURCE__B_STACK         = (0x10 << 2)
 	,ZRTOS_VM_IO_SOURCE__B_PC            = (0x20 << 2)
+	,ZRTOS_VM_IO_SOURCE__B_ADDRESS       = (0x40 << 2)
 	,ZRTOS_VM_IO_SOURCE__MASK            = 0xF0
 }zrtos_vm_io_source_t;
 
@@ -99,6 +101,29 @@ typedef struct{
 	uint8_t op;
 }zrtos_vm_ioop_t;
 
+typedef enum{
+	 ZRTOS_VM_IO_ADDRESS_TYPE__MIN                   = 0x00
+	,ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_ABSOLUTE = 0x00
+	,ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_RELATIVE = 0x01
+	,ZRTOS_VM_IO_ADDRESS_TYPE__DISPLACEMENT_MASK     = 0x01
+
+	,ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_PROGRAM        = 0x02
+	,ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_STACK          = 0x04
+	,ZRTOS_VM_IO_ADDRESS_TYPE__SOURCE_MASK           = 0x06
+
+	,ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_1              = 0x10
+	,ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_2              = 0x20
+	,ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_4              = 0x30
+	,ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_8              = 0x40
+	,ZRTOS_VM_IO_ADDRESS_TYPE__LENGTH_MASK           = 0x70
+	,ZRTOS_VM_IO_ADDRESS_TYPE__MAX                   = 0xFF
+}zrtos_vm_io_address_type_t;
+
+typedef struct _zrtos_vm_io_source_address_t{
+	size_t                      address;
+	zrtos_vm_io_address_type_t  type;
+}zrtos_vm_io_address_t;
+
 typedef struct _zrtos_vm_t{
 	zrtos_stack_t stack;
 	zrtos_stack_t program;
@@ -123,8 +148,35 @@ typedef struct _zrtos_vm_value_t{
 	
 		size_t   pc;
 	}value;
-	zrtos_vm_io_type_t type;
+	zrtos_vm_io_type_t             type;
+	zrtos_vm_io_address_t          address;
 }zrtos_vm_value_t;
+
+#define ZRTOS_VM_OP_CAST(target,op)\
+		case ZRTOS_VM_IO_TYPE__INT8:\
+			a.value.target = op b.value.s8;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__INT16:\
+			a.value.target = op b.value.s16;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__INT32:\
+			a.value.target = op b.value.s32;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__INT64:\
+			a.value.target = op b.value.s64;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__UINT8:\
+			a.value.target = op b.value.u8;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__UINT16:\
+			a.value.target = op b.value.u16;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__UINT32:\
+			a.value.target = op b.value.u32;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__UINT64:\
+			a.value.target = op b.value.u64;\
+		break;
 
 #define ZRTOS_VM_OP_WITHOUT_FLOAT(op)\
 		case ZRTOS_VM_IO_TYPE__INT8:\
@@ -227,16 +279,16 @@ typedef struct _zrtos_vm_value_t{
 
 
 
-error_t zrtos_vm_runtime__run(zrtos_vm_t *thiz){
+zrtos_error_t zrtos_vm_runtime__run(zrtos_vm_t *thiz){
 	zrtos_stack_t *stack = &thiz->stack;
 	zrtos_stack_t *program = &thiz->program;
-	error_t ret = 0;
+	zrtos_error_t ret = EXIT_SUCCESS;
 	zrtos_vm_value_t a;
 	zrtos_vm_value_t b;
 	zrtos_vm_value_t tmp;
 	zrtos_vm_io_type_t io_type;
 	zrtos_vm_io_source_t io_src;
-	size_t length;
+	size_t length; 
 	zrtos_vm_ioop_t ioop;
 	zrtos_stack_t *src;
 	zrtos_vm_value_t *dest;
@@ -257,6 +309,27 @@ error_t zrtos_vm_runtime__run(zrtos_vm_t *thiz){
 				src = program;
 			}else if((io & ZRTOS_VM_IO_SOURCE__A_STACK) > 0){
 				src = stack;
+			}else if((io & ZRTOS_VM_IO_SOURCE__A_ADDRESS) > 0){
+				if(!zrtos_stack__pop(program,&dest->address.type,1)){
+					goto L_EFAULT;
+				}
+				if(!zrtos_stack__pop(
+					program
+					,&dest->address.address
+					,zrtos_vm_io_address__get_length(&dest->address)
+				)){
+					goto L_EFAULT;
+				}
+				if(!zrtos_stack__read(
+					( zrtos_vm_io_address__is_source_program(&dest->address)
+					? program
+					: stack)
+					,dest
+					,length
+				)){
+					goto L_EFAULT;
+				}
+				goto L_NEXT;
 			}else{
 				goto L_NEXT;
 			}
@@ -272,20 +345,45 @@ L_NEXT:
 		
 		//compute values
 		switch(ioop.op){
-			/*??
 			case ZRTOS_VM_OP__CAST_INT8:
 			case ZRTOS_VM_OP__CAST_INT16:
 			case ZRTOS_VM_OP__CAST_INT32:
 			case ZRTOS_VM_OP__CAST_INT64:
+				if(zrtos_vm_io_type__is_int(a.value.type)){
+				}else if(zrtos_vm_io_type__is_uint(a.value.type)){
+					a.value.s64 = (int64_t)a.value.u64;
+				}else if(zrtos_vm_io_type__is_float(a.value.type)){
+					a.value.s64 = (int64_t)a.value.f32;
+				}else if(zrtos_vm_io_type__is_double(a.value.type)){
+					a.value.s64 = (int64_t)a.value.f64;
+				}
+			goto L_CAST;
 			case ZRTOS_VM_OP__CAST_UINT8:
 			case ZRTOS_VM_OP__CAST_UINT16:
 			case ZRTOS_VM_OP__CAST_UINT32:
 			case ZRTOS_VM_OP__CAST_UINT64:
+				if(zrtos_vm_io_type__is_uint(a.value.type)){
+				}else if(zrtos_vm_io_type__is_int(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.s64;
+				}else if(zrtos_vm_io_type__is_float(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.f32;
+				}else if(zrtos_vm_io_type__is_double(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.f64;
+				}
+			goto L_CAST;
 			case ZRTOS_VM_OP__CAST_FLOAT:
+				if(zrtos_vm_io_type__is_uint(a.value.type)){
+					a.value.f32 = (float)a.value.s64;
+				}else if(zrtos_vm_io_type__is_int(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.s64;
+				}else if(zrtos_vm_io_type__is_float(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.f32;
+				}else if(zrtos_vm_io_type__is_double(a.value.type)){
+					a.value.u64 = (uint64_t)a.value.f64;
+				}
+			goto L_CAST;
 			case ZRTOS_VM_OP__CAST_DOUBLE:
-				a.type = op - ZRTOS_VM_OP__CAST;
-			break;
-			*/
+			goto L_CAST;
 
 			case ZRTOS_VM_OP__PUSH:
 			goto L_PUSH_TPYE;
@@ -391,6 +489,9 @@ L_NEXT:
 			case ZRTOS_VM_OP__RET:
 				pc = a.value.pc;
 			goto L_SET_PROGRAM_POS;
+			case ZRTOS_VM_OP__SET_SP:
+				zrtos_stack__set_pos(stack,a.value.pc);
+			goto L_NEXT;
 			case ZRTOS_VM_OP__NOP:
 			goto L_NOP;
 			case ZRTOS_VM_OP__END:
@@ -399,16 +500,20 @@ L_NEXT:
 
 		goto L_NOP;
 		//store values
+L_CAST:
+		a.type = op - ZRTOS_VM_OP__CAST;
+		goto L_PUSH_TPYE;
 L_PUSH_BOOL:
 		a.type = ZRTOS_VM_IO_TYPE__BOOLEAN;
 L_PUSH_TPYE:
-		if(!zrtos_stack__pop(stack,&a,zrtos_vm_io_type__get_length(a.type))){
+		if(!zrtos_stack__push(stack,&a,zrtos_vm_io_type__get_length(a.type))){
 			goto L_EFAULT;
 		}
 		goto L_PUSH_NOTHING;
 L_SET_PROGRAM_POS:
 		zrtos_stack__set_pos(program,pc);
 L_PUSH_NOTHING:
+L_NEXT:
 L_NOP:
 		continue;
 	}
