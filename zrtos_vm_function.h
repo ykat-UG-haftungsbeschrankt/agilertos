@@ -14,24 +14,32 @@ extern "C" {
 #include "zrtos_types.h"
 #include "zrtos_error.h"
 
- 
+typedef size_t zrtos_vm_function_id_t;
+struct _zrtos_vm_function_t;
+
 typedef zrtos_error_t (*zrtos_vm_function_callback_t)(
-	 struct _zrtos_vm_function_t *thiz
-	,struct _zrtos_vm_function_t         *args
+	 struct _zrtos_vm_t          *vm
+	,struct _zrtos_vm_function_t *fn
 );
 
 typedef struct _zrtos_vm_function_t{
 	zrtos_vm_function_id_t       id;
 	zrtos_vm_function_callback_t callback;
-	void                         *ctx;
+	void                         *context;
 }zrtos_vm_function_t;
 
-#define ZRTOS_VM_FUNCTION(id_,callback_,ctx_)     \
+#define ZRTOS_VM_FUNCTION(id_,callback_,context_) \
     {                                             \
          .id=id_                                  \
         ,.callback=callback_                      \
-        ,.ctx=ctx_                                \
+        ,.context=context_                        \
     }
+
+int zrtos_vm_function__cmp(const void *aa,const void *bb){
+	const zrtos_vm_function_t *a = (const zrtos_vm_function_t *)aa;
+	const zrtos_vm_function_t *b = (const zrtos_vm_function_t *)bb;
+	return a->id - b->id;
+}
 
 zrtos_vm_function_callback_t zrtos_vm_function__get_callback(
 	zrtos_vm_function_t *thiz
@@ -42,7 +50,7 @@ zrtos_vm_function_callback_t zrtos_vm_function__get_callback(
 void *zrtos_vm_function__get_context(
 	zrtos_vm_function_t *thiz
 ){
-	return thiz->ctx;
+	return thiz->context;
 }
 
 

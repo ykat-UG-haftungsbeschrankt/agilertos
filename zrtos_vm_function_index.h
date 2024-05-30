@@ -12,102 +12,45 @@ extern "C" {
 
 
 #include "zrtos_types.h"
-#include "zrtos_progmem.h"
+#include "zrtos_mem.h"
 #include "zrtos_vm_function.h"
 
 //#define ZRTOS_VM_FUNCTION_INDEX__CFG_ENABLE_PROGMEM
 #define ZRTOS_VM_FUNCTION_INDEX(name,...) \
-zrtos_vm_function_t name[] ZRTOS_PROGMEM = { \
+zrtos_vm_function_t name[] = { \
 	 __VA_ARGS__ \
 	,{} \
 };
 
+typedef struct _zrtos_vm_function_index_t{
+	zrtos_vm_function_t *arr;
+	size_t              length;
+}zrtos_vm_function_index_t;
 
+bool zrtos_vm_function_index__init(
+	 zrtos_vm_function_index_t *thiz
+	,zrtos_vm_function_t *arr
+	,size_t length
+){
+	thiz->arr = arr;
+	thiz->length = length;
+	return true;
+}
 
-bool zrtos_vm_function_index__get_function(
+zrtos_vm_function_t *zrtos_vm_function_index__get_function(
 	 zrtos_vm_function_index_t *thiz
 	,zrtos_vm_function_id_t    id
 ){
-	zrtos_event_t event;
-	if(zrtos_event__init(
-		 &event
-		,type
-		,data
-	)){
-#ifndef ZRTOS_VM_FUNCTION_INDEX__CFG_ENABLE_PROGMEM
-		zrtos_vm_function_t *handler = (zrtos_vm_function_t *)thiz;
-		for(;handler->callback;handler++){
-			if(zrtos_event_type__is_any(&handler->type)
-			|| 0 == zrtos_event_type__cmp(&handler->type,&event.type)){
-				if(!handler->callback(handler,&event)){
-					break;
-				}
-			}
-		}
-		return true;
-#else
-		zrtos_vm_function_t *phandler = (zrtos_vm_function_t *)thiz;
-		while(1){
-			zrtos_vm_function_t handler;
-			zrtos_progmem__cpy(&handler,phandler++,sizeof(zrtos_vm_function_t));
-			if(handler.callback){
-				if(zrtos_event_type__is_any(&handler.type)
-				|| 0 == zrtos_event_type__cmp(&handler.type,&event.type)){
-					if(!handler.callback(&handler,&event)){
-						break;
-					}
-				}
-			}else{
-				break;
-			}
-		}
-		return true;
-#endif
-	}
-	return false;
-}
-
-bool zrtos_vm_function__invoke(
-	 zrtos_vm_function_index_t   *thiz
-	,void                        *data
-){
-	zrtos_event_t event;
-	if(zrtos_event__init(
-		 &event
-		,type
-		,data
-	)){
-#ifndef ZRTOS_VM_FUNCTION_INDEX__CFG_ENABLE_PROGMEM
-		zrtos_vm_function_t *handler = (zrtos_vm_function_t *)thiz;
-		for(;handler->callback;handler++){
-			if(zrtos_event_type__is_any(&handler->type)
-			|| 0 == zrtos_event_type__cmp(&handler->type,&event.type)){
-				if(!handler->callback(handler,&event)){
-					break;
-				}
-			}
-		}
-		return true;
-#else
-		zrtos_vm_function_t *phandler = (zrtos_vm_function_t *)thiz;
-		while(1){
-			zrtos_vm_function_t handler;
-			zrtos_progmem__cpy(&handler,phandler++,sizeof(zrtos_vm_function_t));
-			if(handler.callback){
-				if(zrtos_event_type__is_any(&handler.type)
-				|| 0 == zrtos_event_type__cmp(&handler.type,&event.type)){
-					if(!handler.callback(&handler,&event)){
-						break;
-					}
-				}
-			}else{
-				break;
-			}
-		}
-		return true;
-#endif
-	}
-	return false;
+	zrtos_vm_function_t key = {
+		.id = id
+	};
+	return zrtos_mem__search(
+		 &key
+		,thiz->arr
+		,thiz->length
+		,sizeof(zrtos_vm_function_t)
+		,zrtos_vm_function__cmp
+	);
 }
 
 
