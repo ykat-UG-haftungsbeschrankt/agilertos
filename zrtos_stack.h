@@ -51,6 +51,49 @@ static bool _zrtos_stack__cpy(
 	return false;
 }
 
+static bool zrtos_stack__get_offset_ex(
+	 zrtos_stack_t *thiz
+	,size_t offset
+	,bool is_relative
+	,bool is_negative
+	,size_t *new_offset
+){
+	bool ret = true;
+	size_t thiz_offset = thiz->offset;
+	if(is_relative){
+		if(is_negative
+		&& thiz_offset >= offset){
+			*new_offset = thiz_offset - offset;
+		}else if(thiz->length - thiz_offset >= offset){
+			*new_offset = thiz_offset + offset;
+		}else{
+			ret = false;
+		}
+	}else{
+		if(offset <= thiz->length){
+			*new_offset = offset;
+		}else{
+			ret = false;
+		}
+	}
+	return ret;
+}
+
+bool zrtos_stack__set_offset_ex(
+	 zrtos_stack_t *thiz
+	,size_t offset
+	,bool is_relative
+	,bool is_negative
+){
+	return zrtos_stack__get_offset_ex(
+		 thiz
+		,offset
+		,is_relative
+		,is_negative
+		,&thiz->offset
+	);
+}
+
 bool zrtos_stack__read(
 	 zrtos_stack_t *thiz
 	,void *data
@@ -69,6 +112,29 @@ bool zrtos_stack__read(
 	);
 }
 
+bool zrtos_stack__read_ex(
+	 zrtos_stack_t *thiz
+	,void *data
+	,size_t length
+	,size_t offset
+	,bool is_relative
+	,bool is_negative
+){
+	size_t new_offset;
+	return zrtos_stack__get_offset_ex(
+		 thiz
+		,offset
+		,is_relative
+		,is_negative
+		,&new_offset
+	) && zrtos_stack__read(
+		 thiz
+		,data
+		,length
+		,new_offset
+	);
+}
+
 bool zrtos_stack__write(
 	 zrtos_stack_t *thiz
 	,void *data
@@ -84,6 +150,29 @@ bool zrtos_stack__write(
 		,data
 		,length
 		,offset + length
+	);
+}
+
+bool zrtos_stack__write_ex(
+	 zrtos_stack_t *thiz
+	,void *data
+	,size_t length
+	,size_t offset
+	,bool is_relative
+	,bool is_negative
+){
+	size_t new_offset;
+	return zrtos_stack__get_offset_ex(
+		 thiz
+		,offset
+		,is_relative
+		,is_negative
+		,&new_offset
+	) && zrtos_stack__write(
+		 thiz
+		,data
+		,length
+		,new_offset
 	);
 }
 

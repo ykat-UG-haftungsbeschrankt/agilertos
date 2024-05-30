@@ -12,8 +12,10 @@ extern "C" {
 
 
 #include "zrtos_types.h"
+#include "zrtos_error.h"
+
  
-typedef bool (*zrtos_vm_function_callback_t)(
+typedef zrtos_error_t (*zrtos_vm_function_callback_t)(
 	 struct _zrtos_vm_function_t *thiz
 	,struct _zrtos_vm_function_t         *args
 );
