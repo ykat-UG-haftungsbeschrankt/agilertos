@@ -225,7 +225,7 @@ bool zrtos_stack__shift(
 	,size_t length
 ){
 	size_t offset = thiz->offset;
-	if(offset + length < thiz->length){
+	if(offset + length <= thiz->length){
 		thiz->offset += length;
 		zrtos_mem__cpy(
 			 data

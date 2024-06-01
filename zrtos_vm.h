@@ -74,6 +74,8 @@ typedef enum{
 	,ZRTOS_VM_OP__MAX          = 0xFF
 }zrtos_vm_op_t;
 
+ZRTOS_ASSERT__STATIC(sizeof(zrtos_vm_op_t) == sizeof(uint8_t));
+
 typedef struct _zrtos_vm_t{
 	zrtos_stack_t             stack;
 	zrtos_stack_t             program;
@@ -126,8 +128,6 @@ void zrtos_vm_value__normalize(zrtos_vm_value_t *thiz){
 			thiz->value.v_s64 = (int64_t)thiz->value.v_s32;
 		break;
 		case ZRTOS_VM_IO_TYPE__INT64:
-			thiz->value.v_s64 = (int64_t)thiz->value.v_s64;
-		break;
 		case ZRTOS_VM_IO_TYPE__UINT8:
 		case ZRTOS_VM_IO_TYPE__UINT16:
 		case ZRTOS_VM_IO_TYPE__UINT32:
@@ -139,8 +139,8 @@ void zrtos_vm_value__normalize(zrtos_vm_value_t *thiz){
 }
 
 typedef struct{
-	uint8_t io;
-	uint8_t op;
+	uint8_t       io;
+	zrtos_vm_op_t op;
 }__attribute__((packed))zrtos_vm_ioop_t;
 
 zrtos_error_t zrtos_vm__icall(zrtos_vm_t *thiz,zrtos_vm_function_id_t id){
@@ -244,26 +244,31 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 	zrtos_vm_io_source_t io_src;
 	size_t length; 
 	zrtos_vm_ioop_t ioop;
-	zrtos_stack_t *src;
 	zrtos_vm_value_t *dest;
 
 	while(!thiz->is_interrupted
 	   && zrtos_stack__shift(program,&ioop,2)
 	){
 		io_type = (ioop.io & ZRTOS_VM_IO_TYPE__MASK);
-		io_src = ioop.io & ZRTOS_VM_IO_SOURCE__MASK;
+		io_src = (ioop.io & ZRTOS_VM_IO_SOURCE__MASK);
 		length = zrtos_vm_io_type__get_length(io_type);
 
 		zrtos_mem__zero(&a.value,sizeof(a.value));
 		zrtos_mem__zero(&b.value,sizeof(b.value));
 
+		a.type = b.type = io_type;
+
 		//input
 		dest = &a;
-		while(io_src){
+		while((io_src & ZRTOS_VM_IO_SOURCE__MASK)){
 			if((io_src & ZRTOS_VM_IO_SOURCE__A_PROGRAM) > 0){
-				src = program;
+				if(!zrtos_stack__shift(program,&dest->value,length)){
+					goto L_RETURN__EFAULT;
+				}
 			}else if((io_src & ZRTOS_VM_IO_SOURCE__A_STACK) > 0){
-				src = stack;
+				if(!zrtos_stack__pop(stack,&dest->value,length)){
+					goto L_RETURN__EFAULT;
+				}
 			}else if((io_src & ZRTOS_VM_IO_SOURCE__A_ADDRESS) > 0){
 				zrtos_mem__zero(
 					 &dest->address.address
@@ -292,9 +297,7 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 				goto L_INPUT__NEXT;
 			}
 
-			if(!zrtos_stack__pop(src,&dest->value,length)){
-				goto L_RETURN__EFAULT;
-			}
+			
 
 L_INPUT_NORMALIZE:
 			zrtos_vm_value__normalize(dest);

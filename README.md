@@ -498,7 +498,7 @@ zrtos_error_t callback0(
 ){
 	static uint64_t a = 0;
 	a++;
-	return 1;
+	return EXIT_SUCCESS;
 }
 
 zrtos_error_t callback1(
@@ -507,7 +507,7 @@ zrtos_error_t callback1(
 ){
 	static uint64_t a = 0;
 	a++;
-	return 1;
+	return EXIT_SUCCESS;
 }
 
 ZRTOS_VM_FUNCTION_INDEX(vm_functions,
@@ -528,6 +528,19 @@ int main(void){
 		,ZRTOS_VM_IO_SOURCE__A_NONE
 		|ZRTOS_VM_IO_SOURCE__B_NONE
 		,ZRTOS_VM_OP__NOP
+
+		,ZRTOS_VM_IO_SOURCE__A_PROGRAM
+		|ZRTOS_VM_IO_TYPE__UINT8
+		|ZRTOS_VM_IO_SOURCE__B_NONE
+		,ZRTOS_VM_OP__ICALL
+		,0x00
+
+
+		,ZRTOS_VM_IO_SOURCE__A_PROGRAM
+		|ZRTOS_VM_IO_TYPE__UINT8
+		|ZRTOS_VM_IO_SOURCE__B_NONE
+		,ZRTOS_VM_OP__ICALL
+		,0x01
 	};
 
 	zrtos_stack__init(
@@ -558,7 +571,6 @@ int main(void){
 	zrtos_error_t ret = zrtos_vm__run(&vm);
 	return ret;
 }
-
 
 ```
 
