@@ -67,7 +67,9 @@ typedef enum{
 	,ZRTOS_VM_OP__CALL         = 0x23
 	,ZRTOS_VM_OP__RET          = 0x24
 
-	,ZRTOS_VM_OP__NOP          = 0x25
+	,ZRTOS_VM_OP__SET_SP       = 0x25
+
+	,ZRTOS_VM_OP__NOP          = 0x26
 
 	,ZRTOS_VM_OP__MAX          = 0xFF
 }zrtos_vm_op_t;
@@ -78,6 +80,20 @@ typedef struct _zrtos_vm_t{
 	zrtos_vm_function_index_t functions;
 	bool                      is_interrupted;
 }zrtos_vm_t;
+
+bool zrtos_vm__init(
+	 zrtos_vm_t *thiz
+	,zrtos_stack_t             stack
+	,zrtos_stack_t             program
+	,zrtos_vm_function_index_t functions
+){
+	thiz->stack = stack;
+	thiz->program = program;
+	thiz->functions = functions;
+	thiz->is_interrupted = false;
+
+	return true;
+}
 
 typedef struct _zrtos_vm_value_t{
 	union{
@@ -97,6 +113,30 @@ typedef struct _zrtos_vm_value_t{
 	zrtos_vm_io_type_t             type;
 	zrtos_vm_io_address_t          address;
 }zrtos_vm_value_t;
+
+void zrtos_vm_value__normalize(zrtos_vm_value_t *thiz){
+	switch(thiz->type){
+		case ZRTOS_VM_IO_TYPE__INT8:
+			thiz->value.v_s64 = (int64_t)thiz->value.v_s8;
+		break;
+		case ZRTOS_VM_IO_TYPE__INT16:
+			thiz->value.v_s64 = (int64_t)thiz->value.v_s16;
+		break;
+		case ZRTOS_VM_IO_TYPE__INT32:
+			thiz->value.v_s64 = (int64_t)thiz->value.v_s32;
+		break;
+		case ZRTOS_VM_IO_TYPE__INT64:
+			thiz->value.v_s64 = (int64_t)thiz->value.v_s64;
+		break;
+		case ZRTOS_VM_IO_TYPE__UINT8:
+		case ZRTOS_VM_IO_TYPE__UINT16:
+		case ZRTOS_VM_IO_TYPE__UINT32:
+		case ZRTOS_VM_IO_TYPE__UINT64:
+		case ZRTOS_VM_IO_TYPE__FLOAT:
+		case ZRTOS_VM_IO_TYPE__DOUBLE:
+		break;
+	}
+}
 
 typedef struct{
 	uint8_t io;
@@ -155,59 +195,33 @@ zrtos_error_t zrtos_vm__icall(zrtos_vm_t *thiz,zrtos_vm_function_id_t id){
 		break;
 
 #define ZRTOS_VM_OP_NOT(op)\
-		case ZRTOS_VM_IO_TYPE__INT8:\
-			a.value.v_s8 = op a.value.v_s8;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__INT16:\
-			a.value.v_s16 = op a.value.v_s16;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__INT32:\
-			a.value.v_s32 = op a.value.v_s32;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__INT64:\
-			a.value.v_s64 = op a.value.v_s64;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__UINT8:\
-			a.value.v_u8 = op a.value.v_u8;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__UINT16:\
-			a.value.v_u16 = op a.value.v_u16;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__UINT32:\
-			a.value.v_u32 = op a.value.v_u32;\
-		break;\
-		case ZRTOS_VM_IO_TYPE__UINT64:\
-			a.value.v_u64 = op a.value.v_u64;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__FLOAT:\
 			a.value.v_f32 = op a.value.v_f32;\
 		break;\
 		case ZRTOS_VM_IO_TYPE__DOUBLE:\
 			a.value.v_f64 = op a.value.v_f64;\
+		break;\
+		case ZRTOS_VM_IO_TYPE__INT8:\
+		case ZRTOS_VM_IO_TYPE__INT16:\
+		case ZRTOS_VM_IO_TYPE__INT32:\
+		case ZRTOS_VM_IO_TYPE__INT64:\
+		case ZRTOS_VM_IO_TYPE__UINT8:\
+		case ZRTOS_VM_IO_TYPE__UINT16:\
+		case ZRTOS_VM_IO_TYPE__UINT32:\
+		case ZRTOS_VM_IO_TYPE__UINT64:\
+			a.value.v_u64 = op a.value.v_u64;\
 		break;
 
 #define ZRTOS_VM_OP_BOOLEAN(op)\
 		case ZRTOS_VM_IO_TYPE__INT8:\
-			a.value.v_u8 = a.value.v_s8 op b.value.v_s8;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__INT16:\
-			a.value.v_u8 = a.value.v_s16 op b.value.v_s16;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__INT32:\
-			a.value.v_u8 = a.value.v_s32 op b.value.v_s32;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__INT64:\
 			a.value.v_u8 = a.value.v_s64 op b.value.v_s64;\
 		break;\
 		case ZRTOS_VM_IO_TYPE__UINT8:\
-			a.value.v_u8 = a.value.v_u8 op b.value.v_u8;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__UINT16:\
-			a.value.v_u8 = a.value.v_u16 op b.value.v_u16;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__UINT32:\
-			a.value.v_u8 = a.value.v_u32 op b.value.v_u32;\
-		break;\
 		case ZRTOS_VM_IO_TYPE__UINT64:\
 			a.value.v_u8 = a.value.v_u64 op b.value.v_u64;\
 		break;\
@@ -226,23 +240,22 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 	zrtos_error_t ret = EXIT_SUCCESS;
 	zrtos_vm_value_t a;
 	zrtos_vm_value_t b;
-	zrtos_vm_value_t tmp;
 	zrtos_vm_io_type_t io_type;
 	zrtos_vm_io_source_t io_src;
 	size_t length; 
 	zrtos_vm_ioop_t ioop;
 	zrtos_stack_t *src;
 	zrtos_vm_value_t *dest;
-	zrtos_vm_io_address_t address;
 
 	while(!thiz->is_interrupted
-	   && zrtos_stack__pop(program,&ioop,2)
+	   && zrtos_stack__shift(program,&ioop,2)
 	){
 		io_type = (ioop.io & ZRTOS_VM_IO_TYPE__MASK);
 		io_src = ioop.io & ZRTOS_VM_IO_SOURCE__MASK;
 		length = zrtos_vm_io_type__get_length(io_type);
 
 		zrtos_mem__zero(&a.value,sizeof(a.value));
+		zrtos_mem__zero(&b.value,sizeof(b.value));
 
 		//input
 		dest = &a;
@@ -256,8 +269,8 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 					 &dest->address.address
 					,sizeof(dest->address.address)
 				);
-				if(zrtos_stack__pop(program,&dest->address.type,1)
-				&& zrtos_stack__pop(
+				if(zrtos_stack__shift(program,&dest->address.type,1)
+				&& zrtos_stack__shift(
 					 program
 					,&dest->address.address
 					,zrtos_vm_io_address__get_length(&dest->address)
@@ -272,7 +285,7 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 					,zrtos_vm_io_address__is_relative(&dest->address)
 					,zrtos_vm_io_address__is_negative(&dest->address)
 				)){
-					goto L_INPUT__NEXT;
+					goto L_INPUT_NORMALIZE;
 				}
 				goto L_RETURN__EFAULT;
 			}else{
@@ -283,6 +296,8 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 				goto L_RETURN__EFAULT;
 			}
 
+L_INPUT_NORMALIZE:
+			zrtos_vm_value__normalize(dest);
 L_INPUT__NEXT:
 			dest = &b;
 			io_src >>= 2;
@@ -384,6 +399,9 @@ L_INPUT__NEXT:
 			case ZRTOS_VM_OP__MOD:
 				switch(io_type){
 					ZRTOS_VM_OP_WITHOUT_FLOAT(%)
+					case ZRTOS_VM_IO_TYPE__FLOAT:
+					case ZRTOS_VM_IO_TYPE__DOUBLE:
+					goto L_RETURN__EINVAL;
 				}
 			goto L_OUTPUT__PUSH_TYPE;
 
@@ -426,7 +444,7 @@ L_INPUT__NEXT:
 			goto L_OUTPUT__END;
 
 			case ZRTOS_VM_OP__ICALL:
-				ret = zrtos_vm__icall(thiz,a.value.uint64);
+				ret = zrtos_vm__icall(thiz,a.value.v_u64);
 				if(ret != 0){
 					goto L_RETURN__END;
 				}
@@ -435,6 +453,9 @@ L_INPUT__NEXT:
 			case ZRTOS_VM_OP__CALL:
 			case ZRTOS_VM_OP__RET:
 			goto L_OUTPUT__SET_PROGRAM_OFFSET;
+
+			case ZRTOS_VM_OP__SET_SP:
+			goto L_OUTPUT__SET_STACK_OFFSET;
 
 			case ZRTOS_VM_OP__NOP:
 			goto L_OUTPUT__END;
@@ -487,8 +508,12 @@ L_OUTPUT__END:
 		continue;
 	}
 
+L_RETURN__EINVAL:
+	ret = EINVAL;
+	goto L_RETURN__END;
 L_RETURN__EFAULT:
 	ret = EFAULT;
+	goto L_RETURN__END;
 L_RETURN__END:
 	return ret;
 }

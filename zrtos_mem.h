@@ -121,8 +121,9 @@ void zrtos_mem__reverse(void *dest,size_t len){
 }
 
 void zrtos_mem__set(void *dest,uint8_t value,size_t len){
+	uint8_t *tmp = dest;
 	while(len--){
-		*dest++ = value;
+		*tmp++ = value;
 	}
 }
 

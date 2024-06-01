@@ -29,7 +29,7 @@ bool zrtos_stack__init(
 ){
 	thiz->data = data;
 	thiz->offset = 0;
-	thiz->length = 0;
+	thiz->length = length;
 	return true;
 }
 
@@ -219,11 +219,32 @@ bool zrtos_stack__pop(
 	return false;
 }
 
+bool zrtos_stack__shift(
+	 zrtos_stack_t *thiz
+	,void *data
+	,size_t length
+){
+	size_t offset = thiz->offset;
+	if(offset + length < thiz->length){
+		thiz->offset += length;
+		zrtos_mem__cpy(
+			 data
+			,zrtos_types__ptr_add(
+				 thiz->data
+				,offset
+			)
+			,length
+		);
+		return true;
+	}
+	return false;
+}
+
 bool zrtos_stack__set_offset(
 	 zrtos_stack_t *thiz
 	,size_t offset
 ){
-	if(offset <= length){
+	if(offset <= thiz->length){
 		thiz->offset = offset;
 		return true;
 	}
