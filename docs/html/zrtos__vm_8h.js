@@ -45,9 +45,13 @@ var zrtos__vm_8h =
       [ "ZRTOS_VM_OP__ICALL", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210afcc914274c1cb7c33b192f1170bca897", null ],
       [ "ZRTOS_VM_OP__CALL", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210a07f0559737f9b254199d8615b62edd46", null ],
       [ "ZRTOS_VM_OP__RET", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210a03e5fb768cecc4092020b9294323fe94", null ],
+      [ "ZRTOS_VM_OP__SET_SP", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210a3035182269cc9690f5524d7d7c8cedf5", null ],
       [ "ZRTOS_VM_OP__NOP", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210adea9e2f988581f39a01fa6f897afa456", null ],
       [ "ZRTOS_VM_OP__MAX", "zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210adc0d066b3200c1166e1755ae1975a75f", null ]
     ] ],
+    [ "ZRTOS_ASSERT__STATIC", "zrtos__vm_8h.html#a294ad3a31942360c2eddc423894b408c", null ],
     [ "zrtos_vm__icall", "zrtos__vm_8h.html#ae6f17a5b030842c91a0d877775ac9a44", null ],
-    [ "zrtos_vm__run", "zrtos__vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9", null ]
+    [ "zrtos_vm__init", "zrtos__vm_8h.html#ac90ec2fccf2d112e8caff3947eb72624", null ],
+    [ "zrtos_vm__run", "zrtos__vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9", null ],
+    [ "zrtos_vm_value__normalize", "zrtos__vm_8h.html#a08c8837d1bebebd90e6cfe74b6e79fa7", null ]
 ];

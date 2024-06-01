@@ -303,6 +303,7 @@ L_INPUT_NORMALIZE:
 			zrtos_vm_value__normalize(dest);
 L_INPUT__NEXT:
 			dest = &b;
+			///@todo shift left
 			io_src >>= 2;
 		}
 

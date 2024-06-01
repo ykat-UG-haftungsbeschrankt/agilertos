@@ -12,6 +12,7 @@ var zrtos__stack_8h =
     [ "zrtos_stack__read_ex", "zrtos__stack_8h.html#a671e22b7c2aaae864486a45d585ea6cd", null ],
     [ "zrtos_stack__set_offset", "zrtos__stack_8h.html#a0ef81efd362c92d6fc28d6e72e234533", null ],
     [ "zrtos_stack__set_offset_ex", "zrtos__stack_8h.html#a26f89fc990ca0fa4f19cc0e4f2170c20", null ],
+    [ "zrtos_stack__shift", "zrtos__stack_8h.html#afa31eba570f50c5a4abe165602963225", null ],
     [ "zrtos_stack__write", "zrtos__stack_8h.html#aebaaa2b5cc93359116c7c7cee1f77bca", null ],
     [ "zrtos_stack__write_ex", "zrtos__stack_8h.html#a34c188132dc24679ed10585279d791d9", null ]
 ];
