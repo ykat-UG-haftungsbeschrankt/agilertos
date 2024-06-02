@@ -64,10 +64,15 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
     #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0001 )
 #elif ZRTOS_ARCH__BYTE_ALIGNMENT == 1
     #define ZRTOS_ARCH__BYTE_ALIGNMENT_MASK    ( 0x0000 )
-#else /* if ZRTOS_ARCH__BYTE_ALIGNMENT == 32 */
+#else
     #error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT definition"
-#endif /* if ZRTOS_ARCH__BYTE_ALIGNMENT == 32 */
+#endif
 
+#if ZRTOS_ARCH__BYTE_ALIGNMENT != ZRTOS_TYPES__BYTE_ALIGNMENT
+	#error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT definition"
+#elif ZRTOS_ARCH__BYTE_ALIGNMENT_MASK != ZRTOS_TYPES__BYTE_ALIGNMENT_MASK
+	#error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT_MASK definition"
+#endif
 
 size_t zrtos_arch__do_not_disturb = 0;
 #define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \

@@ -40,5 +40,28 @@ size_t zrtos_string__get_length(zrtos_string_t *thiz){
 
 #ifdef __cplusplus
 }
+
+namespace zrtos{
+	class string{
+		zrtos_string_t thiz;
+		string(
+			 char *data
+			,size_t length
+		){
+			zrtos_string__init(
+				 &this->thiz
+				,data
+				,length
+			);
+		}
+		char *getData(){
+			return zrtos_string__get_data(&this->thiz);
+		}
+		size_t getLength(){
+			return zrtos_string__get_length(&this->thiz);
+		}
+	};
+}
+
 #endif
 #endif

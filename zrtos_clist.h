@@ -46,7 +46,7 @@ zrtos_clist_node_t *zrtos_clist_node__get_previous_node(
 ){
 	zrtos_clist_node_t *ret = node;
 	zrtos_clist_node_t *next;
-	while(ret && (next = ret->next) != node){
+	while((next = ret->next) != node){
 		ret = next;
 	}
 	return ret;
@@ -62,13 +62,15 @@ zrtos_clist_node_t *zrtos_clist__get_first_node(zrtos_clist_t *thiz){
 }
 
 zrtos_clist_node_t *zrtos_clist__get_last_node(zrtos_clist_t *thiz){
-	return zrtos_clist_node__get_previous_node(zrtos_clist__get_root(thiz));
+	zrtos_clist_node_t *root = zrtos_clist__get_root(thiz);
+	return root
+	     ? zrtos_clist_node__get_previous_node(root)
+	     : root;
 }
 
 bool zrtos_clist__push(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
-	zrtos_clist_node_t *root = zrtos_clist__get_root(thiz);
-	if(root){
-		zrtos_clist_node_t *last = zrtos_clist__get_last_node(thiz);
+	zrtos_clist_node_t *last = zrtos_clist__get_last_node(thiz);
+	if(last){
 		node->next = last->next;
 		last->next = node;
 	}else{

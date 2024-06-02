@@ -13,6 +13,7 @@ extern "C" {
 
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <limits.h>
 
 typedef uint16_t size_t;
@@ -40,6 +41,25 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 	return ((uint8_t*)bigger)-((uint8_t*)smaller);
 }
 
+#define ZRTOS_TYPES__BYTE_ALIGNMENT sizeof(max_align_t)
+#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (sizeof(max_align_t)-1)
+
+void *zrtos_types__ptr_to_alignment(void *ptr){
+	uintptr_t ret = (uintptr_t)ptr;
+	ret = ret
+	    + ZRTOS_TYPES__BYTE_ALIGNMENT
+	    - (ret & ZRTOS_TYPES__BYTE_ALIGNMENT_MASK)
+	;
+	return (void*)ret;
+}
+
+size_t zrtos_types__ceil_size_to_alignment(size_t len){
+	return len
+	     + ZRTOS_TYPES__BYTE_ALIGNMENT
+	     - (len & ZRTOS_TYPES__BYTE_ALIGNMENT_MASK)
+	;
+}
+
 #define zrtos_types__get_offset_of(type,member) \
     __builtin_offsetof(type,member)
 
@@ -62,8 +82,8 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
         *(b) = a____;                       \
     }while(0);
 
-#define ZRTOS_TYPES__NO_ADD_OVERFLOW(a,b) \
-    (((a + b ) >= a))
+#define ZRTOS_TYPES__IS_ADD_OVERFLOW(a,b) \
+    (((a + b ) < a))
 
 #define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \
     (sizeof(arr)/sizeof((arr)[0]))
