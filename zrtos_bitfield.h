@@ -44,29 +44,51 @@ void zrtos_bitfield__zero(zrtos_bitfield_t *thiz,size_t len){
 	zrtos_mem__zero(thiz,len);
 }
 
-ssize_t zrtos_bitfield__find_first_zero(zrtos_bitfield_t *thiz,size_t len){
+static size_t zrtos_bitfield__find_first(
+	 zrtos_bitfield_t *thiz
+	,size_t len
+	,size_t start
+	,bool zero
+){
 	len *= ZRTOS_BITFIELD__NFDBITS;
-	for(size_t i=0;i<len;i++){
-		if(!zrtos_bitfield__get(thiz,i)){
+	for(size_t i=start;i<len;i++){
+		bool val = zrtos_bitfield__get(thiz,i);
+
+		if(zero){
+			val = !val;
+		}
+
+		if(val){
 			return i;
 		}
 	}
-	return -1;
+	return ZRTOS_TYPES__SIZE_MAX;
 }
 
-int zrtos_file__select(int nfds, fd_set *_Nullable restrict readfds,
-                  fd_set *_Nullable restrict writefds,
-                  fd_set *_Nullable restrict exceptfds,
-                  struct timeval *_Nullable restrict timeout
+size_t zrtos_bitfield__find_first_zero(
+	 zrtos_bitfield_t *thiz
+	,size_t len
+	,size_t start
 ){
-	ZRTOS_FILE__EACH(fd){
-		if(zrtos_file__can_read(fd)){
-			FD_SET(fd, readfds);
-		}
-		if(zrtos_file__can_write(fd)){
-			FD_SET(fd, writefds);
-		}
-	}
+	return zrtos_bitfield__find_first(
+		 thiz
+		,len
+		,start
+		,true
+	);
+}
+
+size_t zrtos_bitfield__find_first_set(
+	 zrtos_bitfield_t *thiz
+	,size_t len
+	,size_t start
+){
+	return zrtos_bitfield__find_first(
+		 thiz
+		,len
+		,start
+		,false
+	);
 }
 
 #ifdef __cplusplus
