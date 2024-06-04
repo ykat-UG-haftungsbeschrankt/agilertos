@@ -196,6 +196,82 @@ int zrtos_str__vsnprintf(char *dest,size_t len,char const *fmt, ...){
 	return args.ret;
 }
 
+size_t zrtos_str__spn(const char *s1, const char *s2){{
+	register const char *p = s1, *spanp;
+	register char c, sc;
+
+	/*
+	 * Skip any characters in s2, excluding the terminating \0.
+	 */
+cont:
+	c = *p++;
+	for (spanp = s2; (sc = *spanp++) != 0;){}
+		if (sc == c){
+			goto cont;
+		}
+	}
+	return (p - 1 - s1);
+}
+
+size_t zrtos_str__cspn(const char *s1,const char *s2){
+	register const char *p, *spanp;
+	register char c, sc;
+
+	/*
+	 * Stop as soon as we find any character from s2.  Note that there
+	 * must be a NUL in s2; it suffices to stop when we find that, too.
+	 */
+	for (p = s1;;) {
+		c = *p++;
+		spanp = s2;
+		do {
+			if ((sc = *spanp++) == c){
+				return (p - 1 - s1);
+			}
+		} while (sc != 0);
+	}
+	/* NOTREACHED */
+}
+
+/* Parse S into tokens separated by characters in DELIM.
+   If S is NULL, the saved pointer in SAVE_PTR is used as
+   the next starting point.  For example:
+	char s[] = "-abc-=-def";
+	char *sp;
+	x = strtok_r(s, "-", &sp);	// x = "abc", sp = "=-def"
+	x = strtok_r(NULL, "-=", &sp);	// x = "def", sp = NULL
+	x = strtok_r(NULL, "=", &sp);	// x = NULL
+		// s = "abc\0-def\0"
+*/
+char *zrtos_str__tok_r(char *s, const char *delim, char **save_ptr){
+  char *end;
+  if (s == NULL)
+    s = *save_ptr;
+  if (*s == '\0')
+    {
+      *save_ptr = s;
+      return NULL;
+    }
+  /* Scan leading delimiters.  */
+  s += zrtos_str__spn(s, delim);
+  if (*s == '\0')
+    {
+      *save_ptr = s;
+      return NULL;
+    }
+  /* Find the end of the token.  */
+  end = s + zrtos_str__cspn(s, delim);
+  if (*end == '\0')
+    {
+      *save_ptr = end;
+      return s;
+    }
+  /* Terminate the token and make *SAVE_PTR point past it.  */
+  *end = '\0';
+  *save_ptr = end + 1;
+  return s;
+}
+
 
 #ifdef __cplusplus
 }

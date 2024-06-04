@@ -22,6 +22,7 @@ bool zrtos_progmem__cpy(void *dest,void *src,size_t len){
 #else
 
 # define ZRTOS_PROGMEM ZRTOS_ARCH__PROGMEM
+
 bool zrtos_progmem__cpy(void *dest,void *src,size_t len){
 	ZRTOS_ARCH__PROGMEM_CPY(dest,src,len);
 	return true;

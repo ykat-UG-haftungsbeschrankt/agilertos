@@ -91,6 +91,13 @@ size_t zrtos_bitfield__find_first_set(
 	);
 }
 
+#define ZRTOS_BITFIELD__EACH(thiz,len,pos)\
+    for(size_t pos = 0\
+       ; ZRTOS_TYPES__SIZE_MAX\
+       != (pos = zrtos_bitfield__find_first_set(thiz,len,pos))\
+       ;pos++\
+    )
+
 #ifdef __cplusplus
 }
 #endif
