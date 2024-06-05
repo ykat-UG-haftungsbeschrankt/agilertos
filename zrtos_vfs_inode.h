@@ -4,25 +4,20 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_SYS_IOCTL_H
-#define ZRTOS_SYS_IOCTL_H
+#ifndef ZRTOS_VFS_INODE_H
+#define ZRTOS_VFS_INODE_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <stdarg.h>
 
-#include "../zrtos_vfs_file.h"
+#include "zrtos_vfs_plugin.h"
 
 
-int ioctl(int fd, int request,...){
-	int ret;
-	va_list args;
-	va_start(args,request);
-	ret = zrtos_vfs_file__ioctl(fd,request,args);
-	va_end(args);
-	return ret;
-}
+typedef struct _zrtos_vfs_inode_t{
+	zrtos_vfs_plugin_t         *plugin;
+	void                       *private_data;
+}zrtos_vfs_inode_t;
 
 
 #ifdef __cplusplus

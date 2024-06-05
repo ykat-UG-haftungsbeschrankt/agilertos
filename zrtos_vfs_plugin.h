@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_FILE_OPERATIONS_H
-#define ZRTOS_FILE_OPERATIONS_H
+#ifndef ZRTOS_VFS_PLUGIN_H
+#define ZRTOS_VFS_PLUGIN_H
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -25,7 +25,7 @@ typedef struct{
 	size_t  (*can_write)(struct _zrtos_file_t *thiz);
 	off_t   (*seek)(int fd, off_t offset, int whence);
 	int     (*ioctl)(struct _zrtos_file_t *thiz, int whence, va_list args);
-}zrtos_file_operations_t;
+}zrtos_vfs_plugin_t;
 
 
 #ifdef __cplusplus

@@ -12,7 +12,7 @@ extern "C" {
 
 
 #include "../zrtos_bitfield.h"
-#include "../zrtos_file.h"
+#include "../zrtos_vfs_file.h"
 
 #include <sys/time.h>
 
@@ -31,7 +31,7 @@ int select(
 	,struct timeval *timeout
 ){
 	int ret = 0;
-	typeof(zrtos_file__can_read) callback = zrtos_file__can_read;
+	typeof(zrtos_file__can_read) callback = zrtos_vfs_file__can_read;
 	zrtos_bitfield_t *bitfield = readfds->fds_bits;
 	size_t l = 1;
 
@@ -41,8 +41,7 @@ int select(
 			,FD_SETSIZE / ZRTOS_BITFIELD__NFDBITS
 			,fd
 		){
-			zrtos_file_t *file = zrtos_file_descriptor__get_file(fd);
-			if(!callback(file)){
+			if(!callback(fd)){
 				zrtos_bitfield__set(
 					 bitfield
 					,fd
@@ -52,7 +51,7 @@ int select(
 				ret++;
 			}
 		}
-		callback = zrtos_file__can_write;
+		callback = zrtos_vfs_file__can_write;
 		bitfield = writefds->fds_bits;
 	}
 
