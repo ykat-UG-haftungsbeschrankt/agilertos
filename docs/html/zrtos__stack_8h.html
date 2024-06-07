@@ -124,12 +124,14 @@ Include dependency graph for zrtos_stack.h:</div>
 <area shape="poly" title=" " alt="" coords="390,184,302,232,299,227,388,179"/>
 <area shape="rect" href="atmega2560_8h.html" title=" " alt="" coords="354,237,487,264"/>
 <area shape="poly" title=" " alt="" coords="416,182,420,222,415,222,411,182"/>
-<area shape="rect" title=" " alt="" coords="523,320,598,347"/>
-<area shape="poly" title=" " alt="" coords="563,265,563,305,558,305,558,265"/>
-<area shape="rect" title=" " alt="" coords="621,320,689,347"/>
-<area shape="poly" title=" " alt="" coords="577,262,631,308,627,312,573,267"/>
-<area shape="rect" title=" " alt="" coords="435,320,499,347"/>
-<area shape="poly" title=" " alt="" coords="547,267,494,312,491,308,544,262"/>
+<area shape="rect" title=" " alt="" coords="570,320,644,347"/>
+<area shape="poly" title=" " alt="" coords="570,263,595,306,590,308,565,266"/>
+<area shape="rect" title=" " alt="" coords="668,320,735,347"/>
+<area shape="poly" title=" " alt="" coords="584,262,668,310,665,314,581,267"/>
+<area shape="rect" title=" " alt="" coords="394,320,458,347"/>
+<area shape="poly" title=" " alt="" coords="541,267,461,314,458,310,538,262"/>
+<area shape="rect" title=" " alt="" coords="482,320,545,347"/>
+<area shape="poly" title=" " alt="" coords="555,266,531,308,526,306,551,263"/>
 <area shape="rect" href="avr__software__emulator_8h.html" title=" " alt="" coords="46,229,174,272"/>
 <area shape="poly" title=" " alt="" coords="145,183,128,217,124,215,140,181"/>
 <area shape="rect" title=" " alt="" coords="5,320,105,347"/>
@@ -164,31 +166,31 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae47b4ca567d0779fd60bec52575e6c46" id="r_ae47b4ca567d0779fd60bec52575e6c46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae47b4ca567d0779fd60bec52575e6c46">zrtos_stack__init</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="memitem:ae47b4ca567d0779fd60bec52575e6c46" id="r_ae47b4ca567d0779fd60bec52575e6c46"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae47b4ca567d0779fd60bec52575e6c46">zrtos_stack__init</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length)</td></tr>
 <tr class="separator:ae47b4ca567d0779fd60bec52575e6c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa86feb2b5c314393a0624e3aefee9ed6" id="r_aa86feb2b5c314393a0624e3aefee9ed6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86feb2b5c314393a0624e3aefee9ed6">_zrtos_stack__cpy</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *dest, void *src, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset_plus_length)</td></tr>
+<tr class="memitem:aa86feb2b5c314393a0624e3aefee9ed6" id="r_aa86feb2b5c314393a0624e3aefee9ed6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86feb2b5c314393a0624e3aefee9ed6">_zrtos_stack__cpy</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *dest, void *src, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset_plus_length)</td></tr>
 <tr class="separator:aa86feb2b5c314393a0624e3aefee9ed6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57ec254b26faf939e4214820af6c2200" id="r_a57ec254b26faf939e4214820af6c2200"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57ec254b26faf939e4214820af6c2200">zrtos_stack__get_offset_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset, bool is_relative, bool is_negative, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *new_offset)</td></tr>
+<tr class="memitem:a57ec254b26faf939e4214820af6c2200" id="r_a57ec254b26faf939e4214820af6c2200"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57ec254b26faf939e4214820af6c2200">zrtos_stack__get_offset_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset, bool is_relative, bool is_negative, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> *new_offset)</td></tr>
 <tr class="separator:a57ec254b26faf939e4214820af6c2200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26f89fc990ca0fa4f19cc0e4f2170c20" id="r_a26f89fc990ca0fa4f19cc0e4f2170c20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f89fc990ca0fa4f19cc0e4f2170c20">zrtos_stack__set_offset_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
+<tr class="memitem:a26f89fc990ca0fa4f19cc0e4f2170c20" id="r_a26f89fc990ca0fa4f19cc0e4f2170c20"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f89fc990ca0fa4f19cc0e4f2170c20">zrtos_stack__set_offset_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
 <tr class="separator:a26f89fc990ca0fa4f19cc0e4f2170c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6d341f61cf081171285ecc0013eb025" id="r_ab6d341f61cf081171285ecc0013eb025"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6d341f61cf081171285ecc0013eb025">zrtos_stack__read</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset)</td></tr>
+<tr class="memitem:ab6d341f61cf081171285ecc0013eb025" id="r_ab6d341f61cf081171285ecc0013eb025"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6d341f61cf081171285ecc0013eb025">zrtos_stack__read</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset)</td></tr>
 <tr class="separator:ab6d341f61cf081171285ecc0013eb025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a671e22b7c2aaae864486a45d585ea6cd" id="r_a671e22b7c2aaae864486a45d585ea6cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a671e22b7c2aaae864486a45d585ea6cd">zrtos_stack__read_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
+<tr class="memitem:a671e22b7c2aaae864486a45d585ea6cd" id="r_a671e22b7c2aaae864486a45d585ea6cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a671e22b7c2aaae864486a45d585ea6cd">zrtos_stack__read_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
 <tr class="separator:a671e22b7c2aaae864486a45d585ea6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebaaa2b5cc93359116c7c7cee1f77bca" id="r_aebaaa2b5cc93359116c7c7cee1f77bca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebaaa2b5cc93359116c7c7cee1f77bca">zrtos_stack__write</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset)</td></tr>
+<tr class="memitem:aebaaa2b5cc93359116c7c7cee1f77bca" id="r_aebaaa2b5cc93359116c7c7cee1f77bca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebaaa2b5cc93359116c7c7cee1f77bca">zrtos_stack__write</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset)</td></tr>
 <tr class="separator:aebaaa2b5cc93359116c7c7cee1f77bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34c188132dc24679ed10585279d791d9" id="r_a34c188132dc24679ed10585279d791d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c188132dc24679ed10585279d791d9">zrtos_stack__write_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
+<tr class="memitem:a34c188132dc24679ed10585279d791d9" id="r_a34c188132dc24679ed10585279d791d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34c188132dc24679ed10585279d791d9">zrtos_stack__write_ex</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset, bool is_relative, bool is_negative)</td></tr>
 <tr class="separator:a34c188132dc24679ed10585279d791d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3fd330de26a2b1020d117ecc4ddb8ce" id="r_ac3fd330de26a2b1020d117ecc4ddb8ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3fd330de26a2b1020d117ecc4ddb8ce">zrtos_stack__push</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="memitem:ac3fd330de26a2b1020d117ecc4ddb8ce" id="r_ac3fd330de26a2b1020d117ecc4ddb8ce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3fd330de26a2b1020d117ecc4ddb8ce">zrtos_stack__push</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length)</td></tr>
 <tr class="separator:ac3fd330de26a2b1020d117ecc4ddb8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2f30a04ec3ad6cbb92d5ea61eb939cf" id="r_ad2f30a04ec3ad6cbb92d5ea61eb939cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2f30a04ec3ad6cbb92d5ea61eb939cf">zrtos_stack__pop</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="memitem:ad2f30a04ec3ad6cbb92d5ea61eb939cf" id="r_ad2f30a04ec3ad6cbb92d5ea61eb939cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2f30a04ec3ad6cbb92d5ea61eb939cf">zrtos_stack__pop</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length)</td></tr>
 <tr class="separator:ad2f30a04ec3ad6cbb92d5ea61eb939cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa31eba570f50c5a4abe165602963225" id="r_afa31eba570f50c5a4abe165602963225"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa31eba570f50c5a4abe165602963225">zrtos_stack__shift</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="memitem:afa31eba570f50c5a4abe165602963225" id="r_afa31eba570f50c5a4abe165602963225"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa31eba570f50c5a4abe165602963225">zrtos_stack__shift</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, void *data, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> length)</td></tr>
 <tr class="separator:afa31eba570f50c5a4abe165602963225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ef81efd362c92d6fc28d6e72e234533" id="r_a0ef81efd362c92d6fc28d6e72e234533"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ef81efd362c92d6fc28d6e72e234533">zrtos_stack__set_offset</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset)</td></tr>
+<tr class="memitem:a0ef81efd362c92d6fc28d6e72e234533" id="r_a0ef81efd362c92d6fc28d6e72e234533"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ef81efd362c92d6fc28d6e72e234533">zrtos_stack__set_offset</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz, <a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> offset)</td></tr>
 <tr class="separator:a0ef81efd362c92d6fc28d6e72e234533"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1d96d70aaaf6295ca8e91903849c6c3" id="r_ad1d96d70aaaf6295ca8e91903849c6c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1d96d70aaaf6295ca8e91903849c6c3">zrtos_stack__get_offset</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz)</td></tr>
+<tr class="memitem:ad1d96d70aaaf6295ca8e91903849c6c3" id="r_ad1d96d70aaaf6295ca8e91903849c6c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1d96d70aaaf6295ca8e91903849c6c3">zrtos_stack__get_offset</a> (<a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *thiz)</td></tr>
 <tr class="separator:ad1d96d70aaaf6295ca8e91903849c6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -234,12 +236,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset_plus_length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset_plus_length</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -306,7 +308,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_stack__get_offset </td>
+          <td class="memname"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> zrtos_stack__get_offset </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#af89c215658f2deda827a3cdb4954f6c4">zrtos_stack_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
           <td></td>
@@ -339,7 +341,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -354,7 +356,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *</td>          <td class="paramname"><span class="paramname"><em>new_offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> *</td>          <td class="paramname"><span class="paramname"><em>new_offset</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -427,7 +429,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -462,7 +464,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -484,7 +486,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  218</span>    }</div>
 <div class="line"><span class="lineno">  219</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">  220</span>}</div>
-<div class="ttc" id="azrtos__types_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00031">zrtos_types.h:31</a></div></div>
+<div class="ttc" id="azrtos__types_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__types_8h_source.html#l00032">zrtos_types.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -531,7 +533,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -603,12 +605,12 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -676,12 +678,12 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -761,7 +763,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -791,7 +793,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -858,7 +860,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -926,12 +928,12 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -999,12 +1001,12 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>

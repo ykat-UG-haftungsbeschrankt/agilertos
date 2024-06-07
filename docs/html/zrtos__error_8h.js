@@ -129,6 +129,5 @@ var zrtos__error_8h =
       [ "ELAST", "zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22a023c7951199cc8b4175f0bfc9bd92c50", null ],
       [ "EMAX", "zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac4a659f53dba810a45e33700ae18e536", null ]
     ] ],
-    [ "ZRTOS_ASSERT__STATIC", "zrtos__error_8h.html#a322901aa0f1b4abc7068d4f03daa4a3b", null ],
-    [ "errno", "zrtos__error_8h.html#ace85ca0ed9496169ab37101ef9a09cd1", null ]
+    [ "ZRTOS_ASSERT__STATIC", "zrtos__error_8h.html#a322901aa0f1b4abc7068d4f03daa4a3b", null ]
 ];

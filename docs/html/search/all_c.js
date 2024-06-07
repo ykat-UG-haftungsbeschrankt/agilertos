@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['offset_0',['offset',['../struct__zrtos__stack__t.html#af353a9412f15c5646e32ce7a7af8c679',1,'_zrtos_stack_t']]],
-  ['op_1',['op',['../structzrtos__vm__ioop__t.html#ae09b03d732d97b63b95a59f619f168a8',1,'zrtos_vm_ioop_t']]]
+  ['malloc_20free_0',['malloc() / free()',['../index.html#autotoc_md1',1,'']]],
+  ['mode_5ft_1',['mode_t',['../types_8h.html#ab9173e3529d0a36110a14005a566262a',1,'types.h']]],
+  ['mount_2',['mount',['../structzrtos__vfs__plugin__t.html#a33b5203076c7bfa05c6db641eaff57e8',1,'zrtos_vfs_plugin_t']]],
+  ['mutex_3',['mutex',['../structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95',1,'pthread_mutex_t']]]
 ];

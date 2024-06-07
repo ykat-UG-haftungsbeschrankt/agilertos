@@ -1,0 +1,7 @@
+<map id="zrtos_types__uint32_is_valid_address_range" name="zrtos_types__uint32_is_valid_address_range">
+<area shape="rect" id="Node000001" title=" " alt="" coords="240,23,402,65"/>
+<area shape="rect" id="Node000002" href="$avr__progmem_8h.html#a3a2009110f802cd7f5df1d1cef419709" title=" " alt="" coords="5,5,192,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,36,192,32,192,27,225,30"/>
+<area shape="rect" id="Node000003" href="$sram_8h.html#a2acb6f15e42ab308cbb316f36a7b9ca1" title=" " alt="" coords="5,56,192,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="225,58,192,61,192,56,224,52"/>
+</map>

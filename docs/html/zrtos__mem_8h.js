@@ -1,5 +1,6 @@
 var zrtos__mem_8h =
 [
+    [ "zrtos_mem__cmp", "zrtos__mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3", null ],
     [ "zrtos_mem__cpy", "zrtos__mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78", null ],
     [ "zrtos_mem__left_rotate", "zrtos__mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57", null ],
     [ "zrtos_mem__move_left_overlapping", "zrtos__mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32", null ],

@@ -106,19 +106,21 @@ Include dependency graph for zrtos_arch.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__arch_8h__incl.png" border="0" usemap="#azrtos__arch_8h" alt=""/></div>
 <map name="azrtos__arch_8h" id="azrtos__arch_8h">
-<area shape="rect" title=" " alt="" coords="231,5,324,32"/>
-<area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="87,80,187,107"/>
-<area shape="poly" title=" " alt="" coords="254,35,177,75,174,70,252,30"/>
-<area shape="rect" href="atmega328p_8h.html" title=" " alt="" coords="211,80,343,107"/>
-<area shape="poly" title=" " alt="" coords="280,33,280,64,275,64,275,33"/>
-<area shape="rect" href="atmega2560_8h.html" title=" " alt="" coords="367,80,499,107"/>
-<area shape="poly" title=" " alt="" coords="305,30,393,71,391,75,303,35"/>
+<area shape="rect" title=" " alt="" coords="275,5,368,32"/>
+<area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="131,80,231,107"/>
+<area shape="poly" title=" " alt="" coords="298,35,221,75,218,70,296,30"/>
+<area shape="rect" href="atmega328p_8h.html" title=" " alt="" coords="255,80,387,107"/>
+<area shape="poly" title=" " alt="" coords="324,33,324,64,319,64,319,33"/>
+<area shape="rect" href="atmega2560_8h.html" title=" " alt="" coords="411,80,543,107"/>
+<area shape="poly" title=" " alt="" coords="349,30,437,71,435,75,347,35"/>
 <area shape="rect" title=" " alt="" coords="5,155,80,181"/>
-<area shape="poly" title=" " alt="" coords="122,109,73,147,69,143,119,105"/>
+<area shape="poly" title=" " alt="" coords="158,110,82,149,79,145,156,105"/>
 <area shape="rect" title=" " alt="" coords="104,155,171,181"/>
-<area shape="poly" title=" " alt="" coords="140,107,140,139,135,139,135,107"/>
-<area shape="rect" title=" " alt="" coords="195,155,258,181"/>
-<area shape="poly" title=" " alt="" coords="154,105,201,143,198,147,151,109"/>
+<area shape="poly" title=" " alt="" coords="176,109,155,143,150,140,171,106"/>
+<area shape="rect" title=" " alt="" coords="194,155,259,181"/>
+<area shape="poly" title=" " alt="" coords="191,106,213,140,208,143,187,109"/>
+<area shape="rect" title=" " alt="" coords="283,155,346,181"/>
+<area shape="poly" title=" " alt="" coords="206,105,279,145,277,149,203,110"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -126,9 +128,11 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="zrtos__arch_8h__dep__incl.png" border="0" usemap="#azrtos__arch_8hdep" alt=""/></div>
 <map name="azrtos__arch_8hdep" id="azrtos__arch_8hdep">
-<area shape="rect" title=" " alt="" coords="161,5,254,32"/>
+<area shape="rect" title=" " alt="" coords="212,5,305,32"/>
 <area shape="rect" href="zrtos_8h.html" title=" " alt="" coords="177,80,238,107"/>
-<area shape="poly" title=" " alt="" coords="210,48,210,80,205,80,205,48"/>
+<area shape="poly" title=" " alt="" coords="243,46,218,81,214,78,239,43"/>
+<area shape="rect" href="zrtos__gpio_8h.html" title=" " alt="" coords="263,80,355,107"/>
+<area shape="poly" title=" " alt="" coords="278,43,302,78,298,81,273,46"/>
 <area shape="rect" href="zrtos__stack_8h.html" title=" " alt="" coords="5,155,106,181"/>
 <area shape="poly" title=" " alt="" coords="169,116,83,156,81,152,166,111"/>
 <area shape="rect" href="zrtos__task__mutex_8h.html" title=" " alt="" coords="310,155,446,181"/>
@@ -161,7 +165,7 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ab86f625f4bb9f6aaddd33576b99359c1" id="r_ab86f625f4bb9f6aaddd33576b99359c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a> = 0</td></tr>
+<tr class="memitem:ab86f625f4bb9f6aaddd33576b99359c1" id="r_ab86f625f4bb9f6aaddd33576b99359c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a> = 0</td></tr>
 <tr class="separator:ab86f625f4bb9f6aaddd33576b99359c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -189,20 +193,20 @@ Variables</h2></td></tr>
 <div class="line">            ZRTOS_ARCH__ENABLE_INTERRUPTS();   \</div>
 <div class="line">        }                                      \</div>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
-<div class="ttc" id="azrtos__arch_8h_html_ab86f625f4bb9f6aaddd33576b99359c1"><div class="ttname"><a href="#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a></div><div class="ttdeci">size_t zrtos_arch__do_not_disturb</div><div class="ttdef"><b>Definition</b> <a href="zrtos__arch_8h_source.html#l00072">zrtos_arch.h:72</a></div></div>
+<div class="ttc" id="azrtos__arch_8h_html_ab86f625f4bb9f6aaddd33576b99359c1"><div class="ttname"><a href="#ab86f625f4bb9f6aaddd33576b99359c1">zrtos_arch__do_not_disturb</a></div><div class="ttdeci">size_t zrtos_arch__do_not_disturb</div><div class="ttdef"><b>Definition</b> <a href="zrtos__arch_8h_source.html#l00077">zrtos_arch.h:77</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00073">73</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \</span></div>
-<div class="line"><span class="lineno">   74</span><span class="preprocessor">    do{                                        \</span></div>
-<div class="line"><span class="lineno">   75</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \</span></div>
-<div class="line"><span class="lineno">   76</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;          \</span></div>
-<div class="line"><span class="lineno">   77</span><span class="preprocessor">        do{                                    \</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor">            code;                              \</span></div>
-<div class="line"><span class="lineno">   79</span><span class="preprocessor">        }while(0);                             \</span></div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){ \</span></div>
-<div class="line"><span class="lineno">   81</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();   \</span></div>
-<div class="line"><span class="lineno">   82</span><span class="preprocessor">        }                                      \</span></div>
-<div class="line"><span class="lineno">   83</span><span class="preprocessor">    }while(0);</span></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00078">78</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">    do{                                        \</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();      \</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;          \</span></div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">        do{                                    \</span></div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">            code;                              \</span></div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">        }while(0);                             \</span></div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){ \</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();   \</span></div>
+<div class="line"><span class="lineno">   87</span><span class="preprocessor">        }                                      \</span></div>
+<div class="line"><span class="lineno">   88</span><span class="preprocessor">    }while(0);</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -237,19 +241,19 @@ Variables</h2></td></tr>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
 <div class="ttc" id="aatmega328p_8h_html_a2fcf5dd5b0924d6a448ca76d6945104d"><div class="ttname"><a href="atmega328p_8h.html#a2fcf5dd5b0924d6a448ca76d6945104d">ZRTOS_ARCH__IS_INTERRUPTS_DISABLED</a></div><div class="ttdeci">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00034">atmega328p.h:34</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00086">86</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   86</span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB_EX(is_locked,code)     \</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">    do{                                                   \</span></div>
-<div class="line"><span class="lineno">   88</span><span class="preprocessor">        is_locked = ZRTOS_ARCH__IS_INTERRUPTS_DISABLED(); \</span></div>
-<div class="line"><span class="lineno">   89</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();                 \</span></div>
-<div class="line"><span class="lineno">   90</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;                     \</span></div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">        do{                                               \</span></div>
-<div class="line"><span class="lineno">   92</span><span class="preprocessor">            code;                                         \</span></div>
-<div class="line"><span class="lineno">   93</span><span class="preprocessor">        }while(0);                                        \</span></div>
-<div class="line"><span class="lineno">   94</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){            \</span></div>
-<div class="line"><span class="lineno">   95</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();              \</span></div>
-<div class="line"><span class="lineno">   96</span><span class="preprocessor">        }                                                 \</span></div>
-<div class="line"><span class="lineno">   97</span><span class="preprocessor">    }while(0);</span></div>
+<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00091">91</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span><span class="preprocessor">#define ZRTOS_ARCH__DO_NOT_DISTURB_EX(is_locked,code)     \</span></div>
+<div class="line"><span class="lineno">   92</span><span class="preprocessor">    do{                                                   \</span></div>
+<div class="line"><span class="lineno">   93</span><span class="preprocessor">        is_locked = ZRTOS_ARCH__IS_INTERRUPTS_DISABLED(); \</span></div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">        ZRTOS_ARCH__DISABLE_INTERRUPTS();                 \</span></div>
+<div class="line"><span class="lineno">   95</span><span class="preprocessor">        zrtos_arch__do_not_disturb++;                     \</span></div>
+<div class="line"><span class="lineno">   96</span><span class="preprocessor">        do{                                               \</span></div>
+<div class="line"><span class="lineno">   97</span><span class="preprocessor">            code;                                         \</span></div>
+<div class="line"><span class="lineno">   98</span><span class="preprocessor">        }while(0);                                        \</span></div>
+<div class="line"><span class="lineno">   99</span><span class="preprocessor">        if(--zrtos_arch__do_not_disturb == 0){            \</span></div>
+<div class="line"><span class="lineno">  100</span><span class="preprocessor">            ZRTOS_ARCH__ENABLE_INTERRUPTS();              \</span></div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">        }                                                 \</span></div>
+<div class="line"><span class="lineno">  102</span><span class="preprocessor">    }while(0);</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -278,12 +282,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="zrtos__types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_arch__do_not_disturb = 0</td>
+          <td class="memname"><a class="el" href="types_8h.html#af425010ad10d3844b2d97a43dee0b4c6">size_t</a> zrtos_arch__do_not_disturb = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00072">72</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="zrtos__arch_8h_source.html#l00077">77</a> of file <a class="el" href="zrtos__arch_8h_source.html">zrtos_arch.h</a>.</p>
 
 </div>
 </div>

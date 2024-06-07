@@ -1,0 +1,17 @@
+<map id="_zrtos_vfs_inode_t" name="_zrtos_vfs_inode_t">
+<area shape="rect" id="Node000001" title=" " alt="" coords="492,207,620,233"/>
+<area shape="rect" id="Node000002" href="$structzrtos__vfs__plugin__t.html" title=" " alt="" coords="282,179,406,205"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,200,492,209,491,214,421,205"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="15,13,167,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,58,222,75,259,96,283,116,304,137,335,176,331,180,300,141,279,120,256,101,219,80,180,63"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,80,177,123"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="181,125,259,152,314,176,312,181,257,157,179,130"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="15,147,167,237"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="183,189,281,189,281,195,183,195"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="20,261,162,304"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="166,253,303,203,305,208,168,258"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="12,328,170,403"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="170,317,175,314,219,291,236,280,256,262,263,251,267,239,271,228,280,215,297,204,300,208,284,219,275,230,272,241,268,253,260,266,240,284,221,296,178,318,172,322"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="318,229,370,256"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="385,241,468,237,502,231,503,237,468,243,385,247"/>
+</map>

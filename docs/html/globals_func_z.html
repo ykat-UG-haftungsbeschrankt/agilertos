@@ -98,6 +98,12 @@ $(function(){initNavTree('globals_func_z.html',''); initResizable(); });
 <li>zrtos_arch__cpu_state_init_b()&#160;:&#160;<a class="el" href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">atmega328p.h</a></li>
 <li>zrtos_arch__cpu_state_init_helper()&#160;:&#160;<a class="el" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">atmega328p.h</a></li>
 <li>ZRTOS_ASSERT__STATIC()&#160;:&#160;<a class="el" href="zrtos__error_8h.html#a322901aa0f1b4abc7068d4f03daa4a3b">zrtos_error.h</a>, <a class="el" href="zrtos__vm_8h.html#a294ad3a31942360c2eddc423894b408c">zrtos_vm.h</a></li>
+<li>zrtos_bitfield__find_first()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#ae159ead9b17ac132ed00e348f491a75f">zrtos_bitfield.h</a></li>
+<li>zrtos_bitfield__find_first_set()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#a2eaa50d4017c09f5bb42a9c9d5857061">zrtos_bitfield.h</a></li>
+<li>zrtos_bitfield__find_first_zero()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#a8af20acb2c9cd25ddfcb574505c48a4a">zrtos_bitfield.h</a></li>
+<li>zrtos_bitfield__get()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#aeda38234a3298baed14a5a7cd4207883">zrtos_bitfield.h</a></li>
+<li>zrtos_bitfield__set()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#a31e4cbdaf65df7464b28c25d1780eb84">zrtos_bitfield.h</a></li>
+<li>zrtos_bitfield__zero()&#160;:&#160;<a class="el" href="zrtos__bitfield_8h.html#a41e25f1f59cb57785b18503403258629">zrtos_bitfield.h</a></li>
 <li>ZRTOS_BOARD__ON_TICK_CALLBACK()&#160;:&#160;<a class="el" href="zrtos__board_8h.html#add30304098804d7d007239eee890c11c">zrtos_board.h</a></li>
 <li>ZRTOS_BOARD__ON_TICK_NAKED_CALLBACK()&#160;:&#160;<a class="el" href="zrtos__board_8h.html#a151f2c836673112808b74ff4d0246e44">zrtos_board.h</a></li>
 <li>zrtos_board__start_tick_timer()&#160;:&#160;<a class="el" href="avr__software__emulator_8h.html#a84fe65069f6a5d34d06f587ee4d53269">avr_software_emulator.h</a></li>
@@ -117,6 +123,7 @@ $(function(){initNavTree('globals_func_z.html',''); initResizable(); });
 <li>zrtos_clist_node__get_next_node()&#160;:&#160;<a class="el" href="zrtos__clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c">zrtos_clist.h</a></li>
 <li>zrtos_clist_node__get_previous_node()&#160;:&#160;<a class="el" href="zrtos__clist_8h.html#a7e4e2a2b78267e86a322ece473242b47">zrtos_clist.h</a></li>
 <li>zrtos_clist_node__init()&#160;:&#160;<a class="el" href="zrtos__clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a">zrtos_clist.h</a></li>
+<li>zrtos_driver_dht11__on_change()&#160;:&#160;<a class="el" href="dht11_8h.html#a64aff34cb27bc80d2be8c89058b662b6">dht11.h</a>, <a class="el" href="hd44780u_8h.html#a64aff34cb27bc80d2be8c89058b662b6">hd44780u.h</a></li>
 <li>zrtos_event__get_data()&#160;:&#160;<a class="el" href="zrtos__event_8h.html#a85942124b7a0bed8e87c5f662e2c0195">zrtos_event.h</a></li>
 <li>zrtos_event__get_type()&#160;:&#160;<a class="el" href="zrtos__event_8h.html#a8e28ee5eed6e0f1ca0c40ce9ac913aeb">zrtos_event.h</a></li>
 <li>zrtos_event__init()&#160;:&#160;<a class="el" href="zrtos__event_8h.html#af1328cd513b60ad2241d6f404b7da06d">zrtos_event.h</a></li>
@@ -124,10 +131,34 @@ $(function(){initNavTree('globals_func_z.html',''); initResizable(); });
 <li>zrtos_event_index__invoke()&#160;:&#160;<a class="el" href="zrtos__event__index_8h.html#a103b54fae27100dc5d48347a3110f51c">zrtos_event_index.h</a></li>
 <li>zrtos_event_type__cmp()&#160;:&#160;<a class="el" href="zrtos__event__type_8h.html#a0ad028c45084de5a2a2d24c08433159e">zrtos_event_type.h</a></li>
 <li>zrtos_event_type__is_any()&#160;:&#160;<a class="el" href="zrtos__event__type_8h.html#aff2d2f65e95c74a81c4a979c79bd7bc9">zrtos_event_type.h</a></li>
+<li>zrtos_gpio__analog_read()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a9acc1b32d920b82eabb137dc36f92f46">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__analog_read_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a91eb5a276c776b3831d8045a119adb49">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__analog_read_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#acdcdd31be74dcb564f43d4fc612ce21a">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__analog_write()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a083c38af2b88ce14ef0ac8dd5aa766a4">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__analog_write_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#ae243378c4a2f4fef907c2d49f0b45540">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__analog_write_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a1dcb7fd4b6e14193446effbae5ef4cab">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__delay_microseconds()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#ac0d342145c92f067de26bbfbb4f3fe8d">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__delay_milliseconds()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a1f8ccfbe91f750fb13f00e42103fb8b0">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_read()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a02cf216aa84dd51cc356fd68ed105cd4">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_read_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a1d3927aaf3b6d27b7995c0791d4c8609">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_read_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#ad4a3b7dd1577e8aef75f94088146b9cb">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_write()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_write_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a9c359724b7388fa1829d1efd2a6c46a6">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__digital_write_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a8f42e9253742ea9fdd21fc7f19ffa03e">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_high()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_high_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a0a8aaa3086b2bbb79c60316413c96f7c">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_high_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a18d01a230a28c80656ed510d10a1ef91">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_low()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a54c6a96e2e8cb2b5bd47e9863328d499">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_low_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#ab4fe38cf130b336fe5db3da8cfe24003">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_low_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a61079337a9a107f175ee95c7ebc50aeb">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_mode()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_mode_ex()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#a09265f640ff70e6c6a30db445b052069">zrtos_gpio.h</a></li>
+<li>zrtos_gpio__set_mode_va()&#160;:&#160;<a class="el" href="zrtos__gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd">zrtos_gpio.h</a></li>
 <li>zrtos_malloc__free()&#160;:&#160;<a class="el" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc.h</a></li>
 <li>zrtos_malloc__get_free_chunk()&#160;:&#160;<a class="el" href="zrtos__malloc_8h.html#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc.h</a></li>
 <li>zrtos_malloc__init()&#160;:&#160;<a class="el" href="zrtos__malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f">zrtos_malloc.h</a></li>
 <li>zrtos_malloc__malloc()&#160;:&#160;<a class="el" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc.h</a></li>
+<li>zrtos_mem__cmp()&#160;:&#160;<a class="el" href="zrtos__mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem.h</a></li>
 <li>zrtos_mem__cpy()&#160;:&#160;<a class="el" href="zrtos__mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78">zrtos_mem.h</a></li>
 <li>zrtos_mem__left_rotate()&#160;:&#160;<a class="el" href="zrtos__mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57">zrtos_mem.h</a></li>
 <li>zrtos_mem__move_left_overlapping()&#160;:&#160;<a class="el" href="zrtos__mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem.h</a></li>
@@ -152,10 +183,14 @@ $(function(){initNavTree('globals_func_z.html',''); initResizable(); });
 <li>zrtos_stack__shift()&#160;:&#160;<a class="el" href="zrtos__stack_8h.html#afa31eba570f50c5a4abe165602963225">zrtos_stack.h</a></li>
 <li>zrtos_stack__write()&#160;:&#160;<a class="el" href="zrtos__stack_8h.html#aebaaa2b5cc93359116c7c7cee1f77bca">zrtos_stack.h</a></li>
 <li>zrtos_stack__write_ex()&#160;:&#160;<a class="el" href="zrtos__stack_8h.html#a34c188132dc24679ed10585279d791d9">zrtos_stack.h</a></li>
+<li>zrtos_str__cmp()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a7e9860a6921e03fd013bbb20bf4a88b3">zrtos_str.h</a></li>
+<li>zrtos_str__cspn()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a94f2645c0c594c77acacede9a145ff11">zrtos_str.h</a></li>
 <li>zrtos_str__dtoa()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#adcf77443fdcd0ba7a3a37438f6ee3855">zrtos_str.h</a></li>
 <li>zrtos_str__len()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str.h</a></li>
 <li>zrtos_str__ltoa()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a0f900e1b206fe39cd1b56fb61c1802b6">zrtos_str.h</a></li>
 <li>zrtos_str__reverse()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a1d32a5a8a6bb91bef6370f6f5b03513f">zrtos_str.h</a></li>
+<li>zrtos_str__spn()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a449cee93b0e54bd698d6c14d8ad83957">zrtos_str.h</a></li>
+<li>zrtos_str__tok_r()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a1952f0c5784b3276bc6e0439f23d3fd0">zrtos_str.h</a></li>
 <li>zrtos_str__ultoa()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#aee390913b90918b21b4a44f1e07d7189">zrtos_str.h</a></li>
 <li>zrtos_str__vsnprintf()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#af64b95fd53da061e4bde68dddbe02232">zrtos_str.h</a></li>
 <li>zrtos_str__vsnprintf_cb()&#160;:&#160;<a class="el" href="zrtos__str_8h.html#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str.h</a></li>
@@ -204,10 +239,40 @@ $(function(){initNavTree('globals_func_z.html',''); initResizable(); });
 <li>zrtos_time__get_milliseconds()&#160;:&#160;<a class="el" href="zrtos__time_8h.html#ac339d83e827a1dcd461fe500bc05ed3f">zrtos_time.h</a></li>
 <li>zrtos_time__get_seconds()&#160;:&#160;<a class="el" href="zrtos__time_8h.html#abbb1f4c8fe104c00c297c541a9a34cb7">zrtos_time.h</a></li>
 <li>zrtos_time__get_ticks()&#160;:&#160;<a class="el" href="zrtos__time_8h.html#aa52faf83b38b9052b325aa1fa55a2b3e">zrtos_time.h</a></li>
+<li>zrtos_types__ceil_size_to_alignment()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#a16a3c8eb064a7cb4a9ca61976ddb9d9f">zrtos_types.h</a></li>
 <li>zrtos_types__ptr_add()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types.h</a></li>
 <li>zrtos_types__ptr_cmp()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#aee2e623cc539d0a4a2d1ba5c4750f7c6">zrtos_types.h</a></li>
 <li>zrtos_types__ptr_get_byte_distance()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types.h</a></li>
 <li>zrtos_types__ptr_subtract()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#a1824c547b5262eed148a0bfac2912537">zrtos_types.h</a></li>
+<li>zrtos_types__ptr_to_alignment()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#a0d7337185aae059864c70d11582e0339">zrtos_types.h</a></li>
+<li>zrtos_types__uint32_is_valid_address_range()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329">zrtos_types.h</a></li>
+<li>zrtos_types__uint64_is_valid_address_range()&#160;:&#160;<a class="el" href="zrtos__types_8h.html#ab829436e5ffed129b2fac128a21347c7">zrtos_types.h</a></li>
+<li>zrtos_vfs_dentry__get_first_node()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#a895c077dbdd88a763cab572ee60a11d4">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_dentry__get_next_node()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#a678cdfa343ed69c73450b27f121bf0d0">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_dentry__init()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#a568a74f7d927fbb181bcbf96621ffd8c">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_dentry__lookup()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#a25c3d8504af7c99c7fe0705919e4bba6">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_dentry__mount()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#aa44d756d8bd3e9b22310af495c40a6a1">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_dentry__umount()&#160;:&#160;<a class="el" href="zrtos__vfs__dentry_8h.html#ab23bd5936ef6a2797c8970794c44bad0">zrtos_vfs_dentry.h</a></li>
+<li>zrtos_vfs_file__close()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#a56db77e600ba29d8f2dd339a3907ccc7">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_file__get_inode_data()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_file__ioctl()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#aca64e7e6d0d4f35a2a3e58b08bf1b0a6">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_file__open()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#a85b537c061190c8551bbe0d1989fc617">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_file__read()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#a7e6d8b045d137b514db59901b918d665">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_file__write()&#160;:&#160;<a class="el" href="zrtos__vfs__file_8h.html#a29f367dd6940b2c3f09c1e6c69e6c3d1">zrtos_vfs_file.h</a></li>
+<li>zrtos_vfs_inode__deinit()&#160;:&#160;<a class="el" href="zrtos__vfs__inode_8h.html#a642746b730ce3fe49070eaa4b6514ffc">zrtos_vfs_inode.h</a></li>
+<li>zrtos_vfs_inode__get_ctx()&#160;:&#160;<a class="el" href="zrtos__vfs__inode_8h.html#a9d295cf6a60e6b8c8cc1c8279c69e2c9">zrtos_vfs_inode.h</a></li>
+<li>zrtos_vfs_inode__get_plugin()&#160;:&#160;<a class="el" href="zrtos__vfs__inode_8h.html#ae4cebdb4815bddc24c2e8650903ce32b">zrtos_vfs_inode.h</a></li>
+<li>zrtos_vfs_inode__init()&#160;:&#160;<a class="el" href="zrtos__vfs__inode_8h.html#a017cf6850f11efa189da7d3655d9ea53">zrtos_vfs_inode.h</a></li>
+<li>zrtos_vfs_module_dht11__can_read()&#160;:&#160;<a class="el" href="dht11_8h.html#a0e0f763b930d142d53bb12cd82ad5ecd">dht11.h</a>, <a class="el" href="hd44780u_8h.html#a0e0f763b930d142d53bb12cd82ad5ecd">hd44780u.h</a></li>
+<li>zrtos_vfs_module_dht11__can_write()&#160;:&#160;<a class="el" href="dht11_8h.html#a3cd6e02cac43228cd6272cff1b8e5172">dht11.h</a>, <a class="el" href="hd44780u_8h.html#a3cd6e02cac43228cd6272cff1b8e5172">hd44780u.h</a></li>
+<li>zrtos_vfs_module_dht11__pread()&#160;:&#160;<a class="el" href="dht11_8h.html#a7fae3b6015cdd729341495be64fc57a1">dht11.h</a>, <a class="el" href="hd44780u_8h.html#a7fae3b6015cdd729341495be64fc57a1">hd44780u.h</a></li>
+<li>zrtos_vfs_module_dht11__pwrite()&#160;:&#160;<a class="el" href="dht11_8h.html#a1eeaa2dd386cf6aa65f2dc139392d1fc">dht11.h</a>, <a class="el" href="hd44780u_8h.html#a1eeaa2dd386cf6aa65f2dc139392d1fc">hd44780u.h</a></li>
+<li>zrtos_vfs_module_gpio__ioctl()&#160;:&#160;<a class="el" href="gpio_8h.html#a71783ad9411c7fe1d55c57703c3d3326">gpio.h</a></li>
+<li>zrtos_vfs_module_hd44780u__init()&#160;:&#160;<a class="el" href="hd44780u_8h.html#a8d04468db1247810ddd9f64483cd76f4">hd44780u.h</a></li>
+<li>zrtos_vfs_module_hd44780u__read()&#160;:&#160;<a class="el" href="hd44780u_8h.html#a94db9d5af95cee3b1350a84f73c1c1fb">hd44780u.h</a></li>
+<li>zrtos_vfs_module_hd44780u__write()&#160;:&#160;<a class="el" href="hd44780u_8h.html#a00fcc65c9faa9929ce63ff37ea3917bd">hd44780u.h</a></li>
+<li>zrtos_vfs_module_zero__on_read()&#160;:&#160;<a class="el" href="zero_8h.html#ab183cd24a395f3b2f709618d3c6ca8d9">zero.h</a></li>
+<li>ZRTOS_VFS_PLUGIN__INIT()&#160;:&#160;<a class="el" href="avr__progmem_8h.html#a3a2009110f802cd7f5df1d1cef419709">avr_progmem.h</a>, <a class="el" href="null_8h.html#a29d11801cb70308271d5d07875c944ac">null.h</a>, <a class="el" href="sram_8h.html#a2acb6f15e42ab308cbb316f36a7b9ca1">sram.h</a>, <a class="el" href="zero_8h.html#a74eef446961300740c812ac0416df8b5">zero.h</a></li>
 <li>zrtos_vheap__free()&#160;:&#160;<a class="el" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap.h</a></li>
 <li>zrtos_vheap__free_helper()&#160;:&#160;<a class="el" href="zrtos__vheap_8h.html#a8d6d03b6b309d0782887c006e8527398">zrtos_vheap.h</a></li>
 <li>zrtos_vheap__get_by_id()&#160;:&#160;<a class="el" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap.h</a></li>

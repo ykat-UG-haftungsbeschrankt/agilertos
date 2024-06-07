@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['callback_0',['callback',['../struct__zrtos__event__handler__t.html#a3865706147ec9e8518f94f441f47c65a',1,'_zrtos_event_handler_t::callback'],['../structzrtos__task__pthread____trampoline__cb__args__t.html#a5bbe7970bfba5910eb204feb6dbb3c8f',1,'zrtos_task_pthread__trampoline_cb_args_t::callback'],['../struct__zrtos__vm__function__t.html#ab76d46b89a9e68040ebe95bff281cb89',1,'_zrtos_vm_function_t::callback']]],
-  ['context_1',['context',['../struct__zrtos__vm__function__t.html#ae10bb8b5be89febfcc37a78a6a2fdeef',1,'_zrtos_vm_function_t']]],
-  ['ctx_2',['ctx',['../struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137',1,'_zrtos_event_handler_t']]],
-  ['ctx_5fswitch_5ftask_5fstack_3',['ctx_switch_task_stack',['../struct__zrtos__vheap__task__scheduler__t.html#a29354430041cd1f450c935208480e3f4',1,'_zrtos_vheap_task_scheduler_t']]]
+  ['bits_0',['bits',['../struct__zrtos__driver__dht11__t.html#acf96f72d25bd42e5d5b7206c60e29b57',1,'_zrtos_driver_dht11_t::bits'],['../struct__zrtos__vfs__module__hd44780u__t.html#a24ae6ae906056d8840fbca415c3f353d',1,'_zrtos_vfs_module_hd44780u_t::bits']]]
 ];

@@ -1,22 +1,24 @@
 <map id="zrtos_vm_function_index.h" name="zrtos_vm_function_index.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="50,5,224,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__types_8h.html" title=" " alt="" coords="87,155,187,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,35,102,49,86,66,77,85,78,106,91,126,108,143,104,147,87,129,73,108,71,84,82,63,98,45,116,30"/>
-<area shape="rect" id="Node000006" href="$zrtos__mem_8h.html" title=" " alt="" coords="89,80,186,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="140,33,140,64,135,64,135,33"/>
-<area shape="rect" id="Node000007" href="$zrtos__vm__function_8h.html" title=" " alt="" coords="210,80,347,107"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="163,30,241,70,239,75,161,35"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="113,5,287,32"/>
+<area shape="rect" id="Node000002" href="$zrtos__types_8h.html" title=" " alt="" coords="150,155,250,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,35,165,49,149,66,139,85,141,106,154,126,170,143,167,147,149,129,136,108,134,84,144,63,161,45,179,30"/>
+<area shape="rect" id="Node000007" href="$zrtos__mem_8h.html" title=" " alt="" coords="151,80,249,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="203,33,203,64,197,64,197,33"/>
+<area shape="rect" id="Node000008" href="$zrtos__vm__function_8h.html" title=" " alt="" coords="273,80,409,107"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="226,30,304,70,302,75,223,35"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,229,80,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,184,73,222,69,218,119,180"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="174,184,85,225,83,220,171,179"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="104,229,171,256"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="140,182,140,214,135,214,135,182"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="195,229,258,256"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="154,180,201,217,198,221,151,184"/>
-<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="140,107,140,139,135,139,135,107"/>
-<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="255,110,177,150,174,145,253,105"/>
-<area shape="rect" id="Node000008" href="$zrtos__error_8h.html" title=" " alt="" coords="231,155,326,181"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="281,107,281,139,276,139,276,107"/>
-<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="272,183,246,218,242,215,267,180"/>
-<area shape="rect" id="Node000009" href="$zrtos__assert_8h.html" title=" " alt="" coords="282,229,387,256"/>
-<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="290,180,318,215,314,219,286,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="191,184,160,219,156,216,187,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="194,229,259,256"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="207,181,219,214,214,216,202,183"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="283,229,346,256"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="221,180,283,218,280,223,218,184"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="203,107,203,139,197,139,197,107"/>
+<area shape="poly" id="edge9_Node000008_Node000002" title=" " alt="" coords="318,110,239,150,237,145,315,105"/>
+<area shape="rect" id="Node000009" href="$zrtos__error_8h.html" title=" " alt="" coords="294,155,388,181"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="344,107,344,139,339,139,339,107"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="339,183,327,216,322,214,334,181"/>
+<area shape="rect" id="Node000010" href="$zrtos__assert_8h.html" title=" " alt="" coords="370,229,475,256"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="357,180,399,217,396,221,354,184"/>
 </map>
