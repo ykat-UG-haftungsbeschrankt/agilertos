@@ -44,34 +44,39 @@ zrtos_vfs_dentry_t *zrtos_vfs_dentry__lookup(
 	return ret;
 }
 
-int zrtos_vfs_dentry__mount(
+zrtos_error_t zrtos_vfs_dentry__mount(
 	 zrtos_vfs_dentry_t *thiz
 	,zrtos_vfs_plugin_t *plugin
-	,void *private_data
+	,void *inode_ctx
 ){
-	int ret;
+	int ret = EBUSY;
 	if(0 == thiz->count){
-		thiz->inode.plugin = plugin;
-		thiz->inode.private_data = private_data;
-		ret = plugin->mount(private_data);
-	}else{
-		ret = -EBUSY;
+		zrtos_vfs_inode__init(
+			 &thiz->inode
+			,plugin
+			,inode_ctx
+		);
+		ret = plugin->operation(
+			 ZRTOS_VFS_PLUGIN_OPERATION__MOUNT
+			,thiz
+			,private_data
+		);
 	}
 	return ret;
 }
 
-zrtos_vfs_dentry_t *zrtos_vfs_dentry__umount(
+zrtos_error_t zrtos_vfs_dentry__umount(
 	 zrtos_vfs_dentry_t *thiz
 ){
-	int ret;
+	zrtos_error_t ret = EBUSY;
 	if(0 == thiz->count){
-		ret = thiz->inode.plugin->umount(thiz->inode.private_data);
-		if(ret == 0){
-			thiz->inode.plugin = 0;
-			thiz->inode.private_data = 0;
+		ret = thiz->inode.plugin->operation(
+			 ZRTOS_VFS_PLUGIN_OPERATION__UMOUNT
+			,thiz
+		);
+		if(ret == EXIT_SUCCESS){
+			zrtos_vfs_inode__deinit(&thiz->inode);
 		}
-	}else{
-		ret = -EBUSY;
 	}
 	return ret;
 }

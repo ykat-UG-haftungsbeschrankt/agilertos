@@ -21,8 +21,9 @@ extern "C" {
 typedef zrtos_arch_gpio_pin_t zrtos_gpio_pin_t;
 
 typedef enum{
-	 ZRTOS_GPIO_MODE__INPUT
-	,ZRTOS_GPIO_MODE__OUTPUT
+	 ZRTOS_GPIO_MODE__INPUT  
+	,ZRTOS_GPIO_MODE__OUTPUT 
+	,ZRTOS_GPIO_MODE__PULLUP 
 }zrtos_gpio_mode_t;
 
 typedef bool zrtos_gpio_value_digital_t;

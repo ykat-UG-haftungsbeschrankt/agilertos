@@ -45,13 +45,17 @@ ssize_t zrtos_vfs_module_hd44780u__init(
 	,size_t len
 	,off_t offset
 ){
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_rs, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_rw, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_e, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_data0, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_data1, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_data2, ZRTOS_GPIO_MODE__OUTPUT);
-	zrtos_gpio__set_mode(thiz->gpio,thiz->pin_data3, ZRTOS_GPIO_MODE__OUTPUT);
+	zrtos_gpio__set_mode_ex(
+		 thiz->gpio
+		,7
+		,thiz->pin_rs   , ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_rw   , ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_e    , ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_data0, ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_data1, ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_data2, ZRTOS_GPIO_MODE__OUTPUT
+		,thiz->pin_data3, ZRTOS_GPIO_MODE__OUTPUT
+	);
 	zrtos_gpio__delay_microseconds(LCD_DELAY_BOOTUP);
 
     /* initial write to lcd is 8bit */

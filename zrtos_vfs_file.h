@@ -29,7 +29,7 @@ int zrtos_vfs_file__open(const char *path){
 		 0
 		,path
 	);
-	if(dentry){
+	if(dentry){ 
 		for(size_t i=0;i<ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX;i++){
 			if(0 == zrtos_vfs_file_index[i].dentry){
 				dentry->count++;
@@ -56,7 +56,16 @@ void zrtos_vfs_file__close(size_t fd){
 
 ssize_t zrtos_vfs_file__read(size_t fd,void *buffer,size_t len,size_t offset){
 	zrtos_vfs_file_t file = zrtos_vfs_file_index[fd];
-	return file.dentry->inode.read(&file,buffer,len,offset);
+	ssize_t ret;
+	zrtos_error_t err = file.dentry->inode.plugin->operation(
+		 &file
+		,ZRTOS_VFS_PLUGIN_OPERATION__READ
+		,&ret
+		,buffer
+		,len
+		,offset
+	);
+	return err ? -err : ret;
 }
 
 ssize_t zrtos_vfs_file__write(size_t fd,void *buffer,size_t len,size_t offset){
