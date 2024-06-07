@@ -344,9 +344,9 @@ zrtos_error_t zrtos_gpio__analog_read_ex(
 }
 
 zrtos_error_t zrtos_gpio__analog_write(
-	 zrtos_gpio_t       *thiz
-	,zrtos_gpio_pin_t   pin
-	,zrtos_gpio_value_t val
+	 zrtos_gpio_t              *thiz
+	,zrtos_gpio_pin_t          pin
+	,zrtos_gpio_value_analog_t val
 ){
 	return thiz->analog_write(thiz,pin,val);
 }

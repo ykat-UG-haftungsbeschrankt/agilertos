@@ -43,7 +43,7 @@ ssize_t zrtos_vfs_module_hd44780u__init(
 	 zrtos_vfs_module_hd44780u_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	zrtos_gpio__set_mode_ex(
 		 thiz->gpio
@@ -83,7 +83,7 @@ ssize_t zrtos_vfs_module_hd44780u__write(
 	 zrtos_vfs_module_hd44780u_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 }
 
@@ -91,7 +91,7 @@ ssize_t zrtos_vfs_module_hd44780u__read(
 	 zrtos_vfs_module_hd44780u_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	uint8_t data = 0;
 
@@ -157,7 +157,7 @@ ssize_t zrtos_vfs_module_dht11__pread(
 	 zrtos_file_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	zrtos_driver_dht11_t *dht11 = zrtos_vfs_inode__get_private_data(
 		zrtos_vfs_file__get_inode(
@@ -180,7 +180,7 @@ ssize_t zrtos_vfs_module_dht11__pwrite(
 	 zrtos_file_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	zrtos_driver_dht11_t *dht11 = zrtos_vfs_inode__get_private_data(
 		zrtos_vfs_file__get_inode(

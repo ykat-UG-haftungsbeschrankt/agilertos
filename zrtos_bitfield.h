@@ -44,7 +44,7 @@ void zrtos_bitfield__zero(zrtos_bitfield_t *thiz,size_t len){
 	zrtos_mem__zero(thiz,len);
 }
 
-static size_t zrtos_bitfield__find_first(
+size_t zrtos_bitfield__find_first(
 	 zrtos_bitfield_t *thiz
 	,size_t len
 	,size_t start

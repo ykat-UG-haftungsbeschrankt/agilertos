@@ -146,8 +146,6 @@ typedef enum{
 	,EMAX             = INT_MAX ///< Maximum value of zrtos_error_t
 }zrtos_error_t;
 
-volatile zrtos_error_t errno = 0;
-
 ZRTOS_ASSERT__STATIC(sizeof(zrtos_error_t) == sizeof(int));
 
 

@@ -16,15 +16,19 @@ extern "C" {
 #include "zrtos_vfs_dentry.h"
 
 
-typedef struct{
+typedef struct _zrtos_vfs_file_t{
 	zrtos_vfs_dentry_t *dentry;
-	off_t              offset;
+	zrtos_vfs_offset_t offset;
 }zrtos_vfs_file_t;
+
+#ifndef ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX
+#error "define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX"
+#endif
 
 zrtos_vfs_file_t zrtos_vfs_file_index[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX];
 
-int zrtos_vfs_file__open(const char *path){
-	int ret;
+zrtos_error_t zrtos_vfs_file__open(char *path,size_t *fd){
+	zrtos_error_t ret;
 	zrtos_vfs_dentry_t *dentry = zrtos_vfs_dentry__lookup(
 		 0
 		,path
@@ -34,62 +38,86 @@ int zrtos_vfs_file__open(const char *path){
 			if(0 == zrtos_vfs_file_index[i].dentry){
 				dentry->count++;
 				zrtos_vfs_file_index[i].dentry = dentry;
-				ret = i;
+				*fd = i;
+				ret = EXIT_SUCCESS;
 				goto L_OUT;
 			}
 		}
-		ret = -EMFILE;
+		ret = EMFILE;
 	}else{
-		ret = -ENOENT;
+		ret = ENOENT;
 	}
 
 L_OUT:
 	return ret;
 }
 
-void zrtos_vfs_file__close(size_t fd){
+zrtos_error_t zrtos_vfs_file__close(size_t fd){
+	zrtos_error_t ret;
 	zrtos_vfs_file_t file = zrtos_vfs_file_index[fd];
 	file.dentry->count--;
-	file.dentry->inode.close(&file);
+	ret = ZRTOS_VFS_PLUGIN__INVOKE(
+		 file.dentry->inode.plugin
+		,ZRTOS_VFS_PLUGIN_OPERATION__CLOSE
+		,&file
+	);
 	zrtos_vfs_file_index[fd].dentry = 0;
+	return ret;
 }
 
-ssize_t zrtos_vfs_file__read(size_t fd,void *buffer,size_t len,size_t offset){
+zrtos_error_t zrtos_vfs_file__read(size_t fd,char *path,void *buffer,size_t len,size_t offset,size_t *ret){
 	zrtos_vfs_file_t file = zrtos_vfs_file_index[fd];
-	ssize_t ret;
-	zrtos_error_t err = file.dentry->inode.plugin->operation(
-		 &file
+	return ZRTOS_VFS_PLUGIN__INVOKE(
+		 file.dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__READ
-		,&ret
+		,&file
+		,path
 		,buffer
 		,len
 		,offset
+		,ret
 	);
-	return err ? -err : ret;
 }
 
-ssize_t zrtos_vfs_file__write(size_t fd,void *buffer,size_t len,size_t offset){
+zrtos_error_t zrtos_vfs_file__write(size_t fd,char *path,void *buffer,size_t len,size_t offset,size_t *ret){
 	zrtos_vfs_file_t file = zrtos_vfs_file_index[fd];
-	return file.dentry->inode.write(&file,buffer,len,offset);
+	return ZRTOS_VFS_PLUGIN__INVOKE(
+		 file.dentry->inode.plugin
+		,ZRTOS_VFS_PLUGIN_OPERATION__WRITE
+		,&file
+		,path
+		,buffer
+		,len
+		,offset
+		,ret
+	);
 }
 
-int zrtos_vfs_file__ioctl(size_t fd,int request,va_list args){
-	int ret;
+zrtos_error_t zrtos_vfs_file__ioctl(size_t fd,char *path,int request,...){
+	zrtos_error_t ret;
 	zrtos_vfs_file_t file = zrtos_vfs_file_index[fd];
+	va_list       args;
+
+	va_start(args,request);
 	if(file.dentry){
-		ret = file.dentry->inode.plugin->ioctl(
-			 &file
+		return ZRTOS_VFS_PLUGIN__INVOKE(
+			 file.dentry->inode.plugin
+			,ZRTOS_VFS_PLUGIN_OPERATION__IOCTL
+			,&file
+			,path
 			,request
 			,args
 		);
 	}else{
-		ret = -EBADF;
+		ret = EBADF;
 	}
+	va_end(args);
+
 	return ret;
 }
 
 void *zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz){
-	return thiz->dentry->inode.private_data;
+	return thiz->dentry->inode.ctx;
 }
 
 #ifdef __cplusplus

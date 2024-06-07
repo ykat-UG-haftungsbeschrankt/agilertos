@@ -74,6 +74,52 @@ size_t zrtos_types__ceil_size_to_alignment(size_t len){
 
 #define ZRTOS_TYPES__MIN(a,b) ((a)<(b)?(a):(b))
 #define ZRTOS_TYPES__MAX(a,b) ((a)>(b)?(a):(b))
+#define ZRTOS_TYPES__CMP(type,a_len,b_len)\
+	({\
+		int ret;\
+		if(a_len < b_len){\
+			ret = -1;\
+		}else if(a_len > b_len){\
+			ret = 1;\
+		}else{\
+			ret = 0;\
+		}\
+		ret;\
+	})
+
+bool zrtos_types__uint32_is_valid_address_range(
+	 uint32_t first_address
+	,uint32_t last_address
+	,uint32_t offset
+	,size_t *length
+){
+	if(offset >= first_address
+	&& offset <= last_address){
+		*length = ZRTOS_TYPES__MIN(
+			 *length
+			,last_address - offset
+		);
+		return true;
+	}
+	return false;
+}
+
+bool zrtos_types__uint64_is_valid_address_range(
+	 uint64_t first_address
+	,uint64_t last_address
+	,uint64_t offset
+	,size_t *length
+){
+	if(offset >= first_address
+	&& offset <= last_address){
+		*length = ZRTOS_TYPES__MIN(
+			 *length
+			,last_address - offset
+		);
+		return true;
+	}
+	return false;
+}
 
 #define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
     do{                                     \
@@ -87,6 +133,8 @@ size_t zrtos_types__ceil_size_to_alignment(size_t len){
 
 #define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \
     (sizeof(arr)/sizeof((arr)[0]))
+
+#define ZRTOS_TYPES__SIZE_MAX SIZE_MAX
 
 #ifdef __cplusplus
 }

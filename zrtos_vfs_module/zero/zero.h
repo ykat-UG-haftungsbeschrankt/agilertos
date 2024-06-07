@@ -11,17 +11,27 @@ extern "C" {
 #endif
 
 
-#include <zrtos/zrtos_vfs_plugin.h>
-#include <zrtos/zrtos_mem.h>
+#include "../../zrtos_vfs_plugin.h"
+#include "../../zrtos_vfs_file.h"
+#include "../../zrtos_mem.h"
 
 
-ZRTOS_VFS_PLUGIN__INIT(zero,{
-	ZRTOS_VFS_PLUGIN__ON_READ(ret,data,len,{
-		zrtos_mem__zero(data,len);
-		*ret = len;
-		ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
-	});
-});
+zrtos_error_t zrtos_vfs_module_zero__on_read(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,void *buf
+	,size_t len
+	,zrtos_vfs_offset_t offset
+	,size_t *ret
+){
+	zrtos_mem__zero(buf,len);
+	*ret = len;
+	return EXIT_SUCCESS;
+}
+
+ZRTOS_VFS_PLUGIN__INIT(zero
+	,ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_zero__on_read)
+);
 
 
 #ifdef __cplusplus

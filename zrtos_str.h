@@ -29,6 +29,13 @@ size_t zrtos_str__len(char *str){
 	return zrtos_types__ptr_get_byte_distance(str,tmp);
 }
 
+int zrtos_str__cmp(char *a,char *b){
+	size_t a_len = zrtos_str__len(a);
+	size_t b_len = zrtos_str__len(b);
+	int ret = ZRTOS_TYPES__CMP(size_t,a_len,b_len);
+	return ret ? ret : zrtos_mem__cmp(a,b,a_len);
+}
+
 void zrtos_str__reverse(char *str){
 	zrtos_mem__reverse(str,zrtos_str__len(str));
 }
@@ -196,7 +203,7 @@ int zrtos_str__vsnprintf(char *dest,size_t len,char const *fmt, ...){
 	return args.ret;
 }
 
-size_t zrtos_str__spn(const char *s1, const char *s2){{
+size_t zrtos_str__spn(const char *s1, const char *s2){
 	register const char *p = s1, *spanp;
 	register char c, sc;
 
@@ -205,7 +212,7 @@ size_t zrtos_str__spn(const char *s1, const char *s2){{
 	 */
 cont:
 	c = *p++;
-	for (spanp = s2; (sc = *spanp++) != 0;){}
+	for (spanp = s2; (sc = *spanp++) != 0;){
 		if (sc == c){
 			goto cont;
 		}

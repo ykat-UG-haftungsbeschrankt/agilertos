@@ -48,7 +48,7 @@ ssize_t zrtos_vfs_module_dht11__pread(
 	 zrtos_file_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	zrtos_driver_dht11_t *dht11 = zrtos_vfs_inode__get_private_data(
 		zrtos_vfs_file__get_inode(
@@ -71,7 +71,7 @@ ssize_t zrtos_vfs_module_dht11__pwrite(
 	 zrtos_file_t *thiz
 	,void *buf
 	,size_t len
-	,off_t offset
+	,zrtos_vfs_offset_t offset
 ){
 	zrtos_driver_dht11_t *dht11 = zrtos_vfs_inode__get_private_data(
 		zrtos_vfs_file__get_inode(

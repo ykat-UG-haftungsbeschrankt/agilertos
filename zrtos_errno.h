@@ -4,17 +4,17 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_VFS_MODULE_NULL_H
-#define ZRTOS_VFS_MODULE_NULL_H
+#ifndef ZRTOS_ERRNO_H
+#define ZRTOS_ERRNO_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-#include "../../zrtos_vfs_plugin.h"
+#include "zrtos_error.h"
 
 
-ZRTOS_VFS_PLUGIN__INIT(null,);
+zrtos_error_t errno = EXIT_SUCCESS;
 
 
 #ifdef __cplusplus
