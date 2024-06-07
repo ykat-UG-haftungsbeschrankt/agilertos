@@ -20,12 +20,14 @@ typedef size_t off_t;
 
 #include "zrtos_vfs_module/zero/zero.h"
 #include "zrtos_vfs_module/null/null.h"
+#include "zrtos_vfs_module/random/random.h"
 
 int main(void){
 
 	zrtos_vfs_dentry_t dev;
 	zrtos_vfs_dentry_t dev_zero;
 	zrtos_vfs_dentry_t dev_null;
+	zrtos_vfs_dentry_t dev_random;
 
 	zrtos_vfs_dentry__init(
 		 &dev
@@ -45,15 +47,36 @@ int main(void){
 		,&dev
 	);
 
+	zrtos_vfs_dentry__init(
+		 &dev_random
+		,"random"
+		,&dev
+	);
+
 	zrtos_vfs_dentry__mount(
 		 &dev_zero
 		,ZRTOS_VFS_PLUGIN(zero)
 		,0
 	);
 
+	zrtos_vfs_dentry__mount(
+		 &dev_random
+		,ZRTOS_VFS_PLUGIN(random)
+		,0
+	);
+
+	size_t ret;
 	size_t fd;
+	size_t fd2;
+	uint8_t buffer[10];
+		
 	zrtos_vfs_file__open("/dev/zero",&fd);
-	
+	zrtos_vfs_file__open("/dev/random",&fd2);
+
+	for(size_t l=5;l--;){
+		zrtos_vfs_file__read(fd2,0,buffer,5,0,&ret);
+	}
+	zrtos_vfs_file__read(fd,0,buffer,5,0,&ret);
 
 	return 0;
 }

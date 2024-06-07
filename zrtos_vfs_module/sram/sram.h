@@ -22,57 +22,53 @@ typedef struct _zrtos_vfs_module_sram_args_t{
 }zrtos_vfs_module_sram_args_t;
 
 
-ZRTOS_VFS_PLUGIN__INIT(zero,{
-	ZRTOS_VFS_PLUGIN__ON_READ(ret,file,path,data,len,offset,{
-		zrtos_vfs_module_progmem_args_t *mod = zrtos_vfs_file__get_inode_data(
-			thiz
-		);
-		uint8_t *addr = offset;
-		uint8_t *data_ptr = data;
-		if(zrtos_types__uint32_is_valid_address_range(
-			 mod->start_addr
-			,mod->end_addr
-			,addr
-			,&len
-		)){
-			*ret = len;
-			for(;len--;addr++){
-				*data_ptr++ = pgm_read_byte_far(addr);
-			}
-			ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
-		}else{
-			ZRTOS_VFS_PLUGIN__RETURN(EFAULT);
+zrtos_error_t zrtos_vfs_module_sram__read(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,off_t offset,size_t *out){
+	zrtos_vfs_module_progmem_args_t *mod = zrtos_vfs_file__get_inode_data(
+	thiz
+	);
+	uint8_t *addr = offset;
+	uint8_t *data_ptr = data;
+	if(zrtos_types__uint32_is_valid_address_range(
+	mod->start_addr
+	,mod->end_addr
+	,addr
+	,&len
+	)){
+		*ret = len;
+		for(;len--;addr++){
+			*data_ptr++ = pgm_read_byte_far(addr);
 		}
-	});
-	ZRTOS_VFS_PLUGIN__ON_WRITE(ret,file,path,data,len,offset,{
-		zrtos_vfs_module_sram_args_t *mod = zrtos_vfs_file__get_inode_data(
-			thiz
-		);
-		uint32_t addr = offset;
-		uint8_t *data_ptr = data;
-		if(addr >= mod->start_addr
-		&& addr <= mod->end_addr){
-			size_t i = *ret = ZRTOS_TYPES__MIN(
-				 len
-				,mod->end_addr - addr
-			);
-			for(;i--;addr++){
-				*data_ptr++ = pgm_read_byte_far(addr);
-			}
-			ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
+		ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
 		}else{
-			ZRTOS_VFS_PLUGIN__RETURN(EFAULT);
+		ZRTOS_VFS_PLUGIN__RETURN(EFAULT);
+	}
+}
+
+zrtos_error_t zrtos_vfs_module_sram__write(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,off_t offset,size_t *out){
+	zrtos_vfs_module_sram_args_t *mod = zrtos_vfs_file__get_inode_data(
+	thiz
+	);
+	uint32_t addr = offset;
+	uint8_t *data_ptr = data;
+	if(addr >= mod->start_addr
+	&& addr <= mod->end_addr){
+		size_t i = *ret = ZRTOS_TYPES__MIN(
+		len
+		,mod->end_addr - addr
+		);
+		for(;i--;addr++){
+			*data_ptr++ = pgm_read_byte_far(addr);
 		}
-	});
-	ZRTOS_VFS_PLUGIN__ON_CAN_READ(ret,file,path,{
-		*ret = 1;
 		ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
-	});
-	ZRTOS_VFS_PLUGIN__ON_CAN_WRITE(ret,file,path,{
-		*ret = 1;
-		ZRTOS_VFS_PLUGIN__RETURN(EXIT_SUCCESS);
-	});
-});
+		}else{
+		ZRTOS_VFS_PLUGIN__RETURN(EFAULT);
+	}
+}
+
+ZRTOS_VFS_PLUGIN__INIT(zero,
+	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_sram__read)
+	ZRTOS_VFS_PLUGIN__ON_WRITE(zrtos_vfs_module_sram__write)
+);
 
 
 #ifdef __cplusplus

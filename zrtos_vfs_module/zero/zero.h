@@ -29,8 +29,8 @@ zrtos_error_t zrtos_vfs_module_zero__on_read(
 	return EXIT_SUCCESS;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(zero
-	,ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_zero__on_read)
+ZRTOS_VFS_PLUGIN__INIT(zero,
+	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_zero__on_read)
 );
 
 
