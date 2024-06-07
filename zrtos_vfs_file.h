@@ -79,6 +79,10 @@ int zrtos_vfs_file__ioctl(size_t fd,int request,va_list args){
 	return ret;
 }
 
+void *zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz){
+	return thiz->dentry->inode.private_data;
+}
+
 #ifdef __cplusplus
 }
 #endif
