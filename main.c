@@ -19,23 +19,36 @@ typedef size_t off_t;
 #include "zrtos_vfs_file.h"
 
 #include "zrtos_vfs_module/zero/zero.h"
+#include "zrtos_vfs_module/null/null.h"
 
 int main(void){
 
-	zrtos_vfs_dentry_t root;
-
-	zrtos_vfs_dentry_t zero;
+	zrtos_vfs_dentry_t dev;
+	zrtos_vfs_dentry_t dev_zero;
+	zrtos_vfs_dentry_t dev_null;
 
 	zrtos_vfs_dentry__init(
-		 &root
+		 &dev
 		,"dev"
 		,0
 	);
 
 	zrtos_vfs_dentry__init(
-		 &zero
+		 &dev_zero
 		,"zero"
-		,&root
+		,&dev
+	);
+
+	zrtos_vfs_dentry__init(
+		 &dev_null
+		,"null"
+		,&dev
+	);
+
+	zrtos_vfs_dentry__mount(
+		 &dev_zero
+		,ZRTOS_VFS_PLUGIN(zero)
+		,0
 	);
 
 	size_t fd;
