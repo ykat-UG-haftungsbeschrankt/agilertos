@@ -1,7 +1,0 @@
-<map id="zrtos_error.h" name="zrtos_error.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,138,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,69,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,34,57,69,53,66,79,31"/>
-<area shape="rect" id="Node000003" href="$zrtos__assert_8h.html" title=" " alt="" coords="93,80,197,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="102,31,128,66,124,69,98,34"/>
-</map>

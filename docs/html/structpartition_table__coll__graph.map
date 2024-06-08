@@ -1,9 +1,0 @@
-<map id="partitionTable" name="partitionTable">
-<area shape="rect" id="Node000001" title="MBR partition table entry." alt="" coords="122,176,221,203"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,66,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,47,40,99,48,127,63,150,90,170,123,181,121,186,88,175,59,154,44,129,35,100,31,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="135,5,208,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,47,174,176,169,176,169,47"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="277,5,344,32"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="314,48,308,101,299,129,283,154,254,174,222,185,220,180,252,169,279,150,294,127,303,99,309,47"/>
-</map>

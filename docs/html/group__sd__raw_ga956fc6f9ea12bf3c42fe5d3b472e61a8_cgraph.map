@@ -1,7 +1,0 @@
-<map id="sd_raw_send_command_r1" name="sd_raw_send_command_r1">
-<area shape="rect" id="Node000001" title="Send a command to the memory card which responses with a R1 response." alt="" coords="5,31,185,57"/>
-<area shape="rect" id="Node000002" href="$group__sd__raw.html#ga75085da84454931647328e80f6bdea7c" title="Receives a raw byte from the memory card." alt="" coords="238,5,357,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,30,222,25,223,31,185,35"/>
-<area shape="rect" id="Node000003" href="$group__sd__raw.html#ga157908b0533eb72368d320eb697f0cc0" title="Sends a raw byte to the memory card." alt="" coords="233,56,362,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,53,217,57,217,62,185,58"/>
-</map>

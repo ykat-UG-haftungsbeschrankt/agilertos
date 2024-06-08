@@ -1,9 +1,0 @@
-<map id="_sd_card.h" name="_sd_card.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,190,32"/>
-<area shape="rect" id="Node000002" href="$arduino_8h.html" title=" " alt="" coords="5,80,82,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,35,75,73,72,69,128,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="106,80,189,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,33,150,64,145,64,145,33"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="213,80,266,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="165,30,214,68,210,73,162,35"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="sd_raw_info" name="sd_raw_info">
-<area shape="rect" id="Node000001" title="This struct is used by sd_raw_get_info() to return manufacturing and status information of the card." alt="" coords="5,304,95,331"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="13,5,87,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,47,53,304,47,304,47,47"/>
-</map>

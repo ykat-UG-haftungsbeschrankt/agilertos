@@ -1,9 +1,0 @@
-<map id="directoryEntry" name="directoryEntry">
-<area shape="rect" id="Node000001" title="FAT short directory entry." alt="" coords="128,192,231,219"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,66,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="35,48,34,75,38,107,46,139,63,166,77,178,93,187,129,198,127,203,91,192,74,183,59,170,41,141,32,108,29,76,30,47"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="146,5,213,32"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,48,182,192,177,192,177,48"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="269,5,336,32"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,48,302,108,292,140,275,170,255,186,232,197,230,192,252,182,271,166,287,138,297,107,302,47"/>
-</map>

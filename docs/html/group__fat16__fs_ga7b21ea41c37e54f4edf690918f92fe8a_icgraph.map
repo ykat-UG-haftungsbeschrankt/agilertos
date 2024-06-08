@@ -1,5 +1,0 @@
-<map id="fat16_get_fs_free_callback" name="fat16_get_fs_free_callback">
-<area shape="rect" id="Node000001" title="Callback function used for counting free clusters." alt="" coords="173,5,347,32"/>
-<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga2f8ff07cca44ecb6770b12a58b6cd8c7" title="Returns the amount of free storage capacity on the filesystem in bytes." alt="" coords="5,5,125,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,21,125,21,125,16,157,16"/>
-</map>

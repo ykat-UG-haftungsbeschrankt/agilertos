@@ -1,7 +1,0 @@
-<map id="FAT16 support" name="FAT16 support">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,89,112,116"/>
-<area shape="rect" id="Node000002" href="$group__fat16__config.html" title="Preprocessor defines to configure the FAT16 implementation." alt="" coords="301,5,438,32"/>
-<area shape="rect" id="Node000005" href="$group__fat16__dir.html" title="Functions for managing directories." alt="" coords="285,56,454,83"/>
-<area shape="rect" id="Node000004" href="$group__fat16__file.html" title="Functions for managing files." alt="" coords="302,112,437,139"/>
-<area shape="rect" id="Node000003" href="$group__fat16__fs.html" title="Basic functions for handling a FAT16 filesystem." alt="" coords="317,169,422,196"/>
-</map>

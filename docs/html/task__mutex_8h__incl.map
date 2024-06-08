@@ -1,6 +1,6 @@
 <map id="task_mutex.h" name="task_mutex.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="357,5,457,32"/>
-<area shape="rect" id="Node000002" href="$zrtos_8h.html" title=" " alt="" coords="316,80,378,107"/>
+<area shape="rect" id="Node000002" href="$zrtos_8h.html" title=" " alt="" coords="300,80,394,107"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="399,34,369,70,365,66,395,31"/>
 <area shape="rect" id="Node000016" href="$error_8h.html" title=" " alt="" coords="499,80,590,107"/>
 <area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="432,30,508,70,506,75,430,35"/>
@@ -9,7 +9,7 @@
 <area shape="rect" id="Node000004" href="$arch_8h.html" title=" " alt="" coords="362,155,452,181"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="359,106,389,141,385,145,355,109"/>
 <area shape="rect" id="Node000012" href="$board_8h.html" title=" " alt="" coords="90,155,188,181"/>
-<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="317,108,190,152,189,147,315,103"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="312,110,191,152,189,147,310,105"/>
 <area shape="rect" id="Node000005" href="$types_8h.html" title=" " alt="" coords="358,237,456,264"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="410,182,410,222,404,222,404,182"/>
 <area shape="rect" id="Node000010" href="$atmega328p_8h.html" title=" " alt="" coords="480,237,612,264"/>

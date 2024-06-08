@@ -35,7 +35,8 @@ html {
 
     /* page base colors */
     --page-background-color: #ffffff;
-    --page-foreground-color: #2f4153;
+    /*--page-foreground-color: #2f4153;*/
+	--page-foreground-color: #000;
     --page-secondary-foreground-color: #6f7e8e;
 
     /* color for all separators on the website: hr, borders, ... */
@@ -137,7 +138,8 @@ html {
     --code-foreground: var(--page-foreground-color);
 
     /* fragment colors */
-    --fragment-background: #F8F9FA;
+    /*--fragment-background: #F8F9FA;*/
+	--fragment-background: #fbfbfb;
     --fragment-foreground: #37474F;
     --fragment-keyword: #bb6bb2;
     --fragment-keywordtype: #8258b3;
@@ -1226,7 +1228,7 @@ div.fragment, pre.fragment {
     margin: var(--spacing-medium) 0;
     //padding: calc(var(--spacing-large) - (var(--spacing-large) / 6)) var(--spacing-large);
 	padding: 0;
-    background: var(--fragment-background);
+    //background: var(--fragment-background);
     color: var(--fragment-foreground);
     overflow-x: auto;
 }
@@ -1332,6 +1334,8 @@ div.fragment span.lineno {
     //background: var(--fragment-linenumber-background);
     color: var(--fragment-linenumber-color);
 	padding: 0 14px 0px 0px;
+	position: relative;
+    left: -7px;
 }
 
 div.fragment span.lineno a {
@@ -1346,6 +1350,16 @@ div.fragment > .line:first-child .lineno {
 
 div.line {
     border-radius: var(--border-radius-small);
+	padding: 0px 7px 0 7px;
+	text-indent: 0px;
+}
+
+div.line:nth-child(2){
+	padding: 7px 7px 0px 7px;
+}
+
+div.line:nth-last-child(1 of .line){
+	padding: 0px 7px 7px 7px;
 }
 
 div.line.glow {

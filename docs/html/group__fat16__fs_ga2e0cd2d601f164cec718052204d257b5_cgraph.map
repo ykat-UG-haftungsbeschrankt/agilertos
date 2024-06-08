@@ -1,9 +1,0 @@
-<map id="fat16_read_root_dir_entry" name="fat16_read_root_dir_entry">
-<area shape="rect" id="Node000001" title="Reads a directory entry of the root directory." alt="" coords="5,39,137,81"/>
-<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga64666f9e44e49273d33ed01058ff5fac" title="Callback function for reading a directory entry." alt="" coords="186,5,325,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,46,171,39,172,45,137,51"/>
-<area shape="rect" id="Node000004" href="$group__fat16__fs.html#ga6f277c11fa202ecfadca3635221f70a4" title="Callback function for seeking through subdirectory entries." alt="" coords="185,72,326,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="137,69,170,75,169,80,136,74"/>
-<area shape="rect" id="Node000003" href="$group__fat16__fs.html#ga8927d70d35df0d10284286e2d5b66193" title="Interprets a raw directory entry and puts the contained information into the directory entry." alt="" coords="374,5,498,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="325,24,358,24,358,29,325,29"/>
-</map>

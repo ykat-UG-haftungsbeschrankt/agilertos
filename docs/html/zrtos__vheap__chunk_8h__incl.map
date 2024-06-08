@@ -1,9 +1,0 @@
-<map id="zrtos_vheap_chunk.h" name="zrtos_vheap_chunk.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="115,5,258,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__vheap__chunk__uid_8h.html" title=" " alt="" coords="5,80,173,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,35,119,73,116,69,168,30"/>
-<area shape="rect" id="Node000003" href="$zrtos__vheap__chunk__type_8h.html" title=" " alt="" coords="197,80,373,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,30,257,69,254,73,202,35"/>
-<area shape="rect" id="Node000004" href="$zrtos__vheap__type_8h.html" title=" " alt="" coords="218,155,352,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="288,107,288,139,282,139,282,107"/>
-</map>

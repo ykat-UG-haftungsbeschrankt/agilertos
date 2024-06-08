@@ -1,7 +1,0 @@
-<map id="zrtos_gpio__digital_read" name="zrtos_gpio__digital_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="360,13,521,40"/>
-<area shape="rect" id="Node000002" href="$zrtos__gpio_8h.html#ad4a3b7dd1577e8aef75f94088146b9cb" title=" " alt="" coords="183,5,312,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="344,29,312,29,312,24,344,24"/>
-<area shape="rect" id="Node000003" href="$zrtos__gpio_8h.html#a1d3927aaf3b6d27b7995c0791d4c8609" title=" " alt="" coords="5,5,135,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="167,29,135,29,135,24,167,24"/>
-</map>

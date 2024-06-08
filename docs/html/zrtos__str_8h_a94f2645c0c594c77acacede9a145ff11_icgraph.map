@@ -1,9 +1,0 @@
-<map id="zrtos_str__cspn" name="zrtos_str__cspn">
-<area shape="rect" id="Node000001" title=" " alt="" coords="569,5,684,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__str_8h.html#a1952f0c5784b3276bc6e0439f23d3fd0" title=" " alt="" coords="406,5,521,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="554,21,521,21,521,16,554,16"/>
-<area shape="rect" id="Node000003" href="$zrtos__vfs__dentry_8h.html#a25c3d8504af7c99c7fe0705919e4bba6" title=" " alt="" coords="191,5,358,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="391,21,359,21,359,16,391,16"/>
-<area shape="rect" id="Node000004" href="$zrtos__vfs__file_8h.html#a85b537c061190c8551bbe0d1989fc617" title=" " alt="" coords="5,5,143,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="175,21,143,21,143,16,175,16"/>
-</map>

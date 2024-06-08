@@ -1,9 +1,0 @@
-<map id="zrtos_task__trampoline_cb" name="zrtos_task__trampoline_cb">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,183,99"/>
-<area shape="rect" id="Node000002" href="$zrtos__task_8h.html#af347ad95ac58571ed81869a276c3c27c" title=" " alt="" coords="246,5,401,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,69,230,48,231,53,150,74"/>
-<area shape="rect" id="Node000003" href="$zrtos__task_8h.html#a67e257f5d9a405023725ef7adaa09746" title=" " alt="" coords="231,72,416,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,83,215,83,215,88,183,88"/>
-<area shape="rect" id="Node000004" href="$zrtos__task_8h.html#a20f3346850186630e5756b04af1b01b8" title=" " alt="" coords="248,123,399,165"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,97,234,118,232,124,148,102"/>
-</map>

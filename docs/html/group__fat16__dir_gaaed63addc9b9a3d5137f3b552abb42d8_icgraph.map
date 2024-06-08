@@ -1,9 +1,0 @@
-<map id="fat16_reset_dir" name="fat16_reset_dir">
-<area shape="rect" id="Node000001" title="Resets a directory handle." alt="" coords="327,31,433,57"/>
-<area shape="rect" id="Node000002" href="$group__fat16__file.html#gaf8029e3ec633902d08e8204d13afc350" title="Creates a file." alt="" coords="164,5,279,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="311,36,279,31,280,25,312,30"/>
-<area shape="rect" id="Node000003" href="$group__fat16.html#gaa25986550d47370f582118a9ef6eae24" title=" " alt="" coords="170,56,273,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="312,58,274,64,273,59,311,52"/>
-<area shape="rect" id="Node000004" href="$group__fat16.html#gacdc9da639a6ccdac9847aaba559f9ef0" title=" " alt="" coords="5,56,116,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="154,72,116,72,116,67,154,67"/>
-</map>

@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 
-#include "zrtos.h"
+#include <zrtos/zrtos.h>
 #include <zrtos/error.h>
 
 

@@ -1,7 +1,7 @@
 <map id="task_scheduler.h" name="task_scheduler.h">
 <area shape="rect" id="Node000001" title=" " alt="" coords="473,5,593,32"/>
-<area shape="rect" id="Node000002" href="$zrtos_8h.html" title=" " alt="" coords="293,80,354,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="497,35,370,79,368,74,496,30"/>
+<area shape="rect" id="Node000002" href="$zrtos_8h.html" title=" " alt="" coords="276,80,371,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="497,35,375,77,374,72,496,30"/>
 <area shape="rect" id="Node000005" href="$types_8h.html" title=" " alt="" coords="487,237,584,264"/>
 <area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="531,33,514,97,509,139,511,181,525,222,520,224,506,182,503,139,508,96,526,32"/>
 <area shape="rect" id="Node000016" href="$clist_8h.html" title=" " alt="" coords="520,155,610,181"/>

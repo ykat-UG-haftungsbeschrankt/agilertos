@@ -1,9 +1,0 @@
-<map id="zrtos_str__cmp" name="zrtos_str__cmp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,117,57"/>
-<area shape="rect" id="Node000002" href="$zrtos__mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3" title=" " alt="" coords="165,5,290,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,33,149,28,150,33,118,38"/>
-<area shape="rect" id="Node000003" href="$zrtos__str_8h.html#a0bbbf024b181a2c7d5ec9056efb84743" title=" " alt="" coords="176,56,279,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,50,161,57,160,62,117,55"/>
-<area shape="rect" id="Node000004" href="$zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="338,48,481,91"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="279,67,322,67,322,72,279,72"/>
-</map>

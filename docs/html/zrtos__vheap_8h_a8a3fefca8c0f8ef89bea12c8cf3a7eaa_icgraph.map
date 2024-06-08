@@ -1,9 +1,0 @@
-<map id="zrtos_vheap__get_child" name="zrtos_vheap__get_child">
-<area shape="rect" id="Node000001" title=" " alt="" coords="359,31,515,57"/>
-<area shape="rect" id="Node000002" href="$zrtos__vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title=" " alt="" coords="179,31,311,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="343,47,311,47,311,41,343,41"/>
-<area shape="rect" id="Node000003" href="$zrtos__vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="22,5,114,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="163,35,114,28,114,23,164,30"/>
-<area shape="rect" id="Node000004" href="$zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="5,56,131,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="163,58,131,63,131,58,163,53"/>
-</map>

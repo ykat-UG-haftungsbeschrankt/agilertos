@@ -1,9 +1,0 @@
-<map id="sd_raw_available" name="sd_raw_available">
-<area shape="rect" id="Node000001" title="Checks wether a memory card is located in the slot." alt="" coords="193,56,311,83"/>
-<area shape="rect" id="Node000002" href="$group__sd__raw.html#ga0cd21cf9a326b8cfc9b9d9f35fa57423" title=" " alt="" coords="5,5,145,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,54,123,35,125,30,189,49"/>
-<area shape="rect" id="Node000003" href="$group__sd__raw.html#ga16b73f2f45ee2f1c647d6bef916eb198" title="Reads informational data from the card." alt="" coords="18,56,132,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,72,133,72,133,67,177,67"/>
-<area shape="rect" id="Node000004" href="$group__sd__raw.html#gac2e6d0ba10cef8f72391d35b4aabf385" title="Initializes memory card communication." alt="" coords="32,107,118,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,90,119,110,118,105,187,85"/>
-</map>

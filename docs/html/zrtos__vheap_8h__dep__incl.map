@@ -1,8 +1,0 @@
-<map id="zrtos_vheap.h" name="zrtos_vheap.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="46,5,148,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="5,155,189,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,46,65,62,57,81,56,101,62,120,86,153,82,156,58,123,50,101,52,79,61,60,72,43"/>
-<area shape="rect" id="Node000003" href="$zrtos__vheap__task__scheduler_8h.html" title=" " alt="" coords="67,80,263,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="121,42,155,78,151,81,117,45"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="145,120,111,156,107,152,141,116"/>
-</map>
