@@ -11,9 +11,9 @@ extern "C" {
 #endif
 
 
-#include "../../zrtos_vfs_plugin.h"
-#include "../../zrtos_vfs_file.h"
-#include "../../zrtos_mem.h"
+#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_file.h>
+#include <zrtos/mem.h>
 
 
 zrtos_error_t zrtos_vfs_module_zero__on_read(
@@ -29,7 +29,7 @@ zrtos_error_t zrtos_vfs_module_zero__on_read(
 	return EXIT_SUCCESS;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(zero,
+ZRTOS_VFS_PLUGIN__INIT(zero,ZRTOS_VFS_PLUGIN_TYPE__FILE,
 	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_zero__on_read)
 );
 

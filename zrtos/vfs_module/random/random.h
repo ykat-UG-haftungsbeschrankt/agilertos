@@ -11,8 +11,8 @@ extern "C" {
 #endif
 
 
-#include "../../zrtos_vfs_plugin.h"
-#include "../../zrtos_vfs_file.h"
+#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_file.h>
 
 
 zrtos_error_t zrtos_vfs_module_random__on_open(
@@ -55,7 +55,7 @@ zrtos_error_t zrtos_vfs_module_random__on_read(
 	return EXIT_SUCCESS;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(random,
+ZRTOS_VFS_PLUGIN__INIT(random,ZRTOS_VFS_PLUGIN_TYPE__FILE,
 	ZRTOS_VFS_PLUGIN__ON_OPEN(zrtos_vfs_module_random__on_open)
 	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_random__on_read)
 );

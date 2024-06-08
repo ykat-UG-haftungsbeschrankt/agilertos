@@ -48,6 +48,10 @@ bool zrtos_vfs_dentry__init(
 	return true;
 }
 
+bool zrtos_vfs_dentry__is_filesystem(zrtos_vfs_dentry_t *node){
+	return ZRTOS_VFS_PLUGIN_TYPE__FILESYSTEM == node->inode.plugin->type;
+}
+/*
 zrtos_vfs_dentry_t *zrtos_vfs_dentry__get_first_node(){
 	zrtos_clist_node_t *node = zrtos_clist__get_first_node(&zrtos_vfs_dentry__index);
 	return zrtos_types__get_container_of_ex(node,zrtos_vfs_dentry_t,node);
@@ -57,49 +61,87 @@ zrtos_vfs_dentry_t *zrtos_vfs_dentry__get_next_node(zrtos_vfs_dentry_t *thiz){
 	zrtos_clist_node_t *node = zrtos_clist_node__get_next_node(&thiz->node);
 	return zrtos_types__get_container_of(node,zrtos_vfs_dentry_t,node);
 }
+*/
+typedef struct _zrtos_vfs_dentry__each_child_cb_args_t{
+	zrtos_vfs_dentry_t *parent;
+	bool (*callback)(zrtos_vfs_dentry_t *node,void *arg);
+	void *callback_arg;
+	bool (*filter)(zrtos_vfs_dentry_t *node,void *arg);
+	void *filter_arg;
+}zrtos_vfs_dentry__each_child_cb_args_t;
 
-#define ZRTOS_VFS_DENTRY__EACH(node)                                  \
-	for(zrtos_vfs_dentry_t *node = zrtos_vfs_dentry__get_first_node(&zrtos_vfs_dentry__index) \
-		,*sentinel = node                                             \
-		,*next                                                        \
-		;node && ({                                                           \
-			next = zrtos_vfs_dentry__get_next_node(node);                   \
-			node != sentinel;                                         \
-		})                                                            \
-		;node = next                                                  \
-	)
+static bool zrtos_vfs_dentry__each_child_cb(zrtos_clist_node_t *node,void *arg){
+	bool ret = true;
+	zrtos_vfs_dentry_t *dentry = zrtos_types__get_container_of_ex(
+		 node
+		,zrtos_vfs_dentry_t
+		,node
+	);
+	zrtos_vfs_dentry__each_child_cb_args_t *args = arg;
+	if(args->parent == dentry->parent
+	&& args->filter(dentry,args->filter_arg)){
+		ret = args->callback(dentry,args->callback_arg);
+	}
+	return ret;
+}
 
+bool zrtos_vfs_dentry__each_child(
+	 zrtos_vfs_dentry_t *thiz
+	,bool (*callback)(zrtos_vfs_dentry_t *node,void *arg)
+	,void *callback_arg
+	,bool (*filter)(zrtos_vfs_dentry_t *node,void *arg)
+	,void *filter_arg
+){
+	zrtos_vfs_dentry__each_child_cb_args_t args = {
+		 .parent = thiz
+		,.callback = callback
+		,.callback_arg = callback_arg
+		,.filter = filter
+		,.filter_arg = filter_arg
+	};
+	return zrtos_clist__each(
+		 &zrtos_vfs_dentry__index
+		,zrtos_vfs_dentry__each_child_cb
+		,&args
+	);
+}
+
+bool zrtos_vfs_dentry__each_child_filter_name_cb(
+	 zrtos_vfs_dentry_t *node
+	,void *arg
+){
+	return 0 == zrtos_str__cmp(dentry->name,(char*)arg);
+}
+
+static bool zrtos_vfs_dentry__lookup_callback_cb(zrtos_vfs_dentry_t *node,void *arg){
+	zrtos_vfs_dentry_t **args = (zrtos_vfs_dentry_t **)arg;
+	*args = node;
+	return false;
+}
 
 zrtos_vfs_dentry_t *zrtos_vfs_dentry__lookup(
 	 zrtos_vfs_dentry_t *thiz
 	,char *path
 ){
-	char *token;
-	char *rest = path;
+	char               *token;
 	zrtos_vfs_dentry_t *ret = 0;
-	zrtos_vfs_dentry_t *parent = thiz;
 
-	while((token = zrtos_str__tok_r(rest,"/", &rest))){
-		zrtos_vfs_dentry_t *node = zrtos_vfs_dentry__get_first_node(&zrtos_vfs_dentry__index);
-		zrtos_vfs_dentry_t *sentinel = node;
-		if(node){
-			do{
-				if(parent == node->parent
-				&& 0 == zrtos_str__cmp(token,node->name)){
-					parent = ret = node;
-					break;
-				}
-				node = zrtos_vfs_dentry__get_next_node(node);
-			}while(node != sentinel);
-		}
-/*
-		ZRTOS_VFS_DENTRY__EACH(dentry){
-			if(parent == dentry->parent
-			&& 0 == zrtos_str__cmp(token,dentry->name)){
-				parent = ret = dentry;
+	while((token = zrtos_str__tok_r(path,"/", &path))){
+		zrtos_vfs_dentry__each_child(
+			 thiz
+			,zrtos_vfs_dentry__lookup_callback_cb
+			,&thiz
+			,zrtos_vfs_dentry__each_child_filter_name_cb
+			,token
+		);
+		if(thiz){
+			ret = thiz;
+		}else{
+			if(!zrtos_vfs_dentry__is_filesystem(ret)){
+				ret = 0;
 			}
+			break;
 		}
-*/
 	}
 
 	return ret;

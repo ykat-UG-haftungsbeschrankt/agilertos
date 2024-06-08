@@ -11,8 +11,8 @@ extern "C" {
 #endif
 
 
-#include "../zrtos_bitfield.h"
-#include "../zrtos_vfs_file.h"
+#include <zrtos/bitfield.h>
+#include <zrtos/vfs_file.h>
 
 #include <sys/time.h>
 

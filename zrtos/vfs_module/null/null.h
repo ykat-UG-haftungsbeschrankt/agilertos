@@ -11,7 +11,7 @@ extern "C" {
 #endif
 
 
-#include "../../zrtos_vfs_plugin.h"
+#include <zrtos/vfs_plugin.h>
 
 
 ZRTOS_VFS_PLUGIN__INIT(null);

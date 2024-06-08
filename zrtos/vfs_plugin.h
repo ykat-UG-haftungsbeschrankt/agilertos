@@ -23,6 +23,12 @@ struct _zrtos_vfs_inode_t;
 
 typedef size_t zrtos_vfs_offset_t;
 
+typedef enum{
+	 ZRTOS_VFS_PLUGIN_TYPE__FILE
+	,ZRTOS_VFS_PLUGIN_TYPE__DIR
+	,ZRTOS_VFS_PLUGIN_TYPE__FILESYSTEM
+}zrtos_vfs_plugin_type_t;
+
 #ifdef ZRTOS_VFS_PLUGIN__CFG_USE_SWITCH
 typedef enum{
 	 ZRTOS_VFS_PLUGIN_OPERATION__OPEN
@@ -91,9 +97,10 @@ zrtos_error_t zrtos_vfs_plugin__default_can_read(struct _zrtos_vfs_file_t *thiz)
 zrtos_error_t zrtos_vfs_plugin__default_can_write(struct _zrtos_vfs_file_t *thiz){return EXIT_SUCCESS;}
 zrtos_error_t zrtos_vfs_plugin__default_seek(struct _zrtos_vfs_file_t *thiz, zrtos_vfs_offset_t offset, int whence, zrtos_vfs_offset_t *out){return ENOSYS;}
 zrtos_error_t zrtos_vfs_plugin__default_ioctl(struct _zrtos_vfs_file_t *thiz,char *path, int request, va_list args){return ENOSYS;}
-#define ZRTOS_VFS_PLUGIN__INIT(name,...)\
+#define ZRTOS_VFS_PLUGIN__INIT(name,type,...)\
 zrtos_vfs_plugin_t zrtos_vfs_module_##name = {\
-	 .open = zrtos_vfs_plugin__default_open\
+	 .type = type\
+	,.open = zrtos_vfs_plugin__default_open\
 	,.close = zrtos_vfs_plugin__default_close\
 	,.mount = zrtos_vfs_plugin__default_mount\
 	,.umount = zrtos_vfs_plugin__default_umount\
@@ -116,6 +123,8 @@ zrtos_vfs_plugin_t zrtos_vfs_module_##name = {\
 #endif
 
 typedef struct{
+	zrtos_vfs_plugin_type_t type;
+
 #ifndef ZRTOS_VFS_PLUGIN__CFG_USE_SWITCH
 	zrtos_error_t (*open)(struct _zrtos_vfs_file_t *thiz);
 # define ZRTOS_VFS_PLUGIN__ON_OPEN(callback) ,.open=callback

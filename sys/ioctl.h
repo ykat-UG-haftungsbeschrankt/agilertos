@@ -12,7 +12,7 @@ extern "C" {
 
 #include <stdarg.h>
 
-#include "../zrtos_vfs_file.h"
+#include <zrtos/vfs_file.h>
 
 
 int ioctl(int fd, int request,...){
