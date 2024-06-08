@@ -1,6 +1,6 @@
 #include <avr/io.h>
 
-#include "zrtos_vheap.h"
+#include <zrtos/vheap.h>
 
 ZRTOS_VHEAP__INIT(heap,160);
 

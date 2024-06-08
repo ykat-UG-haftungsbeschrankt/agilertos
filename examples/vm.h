@@ -1,7 +1,7 @@
 #include <avr/io.h>
 
 
-#include "zrtos_vm.h"
+#include <zrtos/vm.h>
 
 unsigned a = 0;
 unsigned b = 0;

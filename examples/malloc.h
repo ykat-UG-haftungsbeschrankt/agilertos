@@ -2,7 +2,7 @@
 
 #define ZRTOS_DEBUG__CFG_ENABLED
 
-#include "zrtos_malloc.h"
+#include <zrtos/malloc.h>
 
 ZRTOS_MALLOC__GLOBAL_HEAP(heap,160);
 

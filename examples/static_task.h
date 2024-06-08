@@ -7,7 +7,7 @@
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos_task_scheduler.h"
+#include <zrtos/task_scheduler.h>
 
 __attribute__((noreturn)) void callback_a(void *args){
 	static size_t a = 0;

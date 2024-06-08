@@ -8,8 +8,8 @@
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
 #include "zrtos.h"
-#include "zrtos_vheap_task_pthread.h"
-#include "zrtos_debug.h"
+#include <zrtos/vheap_task_pthread.h>
+#include <zrtos/debug.h>
 
 unsigned a = 0;
 unsigned b = 0;

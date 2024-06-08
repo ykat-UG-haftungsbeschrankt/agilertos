@@ -9,8 +9,8 @@ typedef enum{
 	,EVENT_CODE_B
 }zrtos_event_type_t;
 
-#include "zrtos_event_index.h"
-#include "zrtos_debug.h"
+#include <zrtos/event_index.h>
+#include <zrtos/debug.h>
 
 bool handler_a(
 	 zrtos_event_handler_t *thiz

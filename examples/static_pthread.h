@@ -7,7 +7,7 @@
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos_task_pthread.h"
+#include <zrtos/task_pthread.h>
 
 pthread_attr_t attr;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;

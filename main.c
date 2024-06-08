@@ -8,19 +8,19 @@ typedef uint8_t max_align_t;
 
 #define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX 10
 
-#include "zrtos_error.h"
-#include "zrtos_types.h"
+#include <zrtos/error.h>
+#include <zrtos/types.h>
 
 typedef size_t off_t;
 
-#include "zrtos_vfs_plugin.h"
-#include "zrtos_vfs_inode.h"
-#include "zrtos_vfs_dentry.h"
-#include "zrtos_vfs_file.h"
+#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_inode.h>
+#include <zrtos/vfs_dentry.h>
+#include <zrtos/vfs_file.h>
 
-#include "zrtos_vfs_module/zero/zero.h"
-#include "zrtos_vfs_module/null/null.h"
-#include "zrtos_vfs_module/random/random.h"
+#include <zrtos/vfs_module/zero/zero.h>
+#include <zrtos/vfs_module/null/null.h>
+#include <zrtos/vfs_module/random/random.h>
 
 int main(void){
 

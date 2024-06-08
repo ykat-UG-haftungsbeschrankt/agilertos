@@ -4,3 +4,9 @@ Debug/
 trash/
 .vscode/
 trash/zrtos_task_scheduler.h
+zrtos_vfs_module/fat16/_fat16.h
+zrtos_vfs_module/fat16/fat16_header.h
+zrtos_vfs_module/fat16/fat16.h
+zrtos_vfs_module/sd_card/_sd_card.h
+zrtos_vfs_module/sd_card/sd_card_header.h
+zrtos_vfs_module/sd_card/sd_card.h
