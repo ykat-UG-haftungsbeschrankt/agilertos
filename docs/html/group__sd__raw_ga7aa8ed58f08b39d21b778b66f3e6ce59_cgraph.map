@@ -1,0 +1,17 @@
+<map id="sd_raw_read" name="sd_raw_read">
+<area shape="rect" id="Node000001" title="Send a command to the memory card which responses with a R2 response." alt="" coords="5,64,100,91"/>
+<area shape="rect" id="Node000002" href="$group__sd__raw.html#ga75085da84454931647328e80f6bdea7c" title="Receives a raw byte from the memory card." alt="" coords="524,27,644,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,61,147,39,236,16,308,5,380,4,472,12,518,20,517,25,471,17,380,9,308,10,237,21,148,44,87,66"/>
+<area shape="rect" id="Node000003" href="$group__sd__raw.html#ga956fc6f9ea12bf3c42fe5d3b472e61a8" title="Send a command to the memory card which responses with a R1 response." alt="" coords="292,27,471,53"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,69,147,63,276,48,277,54,148,68,100,74"/>
+<area shape="rect" id="Node000005" href="$group__sd__raw.html#ga70e84e3345f19d2b5eecb9f665b37e0d" title="Writes raw data to the card." alt="" coords="148,101,244,128"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="80,89,133,105,132,110,79,94"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="472,37,509,37,509,43,472,43"/>
+<area shape="rect" id="Node000004" href="$group__sd__raw.html#ga157908b0533eb72368d320eb697f0cc0" title="Sends a raw byte to the memory card." alt="" coords="519,103,649,129"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="421,52,533,94,531,99,419,57"/>
+<area shape="poly" id="edge6_Node000005_Node000001" title=" " alt="" coords="168,103,114,87,116,82,170,98"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="244,104,471,63,509,55,510,60,472,68,245,110"/>
+<area shape="poly" id="edge9_Node000005_Node000003" title=" " alt="" coords="225,99,291,70,325,57,327,62,293,75,227,103"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="244,112,504,113,504,119,244,118"/>
+<area shape="poly" id="edge10_Node000005_Node000005" title=" " alt="" coords="171,102,166,93,169,83,180,77,196,75,213,77,223,84,220,88,211,82,196,80,181,82,174,87,172,92,175,100"/>
+</map>

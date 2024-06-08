@@ -1,11 +1,20 @@
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/ykat-UG-haftungsbeschrankt/agilertos)](https://github.com/ykat-UG-haftungsbeschrankt/agilertos)
+
+<!--
+[![GitHub](https://img.shields.io/github/license/jothepro/doxygen-awesome-css)](https://github.com/jothepro/doxygen-awesome-css/blob/main/LICENSE)
+![GitHub Repo stars](https://img.shields.io/github/stars/jothepro/doxygen-awesome-css)
+-->
+
+
+
 Documentation
 ============
 
 AgileRTOS can probably be a RTOS but mostly it is just a RAM saving malloc and pthread implementation for microcontroller without memory management unit.
 
- 🔗 [Documentation](http://agilertos.com)
+🔗 <img src=https://doxygen.nl/favicon.ico width=16 height=16> [Documentation](http://agilertos.com)
 
- 🔗 [Repository](https://github.com/ykat-UG-haftungsbeschrankt/agilertos)
+🔗 <img src=https://github.com/favicon.ico width=16 height=16> [Repository](https://github.com/ykat-UG-haftungsbeschrankt/agilertos)
 
 Examples
 ------------
@@ -22,7 +31,7 @@ Examples
  * ram usage can be further reduced by '#define ZRTOS_MALLOC__CFG_DISABLE_FREE'.
  */
 //#define ZRTOS_MALLOC__CFG_DISABLE_FREE
-#include "zrtos_malloc.h"
+#include <zrtos/malloc.h>
 
 // global heap for malloc()/free()
 ZRTOS_MALLOC__GLOBAL_HEAP(heap,ZRTOS_MALLOC__GET_REQUIRED_SIZE(char,160));
@@ -74,7 +83,7 @@ int main(void){
 ```C
 #include <avr/io.h>
 
-#include "zrtos_vheap.h"
+#include <zrtos/vheap.h>
 
 ZRTOS_VHEAP__INIT(heap,160);
 
@@ -168,8 +177,8 @@ typedef enum{
 	,EVENT_CODE_B
 }zrtos_event_type_t;
 
-#include "zrtos_event_index.h"
-#include "zrtos_debug.h"
+#include <zrtos/event_index.h>
+#include <zrtos/debug.h>
 
 bool handler_a(
 	 zrtos_event_handler_t *thiz
@@ -304,7 +313,7 @@ int main(void){
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos_task_scheduler.h"
+#include <zrtos/task_scheduler.h>
 
 __attribute__((noreturn)) void callback_a(void *args){
 	static size_t a = 0;
@@ -385,7 +394,7 @@ int main(void){
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos_task_pthread.h"
+#include <zrtos/task_pthread.h>
 
 pthread_attr_t attr;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -490,7 +499,7 @@ int main(void){
 #define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
-#include "zrtos_vm.h"
+#include <zrtos/vm.h>
 
 zrtos_error_t callback0(
 	 struct _zrtos_vm_t          *vm
@@ -587,18 +596,18 @@ typedef uint8_t max_align_t;
 
 #define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX 10
 
-#include "zrtos_error.h"
-#include "zrtos_types.h"
+#include <zrtos/error.h>
+#include <zrtos/types.h>
 
 typedef size_t off_t;
 
-#include "zrtos_vfs_plugin.h"
-#include "zrtos_vfs_inode.h"
-#include "zrtos_vfs_dentry.h"
-#include "zrtos_vfs_file.h"
+#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_inode.h>
+#include <zrtos/vfs_dentry.h>
+#include <zrtos/vfs_file.h>
 
-#include "zrtos_vfs_module/zero/zero.h"
-#include "zrtos_vfs_module/null/null.h"
+#include <zrtos/vfs_module/zero/zero.h>
+#include <zrtos/vfs_module/null/null.h>
 
 int main(void){
 

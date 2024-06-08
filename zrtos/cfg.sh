@@ -3,9 +3,9 @@
 BASEDIR=$(dirname "$0")
 pushd "$BASEDIR"
 
-rm zrtos_cfg.h
+rm cfg.h
 
-cat <<EOT > zrtos_cfg.h
+cat <<EOT > cfg.h
 /*
  * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
@@ -31,9 +31,9 @@ grep --include=\*.{c,h} -rhEo '[A-Z0-9_]+__CFG_[A-Z0-9_]+' . \
  | sort \
  | uniq \
  | while read line; do echo "#define $line"; done \
- >> zrtos_cfg.h
+ >> cfg.h
 
-cat <<EOT >> zrtos_cfg.h
+cat <<EOT >> cfg.h
 
 
 #ifdef __cplusplus

@@ -12,8 +12,8 @@ extern "C" {
 
 #if !defined(ZRTOS_PROGMEM__CFG_ENABLED) || !defined(ZRTOS_ARCH__HAS_PROGMEM)
 
-# include "zrtos_mem.h"
-# define ZRTOS_PROGMEM
+#include <zrtos/mem.h>
+#define ZRTOS_PROGMEM
 bool zrtos_progmem__cpy(void *dest,void *src,size_t len){
 	zrtos_mem__cpy(dest,src,len);
 	return true;
@@ -21,7 +21,7 @@ bool zrtos_progmem__cpy(void *dest,void *src,size_t len){
 
 #else
 
-# define ZRTOS_PROGMEM ZRTOS_ARCH__PROGMEM
+#define ZRTOS_PROGMEM ZRTOS_ARCH__PROGMEM
 
 bool zrtos_progmem__cpy(void *dest,void *src,size_t len){
 	ZRTOS_ARCH__PROGMEM_CPY(dest,src,len);

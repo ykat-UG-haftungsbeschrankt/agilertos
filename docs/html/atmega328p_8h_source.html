@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgileRTOS (zrtos): atmega328p.h Source File</title>
+<title>agileRTOS (zrtos): atmega328p.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,8 +27,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
+   <div id="projectname">agileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -159,7 +161,7 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">   47</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> * <a class="code hl_function" href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a>( <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> * pxTopOfStack,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                     <a class="code hl_typedef" href="zrtos__arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> pxCode,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                     <a class="code hl_typedef" href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> pxCode,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                                     <span class="keywordtype">void</span> * pvParameters )</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>uint16_t usAddress;</div>
@@ -245,7 +247,7 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">  129</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_function" href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">zrtos_arch__cpu_state_init_b</a>(</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>     <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>     *thiz</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="comment">//,size_t                length</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    ,<a class="code hl_typedef" href="zrtos__arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    ,<a class="code hl_typedef" href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    ,<span class="keywordtype">void</span>                  *args</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>){</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">/*</span></div>
@@ -266,7 +268,7 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno"><a class="line" href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">  148</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_function" href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">zrtos_arch__cpu_state_init_a</a>(</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>     <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>     *thiz</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="comment">//,size_t                length</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    ,<a class="code hl_typedef" href="zrtos__arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    ,<a class="code hl_typedef" href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    ,<span class="keywordtype">void</span>                  *args</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>){</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStack = thiz;</div>
@@ -425,19 +427,19 @@ $(function(){initNavTree('atmega328p_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aarch_8h_html_aa36ce2be34a1ed388ea0d61c3a872eb3"><div class="ttname"><a href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a></div><div class="ttdeci">void(* zrtos_arch_callback_t)(void *arg)</div><div class="ttdef"><b>Definition</b> <a href="arch_8h_source.html#l00016">arch.h:16</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_a0a7f99406f33a248301b9f008bf58ca9"><div class="ttname"><a href="atmega328p_8h.html#a0a7f99406f33a248301b9f008bf58ca9">zrtos_arch__cpu_state_init_a</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_a(zrtos_arch_stack_t *thiz, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00148">atmega328p.h:148</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_a10f065b40729c7ec718bfcb83bfcb96a"><div class="ttname"><a href="atmega328p_8h.html#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper(zrtos_arch_stack_t *pxTopOfStack, zrtos_arch_callback_t pxCode, void *pvParameters)</div><div class="ttdef"><b>Definition</b> <a href="#l00047">atmega328p.h:47</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_a5599edd96083ebf96ce87853d5f408f2"><div class="ttname"><a href="atmega328p_8h.html#a5599edd96083ebf96ce87853d5f408f2">zrtos_arch__cpu_state_init_b</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_b(zrtos_arch_stack_t *thiz, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00129">atmega328p.h:129</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_a7456b566c8ab6b738a5795f419b0f319"><div class="ttname"><a href="atmega328p_8h.html#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a></div><div class="ttdeci">int8_t zrtos_arch_stack_signed_t</div><div class="ttdef"><b>Definition</b> <a href="#l00019">atmega328p.h:19</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="#l00018">atmega328p.h:18</a></div></div>
-<div class="ttc" id="azrtos__arch_8h_html_aa36ce2be34a1ed388ea0d61c3a872eb3"><div class="ttname"><a href="zrtos__arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a></div><div class="ttdeci">void(* zrtos_arch_callback_t)(void *arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__arch_8h_source.html#l00016">zrtos_arch.h:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_ea9599923402ca8ab47fc3e495999dea.html">arch</a></li><li class="navelem"><a class="el" href="atmega328p_8h.html">atmega328p.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="dir_7d903d097c1b6b14551a2d3d2fb1b757.html">arch</a></li><li class="navelem"><a class="el" href="atmega328p_8h.html">atmega328p.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

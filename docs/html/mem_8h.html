@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgileRTOS (zrtos): mem.h File Reference</title>
+<title>agileRTOS (zrtos): mem.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,8 +27,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">agileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -92,446 +94,624 @@ $(function(){initNavTree('mem_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">mem.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="zrtos_8h_source.html">zrtos.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="zrtos__vheap_8h_source.html">zrtos_vheap.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mem.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="mem_8h__incl.png" border="0" usemap="#amem_8h" alt=""/></div>
-<map name="amem_8h" id="amem_8h">
-<area shape="rect" title=" " alt="" coords="258,5,319,32"/>
-<area shape="rect" title=" " alt="" coords="172,80,234,107"/>
-<area shape="poly" title=" " alt="" coords="275,35,231,72,227,68,272,31"/>
-<area shape="rect" href="zrtos_8h.html" title=" " alt="" coords="258,80,319,107"/>
-<area shape="poly" title=" " alt="" coords="291,33,291,64,286,64,286,33"/>
-<area shape="rect" href="zrtos__vheap_8h.html" title=" " alt="" coords="414,80,515,107"/>
-<area shape="poly" title=" " alt="" coords="320,30,420,71,418,76,318,35"/>
-<area shape="rect" href="zrtos__debug_8h.html" title=" " alt="" coords="351,155,455,181"/>
-<area shape="poly" title=" " alt="" coords="310,105,371,144,368,148,307,109"/>
-<area shape="rect" href="zrtos__arch_8h.html" title=" " alt="" coords="234,155,327,181"/>
-<area shape="poly" title=" " alt="" coords="289,108,286,139,281,139,284,107"/>
-<area shape="rect" href="zrtos__board_8h.html" title=" " alt="" coords="67,155,168,181"/>
-<area shape="poly" title=" " alt="" coords="259,110,163,151,161,146,257,105"/>
-<area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="470,237,570,264"/>
-<area shape="poly" title=" " alt="" coords="319,179,469,230,468,235,317,184"/>
-<area shape="rect" href="atmega328p_8h.html" title=" " alt="" coords="158,237,290,264"/>
-<area shape="poly" title=" " alt="" coords="274,183,244,226,239,223,269,180"/>
-<area shape="rect" href="atmega2560_8h.html" title=" " alt="" coords="314,237,446,264"/>
-<area shape="poly" title=" " alt="" coords="297,180,355,226,352,230,294,184"/>
-<area shape="rect" title=" " alt="" coords="530,320,604,347"/>
-<area shape="poly" title=" " alt="" coords="530,263,555,306,550,308,525,266"/>
-<area shape="rect" title=" " alt="" coords="439,320,506,347"/>
-<area shape="poly" title=" " alt="" coords="515,266,489,308,485,306,510,263"/>
-<area shape="rect" href="avr__software__emulator_8h.html" title=" " alt="" coords="5,229,134,272"/>
-<area shape="poly" title=" " alt="" coords="112,183,92,217,87,215,108,180"/>
-<area shape="poly" title=" " alt="" coords="456,109,425,145,421,141,451,105"/>
-<area shape="rect" href="zrtos__mem_8h.html" title=" " alt="" coords="478,155,576,181"/>
-<area shape="poly" title=" " alt="" coords="477,105,508,141,504,145,473,109"/>
-<area shape="rect" href="zrtos__vheap__chunk_8h.html" title=" " alt="" coords="606,155,749,181"/>
-<area shape="poly" title=" " alt="" coords="502,105,627,147,625,152,500,110"/>
-<area shape="poly" title=" " alt="" coords="528,182,525,222,520,222,523,182"/>
-<area shape="rect" href="zrtos__vheap__chunk__uid_8h.html" title=" " alt="" coords="594,237,761,264"/>
-<area shape="poly" title=" " alt="" coords="680,182,680,222,675,222,675,182"/>
-<area shape="rect" href="zrtos__vheap__chunk__type_8h.html" title=" " alt="" coords="786,237,961,264"/>
-<area shape="poly" title=" " alt="" coords="709,179,830,229,828,234,707,184"/>
-<area shape="rect" href="zrtos__vheap__type_8h.html" title=" " alt="" coords="807,320,940,347"/>
-<area shape="poly" title=" " alt="" coords="876,265,876,305,871,305,871,265"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h__incl.svg" width="352" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h__dep__incl.svg" width="738" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="mem_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a04f2f242c34f581faf5b31331d0d6bdb" id="r_a04f2f242c34f581faf5b31331d0d6bdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04f2f242c34f581faf5b31331d0d6bdb">ZRTOS_ARCH__BYTE_ALIGNMENT</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a04f2f242c34f581faf5b31331d0d6bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e0c07f308eb0d821ceb0c8e8f27e579" id="r_a1e0c07f308eb0d821ceb0c8e8f27e579"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0c07f308eb0d821ceb0c8e8f27e579">ZRTOS_DEBUG__CFG_ENABLED</a></td></tr>
-<tr class="separator:a1e0c07f308eb0d821ceb0c8e8f27e579"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a768e6fa95ee3a44c67483be906d6fb7f" id="r_a768e6fa95ee3a44c67483be906d6fb7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a768e6fa95ee3a44c67483be906d6fb7f">ZRTOS_ARCH__ATMEGA328P</a></td></tr>
-<tr class="separator:a768e6fa95ee3a44c67483be906d6fb7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:af5439e19eec032e96a3561505be8ec35" id="r_af5439e19eec032e96a3561505be8ec35"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a></td></tr>
-<tr class="separator:af5439e19eec032e96a3561505be8ec35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedfaaad6745394d58a2fd37dbdc42742" id="r_aedfaaad6745394d58a2fd37dbdc42742"><td class="memItemLeft" align="right" valign="top">typedef int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a></td></tr>
-<tr class="separator:aedfaaad6745394d58a2fd37dbdc42742"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:af6a258d8f3ee5206d682d799316314b1" id="r_af6a258d8f3ee5206d682d799316314b1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6a258d8f3ee5206d682d799316314b1">bool</a> { <br />
-&#160;&#160;<a class="el" href="#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>
-, <br />
-&#160;&#160;<a class="el" href="#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b">true</a>
-<br />
- }</td></tr>
-<tr class="separator:af6a258d8f3ee5206d682d799316314b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab670d7e1ab8db82279714a56efc3c99a" id="r_ab670d7e1ab8db82279714a56efc3c99a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab670d7e1ab8db82279714a56efc3c99a">_zrtos_task_scheduler__on_tick</a> (void)</td></tr>
-<tr class="separator:ab670d7e1ab8db82279714a56efc3c99a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c0c687de78c11a2d8542e8b0a9024e4" id="r_a9c0c687de78c11a2d8542e8b0a9024e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c0c687de78c11a2d8542e8b0a9024e4">ZRTOS_VHEAP__INIT</a> (heap, 160)</td></tr>
-<tr class="separator:a9c0c687de78c11a2d8542e8b0a9024e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7e65258e9f403545514aa561c040c71" id="r_af7e65258e9f403545514aa561c040c71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a> (void *dest, void *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:af7e65258e9f403545514aa561c040c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a7df82d207aef7d339f7ff95cce550" id="r_a76a7df82d207aef7d339f7ff95cce550"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a> (void *ptr, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offest_dest, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> offset_src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:a76a7df82d207aef7d339f7ff95cce550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3d82e56bdea756a305d5ced180ca57" id="r_a2e3d82e56bdea756a305d5ced180ca57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e3d82e56bdea756a305d5ced180ca57">zrtos_mem__left_rotate</a> (void *ptr, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> buffer_length)</td></tr>
+<tr class="separator:a2e3d82e56bdea756a305d5ced180ca57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1590269d1001c17c2c99725ef85f6386" id="r_a1590269d1001c17c2c99725ef85f6386"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1590269d1001c17c2c99725ef85f6386">zrtos_mem__move_right_overlapping</a> (void *dest, void *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:a1590269d1001c17c2c99725ef85f6386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9054cc3824c6ffdaf4ed24fde2f80f32" id="r_a9054cc3824c6ffdaf4ed24fde2f80f32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a> (void *dest, void *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:a9054cc3824c6ffdaf4ed24fde2f80f32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36c32ce5585de38fd4b77b2a322ac78" id="r_ac36c32ce5585de38fd4b77b2a322ac78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac36c32ce5585de38fd4b77b2a322ac78">zrtos_mem__cpy</a> (void *dest, void *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:ac36c32ce5585de38fd4b77b2a322ac78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc92c0f931688ddf8da31714fff6a8d3" id="r_abc92c0f931688ddf8da31714fff6a8d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem__cmp</a> (void *str1, void *str2, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> count)</td></tr>
+<tr class="separator:abc92c0f931688ddf8da31714fff6a8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d701c04fc9475a1e6cd8d5b14d6534b" id="r_a3d701c04fc9475a1e6cd8d5b14d6534b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a> (void *dest, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:a3d701c04fc9475a1e6cd8d5b14d6534b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c786590236d1d560b6277f638bf766" id="r_ad6c786590236d1d560b6277f638bf766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a> (void *dest, uint8_t value, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:ad6c786590236d1d560b6277f638bf766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419d9f9e6d69f2577fdce04166a8b8a7" id="r_a419d9f9e6d69f2577fdce04166a8b8a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a419d9f9e6d69f2577fdce04166a8b8a7">zrtos_mem__zero</a> (void *dest, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:a419d9f9e6d69f2577fdce04166a8b8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab5ba8aca3f57d2f28ec20b9ae5dceaf" id="r_aab5ba8aca3f57d2f28ec20b9ae5dceaf"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a> (const void *key, const void *base, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> high, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> size, int(*compar)(const void *, const void *))</td></tr>
+<tr class="separator:aab5ba8aca3f57d2f28ec20b9ae5dceaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2512a95e0df7c3af1ce69001c256ee3" id="r_af2512a95e0df7c3af1ce69001c256ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2512a95e0df7c3af1ce69001c256ee3">zrtos_mem__sort</a> (void *base, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> nel, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> width, int(*comp)(const void *, const void *))</td></tr>
+<tr class="separator:af2512a95e0df7c3af1ce69001c256ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a768e6fa95ee3a44c67483be906d6fb7f" name="a768e6fa95ee3a44c67483be906d6fb7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a768e6fa95ee3a44c67483be906d6fb7f">&#9670;&#160;</a></span>ZRTOS_ARCH__ATMEGA328P</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ZRTOS_ARCH__ATMEGA328P</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00013">13</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-
-</div>
-</div>
-<a id="a04f2f242c34f581faf5b31331d0d6bdb" name="a04f2f242c34f581faf5b31331d0d6bdb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04f2f242c34f581faf5b31331d0d6bdb">&#9670;&#160;</a></span>ZRTOS_ARCH__BYTE_ALIGNMENT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ZRTOS_ARCH__BYTE_ALIGNMENT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00011">11</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-
-</div>
-</div>
-<a id="a1e0c07f308eb0d821ceb0c8e8f27e579" name="a1e0c07f308eb0d821ceb0c8e8f27e579"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e0c07f308eb0d821ceb0c8e8f27e579">&#9670;&#160;</a></span>ZRTOS_DEBUG__CFG_ENABLED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ZRTOS_DEBUG__CFG_ENABLED</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00012">12</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="af5439e19eec032e96a3561505be8ec35" name="af5439e19eec032e96a3561505be8ec35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5439e19eec032e96a3561505be8ec35">&#9670;&#160;</a></span>size_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef uint16_t <a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00004">4</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-
-</div>
-</div>
-<a id="aedfaaad6745394d58a2fd37dbdc42742" name="aedfaaad6745394d58a2fd37dbdc42742"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedfaaad6745394d58a2fd37dbdc42742">&#9670;&#160;</a></span>ssize_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef int16_t <a class="el" href="#aedfaaad6745394d58a2fd37dbdc42742">ssize_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00005">5</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="af6a258d8f3ee5206d682d799316314b1" name="af6a258d8f3ee5206d682d799316314b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6a258d8f3ee5206d682d799316314b1">&#9670;&#160;</a></span>bool</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#af6a258d8f3ee5206d682d799316314b1">bool</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c" name="af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c"></a>false&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b" name="af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b"></a>true&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00006">6</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    6</span>            {</div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_enumvalue" href="#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a></div>
-<div class="line"><span class="lineno">    8</span>    ,<span class="keyword">true</span></div>
-<div class="line"><span class="lineno">    9</span>}<a class="code hl_enumeration" href="#af6a258d8f3ee5206d682d799316314b1">bool</a>;</div>
-<div class="ttc" id="amem_8h_html_af6a258d8f3ee5206d682d799316314b1"><div class="ttname"><a href="#af6a258d8f3ee5206d682d799316314b1">bool</a></div><div class="ttdeci">bool</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00006">mem.h:6</a></div></div>
-<div class="ttc" id="amem_8h_html_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c"><div class="ttname"><a href="#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a></div><div class="ttdeci">@ false</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00008">mem.h:7</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab670d7e1ab8db82279714a56efc3c99a" name="ab670d7e1ab8db82279714a56efc3c99a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab670d7e1ab8db82279714a56efc3c99a">&#9670;&#160;</a></span>_zrtos_task_scheduler__on_tick()</h2>
+<a id="abc92c0f931688ddf8da31714fff6a8d3" name="abc92c0f931688ddf8da31714fff6a8d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc92c0f931688ddf8da31714fff6a8d3">&#9670;&#160;</a></span>zrtos_mem__cmp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void _zrtos_task_scheduler__on_tick </td>
+          <td class="memname">int zrtos_mem__cmp </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00018">18</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>                                         {</div>
-<div class="line"><span class="lineno">   19</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00024">24</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   24</span>              {</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_struct" href="struct__zrtos__vheap__t.html">zrtos_vheap_t</a> mem;</div>
-<div class="line"><span class="lineno">   26</span>    </div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a>(</div>
-<div class="line"><span class="lineno">   28</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   29</span>        ,<a class="code hl_define" href="zrtos__vheap_8h.html#a47e3e00912f5bdee05169955edb5ce0b">ZRTOS_VHEAP__GET</a>(heap)</div>
-<div class="line"><span class="lineno">   30</span>        ,160</div>
-<div class="line"><span class="lineno">   31</span>    );</div>
-<div class="line"><span class="lineno">   32</span> </div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunka = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><span class="lineno">   34</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkb = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><span class="lineno">   35</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkc = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><span class="lineno">   36</span>    zrtos_vheap_chunk_t *chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   37</span>    &amp;mem</div>
-<div class="line"><span class="lineno">   38</span>    ,chunka</div>
-<div class="line"><span class="lineno">   39</span>    );</div>
-<div class="line"><span class="lineno">   40</span>    zrtos_vheap_chunk_t *chunkbb = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   41</span>    &amp;mem</div>
-<div class="line"><span class="lineno">   42</span>    ,chunkb</div>
-<div class="line"><span class="lineno">   43</span>    );</div>
-<div class="line"><span class="lineno">   44</span>    zrtos_vheap_chunk_t *chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   45</span>    &amp;mem</div>
-<div class="line"><span class="lineno">   46</span>    ,chunkc</div>
-<div class="line"><span class="lineno">   47</span>    );</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289">zrtos_vheap__page_in</a>(</div>
-<div class="line"><span class="lineno">   50</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   51</span>        ,chunkbb</div>
-<div class="line"><span class="lineno">   52</span>    );</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunke = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    zrtos_vheap_chunk_t *chunkee = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   57</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   58</span>        ,chunke</div>
-<div class="line"><span class="lineno">   59</span>    );</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397">zrtos_vheap__page_out</a>(</div>
-<div class="line"><span class="lineno">   62</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   63</span>        ,chunkbb</div>
-<div class="line"><span class="lineno">   64</span>        ,16</div>
-<div class="line"><span class="lineno">   65</span>    );</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   68</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   69</span>        ,chunka</div>
-<div class="line"><span class="lineno">   70</span>    );</div>
-<div class="line"><span class="lineno">   71</span>    chunkbb = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   72</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   73</span>        ,chunkb</div>
-<div class="line"><span class="lineno">   74</span>    );</div>
-<div class="line"><span class="lineno">   75</span>    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   76</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   77</span>        ,chunkc</div>
-<div class="line"><span class="lineno">   78</span>    );</div>
-<div class="line"><span class="lineno">   79</span> </div>
-<div class="line"><span class="lineno">   80</span>    chunkee = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   81</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   82</span>        ,chunke</div>
-<div class="line"><span class="lineno">   83</span>    );</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289">zrtos_vheap__page_in</a>(</div>
-<div class="line"><span class="lineno">   86</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   87</span>        ,chunkee</div>
-<div class="line"><span class="lineno">   88</span>    );</div>
-<div class="line"><span class="lineno">   89</span> </div>
-<div class="line"><span class="lineno">   90</span>    chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   91</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   92</span>        ,chunka</div>
-<div class="line"><span class="lineno">   93</span>    );</div>
-<div class="line"><span class="lineno">   94</span>    chunkbb = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   95</span>         &amp;mem</div>
-<div class="line"><span class="lineno">   96</span>        ,chunkb</div>
-<div class="line"><span class="lineno">   97</span>    );</div>
-<div class="line"><span class="lineno">   98</span>    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">   99</span>         &amp;mem</div>
-<div class="line"><span class="lineno">  100</span>        ,chunkc</div>
-<div class="line"><span class="lineno">  101</span>    );</div>
-<div class="line"><span class="lineno">  102</span> </div>
-<div class="line"><span class="lineno">  103</span>    chunkee = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">  104</span>         &amp;mem</div>
-<div class="line"><span class="lineno">  105</span>        ,chunke</div>
-<div class="line"><span class="lineno">  106</span>    );</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunkb);</div>
-<div class="line"><span class="lineno">  109</span>    chunkaa = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">  110</span>         &amp;mem</div>
-<div class="line"><span class="lineno">  111</span>        ,chunka</div>
-<div class="line"><span class="lineno">  112</span>    );</div>
-<div class="line"><span class="lineno">  113</span>    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">  114</span>         &amp;mem</div>
-<div class="line"><span class="lineno">  115</span>        ,chunkc</div>
-<div class="line"><span class="lineno">  116</span>    );</div>
-<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunka);</div>
-<div class="line"><span class="lineno">  118</span>    chunkcc = <a class="code hl_function" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a>(</div>
-<div class="line"><span class="lineno">  119</span>         &amp;mem</div>
-<div class="line"><span class="lineno">  120</span>        ,chunkc</div>
-<div class="line"><span class="lineno">  121</span>    );</div>
-<div class="line"><span class="lineno">  122</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a>(&amp;mem,chunkc);</div>
-<div class="line"><span class="lineno">  123</span>    <span class="comment">//zrtos_vheap__free(&amp;mem,chunke);</span></div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  126</span>}</div>
-<div class="ttc" id="astruct__zrtos__vheap__chunk__uid__t_html"><div class="ttname"><a href="struct__zrtos__vheap__chunk__uid__t.html">_zrtos_vheap_chunk_uid_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk__uid_8h_source.html#l00014">zrtos_vheap_chunk_uid.h:14</a></div></div>
-<div class="ttc" id="astruct__zrtos__vheap__t_html"><div class="ttname"><a href="struct__zrtos__vheap__t.html">_zrtos_vheap_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00028">zrtos_vheap.h:28</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a27884234d50a622ec3b6ec54c72db244"><div class="ttname"><a href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap__malloc(zrtos_vheap_t *thiz, zrtos_vheap_type_t type, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00194">zrtos_vheap.h:194</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a47e3e00912f5bdee05169955edb5ce0b"><div class="ttname"><a href="zrtos__vheap_8h.html#a47e3e00912f5bdee05169955edb5ce0b">ZRTOS_VHEAP__GET</a></div><div class="ttdeci">#define ZRTOS_VHEAP__GET(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00025">zrtos_vheap.h:25</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a7c64f185f189dd5e35dc36b22d1b0397"><div class="ttname"><a href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397">zrtos_vheap__page_out</a></div><div class="ttdeci">void zrtos_vheap__page_out(zrtos_vheap_t *thiz, zrtos_vheap_chunk_t *chunk, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00315">zrtos_vheap.h:315</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a8cb25649260ebcdadebc5cc733e01254"><div class="ttname"><a href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254">zrtos_vheap__free</a></div><div class="ttdeci">void zrtos_vheap__free(zrtos_vheap_t *thiz, zrtos_vheap_chunk_uid_t uid)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00257">zrtos_vheap.h:257</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a8eac080ec3d734b3a5eda8d7b45f13fd"><div class="ttname"><a href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a></div><div class="ttdeci">bool zrtos_vheap__init(zrtos_vheap_t *thiz, void *heap, size_t heap_size)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00035">zrtos_vheap.h:35</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_abe149f8bc1f24a77d03fb3e5e92a3886"><div class="ttname"><a href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886">zrtos_vheap__get_by_id</a></div><div class="ttdeci">zrtos_vheap_chunk_t * zrtos_vheap__get_by_id(zrtos_vheap_t *thiz, zrtos_vheap_chunk_uid_t uid)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00081">zrtos_vheap.h:81</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_ad63813b8a0f34f7eef0cf65af8eb8289"><div class="ttname"><a href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289">zrtos_vheap__page_in</a></div><div class="ttdeci">void * zrtos_vheap__page_in(zrtos_vheap_t *thiz, zrtos_vheap_chunk_t *chunk)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00287">zrtos_vheap.h:287</a></div></div>
-<div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b"><div class="ttname"><a href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00017">zrtos_vheap_type.h:16</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="mem_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#amem_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
-<map name="amem_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="amem_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,276,55,303"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="111,302,237,328"/>
-<area shape="poly" title=" " alt="" coords="56,291,96,299,95,304,55,296"/>
-<area shape="rect" href="zrtos__vheap_8h.html#abe149f8bc1f24a77d03fb3e5e92a3886" title=" " alt="" coords="735,123,896,150"/>
-<area shape="poly" title=" " alt="" coords="37,274,63,233,101,186,147,136,186,98,230,68,292,42,397,12,442,5,484,3,526,6,570,13,677,42,709,55,740,73,790,110,787,114,737,77,707,60,675,47,569,18,525,11,484,8,442,10,398,17,294,47,232,73,189,102,151,140,105,190,67,236,41,277"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd" title=" " alt="" coords="113,251,235,278"/>
-<area shape="poly" title=" " alt="" coords="55,283,98,275,99,280,56,288"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244" title=" " alt="" coords="103,200,245,227"/>
-<area shape="poly" title=" " alt="" coords="47,273,101,237,113,231,116,236,104,241,50,278"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad63813b8a0f34f7eef0cf65af8eb8289" title=" " alt="" coords="297,459,446,486"/>
-<area shape="poly" title=" " alt="" coords="50,301,104,338,222,402,325,450,323,455,220,406,101,343,47,305"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a7c64f185f189dd5e35dc36b22d1b0397" title=" " alt="" coords="508,678,665,704"/>
-<area shape="poly" title=" " alt="" coords="38,302,62,356,81,388,105,417,156,463,212,506,270,544,330,578,442,633,532,669,530,674,440,638,327,583,268,549,209,510,152,468,101,421,77,391,57,359,34,304"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title=" " alt="" coords="305,302,437,328"/>
-<area shape="poly" title=" " alt="" coords="237,312,289,312,289,318,237,318"/>
-<area shape="poly" title=" " alt="" coords="225,299,243,288,259,268,266,248,274,227,291,208,342,177,396,154,453,137,511,127,623,119,720,122,720,127,623,124,512,132,454,143,398,159,344,182,295,212,278,230,271,250,264,271,247,292,228,303"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ac51ec4f9bd14da10a2ee484711333ce3" title=" " alt="" coords="511,392,662,435"/>
-<area shape="poly" title=" " alt="" coords="403,326,498,371,524,383,522,388,496,376,401,331"/>
-<area shape="rect" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="1154,459,1301,486"/>
-<area shape="poly" title=" " alt="" coords="438,324,1139,453,1138,459,437,330"/>
-<area shape="rect" href="zrtos__vheap_8h.html#acca883435b77e31ca3e06f11c549717d" title=" " alt="" coords="297,222,446,248"/>
-<area shape="poly" title=" " alt="" coords="246,219,282,223,281,228,245,224"/>
-<area shape="rect" href="zrtos__vheap__chunk__uid_8h.html#ac28b650d7254ba9c46f2e53368c5c17d" title=" " alt="" coords="293,56,449,99"/>
-<area shape="poly" title=" " alt="" coords="188,198,233,159,292,115,309,105,312,109,294,120,236,163,192,202"/>
-<area shape="rect" href="zrtos__vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title=" " alt="" coords="508,224,665,267"/>
-<area shape="poly" title=" " alt="" coords="446,236,492,238,492,244,446,241"/>
-<area shape="rect" href="zrtos__mem_8h.html#a1590269d1001c17c2c99725ef85f6386" title=" " alt="" coords="734,510,897,552"/>
-<area shape="poly" title=" " alt="" coords="414,246,537,297,609,334,677,378,711,406,742,437,791,495,787,499,738,441,707,410,674,382,606,339,534,302,412,251"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a70882031ead6ad43c36cd20b4deb46d5" title=" " alt="" coords="497,174,676,200"/>
-<area shape="poly" title=" " alt="" coords="433,218,508,202,509,207,435,224"/>
-<area shape="rect" href="zrtos__vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="737,224,894,267"/>
-<area shape="poly" title=" " alt="" coords="666,243,721,243,721,248,666,248"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a8db165ab2eef6113422d6f72c9321ea9" title=" " alt="" coords="724,174,907,200"/>
-<area shape="poly" title=" " alt="" coords="665,223,745,202,746,207,666,228"/>
-<area shape="rect" href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="959,568,1102,611"/>
-<area shape="poly" title=" " alt="" coords="832,266,1010,553,1005,556,828,268"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a9cff4e6aefa63154b78bcb1a5f442d72" title=" " alt="" coords="956,224,1106,267"/>
-<area shape="poly" title=" " alt="" coords="895,243,940,243,940,248,895,248"/>
-<area shape="poly" title=" " alt="" coords="1083,265,1108,284,1144,323,1174,366,1216,443,1212,446,1170,369,1140,326,1105,288,1080,270"/>
-<area shape="poly" title=" " alt="" coords="650,170,736,151,738,156,651,176"/>
-<area shape="rect" href="zrtos__vheap__chunk__uid_8h.html#a25e30e50f03ae38e8c9a0aab47b04f6c" title=" " alt="" coords="508,56,665,99"/>
-<area shape="poly" title=" " alt="" coords="450,75,493,75,493,80,450,80"/>
-<area shape="poly" title=" " alt="" coords="422,456,496,435,497,441,424,461"/>
-<area shape="poly" title=" " alt="" coords="446,470,1139,470,1139,475,446,475"/>
-<area shape="poly" title=" " alt="" coords="387,484,433,525,464,546,498,562,556,579,616,591,737,603,850,604,944,598,944,603,850,609,736,609,615,596,555,584,496,567,462,550,430,529,384,488"/>
-<area shape="rect" href="zrtos__vheap_8h.html#a89842c4003afd30fbe7b90db0f9a7125" title=" " alt="" coords="516,510,657,552"/>
-<area shape="poly" title=" " alt="" coords="424,484,502,505,500,510,422,489"/>
-<area shape="poly" title=" " alt="" coords="658,528,719,528,719,534,658,534"/>
-<area shape="rect" href="zrtos__mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57" title=" " alt="" coords="737,678,894,704"/>
-<area shape="poly" title=" " alt="" coords="620,551,784,666,781,671,617,555"/>
-<area shape="rect" href="zrtos__mem_8h.html#a76a7df82d207aef7d339f7ff95cce550" title=" " alt="" coords="955,779,1106,806"/>
-<area shape="poly" title=" " alt="" coords="847,702,988,770,986,774,845,707"/>
-<area shape="poly" title=" " alt="" coords="1078,776,1105,758,1130,728,1152,695,1186,622,1207,554,1219,500,1224,501,1212,555,1190,624,1157,697,1134,731,1108,762,1081,780"/>
-<area shape="rect" href="zrtos__mem_8h.html#af7e65258e9f403545514aa561c040c71" title="swap len bytes of dest and src inplace" alt="" coords="1162,779,1293,806"/>
-<area shape="poly" title=" " alt="" coords="1107,790,1147,790,1147,795,1107,795"/>
-<area shape="poly" title=" " alt="" coords="643,702,698,713,765,721,836,722,907,714,967,699,1013,682,1055,658,1105,621,1137,591,1165,558,1208,497,1213,501,1170,562,1141,595,1108,625,1058,662,1015,687,968,704,907,719,836,728,764,726,697,718,642,708"/>
-<area shape="poly" title=" " alt="" coords="648,674,943,607,944,612,649,680"/>
-<area shape="poly" title=" " alt="" coords="666,688,721,688,721,694,666,694"/>
-<area shape="rect" href="zrtos__mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="738,779,893,822"/>
-<area shape="poly" title=" " alt="" coords="615,703,725,758,751,770,748,775,723,763,613,707"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a9c0c687de78c11a2d8542e8b0a9024e4" name="a9c0c687de78c11a2d8542e8b0a9024e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c0c687de78c11a2d8542e8b0a9024e4">&#9670;&#160;</a></span>ZRTOS_VHEAP__INIT()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ZRTOS_VHEAP__INIT </td>
-          <td>(</td>
-          <td class="paramtype">heap</td>          <td class="paramname"><span class="paramname">, </span></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>str1</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">160</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>str2</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00112">112</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                        {</div>
+<div class="line"><span class="lineno">  113</span>    uint8_t *s1 = (uint8_t*)str1;</div>
+<div class="line"><span class="lineno">  114</span>    uint8_t *s2 = (uint8_t*)str2;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span>(count-- &gt; 0){</div>
+<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">if</span>(*s1++ != *s2++){</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> s1[-1] &lt; s2[-1] ? -1 : 1;</div>
+<div class="line"><span class="lineno">  119</span>        }</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_abc92c0f931688ddf8da31714fff6a8d3_icgraph.svg" width="696" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac36c32ce5585de38fd4b77b2a322ac78" name="ac36c32ce5585de38fd4b77b2a322ac78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36c32ce5585de38fd4b77b2a322ac78">&#9670;&#160;</a></span>zrtos_mem__cpy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__cpy </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00104">104</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span> {</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a>(dest,src,length);</div>
+<div class="line"><span class="lineno">  110</span>}</div>
+<div class="ttc" id="amem_8h_html_a9054cc3824c6ffdaf4ed24fde2f80f32"><div class="ttname"><a href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a></div><div class="ttdeci">void zrtos_mem__move_left_overlapping(void *dest, void *src, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00091">mem.h:91</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ac36c32ce5585de38fd4b77b2a322ac78_cgraph.svg" width="335" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ac36c32ce5585de38fd4b77b2a322ac78_icgraph.svg" width="860" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2e3d82e56bdea756a305d5ced180ca57" name="a2e3d82e56bdea756a305d5ced180ca57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3d82e56bdea756a305d5ced180ca57">&#9670;&#160;</a></span>zrtos_mem__left_rotate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__left_rotate </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>buffer_length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00049">49</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span> {</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">size_t</span> d = length;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">size_t</span> n = buffer_length;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">size_t</span> i = d;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">size_t</span> j = n - d;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">while</span>(i != j){</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span>(i &lt; j){</div>
+<div class="line"><span class="lineno">   60</span>            <span class="comment">//A is shorter</span></div>
+<div class="line"><span class="lineno">   61</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d + j - i, i);</div>
+<div class="line"><span class="lineno">   62</span>            j -= i;</div>
+<div class="line"><span class="lineno">   63</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   64</span>            <span class="comment">//B is shorter</span></div>
+<div class="line"><span class="lineno">   65</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, j);</div>
+<div class="line"><span class="lineno">   66</span>            i -= j;</div>
+<div class="line"><span class="lineno">   67</span>        }</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">//Finally, block swap A and B</span></div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, i);</div>
+<div class="line"><span class="lineno">   71</span>}</div>
+<div class="ttc" id="amem_8h_html_a76a7df82d207aef7d339f7ff95cce550"><div class="ttname"><a href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a></div><div class="ttdeci">void zrtos_mem__swap_ex(void *ptr, size_t offest_dest, size_t offset_src, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00036">mem.h:36</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a2e3d82e56bdea756a305d5ced180ca57_cgraph.svg" width="562" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a2e3d82e56bdea756a305d5ced180ca57_icgraph.svg" width="1898" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a9054cc3824c6ffdaf4ed24fde2f80f32" name="a9054cc3824c6ffdaf4ed24fde2f80f32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9054cc3824c6ffdaf4ed24fde2f80f32">&#9670;&#160;</a></span>zrtos_mem__move_left_overlapping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__move_left_overlapping </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00091">91</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span> {</div>
+<div class="line"><span class="lineno">   96</span>    uint8_t *tmp_dest = dest;</div>
+<div class="line"><span class="lineno">   97</span>    uint8_t *tmp_src = src;</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">while</span>(length--){</div>
+<div class="line"><span class="lineno">   99</span>        *tmp_dest++ = *tmp_src++;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a9054cc3824c6ffdaf4ed24fde2f80f32_icgraph.svg" width="1698" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1590269d1001c17c2c99725ef85f6386" name="a1590269d1001c17c2c99725ef85f6386"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1590269d1001c17c2c99725ef85f6386">&#9670;&#160;</a></span>zrtos_mem__move_right_overlapping()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__move_right_overlapping </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00077">77</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span> {</div>
+<div class="line"><span class="lineno">   82</span>    uint8_t *tmp_dest = dest;</div>
+<div class="line"><span class="lineno">   83</span>    uint8_t *tmp_src = src;</div>
+<div class="line"><span class="lineno">   84</span>    tmp_dest += --length;</div>
+<div class="line"><span class="lineno">   85</span>    tmp_src += length++;</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">while</span>(length--){</div>
+<div class="line"><span class="lineno">   87</span>        *tmp_dest-- = *tmp_src--;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+<div class="line"><span class="lineno">   89</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a1590269d1001c17c2c99725ef85f6386_icgraph.svg" width="1895" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a3d701c04fc9475a1e6cd8d5b14d6534b" name="a3d701c04fc9475a1e6cd8d5b14d6534b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d701c04fc9475a1e6cd8d5b14d6534b">&#9670;&#160;</a></span>zrtos_mem__reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__reverse </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00124">124</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  124</span>                                              {</div>
+<div class="line"><span class="lineno">  125</span>    uint8_t *tmp_dest = dest;</div>
+<div class="line"><span class="lineno">  126</span>    uint8_t *tmp_src = tmp_dest + len;</div>
+<div class="line"><span class="lineno">  127</span>    len&gt;&gt;=1;</div>
+<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  129</span>        --tmp_src;</div>
+<div class="line"><span class="lineno">  130</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_dest,tmp_src);</div>
+<div class="line"><span class="lineno">  131</span>        tmp_dest++;</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span>}</div>
+<div class="ttc" id="atypes_8h_html_a2f4eaa4b4f1a02421779d9923bc8300d"><div class="ttname"><a href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a></div><div class="ttdeci">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00124">types.h:124</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a3d701c04fc9475a1e6cd8d5b14d6534b_icgraph.svg" width="1006" height="122"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aab5ba8aca3f57d2f28ec20b9ae5dceaf" name="aab5ba8aca3f57d2f28ec20b9ae5dceaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab5ba8aca3f57d2f28ec20b9ae5dceaf">&#9670;&#160;</a></span>zrtos_mem__search()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * zrtos_mem__search </td>
+          <td>(</td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>key</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>base</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>high</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>size</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)</td>          <td class="paramname"><span class="paramname"><em>compar</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00146">146</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
+<div class="line"><span class="lineno">  149</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> *p;</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordtype">size_t</span> low;</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">size_t</span> mid;</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">int</span> r;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (size &gt; 0) {             <span class="comment">/* TODO: change this to an assert?? */</span></div>
+<div class="line"><span class="lineno">  155</span>        low = 0;</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">while</span> (low &lt; high) {</div>
+<div class="line"><span class="lineno">  157</span>            mid = low + ((high - low) &gt;&gt; 1); <span class="comment">/* Avoid possible overflow here. */</span></div>
+<div class="line"><span class="lineno">  158</span>            p = ((<span class="keywordtype">char</span> *)base) + mid * size; <span class="comment">/* Could overflow here... */</span></div>
+<div class="line"><span class="lineno">  159</span>            r = (*compar)(key, p); <span class="comment">/* but that&#39;s an application problem! */</span></div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">if</span> (r &gt; 0) {</div>
+<div class="line"><span class="lineno">  161</span>                low = mid + 1;</div>
+<div class="line"><span class="lineno">  162</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &lt; 0) {</div>
+<div class="line"><span class="lineno">  163</span>                high = mid;</div>
+<div class="line"><span class="lineno">  164</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  165</span>                <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">  166</span>            }</div>
+<div class="line"><span class="lineno">  167</span>        }</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  170</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_aab5ba8aca3f57d2f28ec20b9ae5dceaf_icgraph.svg" width="674" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ad6c786590236d1d560b6277f638bf766" name="ad6c786590236d1d560b6277f638bf766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c786590236d1d560b6277f638bf766">&#9670;&#160;</a></span>zrtos_mem__set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__set </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00135">135</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                        {</div>
+<div class="line"><span class="lineno">  136</span>    uint8_t *tmp = dest;</div>
+<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  138</span>        *tmp++ = value;</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="line"><span class="lineno">  140</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ad6c786590236d1d560b6277f638bf766_icgraph.svg" width="484" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="af2512a95e0df7c3af1ce69001c256ee3" name="af2512a95e0df7c3af1ce69001c256ee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2512a95e0df7c3af1ce69001c256ee3">&#9670;&#160;</a></span>zrtos_mem__sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__sort </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>base</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>nel</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>width</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)</td>          <td class="paramname"><span class="paramname"><em>comp</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00172">172</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">size_t</span> wnel, gap, wgap, i, j, k;</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordtype">char</span> *a, *b, tmp;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>    wnel = width * nel;</div>
+<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">for</span> (gap = 0; ++gap &lt; nel;){</div>
+<div class="line"><span class="lineno">  182</span>        gap *= 3;</div>
+<div class="line"><span class="lineno">  183</span>    }</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">while</span> ((gap /= 3) != 0) {</div>
+<div class="line"><span class="lineno">  185</span>        wgap = width * gap;</div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">for</span> (i = wgap; i &lt; wnel; i += width) {</div>
+<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">for</span> (j = i - wgap; ;j -= wgap) {</div>
+<div class="line"><span class="lineno">  188</span>                a = j + (<span class="keywordtype">char</span> *)base;</div>
+<div class="line"><span class="lineno">  189</span>                b = a + wgap;</div>
+<div class="line"><span class="lineno">  190</span>                <span class="keywordflow">if</span> ((*comp)(a, b) &lt;= 0){</div>
+<div class="line"><span class="lineno">  191</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  192</span>                }</div>
+<div class="line"><span class="lineno">  193</span>                k = width;</div>
+<div class="line"><span class="lineno">  194</span>                <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  195</span>                    tmp = *a;</div>
+<div class="line"><span class="lineno">  196</span>                    *a++ = *b;</div>
+<div class="line"><span class="lineno">  197</span>                    *b++ = tmp;</div>
+<div class="line"><span class="lineno">  198</span>                } <span class="keywordflow">while</span> (--k);</div>
+<div class="line"><span class="lineno">  199</span>                <span class="keywordflow">if</span> (j &lt; wgap){</div>
+<div class="line"><span class="lineno">  200</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  201</span>                }</div>
+<div class="line"><span class="lineno">  202</span>            }</div>
+<div class="line"><span class="lineno">  203</span>        }</div>
+<div class="line"><span class="lineno">  204</span>    }</div>
+<div class="line"><span class="lineno">  205</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af7e65258e9f403545514aa561c040c71" name="af7e65258e9f403545514aa561c040c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7e65258e9f403545514aa561c040c71">&#9670;&#160;</a></span>zrtos_mem__swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__swap </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Swap <code>len</code> bytes of <code>dest</code> and <code>src</code> inplace. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dest</td><td>destination </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>source </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>byte length to swap</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00026">26</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                       {</div>
+<div class="line"><span class="lineno">   27</span>    uint8_t *tmp_dest = dest;</div>
+<div class="line"><span class="lineno">   28</span>    uint8_t *tmp_src = src;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">   30</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_src,tmp_dest);</div>
+<div class="line"><span class="lineno">   31</span>        tmp_src++;</div>
+<div class="line"><span class="lineno">   32</span>        tmp_dest++;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_af7e65258e9f403545514aa561c040c71_icgraph.svg" width="2276" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a76a7df82d207aef7d339f7ff95cce550" name="a76a7df82d207aef7d339f7ff95cce550"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a7df82d207aef7d339f7ff95cce550">&#9670;&#160;</a></span>zrtos_mem__swap_ex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__swap_ex </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offest_dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>offset_src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00036">36</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span> {</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a>(</div>
+<div class="line"><span class="lineno">   43</span>         <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offest_dest)</div>
+<div class="line"><span class="lineno">   44</span>        ,<a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offset_src)</div>
+<div class="line"><span class="lineno">   45</span>        ,len</div>
+<div class="line"><span class="lineno">   46</span>    );</div>
+<div class="line"><span class="lineno">   47</span>}</div>
+<div class="ttc" id="amem_8h_html_af7e65258e9f403545514aa561c040c71"><div class="ttname"><a href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a></div><div class="ttdeci">void zrtos_mem__swap(void *dest, void *src, size_t len)</div><div class="ttdoc">Swap len bytes of dest and src inplace.</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00026">mem.h:26</a></div></div>
+<div class="ttc" id="atypes_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a76a7df82d207aef7d339f7ff95cce550_cgraph.svg" width="356" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a76a7df82d207aef7d339f7ff95cce550_icgraph.svg" width="2098" height="154"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a419d9f9e6d69f2577fdce04166a8b8a7" name="a419d9f9e6d69f2577fdce04166a8b8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419d9f9e6d69f2577fdce04166a8b8a7">&#9670;&#160;</a></span>zrtos_mem__zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_mem__zero </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00142">142</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                           {</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a>(dest,0,len);</div>
+<div class="line"><span class="lineno">  144</span>}</div>
+<div class="ttc" id="amem_8h_html_ad6c786590236d1d560b6277f638bf766"><div class="ttname"><a href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a></div><div class="ttdeci">void zrtos_mem__set(void *dest, uint8_t value, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00135">mem.h:135</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a419d9f9e6d69f2577fdce04166a8b8a7_cgraph.svg" width="303" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a419d9f9e6d69f2577fdce04166a8b8a7_icgraph.svg" width="318" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -541,7 +721,7 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="mem_8h.html">mem.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="mem_8h.html">mem.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

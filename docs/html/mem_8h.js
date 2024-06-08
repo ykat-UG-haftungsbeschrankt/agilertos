@@ -1,15 +1,15 @@
 var mem_8h =
 [
-    [ "ZRTOS_ARCH__ATMEGA328P", "mem_8h.html#a768e6fa95ee3a44c67483be906d6fb7f", null ],
-    [ "ZRTOS_ARCH__BYTE_ALIGNMENT", "mem_8h.html#a04f2f242c34f581faf5b31331d0d6bdb", null ],
-    [ "ZRTOS_DEBUG__CFG_ENABLED", "mem_8h.html#a1e0c07f308eb0d821ceb0c8e8f27e579", null ],
-    [ "size_t", "mem_8h.html#af5439e19eec032e96a3561505be8ec35", null ],
-    [ "ssize_t", "mem_8h.html#aedfaaad6745394d58a2fd37dbdc42742", null ],
-    [ "bool", "mem_8h.html#af6a258d8f3ee5206d682d799316314b1", [
-      [ "false", "mem_8h.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c", null ],
-      [ "true", "mem_8h.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b", null ]
-    ] ],
-    [ "_zrtos_task_scheduler__on_tick", "mem_8h.html#ab670d7e1ab8db82279714a56efc3c99a", null ],
-    [ "main", "mem_8h.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
-    [ "ZRTOS_VHEAP__INIT", "mem_8h.html#a9c0c687de78c11a2d8542e8b0a9024e4", null ]
+    [ "zrtos_mem__cmp", "mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3", null ],
+    [ "zrtos_mem__cpy", "mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78", null ],
+    [ "zrtos_mem__left_rotate", "mem_8h.html#a2e3d82e56bdea756a305d5ced180ca57", null ],
+    [ "zrtos_mem__move_left_overlapping", "mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32", null ],
+    [ "zrtos_mem__move_right_overlapping", "mem_8h.html#a1590269d1001c17c2c99725ef85f6386", null ],
+    [ "zrtos_mem__reverse", "mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b", null ],
+    [ "zrtos_mem__search", "mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf", null ],
+    [ "zrtos_mem__set", "mem_8h.html#ad6c786590236d1d560b6277f638bf766", null ],
+    [ "zrtos_mem__sort", "mem_8h.html#af2512a95e0df7c3af1ce69001c256ee3", null ],
+    [ "zrtos_mem__swap", "mem_8h.html#af7e65258e9f403545514aa561c040c71", null ],
+    [ "zrtos_mem__swap_ex", "mem_8h.html#a76a7df82d207aef7d339f7ff95cce550", null ],
+    [ "zrtos_mem__zero", "mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7", null ]
 ];

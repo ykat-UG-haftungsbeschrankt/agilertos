@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['parent_0',['parent',['../struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd',1,'_zrtos_task_t::parent'],['../struct__zrtos__vfs__dentry__t.html#a434de1d794713094354ae5460c662d0f',1,'_zrtos_vfs_dentry_t::parent'],['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t::parent']]],
-  ['plugin_1',['plugin',['../struct__zrtos__vfs__inode__t.html#a013004f622eb58f4474d540fb408aff3',1,'_zrtos_vfs_inode_t']]],
-  ['program_2',['program',['../struct__zrtos__vm__t.html#ac35995f278cab541f00eb88969110eb1',1,'_zrtos_vm_t']]],
-  ['ptr_3',['ptr',['../struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b',1,'_zrtos_malloc_internal_t::ptr'],['../struct__zrtos__vheap__t.html#acd6cb0f8c2ef805ceec17546f5ff609a',1,'_zrtos_vheap_t::ptr'],['../struct__zrtos__vheap__chunk__t.html#a337d809a2134a475ebc2f361bef2dfc9',1,'_zrtos_vheap_chunk_t::ptr']]]
+  ['seek_0',['seek',['../structzrtos__vfs__plugin__t.html#a3bb883f404fe6e78f5f3f5124135aab8',1,'zrtos_vfs_plugin_t']]],
+  ['set_5fmode_1',['set_mode',['../struct__zrtos__gpio__t.html#a9a89f95c7141f683b42880f4de65580b',1,'_zrtos_gpio_t']]],
+  ['sleep_5ftask_2',['sleep_task',['../struct__zrtos__task__scheduler__t.html#ae86526d24890c94e38aedba3d481d225',1,'_zrtos_task_scheduler_t']]],
+  ['stack_3',['stack',['../struct__zrtos__vm__t.html#ac9cf91e748c372fba030e842451e558c',1,'_zrtos_vm_t']]],
+  ['stack_5fptr_4',['stack_ptr',['../struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79',1,'_zrtos_task_t::stack_ptr'],['../struct__zrtos__vheap__task__t.html#af55d49b9520c3bcdb23771f7975ee3d5',1,'_zrtos_vheap_task_t::stack_ptr']]],
+  ['stacksize_5',['stacksize',['../structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6',1,'pthread_attr_t']]],
+  ['stacksize_5fmin_6',['stacksize_min',['../struct__zrtos__vheap__task__t.html#aaae06b6b48cd8ab190302cba766e1ee3',1,'_zrtos_vheap_task_t']]],
+  ['start_5foffset_7',['start_offset',['../struct__zrtos__vheap__task__scheduler__t.html#a5ab9fb5bdd08564f1c0aa5db90c336ab',1,'_zrtos_vheap_task_scheduler_t']]]
 ];

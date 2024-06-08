@@ -6,8 +6,8 @@ var structzrtos__vfs__plugin__t =
     [ "ioctl", "structzrtos__vfs__plugin__t.html#a6b8edf7e02ddb8efa9d41875a432a9c8", null ],
     [ "mount", "structzrtos__vfs__plugin__t.html#a33b5203076c7bfa05c6db641eaff57e8", null ],
     [ "open", "structzrtos__vfs__plugin__t.html#a86f233736f0536d8a4e926bf5dbc1311", null ],
-    [ "read", "structzrtos__vfs__plugin__t.html#a39ea0a4a1ebdb0edd6da15c5d3bed639", null ],
-    [ "seek", "structzrtos__vfs__plugin__t.html#a16d441c5e9c556daf1bd347679e2cc56", null ],
+    [ "read", "structzrtos__vfs__plugin__t.html#a0d408c474d085130f57f67b568b448c0", null ],
+    [ "seek", "structzrtos__vfs__plugin__t.html#a3bb883f404fe6e78f5f3f5124135aab8", null ],
     [ "umount", "structzrtos__vfs__plugin__t.html#aa64949d55f9f83916caf428f6f78505d", null ],
-    [ "write", "structzrtos__vfs__plugin__t.html#af301674739353f68c2158c945dbebf1d", null ]
+    [ "write", "structzrtos__vfs__plugin__t.html#a586ddd536d24e54d64a7b4160d351bfe", null ]
 ];

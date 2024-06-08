@@ -1,0 +1,30 @@
+<map id="zrtos_clist_node__get_previous_node" name="zrtos_clist_node__get_previous_node">
+<area shape="rect" id="Node000001" title=" " alt="" coords="797,115,945,157"/>
+<area shape="rect" id="Node000002" href="$clist_8h.html#a383b927f3eeb7f78f5ae9929138a635f" title=" " alt="" coords="583,68,714,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="781,117,705,98,707,93,782,112"/>
+<area shape="rect" id="Node000008" href="$clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="560,123,737,149"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="781,139,737,139,737,133,781,133"/>
+<area shape="rect" id="Node000014" href="$task_8h.html#a3331525ae546d5c92365943b4476cd14" title=" " alt="" coords="548,173,749,200"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="782,159,711,175,710,170,781,154"/>
+<area shape="rect" id="Node000003" href="$clist_8h.html#a93c384bab6f49732e1fd1aff0cbb0e2b" title=" " alt="" coords="370,123,486,149"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="577,102,485,125,484,120,576,96"/>
+<area shape="rect" id="Node000004" href="$clist_8h.html#a443b3447b07aa651d8bc5b81e73be88f" title=" " alt="" coords="368,5,487,32"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="583,66,477,35,478,30,585,61"/>
+<area shape="rect" id="Node000005" href="$task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27" title=" " alt="" coords="355,56,500,99"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="568,83,501,81,501,76,568,77"/>
+<area shape="rect" id="Node000006" href="$task__pthread_8h.html#a138580b425fd21586b4efd4ab448d593" title=" " alt="" coords="168,49,300,92"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="339,77,300,76,300,70,339,72"/>
+<area shape="rect" id="Node000007" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="13,57,105,84"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="152,73,105,73,105,68,152,68"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="545,139,486,139,486,133,545,133"/>
+<area shape="rect" id="Node000009" href="$clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="366,185,489,212"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="577,156,549,164,472,187,471,182,548,159,575,151"/>
+<area shape="rect" id="Node000010" href="$task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035" title=" " alt="" coords="161,116,307,159"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="368,183,303,162,304,157,369,178"/>
+<area shape="rect" id="Node000012" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="161,183,307,225"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="351,203,307,205,307,199,350,198"/>
+<area shape="rect" id="Node000013" href="$vfs__dentry_8h.html#a568a74f7d927fbb181bcbf96621ffd8c" title=" " alt="" coords="161,249,307,276"/>
+<area shape="poly" id="edge13_Node000009_Node000013" title=" " alt="" coords="372,220,277,251,276,246,370,215"/>
+<area shape="rect" id="Node000011" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="5,124,113,151"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="146,140,113,140,113,135,146,135"/>
+</map>

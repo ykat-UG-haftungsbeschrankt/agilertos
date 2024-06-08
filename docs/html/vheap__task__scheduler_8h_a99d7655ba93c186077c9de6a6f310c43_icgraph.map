@@ -1,0 +1,13 @@
+<map id="zrtos_vheap_task_scheduler__has_enough_stack_space" name="zrtos_vheap_task_scheduler__has_enough_stack_space">
+<area shape="rect" id="Node000001" title=" " alt="" coords="859,39,1045,81"/>
+<area shape="rect" id="Node000002" href="$vheap__task__scheduler_8h.html#a1a1be02692a671c368f4e2335179a042" title=" " alt="" coords="618,39,811,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,63,811,63,811,57,843,57"/>
+<area shape="rect" id="Node000003" href="$vheap__task__scheduler_8h.html#acd810187c2b0b8d63548170c9da4b73d" title=" " alt="" coords="378,39,570,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="603,63,571,63,571,57,603,57"/>
+<area shape="rect" id="Node000004" href="$vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title=" " alt="" coords="145,5,330,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="362,47,330,42,331,37,363,42"/>
+<area shape="rect" id="Node000006" href="$vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title=" " alt="" coords="145,72,330,115"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="363,78,331,83,330,78,362,73"/>
+<area shape="rect" id="Node000005" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,13,97,40"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="129,29,97,29,97,24,129,24"/>
+</map>

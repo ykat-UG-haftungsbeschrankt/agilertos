@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgileRTOS (zrtos): task.h Source File</title>
+<title>agileRTOS (zrtos): task.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,8 +27,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">agileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -99,133 +101,248 @@ $(function(){initNavTree('task_8h_source.html',''); initResizable(); });
   <div class="headertitle"><div class="title">task.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="task_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="task_8h.html#a768e6fa95ee3a44c67483be906d6fb7f">    4</a></span><span class="preprocessor">#define ZRTOS_ARCH__ATMEGA328P</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="task_8h.html#a8f4c18a41beaf40ff5c4b3a1bd386968">    5</a></span><span class="preprocessor">#define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="task_8h.html#a1e0c07f308eb0d821ceb0c8e8f27e579">    7</a></span><span class="preprocessor">#define ZRTOS_DEBUG__CFG_ENABLED</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos_8h.html">zrtos.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos__task__pthread_8h.html">zrtos_task_pthread.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="zrtos__debug_8h.html">zrtos_debug.h</a>&quot;</span></div>
+<a href="task_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Permission for non-commercial use is hereby granted,</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * free of charge, without warranty of any kind.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef ZRTOS_TASK_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define ZRTOS_TASK_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">   14</a></span><span class="keywordtype">unsigned</span> <a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a> = 0;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">   15</a></span><span class="keywordtype">unsigned</span> <a class="code hl_variable" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a> = 0;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4">   17</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4">callback0</a>(<span class="keywordtype">void</span> *args){</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">static</span> uint64_t <a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a> = 0;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">while</span>(1){</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <a class="code hl_variable" href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a>++;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="comment">//ZRTOS_DEBUG(&quot;callback0:%u;&quot;,a);</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20">zrtos_task_scheduler__delay_ms</a>(20);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>}</div>
-</div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2">   25</a></span><span class="keywordtype">void</span> *<a class="code hl_function" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2">callback1</a>(<span class="keywordtype">void</span> *args){</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> uint64_t <a class="code hl_variable" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a> = 0;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">while</span>(1){</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <a class="code hl_variable" href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a>++;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="comment">//ZRTOS_DEBUG(&quot;callback1:%u;&quot;,b);</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20">zrtos_task_scheduler__delay_ms</a>(2);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef ZRTOS_BOARD__TICK_PERIOD_MS</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#error &quot;Please define ZRTOS_BOARD__TICK_PERIOD_MS&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="error_8h.html">zrtos/error.h</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="clist_8h.html">zrtos/clist.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">   23</a></span><span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="task_8h.html#af59d940f6b1b529d046c2799cdebfe87">   24</a></span><span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_typedef" href="task_8h.html#af59d940f6b1b529d046c2799cdebfe87">zrtos_task_id_t</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="task_8h.html#a546bf6dc5715cd827918da10972ae33f">   26</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>     <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa98c3a0b9428c9d47e1fee7269803ee36">ZRTOS_TASK_STATE__READY</a>   = 0x0000</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa98c3a0b9428c9d47e1fee7269803ee36">   28</a></span>    ,<a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">ZRTOS_TASK_STATE__RUNNING</a> = 1 &lt;&lt; (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a>) * 8 - 2)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">   29</a></span>    ,<a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">ZRTOS_TASK_STATE__DONE</a>    = 1 &lt;&lt; (<span class="keyword">sizeof</span>(<a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a>) * 8 - 1)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">   30</a></span>    ,<a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0">ZRTOS_TASK_STATE__MASK</a>    = <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">ZRTOS_TASK_STATE__RUNNING</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                               | <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">ZRTOS_TASK_STATE__DONE</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="task_8h.html#a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0">   32</a></span>}<a class="code hl_enumeration" href="task_8h.html#a546bf6dc5715cd827918da10972ae33f">zrtos_task_state_t</a>;</div>
 </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe">   34</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>){</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">    uint8_t *buffer = (void*)0x600;</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">    for(size_t l=0;l&lt;16;l++){</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">        buffer[l] = l;</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">    }</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">    //zrtos_str__left_rotate(buffer,7,16);</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"></span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">    zrtos_mem__left_rotate(</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">         buffer</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">        ,7</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">        ,16</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">    );</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> </span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">    uint8_t *a = zrtos_arch__cpu_state_init_a(</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">         0x300</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">        ,callback0</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">        ,0xCAFE</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">    );</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"></span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">    uint8_t *b = zrtos_arch__cpu_state_init_b(</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">         0x400</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">        ,callback0</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">        ,0xCAFE</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">    );</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_struct" href="structpthread__t.html">pthread_t</a> task0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_struct" href="structpthread__t.html">pthread_t</a> task1;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="struct__zrtos__vheap__t.html">zrtos_vheap_t</a> mem;   </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_function" href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a>(&amp;mem,(<span class="keywordtype">void</span>*)0x200,0x700-0x200);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">//zrtos_board__start_tick_timer();</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ac7672ac05f011948d8afc948ec28e4c4">zrtos_task_scheduler__set_heap</a>(&amp;mem);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunka = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286">pthread_create</a>(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>         &amp;task0</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        ,0</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        ,<a class="code hl_function" href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4">callback0</a></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        ,(<span class="keywordtype">void</span>*)0xAFFE</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    ) != 0){</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkb = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286">pthread_create</a>(</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>         &amp;task1</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        ,0</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        ,<a class="code hl_function" href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2">callback1</a></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        ,(<span class="keywordtype">void</span>*)0xCFFE</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    ) != 0){</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_struct" href="struct__zrtos__vheap__chunk__uid__t.html">zrtos_vheap_chunk_uid_t</a> chunkc = <a class="code hl_function" href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a>(&amp;mem,<a class="code hl_enumvalue" href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a>,16);</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_function" href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467">zrtos_task_scheduler__start</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html">   35</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct__zrtos__task__t.html">_zrtos_task_t</a>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">   36</a></span>    <a class="code hl_struct" href="struct__zrtos__clist__node__t.html">zrtos_clist_node_t</a>           <a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">   37</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="struct__zrtos__task__t.html">_zrtos_task_t</a>         *<a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">   38</a></span>    <a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>           *<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">   39</a></span>    <a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a>            <a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">   40</a></span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>                      <a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="task_8h.html#ae059dfbd36f892064673fe603633e2d4">   41</a></span>}<a class="code hl_typedef" href="task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a>;</div>
+</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6">   43</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6">zrtos_task__init</a>(</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>     <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>          *thiz</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ,<a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>    *<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>){</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a">zrtos_clist_node__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>)){</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a> = 0;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a> = <a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> = 0;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a> = 0;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
+</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="task_8h.html#a6834fca580b85c21da7be34f815f5f50">   57</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a>(</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>     <a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>          *thiz</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    ,<a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a>    *heap</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    ,<a class="code hl_typedef" href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    ,<span class="keywordtype">void</span>                  *args</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>){</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6">zrtos_task__init</a>(</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>         thiz</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        ,<a class="code hl_define" href="atmega328p_8h.html#af0a24f4af1f5fddd9b171d6ddc51d9b3">zrtos_arch__cpu_state_init</a>(</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            heap</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            <span class="comment">//,heap_size</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            ,callback</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            ,args</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        )</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    );</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00074" data-start="{" data-end="}">
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="task_8h.html#ab94dfaf652c3dd1dd48e1b21972edcf9">   74</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#ab94dfaf652c3dd1dd48e1b21972edcf9">zrtos_task__set_delay_ms</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz,<a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a> ms){</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#if ZRTOS_BOARD__TICK_PERIOD_MS == 1</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> = ms;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> = ms ? (ms / <a class="code hl_define" href="arduino_8h.html#a7eb4a3dada646b612ed29fb1bcd8b4a1">ZRTOS_BOARD__TICK_PERIOD_MS</a>) : 0;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9">   82</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9">zrtos_task__on_tick</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <a class="code hl_typedef" href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a> val  = thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordflow">if</span>(0 == (val &amp; <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0">ZRTOS_TASK_STATE__MASK</a>)){</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> -= (val &gt; 0);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="task_8h.html#a886f2c097ab9830c80f6d0137c7bd526">   89</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="task_8h.html#a886f2c097ab9830c80f6d0137c7bd526">zrtos_task__is_ready</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> == 0;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="task_8h.html#af052e8a8ec60aa0187289a3dc5f5eb65">   93</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="task_8h.html#af052e8a8ec60aa0187289a3dc5f5eb65">zrtos_task__is_running</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> (thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> &amp; <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">ZRTOS_TASK_STATE__RUNNING</a>) &gt; 0;</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>}</div>
 </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="ttc" id="astruct__zrtos__vheap__chunk__uid__t_html"><div class="ttname"><a href="struct__zrtos__vheap__chunk__uid__t.html">_zrtos_vheap_chunk_uid_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk__uid_8h_source.html#l00014">zrtos_vheap_chunk_uid.h:14</a></div></div>
-<div class="ttc" id="astruct__zrtos__vheap__t_html"><div class="ttname"><a href="struct__zrtos__vheap__t.html">_zrtos_vheap_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00028">zrtos_vheap.h:28</a></div></div>
-<div class="ttc" id="astructpthread__t_html"><div class="ttname"><a href="structpthread__t.html">pthread_t</a></div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00025">zrtos_task_pthread.h:25</a></div></div>
-<div class="ttc" id="atask_8h_html_a43b6d2cb6d9260a7ffdd0b094aa9fcfc"><div class="ttname"><a href="task_8h.html#a43b6d2cb6d9260a7ffdd0b094aa9fcfc">a</a></div><div class="ttdeci">unsigned a</div><div class="ttdef"><b>Definition</b> <a href="#l00014">task.h:14</a></div></div>
-<div class="ttc" id="atask_8h_html_a6202a5b52bc0c21f59932c1ebd1439c2"><div class="ttname"><a href="task_8h.html#a6202a5b52bc0c21f59932c1ebd1439c2">callback1</a></div><div class="ttdeci">void * callback1(void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00025">task.h:25</a></div></div>
-<div class="ttc" id="atask_8h_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="task_8h.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00034">task.h:34</a></div></div>
-<div class="ttc" id="atask_8h_html_af05b6218b3fd77b4d618ceb43eaeedb4"><div class="ttname"><a href="task_8h.html#af05b6218b3fd77b4d618ceb43eaeedb4">callback0</a></div><div class="ttdeci">void * callback0(void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">task.h:17</a></div></div>
-<div class="ttc" id="atask_8h_html_af17f0ab7a33d14841ab6217811a1de6b"><div class="ttname"><a href="task_8h.html#af17f0ab7a33d14841ab6217811a1de6b">b</a></div><div class="ttdeci">unsigned b</div><div class="ttdef"><b>Definition</b> <a href="#l00015">task.h:15</a></div></div>
-<div class="ttc" id="azrtos_8h_html"><div class="ttname"><a href="zrtos_8h.html">zrtos.h</a></div></div>
-<div class="ttc" id="azrtos__debug_8h_html"><div class="ttname"><a href="zrtos__debug_8h.html">zrtos_debug.h</a></div></div>
-<div class="ttc" id="azrtos__task__pthread_8h_html"><div class="ttname"><a href="zrtos__task__pthread_8h.html">zrtos_task_pthread.h</a></div></div>
-<div class="ttc" id="azrtos__task__pthread_8h_html_a091adcef6201bebbf231763328c15286"><div class="ttname"><a href="zrtos__task__pthread_8h.html#a091adcef6201bebbf231763328c15286">pthread_create</a></div><div class="ttdeci">int pthread_create(pthread_t *restrict thread, const pthread_attr_t *restrict attr, void *(*start_routine)(void *), void *restrict arg)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__pthread_8h_source.html#l00077">zrtos_task_pthread.h:77</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ac464ad876acb442cb19499f5b7c68467"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ac464ad876acb442cb19499f5b7c68467">zrtos_task_scheduler__start</a></div><div class="ttdeci">bool zrtos_task_scheduler__start(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00122">zrtos_task_scheduler.h:122</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ac7672ac05f011948d8afc948ec28e4c4"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ac7672ac05f011948d8afc948ec28e4c4">zrtos_task_scheduler__set_heap</a></div><div class="ttdeci">void zrtos_task_scheduler__set_heap(zrtos_vheap_t *heap)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00034">zrtos_task_scheduler.h:34</a></div></div>
-<div class="ttc" id="azrtos__task__scheduler_8h_html_ae23ef6160f09d834936f87898aadda20"><div class="ttname"><a href="zrtos__task__scheduler_8h.html#ae23ef6160f09d834936f87898aadda20">zrtos_task_scheduler__delay_ms</a></div><div class="ttdeci">void zrtos_task_scheduler__delay_ms(zrtos_task_delay_t ms)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__task__scheduler_8h_source.html#l00230">zrtos_task_scheduler.h:230</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a27884234d50a622ec3b6ec54c72db244"><div class="ttname"><a href="zrtos__vheap_8h.html#a27884234d50a622ec3b6ec54c72db244">zrtos_vheap__malloc</a></div><div class="ttdeci">zrtos_vheap_chunk_uid_t zrtos_vheap__malloc(zrtos_vheap_t *thiz, zrtos_vheap_type_t type, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00194">zrtos_vheap.h:194</a></div></div>
-<div class="ttc" id="azrtos__vheap_8h_html_a8eac080ec3d734b3a5eda8d7b45f13fd"><div class="ttname"><a href="zrtos__vheap_8h.html#a8eac080ec3d734b3a5eda8d7b45f13fd">zrtos_vheap__init</a></div><div class="ttdeci">bool zrtos_vheap__init(zrtos_vheap_t *thiz, void *heap, size_t heap_size)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap_8h_source.html#l00035">zrtos_vheap.h:35</a></div></div>
-<div class="ttc" id="azrtos__vheap__type_8h_html_a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b"><div class="ttname"><a href="zrtos__vheap__type_8h.html#a66b34d8062a0c2e163e00077f3caa1f1a4cd59e0310f681351897971e07d8605b">ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</a></div><div class="ttdeci">@ ZRTOS_VHEAP_CHUNK_TYPE__MALLOC</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__type_8h_source.html#l00017">zrtos_vheap_type.h:16</a></div></div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="task_8h.html#a56a77b15f26b91d18a628aa1881b20df">   97</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> (thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> &amp; <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">ZRTOS_TASK_STATE__DONE</a>) &gt; 0;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="task_8h.html#ad8c16c2d76e6c914578e4d7119912d23">  101</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#ad8c16c2d76e6c914578e4d7119912d23">zrtos_task__set_ready</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> ^= (thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> &amp; <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0">ZRTOS_TASK_STATE__MASK</a>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="task_8h.html#ad1a1e7f56769e80053057dce46b27edd">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#ad1a1e7f56769e80053057dce46b27edd">zrtos_task__set_running</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> |= <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">ZRTOS_TASK_STATE__RUNNING</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
+</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="}">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="task_8h.html#a347af015cd8a024798feccbe5fbf1a39">  109</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#a347af015cd8a024798feccbe5fbf1a39">zrtos_task__set_done</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">ticks</a> |= <a class="code hl_enumvalue" href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">ZRTOS_TASK_STATE__DONE</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="task_8h.html#a007a26e54f32157b572c217857c9c190">  113</a></span><a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *<a class="code hl_function" href="task_8h.html#a007a26e54f32157b572c217857c9c190">zrtos_task__get_next_task</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_struct" href="struct__zrtos__clist__node__t.html">zrtos_clist_node_t</a> *<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a> = <a class="code hl_function" href="clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c">zrtos_clist_node__get_next_node</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="types_8h.html#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a>(<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>,<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>,<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="foldopen" id="foldopen00118" data-start="{" data-end="}">
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="task_8h.html#a3331525ae546d5c92365943b4476cd14">  118</a></span><a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *<a class="code hl_function" href="task_8h.html#a3331525ae546d5c92365943b4476cd14">zrtos_task__get_previous_task</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_struct" href="struct__zrtos__clist__node__t.html">zrtos_clist_node_t</a> *<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a> = <a class="code hl_function" href="clist_8h.html#a7e4e2a2b78267e86a322ece473242b47">zrtos_clist_node__get_previous_node</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="types_8h.html#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a>(<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>,<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a>,<a class="code hl_variable" href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">node</a>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="}">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e">  123</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e">zrtos_task__set_stack_ptr</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz,<a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a>){</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a> = <a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>}</div>
+</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="task_8h.html#a57ff82492e8cb164a83c79630497defd">  127</a></span><a class="code hl_typedef" href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *<a class="code hl_function" href="task_8h.html#a57ff82492e8cb164a83c79630497defd">zrtos_task__get_stack_ptr</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">stack_ptr</a>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="task_8h.html#a06873ce7299989184f846b48d2cad810">  131</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#a06873ce7299989184f846b48d2cad810">zrtos_task__set_errno</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz,<a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> <a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a>){</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a> = <a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a>;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
+</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="task_8h.html#a6d97ac60e5777143b600124289cc9de0">  135</a></span><a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> <a class="code hl_function" href="task_8h.html#a6d97ac60e5777143b600124289cc9de0">zrtos_task__get_errno</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">error_code</a>;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>}</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="foldopen" id="foldopen00139" data-start="{" data-end="}">
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="task_8h.html#a34aca34833e1ab06a5e0d26fda080286">  139</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="task_8h.html#a34aca34833e1ab06a5e0d26fda080286">zrtos_task__set_parent</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz,<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *<a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a>){</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a> = <a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="foldopen" id="foldopen00143" data-start="{" data-end="}">
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="task_8h.html#a96c19c6a70a0f448bbdc65a637bdeafb">  143</a></span><a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *<a class="code hl_function" href="task_8h.html#a96c19c6a70a0f448bbdc65a637bdeafb">zrtos_task__get_parent</a>(<a class="code hl_struct" href="struct__zrtos__task__t.html">zrtos_task_t</a> *thiz){</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">parent</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aarch_8h_html_aa36ce2be34a1ed388ea0d61c3a872eb3"><div class="ttname"><a href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a></div><div class="ttdeci">void(* zrtos_arch_callback_t)(void *arg)</div><div class="ttdef"><b>Definition</b> <a href="arch_8h_source.html#l00016">arch.h:16</a></div></div>
+<div class="ttc" id="aarduino_8h_html_a7eb4a3dada646b612ed29fb1bcd8b4a1"><div class="ttname"><a href="arduino_8h.html#a7eb4a3dada646b612ed29fb1bcd8b4a1">ZRTOS_BOARD__TICK_PERIOD_MS</a></div><div class="ttdeci">#define ZRTOS_BOARD__TICK_PERIOD_MS</div><div class="ttdef"><b>Definition</b> <a href="arduino_8h_source.html#l00078">arduino.h:78</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="atmega328p_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00018">atmega328p.h:18</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_af0a24f4af1f5fddd9b171d6ddc51d9b3"><div class="ttname"><a href="atmega328p_8h.html#af0a24f4af1f5fddd9b171d6ddc51d9b3">zrtos_arch__cpu_state_init</a></div><div class="ttdeci">#define zrtos_arch__cpu_state_init</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00183">atmega328p.h:183</a></div></div>
+<div class="ttc" id="aclist_8h_html"><div class="ttname"><a href="clist_8h.html">clist.h</a></div></div>
+<div class="ttc" id="aclist_8h_html_a26b8f9c0c172cd6d9deba237155bf40a"><div class="ttname"><a href="clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a">zrtos_clist_node__init</a></div><div class="ttdeci">bool zrtos_clist_node__init(zrtos_clist_node_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="clist_8h_source.html#l00033">clist.h:33</a></div></div>
+<div class="ttc" id="aclist_8h_html_a7e4e2a2b78267e86a322ece473242b47"><div class="ttname"><a href="clist_8h.html#a7e4e2a2b78267e86a322ece473242b47">zrtos_clist_node__get_previous_node</a></div><div class="ttdeci">zrtos_clist_node_t * zrtos_clist_node__get_previous_node(zrtos_clist_node_t *node)</div><div class="ttdef"><b>Definition</b> <a href="clist_8h_source.html#l00044">clist.h:44</a></div></div>
+<div class="ttc" id="aclist_8h_html_aec8fbabbd0ff3c556e46b59eb872d43c"><div class="ttname"><a href="clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c">zrtos_clist_node__get_next_node</a></div><div class="ttdeci">zrtos_clist_node_t * zrtos_clist_node__get_next_node(zrtos_clist_node_t *node)</div><div class="ttdef"><b>Definition</b> <a href="clist_8h_source.html#l00038">clist.h:38</a></div></div>
+<div class="ttc" id="aerror_8h_html"><div class="ttname"><a href="error_8h.html">error.h</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00019">error.h:19</a></div></div>
+<div class="ttc" id="astruct__zrtos__clist__node__t_html"><div class="ttname"><a href="struct__zrtos__clist__node__t.html">_zrtos_clist_node_t</a></div><div class="ttdef"><b>Definition</b> <a href="clist_8h_source.html#l00017">clist.h:17</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html"><div class="ttname"><a href="struct__zrtos__task__t.html">_zrtos_task_t</a></div><div class="ttdef"><b>Definition</b> <a href="#l00035">task.h:35</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html_a3169838bb5ecb547052b64081a59b6b1"><div class="ttname"><a href="struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1">_zrtos_task_t::node</a></div><div class="ttdeci">zrtos_clist_node_t node</div><div class="ttdef"><b>Definition</b> <a href="#l00036">task.h:36</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html_a760a7d23c6ea7ce8993363caf2c9a1f8"><div class="ttname"><a href="struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8">_zrtos_task_t::error_code</a></div><div class="ttdeci">zrtos_error_t error_code</div><div class="ttdef"><b>Definition</b> <a href="#l00040">task.h:40</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html_aca771ad9d5dffbc93a142301b23f9838"><div class="ttname"><a href="struct__zrtos__task__t.html#aca771ad9d5dffbc93a142301b23f9838">_zrtos_task_t::ticks</a></div><div class="ttdeci">zrtos_task_tick_t ticks</div><div class="ttdef"><b>Definition</b> <a href="#l00039">task.h:39</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html_ad37affc0d846b49dc717cbc5049d4bcd"><div class="ttname"><a href="struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd">_zrtos_task_t::parent</a></div><div class="ttdeci">struct _zrtos_task_t * parent</div><div class="ttdef"><b>Definition</b> <a href="#l00037">task.h:37</a></div></div>
+<div class="ttc" id="astruct__zrtos__task__t_html_ae8166fe6c42d53214f7a7a26ef1a7d79"><div class="ttname"><a href="struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79">_zrtos_task_t::stack_ptr</a></div><div class="ttdeci">zrtos_arch_stack_t * stack_ptr</div><div class="ttdef"><b>Definition</b> <a href="#l00038">task.h:38</a></div></div>
+<div class="ttc" id="atask_8h_html_a007a26e54f32157b572c217857c9c190"><div class="ttname"><a href="task_8h.html#a007a26e54f32157b572c217857c9c190">zrtos_task__get_next_task</a></div><div class="ttdeci">zrtos_task_t * zrtos_task__get_next_task(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00113">task.h:113</a></div></div>
+<div class="ttc" id="atask_8h_html_a06873ce7299989184f846b48d2cad810"><div class="ttname"><a href="task_8h.html#a06873ce7299989184f846b48d2cad810">zrtos_task__set_errno</a></div><div class="ttdeci">void zrtos_task__set_errno(zrtos_task_t *thiz, zrtos_error_t error_code)</div><div class="ttdef"><b>Definition</b> <a href="#l00131">task.h:131</a></div></div>
+<div class="ttc" id="atask_8h_html_a0a980ca1d36245017c5c67113434fa44"><div class="ttname"><a href="task_8h.html#a0a980ca1d36245017c5c67113434fa44">zrtos_task_tick_t</a></div><div class="ttdeci">unsigned int zrtos_task_tick_t</div><div class="ttdef"><b>Definition</b> <a href="#l00023">task.h:23</a></div></div>
+<div class="ttc" id="atask_8h_html_a3167eade7e7faf3fc23d540b9888aaf9"><div class="ttname"><a href="task_8h.html#a3167eade7e7faf3fc23d540b9888aaf9">zrtos_task__on_tick</a></div><div class="ttdeci">void zrtos_task__on_tick(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00082">task.h:82</a></div></div>
+<div class="ttc" id="atask_8h_html_a3331525ae546d5c92365943b4476cd14"><div class="ttname"><a href="task_8h.html#a3331525ae546d5c92365943b4476cd14">zrtos_task__get_previous_task</a></div><div class="ttdeci">zrtos_task_t * zrtos_task__get_previous_task(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00118">task.h:118</a></div></div>
+<div class="ttc" id="atask_8h_html_a347af015cd8a024798feccbe5fbf1a39"><div class="ttname"><a href="task_8h.html#a347af015cd8a024798feccbe5fbf1a39">zrtos_task__set_done</a></div><div class="ttdeci">void zrtos_task__set_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00109">task.h:109</a></div></div>
+<div class="ttc" id="atask_8h_html_a34aca34833e1ab06a5e0d26fda080286"><div class="ttname"><a href="task_8h.html#a34aca34833e1ab06a5e0d26fda080286">zrtos_task__set_parent</a></div><div class="ttdeci">void zrtos_task__set_parent(zrtos_task_t *thiz, zrtos_task_t *parent)</div><div class="ttdef"><b>Definition</b> <a href="#l00139">task.h:139</a></div></div>
+<div class="ttc" id="atask_8h_html_a546bf6dc5715cd827918da10972ae33f"><div class="ttname"><a href="task_8h.html#a546bf6dc5715cd827918da10972ae33f">zrtos_task_state_t</a></div><div class="ttdeci">zrtos_task_state_t</div><div class="ttdef"><b>Definition</b> <a href="#l00026">task.h:26</a></div></div>
+<div class="ttc" id="atask_8h_html_a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc"><div class="ttname"><a href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa2ceed344c92784bcd031500945ea72bc">ZRTOS_TASK_STATE__RUNNING</a></div><div class="ttdeci">@ ZRTOS_TASK_STATE__RUNNING</div><div class="ttdef"><b>Definition</b> <a href="#l00029">task.h:28</a></div></div>
+<div class="ttc" id="atask_8h_html_a546bf6dc5715cd827918da10972ae33fa98c3a0b9428c9d47e1fee7269803ee36"><div class="ttname"><a href="task_8h.html#a546bf6dc5715cd827918da10972ae33fa98c3a0b9428c9d47e1fee7269803ee36">ZRTOS_TASK_STATE__READY</a></div><div class="ttdeci">@ ZRTOS_TASK_STATE__READY</div><div class="ttdef"><b>Definition</b> <a href="#l00028">task.h:27</a></div></div>
+<div class="ttc" id="atask_8h_html_a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0"><div class="ttname"><a href="task_8h.html#a546bf6dc5715cd827918da10972ae33faa758fd903a296e68f99ab0b0d21445d0">ZRTOS_TASK_STATE__MASK</a></div><div class="ttdeci">@ ZRTOS_TASK_STATE__MASK</div><div class="ttdef"><b>Definition</b> <a href="#l00032">task.h:30</a></div></div>
+<div class="ttc" id="atask_8h_html_a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0"><div class="ttname"><a href="task_8h.html#a546bf6dc5715cd827918da10972ae33fafbeeec5460772fd87a4b6835f68717f0">ZRTOS_TASK_STATE__DONE</a></div><div class="ttdeci">@ ZRTOS_TASK_STATE__DONE</div><div class="ttdef"><b>Definition</b> <a href="#l00030">task.h:29</a></div></div>
+<div class="ttc" id="atask_8h_html_a56a77b15f26b91d18a628aa1881b20df"><div class="ttname"><a href="task_8h.html#a56a77b15f26b91d18a628aa1881b20df">zrtos_task__is_done</a></div><div class="ttdeci">bool zrtos_task__is_done(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00097">task.h:97</a></div></div>
+<div class="ttc" id="atask_8h_html_a57b11c5affd2719f0abf5fa9bc8feaa6"><div class="ttname"><a href="task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6">zrtos_task__init</a></div><div class="ttdeci">bool zrtos_task__init(zrtos_task_t *thiz, zrtos_arch_stack_t *stack_ptr)</div><div class="ttdef"><b>Definition</b> <a href="#l00043">task.h:43</a></div></div>
+<div class="ttc" id="atask_8h_html_a57ff82492e8cb164a83c79630497defd"><div class="ttname"><a href="task_8h.html#a57ff82492e8cb164a83c79630497defd">zrtos_task__get_stack_ptr</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_task__get_stack_ptr(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00127">task.h:127</a></div></div>
+<div class="ttc" id="atask_8h_html_a6834fca580b85c21da7be34f815f5f50"><div class="ttname"><a href="task_8h.html#a6834fca580b85c21da7be34f815f5f50">zrtos_task__init_ex</a></div><div class="ttdeci">bool zrtos_task__init_ex(zrtos_task_t *thiz, zrtos_arch_stack_t *heap, zrtos_arch_callback_t callback, void *args)</div><div class="ttdef"><b>Definition</b> <a href="#l00057">task.h:57</a></div></div>
+<div class="ttc" id="atask_8h_html_a6d97ac60e5777143b600124289cc9de0"><div class="ttname"><a href="task_8h.html#a6d97ac60e5777143b600124289cc9de0">zrtos_task__get_errno</a></div><div class="ttdeci">zrtos_error_t zrtos_task__get_errno(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00135">task.h:135</a></div></div>
+<div class="ttc" id="atask_8h_html_a6e268bf35f1b190f4cc63eab16068d9e"><div class="ttname"><a href="task_8h.html#a6e268bf35f1b190f4cc63eab16068d9e">zrtos_task__set_stack_ptr</a></div><div class="ttdeci">void zrtos_task__set_stack_ptr(zrtos_task_t *thiz, zrtos_arch_stack_t *stack_ptr)</div><div class="ttdef"><b>Definition</b> <a href="#l00123">task.h:123</a></div></div>
+<div class="ttc" id="atask_8h_html_a886f2c097ab9830c80f6d0137c7bd526"><div class="ttname"><a href="task_8h.html#a886f2c097ab9830c80f6d0137c7bd526">zrtos_task__is_ready</a></div><div class="ttdeci">bool zrtos_task__is_ready(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00089">task.h:89</a></div></div>
+<div class="ttc" id="atask_8h_html_a96c19c6a70a0f448bbdc65a637bdeafb"><div class="ttname"><a href="task_8h.html#a96c19c6a70a0f448bbdc65a637bdeafb">zrtos_task__get_parent</a></div><div class="ttdeci">zrtos_task_t * zrtos_task__get_parent(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00143">task.h:143</a></div></div>
+<div class="ttc" id="atask_8h_html_ab94dfaf652c3dd1dd48e1b21972edcf9"><div class="ttname"><a href="task_8h.html#ab94dfaf652c3dd1dd48e1b21972edcf9">zrtos_task__set_delay_ms</a></div><div class="ttdeci">void zrtos_task__set_delay_ms(zrtos_task_t *thiz, zrtos_task_tick_t ms)</div><div class="ttdef"><b>Definition</b> <a href="#l00074">task.h:74</a></div></div>
+<div class="ttc" id="atask_8h_html_ad1a1e7f56769e80053057dce46b27edd"><div class="ttname"><a href="task_8h.html#ad1a1e7f56769e80053057dce46b27edd">zrtos_task__set_running</a></div><div class="ttdeci">void zrtos_task__set_running(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00105">task.h:105</a></div></div>
+<div class="ttc" id="atask_8h_html_ad8c16c2d76e6c914578e4d7119912d23"><div class="ttname"><a href="task_8h.html#ad8c16c2d76e6c914578e4d7119912d23">zrtos_task__set_ready</a></div><div class="ttdeci">void zrtos_task__set_ready(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00101">task.h:101</a></div></div>
+<div class="ttc" id="atask_8h_html_ae059dfbd36f892064673fe603633e2d4"><div class="ttname"><a href="task_8h.html#ae059dfbd36f892064673fe603633e2d4">zrtos_task_t</a></div><div class="ttdeci">struct _zrtos_task_t zrtos_task_t</div></div>
+<div class="ttc" id="atask_8h_html_af052e8a8ec60aa0187289a3dc5f5eb65"><div class="ttname"><a href="task_8h.html#af052e8a8ec60aa0187289a3dc5f5eb65">zrtos_task__is_running</a></div><div class="ttdeci">bool zrtos_task__is_running(zrtos_task_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="#l00093">task.h:93</a></div></div>
+<div class="ttc" id="atask_8h_html_af59d940f6b1b529d046c2799cdebfe87"><div class="ttname"><a href="task_8h.html#af59d940f6b1b529d046c2799cdebfe87">zrtos_task_id_t</a></div><div class="ttdeci">unsigned int zrtos_task_id_t</div><div class="ttdef"><b>Definition</b> <a href="#l00024">task.h:24</a></div></div>
+<div class="ttc" id="atypes_8h_html_aac2bdc28e0ef47f8fcd14cd44cf1eb35"><div class="ttname"><a href="types_8h.html#aac2bdc28e0ef47f8fcd14cd44cf1eb35">zrtos_types__get_container_of</a></div><div class="ttdeci">#define zrtos_types__get_container_of(ptr, type, member)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00066">types.h:66</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="task_8h.html">task.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="task_8h.html">task.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

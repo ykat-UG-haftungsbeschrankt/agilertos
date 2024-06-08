@@ -24,8 +24,19 @@
 */
 var NAVTREE =
 [
-  [ "AgileRTOS (zrtos)", "index.html", [
-    [ "Documentation", "index.html", "index" ],
+  [ "agileRTOS (zrtos)", "index.html", [
+    [ "Documentation", "index.html#autotoc_md0", [
+      [ "Examples", "index.html#autotoc_md1", [
+        [ "malloc() / free()", "index.html#autotoc_md2", null ],
+        [ "vheap", "index.html#autotoc_md3", null ],
+        [ "events", "index.html#autotoc_md4", null ],
+        [ "static tasks", "index.html#autotoc_md5", null ],
+        [ "static pthread", "index.html#autotoc_md6", null ],
+        [ "VM", "index.html#autotoc_md7", null ],
+        [ "VFS", "index.html#autotoc_md8", null ],
+        [ "Supported Chips and Boards", "index.html#autotoc_md9", null ]
+      ] ]
+    ] ],
     [ "Todo List", "todo.html", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -53,10 +64,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"struct__zrtos__vheap__chunk__t.html#a17a5ef8a15dc39903eb3bc5c3ca5a839",
-"zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22a5f346a0ec7e8c83444baaa75d22b5473",
-"zrtos__task__pthread_8h.html#a27da386211db1a7e9a3b2a0db4d22144",
-"zrtos__vm_8h.html#a7cea76c39f093733f6079380f8e2f210a0e6e02ec159c8de5441c0eec60fbcae9"
+"error_8h.html#a858141c8990203d8ff36f82cf43f0e22afb6f95c30c1d62c5386da586cc8d45aa",
+"struct__zrtos__vheap__task__t.html#acb47daf12a808d17fd707b4df7b01df3",
+"vheap_8h.html#a73b1530334cc53fe2b1ed9e811ad16b7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

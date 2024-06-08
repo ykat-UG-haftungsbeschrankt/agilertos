@@ -1,0 +1,19 @@
+<map id="fat16_free_clusters" name="fat16_free_clusters">
+<area shape="rect" id="Node000001" title="Frees a cluster chain, or a part thereof." alt="" coords="535,132,666,159"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga7c2bf1884a5d396916b4581e15eb6992" title="Appends a new cluster chain to an existing one." alt="" coords="330,56,481,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="549,128,441,86,443,81,551,123"/>
+<area shape="rect" id="Node000004" href="$group__fat16__file.html#ga23740742fa60ca148ef098caac7085c0" title="Resizes a file to have a specific size." alt="" coords="161,107,276,133"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="520,143,276,126,276,121,520,137"/>
+<area shape="rect" id="Node000007" href="$group__fat16__file.html#gae060faccbbeca802afe86be2f4d5b485" title="Deletes a file or directory." alt="" coords="349,157,463,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="520,158,463,166,463,161,520,153"/>
+<area shape="rect" id="Node000008" href="$group__fat16__fs.html#gad1da920ff8c1a617522bbfa21972e4c7" title="Frees a part of a cluster chain and correctly terminates the rest." alt="" coords="324,208,487,235"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="559,168,488,198,455,210,454,205,486,194,556,163"/>
+<area shape="rect" id="Node000003" href="$group__fat16__file.html#gaf8029e3ec633902d08e8204d13afc350" title="Creates a file." alt="" coords="161,5,276,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,54,270,35,271,30,340,49"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="340,90,271,109,270,103,338,85"/>
+<area shape="rect" id="Node000006" href="$group__fat16__file.html#ga4f0c785a47b1cf070839b5edec2c6f65" title="Writes data to a file." alt="" coords="165,56,272,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="315,72,272,72,272,67,315,67"/>
+<area shape="rect" id="Node000005" href="$group__fat16__file.html#gaf1511fd1a5419d0828265566dc5d33e4" title="Repositions the read/write file offset." alt="" coords="5,107,113,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="146,123,113,123,113,117,146,117"/>
+<area shape="poly" id="edge9_Node000008_Node000004" title=" " alt="" coords="336,205,323,198,273,167,234,136,237,132,276,163,325,194,339,200"/>
+</map>

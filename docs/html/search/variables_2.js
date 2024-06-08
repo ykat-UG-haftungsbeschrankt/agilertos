@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['callback_0',['callback',['../struct__zrtos__event__handler__t.html#a3865706147ec9e8518f94f441f47c65a',1,'_zrtos_event_handler_t::callback'],['../structzrtos__task__pthread____trampoline__cb__args__t.html#a5bbe7970bfba5910eb204feb6dbb3c8f',1,'zrtos_task_pthread__trampoline_cb_args_t::callback'],['../struct__zrtos__vm__function__t.html#ab76d46b89a9e68040ebe95bff281cb89',1,'_zrtos_vm_function_t::callback']]],
-  ['can_5fread_1',['can_read',['../structzrtos__vfs__plugin__t.html#a1053c1eaf18a6cd45c53adb323db82a1',1,'zrtos_vfs_plugin_t']]],
-  ['can_5fwrite_2',['can_write',['../structzrtos__vfs__plugin__t.html#a000c6efaa4fdddd01bc079e44d2c534c',1,'zrtos_vfs_plugin_t']]],
-  ['close_3',['close',['../structzrtos__vfs__plugin__t.html#a525beb2da1e1bddee0018a3abd642e63',1,'zrtos_vfs_plugin_t']]],
-  ['context_4',['context',['../struct__zrtos__vm__function__t.html#ae10bb8b5be89febfcc37a78a6a2fdeef',1,'_zrtos_vm_function_t']]],
-  ['count_5',['count',['../struct__zrtos__vfs__dentry__t.html#a65f427470689ed46c98e18d5a2c217ba',1,'_zrtos_vfs_dentry_t']]],
-  ['ctx_6',['ctx',['../struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137',1,'_zrtos_event_handler_t::ctx'],['../struct__zrtos__vfs__inode__t.html#a3a472320bd4c2a7cb38fee643d735f5e',1,'_zrtos_vfs_inode_t::ctx']]],
-  ['ctx_5fswitch_5ftask_5fstack_7',['ctx_switch_task_stack',['../struct__zrtos__vheap__task__scheduler__t.html#a29354430041cd1f450c935208480e3f4',1,'_zrtos_vheap_task_scheduler_t']]]
+  ['data_0',['data',['../struct__zrtos__event__t.html#a255209a3c3a2432ab0ca211f47becd33',1,'_zrtos_event_t::data'],['../struct__zrtos__stack__t.html#ac7a6304a9157df5fc231d4241c7069b2',1,'_zrtos_stack_t::data'],['../struct__zrtos__string__t.html#acf0ac347db13e27caf97827125652fbe',1,'_zrtos_string_t::data']]],
+  ['dentry_1',['dentry',['../struct__zrtos__vfs__file__t.html#a6f758208bc6b14b8962c848c32db96d6',1,'_zrtos_vfs_file_t']]],
+  ['dest_2',['dest',['../struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7',1,'_zrtos_str__vsnprintf_cb_args_t']]],
+  ['digital_5fread_3',['digital_read',['../struct__zrtos__gpio__t.html#a2fbc37b22a8627dc73eb873f3aaca8e5',1,'_zrtos_gpio_t']]],
+  ['digital_5fwrite_4',['digital_write',['../struct__zrtos__gpio__t.html#a84280a9ebea11e19b9e809efe3518caa',1,'_zrtos_gpio_t']]],
+  ['do_5fnot_5fdisturb_5',['do_not_disturb',['../struct__zrtos__task__scheduler__t.html#a946f04f742de47e9f1a9a0f0affe1538',1,'_zrtos_task_scheduler_t']]]
 ];

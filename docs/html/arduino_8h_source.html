@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgileRTOS (zrtos): arduino.h Source File</title>
+<title>agileRTOS (zrtos): arduino.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,8 +27,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
+   <div id="projectname">agileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -208,10 +210,10 @@ $(function(){initNavTree('arduino_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <a class="code hl_define" href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// @todo save register on stack</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="arduino_8h.html#a8e093dc856bff2ca41d346f1dc8bc116">zrtos_board_arduino__on_ovf</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_variable" href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a>();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_variable" href="board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a>();</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">//avr/time.h system_tick();</span></div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_define" href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a>((<span class="keywordtype">void</span>*)SP);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_variable" href="zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a>();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_variable" href="board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a>();</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_define" href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a>();</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
 </div>
@@ -249,15 +251,15 @@ $(function(){initNavTree('arduino_8h_source.html',''); initResizable(); });
 <div class="ttc" id="aatmega328p_8h_html_a1bb4fc060fe3f863a6209873f4b052f0"><div class="ttname"><a href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__LOAD_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00241">atmega328p.h:241</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_a5147fe8b6fc6553050c0f115bf7091c0"><div class="ttname"><a href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a></div><div class="ttdeci">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00289">atmega328p.h:289</a></div></div>
 <div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00191">atmega328p.h:191</a></div></div>
-<div class="ttc" id="azrtos__board_8h_html_a42a3f8dd109dd5024a599bb69766a09b"><div class="ttname"><a href="zrtos__board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a></div><div class="ttdeci">void(* zrtos_board__on_tick_naked)(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00034">zrtos_board.h:34</a></div></div>
-<div class="ttc" id="azrtos__board_8h_html_ad7e85a8be90115b03950e72b72e5c0d3"><div class="ttname"><a href="zrtos__board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a></div><div class="ttdeci">void(* zrtos_board__on_tick)(void)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__board_8h_source.html#l00033">zrtos_board.h:33</a></div></div>
+<div class="ttc" id="aboard_8h_html_a42a3f8dd109dd5024a599bb69766a09b"><div class="ttname"><a href="board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a></div><div class="ttdeci">void(* zrtos_board__on_tick_naked)(void)</div><div class="ttdef"><b>Definition</b> <a href="board_8h_source.html#l00034">board.h:34</a></div></div>
+<div class="ttc" id="aboard_8h_html_ad7e85a8be90115b03950e72b72e5c0d3"><div class="ttname"><a href="board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a></div><div class="ttdeci">void(* zrtos_board__on_tick)(void)</div><div class="ttdef"><b>Definition</b> <a href="board_8h_source.html#l00033">board.h:33</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_7149141a7e3af1ee95dfb0598e371427.html">board</a></li><li class="navelem"><a class="el" href="arduino_8h.html">arduino.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="dir_f04b423965c07ce5f2c4da56e14dc653.html">board</a></li><li class="navelem"><a class="el" href="arduino_8h.html">arduino.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

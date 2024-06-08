@@ -1,0 +1,21 @@
+<map id="sd_raw_read_interval" name="sd_raw_read_interval">
+<area shape="rect" id="Node000001" title="Continuously reads units of interval bytes and calls a callback function." alt="" coords="5,107,147,133"/>
+<area shape="rect" id="Node000002" href="$group__sd__raw.html#ga7aa8ed58f08b39d21b778b66f3e6ce59" title="Send a command to the memory card which responses with a R2 response." alt="" coords="195,107,289,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,117,179,117,179,123,147,123"/>
+<area shape="rect" id="Node000003" href="$group__sd__raw.html#ga75085da84454931647328e80f6bdea7c" title="Receives a raw byte from the memory card." alt="" coords="714,120,833,147"/>
+<area shape="poly" id="edge12_Node000001_Node000003" title=" " alt="" coords="135,131,195,143,325,162,427,171,530,170,660,157,709,148,710,154,661,163,530,175,427,176,325,167,194,148,134,136"/>
+<area shape="rect" id="Node000004" href="$group__sd__raw.html#ga956fc6f9ea12bf3c42fe5d3b472e61a8" title="Send a command to the memory card which responses with a R1 response." alt="" coords="481,5,661,32"/>
+<area shape="poly" id="edge13_Node000001_Node000004" title=" " alt="" coords="112,103,212,69,336,36,402,26,466,20,466,25,402,31,338,41,214,74,114,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="286,131,337,143,435,151,532,151,698,140,699,145,532,156,434,156,337,148,285,136"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="264,104,297,85,336,68,401,48,466,33,468,38,403,53,338,73,300,90,267,108"/>
+<area shape="rect" id="Node000006" href="$group__sd__raw.html#ga70e84e3345f19d2b5eecb9f665b37e0d" title="Writes raw data to the card." alt="" coords="337,107,433,133"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="290,126,321,126,321,132,290,131"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="598,30,736,110,733,114,595,35"/>
+<area shape="rect" id="Node000005" href="$group__sd__raw.html#ga157908b0533eb72368d320eb697f0cc0" title="Sends a raw byte to the memory card." alt="" coords="709,44,838,71"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="645,30,694,40,693,45,644,35"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="336,114,305,114,305,108,337,109"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="434,119,699,128,699,133,434,124"/>
+<area shape="poly" id="edge10_Node000006_Node000004" title=" " alt="" coords="401,104,436,77,480,48,508,35,510,40,483,53,439,81,404,108"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="433,110,693,68,694,73,434,115"/>
+<area shape="poly" id="edge11_Node000006_Node000006" title=" " alt="" coords="360,107,356,98,359,88,369,82,385,80,403,83,412,89,409,94,401,88,385,85,371,87,363,92,361,98,365,105"/>
+</map>

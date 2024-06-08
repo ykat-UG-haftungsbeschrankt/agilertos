@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,6 +27,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
    <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
@@ -133,7 +135,7 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a3a2009110f802cd7f5df1d1cef419709" id="r_a3a2009110f802cd7f5df1d1cef419709"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2009110f802cd7f5df1d1cef419709">ZRTOS_VFS_PLUGIN__INIT</a> (zero,{ <a class="el" href="zrtos__vfs__plugin_8h.html#ae93f2b956615b718d706cb372d08dc03">ZRTOS_VFS_PLUGIN__ON_READ</a>(ret, file, path, data, len, offset,{ <a class="el" href="#a8c50d86ee68d0104bfe2410dfb8ba8a9">zrtos_vfs_module_progmem_args_t</a> *mod=<a class="el" href="zrtos__vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz);uint32_t addr=offset;uint8_t *data_ptr=data;if(<a class="el" href="zrtos__types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329">zrtos_types__uint32_is_valid_address_range</a>(mod-&gt;start_addr, mod-&gt;end_addr, addr,&amp;len)){ *ret=len;for(;len--;addr++){ *data_ptr++=pgm_read_byte_far(addr);} <a class="el" href="zrtos__vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac49b050fba23fef3894eb362679c62eb">EXIT_SUCCESS</a>);}else{ <a class="el" href="zrtos__vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22af740610de680c2861ac4042ad4485d15">EFAULT</a>);} });})</td></tr>
+<tr class="memitem:a3a2009110f802cd7f5df1d1cef419709" id="r_a3a2009110f802cd7f5df1d1cef419709"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a2009110f802cd7f5df1d1cef419709">ZRTOS_VFS_PLUGIN__INIT</a> (zero,{ <a class="el" href="vfs__plugin_8h.html#ae93f2b956615b718d706cb372d08dc03">ZRTOS_VFS_PLUGIN__ON_READ</a>(ret, file, path, data, len, offset,{ <a class="el" href="#a8c50d86ee68d0104bfe2410dfb8ba8a9">zrtos_vfs_module_progmem_args_t</a> *mod=<a class="el" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz);uint32_t addr=offset;uint8_t *data_ptr=data;if(<a class="el" href="types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329">zrtos_types__uint32_is_valid_address_range</a>(mod-&gt;start_addr, mod-&gt;end_addr, addr,&amp;len)){ *ret=len;for(;len--;addr++){ *data_ptr++=pgm_read_byte_far(addr);} <a class="el" href="vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac49b050fba23fef3894eb362679c62eb">EXIT_SUCCESS</a>);}else{ <a class="el" href="vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22af740610de680c2861ac4042ad4485d15">EFAULT</a>);} });})</td></tr>
 <tr class="separator:a3a2009110f802cd7f5df1d1cef419709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -166,7 +168,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">{ <a class="el" href="zrtos__vfs__plugin_8h.html#ae93f2b956615b718d706cb372d08dc03">ZRTOS_VFS_PLUGIN__ON_READ</a>(ret, file, path, data, len, offset,{ <a class="el" href="#a8c50d86ee68d0104bfe2410dfb8ba8a9">zrtos_vfs_module_progmem_args_t</a> *mod=<a class="el" href="zrtos__vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz);uint32_t addr=offset;uint8_t *data_ptr=data;if(<a class="el" href="zrtos__types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329">zrtos_types__uint32_is_valid_address_range</a>(mod-&gt;start_addr, mod-&gt;end_addr, addr,&amp;len)){ *ret=len;for(;len--;addr++){ *data_ptr++=pgm_read_byte_far(addr);} <a class="el" href="zrtos__vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac49b050fba23fef3894eb362679c62eb">EXIT_SUCCESS</a>);}else{ <a class="el" href="zrtos__vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="zrtos__error_8h.html#a858141c8990203d8ff36f82cf43f0e22af740610de680c2861ac4042ad4485d15">EFAULT</a>);} });}</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+          <td class="paramtype">{ <a class="el" href="vfs__plugin_8h.html#ae93f2b956615b718d706cb372d08dc03">ZRTOS_VFS_PLUGIN__ON_READ</a>(ret, file, path, data, len, offset,{ <a class="el" href="#a8c50d86ee68d0104bfe2410dfb8ba8a9">zrtos_vfs_module_progmem_args_t</a> *mod=<a class="el" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz);uint32_t addr=offset;uint8_t *data_ptr=data;if(<a class="el" href="types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329">zrtos_types__uint32_is_valid_address_range</a>(mod-&gt;start_addr, mod-&gt;end_addr, addr,&amp;len)){ *ret=len;for(;len--;addr++){ *data_ptr++=pgm_read_byte_far(addr);} <a class="el" href="vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac49b050fba23fef3894eb362679c62eb">EXIT_SUCCESS</a>);}else{ <a class="el" href="vfs__plugin_8h.html#ac86eb0d1dbb343a3308e22bf7071b972">ZRTOS_VFS_PLUGIN__RETURN</a>(<a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22af740610de680c2861ac4042ad4485d15">EFAULT</a>);} });}</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,9 +178,9 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="avr__progmem_8h_a3a2009110f802cd7f5df1d1cef419709_cgraph.png" border="0" usemap="#aavr__progmem_8h_a3a2009110f802cd7f5df1d1cef419709_cgraph" alt=""/></div>
 <map name="aavr__progmem_8h_a3a2009110f802cd7f5df1d1cef419709_cgraph" id="aavr__progmem_8h_a3a2009110f802cd7f5df1d1cef419709_cgraph">
 <area shape="rect" title=" " alt="" coords="5,47,192,73"/>
-<area shape="rect" href="zrtos__types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329" title=" " alt="" coords="240,5,402,48"/>
+<area shape="rect" href="types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329" title=" " alt="" coords="240,5,402,48"/>
 <area shape="poly" title=" " alt="" coords="191,43,224,39,225,44,192,49"/>
-<area shape="rect" href="zrtos__vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="257,72,385,115"/>
+<area shape="rect" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="257,72,385,115"/>
 <area shape="poly" title=" " alt="" coords="192,71,242,79,241,84,191,77"/>
 </map>
 </div>
@@ -191,7 +193,7 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_c5e8f3ef3704c3c7650500c1a4aff921.html">zrtos_vfs_module</a></li><li class="navelem"><a class="el" href="dir_750a31eae9753e42dc27432637233192.html">avr_progmem</a></li><li class="navelem"><a class="el" href="avr__progmem_8h.html">avr_progmem.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="dir_58c343cea91536e93784a70c1849a40b.html">vfs_module</a></li><li class="navelem"><a class="el" href="dir_7ffb9a2464ced11af975342478b7e1d9.html">avr_progmem</a></li><li class="navelem"><a class="el" href="avr__progmem_8h.html">avr_progmem.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

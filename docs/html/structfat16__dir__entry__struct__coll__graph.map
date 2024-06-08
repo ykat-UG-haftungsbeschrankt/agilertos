@@ -1,0 +1,11 @@
+<map id="fat16_dir_entry_struct" name="fat16_dir_entry_struct">
+<area shape="rect" id="Node000001" title="Describes a directory entry." alt="" coords="97,112,243,139"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,52,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="33,47,39,68,50,86,72,102,98,112,96,117,69,107,46,90,34,70,28,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="96,5,156,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,47,125,67,130,87,139,99,151,110,147,114,135,103,125,89,120,68,119,47"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="182,5,249,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="206,47,188,89,178,112,173,110,183,87,201,45"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="274,5,341,32"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="292,46,272,69,249,90,206,114,203,109,246,86,268,65,287,43"/>
+</map>

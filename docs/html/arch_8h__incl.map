@@ -1,0 +1,17 @@
+<map id="arch.h" name="arch.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="291,5,349,32"/>
+<area shape="rect" id="Node000002" href="$types_8h.html" title=" " alt="" coords="133,80,230,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,35,220,75,218,70,294,30"/>
+<area shape="rect" id="Node000007" href="$atmega328p_8h.html" title=" " alt="" coords="254,80,386,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="323,33,323,64,317,64,317,33"/>
+<area shape="rect" id="Node000008" href="$atmega2560_8h.html" title=" " alt="" coords="410,80,542,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="348,30,436,71,434,75,346,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,80,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="158,110,82,149,79,145,156,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="104,155,171,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="176,109,155,143,150,140,171,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="194,155,259,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="191,106,213,140,208,143,187,109"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="283,155,346,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="206,105,279,145,277,149,203,110"/>
+</map>

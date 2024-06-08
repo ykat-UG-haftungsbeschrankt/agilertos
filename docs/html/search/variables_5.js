@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['first_0',['first',['../struct__zrtos__vheap__chunk__t.html#a8dbc6dbaa9921142ec2d5d367cb4e556',1,'_zrtos_vheap_chunk_t']]],
-  ['functions_1',['functions',['../struct__zrtos__vm__t.html#ac2181fb1aab27d26f72332812f7b4333',1,'_zrtos_vm_t']]]
+  ['heap_0',['heap',['../struct__zrtos__vheap__task__scheduler__t.html#a315e23fcba3b2b58965bbd6eed8c96ee',1,'_zrtos_vheap_task_scheduler_t']]],
+  ['heap_5fsize_1',['heap_size',['../struct__zrtos__vheap__t.html#a6e31fca0a7bede3c3f7468e8ea963b5e',1,'_zrtos_vheap_t']]]
 ];

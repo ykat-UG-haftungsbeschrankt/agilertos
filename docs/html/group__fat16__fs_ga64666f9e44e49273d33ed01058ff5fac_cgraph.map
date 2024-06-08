@@ -1,0 +1,5 @@
+<map id="fat16_dir_entry_read_callback" name="fat16_dir_entry_read_callback">
+<area shape="rect" id="Node000001" title="Callback function for reading a directory entry." alt="" coords="5,5,144,48"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga8927d70d35df0d10284286e2d5b66193" title="Interprets a raw directory entry and puts the contained information into the directory entry." alt="" coords="192,5,316,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,24,176,24,176,29,144,29"/>
+</map>

@@ -7,7 +7,7 @@
 //#define ZRTOS_DEBUG__CFG_ENABLED
 //#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE 160
 
-#include "zrtos.h"
+#include <zrtos/zrtos.h>
 #include <zrtos/vheap_task_pthread.h>
 #include <zrtos/debug.h>
 

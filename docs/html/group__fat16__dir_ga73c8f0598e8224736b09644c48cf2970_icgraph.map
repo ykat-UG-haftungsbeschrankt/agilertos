@@ -1,0 +1,11 @@
+<map id="fat16_read_dir" name="fat16_read_dir">
+<area shape="rect" id="Node000001" title="Reads the next directory entry contained within a parent directory." alt="" coords="343,64,445,91"/>
+<area shape="rect" id="Node000002" href="$group__fat16__file.html#gaf8029e3ec633902d08e8204d13afc350" title="Creates a file." alt="" coords="172,5,287,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="340,61,268,35,270,30,341,56"/>
+<area shape="rect" id="Node000003" href="$group__fat16__file.html#ga0045fe378de2f7c52b528f985e1891a6" title="Retrieves the directory entry of a path." alt="" coords="164,56,295,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="327,80,295,80,295,75,327,75"/>
+<area shape="rect" id="Node000004" href="$group__fat16.html#gaa25986550d47370f582118a9ef6eae24" title=" " alt="" coords="178,123,281,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="341,99,270,125,268,120,340,94"/>
+<area shape="rect" id="Node000005" href="$group__fat16.html#gacdc9da639a6ccdac9847aaba559f9ef0" title=" " alt="" coords="5,123,116,149"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="163,139,116,139,116,133,163,133"/>
+</map>

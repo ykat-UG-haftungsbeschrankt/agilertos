@@ -1,0 +1,11 @@
+<map id="fat16_read_sub_dir_entry" name="fat16_read_sub_dir_entry">
+<area shape="rect" id="Node000001" title="Reads a directory entry of a given parent directory." alt="" coords="5,72,136,115"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga64666f9e44e49273d33ed01058ff5fac" title="Callback function for reading a directory entry." alt="" coords="191,5,329,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,69,182,51,184,56,134,74"/>
+<area shape="rect" id="Node000004" href="$group__fat16__fs.html#ga6f277c11fa202ecfadca3635221f70a4" title="Callback function for seeking through subdirectory entries." alt="" coords="189,72,331,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="136,91,174,91,174,96,136,96"/>
+<area shape="rect" id="Node000005" href="$group__fat16__fs.html#ga80d15e5b202d3b8999f1c05d5da6be6a" title="Retrieves the next following cluster of a given cluster." alt="" coords="184,139,336,165"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,111,201,131,199,136,135,116"/>
+<area shape="rect" id="Node000003" href="$group__fat16__fs.html#ga8927d70d35df0d10284286e2d5b66193" title="Interprets a raw directory entry and puts the contained information into the directory entry." alt="" coords="384,5,508,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="330,24,369,24,369,29,330,29"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="vfs_plugin.h" name="vfs_plugin.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="166,5,255,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="70,80,138,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,35,137,73,134,69,190,30"/>
+<area shape="rect" id="Node000003" href="$types_8h.html" title=" " alt="" coords="162,80,259,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,33,213,64,208,64,208,33"/>
+<area shape="rect" id="Node000008" href="$error_8h.html" title=" " alt="" coords="284,80,375,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="233,30,297,69,294,74,230,35"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,155,80,181"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,110,87,151,85,146,180,105"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,155,171,181"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="200,109,163,145,159,142,196,105"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="194,155,259,181"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="216,107,223,139,218,140,211,108"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="283,155,346,181"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="230,105,286,143,283,148,227,109"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="329,108,323,140,317,139,324,107"/>
+<area shape="rect" id="Node000009" href="$assert_8h.html" title=" " alt="" coords="371,155,472,181"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="347,105,395,143,392,147,344,109"/>
+</map>

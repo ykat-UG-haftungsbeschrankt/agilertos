@@ -1,0 +1,5 @@
+<map id="fat16_read_file" name="fat16_read_file">
+<area shape="rect" id="Node000001" title="Reads data from a file." alt="" coords="5,5,110,32"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga80d15e5b202d3b8999f1c05d5da6be6a" title="Retrieves the next following cluster of a given cluster." alt="" coords="158,5,310,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,16,142,16,142,21,110,21"/>
+</map>

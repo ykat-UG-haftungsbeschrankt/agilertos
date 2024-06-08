@@ -1,0 +1,25 @@
+<map id="sd_raw_send_byte" name="sd_raw_send_byte">
+<area shape="rect" id="Node000001" title="Sends a raw byte to the memory card." alt="" coords="755,209,884,235"/>
+<area shape="rect" id="Node000002" href="$group__sd__raw.html#ga956fc6f9ea12bf3c42fe5d3b472e61a8" title="Send a command to the memory card which responses with a R1 response." alt="" coords="527,133,707,159"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="766,205,654,162,656,158,768,200"/>
+<area shape="rect" id="Node000008" href="$group__sd__raw.html#ga70e84e3345f19d2b5eecb9f665b37e0d" title="Writes raw data to the card." alt="" coords="173,221,270,247"/>
+<area shape="poly" id="edge14_Node000001_Node000008" title=" " alt="" coords="739,234,557,247,448,251,340,249,270,243,270,237,340,243,448,245,557,242,739,228"/>
+<area shape="rect" id="Node000003" href="$group__sd__raw.html#ga0cd21cf9a326b8cfc9b9d9f35fa57423" title=" " alt="" coords="340,31,479,58"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="579,127,478,72,451,61,453,56,480,68,582,122"/>
+<area shape="rect" id="Node000004" href="$group__sd__raw.html#ga16b73f2f45ee2f1c647d6bef916eb198" title="Reads informational data from the card." alt="" coords="353,82,467,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="544,131,467,112,468,107,545,126"/>
+<area shape="rect" id="Node000005" href="$group__sd__raw.html#gac2e6d0ba10cef8f72391d35b4aabf385" title="Initializes memory card communication." alt="" coords="178,35,265,62"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="595,122,547,68,515,41,478,22,450,13,420,9,359,12,303,23,258,37,256,32,302,18,358,6,420,4,451,8,480,17,518,37,551,64,599,118"/>
+<area shape="rect" id="Node000006" href="$group__sd__raw.html#ga7aa8ed58f08b39d21b778b66f3e6ce59" title="Send a command to the memory card which responses with a R2 response." alt="" coords="363,183,457,210"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="545,166,458,188,457,183,544,161"/>
+<area shape="rect" id="Node000007" href="$group__sd__raw.html#ga0321ddf4d0234479fc90ee90d3e3cc40" title="Continuously reads units of interval bytes and calls a callback function." alt="" coords="151,139,292,166"/>
+<area shape="poly" id="edge12_Node000002_Node000007" title=" " alt="" coords="512,150,292,154,292,149,512,145"/>
+<area shape="poly" id="edge13_Node000002_Node000008" title=" " alt="" coords="586,171,538,200,480,225,425,236,368,242,270,241,270,236,368,236,424,231,479,219,536,196,584,166"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="378,176,239,65,242,61,381,171"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="346,185,281,169,282,164,348,180"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="360,217,271,235,270,230,359,212"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="270,214,361,195,362,201,271,219"/>
+<area shape="poly" id="edge11_Node000008_Node000008" title=" " alt="" coords="250,208,240,202,221,199,204,201,195,206,193,212,197,219,192,222,187,212,191,202,203,196,221,194,242,197,252,203"/>
+<area shape="rect" id="Node000009" href="$group__sd__raw.html#ga8cff641a3a1cd747bb6634eeba1ad54b" title="Writes the write buffer&#39;s content to the card." alt="" coords="5,221,103,247"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="158,237,103,237,103,231,158,231"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="fat16_terminate_clusters" name="fat16_terminate_clusters">
+<area shape="rect" id="Node000001" title="Frees a part of a cluster chain and correctly terminates the rest." alt="" coords="5,31,169,57"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#gadef154e10fea9a769262e22c4bbfa383" title="Frees a cluster chain, or a part thereof." alt="" coords="228,5,358,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,31,212,26,212,31,170,37"/>
+<area shape="rect" id="Node000003" href="$group__fat16__fs.html#ga80d15e5b202d3b8999f1c05d5da6be6a" title="Retrieves the next following cluster of a given cluster." alt="" coords="217,56,369,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,51,202,55,201,61,169,57"/>
+</map>

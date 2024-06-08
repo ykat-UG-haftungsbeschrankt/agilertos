@@ -1,16 +1,16 @@
 <map id="zrtos.h" name="zrtos.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="177,5,238,32"/>
-<area shape="rect" id="Node000002" href="$zrtos__stack_8h.html" title=" " alt="" coords="5,80,106,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,41,83,82,81,77,166,37"/>
-<area shape="rect" id="Node000004" href="$zrtos__task__mutex_8h.html" title=" " alt="" coords="310,80,446,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="252,36,349,77,347,82,250,41"/>
-<area shape="rect" id="Node000007" href="$zrtos__task__scheduler_8h.html" title=" " alt="" coords="129,80,286,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="210,48,210,80,205,80,205,48"/>
-<area shape="rect" id="Node000003" href="$zrtos__vm_8h.html" title=" " alt="" coords="13,155,98,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="58,122,58,154,53,154,53,122"/>
-<area shape="rect" id="Node000005" href="$zrtos__task__pthread_8h.html" title=" " alt="" coords="136,155,279,181"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="335,116,238,156,236,152,333,111"/>
-<area shape="rect" id="Node000006" href="$zrtos__vheap__task__pthread_8h.html" title=" " alt="" coords="304,155,487,181"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="387,121,395,154,390,155,382,123"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="210,122,210,154,205,154,205,122"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,5,184,32"/>
+<area shape="rect" id="Node000002" href="$stack_8h.html" title=" " alt="" coords="5,80,70,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,43,59,82,56,77,119,38"/>
+<area shape="rect" id="Node000004" href="$task__mutex_8h.html" title=" " alt="" coords="238,80,338,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,37,266,77,263,82,189,42"/>
+<area shape="rect" id="Node000007" href="$task__scheduler_8h.html" title=" " alt="" coords="93,80,214,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="156,48,156,80,151,80,151,48"/>
+<area shape="rect" id="Node000003" href="$vm_8h.html" title=" " alt="" coords="13,155,62,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="40,122,40,154,35,154,35,122"/>
+<area shape="rect" id="Node000005" href="$task__pthread_8h.html" title=" " alt="" coords="100,155,207,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="253,117,178,156,176,152,250,112"/>
+<area shape="rect" id="Node000006" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="232,155,379,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="297,121,305,154,300,155,292,123"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="156,122,156,154,151,154,151,122"/>
 </map>

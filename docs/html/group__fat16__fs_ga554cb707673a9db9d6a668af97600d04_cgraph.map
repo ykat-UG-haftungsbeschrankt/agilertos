@@ -1,0 +1,5 @@
+<map id="fat16_open" name="fat16_open">
+<area shape="rect" id="Node000001" title="Opens a FAT16 filesystem." alt="" coords="5,5,90,32"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#ga4ae970c89e2d74d71eb313f104db7e27" title="Reads and parses the header of a FAT16 filesystem." alt="" coords="138,5,265,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,16,122,16,122,21,90,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="fat16_append_clusters" name="fat16_append_clusters">
+<area shape="rect" id="Node000001" title="Appends a new cluster chain to an existing one." alt="" coords="5,5,157,32"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#gadef154e10fea9a769262e22c4bbfa383" title="Frees a cluster chain, or a part thereof." alt="" coords="205,5,335,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,16,189,16,189,21,157,21"/>
+</map>

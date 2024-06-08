@@ -1,6 +1,17 @@
 var malloc_8h =
 [
-    [ "ZRTOS_DEBUG__CFG_ENABLED", "malloc_8h.html#a1e0c07f308eb0d821ceb0c8e8f27e579", null ],
-    [ "main", "malloc_8h.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
-    [ "ZRTOS_MALLOC__GLOBAL_HEAP", "malloc_8h.html#a08a84eb055145253ccc5c783567bf9b8", null ]
+    [ "_zrtos_malloc_t", "struct__zrtos__malloc__t.html", "struct__zrtos__malloc__t" ],
+    [ "_zrtos_malloc_heap_chunk_t", "struct__zrtos__malloc__heap__chunk__t.html", "struct__zrtos__malloc__heap__chunk__t" ],
+    [ "_zrtos_malloc_internal_t", "struct__zrtos__malloc__internal__t.html", "struct__zrtos__malloc__internal__t" ],
+    [ "ZRTOS_MALLOC__GET_REQUIRED_SIZE", "malloc_8h.html#a9f02437abeef6dc7e94a9b9f080584de", null ],
+    [ "ZRTOS_MALLOC__GLOBAL_HEAP", "malloc_8h.html#a04ec9557c3ef3580d3479162861c5d87", null ],
+    [ "ZRTOS_MALLOC__GLOBAL_HEAP_INIT", "malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6", null ],
+    [ "ZRTOS_MALLOC__INIT", "malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8", null ],
+    [ "zrtos_malloc_heap_chunk_t", "malloc_8h.html#a9f7d16c747e7f4fca50c77155eebc5ed", null ],
+    [ "zrtos_malloc_internal_t", "malloc_8h.html#ad2e8348b810cf8e8c6066c66568b67a2", null ],
+    [ "zrtos_malloc_t", "malloc_8h.html#ab3e4b0fe1ed4eeddbd0b169e44340a62", null ],
+    [ "zrtos_malloc__free", "malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32", null ],
+    [ "zrtos_malloc__get_free_chunk", "malloc_8h.html#a92ada475abfd239fff5f30f68f5ca3cb", null ],
+    [ "zrtos_malloc__init", "malloc_8h.html#aea3a0d9fb100dd121406ff2cb6d61f3f", null ],
+    [ "zrtos_malloc__malloc", "malloc_8h.html#a886b38a033247d17a6681a94b237aab7", null ]
 ];

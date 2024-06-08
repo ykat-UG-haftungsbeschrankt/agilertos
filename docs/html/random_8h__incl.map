@@ -1,0 +1,7 @@
+<map id="random.h" name="random.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="123,5,199,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,154,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,35,106,72,103,68,145,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="178,80,309,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,31,220,68,216,72,173,35"/>
+</map>

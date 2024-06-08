@@ -1,0 +1,17 @@
+<map id="vfs_module" name="vfs_module">
+<area shape="rect" id="node1" href="dir_f04b423965c07ce5f2c4da56e14dc653.html" title="board" alt="" coords="753,139,807,165"/>
+<area shape="rect" id="node3" href="dir_7ffb9a2464ced11af975342478b7e1d9.html" title="avr_progmem" alt="" coords="147,64,245,91"/>
+<area shape="rect" id="node4" href="dir_6f04ac89152d9a854d7c5d6af25bfb8c.html" title="dht11" alt="" coords="269,64,323,91"/>
+<area shape="rect" id="node5" href="dir_c202f9ef574af4af20971d7d851ecde8.html" title="fat16" alt="" coords="347,64,397,91"/>
+<area shape="rect" id="node6" href="dir_7b617547747f1585ed90dd55d23131d4.html" title="gpio" alt="" coords="421,64,467,91"/>
+<area shape="rect" id="node7" href="dir_ca069cf1f7fcf30858a7e86c928f9c60.html" title="hd44780u" alt="" coords="491,64,568,91"/>
+<area shape="rect" id="node8" href="dir_f0626e5af03e609328115318caba738a.html" title="null" alt="" coords="593,64,634,91"/>
+<area shape="rect" id="node9" href="dir_59ada3a374095de338acb24af628c277.html" title="random" alt="" coords="659,64,723,91"/>
+<area shape="rect" id="node10" href="dir_30dea0d037c2af6ffee13c2f86add4c9.html" title="sd_card" alt="" coords="746,64,814,91"/>
+<area shape="poly" id="edge1" href="dir_000009_000002.html" alt="" coords="783,91,783,123,777,123,777,91"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000009_000002.html" title="1" alt="" coords="785,112,792,128"/>
+<area shape="rect" id="node11" href="dir_632c361a4b11b008d96debe649b3d53c.html" title="sram" alt="" coords="838,64,888,91"/>
+<area shape="rect" id="node12" href="dir_733268f750a31887e5820f7dbef1d9f0.html" title="zero" alt="" coords="912,64,958,91"/>
+<area shape="rect" id="clust2" href="dir_58c343cea91536e93784a70c1849a40b.html" alt="" coords="27,53,968,101"/>
+<area shape="rect" id="clust1" href="dir_945450c4c75941ecfeefad1631b928ac.html" title="zrtos" alt="" coords="16,16,979,176"/>
+</map>

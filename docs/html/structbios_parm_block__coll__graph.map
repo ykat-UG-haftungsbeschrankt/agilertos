@@ -1,0 +1,9 @@
+<map id="biosParmBlock" name="biosParmBlock">
+<area shape="rect" id="Node000001" title="BIOS parameter block." alt="" coords="135,256,244,283"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,73,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,47,32,87,32,136,42,186,52,209,66,230,81,243,98,252,135,263,134,268,96,257,78,247,62,234,48,212,37,188,27,137,26,87,31,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="160,5,220,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,48,192,256,187,256,187,48"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="291,5,358,32"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="332,47,335,87,333,137,322,188,312,212,297,234,273,253,246,264,244,259,271,248,293,230,307,209,317,186,328,136,329,87,326,48"/>
+</map>

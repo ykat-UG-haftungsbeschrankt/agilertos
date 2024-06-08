@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['malloc_20free_0',['malloc() / free()',['../index.html#autotoc_md1',1,'']]],
-  ['mode_5ft_1',['mode_t',['../types_8h.html#ab9173e3529d0a36110a14005a566262a',1,'types.h']]],
-  ['mount_2',['mount',['../structzrtos__vfs__plugin__t.html#a33b5203076c7bfa05c6db641eaff57e8',1,'zrtos_vfs_plugin_t']]],
-  ['mutex_3',['mutex',['../structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95',1,'pthread_mutex_t']]]
+  ['name_0',['name',['../struct__zrtos__vfs__dentry__t.html#a2f5858a907232b3b87ca620e00904918',1,'_zrtos_vfs_dentry_t']]],
+  ['next_1',['next',['../struct__zrtos__clist__node__t.html#a44a56a7c4adcff3de156ab4ce469cfb2',1,'_zrtos_clist_node_t']]],
+  ['node_2',['node',['../struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1',1,'_zrtos_task_t::node'],['../struct__zrtos__vfs__dentry__t.html#a1c8e0185ecf20b70d5166367757c7ec7',1,'_zrtos_vfs_dentry_t::node']]]
 ];

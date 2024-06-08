@@ -1,0 +1,5 @@
+<map id="fat16_delete_file" name="fat16_delete_file">
+<area shape="rect" id="Node000001" title="Deletes a file or directory." alt="" coords="5,5,120,32"/>
+<area shape="rect" id="Node000002" href="$group__fat16__fs.html#gadef154e10fea9a769262e22c4bbfa383" title="Frees a cluster chain, or a part thereof." alt="" coords="168,5,298,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,16,152,16,152,21,120,21"/>
+</map>

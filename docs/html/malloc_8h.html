@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>AgileRTOS (zrtos): malloc.h File Reference</title>
+<title>agileRTOS (zrtos): malloc.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -26,8 +27,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">AgileRTOS (zrtos)<span id="projectnumber">&#160;0.1</span>
+   <div id="projectname">agileRTOS (zrtos)<span id="projectnumber">&#160;Version 0.8.0 (ghostbuster)</span>
    </div>
   </td>
  </tr>
@@ -92,164 +94,547 @@ $(function(){initNavTree('malloc_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">malloc.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="zrtos__malloc_8h_source.html">zrtos_malloc.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">zrtos/assert.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="debug_8h_source.html">zrtos/debug.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for malloc.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="malloc_8h__incl.png" border="0" usemap="#amalloc_8h" alt=""/></div>
-<map name="amalloc_8h" id="amalloc_8h">
-<area shape="rect" title=" " alt="" coords="94,5,165,32"/>
-<area shape="rect" title=" " alt="" coords="45,80,107,107"/>
-<area shape="poly" title=" " alt="" coords="122,34,97,69,92,66,118,31"/>
-<area shape="rect" href="zrtos__malloc_8h.html" title=" " alt="" coords="131,80,237,107"/>
-<area shape="poly" title=" " alt="" coords="141,31,168,66,163,69,137,34"/>
-<area shape="rect" href="zrtos__assert_8h.html" title=" " alt="" coords="5,155,110,181"/>
-<area shape="poly" title=" " alt="" coords="163,110,94,149,91,144,161,105"/>
-<area shape="rect" href="zrtos__types_8h.html" title=" " alt="" coords="134,155,234,181"/>
-<area shape="poly" title=" " alt="" coords="187,107,187,139,182,139,182,107"/>
-<area shape="rect" href="zrtos__debug_8h.html" title=" " alt="" coords="258,155,361,181"/>
-<area shape="poly" title=" " alt="" coords="207,105,276,144,273,149,205,110"/>
-<area shape="rect" title=" " alt="" coords="99,229,173,256"/>
-<area shape="poly" title=" " alt="" coords="178,183,155,218,151,215,174,180"/>
-<area shape="rect" title=" " alt="" coords="197,229,265,256"/>
-<area shape="poly" title=" " alt="" coords="195,180,217,215,212,218,190,183"/>
-</map>
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h__incl.svg" width="360" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h__dep__incl.svg" width="119" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="malloc_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__malloc__t.html">_zrtos_malloc_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__malloc__heap__chunk__t.html">_zrtos_malloc_heap_chunk_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__malloc__internal__t.html">_zrtos_malloc_internal_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a1e0c07f308eb0d821ceb0c8e8f27e579" id="r_a1e0c07f308eb0d821ceb0c8e8f27e579"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0c07f308eb0d821ceb0c8e8f27e579">ZRTOS_DEBUG__CFG_ENABLED</a></td></tr>
-<tr class="separator:a1e0c07f308eb0d821ceb0c8e8f27e579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f02437abeef6dc7e94a9b9f080584de" id="r_a9f02437abeef6dc7e94a9b9f080584de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f02437abeef6dc7e94a9b9f080584de">ZRTOS_MALLOC__GET_REQUIRED_SIZE</a>(type,  count)</td></tr>
+<tr class="separator:a9f02437abeef6dc7e94a9b9f080584de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2e292b4f22bb68140eb76ba704eb5b6" id="r_ae2e292b4f22bb68140eb76ba704eb5b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a>(name)</td></tr>
+<tr class="separator:ae2e292b4f22bb68140eb76ba704eb5b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04ec9557c3ef3580d3479162861c5d87" id="r_a04ec9557c3ef3580d3479162861c5d87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04ec9557c3ef3580d3479162861c5d87">ZRTOS_MALLOC__GLOBAL_HEAP</a>(name,  len)</td></tr>
+<tr class="separator:a04ec9557c3ef3580d3479162861c5d87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076a090db65c9c460026c6b5a743a2b8" id="r_a076a090db65c9c460026c6b5a743a2b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(name,  len)</td></tr>
+<tr class="separator:a076a090db65c9c460026c6b5a743a2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab3e4b0fe1ed4eeddbd0b169e44340a62" id="r_ab3e4b0fe1ed4eeddbd0b169e44340a62"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__malloc__t.html">_zrtos_malloc_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a></td></tr>
+<tr class="separator:ab3e4b0fe1ed4eeddbd0b169e44340a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7d16c747e7f4fca50c77155eebc5ed" id="r_a9f7d16c747e7f4fca50c77155eebc5ed"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__malloc__heap__chunk__t.html">_zrtos_malloc_heap_chunk_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a></td></tr>
+<tr class="separator:a9f7d16c747e7f4fca50c77155eebc5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e8348b810cf8e8c6066c66568b67a2" id="r_ad2e8348b810cf8e8c6066c66568b67a2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__malloc__internal__t.html">_zrtos_malloc_internal_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2e8348b810cf8e8c6066c66568b67a2">zrtos_malloc_internal_t</a></td></tr>
+<tr class="separator:ad2e8348b810cf8e8c6066c66568b67a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a08a84eb055145253ccc5c783567bf9b8" id="r_a08a84eb055145253ccc5c783567bf9b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08a84eb055145253ccc5c783567bf9b8">ZRTOS_MALLOC__GLOBAL_HEAP</a> (heap, 160)</td></tr>
-<tr class="separator:a08a84eb055145253ccc5c783567bf9b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea3a0d9fb100dd121406ff2cb6d61f3f" id="r_aea3a0d9fb100dd121406ff2cb6d61f3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea3a0d9fb100dd121406ff2cb6d61f3f">zrtos_malloc__init</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:aea3a0d9fb100dd121406ff2cb6d61f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92ada475abfd239fff5f30f68f5ca3cb" id="r_a92ada475abfd239fff5f30f68f5ca3cb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:a92ada475abfd239fff5f30f68f5ca3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886b38a033247d17a6681a94b237aab7" id="r_a886b38a033247d17a6681a94b237aab7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a> (<a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *thiz, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> length)</td></tr>
+<tr class="separator:a886b38a033247d17a6681a94b237aab7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a299a13aa87e9bdb9fb23fb30cc5b1c32" id="r_a299a13aa87e9bdb9fb23fb30cc5b1c32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a> (void *ptr)</td></tr>
+<tr class="separator:a299a13aa87e9bdb9fb23fb30cc5b1c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a1e0c07f308eb0d821ceb0c8e8f27e579" name="a1e0c07f308eb0d821ceb0c8e8f27e579"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e0c07f308eb0d821ceb0c8e8f27e579">&#9670;&#160;</a></span>ZRTOS_DEBUG__CFG_ENABLED</h2>
+<a id="a9f02437abeef6dc7e94a9b9f080584de" name="a9f02437abeef6dc7e94a9b9f080584de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f02437abeef6dc7e94a9b9f080584de">&#9670;&#160;</a></span>ZRTOS_MALLOC__GET_REQUIRED_SIZE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ZRTOS_DEBUG__CFG_ENABLED</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00003">3</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int main </td>
+          <td class="memname">#define ZRTOS_MALLOC__GET_REQUIRED_SIZE</td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00009">9</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">    9</span>              {</div>
-<div class="line"><span class="lineno">   10</span>    <a class="code hl_define" href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a>(heap);</div>
-<div class="line"><span class="lineno">   11</span>    <a class="code hl_define" href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a>(heap2,160);</div>
-<div class="line"><span class="lineno">   12</span> </div>
-<div class="line"><span class="lineno">   13</span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a> = 10,l;</div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordtype">void</span> *<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[10];</div>
-<div class="line"><span class="lineno">   15</span> </div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16-4);</div>
-<div class="line"><span class="lineno">   18</span>    }</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   20</span>        free(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
-<div class="line"><span class="lineno">   21</span>    }</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   23</span>        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = malloc(16-4);</div>
-<div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   26</span>        free(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
-<div class="line"><span class="lineno">   27</span>    }</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   30</span>        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16-4);</div>
-<div class="line"><span class="lineno">   31</span>    }</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   33</span>        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   36</span>        <a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l] = <a class="code hl_function" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(heap2,16-4);</div>
-<div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">for</span>(l=0;l&lt;=<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a>;l++){</div>
-<div class="line"><span class="lineno">   39</span>        <a class="code hl_function" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a>(<a class="code hl_variable" href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a>[l]);</div>
-<div class="line"><span class="lineno">   40</span>    }</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">   43</span>}</div>
-<div class="ttc" id="azrtos__malloc_8h_html_a076a090db65c9c460026c6b5a743a2b8"><div class="ttname"><a href="zrtos__malloc_8h.html#a076a090db65c9c460026c6b5a743a2b8">ZRTOS_MALLOC__INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__INIT(name, len)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00081">zrtos_malloc.h:81</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_a299a13aa87e9bdb9fb23fb30cc5b1c32"><div class="ttname"><a href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32">zrtos_malloc__free</a></div><div class="ttdeci">void zrtos_malloc__free(void *ptr)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00209">zrtos_malloc.h:209</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_a886b38a033247d17a6681a94b237aab7"><div class="ttname"><a href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a></div><div class="ttdeci">void * zrtos_malloc__malloc(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00144">zrtos_malloc.h:144</a></div></div>
-<div class="ttc" id="azrtos__malloc_8h_html_ae2e292b4f22bb68140eb76ba704eb5b6"><div class="ttname"><a href="zrtos__malloc_8h.html#ae2e292b4f22bb68140eb76ba704eb5b6">ZRTOS_MALLOC__GLOBAL_HEAP_INIT</a></div><div class="ttdeci">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)</div><div class="ttdef"><b>Definition</b> <a href="zrtos__malloc_8h_source.html#l00048">zrtos_malloc.h:48</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk_8h_html_add9af9569af79ec26dd741fb226b38ba"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#add9af9569af79ec26dd741fb226b38ba">ptr</a></div><div class="ttdeci">void * ptr</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00001">zrtos_vheap_chunk.h:1</a></div></div>
-<div class="ttc" id="azrtos__vheap__chunk_8h_html_ae809d5359ac030c60a30a8f0b2294b82"><div class="ttname"><a href="zrtos__vheap__chunk_8h.html#ae809d5359ac030c60a30a8f0b2294b82">length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="zrtos__vheap__chunk_8h_source.html#l00002">zrtos_vheap_chunk.h:2</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="malloc_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#amalloc_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
-<map name="amalloc_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="amalloc_8h_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,55,57"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a299a13aa87e9bdb9fb23fb30cc5b1c32" title=" " alt="" coords="111,5,242,32"/>
-<area shape="poly" title=" " alt="" coords="55,37,96,30,96,35,56,42"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="103,56,250,83"/>
-<area shape="poly" title=" " alt="" coords="56,46,88,51,87,56,55,51"/>
-<area shape="rect" href="zrtos__malloc_8h.html#a3f184ee2100bd4929491ac7b273dcae1" title=" " alt="" coords="298,15,453,57"/>
-<area shape="poly" title=" " alt="" coords="250,54,282,49,283,54,251,60"/>
-<area shape="rect" href="zrtos__types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="304,81,447,124"/>
-<area shape="poly" title=" " alt="" coords="251,79,289,86,289,91,250,84"/>
-<area shape="rect" href="zrtos__types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="501,23,648,49"/>
-<area shape="poly" title=" " alt="" coords="454,33,486,33,486,39,454,39"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a08a84eb055145253ccc5c783567bf9b8" name="a08a84eb055145253ccc5c783567bf9b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08a84eb055145253ccc5c783567bf9b8">&#9670;&#160;</a></span>ZRTOS_MALLOC__GLOBAL_HEAP()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ZRTOS_MALLOC__GLOBAL_HEAP </td>
-          <td>(</td>
-          <td class="paramtype">heap</td>          <td class="paramname"><span class="paramname">, </span></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">type, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">160</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">count</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    ( <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="#ad2e8348b810cf8e8c6066c66568b67a2">zrtos_malloc_internal_t</a>)                                   \</div>
+<div class="line">    +   (                                                               \</div>
+<div class="line">            (                                                           \</div>
+<div class="line">                  <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a>)                     \</div>
+<div class="line">                + <a class="code hl_function" href="types_8h.html#a16a3c8eb064a7cb4a9ca61976ddb9d9f">zrtos_types__ceil_size_to_alignment</a>(<span class="keyword">sizeof</span>(type))     \</div>
+<div class="line">            )                                                           \</div>
+<div class="line">            * (count)                                                   \</div>
+<div class="line">        )                                                               \</div>
+<div class="line">    )</div>
+<div class="ttc" id="amalloc_8h_html_ad2e8348b810cf8e8c6066c66568b67a2"><div class="ttname"><a href="#ad2e8348b810cf8e8c6066c66568b67a2">zrtos_malloc_internal_t</a></div><div class="ttdeci">struct _zrtos_malloc_internal_t zrtos_malloc_internal_t</div></div>
+<div class="ttc" id="astruct__zrtos__malloc__heap__chunk__t_html"><div class="ttname"><a href="struct__zrtos__malloc__heap__chunk__t.html">_zrtos_malloc_heap_chunk_t</a></div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00021">malloc.h:21</a></div></div>
+<div class="ttc" id="atypes_8h_html_a16a3c8eb064a7cb4a9ca61976ddb9d9f"><div class="ttname"><a href="types_8h.html#a16a3c8eb064a7cb4a9ca61976ddb9d9f">zrtos_types__ceil_size_to_alignment</a></div><div class="ttdeci">size_t zrtos_types__ceil_size_to_alignment(size_t len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00056">types.h:56</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00032">32</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span><span class="preprocessor">#define ZRTOS_MALLOC__GET_REQUIRED_SIZE(type,count)                     \</span></div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">    ( sizeof(zrtos_malloc_internal_t)                                   \</span></div>
+<div class="line"><span class="lineno">   34</span><span class="preprocessor">    +   (                                                               \</span></div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">            (                                                           \</span></div>
+<div class="line"><span class="lineno">   36</span><span class="preprocessor">                  sizeof(zrtos_malloc_heap_chunk_t)                     \</span></div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">                + zrtos_types__ceil_size_to_alignment(sizeof(type))     \</span></div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor">            )                                                           \</span></div>
+<div class="line"><span class="lineno">   39</span><span class="preprocessor">            * (count)                                                   \</span></div>
+<div class="line"><span class="lineno">   40</span><span class="preprocessor">        )                                                               \</span></div>
+<div class="line"><span class="lineno">   41</span><span class="preprocessor">    )</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a04ec9557c3ef3580d3479162861c5d87" name="a04ec9557c3ef3580d3479162861c5d87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04ec9557c3ef3580d3479162861c5d87">&#9670;&#160;</a></span>ZRTOS_MALLOC__GLOBAL_HEAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_MALLOC__GLOBAL_HEAP</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">name, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">len</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a> name[                                          \</div>
+<div class="line">        (len)                                                     \</div>
+<div class="line">    ] __attribute__((aligned(<a class="code hl_define" href="types_8h.html#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a>)));      \</div>
+<div class="line">                                                                  \</div>
+<div class="line">    ZRTOS_ASSERT__STATIC(len &gt;= <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>)); \</div>
+<div class="line">                                                                  \</div>
+<div class="line">    <span class="keywordtype">void</span> *malloc(<span class="keywordtype">size_t</span> length){                                  \</div>
+<div class="line">        <span class="keywordflow">return</span> <a class="code hl_function" href="#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a>(                              \</div>
+<div class="line">             name                                                 \</div>
+<div class="line">            ,length                                               \</div>
+<div class="line">        );                                                        \</div>
+<div class="line">    }                                                             \</div>
+<div class="line">                                                                  \</div>
+<div class="line">    <span class="keywordtype">void</span> free(<span class="keywordtype">void</span> *ptr){                                         \</div>
+<div class="line">        zrtos_malloc__free(ptr);                                  \</div>
+<div class="line">    }</div>
+<div class="ttc" id="amalloc_8h_html_a886b38a033247d17a6681a94b237aab7"><div class="ttname"><a href="#a886b38a033247d17a6681a94b237aab7">zrtos_malloc__malloc</a></div><div class="ttdeci">void * zrtos_malloc__malloc(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00134">malloc.h:134</a></div></div>
+<div class="ttc" id="astruct__zrtos__malloc__internal__t_html"><div class="ttname"><a href="struct__zrtos__malloc__internal__t.html">_zrtos_malloc_internal_t</a></div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00027">malloc.h:27</a></div></div>
+<div class="ttc" id="astruct__zrtos__malloc__t_html"><div class="ttname"><a href="struct__zrtos__malloc__t.html">_zrtos_malloc_t</a></div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00017">malloc.h:17</a></div></div>
+<div class="ttc" id="atypes_8h_html_ae67abae612ba714e619ebc711fd29203"><div class="ttname"><a href="types_8h.html#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div><div class="ttdeci">#define ZRTOS_TYPES__BYTE_ALIGNMENT</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00044">types.h:44</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00058">58</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span><span class="preprocessor">#define ZRTOS_MALLOC__GLOBAL_HEAP(name,len)                       \</span></div>
+<div class="line"><span class="lineno">   59</span><span class="preprocessor">    zrtos_malloc_t name[                                          \</span></div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">        (len)                                                     \</span></div>
+<div class="line"><span class="lineno">   61</span><span class="preprocessor">    ] __attribute__((aligned(ZRTOS_TYPES__BYTE_ALIGNMENT)));      \</span></div>
+<div class="line"><span class="lineno">   62</span><span class="preprocessor">                                                                  \</span></div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC(len &gt;= sizeof(zrtos_malloc_internal_t)); \</span></div>
+<div class="line"><span class="lineno">   64</span><span class="preprocessor">                                                                  \</span></div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor">    void *malloc(size_t length){                                  \</span></div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">        return zrtos_malloc__malloc(                              \</span></div>
+<div class="line"><span class="lineno">   67</span><span class="preprocessor">             name                                                 \</span></div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">            ,length                                               \</span></div>
+<div class="line"><span class="lineno">   69</span><span class="preprocessor">        );                                                        \</span></div>
+<div class="line"><span class="lineno">   70</span><span class="preprocessor">    }                                                             \</span></div>
+<div class="line"><span class="lineno">   71</span><span class="preprocessor">                                                                  \</span></div>
+<div class="line"><span class="lineno">   72</span><span class="preprocessor">    void free(void *ptr){                                         \</span></div>
+<div class="line"><span class="lineno">   73</span><span class="preprocessor">        zrtos_malloc__free(ptr);                                  \</span></div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">    }</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae2e292b4f22bb68140eb76ba704eb5b6" name="ae2e292b4f22bb68140eb76ba704eb5b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e292b4f22bb68140eb76ba704eb5b6">&#9670;&#160;</a></span>ZRTOS_MALLOC__GLOBAL_HEAP_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">name</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_function" href="#aea3a0d9fb100dd121406ff2cb6d61f3f">zrtos_malloc__init</a>(                                                 \</div>
+<div class="line">         name                                                           \</div>
+<div class="line">        ,<span class="keyword">sizeof</span>(name) / <span class="keyword">sizeof</span>(name[0])                                 \</div>
+<div class="line">    );                                                                  \</div>
+<div class="line">                                                                        \</div>
+<div class="line">    ZRTOS_DEBUG__CODE({                                                 \</div>
+<div class="line">        zrtos_debug__memset(                                            \</div>
+<div class="line">             <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(name,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>)) \</div>
+<div class="line">            ,0xFF                                                       \</div>
+<div class="line">            ,(<span class="keyword">sizeof</span>(name) / <span class="keyword">sizeof</span>(name[0]))                           \</div>
+<div class="line">            -<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>)                            \</div>
+<div class="line">        );                                                              \</div>
+<div class="line">    });</div>
+<div class="ttc" id="amalloc_8h_html_aea3a0d9fb100dd121406ff2cb6d61f3f"><div class="ttname"><a href="#aea3a0d9fb100dd121406ff2cb6d61f3f">zrtos_malloc__init</a></div><div class="ttdeci">bool zrtos_malloc__init(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00088">malloc.h:88</a></div></div>
+<div class="ttc" id="atypes_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00043">43</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span><span class="preprocessor">#define ZRTOS_MALLOC__GLOBAL_HEAP_INIT(name)                            \</span></div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">    zrtos_malloc__init(                                                 \</span></div>
+<div class="line"><span class="lineno">   45</span><span class="preprocessor">         name                                                           \</span></div>
+<div class="line"><span class="lineno">   46</span><span class="preprocessor">        ,sizeof(name) / sizeof(name[0])                                 \</span></div>
+<div class="line"><span class="lineno">   47</span><span class="preprocessor">    );                                                                  \</span></div>
+<div class="line"><span class="lineno">   48</span><span class="preprocessor">                                                                        \</span></div>
+<div class="line"><span class="lineno">   49</span><span class="preprocessor">    ZRTOS_DEBUG__CODE({                                                 \</span></div>
+<div class="line"><span class="lineno">   50</span><span class="preprocessor">        zrtos_debug__memset(                                            \</span></div>
+<div class="line"><span class="lineno">   51</span><span class="preprocessor">             zrtos_types__ptr_add(name,sizeof(zrtos_malloc_internal_t)) \</span></div>
+<div class="line"><span class="lineno">   52</span><span class="preprocessor">            ,0xFF                                                       \</span></div>
+<div class="line"><span class="lineno">   53</span><span class="preprocessor">            ,(sizeof(name) / sizeof(name[0]))                           \</span></div>
+<div class="line"><span class="lineno">   54</span><span class="preprocessor">            -sizeof(zrtos_malloc_internal_t)                            \</span></div>
+<div class="line"><span class="lineno">   55</span><span class="preprocessor">        );                                                              \</span></div>
+<div class="line"><span class="lineno">   56</span><span class="preprocessor">    });</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a076a090db65c9c460026c6b5a743a2b8" name="a076a090db65c9c460026c6b5a743a2b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076a090db65c9c460026c6b5a743a2b8">&#9670;&#160;</a></span>ZRTOS_MALLOC__INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_MALLOC__INIT</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">name, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">len</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_struct" href="struct__zrtos__malloc__t.html">zrtos_malloc_t</a> name[                                          \</div>
+<div class="line">        (len)                                                     \</div>
+<div class="line">    ] __attribute__((aligned(<a class="code hl_define" href="types_8h.html#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a>)));      \</div>
+<div class="line">                                                                  \</div>
+<div class="line">    ZRTOS_ASSERT__STATIC(len &gt;= <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>)); \</div>
+<div class="line">                                                                  \</div>
+<div class="line">    zrtos_malloc__init(                                           \</div>
+<div class="line">         name                                                     \</div>
+<div class="line">        ,<span class="keyword">sizeof</span>(name) / <span class="keyword">sizeof</span>(name[0])                           \</div>
+<div class="line">    )</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00076">76</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span><span class="preprocessor">#define ZRTOS_MALLOC__INIT(name,len)                              \</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor">    zrtos_malloc_t name[                                          \</span></div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">        (len)                                                     \</span></div>
+<div class="line"><span class="lineno">   79</span><span class="preprocessor">    ] __attribute__((aligned(ZRTOS_TYPES__BYTE_ALIGNMENT)));      \</span></div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">                                                                  \</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC(len &gt;= sizeof(zrtos_malloc_internal_t)); \</span></div>
+<div class="line"><span class="lineno">   82</span><span class="preprocessor">                                                                  \</span></div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">    zrtos_malloc__init(                                           \</span></div>
+<div class="line"><span class="lineno">   84</span><span class="preprocessor">         name                                                     \</span></div>
+<div class="line"><span class="lineno">   85</span><span class="preprocessor">        ,sizeof(name) / sizeof(name[0])                           \</span></div>
+<div class="line"><span class="lineno">   86</span><span class="preprocessor">    )</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a9f7d16c747e7f4fca50c77155eebc5ed" name="a9f7d16c747e7f4fca50c77155eebc5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7d16c747e7f4fca50c77155eebc5ed">&#9670;&#160;</a></span>zrtos_malloc_heap_chunk_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__zrtos__malloc__heap__chunk__t.html">_zrtos_malloc_heap_chunk_t</a> <a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2e8348b810cf8e8c6066c66568b67a2" name="ad2e8348b810cf8e8c6066c66568b67a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e8348b810cf8e8c6066c66568b67a2">&#9670;&#160;</a></span>zrtos_malloc_internal_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__zrtos__malloc__internal__t.html">_zrtos_malloc_internal_t</a> <a class="el" href="#ad2e8348b810cf8e8c6066c66568b67a2">zrtos_malloc_internal_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3e4b0fe1ed4eeddbd0b169e44340a62" name="ab3e4b0fe1ed4eeddbd0b169e44340a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">&#9670;&#160;</a></span>zrtos_malloc_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__zrtos__malloc__t.html">_zrtos_malloc_t</a> <a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a299a13aa87e9bdb9fb23fb30cc5b1c32" name="a299a13aa87e9bdb9fb23fb30cc5b1c32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a299a13aa87e9bdb9fb23fb30cc5b1c32">&#9670;&#160;</a></span>zrtos_malloc__free()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_malloc__free </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>ptr</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00201">201</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  201</span>                                  {</div>
+<div class="line"><span class="lineno">  202</span><span class="preprocessor">#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE</span></div>
+<div class="line"><span class="lineno">  203</span>    <a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *chunk = ptr;</div>
+<div class="line"><span class="lineno">  204</span>    --chunk;</div>
+<div class="line"><span class="lineno">  205</span>    chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> &amp;= ~((<a class="code hl_typedef" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>)1);</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>    <a class="code hl_define" href="debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a">ZRTOS_DEBUG__CODE</a>({</div>
+<div class="line"><span class="lineno">  208</span>        zrtos_debug__memset(ptr,0xFF,(chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> &gt;&gt; 1));</div>
+<div class="line"><span class="lineno">  209</span>    });</div>
+<div class="line"><span class="lineno">  210</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  211</span>}</div>
+<div class="ttc" id="adebug_8h_html_a286bec747f9c6f51f84892f3a8c0fd6a"><div class="ttname"><a href="debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a">ZRTOS_DEBUG__CODE</a></div><div class="ttdeci">#define ZRTOS_DEBUG__CODE(code)</div><div class="ttdef"><b>Definition</b> <a href="debug_8h_source.html#l00047">debug.h:47</a></div></div>
+<div class="ttc" id="astruct__zrtos__malloc__heap__chunk__t_html_ac3007b647e2bc38796e98057a302ec4d"><div class="ttname"><a href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">_zrtos_malloc_heap_chunk_t::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00023">malloc.h:23</a></div></div>
+<div class="ttc" id="atypes_8h_html_af5439e19eec032e96a3561505be8ec35"><div class="ttname"><a href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></div><div class="ttdeci">uint16_t size_t</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00019">types.h:19</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_a299a13aa87e9bdb9fb23fb30cc5b1c32_icgraph.svg" width="462" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a92ada475abfd239fff5f30f68f5ca3cb" name="a92ada475abfd239fff5f30f68f5ca3cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92ada475abfd239fff5f30f68f5ca3cb">&#9670;&#160;</a></span>zrtos_malloc__get_free_chunk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a> * zrtos_malloc__get_free_chunk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00105">105</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span> {</div>
+<div class="line"><span class="lineno">  109</span>    <a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *thiz_ = (<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *)thiz;</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *chunk = (<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *)(thiz_+1);</div>
+<div class="line"><span class="lineno">  111</span>    <a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *last = (<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *)thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a>;</div>
+<div class="line"><span class="lineno">  112</span>    length &lt;&lt;= 1;</div>
+<div class="line"><span class="lineno">  113</span> </div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">while</span>(chunk != last){</div>
+<div class="line"><span class="lineno">  115</span>        <span class="keywordflow">if</span>(chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> == length){</div>
+<div class="line"><span class="lineno">  116</span>            <span class="keywordflow">return</span> chunk;</div>
+<div class="line"><span class="lineno">  117</span>        }</div>
+<div class="line"><span class="lineno">  118</span>        chunk = <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(</div>
+<div class="line"><span class="lineno">  119</span>             chunk</div>
+<div class="line"><span class="lineno">  120</span>            ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a>) + (chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a>&gt;&gt;1)</div>
+<div class="line"><span class="lineno">  121</span>        );</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="astruct__zrtos__malloc__internal__t_html_a07166710ef3af30b473203dc9880259b"><div class="ttname"><a href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">_zrtos_malloc_internal_t::ptr</a></div><div class="ttdeci">uint8_t * ptr</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00028">malloc.h:28</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_cgraph.svg" width="360" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_a92ada475abfd239fff5f30f68f5ca3cb_icgraph.svg" width="518" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aea3a0d9fb100dd121406ff2cb6d61f3f" name="aea3a0d9fb100dd121406ff2cb6d61f3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea3a0d9fb100dd121406ff2cb6d61f3f">&#9670;&#160;</a></span>zrtos_malloc__init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zrtos_malloc__init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00088">88</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span>                                                           {</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *thiz_ = (<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *)thiz;</div>
+<div class="line"><span class="lineno">   90</span>    <span class="keywordtype">bool</span> ret = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span>(length &gt;= <span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>)){</div>
+<div class="line"><span class="lineno">   92</span>        thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a> = <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(thiz,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a>));</div>
+<div class="line"><span class="lineno">   93</span>        thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#ac50e8df4659548f59913b794151f71a9">length</a> = length - <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="#ad2e8348b810cf8e8c6066c66568b67a2">zrtos_malloc_internal_t</a>);</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>        <a class="code hl_define" href="debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a">ZRTOS_DEBUG__CODE</a>({</div>
+<div class="line"><span class="lineno">   96</span>            zrtos_debug__memset(thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a>,0xFF,length);</div>
+<div class="line"><span class="lineno">   97</span>        });</div>
+<div class="line"><span class="lineno">   98</span> </div>
+<div class="line"><span class="lineno">   99</span>        ret = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  102</span>}</div>
+<div class="ttc" id="astruct__zrtos__malloc__internal__t_html_ac50e8df4659548f59913b794151f71a9"><div class="ttname"><a href="struct__zrtos__malloc__internal__t.html#ac50e8df4659548f59913b794151f71a9">_zrtos_malloc_internal_t::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00029">malloc.h:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_aea3a0d9fb100dd121406ff2cb6d61f3f_cgraph.svg" width="332" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a886b38a033247d17a6681a94b237aab7" name="a886b38a033247d17a6681a94b237aab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a886b38a033247d17a6681a94b237aab7">&#9670;&#160;</a></span>zrtos_malloc__malloc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * zrtos_malloc__malloc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ab3e4b0fe1ed4eeddbd0b169e44340a62">zrtos_malloc_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="malloc_8h_source.html#l00134">134</a> of file <a class="el" href="malloc_8h_source.html">malloc.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  134</span>                                                              {</div>
+<div class="line"><span class="lineno">  135</span><span class="preprocessor">#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE</span></div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *thiz_ = (<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *)thiz;</div>
+<div class="line"><span class="lineno">  137</span>    <a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a> *chunk = 0;</div>
+<div class="line"><span class="lineno">  138</span>    <span class="keywordtype">size_t</span> aligned_length = <a class="code hl_function" href="types_8h.html#a16a3c8eb064a7cb4a9ca61976ddb9d9f">zrtos_types__ceil_size_to_alignment</a>(length);</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordtype">size_t</span> total_length = <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a>) + aligned_length;</div>
+<div class="line"><span class="lineno">  140</span>    <span class="keywordtype">bool</span> has_free_space = (thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#ac50e8df4659548f59913b794151f71a9">length</a></div>
+<div class="line"><span class="lineno">  141</span>                        - <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
+<div class="line"><span class="lineno">  142</span>                             thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a></div>
+<div class="line"><span class="lineno">  143</span>                            ,(thiz_ + 1)</div>
+<div class="line"><span class="lineno">  144</span>                        ))</div>
+<div class="line"><span class="lineno">  145</span>                        &gt;= total_length</div>
+<div class="line"><span class="lineno">  146</span>    ;</div>
+<div class="line"><span class="lineno">  147</span> </div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">if</span>(aligned_length &gt; (SIZE_MAX&gt;&gt;1)){</div>
+<div class="line"><span class="lineno">  149</span>        <span class="comment">//out of bounds</span></div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">goto</span> L_OUT;</div>
+<div class="line"><span class="lineno">  151</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>((chunk = <a class="code hl_function" href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a>(thiz,aligned_length))){</div>
+<div class="line"><span class="lineno">  152</span>        chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> |= 1;</div>
+<div class="line"><span class="lineno">  153</span>    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(has_free_space){</div>
+<div class="line"><span class="lineno">  154</span>        chunk = (<a class="code hl_struct" href="struct__zrtos__malloc__heap__chunk__t.html">zrtos_malloc_heap_chunk_t</a>*)thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a>;</div>
+<div class="line"><span class="lineno">  155</span>        chunk-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d">length</a> = (aligned_length &lt;&lt; 1) | 1;</div>
+<div class="line"><span class="lineno">  156</span>        thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a> += total_length;</div>
+<div class="line"><span class="lineno">  157</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordflow">goto</span> L_OUT;</div>
+<div class="line"><span class="lineno">  159</span>    }</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    chunk++;</div>
+<div class="line"><span class="lineno">  162</span> </div>
+<div class="line"><span class="lineno">  163</span>    <a class="code hl_define" href="debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a">ZRTOS_DEBUG__CODE</a>({</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keyword">static</span> uint8_t pattern = 0x20;</div>
+<div class="line"><span class="lineno">  165</span>        zrtos_debug__memset(chunk,pattern++,aligned_length);</div>
+<div class="line"><span class="lineno">  166</span>    });</div>
+<div class="line"><span class="lineno">  167</span> </div>
+<div class="line"><span class="lineno">  168</span>L_OUT:</div>
+<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> chunk;</div>
+<div class="line"><span class="lineno">  170</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *thiz_ = (<a class="code hl_struct" href="struct__zrtos__malloc__internal__t.html">zrtos_malloc_internal_t</a> *)thiz;</div>
+<div class="line"><span class="lineno">  172</span>    <span class="keywordtype">void</span> *ret = 0;</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordtype">size_t</span> aligned_length = <a class="code hl_function" href="types_8h.html#a16a3c8eb064a7cb4a9ca61976ddb9d9f">zrtos_types__ceil_size_to_alignment</a>(length);</div>
+<div class="line"><span class="lineno">  174</span>    <span class="keywordtype">bool</span> has_free_space = (thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#ac50e8df4659548f59913b794151f71a9">length</a></div>
+<div class="line"><span class="lineno">  175</span>                        - <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
+<div class="line"><span class="lineno">  176</span>                             thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a></div>
+<div class="line"><span class="lineno">  177</span>                            ,thiz_</div>
+<div class="line"><span class="lineno">  178</span>                        ))</div>
+<div class="line"><span class="lineno">  179</span>                        &gt;= aligned_length</div>
+<div class="line"><span class="lineno">  180</span>    ;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span>(has_free_space){</div>
+<div class="line"><span class="lineno">  183</span>        ret = thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a>;</div>
+<div class="line"><span class="lineno">  184</span>        thiz_-&gt;<a class="code hl_variable" href="struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b">ptr</a> += aligned_length;</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_define" href="debug_8h.html#a286bec747f9c6f51f84892f3a8c0fd6a">ZRTOS_DEBUG__CODE</a>({</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keyword">static</span> uint8_t pattern = 0x20;</div>
+<div class="line"><span class="lineno">  189</span>        zrtos_debug__memset(ret,pattern++,aligned_length);</div>
+<div class="line"><span class="lineno">  190</span>    });</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  193</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  194</span>}</div>
+<div class="ttc" id="amalloc_8h_html_a92ada475abfd239fff5f30f68f5ca3cb"><div class="ttname"><a href="#a92ada475abfd239fff5f30f68f5ca3cb">zrtos_malloc__get_free_chunk</a></div><div class="ttdeci">static zrtos_malloc_heap_chunk_t * zrtos_malloc__get_free_chunk(zrtos_malloc_t *thiz, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="malloc_8h_source.html#l00105">malloc.h:105</a></div></div>
+<div class="ttc" id="amalloc_8h_html_a9f7d16c747e7f4fca50c77155eebc5ed"><div class="ttname"><a href="#a9f7d16c747e7f4fca50c77155eebc5ed">zrtos_malloc_heap_chunk_t</a></div><div class="ttdeci">struct _zrtos_malloc_heap_chunk_t zrtos_malloc_heap_chunk_t</div></div>
+<div class="ttc" id="atypes_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00040">types.h:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_a886b38a033247d17a6681a94b237aab7_cgraph.svg" width="556" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="malloc_8h_a886b38a033247d17a6681a94b237aab7_icgraph.svg" width="314" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -259,7 +644,7 @@ Here is the call graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
     <ul>
-      <li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="malloc_8h.html">malloc.h</a></li>
+      <li class="navelem"><a class="el" href="dir_945450c4c75941ecfeefad1631b928ac.html">zrtos</a></li><li class="navelem"><a class="el" href="malloc_8h.html">malloc.h</a></li>
       <address class="footer">
         <a href="http://ykat.de">
         &copy 2024 ykat UG (haftungsbeschränkt)

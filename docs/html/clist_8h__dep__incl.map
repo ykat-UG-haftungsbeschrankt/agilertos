@@ -1,0 +1,14 @@
+<map id="clist.h" name="clist.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="89,5,146,32"/>
+<area shape="rect" id="Node000002" href="$task_8h.html" title=" " alt="" coords="22,80,80,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,45,64,81,60,78,94,42"/>
+<area shape="rect" id="Node000003" href="$task__scheduler_8h.html" title=" " alt="" coords="5,155,126,181"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="113,48,95,108,74,156,69,153,90,106,108,46"/>
+<area shape="rect" id="Node000005" href="$vfs__dentry_8h.html" title=" " alt="" coords="155,80,245,107"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="145,40,188,78,184,82,142,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="59,122,66,154,60,155,54,123"/>
+<area shape="rect" id="Node000004" href="$task__pthread_8h.html" title=" " alt="" coords="12,229,119,256"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="68,197,68,229,63,229,63,197"/>
+<area shape="rect" id="Node000006" href="$vfs__file_8h.html" title=" " alt="" coords="165,155,235,181"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="203,122,203,154,198,154,198,122"/>
+</map>
