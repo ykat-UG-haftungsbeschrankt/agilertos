@@ -17,6 +17,7 @@ extern "C" {
 
 
 #include <zrtos/error.h>
+#include <zrtos/errno.h>
 #include <zrtos/clist.h>
 
 
@@ -37,7 +38,7 @@ typedef struct _zrtos_task_t{
 	struct _zrtos_task_t         *parent;
 	zrtos_arch_stack_t           *stack_ptr;
 	zrtos_task_tick_t            ticks;
-	zrtos_error_t                      error_code;
+	zrtos_error_t                error_code;
 }zrtos_task_t;
 
 bool zrtos_task__init(

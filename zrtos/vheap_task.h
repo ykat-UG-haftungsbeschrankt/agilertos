@@ -17,6 +17,7 @@ extern "C" {
 
 
 #include <zrtos/error.h>
+#include <zrtos/errno.h>
 #include <zrtos/vheap_chunk_uid.h>
 
 
