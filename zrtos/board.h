@@ -59,8 +59,9 @@ uint64_t zrtos_board__get_seconds();
 #error "ZRTOS_BOARD__FOUND defined"
 #endif
 
-//#include "board/arduino.h"
-#include "board/avr_software_emulator.h"
+//#include <board/arduino.h>
+#include <zrtos/board/ansi_c.h>
+#include <zrtos/board/avr_software_emulator.h>
 //#define ZRTOS_BOARD__FOUND
 
 #ifndef ZRTOS_BOARD__FOUND

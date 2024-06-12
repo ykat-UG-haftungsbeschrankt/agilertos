@@ -11,23 +11,10 @@ extern "C" {
 #endif
 
 
-#include <stdarg.h>
-
-#include <zrtos/zrtos_gpio.h>
-#include <zrtos/zrtos_vfs_file.h>
-#include <zrtos/zrtos_vfs_plugin.h>
-#include <zrtos/zrtos_error.h>
+#include <zrtos/vfs_plugin.h>
 
 
-zrtos_error_t zrtos_vfs_module_gpio__ioctl(zrtos_file_t *thiz,int request,va_list args){
-	zrtos_gpio_t **val = va_arg(args,zrtos_gpio_t**);
-	*val = zrtos_vfs_file__get_inode_data(thiz);
-	return EXIT_SUCCESS;
-}
-
-zrtos_vfs_plugin_t zrtos_vfs_module_gpio = {
-	,.ioctl = zrtos_vfs_module_gpio__ioctl
-};
+ZRTOS_VFS_PLUGIN__INIT(gpio,ZRTOS_VFS_PLUGIN_TYPE__FILE);
 
 
 #ifdef __cplusplus

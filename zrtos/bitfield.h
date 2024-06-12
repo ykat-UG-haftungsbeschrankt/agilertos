@@ -24,6 +24,7 @@ typedef struct{
 #define	ZRTOS_BITFIELD__NFDBITS	(8 * sizeof(zrtos_bitfield_mask_t))
 #define	ZRTOS_BITFIELD__ELT(d)	(((size_t)d) / ZRTOS_BITFIELD__NFDBITS)
 #define	ZRTOS_BITFIELD__MASK(d)	((zrtos_bitfield_mask_t) (1 << (((size_t)d) % ZRTOS_BITFIELD__NFDBITS)))
+#define	ZRTOS_BITFIELD__MASK_MSB(d)	((zrtos_bitfield_mask_t) (1 << (7-(((size_t)d) % ZRTOS_BITFIELD__NFDBITS))))
 
 void zrtos_bitfield__set(zrtos_bitfield_t *thiz,size_t pos,bool val){
 	zrtos_bitfield_mask_t *tmp = &(&thiz->val)[ZRTOS_BITFIELD__ELT(pos)];
@@ -34,10 +35,23 @@ void zrtos_bitfield__set(zrtos_bitfield_t *thiz,size_t pos,bool val){
 	}
 }
 
+void zrtos_bitfield__set_msb(zrtos_bitfield_t *thiz,size_t pos,bool val){
+	zrtos_bitfield_mask_t *tmp = &(&thiz->val)[ZRTOS_BITFIELD__ELT(pos)];
+	if(val){
+		*tmp |= ZRTOS_BITFIELD__MASK_MSB(pos);
+	}else{
+		*tmp &= ~ZRTOS_BITFIELD__MASK_MSB(pos);
+	}
+}
+
 bool zrtos_bitfield__get(zrtos_bitfield_t *thiz,size_t pos){
 	return 0 != (
 		(&thiz->val)[ZRTOS_BITFIELD__ELT(pos)] & ZRTOS_BITFIELD__MASK(pos)
 	);
+}
+
+uint8_t zrtos_bitfield__get_uint8(zrtos_bitfield_t *thiz,size_t pos){
+	return (&thiz->val)[pos];
 }
 
 void zrtos_bitfield__zero(zrtos_bitfield_t *thiz,size_t len){
@@ -91,12 +105,13 @@ size_t zrtos_bitfield__find_first_set(
 	);
 }
 
-#define ZRTOS_BITFIELD__EACH(thiz,len,pos)\
-    for(size_t pos = 0\
-       ; ZRTOS_TYPES__SIZE_MAX\
-       != (pos = zrtos_bitfield__find_first_set(thiz,len,pos))\
-       ;pos++\
+#define ZRTOS_BITFIELD__EACH(thiz,len,pos)                                     \
+    for(size_t pos = 0                                                         \
+       ; ZRTOS_TYPES__SIZE_MAX                                                 \
+       != (pos = zrtos_bitfield__find_first_set(thiz,len,pos))                 \
+       ;pos++                                                                  \
     )
+
 
 #ifdef __cplusplus
 }

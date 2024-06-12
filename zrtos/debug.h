@@ -16,7 +16,7 @@ extern "C" {
 
 #ifdef ZRTOS_DEBUG__CFG_MEMORY_CONSOLE
 # if ZRTOS_DEBUG__CFG_MEMORY_CONSOLE > 0
-#  include "zrtos_debug_console.h"
+#  include <zrtos/debug_console.h>
    ZRTOS_DEBUG_CONSOLE__INIT(zrtos_debug__memory_console,ZRTOS_DEBUG__CFG_MEMORY_CONSOLE);
 #  define ZRTOS_DEBUG(fmt,...)\
        zrtos_debug_console__printf(&zrtos_debug__memory_console,fmt,##__VA_ARGS__)

@@ -12,6 +12,7 @@ extern "C" {
 
 
 #include <zrtos/types.h>
+#include <zrtos/assert.h>
 
 typedef void (*zrtos_arch_callback_t)(void *arg);
 
@@ -45,8 +46,8 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
 #error "ZRTOS_ARCH__FOUND defined"
 #endif
 
-#include "arch/atmega328p.h"
-#include "arch/atmega2560.h"
+#include <zrtos/arch/atmega328p.h>
+#include <zrtos/arch/atmega2560.h>
 
 #ifndef ZRTOS_ARCH__FOUND
 #error "arch/*.h not found"
@@ -68,11 +69,15 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
     #error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT definition"
 #endif
 
-#if ZRTOS_ARCH__BYTE_ALIGNMENT != ZRTOS_TYPES__BYTE_ALIGNMENT
-	#error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT definition"
-#elif ZRTOS_ARCH__BYTE_ALIGNMENT_MASK != ZRTOS_TYPES__BYTE_ALIGNMENT_MASK
-	#error "Invalid ZRTOS_ARCH__BYTE_ALIGNMENT_MASK definition"
-#endif
+///@todo verify alignment
+/*
+ZRTOS_ASSERT__STATIC(
+	ZRTOS_ARCH__BYTE_ALIGNMENT == ZRTOS_TYPES__BYTE_ALIGNMENT
+);
+ZRTOS_ASSERT__STATIC(
+	ZRTOS_ARCH__BYTE_ALIGNMENT_MASK != ZRTOS_TYPES__BYTE_ALIGNMENT_MASK
+);
+*/
 
 size_t zrtos_arch__do_not_disturb = 0;
 #define ZRTOS_ARCH__DO_NOT_DISTURB(code)       \

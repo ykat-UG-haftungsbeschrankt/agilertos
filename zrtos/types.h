@@ -41,7 +41,7 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 	return ((uint8_t*)bigger)-((uint8_t*)smaller);
 }
 
-#define ZRTOS_TYPES__BYTE_ALIGNMENT sizeof(max_align_t)
+#define ZRTOS_TYPES__BYTE_ALIGNMENT (sizeof(max_align_t))
 #define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (sizeof(max_align_t)-1)
 
 void *zrtos_types__ptr_to_alignment(void *ptr){
@@ -104,6 +104,31 @@ bool zrtos_types__uint32_is_valid_address_range(
 	return false;
 }
 
+bool zrtos_types__ptr_is_valid_address_range(
+	 void *first_address
+	,void *last_address
+	,size_t offset
+	,size_t *length
+){
+	if(offset <= zrtos_types__ptr_get_byte_distance(
+		 last_address
+		,first_address
+	)){
+		*length = ZRTOS_TYPES__MIN(
+			 *length
+			,zrtos_types__ptr_get_byte_distance(
+				 last_address
+				,zrtos_types__ptr_subtract(
+					 last_address
+					,offset
+				)
+			)
+		);
+		return true;
+	}
+	return false;
+}
+
 bool zrtos_types__uint64_is_valid_address_range(
 	 uint64_t first_address
 	,uint64_t last_address
@@ -121,6 +146,13 @@ bool zrtos_types__uint64_is_valid_address_range(
 	return false;
 }
 
+#define ZRTOS_TYPES__SWAP(a,b)              \
+    do{                                     \
+        typeof(a) a____ = (a);              \
+        (a) = (b);                          \
+        (b) = a____;                        \
+    }while(0);
+
 #define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
     do{                                     \
         typeof(*a) a____ = *(a);            \
@@ -135,6 +167,7 @@ bool zrtos_types__uint64_is_valid_address_range(
     (sizeof(arr)/sizeof((arr)[0]))
 
 #define ZRTOS_TYPES__SIZE_MAX SIZE_MAX
+#define ZRTOS_TYPES__UINT32_MAX UINT32_MAX
 
 #ifdef __cplusplus
 }

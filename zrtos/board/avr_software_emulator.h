@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_BOARDS_AVR_SOFTWARE_EMULATOR_H
-#define ZRTOS_BOARDS_AVR_SOFTWARE_EMULATOR_H
+#ifndef ZRTOS_BOARD_AVR_SOFTWARE_EMULATOR_H
+#define ZRTOS_BOARD_AVR_SOFTWARE_EMULATOR_H
 #ifdef __cplusplus
 extern "C" {
 #endif

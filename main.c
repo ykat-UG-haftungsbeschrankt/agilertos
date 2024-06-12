@@ -1,5 +1,8 @@
 #include <avr/io.h>
 
+#include <stdint.h>
+#include <stddef.h>
+/*
 #define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
@@ -21,9 +24,10 @@ typedef size_t off_t;
 #include <zrtos/vfs_module/zero/zero.h>
 #include <zrtos/vfs_module/null/null.h>
 #include <zrtos/vfs_module/random/random.h>
-
+*/
 int main(void){
-
+	unsigned maxl = sizeof(max_align_t);
+/*
 	zrtos_vfs_dentry_t dev;
 	zrtos_vfs_dentry_t dev_zero;
 	zrtos_vfs_dentry_t dev_null;
@@ -79,5 +83,6 @@ int main(void){
 	zrtos_vfs_file__read(fd,0,buffer,5,0,&ret);
 
 	return 0;
+*/
 }
 
