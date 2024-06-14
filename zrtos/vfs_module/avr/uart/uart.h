@@ -13,9 +13,6 @@ extern "C" {
 
 #include <avr/io.h>
 #include <avr/interrupt.h>
-#include <avr/pgmspace.h>
-#include <util/atomic.h>
-#include "uart.h"
 
 
 #if defined(__AVR_AT90S2313__) \
