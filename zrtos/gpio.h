@@ -390,6 +390,53 @@ zrtos_error_t zrtos_gpio__analog_write_ex(
 	return ret;
 }
 
+uint8_t zrtos_gpio__shift_in(
+	 zrtos_gpio_t     *thiz
+	,zrtos_gpio_pin_t dataPin
+	,zrtos_gpio_pin_t clockPin
+	,bool is_lsb
+){
+	uint8_t value = 0;
+	size_t i;
+	zrtos_gpio_value_digital_t val;
+
+	for (i = 0; i < 8; ++i) {
+		zrtos_gpio__set_high(thiz,clockPin);
+		zrtos_gpio__digital_read(thiz,dataPin,&val);
+		if(is_lsb){
+			value |= val << i;
+		}else{
+			value |= val << (7 - i);
+		}
+		zrtos_gpio__set_low(thiz,clockPin);
+	}
+	return value;
+}
+
+zrtos_error_t zrtos_gpio__shift_out(
+	 zrtos_gpio_t     *thiz
+	,zrtos_gpio_pin_t dataPin
+	,zrtos_gpio_pin_t clockPin
+	,bool             is_lsb
+	,uint8_t          value
+){
+	size_t i;
+	zrtos_gpio_value_digital_t val;
+
+	for(i = 0; i < 8; i++){
+		if(is_lsb){
+			val = (value & 1);
+			value >>= 1;
+		} else {
+			val = ((value & 128) != 0);
+			value <<= 1;
+		}
+		zrtos_gpio__digital_write(thiz,dataPin,val);
+		zrtos_gpio__set_high(thiz,clockPin);
+		zrtos_gpio__set_low(thiz,clockPin);
+	}
+}
+
 void zrtos_gpio__delay_microseconds(uint16_t us){
 	zrtos_arch__delay_microseconds(us);
 }

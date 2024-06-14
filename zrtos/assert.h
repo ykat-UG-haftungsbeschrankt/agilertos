@@ -22,6 +22,8 @@ extern "C" {
 #define ZRTOS_ASSERT__STATIC(cond)                 \
     ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)
 
+#define ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(x)\
+	ZRTOS_ASSERT__STATIC(((x) != 0) && (((x) & ((x) - 1)) == 0))
 
 #ifdef __cplusplus
 }

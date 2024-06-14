@@ -41,6 +41,12 @@ zrtos_clist_node_t *zrtos_clist_node__get_next_node(
 	return node->next;
 }
 
+bool zrtos_clist_node__has_next_node(
+	zrtos_clist_node_t *node
+){
+	return node->next != node;
+}
+
 zrtos_clist_node_t *zrtos_clist_node__get_previous_node(
 	zrtos_clist_node_t *node
 ){

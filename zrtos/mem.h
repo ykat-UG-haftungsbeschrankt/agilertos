@@ -204,6 +204,24 @@ void zrtos_mem__sort(void  *base,
 	}
 }
 
+size_t zrtos_mem__from_hex(void *dest,char *src,size_t len){
+	uint8_t *tmp = dest;
+	while(len--){
+		uint8_t h = (*src++) - '0';
+		uint8_t l = (*src++) - '0';
+
+		if(h > 9){
+			h -= 'A' - '9';
+		}
+		if(l > 9){
+			l -= 'A' - '9';
+		}
+
+		*tmp++ = (h << 4) | l;
+	}
+	return zrtos_types__ptr_get_byte_distance(tmp,dest);
+}
+
 
 #ifdef __cplusplus
 }

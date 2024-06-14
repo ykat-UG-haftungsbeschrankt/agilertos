@@ -169,6 +169,24 @@ bool zrtos_types__uint64_is_valid_address_range(
 #define ZRTOS_TYPES__SIZE_MAX SIZE_MAX
 #define ZRTOS_TYPES__UINT32_MAX UINT32_MAX
 
+size_t zrtos_types__uint8_to_hex(uint8_t *dest,uint8_t src){
+	uint8_t h = (src & 0xF) + '0';
+	uint8_t l = (src >> 4) + '0';
+
+	if(h > '9'){
+		h += 'A' - '9';
+	}
+	if(l > '9'){
+		l += 'A' - '9';
+	}
+
+	dest[0] = h;
+	dest[1] = l;
+
+	return 2;
+}
+
+
 #ifdef __cplusplus
 }
 #endif

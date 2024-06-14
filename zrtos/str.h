@@ -279,6 +279,26 @@ char *zrtos_str__tok_r(char *s, const char *delim, char **save_ptr){
   return s;
 }
 
+size_t zrtos_str__to_hex(char *dest,void *src,size_t len){
+	uint8_t *tmp = src;
+	while(len--){
+		uint8_t c = *tmp++;
+		uint8_t l = (c & 0xF) + '0';
+		uint8_t h = (c >> 4) + '0';
+
+		if(h > '9'){
+			h += 'A' - '9';
+		}
+		if(l > '9'){
+			l += 'A' - '9';
+		}
+
+		*dest++ = h;
+		*dest++ = l;
+	}
+	return zrtos_types__ptr_get_byte_distance(tmp,src)*2;
+}
+
 
 #ifdef __cplusplus
 }

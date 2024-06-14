@@ -19,6 +19,7 @@ extern "C" {
 typedef struct _zrtos_vfs_file_t{
 	zrtos_vfs_dentry_t *dentry;
 	zrtos_vfs_offset_t offset;
+	void               *ctx;
 }zrtos_vfs_file_t;
 
 #ifndef ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX
@@ -136,6 +137,14 @@ void *zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz){
 	return thiz->dentry->inode.ctx;
 }
 
+void zrtos_vfs_file__set_data(zrtos_vfs_file_t *thiz,void *ctx){
+	thiz->ctx = ctx;
+}
+
+void *zrtos_vfs_file__get_data(zrtos_vfs_file_t *thiz){
+	return thiz->ctx;
+}
+
 void zrtos_vfs_file__set_offset(zrtos_vfs_file_t *thiz,zrtos_vfs_offset_t offset){
 	thiz->offset = offset;
 }
@@ -143,6 +152,15 @@ void zrtos_vfs_file__set_offset(zrtos_vfs_file_t *thiz,zrtos_vfs_offset_t offset
 zrtos_vfs_offset_t zrtos_vfs_file__get_offset(zrtos_vfs_file_t *thiz){
 	return thiz->offset;
 }
+
+#define ZRTOS_VFS_FILE__EACH_BEGIN(fd,file)\
+	for(size_t fd = 0;fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX;fd++){\
+		zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];\
+		if(0 != file->dentry){
+
+#define ZRTOS_VFS_FILE__EACH_END\
+        }\
+    }
 
 #ifdef __cplusplus
 }

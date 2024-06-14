@@ -25,7 +25,7 @@ typedef size_t zrtos_vfs_offset_t;
 
 typedef enum{
 	 ZRTOS_VFS_PLUGIN_TYPE__FILE
-	,ZRTOS_VFS_PLUGIN_TYPE__DIR
+	,ZRTOS_VFS_PLUGIN_TYPE__DIRECTORY
 	,ZRTOS_VFS_PLUGIN_TYPE__FILESYSTEM
 }zrtos_vfs_plugin_type_t;
 
