@@ -16,7 +16,7 @@ extern "C" {
 #include <zrtos/clist.h>
 #include <zrtos/vfs_inode.h>
 
-#include <zrtos/vfs_module/null/null.h>
+#include <zrtos/vfs/module/null/null.h>
 
 typedef struct _zrtos_vfs_dentry_t{
 	zrtos_clist_node_t         node;
@@ -185,6 +185,13 @@ zrtos_error_t zrtos_vfs_dentry__umount(
 	return ret;
 }
 
+void zrtos_vfs_dentry__set_inode_data(zrtos_vfs_dentry_t *thiz,void *ctx){
+	thiz->inode.ctx = ctx;
+}
+
+void *zrtos_vfs_dentry__get_inode_data(zrtos_vfs_dentry_t *thiz){
+	return thiz->inode.ctx;
+}
 
 #ifdef __cplusplus
 }

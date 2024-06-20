@@ -74,11 +74,18 @@ zrtos_clist_node_t *zrtos_clist__get_last_node(zrtos_clist_t *thiz){
 	     : root;
 }
 
+static void zrtos_clist_node__append(
+	 zrtos_clist_node_t *thiz
+	,zrtos_clist_node_t *node
+){
+	node->next = thiz->next;
+	thiz->next = node;
+}
+
 bool zrtos_clist__push(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
 	zrtos_clist_node_t *last = zrtos_clist__get_last_node(thiz);
 	if(last){
-		node->next = last->next;
-		last->next = node;
+		zrtos_clist_node__append(last,node);
 	}else{
 		thiz->root = node;
 	}
@@ -107,10 +114,9 @@ zrtos_clist_node_t *zrtos_clist__pop(zrtos_clist_t *thiz){
 }
 
 bool zrtos_clist__unshift(zrtos_clist_t *thiz,zrtos_clist_node_t *node){
-	node->next = thiz->root
-	           ? thiz->root
-	           : node->next
-	;
+	if(thiz->root){
+		node->next = thiz->root;
+	}
 	thiz->root = node;
 
 	return true;
@@ -123,8 +129,6 @@ zrtos_clist_node_t *zrtos_clist__shift(zrtos_clist_t *thiz){
 	}
 	return ret;
 }
-
-
 
 void zrtos_clist__each(
 	 zrtos_clist_t *thiz

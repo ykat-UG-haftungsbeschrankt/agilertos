@@ -124,13 +124,6 @@ zrtos_error_t zrtos_vfs_module_spi__on_umount(
 ){
 	zrtos_error_t ret = EXIT_SUCCESS;
 
-	ZRTOS_VFS_FILE__EACH_BEGIN(fd,file){
-		if(file->dentry == thiz){
-			ret = EBUSY;
-			break;
-		}
-	}ZRTOS_VFS_FILE__EACH_END;
-
 	return ret;
 }
 

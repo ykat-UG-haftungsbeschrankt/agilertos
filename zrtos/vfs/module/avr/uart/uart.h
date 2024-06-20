@@ -253,6 +253,19 @@ extern "C" {
 #endif
 
 
+/** @brief  UART Baudrate Expression
+ *  @param  xtalCpu  system clock in Mhz, e.g. 4000000L for 4Mhz
+ *  @param  baudRate baudrate in bps, e.g. 1200, 2400, 9600
+ */
+#define UART_BAUD_SELECT(baudRate,xtalCpu) (((xtalCpu)+8UL*(baudRate))/(16UL*(baudRate))-1UL)
+
+/** @brief  UART Baudrate Expression for ATmega double speed mode
+ *  @param  xtalCpu  system clock in Mhz, e.g. 4000000L for 4Mhz
+ *  @param  baudRate baudrate in bps, e.g. 1200, 2400, 9600
+ */
+#define UART_BAUD_SELECT_DOUBLE_SPEED(baudRate,xtalCpu) ((((xtalCpu)+4UL*(baudRate))/(8UL*(baudRate))-1)|0x8000)
+
+
 #ifdef __cplusplus
 }
 #endif
