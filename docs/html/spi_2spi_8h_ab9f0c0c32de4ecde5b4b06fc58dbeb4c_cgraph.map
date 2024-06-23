@@ -1,0 +1,11 @@
+<map id="zrtos_vfs_module_spi__on_after_file_transfer" name="zrtos_vfs_module_spi__on_after_file_transfer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,160,99"/>
+<area shape="rect" id="Node000002" href="$gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0" title=" " alt="" coords="215,13,360,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,56,215,42,216,47,161,61"/>
+<area shape="rect" id="Node000004" href="$vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5" title=" " alt="" coords="208,64,367,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="160,75,192,75,192,80,160,80"/>
+<area shape="rect" id="Node000005" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="224,115,351,157"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="160,97,209,111,208,116,158,102"/>
+<area shape="rect" id="Node000003" href="$gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414" title=" " alt="" coords="415,5,544,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="360,24,400,24,400,29,360,29"/>
+</map>

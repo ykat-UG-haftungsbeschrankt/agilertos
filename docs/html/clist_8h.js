@@ -2,6 +2,8 @@ var clist_8h =
 [
     [ "_zrtos_clist_node_t", "struct__zrtos__clist__node__t.html", "struct__zrtos__clist__node__t" ],
     [ "_zrtos_clist_t", "struct__zrtos__clist__t.html", "struct__zrtos__clist__t" ],
+    [ "ZRTOS_CLIST__EACH_BEGIN", "clist_8h.html#a4e23ea7c248773ea5e35b578470dad61", null ],
+    [ "ZRTOS_CLIST__EACH_END", "clist_8h.html#ae90292da9e050ccc821bf3635b0a717a", null ],
     [ "zrtos_clist_node_t", "clist_8h.html#a921cd9ebc04b75a84bd34f4406fc174a", null ],
     [ "zrtos_clist_t", "clist_8h.html#aa972ee1ff6a78c26bc619ae56763137f", null ],
     [ "zrtos_clist__delete", "clist_8h.html#a383b927f3eeb7f78f5ae9929138a635f", null ],
@@ -14,8 +16,11 @@ var clist_8h =
     [ "zrtos_clist__push", "clist_8h.html#a853d4178de18748d3bee28700929bda4", null ],
     [ "zrtos_clist__set_root", "clist_8h.html#aa49bd33d74422329134a7793b1284e80", null ],
     [ "zrtos_clist__shift", "clist_8h.html#a443b3447b07aa651d8bc5b81e73be88f", null ],
+    [ "zrtos_clist__shift_and_push", "clist_8h.html#a2c9ceea8a0bb3230c7d4ee52fe351872", null ],
     [ "zrtos_clist__unshift", "clist_8h.html#a389b10c3124654c21ba937cf6303e4e9", null ],
+    [ "zrtos_clist_node__append", "clist_8h.html#a2795f97f269d0259065d7c7219d09341", null ],
     [ "zrtos_clist_node__get_next_node", "clist_8h.html#aec8fbabbd0ff3c556e46b59eb872d43c", null ],
     [ "zrtos_clist_node__get_previous_node", "clist_8h.html#a7e4e2a2b78267e86a322ece473242b47", null ],
+    [ "zrtos_clist_node__has_next_node", "clist_8h.html#aea2f33191d88872feaa1900c4cc6db4d", null ],
     [ "zrtos_clist_node__init", "clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a", null ]
 ];

@@ -10,6 +10,7 @@ var str_8h =
     [ "zrtos_str__ltoa", "str_8h.html#a0f900e1b206fe39cd1b56fb61c1802b6", null ],
     [ "zrtos_str__reverse", "str_8h.html#a1d32a5a8a6bb91bef6370f6f5b03513f", null ],
     [ "zrtos_str__spn", "str_8h.html#a449cee93b0e54bd698d6c14d8ad83957", null ],
+    [ "zrtos_str__to_hex", "str_8h.html#ac8c95d7c5e198a5fd0b41ffae7ecccb1", null ],
     [ "zrtos_str__tok_r", "str_8h.html#a1952f0c5784b3276bc6e0439f23d3fd0", null ],
     [ "zrtos_str__ultoa", "str_8h.html#aee390913b90918b21b4a44f1e07d7189", null ],
     [ "zrtos_str__vsnprintf", "str_8h.html#af64b95fd53da061e4bde68dddbe02232", null ],

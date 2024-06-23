@@ -1,6 +1,11 @@
 var gpio_8h =
 [
     [ "_zrtos_gpio_t", "struct__zrtos__gpio__t.html", "struct__zrtos__gpio__t" ],
+    [ "ZRTOS_GPIO__INIT", "gpio_8h.html#ac46cf6c0ab389ac64fde5dc727c24ce6", null ],
+    [ "ZRTOS_GPIO__VA_ARG_MODE", "gpio_8h.html#a06ef2ecd82d69f87df798a399dc35c86", null ],
+    [ "ZRTOS_GPIO__VA_ARG_PIN", "gpio_8h.html#a623308fc753a838d711e192acd036878", null ],
+    [ "ZRTOS_GPIO__VA_ARG_VALUE_ANALOG", "gpio_8h.html#a6b52be729056014960d58f9d2327915c", null ],
+    [ "ZRTOS_GPIO__VA_ARG_VALUE_DIGITAL", "gpio_8h.html#a1557491ed22113fa62af237c380f0314", null ],
     [ "zrtos_gpio_pin_t", "gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374", null ],
     [ "zrtos_gpio_t", "gpio_8h.html#a1a0007e1e5dfc40fcb32962e1f4f0547", null ],
     [ "zrtos_gpio_value_analog_t", "gpio_8h.html#aa9f643635062e977bc1b554667e95609", null ],
@@ -10,6 +15,9 @@ var gpio_8h =
       [ "ZRTOS_GPIO_MODE__OUTPUT", "gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2", null ],
       [ "ZRTOS_GPIO_MODE__PULLUP", "gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa149e67e61c23990647e9c14333169b63", null ]
     ] ],
+    [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a724ff13a36342baaadc0bd9a592a42d3", null ],
+    [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a5fb50802cf0eeb3c75a369c812e96b23", null ],
+    [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a12c06fcda8eb3bdfde93aabd3b9e6290", null ],
     [ "zrtos_gpio__analog_read", "gpio_8h.html#a9acc1b32d920b82eabb137dc36f92f46", null ],
     [ "zrtos_gpio__analog_read_ex", "gpio_8h.html#a91eb5a276c776b3831d8045a119adb49", null ],
     [ "zrtos_gpio__analog_read_va", "gpio_8h.html#acdcdd31be74dcb564f43d4fc612ce21a", null ],
@@ -24,6 +32,7 @@ var gpio_8h =
     [ "zrtos_gpio__digital_write", "gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414", null ],
     [ "zrtos_gpio__digital_write_ex", "gpio_8h.html#a9c359724b7388fa1829d1efd2a6c46a6", null ],
     [ "zrtos_gpio__digital_write_va", "gpio_8h.html#a8f42e9253742ea9fdd21fc7f19ffa03e", null ],
+    [ "zrtos_gpio__init", "gpio_8h.html#ab6a30071544d445202d1bce5831a82b0", null ],
     [ "zrtos_gpio__set_high", "gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0", null ],
     [ "zrtos_gpio__set_high_ex", "gpio_8h.html#a0a8aaa3086b2bbb79c60316413c96f7c", null ],
     [ "zrtos_gpio__set_high_va", "gpio_8h.html#a18d01a230a28c80656ed510d10a1ef91", null ],
@@ -32,5 +41,7 @@ var gpio_8h =
     [ "zrtos_gpio__set_low_va", "gpio_8h.html#a61079337a9a107f175ee95c7ebc50aeb", null ],
     [ "zrtos_gpio__set_mode", "gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8", null ],
     [ "zrtos_gpio__set_mode_ex", "gpio_8h.html#a09265f640ff70e6c6a30db445b052069", null ],
-    [ "zrtos_gpio__set_mode_va", "gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd", null ]
+    [ "zrtos_gpio__set_mode_va", "gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd", null ],
+    [ "zrtos_gpio__shift_in", "gpio_8h.html#aed5f26b5dc5a1f891ad09bec96691b05", null ],
+    [ "zrtos_gpio__shift_out", "gpio_8h.html#ab49fa21e06050251bf1f9598d4c4bb1b", null ]
 ];

@@ -1,13 +1,20 @@
 <map id="zrtos_gpio__digital_write" name="zrtos_gpio__digital_write">
-<area shape="rect" id="Node000001" title=" " alt="" coords="622,35,752,77"/>
-<area shape="rect" id="Node000002" href="$gpio_8h.html#a8f42e9253742ea9fdd21fc7f19ffa03e" title=" " alt="" coords="438,5,567,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,46,567,40,568,34,608,41"/>
-<area shape="rect" id="Node000004" href="$gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0" title=" " alt="" coords="430,72,574,99"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="608,71,575,76,575,71,607,66"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="622,144,752,187"/>
+<area shape="rect" id="Node000002" href="$gpio_8h.html#a8f42e9253742ea9fdd21fc7f19ffa03e" title=" " alt="" coords="438,45,567,88"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="631,139,543,91,545,86,633,134"/>
+<area shape="rect" id="Node000004" href="$gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0" title=" " alt="" coords="430,152,574,179"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="607,168,575,168,575,163,607,163"/>
+<area shape="rect" id="Node000008" href="$gpio_8h.html#ab49fa21e06050251bf1f9598d4c4bb1b" title=" " alt="" coords="228,240,373,267"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="608,186,363,242,362,237,606,181"/>
 <area shape="rect" id="Node000003" href="$gpio_8h.html#a9c359724b7388fa1829d1efd2a6c46a6" title=" " alt="" coords="236,5,365,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,29,366,29,366,24,422,24"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,54,365,42,366,37,423,48"/>
 <area shape="rect" id="Node000005" href="$gpio_8h.html#a18d01a230a28c80656ed510d10a1ef91" title=" " alt="" coords="219,72,382,99"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="414,88,383,88,383,83,414,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="459,148,381,113,348,102,350,97,383,108,461,143"/>
+<area shape="rect" id="Node000007" href="$gpio_8h.html#aed5f26b5dc5a1f891ad09bec96691b05" title=" " alt="" coords="232,123,369,149"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="414,155,368,148,369,143,415,150"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="460,189,431,204,383,230,352,242,351,237,381,226,429,199,458,184"/>
+<area shape="rect" id="Node000009" href="$spi_2spi_8h.html#ab9f0c0c32de4ecde5b4b06fc58dbeb4c" title=" " alt="" coords="223,173,378,216"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="415,181,378,186,378,181,414,175"/>
 <area shape="rect" id="Node000006" href="$gpio_8h.html#a0a8aaa3086b2bbb79c60316413c96f7c" title=" " alt="" coords="5,72,171,99"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="203,88,171,88,171,83,203,83"/>
 </map>

@@ -2,8 +2,8 @@ var error_8h =
 [
     [ "zrtos_error_t", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22", [
       [ "EMIN", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a587317fbaedf998e945c993fb1b688a3", null ],
-      [ "EXIT_SUCCESS", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac49b050fba23fef3894eb362679c62eb", null ],
-      [ "EXIT_FAILURE", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22afb6f95c30c1d62c5386da586cc8d45aa", null ],
+      [ "ESUCCESS", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9", null ],
+      [ "EERROR", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a6ff7c7acc89d01c65c174e8caf029f40", null ],
       [ "EFIRST", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac8fc728ff63df41ded1acc35f1e38416", null ],
       [ "EPERM", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a156dcc38d9ba0765c6150544963ed267", null ],
       [ "ENOENT", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a996f6f948b613bccc738ff8517413c1a", null ],
@@ -129,5 +129,7 @@ var error_8h =
       [ "ELAST", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22a023c7951199cc8b4175f0bfc9bd92c50", null ],
       [ "EMAX", "error_8h.html#a858141c8990203d8ff36f82cf43f0e22ac4a659f53dba810a45e33700ae18e536", null ]
     ] ],
-    [ "ZRTOS_ASSERT__STATIC", "error_8h.html#a322901aa0f1b4abc7068d4f03daa4a3b", null ]
+    [ "ZRTOS_ASSERT__STATIC", "error_8h.html#a322901aa0f1b4abc7068d4f03daa4a3b", null ],
+    [ "zrtos_error__is_error", "error_8h.html#af58428a30fbc7fd6967e15504df633a0", null ],
+    [ "zrtos_error__is_success", "error_8h.html#add13298163f63b7d37ed9f12d57e1a31", null ]
 ];

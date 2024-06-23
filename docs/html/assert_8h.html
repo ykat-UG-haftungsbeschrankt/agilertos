@@ -101,7 +101,7 @@ $(function(){initNavTree('assert_8h.html',''); initResizable(); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="assert_8h__dep__incl.svg" width="1131" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="assert_8h__dep__incl.svg" width="2430" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="assert_8h_source.html">Go to the source code of this file.</a></p>
@@ -114,6 +114,8 @@ Macros</h2></td></tr>
 <tr class="separator:a47cb68b5e1a36b5ff3cbb2d7d0ae1509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20d599d3e5a1a30c54d24c50af02b571" id="r_a20d599d3e5a1a30c54d24c50af02b571"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d599d3e5a1a30c54d24c50af02b571">ZRTOS_ASSERT__STATIC</a>(cond)&#160;&#160;&#160;    <a class="el" href="#a47cb68b5e1a36b5ff3cbb2d7d0ae1509">ZRTOS_ASSERT__STATIC_HELPER</a>(cond,__COUNTER__)</td></tr>
 <tr class="separator:a20d599d3e5a1a30c54d24c50af02b571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa91ceca03c737ef6d315f341b432a929" id="r_aa91ceca03c737ef6d315f341b432a929"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa91ceca03c737ef6d315f341b432a929">ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO</a>(x)&#160;&#160;&#160;    <a class="el" href="#a20d599d3e5a1a30c54d24c50af02b571">ZRTOS_ASSERT__STATIC</a>(((x) != 0) &amp;&amp; (((x) &amp; ((x) - 1)) == 0))</td></tr>
+<tr class="separator:aa91ceca03c737ef6d315f341b432a929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a20d599d3e5a1a30c54d24c50af02b571" name="a20d599d3e5a1a30c54d24c50af02b571"></a>
@@ -131,9 +133,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00022">22</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond)                 \</span></div>
-<div class="line"><span class="lineno">   23</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
+<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00025">25</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond)                               \</span></div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -159,11 +161,11 @@ Macros</h2></td></tr>
 <div class="line">        (cond)?1:-1                       \</div>
 <div class="line">    ]__attribute__((unused));</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00014">14</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_EX(cond,msg) \</span></div>
-<div class="line"><span class="lineno">   15</span><span class="preprocessor">    typedef char static_assertion_##msg[  \</span></div>
-<div class="line"><span class="lineno">   16</span><span class="preprocessor">        (cond)?1:-1                       \</span></div>
-<div class="line"><span class="lineno">   17</span><span class="preprocessor">    ]__attribute__((unused));</span></div>
+<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00017">17</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_EX(cond,msg) \</span></div>
+<div class="line"><span class="lineno">   18</span><span class="preprocessor">    typedef char static_assertion_##msg[  \</span></div>
+<div class="line"><span class="lineno">   19</span><span class="preprocessor">        (cond)?1:-1                       \</span></div>
+<div class="line"><span class="lineno">   20</span><span class="preprocessor">    ]__attribute__((unused));</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -186,9 +188,30 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00019">19</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_HELPER(cond,line) \</span></div>
-<div class="line"><span class="lineno">   20</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_EX(cond,line)</span></div>
+<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00022">22</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_HELPER(cond,line)                   \</span></div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_EX(cond,line)</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa91ceca03c737ef6d315f341b432a929" name="aa91ceca03c737ef6d315f341b432a929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa91ceca03c737ef6d315f341b432a929">&#9670;&#160;</a></span>ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">x</span></td><td>)</td>
+          <td>&#160;&#160;&#160;    <a class="el" href="#a20d599d3e5a1a30c54d24c50af02b571">ZRTOS_ASSERT__STATIC</a>(((x) != 0) &amp;&amp; (((x) &amp; ((x) - 1)) == 0))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="assert_8h_source.html#l00029">29</a> of file <a class="el" href="assert_8h_source.html">assert.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   29</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(x)                  \</span></div>
+<div class="line"><span class="lineno">   30</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC(((x) != 0) &amp;&amp; (((x) &amp; ((x) - 1)) == 0))</span></div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -102,6 +102,7 @@ $(function(){initNavTree('vm__function__index_8h.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cast_8h_source.html">zrtos/cast.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mem_8h_source.html">zrtos/mem.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="vm__function_8h_source.html">zrtos/vm_function.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -158,18 +159,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a> name[] = { \</div>
-<div class="line">     __VA_ARGS__ \</div>
-<div class="line">    ,{} \</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a> name[] = {            \</div>
+<div class="line">     __VA_ARGS__                          \</div>
+<div class="line">    ,{}                                   \</div>
 <div class="line">};</div>
 <div class="ttc" id="astruct__zrtos__vm__function__t_html"><div class="ttname"><a href="struct__zrtos__vm__function__t.html">_zrtos_vm_function_t</a></div><div class="ttdef"><b>Definition</b> <a href="vm__function_8h_source.html#l00025">vm_function.h:25</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00019">19</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   19</span><span class="preprocessor">#define ZRTOS_VM_FUNCTION_INDEX(name,...) \</span></div>
-<div class="line"><span class="lineno">   20</span><span class="preprocessor">zrtos_vm_function_t name[] = { \</span></div>
-<div class="line"><span class="lineno">   21</span><span class="preprocessor">     __VA_ARGS__ \</span></div>
-<div class="line"><span class="lineno">   22</span><span class="preprocessor">    ,{} \</span></div>
-<div class="line"><span class="lineno">   23</span><span class="preprocessor">};</span></div>
+<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00020">20</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span><span class="preprocessor">#define ZRTOS_VM_FUNCTION_INDEX(name,...) \</span></div>
+<div class="line"><span class="lineno">   21</span><span class="preprocessor">zrtos_vm_function_t name[] = {            \</span></div>
+<div class="line"><span class="lineno">   22</span><span class="preprocessor">     __VA_ARGS__                          \</span></div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">    ,{}                                   \</span></div>
+<div class="line"><span class="lineno">   24</span><span class="preprocessor">};</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -208,22 +209,26 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00040">40</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span> {</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a> key = {</div>
-<div class="line"><span class="lineno">   45</span>        .<a class="code hl_variable" href="struct__zrtos__vm__function__t.html#a72d1871ed9bdfed97bbae69242fef051">id</a> = <span class="keywordtype">id</span></div>
-<div class="line"><span class="lineno">   46</span>    };</div>
-<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a>(</div>
-<div class="line"><span class="lineno">   48</span>         &amp;key</div>
-<div class="line"><span class="lineno">   49</span>        ,thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">arr</a></div>
-<div class="line"><span class="lineno">   50</span>        ,thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">length</a></div>
-<div class="line"><span class="lineno">   51</span>        ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a>)</div>
-<div class="line"><span class="lineno">   52</span>        ,<a class="code hl_function" href="vm__function_8h.html#a186820ec779e59081b10e3a45b708613">zrtos_vm_function__cmp</a></div>
-<div class="line"><span class="lineno">   53</span>    );</div>
-<div class="line"><span class="lineno">   54</span>}</div>
-<div class="ttc" id="amem_8h_html_aab5ba8aca3f57d2f28ec20b9ae5dceaf"><div class="ttname"><a href="mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a></div><div class="ttdeci">void * zrtos_mem__search(const void *key, const void *base, size_t high, size_t size, int(*compar)(const void *, const void *))</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00146">mem.h:146</a></div></div>
-<div class="ttc" id="astruct__zrtos__vm__function__index__t_html_a2592bbe9909d015d81ed4fa84f0ab131"><div class="ttname"><a href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">_zrtos_vm_function_index_t::arr</a></div><div class="ttdeci">zrtos_vm_function_t * arr</div><div class="ttdef"><b>Definition</b> <a href="vm__function__index_8h_source.html#l00026">vm_function_index.h:26</a></div></div>
-<div class="ttc" id="astruct__zrtos__vm__function__index__t_html_a5ec8bfcfa7b2f8d48ca9d92dd94db7cc"><div class="ttname"><a href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">_zrtos_vm_function_index_t::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="vm__function__index_8h_source.html#l00027">vm_function_index.h:27</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00041">41</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span> {</div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a> key = {</div>
+<div class="line"><span class="lineno">   46</span>        .<a class="code hl_variable" href="struct__zrtos__vm__function__t.html#a72d1871ed9bdfed97bbae69242fef051">id</a> = <span class="keywordtype">id</span></div>
+<div class="line"><span class="lineno">   47</span>    };</div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">   49</span>         <a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a>*</div>
+<div class="line"><span class="lineno">   50</span>        ,<a class="code hl_function" href="mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a>(</div>
+<div class="line"><span class="lineno">   51</span>             &amp;key</div>
+<div class="line"><span class="lineno">   52</span>            ,thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">arr</a></div>
+<div class="line"><span class="lineno">   53</span>            ,thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">length</a></div>
+<div class="line"><span class="lineno">   54</span>            ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__vm__function__t.html">zrtos_vm_function_t</a>)</div>
+<div class="line"><span class="lineno">   55</span>            ,<a class="code hl_function" href="vm__function_8h.html#a186820ec779e59081b10e3a45b708613">zrtos_vm_function__cmp</a></div>
+<div class="line"><span class="lineno">   56</span>        )</div>
+<div class="line"><span class="lineno">   57</span>    );</div>
+<div class="line"><span class="lineno">   58</span>}</div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00017">cast.h:17</a></div></div>
+<div class="ttc" id="amem_8h_html_aab5ba8aca3f57d2f28ec20b9ae5dceaf"><div class="ttname"><a href="mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf">zrtos_mem__search</a></div><div class="ttdeci">void * zrtos_mem__search(const void *key, const void *base, size_t high, size_t size, int(*compar)(const void *, const void *))</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00148">mem.h:148</a></div></div>
+<div class="ttc" id="astruct__zrtos__vm__function__index__t_html_a2592bbe9909d015d81ed4fa84f0ab131"><div class="ttname"><a href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">_zrtos_vm_function_index_t::arr</a></div><div class="ttdeci">zrtos_vm_function_t * arr</div><div class="ttdef"><b>Definition</b> <a href="vm__function__index_8h_source.html#l00027">vm_function_index.h:27</a></div></div>
+<div class="ttc" id="astruct__zrtos__vm__function__index__t_html_a5ec8bfcfa7b2f8d48ca9d92dd94db7cc"><div class="ttname"><a href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">_zrtos_vm_function_index_t::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="vm__function__index_8h_source.html#l00028">vm_function_index.h:28</a></div></div>
 <div class="ttc" id="astruct__zrtos__vm__function__t_html_a72d1871ed9bdfed97bbae69242fef051"><div class="ttname"><a href="struct__zrtos__vm__function__t.html#a72d1871ed9bdfed97bbae69242fef051">_zrtos_vm_function_t::id</a></div><div class="ttdeci">zrtos_vm_function_id_t id</div><div class="ttdef"><b>Definition</b> <a href="vm__function_8h_source.html#l00026">vm_function.h:26</a></div></div>
 <div class="ttc" id="avm__function_8h_html_a186820ec779e59081b10e3a45b708613"><div class="ttname"><a href="vm__function_8h.html#a186820ec779e59081b10e3a45b708613">zrtos_vm_function__cmp</a></div><div class="ttdeci">int zrtos_vm_function__cmp(const void *aa, const void *bb)</div><div class="ttdef"><b>Definition</b> <a href="vm__function_8h_source.html#l00038">vm_function.h:38</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -263,12 +268,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00030">30</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span> {</div>
-<div class="line"><span class="lineno">   35</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">arr</a> = arr;</div>
-<div class="line"><span class="lineno">   36</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">length</a> = length;</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vm__function__index_8h_source.html#l00031">31</a> of file <a class="el" href="vm__function__index_8h_source.html">vm_function_index.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span> {</div>
+<div class="line"><span class="lineno">   36</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a2592bbe9909d015d81ed4fa84f0ab131">arr</a> = arr;</div>
+<div class="line"><span class="lineno">   37</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc">length</a> = length;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   39</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

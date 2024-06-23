@@ -100,10 +100,16 @@ $(function(){initNavTree('atmega328p_8h.html',''); initResizable(); });
   <div class="headertitle"><div class="title">atmega328p.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &lt;util/delay_basic.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for atmega328p.h:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h__incl.svg" width="134" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h__dep__incl.svg" width="384" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h__dep__incl.svg" width="590" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="atmega328p_8h_source.html">Go to the source code of this file.</a></p>
@@ -153,6 +159,10 @@ Typedefs</h2></td></tr>
 <tr class="separator:acaf56dbc954fa5dd28b5e1ad7c0f72c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7456b566c8ab6b738a5795f419b0f319" id="r_a7456b566c8ab6b738a5795f419b0f319"><td class="memItemLeft" align="right" valign="top">typedef int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a></td></tr>
 <tr class="separator:a7456b566c8ab6b738a5795f419b0f319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a147e098ee1b5df75fa6ef2a38e5176d1" id="r_a147e098ee1b5df75fa6ef2a38e5176d1"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a147e098ee1b5df75fa6ef2a38e5176d1">zrtos_arch_gpio_pin_t</a></td></tr>
+<tr class="separator:a147e098ee1b5df75fa6ef2a38e5176d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d9dfb7082a813ea6f81e1d1c108b8f" id="r_a32d9dfb7082a813ea6f81e1d1c108b8f"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32d9dfb7082a813ea6f81e1d1c108b8f">zrtos_arch_gpio_value_analog_t</a></td></tr>
+<tr class="separator:a32d9dfb7082a813ea6f81e1d1c108b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -162,6 +172,10 @@ Functions</h2></td></tr>
 <tr class="separator:a5599edd96083ebf96ce87853d5f408f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a7f99406f33a248301b9f008bf58ca9" id="r_a0a7f99406f33a248301b9f008bf58ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0a7f99406f33a248301b9f008bf58ca9">zrtos_arch__cpu_state_init_a</a> (<a class="el" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *thiz, <a class="el" href="arch_8h.html#aa36ce2be34a1ed388ea0d61c3a872eb3">zrtos_arch_callback_t</a> callback, void *args)</td></tr>
 <tr class="separator:a0a7f99406f33a248301b9f008bf58ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04abf9c6757be157ce34315a0f8aea5" id="r_ae04abf9c6757be157ce34315a0f8aea5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae04abf9c6757be157ce34315a0f8aea5">zrtos_arch__delay_microseconds</a> (uint16_t us)</td></tr>
+<tr class="separator:ae04abf9c6757be157ce34315a0f8aea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a4aae738e9511b66c4a4ae90d93f210" id="r_a4a4aae738e9511b66c4a4ae90d93f210"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a4aae738e9511b66c4a4ae90d93f210">zrtos_arch__delay_milliseconds</a> (uint16_t ms)</td></tr>
+<tr class="separator:a4a4aae738e9511b66c4a4ae90d93f210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a04f2f242c34f581faf5b31331d0d6bdb" name="a04f2f242c34f581faf5b31331d0d6bdb"></a>
@@ -176,7 +190,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00024">24</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00027">27</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -192,7 +206,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00021">21</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00024">24</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -208,7 +222,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00183">183</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00186">186</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -227,9 +241,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00040">40</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span><span class="preprocessor">#define ZRTOS_ARCH__DISABLE_INTERRUPTS() \</span></div>
-<div class="line"><span class="lineno">   41</span><span class="preprocessor">    asm volatile ( &quot;cli&quot; :: );</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00043">43</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span><span class="preprocessor">#define ZRTOS_ARCH__DISABLE_INTERRUPTS() \</span></div>
+<div class="line"><span class="lineno">   44</span><span class="preprocessor">    asm volatile ( &quot;cli&quot; :: );</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -248,9 +262,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00043">43</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span><span class="preprocessor">#define ZRTOS_ARCH__ENABLE_INTERRUPTS() \</span></div>
-<div class="line"><span class="lineno">   44</span><span class="preprocessor">    asm volatile ( &quot;sei&quot; :: );</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00046">46</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span><span class="preprocessor">#define ZRTOS_ARCH__ENABLE_INTERRUPTS() \</span></div>
+<div class="line"><span class="lineno">   47</span><span class="preprocessor">    asm volatile ( &quot;sei&quot; :: );</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -269,7 +283,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00026">26</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00029">29</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -304,7 +318,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00188">188</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00191">191</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +337,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00189">189</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00192">192</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -342,9 +356,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00031">31</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="preprocessor">#define ZRTOS_ARCH__GET_STACK_PTR() \</span></div>
-<div class="line"><span class="lineno">   32</span><span class="preprocessor">    ((void*)SP)</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00034">34</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span><span class="preprocessor">#define ZRTOS_ARCH__GET_STACK_PTR() \</span></div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor">    ((void*)SP)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -363,9 +377,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00034">34</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED() \</span></div>
-<div class="line"><span class="lineno">   35</span><span class="preprocessor">    ((SREG &amp; 0x80) == 0)</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00037">37</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_DISABLED() \</span></div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor">    ((SREG &amp; 0x80) == 0)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,9 +398,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00037">37</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED() \</span></div>
-<div class="line"><span class="lineno">   38</span><span class="preprocessor">    ((SREG &amp; 0x80) &gt; 0)</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00040">40</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span><span class="preprocessor">#define ZRTOS_ARCH__IS_INTERRUPTS_ENABLED() \</span></div>
+<div class="line"><span class="lineno">   41</span><span class="preprocessor">    ((SREG &amp; 0x80) &gt; 0)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -405,44 +419,44 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00241">241</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  241</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE()                            \</span></div>
-<div class="line"><span class="lineno">  242</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
-<div class="line"><span class="lineno">  243</span><span class="preprocessor">        &quot;pop    r31                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  244</span><span class="preprocessor">        &quot;pop    r30                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  245</span><span class="preprocessor">        &quot;pop    r29                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  246</span><span class="preprocessor">        &quot;pop    r28                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  247</span><span class="preprocessor">        &quot;pop    r27                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  248</span><span class="preprocessor">        &quot;pop    r26                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  249</span><span class="preprocessor">        &quot;pop    r25                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  250</span><span class="preprocessor">        &quot;pop    r24                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  251</span><span class="preprocessor">        &quot;pop    r23                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  252</span><span class="preprocessor">        &quot;pop    r22                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  253</span><span class="preprocessor">        &quot;pop    r21                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  254</span><span class="preprocessor">        &quot;pop    r20                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  255</span><span class="preprocessor">        &quot;pop    r19                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  256</span><span class="preprocessor">        &quot;pop    r18                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  257</span><span class="preprocessor">        &quot;pop    r17                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  258</span><span class="preprocessor">        &quot;pop    r16                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  259</span><span class="preprocessor">        &quot;pop    r15                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  260</span><span class="preprocessor">        &quot;pop    r14                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  261</span><span class="preprocessor">        &quot;pop    r13                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  262</span><span class="preprocessor">        &quot;pop    r12                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  263</span><span class="preprocessor">        &quot;pop    r11                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  264</span><span class="preprocessor">        &quot;pop    r10                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  265</span><span class="preprocessor">        &quot;pop    r9                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  266</span><span class="preprocessor">        &quot;pop    r8                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  267</span><span class="preprocessor">        &quot;pop    r7                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  268</span><span class="preprocessor">        &quot;pop    r6                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  269</span><span class="preprocessor">        &quot;pop    r5                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  270</span><span class="preprocessor">        &quot;pop    r4                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  271</span><span class="preprocessor">        &quot;pop    r3                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  272</span><span class="preprocessor">        &quot;pop    r2                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  273</span><span class="preprocessor">        &quot;pop    __zero_reg__                            \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  274</span><span class="preprocessor">        &quot;pop    __tmp_reg__                             \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  275</span><span class="preprocessor">        &quot;out    __SREG__, __tmp_reg__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  276</span><span class="preprocessor">        &quot;pop    __tmp_reg__                             \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  277</span><span class="preprocessor">    );</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00244">244</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE()                            \</span></div>
+<div class="line"><span class="lineno">  245</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
+<div class="line"><span class="lineno">  246</span><span class="preprocessor">        &quot;pop    r31                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  247</span><span class="preprocessor">        &quot;pop    r30                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  248</span><span class="preprocessor">        &quot;pop    r29                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  249</span><span class="preprocessor">        &quot;pop    r28                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  250</span><span class="preprocessor">        &quot;pop    r27                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  251</span><span class="preprocessor">        &quot;pop    r26                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  252</span><span class="preprocessor">        &quot;pop    r25                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  253</span><span class="preprocessor">        &quot;pop    r24                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  254</span><span class="preprocessor">        &quot;pop    r23                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  255</span><span class="preprocessor">        &quot;pop    r22                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  256</span><span class="preprocessor">        &quot;pop    r21                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  257</span><span class="preprocessor">        &quot;pop    r20                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  258</span><span class="preprocessor">        &quot;pop    r19                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  259</span><span class="preprocessor">        &quot;pop    r18                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  260</span><span class="preprocessor">        &quot;pop    r17                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  261</span><span class="preprocessor">        &quot;pop    r16                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  262</span><span class="preprocessor">        &quot;pop    r15                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  263</span><span class="preprocessor">        &quot;pop    r14                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  264</span><span class="preprocessor">        &quot;pop    r13                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  265</span><span class="preprocessor">        &quot;pop    r12                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  266</span><span class="preprocessor">        &quot;pop    r11                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  267</span><span class="preprocessor">        &quot;pop    r10                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  268</span><span class="preprocessor">        &quot;pop    r9                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  269</span><span class="preprocessor">        &quot;pop    r8                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  270</span><span class="preprocessor">        &quot;pop    r7                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  271</span><span class="preprocessor">        &quot;pop    r6                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  272</span><span class="preprocessor">        &quot;pop    r5                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  273</span><span class="preprocessor">        &quot;pop    r4                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  274</span><span class="preprocessor">        &quot;pop    r3                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  275</span><span class="preprocessor">        &quot;pop    r2                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor">        &quot;pop    __zero_reg__                            \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  277</span><span class="preprocessor">        &quot;pop    __tmp_reg__                             \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  278</span><span class="preprocessor">        &quot;out    __SREG__, __tmp_reg__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  279</span><span class="preprocessor">        &quot;pop    __tmp_reg__                             \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  280</span><span class="preprocessor">    );</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,16 +483,16 @@ Functions</h2></td></tr>
 <div class="line">    );                                                          \</div>
 <div class="line">    ZRTOS_ARCH__LOAD_CPU_STATE();</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00279">279</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  279</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE_EX(ptr)                      \</span></div>
-<div class="line"><span class="lineno">  280</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
-<div class="line"><span class="lineno">  281</span><span class="preprocessor">        &quot;lds    __tmp_reg__, %0                         \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  282</span><span class="preprocessor">        &quot;out    __SP_L__, __tmp_reg__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  283</span><span class="preprocessor">        &quot;lds    __tmp_reg__, %0 + 1                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  284</span><span class="preprocessor">        &quot;out    __SP_H__, __tmp_reg__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  285</span><span class="preprocessor">        : : &quot;m&quot; (ptr)                                           \</span></div>
-<div class="line"><span class="lineno">  286</span><span class="preprocessor">    );                                                          \</span></div>
-<div class="line"><span class="lineno">  287</span><span class="preprocessor">    ZRTOS_ARCH__LOAD_CPU_STATE();</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00282">282</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span><span class="preprocessor">#define ZRTOS_ARCH__LOAD_CPU_STATE_EX(ptr)                      \</span></div>
+<div class="line"><span class="lineno">  283</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
+<div class="line"><span class="lineno">  284</span><span class="preprocessor">        &quot;lds    __tmp_reg__, %0                         \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  285</span><span class="preprocessor">        &quot;out    __SP_L__, __tmp_reg__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  286</span><span class="preprocessor">        &quot;lds    __tmp_reg__, %0 + 1                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  287</span><span class="preprocessor">        &quot;out    __SP_H__, __tmp_reg__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  288</span><span class="preprocessor">        : : &quot;m&quot; (ptr)                                           \</span></div>
+<div class="line"><span class="lineno">  289</span><span class="preprocessor">    );                                                          \</span></div>
+<div class="line"><span class="lineno">  290</span><span class="preprocessor">    ZRTOS_ARCH__LOAD_CPU_STATE();</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -497,9 +511,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00289">289</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  289</span><span class="preprocessor">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \</span></div>
-<div class="line"><span class="lineno">  290</span><span class="preprocessor">    __asm__ __volatile__(&quot;reti&quot;);</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00292">292</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  292</span><span class="preprocessor">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \</span></div>
+<div class="line"><span class="lineno">  293</span><span class="preprocessor">    __asm__ __volatile__(&quot;reti&quot;);</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -518,46 +532,46 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00191">191</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  191</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE()                            \</span></div>
-<div class="line"><span class="lineno">  192</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
-<div class="line"><span class="lineno">  193</span><span class="preprocessor">        &quot;push   __tmp_reg__                             \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  194</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SREG__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  195</span><span class="preprocessor">        &quot;cli                                            \n\t&quot;   \</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00194">194</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  194</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE()                            \</span></div>
+<div class="line"><span class="lineno">  195</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
 <div class="line"><span class="lineno">  196</span><span class="preprocessor">        &quot;push   __tmp_reg__                             \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  197</span><span class="preprocessor">        &quot;push   __zero_reg__                            \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  198</span><span class="preprocessor">        &quot;clr    __zero_reg__                            \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  199</span><span class="preprocessor">        &quot;push   r2                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  200</span><span class="preprocessor">        &quot;push   r3                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  201</span><span class="preprocessor">        &quot;push   r4                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  202</span><span class="preprocessor">        &quot;push   r5                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  203</span><span class="preprocessor">        &quot;push   r6                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  204</span><span class="preprocessor">        &quot;push   r7                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  205</span><span class="preprocessor">        &quot;push   r8                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  206</span><span class="preprocessor">        &quot;push   r9                                      \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  207</span><span class="preprocessor">        &quot;push   r10                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  208</span><span class="preprocessor">        &quot;push   r11                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  209</span><span class="preprocessor">        &quot;push   r12                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  210</span><span class="preprocessor">        &quot;push   r13                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  211</span><span class="preprocessor">        &quot;push   r14                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  212</span><span class="preprocessor">        &quot;push   r15                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  213</span><span class="preprocessor">        &quot;push   r16                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  214</span><span class="preprocessor">        &quot;push   r17                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  215</span><span class="preprocessor">        &quot;push   r18                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  216</span><span class="preprocessor">        &quot;push   r19                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  217</span><span class="preprocessor">        &quot;push   r20                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  218</span><span class="preprocessor">        &quot;push   r21                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  219</span><span class="preprocessor">        &quot;push   r22                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  220</span><span class="preprocessor">        &quot;push   r23                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  221</span><span class="preprocessor">        &quot;push   r24                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  222</span><span class="preprocessor">        &quot;push   r25                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  223</span><span class="preprocessor">        &quot;push   r26                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  224</span><span class="preprocessor">        &quot;push   r27                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  225</span><span class="preprocessor">        &quot;push   r28                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  226</span><span class="preprocessor">        &quot;push   r29                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  227</span><span class="preprocessor">        &quot;push   r30                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  228</span><span class="preprocessor">        &quot;push   r31                                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  229</span><span class="preprocessor">    );</span></div>
+<div class="line"><span class="lineno">  197</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SREG__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  198</span><span class="preprocessor">        &quot;cli                                            \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  199</span><span class="preprocessor">        &quot;push   __tmp_reg__                             \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  200</span><span class="preprocessor">        &quot;push   __zero_reg__                            \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  201</span><span class="preprocessor">        &quot;clr    __zero_reg__                            \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  202</span><span class="preprocessor">        &quot;push   r2                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  203</span><span class="preprocessor">        &quot;push   r3                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  204</span><span class="preprocessor">        &quot;push   r4                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  205</span><span class="preprocessor">        &quot;push   r5                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  206</span><span class="preprocessor">        &quot;push   r6                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  207</span><span class="preprocessor">        &quot;push   r7                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  208</span><span class="preprocessor">        &quot;push   r8                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  209</span><span class="preprocessor">        &quot;push   r9                                      \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  210</span><span class="preprocessor">        &quot;push   r10                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  211</span><span class="preprocessor">        &quot;push   r11                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  212</span><span class="preprocessor">        &quot;push   r12                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  213</span><span class="preprocessor">        &quot;push   r13                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  214</span><span class="preprocessor">        &quot;push   r14                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  215</span><span class="preprocessor">        &quot;push   r15                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  216</span><span class="preprocessor">        &quot;push   r16                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  217</span><span class="preprocessor">        &quot;push   r17                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  218</span><span class="preprocessor">        &quot;push   r18                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  219</span><span class="preprocessor">        &quot;push   r19                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  220</span><span class="preprocessor">        &quot;push   r20                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  221</span><span class="preprocessor">        &quot;push   r21                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  222</span><span class="preprocessor">        &quot;push   r22                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  223</span><span class="preprocessor">        &quot;push   r23                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  224</span><span class="preprocessor">        &quot;push   r24                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  225</span><span class="preprocessor">        &quot;push   r25                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  226</span><span class="preprocessor">        &quot;push   r26                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  227</span><span class="preprocessor">        &quot;push   r27                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  228</span><span class="preprocessor">        &quot;push   r28                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  229</span><span class="preprocessor">        &quot;push   r29                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  230</span><span class="preprocessor">        &quot;push   r30                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  231</span><span class="preprocessor">        &quot;push   r31                                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  232</span><span class="preprocessor">    );</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -583,18 +597,18 @@ Functions</h2></td></tr>
 <div class="line">        <span class="stringliteral">&quot;sts    %0 + 1, __tmp_reg__                     \n\t&quot;</span>   \</div>
 <div class="line">        : <span class="stringliteral">&quot;=m&quot;</span> (ptr)                                            \</div>
 <div class="line">    );</div>
-<div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00191">atmega328p.h:191</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00194">atmega328p.h:194</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00231">231</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  231</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE_EX(ptr)                      \</span></div>
-<div class="line"><span class="lineno">  232</span><span class="preprocessor">    ZRTOS_ARCH__SAVE_CPU_STATE();                               \</span></div>
-<div class="line"><span class="lineno">  233</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
-<div class="line"><span class="lineno">  234</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SP_L__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  235</span><span class="preprocessor">        &quot;sts    %0, __tmp_reg__                         \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  236</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SP_H__                   \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  237</span><span class="preprocessor">        &quot;sts    %0 + 1, __tmp_reg__                     \n\t&quot;   \</span></div>
-<div class="line"><span class="lineno">  238</span><span class="preprocessor">        : &quot;=m&quot; (ptr)                                            \</span></div>
-<div class="line"><span class="lineno">  239</span><span class="preprocessor">    );</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00234">234</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span><span class="preprocessor">#define ZRTOS_ARCH__SAVE_CPU_STATE_EX(ptr)                      \</span></div>
+<div class="line"><span class="lineno">  235</span><span class="preprocessor">    ZRTOS_ARCH__SAVE_CPU_STATE();                               \</span></div>
+<div class="line"><span class="lineno">  236</span><span class="preprocessor">    ;__asm__ __volatile__(                                      \</span></div>
+<div class="line"><span class="lineno">  237</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SP_L__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  238</span><span class="preprocessor">        &quot;sts    %0, __tmp_reg__                         \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  239</span><span class="preprocessor">        &quot;in     __tmp_reg__, __SP_H__                   \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  240</span><span class="preprocessor">        &quot;sts    %0 + 1, __tmp_reg__                     \n\t&quot;   \</span></div>
+<div class="line"><span class="lineno">  241</span><span class="preprocessor">        : &quot;=m&quot; (ptr)                                            \</span></div>
+<div class="line"><span class="lineno">  242</span><span class="preprocessor">    );</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -613,13 +627,45 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00028">28</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span><span class="preprocessor">#define ZRTOS_ARCH__SET_STACK_PTR(ptr) \</span></div>
-<div class="line"><span class="lineno">   29</span><span class="preprocessor">    (SP = (uint16_t)(ptr))</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00031">31</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span><span class="preprocessor">#define ZRTOS_ARCH__SET_STACK_PTR(ptr) \</span></div>
+<div class="line"><span class="lineno">   32</span><span class="preprocessor">    (SP = (uint16_t)(ptr))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a147e098ee1b5df75fa6ef2a38e5176d1" name="a147e098ee1b5df75fa6ef2a38e5176d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a147e098ee1b5df75fa6ef2a38e5176d1">&#9670;&#160;</a></span>zrtos_arch_gpio_pin_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint8_t <a class="el" href="#a147e098ee1b5df75fa6ef2a38e5176d1">zrtos_arch_gpio_pin_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00021">21</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+
+</div>
+</div>
+<a id="a32d9dfb7082a813ea6f81e1d1c108b8f" name="a32d9dfb7082a813ea6f81e1d1c108b8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32d9dfb7082a813ea6f81e1d1c108b8f">&#9670;&#160;</a></span>zrtos_arch_gpio_value_analog_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint16_t <a class="el" href="#a32d9dfb7082a813ea6f81e1d1c108b8f">zrtos_arch_gpio_value_analog_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00022">22</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+
+</div>
+</div>
 <a id="a7456b566c8ab6b738a5795f419b0f319" name="a7456b566c8ab6b738a5795f419b0f319"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7456b566c8ab6b738a5795f419b0f319">&#9670;&#160;</a></span>zrtos_arch_stack_signed_t</h2>
 
@@ -632,7 +678,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00019">19</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00020">20</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -648,7 +694,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00018">18</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00019">19</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
 
 </div>
 </div>
@@ -677,37 +723,37 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00148">148</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span> {</div>
-<div class="line"><span class="lineno">  154</span>    <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStack = thiz;</div>
-<div class="line"><span class="lineno">  155</span>    <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStackTmp = pxTopOfStack;</div>
-<div class="line"><span class="lineno">  156</span>    uint16_t usAddress = (uint16_t)callback;</div>
-<div class="line"><span class="lineno">  157</span>    <a class="code hl_typedef" href="#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a> usValue = 0;</div>
-<div class="line"><span class="lineno">  158</span> </div>
-<div class="line"><span class="lineno">  159</span>    pxTopOfStack -= 3;</div>
-<div class="line"><span class="lineno">  160</span> </div>
-<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span>(;usValue &lt; 32;){</div>
-<div class="line"><span class="lineno">  162</span>        <span class="comment">/*if(usValue == 0x0A</span></div>
-<div class="line"><span class="lineno">  163</span><span class="comment">        || usValue == 0x1A</span></div>
-<div class="line"><span class="lineno">  164</span><span class="comment">        || usValue == 0x2A){</span></div>
-<div class="line"><span class="lineno">  165</span><span class="comment">            usValue+=6;</span></div>
-<div class="line"><span class="lineno">  166</span><span class="comment">        }*/</span></div>
-<div class="line"><span class="lineno">  167</span>        *pxTopOfStack-- = usValue++;</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
-<div class="line"><span class="lineno">  169</span> </div>
-<div class="line"><span class="lineno">  170</span>    pxTopOfStackTmp[0] = usAddress &amp; 0x00ff;</div>
-<div class="line"><span class="lineno">  171</span>    pxTopOfStackTmp[-1] = (usAddress &gt;&gt; 8) &amp; 0x00ff;</div>
-<div class="line"><span class="lineno">  172</span>    pxTopOfStackTmp[-2] = 0;</div>
-<div class="line"><span class="lineno">  173</span>    pxTopOfStackTmp[-3] = 0x80;<span class="comment">//enable interrupts</span></div>
-<div class="line"><span class="lineno">  174</span>    pxTopOfStackTmp[-4] = 0;</div>
-<div class="line"><span class="lineno">  175</span>    usAddress = (uint16_t)args;</div>
-<div class="line"><span class="lineno">  176</span>    pxTopOfStackTmp[-27] = usAddress &amp; 0x00ff;</div>
-<div class="line"><span class="lineno">  177</span>    pxTopOfStackTmp[-28] = (usAddress &gt;&gt; 8) &amp; 0x00ff;</div>
-<div class="line"><span class="lineno">  178</span> </div>
-<div class="line"><span class="lineno">  179</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
-<div class="line"><span class="lineno">  180</span>}</div>
-<div class="ttc" id="aatmega328p_8h_html_a7456b566c8ab6b738a5795f419b0f319"><div class="ttname"><a href="#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a></div><div class="ttdeci">int8_t zrtos_arch_stack_signed_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00019">atmega328p.h:19</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00018">atmega328p.h:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00151">151</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span> {</div>
+<div class="line"><span class="lineno">  157</span>    <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStack = thiz;</div>
+<div class="line"><span class="lineno">  158</span>    <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> *pxTopOfStackTmp = pxTopOfStack;</div>
+<div class="line"><span class="lineno">  159</span>    uint16_t usAddress = (uint16_t)callback;</div>
+<div class="line"><span class="lineno">  160</span>    <a class="code hl_typedef" href="#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a> usValue = 0;</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>    pxTopOfStack -= 3;</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">for</span>(;usValue &lt; 32;){</div>
+<div class="line"><span class="lineno">  165</span>        <span class="comment">/*if(usValue == 0x0A</span></div>
+<div class="line"><span class="lineno">  166</span><span class="comment">        || usValue == 0x1A</span></div>
+<div class="line"><span class="lineno">  167</span><span class="comment">        || usValue == 0x2A){</span></div>
+<div class="line"><span class="lineno">  168</span><span class="comment">            usValue+=6;</span></div>
+<div class="line"><span class="lineno">  169</span><span class="comment">        }*/</span></div>
+<div class="line"><span class="lineno">  170</span>        *pxTopOfStack-- = usValue++;</div>
+<div class="line"><span class="lineno">  171</span>    }</div>
+<div class="line"><span class="lineno">  172</span> </div>
+<div class="line"><span class="lineno">  173</span>    pxTopOfStackTmp[0] = usAddress &amp; 0x00ff;</div>
+<div class="line"><span class="lineno">  174</span>    pxTopOfStackTmp[-1] = (usAddress &gt;&gt; 8) &amp; 0x00ff;</div>
+<div class="line"><span class="lineno">  175</span>    pxTopOfStackTmp[-2] = 0;</div>
+<div class="line"><span class="lineno">  176</span>    pxTopOfStackTmp[-3] = 0x80;<span class="comment">//enable interrupts</span></div>
+<div class="line"><span class="lineno">  177</span>    pxTopOfStackTmp[-4] = 0;</div>
+<div class="line"><span class="lineno">  178</span>    usAddress = (uint16_t)args;</div>
+<div class="line"><span class="lineno">  179</span>    pxTopOfStackTmp[-27] = usAddress &amp; 0x00ff;</div>
+<div class="line"><span class="lineno">  180</span>    pxTopOfStackTmp[-28] = (usAddress &gt;&gt; 8) &amp; 0x00ff;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
+<div class="line"><span class="lineno">  183</span>}</div>
+<div class="ttc" id="aatmega328p_8h_html_a7456b566c8ab6b738a5795f419b0f319"><div class="ttname"><a href="#a7456b566c8ab6b738a5795f419b0f319">zrtos_arch_stack_signed_t</a></div><div class="ttdeci">int8_t zrtos_arch_stack_signed_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00020">atmega328p.h:20</a></div></div>
+<div class="ttc" id="aatmega328p_8h_html_acaf56dbc954fa5dd28b5e1ad7c0f72c9"><div class="ttname"><a href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a></div><div class="ttdeci">uint8_t zrtos_arch_stack_t</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00019">atmega328p.h:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -735,21 +781,21 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00129">129</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  134</span> {</div>
-<div class="line"><span class="lineno">  135</span><span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  136</span><span class="comment">    ZRTOS_DEBUG__CODE(</span></div>
-<div class="line"><span class="lineno">  137</span><span class="comment">        static uint8_t pattern = 0xF0;</span></div>
-<div class="line"><span class="lineno">  138</span><span class="comment">        memset(thiz,(int)(pattern++),length);</span></div>
-<div class="line"><span class="lineno">  139</span><span class="comment">    );</span></div>
-<div class="line"><span class="lineno">  140</span><span class="comment">*/</span></div>
-<div class="line"><span class="lineno">  141</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a>(</div>
-<div class="line"><span class="lineno">  142</span>         thiz</div>
-<div class="line"><span class="lineno">  143</span>        ,callback</div>
-<div class="line"><span class="lineno">  144</span>        ,args</div>
-<div class="line"><span class="lineno">  145</span>    );</div>
-<div class="line"><span class="lineno">  146</span>}</div>
-<div class="ttc" id="aatmega328p_8h_html_a10f065b40729c7ec718bfcb83bfcb96a"><div class="ttname"><a href="#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper(zrtos_arch_stack_t *pxTopOfStack, zrtos_arch_callback_t pxCode, void *pvParameters)</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00047">atmega328p.h:47</a></div></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00132">132</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span> {</div>
+<div class="line"><span class="lineno">  138</span><span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment">    ZRTOS_DEBUG__CODE(</span></div>
+<div class="line"><span class="lineno">  140</span><span class="comment">        static uint8_t pattern = 0xF0;</span></div>
+<div class="line"><span class="lineno">  141</span><span class="comment">        memset(thiz,(int)(pattern++),length);</span></div>
+<div class="line"><span class="lineno">  142</span><span class="comment">    );</span></div>
+<div class="line"><span class="lineno">  143</span><span class="comment">*/</span></div>
+<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a>(</div>
+<div class="line"><span class="lineno">  145</span>         thiz</div>
+<div class="line"><span class="lineno">  146</span>        ,callback</div>
+<div class="line"><span class="lineno">  147</span>        ,args</div>
+<div class="line"><span class="lineno">  148</span>    );</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+<div class="ttc" id="aatmega328p_8h_html_a10f065b40729c7ec718bfcb83bfcb96a"><div class="ttname"><a href="#a10f065b40729c7ec718bfcb83bfcb96a">zrtos_arch__cpu_state_init_helper</a></div><div class="ttdeci">zrtos_arch_stack_t * zrtos_arch__cpu_state_init_helper(zrtos_arch_stack_t *pxTopOfStack, zrtos_arch_callback_t pxCode, void *pvParameters)</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00050">atmega328p.h:50</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -782,89 +828,152 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00047">47</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>uint16_t usAddress;</div>
-<div class="line"><span class="lineno">   52</span> </div>
-<div class="line"><span class="lineno">   53</span>    <span class="comment">/* Simulate how the stack would look after a call to vPortYield() generated by</span></div>
-<div class="line"><span class="lineno">   54</span><span class="comment">     * the compiler. */</span></div>
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00050">50</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>uint16_t usAddress;</div>
 <div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <span class="comment">/* The start of the task code will be popped off the stack last, so place</span></div>
-<div class="line"><span class="lineno">   57</span><span class="comment">     * it on first. */</span></div>
-<div class="line"><span class="lineno">   58</span>    usAddress = ( uint16_t ) pxCode;</div>
-<div class="line"><span class="lineno">   59</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
-<div class="line"><span class="lineno">   60</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    usAddress &gt;&gt;= 8;</div>
-<div class="line"><span class="lineno">   63</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
-<div class="line"><span class="lineno">   64</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   65</span> </div>
-<div class="line"><span class="lineno">   66</span><span class="preprocessor">#if defined(__AVR_3_BYTE_PC__)</span></div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    <span class="comment">/* The AVR ATmega2560/ATmega2561 have 256KBytes of program memory and a 17-bit</span></div>
-<div class="line"><span class="lineno">   69</span><span class="comment">     * program counter. When a code address is stored on the stack, it takes 3 bytes</span></div>
-<div class="line"><span class="lineno">   70</span><span class="comment">     * instead of 2 for the other ATmega* chips.</span></div>
-<div class="line"><span class="lineno">   71</span><span class="comment">     *</span></div>
-<div class="line"><span class="lineno">   72</span><span class="comment">     * Store 0 as the top byte since we force all task routines to the bottom 128K</span></div>
-<div class="line"><span class="lineno">   73</span><span class="comment">     * of flash. We do this by using the .lowtext label in the linker script.</span></div>
+<div class="line"><span class="lineno">   56</span>    <span class="comment">/* Simulate how the stack would look after a call to vPortYield() generated by</span></div>
+<div class="line"><span class="lineno">   57</span><span class="comment">     * the compiler. */</span></div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span>    <span class="comment">/* The start of the task code will be popped off the stack last, so place</span></div>
+<div class="line"><span class="lineno">   60</span><span class="comment">     * it on first. */</span></div>
+<div class="line"><span class="lineno">   61</span>    usAddress = ( uint16_t ) pxCode;</div>
+<div class="line"><span class="lineno">   62</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><span class="lineno">   63</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    usAddress &gt;&gt;= 8;</div>
+<div class="line"><span class="lineno">   66</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><span class="lineno">   67</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span><span class="preprocessor">#if defined(__AVR_3_BYTE_PC__)</span></div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">/* The AVR ATmega2560/ATmega2561 have 256KBytes of program memory and a 17-bit</span></div>
+<div class="line"><span class="lineno">   72</span><span class="comment">     * program counter. When a code address is stored on the stack, it takes 3 bytes</span></div>
+<div class="line"><span class="lineno">   73</span><span class="comment">     * instead of 2 for the other ATmega* chips.</span></div>
 <div class="line"><span class="lineno">   74</span><span class="comment">     *</span></div>
-<div class="line"><span class="lineno">   75</span><span class="comment">     * In order to do this properly, we would need to get a full 3-byte pointer to</span></div>
-<div class="line"><span class="lineno">   76</span><span class="comment">     * pxCode. That requires a change to GCC. Not likely to happen any time soon.</span></div>
-<div class="line"><span class="lineno">   77</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">   78</span>    *pxTopOfStack = 0;</div>
-<div class="line"><span class="lineno">   79</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   80</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <span class="comment">/* Next simulate the stack as if after a call to portSAVE_CONTEXT().</span></div>
-<div class="line"><span class="lineno">   83</span><span class="comment">     * portSAVE_CONTEXT places the flags on the stack immediately after r0</span></div>
-<div class="line"><span class="lineno">   84</span><span class="comment">     * to ensure the interrupts get disabled as soon as possible, and so ensuring</span></div>
-<div class="line"><span class="lineno">   85</span><span class="comment">     *  the stack use is minimal should a context switch interrupt occur. */</span></div>
-<div class="line"><span class="lineno">   86</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00; <span class="comment">/* R0 */</span></div>
-<div class="line"><span class="lineno">   87</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   88</span>    *pxTopOfStack = 0x80;<span class="comment">//enable interrupts</span></div>
-<div class="line"><span class="lineno">   89</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span><span class="preprocessor">#if defined(__AVR_3_BYTE_PC__)</span></div>
-<div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>    <span class="comment">/* If we have an ATmega256x, we are also saving the EIND register.</span></div>
-<div class="line"><span class="lineno">   94</span><span class="comment">     * We should default to 0.</span></div>
-<div class="line"><span class="lineno">   95</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">   96</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* EIND */</span></div>
-<div class="line"><span class="lineno">   97</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span><span class="preprocessor">#if defined(__AVR_HAVE_RAMPZ__)</span></div>
-<div class="line"><span class="lineno">  101</span> </div>
-<div class="line"><span class="lineno">  102</span>    <span class="comment">/* We are saving the RAMPZ register.</span></div>
-<div class="line"><span class="lineno">  103</span><span class="comment">     * We should default to 0.</span></div>
-<div class="line"><span class="lineno">  104</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">  105</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* RAMPZ */</span></div>
-<div class="line"><span class="lineno">  106</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">  108</span> </div>
-<div class="line"><span class="lineno">  109</span>    <span class="comment">/* Now the remaining registers. The compiler expects R1 to be 0. */</span></div>
-<div class="line"><span class="lineno">  110</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* R1 */</span></div>
+<div class="line"><span class="lineno">   75</span><span class="comment">     * Store 0 as the top byte since we force all task routines to the bottom 128K</span></div>
+<div class="line"><span class="lineno">   76</span><span class="comment">     * of flash. We do this by using the .lowtext label in the linker script.</span></div>
+<div class="line"><span class="lineno">   77</span><span class="comment">     *</span></div>
+<div class="line"><span class="lineno">   78</span><span class="comment">     * In order to do this properly, we would need to get a full 3-byte pointer to</span></div>
+<div class="line"><span class="lineno">   79</span><span class="comment">     * pxCode. That requires a change to GCC. Not likely to happen any time soon.</span></div>
+<div class="line"><span class="lineno">   80</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">   81</span>    *pxTopOfStack = 0;</div>
+<div class="line"><span class="lineno">   82</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>    <span class="comment">/* Next simulate the stack as if after a call to portSAVE_CONTEXT().</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">     * portSAVE_CONTEXT places the flags on the stack immediately after r0</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">     * to ensure the interrupts get disabled as soon as possible, and so ensuring</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">     *  the stack use is minimal should a context switch interrupt occur. */</span></div>
+<div class="line"><span class="lineno">   89</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00; <span class="comment">/* R0 */</span></div>
+<div class="line"><span class="lineno">   90</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">   91</span>    *pxTopOfStack = 0x80;<span class="comment">//enable interrupts</span></div>
+<div class="line"><span class="lineno">   92</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">#if defined(__AVR_3_BYTE_PC__)</span></div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">/* If we have an ATmega256x, we are also saving the EIND register.</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment">     * We should default to 0.</span></div>
+<div class="line"><span class="lineno">   98</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">   99</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* EIND */</span></div>
+<div class="line"><span class="lineno">  100</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  102</span> </div>
+<div class="line"><span class="lineno">  103</span><span class="preprocessor">#if defined(__AVR_HAVE_RAMPZ__)</span></div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">/* We are saving the RAMPZ register.</span></div>
+<div class="line"><span class="lineno">  106</span><span class="comment">     * We should default to 0.</span></div>
+<div class="line"><span class="lineno">  107</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  108</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* RAMPZ */</span></div>
+<div class="line"><span class="lineno">  109</span>    pxTopOfStack--;</div>
+<div class="line"><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
 <div class="line"><span class="lineno">  111</span> </div>
-<div class="line"><span class="lineno">  112</span>    <span class="comment">/* Leave R2 - R23 untouched */</span></div>
-<div class="line"><span class="lineno">  113</span>    pxTopOfStack -= 23;</div>
+<div class="line"><span class="lineno">  112</span>    <span class="comment">/* Now the remaining registers. The compiler expects R1 to be 0. */</span></div>
+<div class="line"><span class="lineno">  113</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) 0x00;    <span class="comment">/* R1 */</span></div>
 <div class="line"><span class="lineno">  114</span> </div>
-<div class="line"><span class="lineno">  115</span>    <span class="comment">/* Place the parameter on the stack in the expected location. */</span></div>
-<div class="line"><span class="lineno">  116</span>    usAddress = ( uint16_t ) pvParameters;</div>
-<div class="line"><span class="lineno">  117</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
-<div class="line"><span class="lineno">  118</span>    pxTopOfStack--;</div>
-<div class="line"><span class="lineno">  119</span> </div>
-<div class="line"><span class="lineno">  120</span>    usAddress &gt;&gt;= 8;</div>
-<div class="line"><span class="lineno">  121</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">/* Leave R2 - R23 untouched */</span></div>
+<div class="line"><span class="lineno">  116</span>    pxTopOfStack -= 23;</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <span class="comment">/* Place the parameter on the stack in the expected location. */</span></div>
+<div class="line"><span class="lineno">  119</span>    usAddress = ( uint16_t ) pvParameters;</div>
+<div class="line"><span class="lineno">  120</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
+<div class="line"><span class="lineno">  121</span>    pxTopOfStack--;</div>
 <div class="line"><span class="lineno">  122</span> </div>
-<div class="line"><span class="lineno">  123</span>    <span class="comment">/* Leave register R26 - R31 untouched */</span></div>
-<div class="line"><span class="lineno">  124</span>    pxTopOfStack -= 7;</div>
+<div class="line"><span class="lineno">  123</span>    usAddress &gt;&gt;= 8;</div>
+<div class="line"><span class="lineno">  124</span>    *pxTopOfStack = ( <a class="code hl_typedef" href="#acaf56dbc954fa5dd28b5e1ad7c0f72c9">zrtos_arch_stack_t</a> ) ( usAddress &amp; ( uint16_t ) 0x00ff );</div>
 <div class="line"><span class="lineno">  125</span> </div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
-<div class="line"><span class="lineno">  127</span>}</div>
+<div class="line"><span class="lineno">  126</span>    <span class="comment">/* Leave register R26 - R31 untouched */</span></div>
+<div class="line"><span class="lineno">  127</span>    pxTopOfStack -= 7;</div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> pxTopOfStack;</div>
+<div class="line"><span class="lineno">  130</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h_a10f065b40729c7ec718bfcb83bfcb96a_icgraph.svg" width="366" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ae04abf9c6757be157ce34315a0f8aea5" name="ae04abf9c6757be157ce34315a0f8aea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04abf9c6757be157ce34315a0f8aea5">&#9670;&#160;</a></span>zrtos_arch__delay_microseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_arch__delay_microseconds </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>us</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00297">297</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  297</span>                                                {</div>
+<div class="line"><span class="lineno">  298</span>    _delay_loop_2((<a class="code hl_define" href="#a52712692b0ac48d8b86b36066406785b">ZRTOS_ARCH__CPU_CLOCK_HZ</a>/4000000) * us);</div>
+<div class="line"><span class="lineno">  299</span>}</div>
+<div class="ttc" id="aatmega328p_8h_html_a52712692b0ac48d8b86b36066406785b"><div class="ttname"><a href="#a52712692b0ac48d8b86b36066406785b">ZRTOS_ARCH__CPU_CLOCK_HZ</a></div><div class="ttdeci">#define ZRTOS_ARCH__CPU_CLOCK_HZ</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00024">atmega328p.h:24</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h_ae04abf9c6757be157ce34315a0f8aea5_icgraph.svg" width="742" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a4a4aae738e9511b66c4a4ae90d93f210" name="a4a4aae738e9511b66c4a4ae90d93f210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a4aae738e9511b66c4a4ae90d93f210">&#9670;&#160;</a></span>zrtos_arch__delay_milliseconds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_arch__delay_milliseconds </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>ms</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="atmega328p_8h_source.html#l00301">301</a> of file <a class="el" href="atmega328p_8h_source.html">atmega328p.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  301</span>                                                {</div>
+<div class="line"><span class="lineno">  302</span>    <span class="keywordflow">while</span>(ms--){</div>
+<div class="line"><span class="lineno">  303</span>        <a class="code hl_function" href="#ae04abf9c6757be157ce34315a0f8aea5">zrtos_arch__delay_microseconds</a>(1000);</div>
+<div class="line"><span class="lineno">  304</span>    }</div>
+<div class="line"><span class="lineno">  305</span>}</div>
+<div class="ttc" id="aatmega328p_8h_html_ae04abf9c6757be157ce34315a0f8aea5"><div class="ttname"><a href="#ae04abf9c6757be157ce34315a0f8aea5">zrtos_arch__delay_microseconds</a></div><div class="ttdeci">void zrtos_arch__delay_microseconds(uint16_t us)</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00297">atmega328p.h:297</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h_a4a4aae738e9511b66c4a4ae90d93f210_cgraph.svg" width="480" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="atmega328p_8h_a4a4aae738e9511b66c4a4ae90d93f210_icgraph.svg" width="471" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

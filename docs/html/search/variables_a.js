@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['offset_0',['offset',['../struct__zrtos__stack__t.html#af353a9412f15c5646e32ce7a7af8c679',1,'_zrtos_stack_t::offset'],['../struct__zrtos__vfs__file__t.html#a08ccd3f79d82bdf5e77eb6d5e1c8f208',1,'_zrtos_vfs_file_t::offset']]],
-  ['op_1',['op',['../structzrtos__vm__ioop__t.html#ae09b03d732d97b63b95a59f619f168a8',1,'zrtos_vm_ioop_t']]],
-  ['open_2',['open',['../structzrtos__vfs__plugin__t.html#a86f233736f0536d8a4e926bf5dbc1311',1,'zrtos_vfs_plugin_t']]]
+  ['name_0',['name',['../struct__zrtos__vfs__dentry__t.html#a2f5858a907232b3b87ca620e00904918',1,'_zrtos_vfs_dentry_t']]],
+  ['next_1',['next',['../struct__zrtos__clist__node__t.html#a44a56a7c4adcff3de156ab4ce469cfb2',1,'_zrtos_clist_node_t::next'],['../struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182',1,'_zrtos_list_node_t::next']]],
+  ['node_2',['node',['../struct__zrtos__cbuffer__node__t.html#a823122e3ae8a92f832ee25a1345da6a7',1,'_zrtos_cbuffer_node_t::node'],['../struct__zrtos__task__t.html#a3169838bb5ecb547052b64081a59b6b1',1,'_zrtos_task_t::node'],['../struct__zrtos__vfs__module__spi__file__t.html#a1ffbf0fdbfbe66448e347386c1b972fe',1,'_zrtos_vfs_module_spi_file_t::node'],['../struct__zrtos__vfs__dentry__t.html#a1c8e0185ecf20b70d5166367757c7ec7',1,'_zrtos_vfs_dentry_t::node']]]
 ];

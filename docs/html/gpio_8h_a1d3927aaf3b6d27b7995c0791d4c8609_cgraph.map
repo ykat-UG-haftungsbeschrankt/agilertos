@@ -1,7 +1,9 @@
 <map id="zrtos_gpio__digital_read_ex" name="zrtos_gpio__digital_read_ex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,135,48"/>
-<area shape="rect" id="Node000002" href="$gpio_8h.html#ad4a3b7dd1577e8aef75f94088146b9cb" title=" " alt="" coords="183,5,312,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,24,167,24,167,29,135,29"/>
-<area shape="rect" id="Node000003" href="$gpio_8h.html#a02cf216aa84dd51cc356fd68ed105cd4" title=" " alt="" coords="360,13,521,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,24,344,24,344,29,312,29"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,135,65"/>
+<area shape="rect" id="Node000002" href="$gpio_8h.html#ad4a3b7dd1577e8aef75f94088146b9cb" title=" " alt="" coords="183,23,312,65"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,41,167,41,167,47,135,47"/>
+<area shape="rect" id="Node000003" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="360,5,523,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,33,344,29,345,34,313,38"/>
+<area shape="rect" id="Node000004" href="$gpio_8h.html#a02cf216aa84dd51cc356fd68ed105cd4" title=" " alt="" coords="361,56,522,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="313,50,346,54,345,59,312,55"/>
 </map>

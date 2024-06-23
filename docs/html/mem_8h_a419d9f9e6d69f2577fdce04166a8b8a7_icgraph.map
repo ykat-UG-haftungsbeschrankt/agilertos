@@ -1,7 +1,9 @@
 <map id="zrtos_mem__zero" name="zrtos_mem__zero">
-<area shape="rect" id="Node000001" title=" " alt="" coords="187,31,312,57"/>
-<area shape="rect" id="Node000002" href="$bitfield_8h.html#a41e25f1f59cb57785b18503403258629" title=" " alt="" coords="5,5,139,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,36,139,31,139,26,172,30"/>
-<area shape="rect" id="Node000003" href="$vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9" title=" " alt="" coords="19,56,125,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,58,125,64,125,59,171,52"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="207,64,332,91"/>
+<area shape="rect" id="Node000002" href="$bitfield_8h.html#a41e25f1f59cb57785b18503403258629" title=" " alt="" coords="15,5,149,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,61,126,35,128,30,211,56"/>
+<area shape="rect" id="Node000003" href="$zero_8h.html#ab183cd24a395f3b2f709618d3c6ca8d9" title=" " alt="" coords="5,56,159,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,80,159,80,159,75,191,75"/>
+<area shape="rect" id="Node000004" href="$vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9" title=" " alt="" coords="29,123,135,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,98,128,125,126,120,209,93"/>
 </map>

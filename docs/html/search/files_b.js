@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['vfs_5fdentry_2eh_0',['vfs_dentry.h',['../vfs__dentry_8h.html',1,'']]],
-  ['vfs_5ffile_2eh_1',['vfs_file.h',['../vfs__file_8h.html',1,'']]],
-  ['vfs_5finode_2eh_2',['vfs_inode.h',['../vfs__inode_8h.html',1,'']]],
-  ['vfs_5fplugin_2eh_3',['vfs_plugin.h',['../vfs__plugin_8h.html',1,'']]],
-  ['vheap_2eh_4',['vheap.h',['../vheap_8h.html',1,'']]],
-  ['vheap_5fchunk_2eh_5',['vheap_chunk.h',['../vheap__chunk_8h.html',1,'']]],
-  ['vheap_5fchunk_5ftype_2eh_6',['vheap_chunk_type.h',['../vheap__chunk__type_8h.html',1,'']]],
-  ['vheap_5fchunk_5fuid_2eh_7',['vheap_chunk_uid.h',['../vheap__chunk__uid_8h.html',1,'']]],
-  ['vheap_5ftask_2eh_8',['vheap_task.h',['../vheap__task_8h.html',1,'']]],
-  ['vheap_5ftask_5fpthread_2eh_9',['vheap_task_pthread.h',['../vheap__task__pthread_8h.html',1,'']]],
-  ['vheap_5ftask_5fscheduler_2eh_10',['vheap_task_scheduler.h',['../vheap__task__scheduler_8h.html',1,'']]],
-  ['vheap_5ftype_2eh_11',['vheap_type.h',['../vheap__type_8h.html',1,'']]],
-  ['vm_2eh_12',['vm.h',['../vm_8h.html',1,'']]],
-  ['vm_5ffunction_2eh_13',['vm_function.h',['../vm__function_8h.html',1,'']]],
-  ['vm_5ffunction_5findex_2eh_14',['vm_function_index.h',['../vm__function__index_8h.html',1,'']]],
-  ['vm_5fio_2eh_15',['vm_io.h',['../vm__io_8h.html',1,'']]]
+  ['spi_2fspi_2eh_0',['spi.h',['../spi_2spi_8h.html',1,'']]],
+  ['sram_2eh_1',['sram.h',['../sram_8h.html',1,'']]],
+  ['stack_2eh_2',['stack.h',['../stack_8h.html',1,'']]],
+  ['str_2eh_3',['str.h',['../str_8h.html',1,'']]],
+  ['string_2eh_4',['string.h',['../string_8h.html',1,'']]]
 ];

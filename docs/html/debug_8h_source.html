@@ -119,7 +119,7 @@ $(function(){initNavTree('debug_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifdef ZRTOS_DEBUG__CFG_MEMORY_CONSOLE</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor"># if ZRTOS_DEBUG__CFG_MEMORY_CONSOLE &gt; 0</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#  include &quot;zrtos_debug_console.h&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#  include &lt;<a class="code" href="debug__console_8h.html">zrtos/debug_console.h</a>&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>   ZRTOS_DEBUG_CONSOLE__INIT(zrtos_debug__memory_console,<a class="code hl_define" href="cfg_8h.html#a0a1e4862b3269c36f52ed091658b4387">ZRTOS_DEBUG__CFG_MEMORY_CONSOLE</a>);</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#  define ZRTOS_DEBUG(fmt,...)\</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">       zrtos_debug_console__printf(&amp;zrtos_debug__memory_console,fmt,##__VA_ARGS__)</span></div>
@@ -157,6 +157,7 @@ $(function(){initNavTree('debug_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acfg_8h_html_a0a1e4862b3269c36f52ed091658b4387"><div class="ttname"><a href="cfg_8h.html#a0a1e4862b3269c36f52ed091658b4387">ZRTOS_DEBUG__CFG_MEMORY_CONSOLE</a></div><div class="ttdeci">#define ZRTOS_DEBUG__CFG_MEMORY_CONSOLE</div><div class="ttdef"><b>Definition</b> <a href="cfg_8h_source.html#l00020">cfg.h:20</a></div></div>
+<div class="ttc" id="adebug__console_8h_html"><div class="ttname"><a href="debug__console_8h.html">debug_console.h</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

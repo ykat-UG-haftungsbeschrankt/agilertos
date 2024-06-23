@@ -1,0 +1,11 @@
+<map id="_zrtos_cbuffer_state_t" name="_zrtos_cbuffer_state_t">
+<area shape="rect" id="Node000001" title=" " alt="" coords="104,235,253,261"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__cbuffer__node__t.html" title=" " alt="" coords="43,128,191,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,167,173,233,169,236,130,169"/>
+<area shape="rect" id="Node000003" href="$struct__zrtos__list__node__t.html" title=" " alt="" coords="5,5,133,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="82,45,114,127,110,128,77,47"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="150,8,159,19,151,28,134,32,133,27,149,24,154,19,146,12"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="210,5,270,32"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="237,48,224,105,185,235,180,233,218,103,232,47"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="211,43,194,58,157,96,129,129,125,126,153,92,190,54,208,39"/>
+</map>

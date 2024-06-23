@@ -113,29 +113,38 @@ $(function(){initNavTree('assert_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="" data-end="">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="assert_8h.html#a2c8f4aea29e15b8b5984213521cbe0ba">   14</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_EX(cond,msg) \</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    typedef char static_assertion_##msg[  \</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">        (cond)?1:-1                       \</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">    ]__attribute__((unused));</span></div>
-</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00019" data-start="" data-end="">
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="assert_8h.html#a47cb68b5e1a36b5ff3cbb2d7d0ae1509">   19</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_HELPER(cond,line) \</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_EX(cond,line)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_EX(cond,msg) static_assert(cond,msg)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond) static_assert(cond)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#else</span></div>
+<div class="foldopen" id="foldopen00017" data-start="" data-end="">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="assert_8h.html#a2c8f4aea29e15b8b5984213521cbe0ba">   17</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_EX(cond,msg) \</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">    typedef char static_assertion_##msg[  \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">        (cond)?1:-1                       \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">    ]__attribute__((unused));</span></div>
 </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
 <div class="foldopen" id="foldopen00022" data-start="" data-end="">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="assert_8h.html#a20d599d3e5a1a30c54d24c50af02b571">   22</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond)                 \</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="assert_8h.html#a47cb68b5e1a36b5ff3cbb2d7d0ae1509">   22</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_HELPER(cond,line)                   \</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_EX(cond,line)</span></div>
 </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="foldopen" id="foldopen00025" data-start="" data-end="">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="assert_8h.html#a20d599d3e5a1a30c54d24c50af02b571">   25</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC(cond)                               \</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC_HELPER(cond,__COUNTER__)</span></div>
+</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="" data-end="">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="assert_8h.html#aa91ceca03c737ef6d315f341b432a929">   29</a></span><span class="preprocessor">#define ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(x)                  \</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">    ZRTOS_ASSERT__STATIC(((x) != 0) &amp;&amp; (((x) &amp; ((x) - 1)) == 0))</span></div>
+</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.8-->

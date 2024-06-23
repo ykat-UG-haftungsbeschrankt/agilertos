@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['heap_0',['heap',['../struct__zrtos__vheap__task__scheduler__t.html#a315e23fcba3b2b58965bbd6eed8c96ee',1,'_zrtos_vheap_task_scheduler_t']]],
-  ['heap_5fsize_1',['heap_size',['../struct__zrtos__vheap__t.html#a6e31fca0a7bede3c3f7468e8ea963b5e',1,'_zrtos_vheap_t']]]
+  ['gpio_0',['gpio',['../struct__zrtos__vfs__module__spi__args__t.html#ac779d1394784fa2267a713aded0a2c9e',1,'_zrtos_vfs_module_spi_args_t']]]
 ];

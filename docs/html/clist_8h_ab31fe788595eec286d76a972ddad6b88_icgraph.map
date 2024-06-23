@@ -1,5 +1,7 @@
 <map id="zrtos_clist__init" name="zrtos_clist__init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="199,13,311,40"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="199,47,311,73"/>
 <area shape="rect" id="Node000002" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,29,151,29,151,24,183,24"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,49,151,43,152,38,184,44"/>
+<area shape="rect" id="Node000003" href="$spi_2spi_8h.html#a7a6e47bfdddf7584a637f7c5719adf1c" title=" " alt="" coords="5,72,151,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,76,152,82,151,77,183,71"/>
 </map>

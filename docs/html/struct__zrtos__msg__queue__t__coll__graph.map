@@ -1,0 +1,15 @@
+<map id="_zrtos_msg_queue_t" name="_zrtos_msg_queue_t">
+<area shape="rect" id="Node000001" title=" " alt="" coords="103,293,246,320"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__cbuffer__t.html" title=" " alt="" coords="12,203,126,229"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,240,115,267,150,290,147,295,112,271,85,243"/>
+<area shape="rect" id="Node000003" href="$struct__zrtos__list__t.html" title=" " alt="" coords="23,112,115,139"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,154,72,202,66,202,66,154"/>
+<area shape="rect" id="Node000004" href="$struct__zrtos__list__node__t.html" title=" " alt="" coords="5,5,133,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="72,47,72,112,66,112,66,47"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="150,9,159,19,151,28,134,31,133,26,149,23,154,19,146,13"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="198,112,265,139"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="216,153,201,177,189,203,179,253,177,293,171,293,174,252,184,202,196,174,211,150"/>
+<area shape="rect" id="Node000006" href="$struct__zrtos__msg__queue__header__t.html" title=" " alt="" coords="267,203,455,229"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="264,146,344,200,341,204,261,150"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="322,239,202,295,200,290,320,234"/>
+</map>

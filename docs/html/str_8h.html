@@ -103,16 +103,17 @@ $(function(){initNavTree('str_8h.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cast_8h_source.html">zrtos/cast.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mem_8h_source.html">zrtos/mem.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for str.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h__incl.svg" width="352" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h__incl.svg" width="362" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h__dep__incl.svg" width="102" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h__dep__incl.svg" width="168" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="str_8h_source.html">Go to the source code of this file.</a></p>
@@ -158,6 +159,8 @@ Functions</h2></td></tr>
 <tr class="separator:a94f2645c0c594c77acacede9a145ff11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1952f0c5784b3276bc6e0439f23d3fd0" id="r_a1952f0c5784b3276bc6e0439f23d3fd0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1952f0c5784b3276bc6e0439f23d3fd0">zrtos_str__tok_r</a> (char *s, const char *delim, char **save_ptr)</td></tr>
 <tr class="separator:a1952f0c5784b3276bc6e0439f23d3fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8c95d7c5e198a5fd0b41ffae7ecccb1" id="r_ac8c95d7c5e198a5fd0b41ffae7ecccb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8c95d7c5e198a5fd0b41ffae7ecccb1">zrtos_str__to_hex</a> (char *dest, void *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:ac8c95d7c5e198a5fd0b41ffae7ecccb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1e05bdf9f1c61d6f89b94ddfa18c2006" name="a1e05bdf9f1c61d6f89b94ddfa18c2006"></a>
@@ -172,7 +175,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00082">82</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00083">83</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
 
 </div>
 </div>
@@ -211,15 +214,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00032">32</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>                                   {</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">size_t</span> a_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(a);</div>
-<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">size_t</span> b_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(b);</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">int</span> ret = <a class="code hl_define" href="types_8h.html#a7c7329fa05fa56c3e9c0ddf095a9625a">ZRTOS_TYPES__CMP</a>(<span class="keywordtype">size_t</span>,a_len,b_len);</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> ret ? ret : <a class="code hl_function" href="mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem__cmp</a>(a,b,a_len);</div>
-<div class="line"><span class="lineno">   37</span>}</div>
-<div class="ttc" id="amem_8h_html_abc92c0f931688ddf8da31714fff6a8d3"><div class="ttname"><a href="mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem__cmp</a></div><div class="ttdeci">int zrtos_mem__cmp(void *str1, void *str2, size_t count)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00112">mem.h:112</a></div></div>
-<div class="ttc" id="astr_8h_html_a0bbbf024b181a2c7d5ec9056efb84743"><div class="ttname"><a href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a></div><div class="ttdeci">size_t zrtos_str__len(char *str)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00026">str.h:26</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00033">33</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>                                   {</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordtype">size_t</span> a_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(a);</div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordtype">size_t</span> b_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(b);</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordtype">int</span> ret = <a class="code hl_define" href="types_8h.html#a7c7329fa05fa56c3e9c0ddf095a9625a">ZRTOS_TYPES__CMP</a>(<span class="keywordtype">size_t</span>,a_len,b_len);</div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> ret ? ret : <a class="code hl_function" href="mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem__cmp</a>(a,b,a_len);</div>
+<div class="line"><span class="lineno">   38</span>}</div>
+<div class="ttc" id="amem_8h_html_abc92c0f931688ddf8da31714fff6a8d3"><div class="ttname"><a href="mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3">zrtos_mem__cmp</a></div><div class="ttdeci">int zrtos_mem__cmp(void *str1, void *str2, size_t count)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00113">mem.h:113</a></div></div>
+<div class="ttc" id="astr_8h_html_a0bbbf024b181a2c7d5ec9056efb84743"><div class="ttname"><a href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a></div><div class="ttdeci">size_t zrtos_str__len(char *str)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00027">str.h:27</a></div></div>
 <div class="ttc" id="atypes_8h_html_a7c7329fa05fa56c3e9c0ddf095a9625a"><div class="ttname"><a href="types_8h.html#a7c7329fa05fa56c3e9c0ddf095a9625a">ZRTOS_TYPES__CMP</a></div><div class="ttdeci">#define ZRTOS_TYPES__CMP(type, a_len, b_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00077">types.h:77</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -229,7 +232,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_a7e9860a6921e03fd013bbb20bf4a88b3_icgraph.svg" width="523" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_a7e9860a6921e03fd013bbb20bf4a88b3_icgraph.svg" width="728" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -253,26 +256,26 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00223">223</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  223</span>                                                     {</div>
-<div class="line"><span class="lineno">  224</span>    <span class="keyword">register</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *p, *spanp;</div>
-<div class="line"><span class="lineno">  225</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> c, sc;</div>
-<div class="line"><span class="lineno">  226</span> </div>
-<div class="line"><span class="lineno">  227</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  228</span><span class="comment">     * Stop as soon as we find any character from s2.  Note that there</span></div>
-<div class="line"><span class="lineno">  229</span><span class="comment">     * must be a NUL in s2; it suffices to stop when we find that, too.</span></div>
-<div class="line"><span class="lineno">  230</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">for</span> (p = s1;;) {</div>
-<div class="line"><span class="lineno">  232</span>        c = *p++;</div>
-<div class="line"><span class="lineno">  233</span>        spanp = s2;</div>
-<div class="line"><span class="lineno">  234</span>        <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  235</span>            <span class="keywordflow">if</span> ((sc = *spanp++) == c){</div>
-<div class="line"><span class="lineno">  236</span>                <span class="keywordflow">return</span> (p - 1 - s1);</div>
-<div class="line"><span class="lineno">  237</span>            }</div>
-<div class="line"><span class="lineno">  238</span>        } <span class="keywordflow">while</span> (sc != 0);</div>
-<div class="line"><span class="lineno">  239</span>    }</div>
-<div class="line"><span class="lineno">  240</span>    <span class="comment">/* NOTREACHED */</span></div>
-<div class="line"><span class="lineno">  241</span>}</div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00224">224</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>                                                     {</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keyword">register</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *p, *spanp;</div>
+<div class="line"><span class="lineno">  226</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> c, sc;</div>
+<div class="line"><span class="lineno">  227</span> </div>
+<div class="line"><span class="lineno">  228</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  229</span><span class="comment">     * Stop as soon as we find any character from s2.  Note that there</span></div>
+<div class="line"><span class="lineno">  230</span><span class="comment">     * must be a NUL in s2; it suffices to stop when we find that, too.</span></div>
+<div class="line"><span class="lineno">  231</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">for</span> (p = s1;;) {</div>
+<div class="line"><span class="lineno">  233</span>        c = *p++;</div>
+<div class="line"><span class="lineno">  234</span>        spanp = s2;</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  236</span>            <span class="keywordflow">if</span> ((sc = *spanp++) == c){</div>
+<div class="line"><span class="lineno">  237</span>                <span class="keywordflow">return</span> (p - 1 - s1);</div>
+<div class="line"><span class="lineno">  238</span>            }</div>
+<div class="line"><span class="lineno">  239</span>        } <span class="keywordflow">while</span> (sc != 0);</div>
+<div class="line"><span class="lineno">  240</span>    }</div>
+<div class="line"><span class="lineno">  241</span>    <span class="comment">/* NOTREACHED */</span></div>
+<div class="line"><span class="lineno">  242</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -300,19 +303,19 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00084">84</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>                                           {</div>
-<div class="line"><span class="lineno">   85</span>    int64_t c = (val * <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>) + .5;</div>
-<div class="line"><span class="lineno">   86</span>    int64_t d = c / <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>;</div>
-<div class="line"><span class="lineno">   87</span>    uint64_t f = c - (d * <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>);</div>
-<div class="line"><span class="lineno">   88</span> </div>
-<div class="line"><span class="lineno">   89</span>    str = <a class="code hl_function" href="#a0f900e1b206fe39cd1b56fb61c1802b6">zrtos_str__ltoa</a>(d,str,10);</div>
-<div class="line"><span class="lineno">   90</span>    *str++ = <span class="charliteral">&#39;.&#39;</span>;</div>
-<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(f,str,10);</div>
-<div class="line"><span class="lineno">   92</span>}</div>
-<div class="ttc" id="astr_8h_html_a0f900e1b206fe39cd1b56fb61c1802b6"><div class="ttname"><a href="#a0f900e1b206fe39cd1b56fb61c1802b6">zrtos_str__ltoa</a></div><div class="ttdeci">char * zrtos_str__ltoa(int64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00074">str.h:74</a></div></div>
-<div class="ttc" id="astr_8h_html_a1e05bdf9f1c61d6f89b94ddfa18c2006"><div class="ttname"><a href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a></div><div class="ttdeci">#define ZRTOS_STR__CFG_DTOA_PRECISION</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00082">str.h:82</a></div></div>
-<div class="ttc" id="astr_8h_html_aee390913b90918b21b4a44f1e07d7189"><div class="ttname"><a href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a></div><div class="ttdeci">char * zrtos_str__ultoa(uint64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00049">str.h:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00085">85</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>                                           {</div>
+<div class="line"><span class="lineno">   86</span>    int64_t c = (val * <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>) + .5;</div>
+<div class="line"><span class="lineno">   87</span>    int64_t d = c / <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>;</div>
+<div class="line"><span class="lineno">   88</span>    uint64_t f = c - (d * <a class="code hl_define" href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a>);</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    str = <a class="code hl_function" href="#a0f900e1b206fe39cd1b56fb61c1802b6">zrtos_str__ltoa</a>(d,str,10);</div>
+<div class="line"><span class="lineno">   91</span>    *str++ = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(f,str,10);</div>
+<div class="line"><span class="lineno">   93</span>}</div>
+<div class="ttc" id="astr_8h_html_a0f900e1b206fe39cd1b56fb61c1802b6"><div class="ttname"><a href="#a0f900e1b206fe39cd1b56fb61c1802b6">zrtos_str__ltoa</a></div><div class="ttdeci">char * zrtos_str__ltoa(int64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00075">str.h:75</a></div></div>
+<div class="ttc" id="astr_8h_html_a1e05bdf9f1c61d6f89b94ddfa18c2006"><div class="ttname"><a href="#a1e05bdf9f1c61d6f89b94ddfa18c2006">ZRTOS_STR__CFG_DTOA_PRECISION</a></div><div class="ttdeci">#define ZRTOS_STR__CFG_DTOA_PRECISION</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00083">str.h:83</a></div></div>
+<div class="ttc" id="astr_8h_html_aee390913b90918b21b4a44f1e07d7189"><div class="ttname"><a href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a></div><div class="ttdeci">char * zrtos_str__ultoa(uint64_t value, char *str, int radix)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00050">str.h:50</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -341,12 +344,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00026">26</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>                                {</div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span> *tmp = str+1;</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">while</span>(*str++){}</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(str,tmp);</div>
-<div class="line"><span class="lineno">   30</span>}</div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00027">27</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                                {</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">char</span> *tmp = str+1;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span>(*str++){}</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(str,tmp);</div>
+<div class="line"><span class="lineno">   31</span>}</div>
 <div class="ttc" id="atypes_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00040">types.h:40</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -356,7 +359,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_a0bbbf024b181a2c7d5ec9056efb84743_icgraph.svg" width="696" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_a0bbbf024b181a2c7d5ec9056efb84743_icgraph.svg" width="902" height="163"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -385,14 +388,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00074">74</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                          {</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span>(value &lt; 0){</div>
-<div class="line"><span class="lineno">   76</span>        value = -value;</div>
-<div class="line"><span class="lineno">   77</span>        *str++ = <span class="charliteral">&#39;-&#39;</span>;</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(value,str,radix);</div>
-<div class="line"><span class="lineno">   80</span>}</div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00075">75</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                          {</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span>(value &lt; 0){</div>
+<div class="line"><span class="lineno">   77</span>        value = -value;</div>
+<div class="line"><span class="lineno">   78</span>        *str++ = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(value,str,radix);</div>
+<div class="line"><span class="lineno">   81</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -421,11 +424,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00039">39</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                  {</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_function" href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a>(str,<a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(str));</div>
-<div class="line"><span class="lineno">   41</span>}</div>
-<div class="ttc" id="amem_8h_html_a3d701c04fc9475a1e6cd8d5b14d6534b"><div class="ttname"><a href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a></div><div class="ttdeci">void zrtos_mem__reverse(void *dest, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00124">mem.h:124</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00040">40</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                  {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a>(str,<a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(str));</div>
+<div class="line"><span class="lineno">   42</span>}</div>
+<div class="ttc" id="amem_8h_html_a3d701c04fc9475a1e6cd8d5b14d6534b"><div class="ttname"><a href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a></div><div class="ttdeci">void zrtos_mem__reverse(void *dest, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00126">mem.h:126</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -453,27 +456,80 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00206">206</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  206</span>                                                     {</div>
-<div class="line"><span class="lineno">  207</span>    <span class="keyword">register</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *p = s1, *spanp;</div>
-<div class="line"><span class="lineno">  208</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> c, sc;</div>
-<div class="line"><span class="lineno">  209</span> </div>
-<div class="line"><span class="lineno">  210</span>    <span class="comment">/*</span></div>
-<div class="line"><span class="lineno">  211</span><span class="comment">     * Skip any characters in s2, excluding the terminating \0.</span></div>
-<div class="line"><span class="lineno">  212</span><span class="comment">     */</span></div>
-<div class="line"><span class="lineno">  213</span>cont:</div>
-<div class="line"><span class="lineno">  214</span>    c = *p++;</div>
-<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">for</span> (spanp = s2; (sc = *spanp++) != 0;){</div>
-<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">if</span> (sc == c){</div>
-<div class="line"><span class="lineno">  217</span>            <span class="keywordflow">goto</span> cont;</div>
-<div class="line"><span class="lineno">  218</span>        }</div>
-<div class="line"><span class="lineno">  219</span>    }</div>
-<div class="line"><span class="lineno">  220</span>    <span class="keywordflow">return</span> (p - 1 - s1);</div>
-<div class="line"><span class="lineno">  221</span>}</div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00207">207</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span>                                                     {</div>
+<div class="line"><span class="lineno">  208</span>    <span class="keyword">register</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *p = s1, *spanp;</div>
+<div class="line"><span class="lineno">  209</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> c, sc;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">/*</span></div>
+<div class="line"><span class="lineno">  212</span><span class="comment">     * Skip any characters in s2, excluding the terminating \0.</span></div>
+<div class="line"><span class="lineno">  213</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  214</span>cont:</div>
+<div class="line"><span class="lineno">  215</span>    c = *p++;</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">for</span> (spanp = s2; (sc = *spanp++) != 0;){</div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordflow">if</span> (sc == c){</div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">goto</span> cont;</div>
+<div class="line"><span class="lineno">  219</span>        }</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>    <span class="keywordflow">return</span> (p - 1 - s1);</div>
+<div class="line"><span class="lineno">  222</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_a449cee93b0e54bd698d6c14d8ad83957_icgraph.svg" width="683" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ac8c95d7c5e198a5fd0b41ffae7ecccb1" name="ac8c95d7c5e198a5fd0b41ffae7ecccb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8c95d7c5e198a5fd0b41ffae7ecccb1">&#9670;&#160;</a></span>zrtos_str__to_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_str__to_hex </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00283">283</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  283</span>                                                         {</div>
+<div class="line"><span class="lineno">  284</span>    uint8_t *tmp = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,src);</div>
+<div class="line"><span class="lineno">  285</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  286</span>        uint8_t c = *tmp++;</div>
+<div class="line"><span class="lineno">  287</span>        uint8_t l = (c &amp; 0xF) + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  288</span>        uint8_t h = (c &gt;&gt; 4) + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  289</span> </div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">if</span>(h &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
+<div class="line"><span class="lineno">  291</span>            h += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<div class="line"><span class="lineno">  292</span>        }</div>
+<div class="line"><span class="lineno">  293</span>        <span class="keywordflow">if</span>(l &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
+<div class="line"><span class="lineno">  294</span>            l += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<div class="line"><span class="lineno">  295</span>        }</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>        *dest++ = h;</div>
+<div class="line"><span class="lineno">  298</span>        *dest++ = l;</div>
+<div class="line"><span class="lineno">  299</span>    }</div>
+<div class="line"><span class="lineno">  300</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(tmp,src)*2;</div>
+<div class="line"><span class="lineno">  301</span>}</div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00017">cast.h:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="str_8h_ac8c95d7c5e198a5fd0b41ffae7ecccb1_cgraph.svg" width="328" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -502,37 +558,37 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00253">253</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  253</span>                                                                   {</div>
-<div class="line"><span class="lineno">  254</span>  <span class="keywordtype">char</span> *end;</div>
-<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">if</span> (s == NULL)</div>
-<div class="line"><span class="lineno">  256</span>    s = *save_ptr;</div>
-<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><span class="lineno">  258</span>    {</div>
-<div class="line"><span class="lineno">  259</span>      *save_ptr = s;</div>
-<div class="line"><span class="lineno">  260</span>      <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  261</span>    }</div>
-<div class="line"><span class="lineno">  262</span>  <span class="comment">/* Scan leading delimiters.  */</span></div>
-<div class="line"><span class="lineno">  263</span>  s += <a class="code hl_function" href="#a449cee93b0e54bd698d6c14d8ad83957">zrtos_str__spn</a>(s, delim);</div>
-<div class="line"><span class="lineno">  264</span>  <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><span class="lineno">  265</span>    {</div>
-<div class="line"><span class="lineno">  266</span>      *save_ptr = s;</div>
-<div class="line"><span class="lineno">  267</span>      <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  268</span>    }</div>
-<div class="line"><span class="lineno">  269</span>  <span class="comment">/* Find the end of the token.  */</span></div>
-<div class="line"><span class="lineno">  270</span>  end = s + <a class="code hl_function" href="#a94f2645c0c594c77acacede9a145ff11">zrtos_str__cspn</a>(s, delim);</div>
-<div class="line"><span class="lineno">  271</span>  <span class="keywordflow">if</span> (*end == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><span class="lineno">  272</span>    {</div>
-<div class="line"><span class="lineno">  273</span>      *save_ptr = end;</div>
-<div class="line"><span class="lineno">  274</span>      <span class="keywordflow">return</span> s;</div>
-<div class="line"><span class="lineno">  275</span>    }</div>
-<div class="line"><span class="lineno">  276</span>  <span class="comment">/* Terminate the token and make *SAVE_PTR point past it.  */</span></div>
-<div class="line"><span class="lineno">  277</span>  *end = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><span class="lineno">  278</span>  *save_ptr = end + 1;</div>
-<div class="line"><span class="lineno">  279</span>  <span class="keywordflow">return</span> s;</div>
-<div class="line"><span class="lineno">  280</span>}</div>
-<div class="ttc" id="astr_8h_html_a449cee93b0e54bd698d6c14d8ad83957"><div class="ttname"><a href="#a449cee93b0e54bd698d6c14d8ad83957">zrtos_str__spn</a></div><div class="ttdeci">size_t zrtos_str__spn(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00206">str.h:206</a></div></div>
-<div class="ttc" id="astr_8h_html_a94f2645c0c594c77acacede9a145ff11"><div class="ttname"><a href="#a94f2645c0c594c77acacede9a145ff11">zrtos_str__cspn</a></div><div class="ttdeci">size_t zrtos_str__cspn(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00223">str.h:223</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00254">254</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>                                                                   {</div>
+<div class="line"><span class="lineno">  255</span>  <span class="keywordtype">char</span> *end;</div>
+<div class="line"><span class="lineno">  256</span>  <span class="keywordflow">if</span> (s == NULL)</div>
+<div class="line"><span class="lineno">  257</span>    s = *save_ptr;</div>
+<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">  259</span>    {</div>
+<div class="line"><span class="lineno">  260</span>      *save_ptr = s;</div>
+<div class="line"><span class="lineno">  261</span>      <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  262</span>    }</div>
+<div class="line"><span class="lineno">  263</span>  <span class="comment">/* Scan leading delimiters.  */</span></div>
+<div class="line"><span class="lineno">  264</span>  s += <a class="code hl_function" href="#a449cee93b0e54bd698d6c14d8ad83957">zrtos_str__spn</a>(s, delim);</div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">if</span> (*s == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">  266</span>    {</div>
+<div class="line"><span class="lineno">  267</span>      *save_ptr = s;</div>
+<div class="line"><span class="lineno">  268</span>      <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span>  <span class="comment">/* Find the end of the token.  */</span></div>
+<div class="line"><span class="lineno">  271</span>  end = s + <a class="code hl_function" href="#a94f2645c0c594c77acacede9a145ff11">zrtos_str__cspn</a>(s, delim);</div>
+<div class="line"><span class="lineno">  272</span>  <span class="keywordflow">if</span> (*end == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><span class="lineno">  273</span>    {</div>
+<div class="line"><span class="lineno">  274</span>      *save_ptr = end;</div>
+<div class="line"><span class="lineno">  275</span>      <span class="keywordflow">return</span> s;</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
+<div class="line"><span class="lineno">  277</span>  <span class="comment">/* Terminate the token and make *SAVE_PTR point past it.  */</span></div>
+<div class="line"><span class="lineno">  278</span>  *end = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><span class="lineno">  279</span>  *save_ptr = end + 1;</div>
+<div class="line"><span class="lineno">  280</span>  <span class="keywordflow">return</span> s;</div>
+<div class="line"><span class="lineno">  281</span>}</div>
+<div class="ttc" id="astr_8h_html_a449cee93b0e54bd698d6c14d8ad83957"><div class="ttname"><a href="#a449cee93b0e54bd698d6c14d8ad83957">zrtos_str__spn</a></div><div class="ttdeci">size_t zrtos_str__spn(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00207">str.h:207</a></div></div>
+<div class="ttc" id="astr_8h_html_a94f2645c0c594c77acacede9a145ff11"><div class="ttname"><a href="#a94f2645c0c594c77acacede9a145ff11">zrtos_str__cspn</a></div><div class="ttdeci">size_t zrtos_str__cspn(const char *s1, const char *s2)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00224">str.h:224</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -579,31 +635,31 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00049">49</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                            {</div>
-<div class="line"><span class="lineno">   50</span>    <span class="keywordtype">char</span> *tp = str;</div>
-<div class="line"><span class="lineno">   51</span>    uint64_t i;</div>
-<div class="line"><span class="lineno">   52</span>    uint64_t v = value;</div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">while</span>(v){</div>
-<div class="line"><span class="lineno">   55</span>        i = v % radix;</div>
-<div class="line"><span class="lineno">   56</span>        v = v / radix;</div>
-<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span>(i &lt; 10){</div>
-<div class="line"><span class="lineno">   58</span>            *tp++ = i + <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno">   59</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   60</span>            *tp++ = i + <span class="charliteral">&#39;a&#39;</span> - 10;</div>
-<div class="line"><span class="lineno">   61</span>        }</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>    <a class="code hl_function" href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a>(</div>
-<div class="line"><span class="lineno">   65</span>         str</div>
-<div class="line"><span class="lineno">   66</span>        ,<a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(tp,str)</div>
-<div class="line"><span class="lineno">   67</span>    );</div>
-<div class="line"><span class="lineno">   68</span> </div>
-<div class="line"><span class="lineno">   69</span>    *tp = 0;</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">return</span> tp;</div>
-<div class="line"><span class="lineno">   72</span>}</div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00050">50</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                                            {</div>
+<div class="line"><span class="lineno">   51</span>    <span class="keywordtype">char</span> *tp = str;</div>
+<div class="line"><span class="lineno">   52</span>    uint64_t i;</div>
+<div class="line"><span class="lineno">   53</span>    uint64_t v = value;</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">while</span>(v){</div>
+<div class="line"><span class="lineno">   56</span>        i = v % radix;</div>
+<div class="line"><span class="lineno">   57</span>        v = v / radix;</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span>(i &lt; 10){</div>
+<div class="line"><span class="lineno">   59</span>            *tp++ = i + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">   60</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   61</span>            *tp++ = i + <span class="charliteral">&#39;a&#39;</span> - 10;</div>
+<div class="line"><span class="lineno">   62</span>        }</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="mem_8h.html#a3d701c04fc9475a1e6cd8d5b14d6534b">zrtos_mem__reverse</a>(</div>
+<div class="line"><span class="lineno">   66</span>         str</div>
+<div class="line"><span class="lineno">   67</span>        ,<a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(tp,str)</div>
+<div class="line"><span class="lineno">   68</span>    );</div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   70</span>    *tp = 0;</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> tp;</div>
+<div class="line"><span class="lineno">   73</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -646,28 +702,28 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00189">189</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>                                                                    {</div>
-<div class="line"><span class="lineno">  190</span>    va_list arg;</div>
-<div class="line"><span class="lineno">  191</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> args = {</div>
-<div class="line"><span class="lineno">  192</span>         .<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a> = dest</div>
-<div class="line"><span class="lineno">  193</span>        ,.len = len</div>
-<div class="line"><span class="lineno">  194</span>    };</div>
-<div class="line"><span class="lineno">  195</span>    va_start(arg, fmt);</div>
-<div class="line"><span class="lineno">  196</span>    <a class="code hl_function" href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a>(</div>
-<div class="line"><span class="lineno">  197</span>         <a class="code hl_function" href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div>
-<div class="line"><span class="lineno">  198</span>        ,&amp;args</div>
-<div class="line"><span class="lineno">  199</span>        ,fmt</div>
-<div class="line"><span class="lineno">  200</span>        ,arg</div>
-<div class="line"><span class="lineno">  201</span>    );</div>
-<div class="line"><span class="lineno">  202</span>    va_end(arg);</div>
-<div class="line"><span class="lineno">  203</span>    <span class="keywordflow">return</span> args.<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>;</div>
-<div class="line"><span class="lineno">  204</span>}</div>
-<div class="ttc" id="astr_8h_html_a253e58778bc61b2ca7b51d761ea914b4"><div class="ttname"><a href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00094">str.h:94</a></div></div>
-<div class="ttc" id="astr_8h_html_a61cc952b30f32a264a5ba3c3749f7646"><div class="ttname"><a href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_cb(void *args_, char ch)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00181">str.h:181</a></div></div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html">_zrtos_str__vsnprintf_cb_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00020">str.h:20</a></div></div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_a3a6aee5791c5a29d7562e06881136af7"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">_zrtos_str__vsnprintf_cb_args_t::dest</a></div><div class="ttdeci">char * dest</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00021">str.h:21</a></div></div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_ac93661e7158589be8164eef3a95bf391"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">_zrtos_str__vsnprintf_cb_args_t::ret</a></div><div class="ttdeci">size_t ret</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00023">str.h:23</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00190">190</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>                                                                    {</div>
+<div class="line"><span class="lineno">  191</span>    va_list arg;</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> args = {</div>
+<div class="line"><span class="lineno">  193</span>         .<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a> = dest</div>
+<div class="line"><span class="lineno">  194</span>        ,.len = len</div>
+<div class="line"><span class="lineno">  195</span>    };</div>
+<div class="line"><span class="lineno">  196</span>    va_start(arg, fmt);</div>
+<div class="line"><span class="lineno">  197</span>    <a class="code hl_function" href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a>(</div>
+<div class="line"><span class="lineno">  198</span>         <a class="code hl_function" href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div>
+<div class="line"><span class="lineno">  199</span>        ,&amp;args</div>
+<div class="line"><span class="lineno">  200</span>        ,fmt</div>
+<div class="line"><span class="lineno">  201</span>        ,arg</div>
+<div class="line"><span class="lineno">  202</span>    );</div>
+<div class="line"><span class="lineno">  203</span>    va_end(arg);</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">return</span> args.<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>;</div>
+<div class="line"><span class="lineno">  205</span>}</div>
+<div class="ttc" id="astr_8h_html_a253e58778bc61b2ca7b51d761ea914b4"><div class="ttname"><a href="#a253e58778bc61b2ca7b51d761ea914b4">zrtos_str__vsnprintf_internal</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_internal(void(*putc)(void *args, char c), void *putc_args, char const *fmt, va_list arg)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00095">str.h:95</a></div></div>
+<div class="ttc" id="astr_8h_html_a61cc952b30f32a264a5ba3c3749f7646"><div class="ttname"><a href="#a61cc952b30f32a264a5ba3c3749f7646">zrtos_str__vsnprintf_cb</a></div><div class="ttdeci">static void zrtos_str__vsnprintf_cb(void *args_, char ch)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00182">str.h:182</a></div></div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html">_zrtos_str__vsnprintf_cb_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00021">str.h:21</a></div></div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_a3a6aee5791c5a29d7562e06881136af7"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">_zrtos_str__vsnprintf_cb_args_t::dest</a></div><div class="ttdeci">char * dest</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00022">str.h:22</a></div></div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_ac93661e7158589be8164eef3a95bf391"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">_zrtos_str__vsnprintf_cb_args_t::ret</a></div><div class="ttdeci">size_t ret</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00024">str.h:24</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -703,15 +759,15 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00181">181</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  181</span>                                                        {</div>
-<div class="line"><span class="lineno">  182</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> *args = (<a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a>*)args_;</div>
-<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">if</span>(args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">len</a>--){</div>
-<div class="line"><span class="lineno">  184</span>        *args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a>++ = ch;</div>
-<div class="line"><span class="lineno">  185</span>    }</div>
-<div class="line"><span class="lineno">  186</span>    args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>++;</div>
-<div class="line"><span class="lineno">  187</span>}</div>
-<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_afad63d6f731f92e95b299f922da3de07"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">_zrtos_str__vsnprintf_cb_args_t::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00022">str.h:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00182">182</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  182</span>                                                        {</div>
+<div class="line"><span class="lineno">  183</span>    <a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a> *args = (<a class="code hl_struct" href="struct__zrtos__str____vsnprintf__cb__args__t.html">zrtos_str__vsnprintf_cb_args_t</a>*)args_;</div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">if</span>(args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">len</a>--){</div>
+<div class="line"><span class="lineno">  185</span>        *args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#a3a6aee5791c5a29d7562e06881136af7">dest</a>++ = ch;</div>
+<div class="line"><span class="lineno">  186</span>    }</div>
+<div class="line"><span class="lineno">  187</span>    args-&gt;<a class="code hl_variable" href="struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391">ret</a>++;</div>
+<div class="line"><span class="lineno">  188</span>}</div>
+<div class="ttc" id="astruct__zrtos__str____vsnprintf__cb__args__t_html_afad63d6f731f92e95b299f922da3de07"><div class="ttname"><a href="struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07">_zrtos_str__vsnprintf_cb_args_t::len</a></div><div class="ttdeci">size_t len</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00023">str.h:23</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -757,89 +813,89 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00094">94</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   99</span> {</div>
-<div class="line"><span class="lineno">  100</span>    <span class="keywordtype">char</span> ch;</div>
-<div class="line"><span class="lineno">  101</span>    uint8_t out_mod;</div>
-<div class="line"><span class="lineno">  102</span>    <span class="keywordtype">char</span> *out_str;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">size_t</span> out_len;</div>
-<div class="line"><span class="lineno">  104</span>    uint64_t out_num;</div>
-<div class="line"><span class="lineno">  105</span>    uint8_t out_radix;</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordtype">char</span> buffer[64];</div>
-<div class="line"><span class="lineno">  107</span> </div>
-<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">while</span>((ch = *fmt++)){</div>
-<div class="line"><span class="lineno">  109</span>        out_mod = 0x1;</div>
-<div class="line"><span class="lineno">  110</span>        <span class="keywordflow">if</span>(ch == <span class="charliteral">&#39;%&#39;</span>){</div>
-<div class="line"><span class="lineno">  111</span>            <span class="keywordflow">switch</span>((ch = *fmt++)){</div>
-<div class="line"><span class="lineno">  112</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:</div>
-<div class="line"><span class="lineno">  113</span>                    out_mod = 0x1;</div>
-<div class="line"><span class="lineno">  114</span>                    ch = va_arg(arg,<span class="keywordtype">int</span>);</div>
-<div class="line"><span class="lineno">  115</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  116</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
-<div class="line"><span class="lineno">  117</span>                    out_mod = 0x4 | 0x2;</div>
-<div class="line"><span class="lineno">  118</span>                    out_str = va_arg(arg,<span class="keywordtype">char</span>*);</div>
-<div class="line"><span class="lineno">  119</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
-<div class="line"><span class="lineno">  121</span>                    out_mod = 0x4;</div>
-<div class="line"><span class="lineno">  122</span>                    out_len = va_arg(arg,<span class="keywordtype">size_t</span>);</div>
-<div class="line"><span class="lineno">  123</span>                    out_str = va_arg(arg,<span class="keywordtype">char</span>*);</div>
-<div class="line"><span class="lineno">  124</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:{</div>
-<div class="line"><span class="lineno">  126</span>                    <span class="keywordtype">int</span> tmp = va_arg(arg, <span class="keywordtype">int</span>);</div>
-<div class="line"><span class="lineno">  127</span>                    out_num = (uint64_t)tmp;</div>
-<div class="line"><span class="lineno">  128</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
-<div class="line"><span class="lineno">  129</span>                    out_radix = 10;</div>
-<div class="line"><span class="lineno">  130</span>                    <span class="keywordflow">if</span>(tmp &lt; 0){</div>
-<div class="line"><span class="lineno">  131</span>                        ch = <span class="charliteral">&#39;-&#39;</span>;</div>
-<div class="line"><span class="lineno">  132</span>                        out_mod |= 0x1;</div>
-<div class="line"><span class="lineno">  133</span>                    }</div>
-<div class="line"><span class="lineno">  134</span>                }</div>
-<div class="line"><span class="lineno">  135</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;u&#39;</span>:{</div>
-<div class="line"><span class="lineno">  137</span>                    out_num = (uint64_t)va_arg(arg, <span class="keywordtype">int</span>);</div>
-<div class="line"><span class="lineno">  138</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
-<div class="line"><span class="lineno">  139</span>                    out_radix = 10;</div>
-<div class="line"><span class="lineno">  140</span>                }</div>
-<div class="line"><span class="lineno">  141</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  142</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:{</div>
-<div class="line"><span class="lineno">  143</span>                    <span class="keywordtype">double</span> out_double = va_arg(arg, <span class="keywordtype">double</span>);</div>
-<div class="line"><span class="lineno">  144</span>                    <a class="code hl_function" href="#adcf77443fdcd0ba7a3a37438f6ee3855">zrtos_str__dtoa</a>(out_double,buffer);</div>
-<div class="line"><span class="lineno">  145</span>                    out_mod = 0x4 | 0x2;</div>
-<div class="line"><span class="lineno">  146</span>                    out_str = buffer;</div>
-<div class="line"><span class="lineno">  147</span>                }</div>
-<div class="line"><span class="lineno">  148</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  149</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
-<div class="line"><span class="lineno">  150</span>                    out_num = (uint64_t)va_arg(arg,uintptr_t);</div>
-<div class="line"><span class="lineno">  151</span>                    <span class="keywordflow">goto</span> L_PRINT_HEX;</div>
-<div class="line"><span class="lineno">  152</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:</div>
-<div class="line"><span class="lineno">  153</span>                    out_num = va_arg(arg,uint64_t);</div>
-<div class="line"><span class="lineno">  154</span>L_PRINT_HEX:</div>
-<div class="line"><span class="lineno">  155</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
-<div class="line"><span class="lineno">  156</span>                    out_radix = 16;</div>
-<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  158</span>                <span class="keywordflow">case</span> 0:</div>
-<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  160</span>            }</div>
-<div class="line"><span class="lineno">  161</span>        }</div>
-<div class="line"><span class="lineno">  162</span> </div>
-<div class="line"><span class="lineno">  163</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x1){</div>
-<div class="line"><span class="lineno">  164</span>            putc(putc_args,ch);</div>
-<div class="line"><span class="lineno">  165</span>        }</div>
-<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x8){</div>
-<div class="line"><span class="lineno">  167</span>            <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(out_num, buffer, out_radix);</div>
-<div class="line"><span class="lineno">  168</span>            out_str = buffer;</div>
-<div class="line"><span class="lineno">  169</span>        }</div>
-<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x2){</div>
-<div class="line"><span class="lineno">  171</span>            out_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(out_str);</div>
-<div class="line"><span class="lineno">  172</span>        }</div>
-<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x4){</div>
-<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">while</span>(out_len--){</div>
-<div class="line"><span class="lineno">  175</span>                putc(putc_args,*out_str++);</div>
-<div class="line"><span class="lineno">  176</span>            }</div>
-<div class="line"><span class="lineno">  177</span>        }</div>
-<div class="line"><span class="lineno">  178</span>    }</div>
-<div class="line"><span class="lineno">  179</span>}</div>
-<div class="ttc" id="astr_8h_html_adcf77443fdcd0ba7a3a37438f6ee3855"><div class="ttname"><a href="#adcf77443fdcd0ba7a3a37438f6ee3855">zrtos_str__dtoa</a></div><div class="ttdeci">char * zrtos_str__dtoa(double val, char *str)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00084">str.h:84</a></div></div>
+<p class="definition">Definition at line <a class="el" href="str_8h_source.html#l00095">95</a> of file <a class="el" href="str_8h_source.html">str.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span> {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordtype">char</span> ch;</div>
+<div class="line"><span class="lineno">  102</span>    uint8_t out_mod;</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordtype">char</span> *out_str;</div>
+<div class="line"><span class="lineno">  104</span>    <span class="keywordtype">size_t</span> out_len;</div>
+<div class="line"><span class="lineno">  105</span>    uint64_t out_num;</div>
+<div class="line"><span class="lineno">  106</span>    uint8_t out_radix;</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordtype">char</span> buffer[64];</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">while</span>((ch = *fmt++)){</div>
+<div class="line"><span class="lineno">  110</span>        out_mod = 0x1;</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">if</span>(ch == <span class="charliteral">&#39;%&#39;</span>){</div>
+<div class="line"><span class="lineno">  112</span>            <span class="keywordflow">switch</span>((ch = *fmt++)){</div>
+<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span>:</div>
+<div class="line"><span class="lineno">  114</span>                    out_mod = 0x1;</div>
+<div class="line"><span class="lineno">  115</span>                    ch = va_arg(arg,<span class="keywordtype">int</span>);</div>
+<div class="line"><span class="lineno">  116</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  117</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;s&#39;</span>:</div>
+<div class="line"><span class="lineno">  118</span>                    out_mod = 0x4 | 0x2;</div>
+<div class="line"><span class="lineno">  119</span>                    out_str = va_arg(arg,<span class="keywordtype">char</span>*);</div>
+<div class="line"><span class="lineno">  120</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  121</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;S&#39;</span>:</div>
+<div class="line"><span class="lineno">  122</span>                    out_mod = 0x4;</div>
+<div class="line"><span class="lineno">  123</span>                    out_len = va_arg(arg,<span class="keywordtype">size_t</span>);</div>
+<div class="line"><span class="lineno">  124</span>                    out_str = va_arg(arg,<span class="keywordtype">char</span>*);</div>
+<div class="line"><span class="lineno">  125</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  126</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;d&#39;</span>:{</div>
+<div class="line"><span class="lineno">  127</span>                    <span class="keywordtype">int</span> tmp = va_arg(arg, <span class="keywordtype">int</span>);</div>
+<div class="line"><span class="lineno">  128</span>                    out_num = (uint64_t)tmp;</div>
+<div class="line"><span class="lineno">  129</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
+<div class="line"><span class="lineno">  130</span>                    out_radix = 10;</div>
+<div class="line"><span class="lineno">  131</span>                    <span class="keywordflow">if</span>(tmp &lt; 0){</div>
+<div class="line"><span class="lineno">  132</span>                        ch = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">  133</span>                        out_mod |= 0x1;</div>
+<div class="line"><span class="lineno">  134</span>                    }</div>
+<div class="line"><span class="lineno">  135</span>                }</div>
+<div class="line"><span class="lineno">  136</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;u&#39;</span>:{</div>
+<div class="line"><span class="lineno">  138</span>                    out_num = (uint64_t)va_arg(arg, <span class="keywordtype">int</span>);</div>
+<div class="line"><span class="lineno">  139</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
+<div class="line"><span class="lineno">  140</span>                    out_radix = 10;</div>
+<div class="line"><span class="lineno">  141</span>                }</div>
+<div class="line"><span class="lineno">  142</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;f&#39;</span>:{</div>
+<div class="line"><span class="lineno">  144</span>                    <span class="keywordtype">double</span> out_double = va_arg(arg, <span class="keywordtype">double</span>);</div>
+<div class="line"><span class="lineno">  145</span>                    <a class="code hl_function" href="#adcf77443fdcd0ba7a3a37438f6ee3855">zrtos_str__dtoa</a>(out_double,buffer);</div>
+<div class="line"><span class="lineno">  146</span>                    out_mod = 0x4 | 0x2;</div>
+<div class="line"><span class="lineno">  147</span>                    out_str = buffer;</div>
+<div class="line"><span class="lineno">  148</span>                }</div>
+<div class="line"><span class="lineno">  149</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  150</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;p&#39;</span>:</div>
+<div class="line"><span class="lineno">  151</span>                    out_num = (uint64_t)va_arg(arg,uintptr_t);</div>
+<div class="line"><span class="lineno">  152</span>                    <span class="keywordflow">goto</span> L_PRINT_HEX;</div>
+<div class="line"><span class="lineno">  153</span>                <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:</div>
+<div class="line"><span class="lineno">  154</span>                    out_num = va_arg(arg,uint64_t);</div>
+<div class="line"><span class="lineno">  155</span>L_PRINT_HEX:</div>
+<div class="line"><span class="lineno">  156</span>                    out_mod = 0x8 | 0x4 | 0x2;</div>
+<div class="line"><span class="lineno">  157</span>                    out_radix = 16;</div>
+<div class="line"><span class="lineno">  158</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  160</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  161</span>            }</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x1){</div>
+<div class="line"><span class="lineno">  165</span>            putc(putc_args,ch);</div>
+<div class="line"><span class="lineno">  166</span>        }</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x8){</div>
+<div class="line"><span class="lineno">  168</span>            <a class="code hl_function" href="#aee390913b90918b21b4a44f1e07d7189">zrtos_str__ultoa</a>(out_num, buffer, out_radix);</div>
+<div class="line"><span class="lineno">  169</span>            out_str = buffer;</div>
+<div class="line"><span class="lineno">  170</span>        }</div>
+<div class="line"><span class="lineno">  171</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x2){</div>
+<div class="line"><span class="lineno">  172</span>            out_len = <a class="code hl_function" href="#a0bbbf024b181a2c7d5ec9056efb84743">zrtos_str__len</a>(out_str);</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">if</span>(out_mod &amp; 0x4){</div>
+<div class="line"><span class="lineno">  175</span>            <span class="keywordflow">while</span>(out_len--){</div>
+<div class="line"><span class="lineno">  176</span>                putc(putc_args,*out_str++);</div>
+<div class="line"><span class="lineno">  177</span>            }</div>
+<div class="line"><span class="lineno">  178</span>        }</div>
+<div class="line"><span class="lineno">  179</span>    }</div>
+<div class="line"><span class="lineno">  180</span>}</div>
+<div class="ttc" id="astr_8h_html_adcf77443fdcd0ba7a3a37438f6ee3855"><div class="ttname"><a href="#adcf77443fdcd0ba7a3a37438f6ee3855">zrtos_str__dtoa</a></div><div class="ttdeci">char * zrtos_str__dtoa(double val, char *str)</div><div class="ttdef"><b>Definition</b> <a href="str_8h_source.html#l00085">str.h:85</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

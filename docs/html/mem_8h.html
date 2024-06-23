@@ -99,6 +99,7 @@ $(function(){initNavTree('mem_8h.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cast_8h_source.html">zrtos/cast.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mem.h:</div>
 <div class="dyncontent">
@@ -107,7 +108,7 @@ Include dependency graph for mem.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h__dep__incl.svg" width="738" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h__dep__incl.svg" width="824" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="mem_8h_source.html">Go to the source code of this file.</a></p>
@@ -138,6 +139,8 @@ Functions</h2></td></tr>
 <tr class="separator:aab5ba8aca3f57d2f28ec20b9ae5dceaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2512a95e0df7c3af1ce69001c256ee3" id="r_af2512a95e0df7c3af1ce69001c256ee3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2512a95e0df7c3af1ce69001c256ee3">zrtos_mem__sort</a> (void *base, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> nel, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> width, int(*comp)(const void *, const void *))</td></tr>
 <tr class="separator:af2512a95e0df7c3af1ce69001c256ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771efa36ca068866859a039d8782dad6" id="r_a771efa36ca068866859a039d8782dad6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a771efa36ca068866859a039d8782dad6">zrtos_mem__from_hex</a> (void *dest, char *src, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:a771efa36ca068866859a039d8782dad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="abc92c0f931688ddf8da31714fff6a8d3" name="abc92c0f931688ddf8da31714fff6a8d3"></a>
@@ -164,22 +167,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00112">112</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span>                                                        {</div>
-<div class="line"><span class="lineno">  113</span>    uint8_t *s1 = (uint8_t*)str1;</div>
-<div class="line"><span class="lineno">  114</span>    uint8_t *s2 = (uint8_t*)str2;</div>
-<div class="line"><span class="lineno">  115</span> </div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span>(count-- &gt; 0){</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">if</span>(*s1++ != *s2++){</div>
-<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">return</span> s1[-1] &lt; s2[-1] ? -1 : 1;</div>
-<div class="line"><span class="lineno">  119</span>        }</div>
-<div class="line"><span class="lineno">  120</span>    }</div>
-<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  122</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00113">113</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  113</span>                                                        {</div>
+<div class="line"><span class="lineno">  114</span>    uint8_t *s1 = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,str1);</div>
+<div class="line"><span class="lineno">  115</span>    uint8_t *s2 = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,str2);</div>
+<div class="line"><span class="lineno">  116</span> </div>
+<div class="line"><span class="lineno">  117</span>    <span class="keywordflow">while</span>(count-- &gt; 0){</div>
+<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">if</span>(*s1++ != *s2++){</div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">return</span> s1[-1] &lt; s2[-1] ? -1 : 1;</div>
+<div class="line"><span class="lineno">  120</span>        }</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span> </div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  124</span>}</div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00017">cast.h:17</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_abc92c0f931688ddf8da31714fff6a8d3_icgraph.svg" width="696" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_abc92c0f931688ddf8da31714fff6a8d3_icgraph.svg" width="902" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -208,11 +213,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00104">104</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span> {</div>
-<div class="line"><span class="lineno">  109</span>    <a class="code hl_function" href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a>(dest,src,length);</div>
-<div class="line"><span class="lineno">  110</span>}</div>
-<div class="ttc" id="amem_8h_html_a9054cc3824c6ffdaf4ed24fde2f80f32"><div class="ttname"><a href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a></div><div class="ttdeci">void zrtos_mem__move_left_overlapping(void *dest, void *src, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00091">mem.h:91</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00105">105</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span> {</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_function" href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a>(dest,src,length);</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="amem_8h_html_a9054cc3824c6ffdaf4ed24fde2f80f32"><div class="ttname"><a href="#a9054cc3824c6ffdaf4ed24fde2f80f32">zrtos_mem__move_left_overlapping</a></div><div class="ttdeci">void zrtos_mem__move_left_overlapping(void *dest, void *src, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00092">mem.h:92</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -221,7 +226,58 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ac36c32ce5585de38fd4b77b2a322ac78_icgraph.svg" width="860" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ac36c32ce5585de38fd4b77b2a322ac78_icgraph.svg" width="923" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a771efa36ca068866859a039d8782dad6" name="a771efa36ca068866859a039d8782dad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a771efa36ca068866859a039d8782dad6">&#9670;&#160;</a></span>zrtos_mem__from_hex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_mem__from_hex </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>src</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00209">209</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>                                                           {</div>
+<div class="line"><span class="lineno">  210</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">  211</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  212</span>        uint8_t h = (*src++) - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  213</span>        uint8_t l = (*src++) - <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordflow">if</span>(h &gt; 9){</div>
+<div class="line"><span class="lineno">  216</span>            h -= <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<div class="line"><span class="lineno">  217</span>        }</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">if</span>(l &gt; 9){</div>
+<div class="line"><span class="lineno">  219</span>            l -= <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<div class="line"><span class="lineno">  220</span>        }</div>
+<div class="line"><span class="lineno">  221</span> </div>
+<div class="line"><span class="lineno">  222</span>        *tmp_dest++ = (h &lt;&lt; 4) | l;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(tmp_dest,dest);</div>
+<div class="line"><span class="lineno">  225</span>}</div>
+<div class="ttc" id="atypes_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00040">types.h:40</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a771efa36ca068866859a039d8782dad6_cgraph.svg" width="356" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -250,27 +306,27 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00049">49</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span> {</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordtype">size_t</span> d = length;</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">size_t</span> n = buffer_length;</div>
-<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">size_t</span> i = d;</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">size_t</span> j = n - d;</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">while</span>(i != j){</div>
-<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">if</span>(i &lt; j){</div>
-<div class="line"><span class="lineno">   60</span>            <span class="comment">//A is shorter</span></div>
-<div class="line"><span class="lineno">   61</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d + j - i, i);</div>
-<div class="line"><span class="lineno">   62</span>            j -= i;</div>
-<div class="line"><span class="lineno">   63</span>        }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   64</span>            <span class="comment">//B is shorter</span></div>
-<div class="line"><span class="lineno">   65</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, j);</div>
-<div class="line"><span class="lineno">   66</span>            i -= j;</div>
-<div class="line"><span class="lineno">   67</span>        }</div>
-<div class="line"><span class="lineno">   68</span>    }</div>
-<div class="line"><span class="lineno">   69</span>    <span class="comment">//Finally, block swap A and B</span></div>
-<div class="line"><span class="lineno">   70</span>    <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, i);</div>
-<div class="line"><span class="lineno">   71</span>}</div>
-<div class="ttc" id="amem_8h_html_a76a7df82d207aef7d339f7ff95cce550"><div class="ttname"><a href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a></div><div class="ttdeci">void zrtos_mem__swap_ex(void *ptr, size_t offest_dest, size_t offset_src, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00036">mem.h:36</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00050">50</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span> {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordtype">size_t</span> d = length;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordtype">size_t</span> n = buffer_length;</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordtype">size_t</span> i = d;</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">size_t</span> j = n - d;</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">while</span>(i != j){</div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span>(i &lt; j){</div>
+<div class="line"><span class="lineno">   61</span>            <span class="comment">//A is shorter</span></div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d + j - i, i);</div>
+<div class="line"><span class="lineno">   63</span>            j -= i;</div>
+<div class="line"><span class="lineno">   64</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   65</span>            <span class="comment">//B is shorter</span></div>
+<div class="line"><span class="lineno">   66</span>            <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, j);</div>
+<div class="line"><span class="lineno">   67</span>            i -= j;</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span>    <span class="comment">//Finally, block swap A and B</span></div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a>(ptr, d - i, d, i);</div>
+<div class="line"><span class="lineno">   72</span>}</div>
+<div class="ttc" id="amem_8h_html_a76a7df82d207aef7d339f7ff95cce550"><div class="ttname"><a href="#a76a7df82d207aef7d339f7ff95cce550">zrtos_mem__swap_ex</a></div><div class="ttdeci">void zrtos_mem__swap_ex(void *ptr, size_t offest_dest, size_t offset_src, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00037">mem.h:37</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -308,18 +364,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00091">91</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span> {</div>
-<div class="line"><span class="lineno">   96</span>    uint8_t *tmp_dest = dest;</div>
-<div class="line"><span class="lineno">   97</span>    uint8_t *tmp_src = src;</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">while</span>(length--){</div>
-<div class="line"><span class="lineno">   99</span>        *tmp_dest++ = *tmp_src++;</div>
-<div class="line"><span class="lineno">  100</span>    }</div>
-<div class="line"><span class="lineno">  101</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00092">92</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span> {</div>
+<div class="line"><span class="lineno">   97</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">   98</span>    uint8_t *tmp_src = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,src);</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">while</span>(length--){</div>
+<div class="line"><span class="lineno">  100</span>        *tmp_dest++ = *tmp_src++;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+<div class="line"><span class="lineno">  102</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a9054cc3824c6ffdaf4ed24fde2f80f32_icgraph.svg" width="1698" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a9054cc3824c6ffdaf4ed24fde2f80f32_icgraph.svg" width="1698" height="540"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -348,16 +404,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00077">77</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span> {</div>
-<div class="line"><span class="lineno">   82</span>    uint8_t *tmp_dest = dest;</div>
-<div class="line"><span class="lineno">   83</span>    uint8_t *tmp_src = src;</div>
-<div class="line"><span class="lineno">   84</span>    tmp_dest += --length;</div>
-<div class="line"><span class="lineno">   85</span>    tmp_src += length++;</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">while</span>(length--){</div>
-<div class="line"><span class="lineno">   87</span>        *tmp_dest-- = *tmp_src--;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
-<div class="line"><span class="lineno">   89</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00078">78</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span> {</div>
+<div class="line"><span class="lineno">   83</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">   84</span>    uint8_t *tmp_src = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,src);</div>
+<div class="line"><span class="lineno">   85</span>    tmp_dest += --length;</div>
+<div class="line"><span class="lineno">   86</span>    tmp_src += length++;</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">while</span>(length--){</div>
+<div class="line"><span class="lineno">   88</span>        *tmp_dest-- = *tmp_src--;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -385,18 +441,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00124">124</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  124</span>                                              {</div>
-<div class="line"><span class="lineno">  125</span>    uint8_t *tmp_dest = dest;</div>
-<div class="line"><span class="lineno">  126</span>    uint8_t *tmp_src = tmp_dest + len;</div>
-<div class="line"><span class="lineno">  127</span>    len&gt;&gt;=1;</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">while</span>(len--){</div>
-<div class="line"><span class="lineno">  129</span>        --tmp_src;</div>
-<div class="line"><span class="lineno">  130</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_dest,tmp_src);</div>
-<div class="line"><span class="lineno">  131</span>        tmp_dest++;</div>
-<div class="line"><span class="lineno">  132</span>    }</div>
-<div class="line"><span class="lineno">  133</span>}</div>
-<div class="ttc" id="atypes_8h_html_a2f4eaa4b4f1a02421779d9923bc8300d"><div class="ttname"><a href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a></div><div class="ttdeci">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00124">types.h:124</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00126">126</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>                                              {</div>
+<div class="line"><span class="lineno">  127</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">  128</span>    uint8_t *tmp_src = tmp_dest + len;</div>
+<div class="line"><span class="lineno">  129</span>    len&gt;&gt;=1;</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  131</span>        --tmp_src;</div>
+<div class="line"><span class="lineno">  132</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_dest,tmp_src);</div>
+<div class="line"><span class="lineno">  133</span>        tmp_dest++;</div>
+<div class="line"><span class="lineno">  134</span>    }</div>
+<div class="line"><span class="lineno">  135</span>}</div>
+<div class="ttc" id="atypes_8h_html_a2f4eaa4b4f1a02421779d9923bc8300d"><div class="ttname"><a href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a></div><div class="ttdeci">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00161">types.h:161</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -439,30 +495,30 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00146">146</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  148</span>{</div>
-<div class="line"><span class="lineno">  149</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> *p;</div>
-<div class="line"><span class="lineno">  150</span>    <span class="keywordtype">size_t</span> low;</div>
-<div class="line"><span class="lineno">  151</span>    <span class="keywordtype">size_t</span> mid;</div>
-<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">int</span> r;</div>
-<div class="line"><span class="lineno">  153</span> </div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span> (size &gt; 0) {             <span class="comment">/* TODO: change this to an assert?? */</span></div>
-<div class="line"><span class="lineno">  155</span>        low = 0;</div>
-<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">while</span> (low &lt; high) {</div>
-<div class="line"><span class="lineno">  157</span>            mid = low + ((high - low) &gt;&gt; 1); <span class="comment">/* Avoid possible overflow here. */</span></div>
-<div class="line"><span class="lineno">  158</span>            p = ((<span class="keywordtype">char</span> *)base) + mid * size; <span class="comment">/* Could overflow here... */</span></div>
-<div class="line"><span class="lineno">  159</span>            r = (*compar)(key, p); <span class="comment">/* but that&#39;s an application problem! */</span></div>
-<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">if</span> (r &gt; 0) {</div>
-<div class="line"><span class="lineno">  161</span>                low = mid + 1;</div>
-<div class="line"><span class="lineno">  162</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &lt; 0) {</div>
-<div class="line"><span class="lineno">  163</span>                high = mid;</div>
-<div class="line"><span class="lineno">  164</span>            } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  165</span>                <span class="keywordflow">return</span> p;</div>
-<div class="line"><span class="lineno">  166</span>            }</div>
-<div class="line"><span class="lineno">  167</span>        }</div>
-<div class="line"><span class="lineno">  168</span>    }</div>
-<div class="line"><span class="lineno">  169</span>    <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><span class="lineno">  170</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00148">148</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keyword">register</span> <span class="keywordtype">char</span> *p;</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordtype">size_t</span> low;</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">size_t</span> mid;</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">int</span> r;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span> (size &gt; 0) {             <span class="comment">/* TODO: change this to an assert?? */</span></div>
+<div class="line"><span class="lineno">  157</span>        low = 0;</div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordflow">while</span> (low &lt; high) {</div>
+<div class="line"><span class="lineno">  159</span>            mid = low + ((high - low) &gt;&gt; 1); <span class="comment">/* Avoid possible overflow here. */</span></div>
+<div class="line"><span class="lineno">  160</span>            p = ((<span class="keywordtype">char</span> *)base) + mid * size; <span class="comment">/* Could overflow here... */</span></div>
+<div class="line"><span class="lineno">  161</span>            r = (*compar)(key, p); <span class="comment">/* but that&#39;s an application problem! */</span></div>
+<div class="line"><span class="lineno">  162</span>            <span class="keywordflow">if</span> (r &gt; 0) {</div>
+<div class="line"><span class="lineno">  163</span>                low = mid + 1;</div>
+<div class="line"><span class="lineno">  164</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (r &lt; 0) {</div>
+<div class="line"><span class="lineno">  165</span>                high = mid;</div>
+<div class="line"><span class="lineno">  166</span>            } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  167</span>                <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">  168</span>            }</div>
+<div class="line"><span class="lineno">  169</span>        }</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><span class="lineno">  172</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -495,17 +551,17 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00135">135</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>                                                        {</div>
-<div class="line"><span class="lineno">  136</span>    uint8_t *tmp = dest;</div>
-<div class="line"><span class="lineno">  137</span>    <span class="keywordflow">while</span>(len--){</div>
-<div class="line"><span class="lineno">  138</span>        *tmp++ = value;</div>
-<div class="line"><span class="lineno">  139</span>    }</div>
-<div class="line"><span class="lineno">  140</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00137">137</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  137</span>                                                        {</div>
+<div class="line"><span class="lineno">  138</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">  140</span>        *tmp_dest++ = value;</div>
+<div class="line"><span class="lineno">  141</span>    }</div>
+<div class="line"><span class="lineno">  142</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ad6c786590236d1d560b6277f638bf766_icgraph.svg" width="484" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_ad6c786590236d1d560b6277f638bf766_icgraph.svg" width="504" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -539,37 +595,37 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00172">172</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  176</span>{</div>
-<div class="line"><span class="lineno">  177</span>    <span class="keywordtype">size_t</span> wnel, gap, wgap, i, j, k;</div>
-<div class="line"><span class="lineno">  178</span>    <span class="keywordtype">char</span> *a, *b, tmp;</div>
-<div class="line"><span class="lineno">  179</span> </div>
-<div class="line"><span class="lineno">  180</span>    wnel = width * nel;</div>
-<div class="line"><span class="lineno">  181</span>    <span class="keywordflow">for</span> (gap = 0; ++gap &lt; nel;){</div>
-<div class="line"><span class="lineno">  182</span>        gap *= 3;</div>
-<div class="line"><span class="lineno">  183</span>    }</div>
-<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">while</span> ((gap /= 3) != 0) {</div>
-<div class="line"><span class="lineno">  185</span>        wgap = width * gap;</div>
-<div class="line"><span class="lineno">  186</span>        <span class="keywordflow">for</span> (i = wgap; i &lt; wnel; i += width) {</div>
-<div class="line"><span class="lineno">  187</span>            <span class="keywordflow">for</span> (j = i - wgap; ;j -= wgap) {</div>
-<div class="line"><span class="lineno">  188</span>                a = j + (<span class="keywordtype">char</span> *)base;</div>
-<div class="line"><span class="lineno">  189</span>                b = a + wgap;</div>
-<div class="line"><span class="lineno">  190</span>                <span class="keywordflow">if</span> ((*comp)(a, b) &lt;= 0){</div>
-<div class="line"><span class="lineno">  191</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  192</span>                }</div>
-<div class="line"><span class="lineno">  193</span>                k = width;</div>
-<div class="line"><span class="lineno">  194</span>                <span class="keywordflow">do</span> {</div>
-<div class="line"><span class="lineno">  195</span>                    tmp = *a;</div>
-<div class="line"><span class="lineno">  196</span>                    *a++ = *b;</div>
-<div class="line"><span class="lineno">  197</span>                    *b++ = tmp;</div>
-<div class="line"><span class="lineno">  198</span>                } <span class="keywordflow">while</span> (--k);</div>
-<div class="line"><span class="lineno">  199</span>                <span class="keywordflow">if</span> (j &lt; wgap){</div>
-<div class="line"><span class="lineno">  200</span>                    <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">  201</span>                }</div>
-<div class="line"><span class="lineno">  202</span>            }</div>
-<div class="line"><span class="lineno">  203</span>        }</div>
-<div class="line"><span class="lineno">  204</span>    }</div>
-<div class="line"><span class="lineno">  205</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00174">174</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{</div>
+<div class="line"><span class="lineno">  179</span>    <span class="keywordtype">size_t</span> wnel, gap, wgap, i, j, k;</div>
+<div class="line"><span class="lineno">  180</span>    <span class="keywordtype">char</span> *a, *b, tmp;</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    wnel = width * nel;</div>
+<div class="line"><span class="lineno">  183</span>    <span class="keywordflow">for</span> (gap = 0; ++gap &lt; nel;){</div>
+<div class="line"><span class="lineno">  184</span>        gap *= 3;</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+<div class="line"><span class="lineno">  186</span>    <span class="keywordflow">while</span> ((gap /= 3) != 0) {</div>
+<div class="line"><span class="lineno">  187</span>        wgap = width * gap;</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">for</span> (i = wgap; i &lt; wnel; i += width) {</div>
+<div class="line"><span class="lineno">  189</span>            <span class="keywordflow">for</span> (j = i - wgap; ;j -= wgap) {</div>
+<div class="line"><span class="lineno">  190</span>                a = j + (<span class="keywordtype">char</span> *)base;</div>
+<div class="line"><span class="lineno">  191</span>                b = a + wgap;</div>
+<div class="line"><span class="lineno">  192</span>                <span class="keywordflow">if</span> ((*comp)(a, b) &lt;= 0){</div>
+<div class="line"><span class="lineno">  193</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  194</span>                }</div>
+<div class="line"><span class="lineno">  195</span>                k = width;</div>
+<div class="line"><span class="lineno">  196</span>                <span class="keywordflow">do</span> {</div>
+<div class="line"><span class="lineno">  197</span>                    tmp = *a;</div>
+<div class="line"><span class="lineno">  198</span>                    *a++ = *b;</div>
+<div class="line"><span class="lineno">  199</span>                    *b++ = tmp;</div>
+<div class="line"><span class="lineno">  200</span>                } <span class="keywordflow">while</span> (--k);</div>
+<div class="line"><span class="lineno">  201</span>                <span class="keywordflow">if</span> (j &lt; wgap){</div>
+<div class="line"><span class="lineno">  202</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  203</span>                }</div>
+<div class="line"><span class="lineno">  204</span>            }</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span>    }</div>
+<div class="line"><span class="lineno">  207</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -608,16 +664,16 @@ Here is the caller graph for this function:</div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Nothing </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00026">26</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>                                                       {</div>
-<div class="line"><span class="lineno">   27</span>    uint8_t *tmp_dest = dest;</div>
-<div class="line"><span class="lineno">   28</span>    uint8_t *tmp_src = src;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">while</span>(len--){</div>
-<div class="line"><span class="lineno">   30</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_src,tmp_dest);</div>
-<div class="line"><span class="lineno">   31</span>        tmp_src++;</div>
-<div class="line"><span class="lineno">   32</span>        tmp_dest++;</div>
-<div class="line"><span class="lineno">   33</span>    }</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00027">27</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>                                                       {</div>
+<div class="line"><span class="lineno">   28</span>    uint8_t *tmp_dest = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,dest);</div>
+<div class="line"><span class="lineno">   29</span>    uint8_t *tmp_src = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,src);</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">   31</span>        <a class="code hl_define" href="types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d">ZRTOS_TYPES__SWAP_PTR_CONTENTS</a>(tmp_src,tmp_dest);</div>
+<div class="line"><span class="lineno">   32</span>        tmp_src++;</div>
+<div class="line"><span class="lineno">   33</span>        tmp_dest++;</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -655,15 +711,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00036">36</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   41</span> {</div>
-<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a>(</div>
-<div class="line"><span class="lineno">   43</span>         <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offest_dest)</div>
-<div class="line"><span class="lineno">   44</span>        ,<a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offset_src)</div>
-<div class="line"><span class="lineno">   45</span>        ,len</div>
-<div class="line"><span class="lineno">   46</span>    );</div>
-<div class="line"><span class="lineno">   47</span>}</div>
-<div class="ttc" id="amem_8h_html_af7e65258e9f403545514aa561c040c71"><div class="ttname"><a href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a></div><div class="ttdeci">void zrtos_mem__swap(void *dest, void *src, size_t len)</div><div class="ttdoc">Swap len bytes of dest and src inplace.</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00026">mem.h:26</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00037">37</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span> {</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a>(</div>
+<div class="line"><span class="lineno">   44</span>         <a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offest_dest)</div>
+<div class="line"><span class="lineno">   45</span>        ,<a class="code hl_function" href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a>(ptr,offset_src)</div>
+<div class="line"><span class="lineno">   46</span>        ,len</div>
+<div class="line"><span class="lineno">   47</span>    );</div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="amem_8h_html_af7e65258e9f403545514aa561c040c71"><div class="ttname"><a href="#af7e65258e9f403545514aa561c040c71">zrtos_mem__swap</a></div><div class="ttdeci">void zrtos_mem__swap(void *dest, void *src, size_t len)</div><div class="ttdoc">Swap len bytes of dest and src inplace.</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00027">mem.h:27</a></div></div>
 <div class="ttc" id="atypes_8h_html_ab0b4ddf54b9e9f4a54504f833babbc1c"><div class="ttname"><a href="types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c">zrtos_types__ptr_add</a></div><div class="ttdeci">void * zrtos_types__ptr_add(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00032">types.h:32</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -697,11 +753,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00142">142</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>                                           {</div>
-<div class="line"><span class="lineno">  143</span>    <a class="code hl_function" href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a>(dest,0,len);</div>
-<div class="line"><span class="lineno">  144</span>}</div>
-<div class="ttc" id="amem_8h_html_ad6c786590236d1d560b6277f638bf766"><div class="ttname"><a href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a></div><div class="ttdeci">void zrtos_mem__set(void *dest, uint8_t value, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00135">mem.h:135</a></div></div>
+<p class="definition">Definition at line <a class="el" href="mem_8h_source.html#l00144">144</a> of file <a class="el" href="mem_8h_source.html">mem.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>                                           {</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_function" href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a>(dest,0,len);</div>
+<div class="line"><span class="lineno">  146</span>}</div>
+<div class="ttc" id="amem_8h_html_ad6c786590236d1d560b6277f638bf766"><div class="ttname"><a href="#ad6c786590236d1d560b6277f638bf766">zrtos_mem__set</a></div><div class="ttdeci">void zrtos_mem__set(void *dest, uint8_t value, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00137">mem.h:137</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -710,7 +766,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a419d9f9e6d69f2577fdce04166a8b8a7_icgraph.svg" width="318" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mem_8h_a419d9f9e6d69f2577fdce04166a8b8a7_icgraph.svg" width="338" height="155"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

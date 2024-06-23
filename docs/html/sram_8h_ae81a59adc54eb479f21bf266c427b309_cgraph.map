@@ -1,0 +1,17 @@
+<map id="zrtos_vfs_module_sram__rw" name="zrtos_vfs_module_sram__rw">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,93,190,120"/>
+<area shape="rect" id="Node000002" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="250,13,372,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,90,237,50,254,43,256,48,239,54,134,95"/>
+<area shape="rect" id="Node000004" href="$types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="238,64,384,91"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="190,91,222,87,223,92,190,97"/>
+<area shape="rect" id="Node000005" href="$types_8h.html#adceb6a2ba8243aab5d92233fe7bb9778" title=" " alt="" coords="238,115,384,157"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="190,117,223,121,222,127,190,122"/>
+<area shape="rect" id="Node000008" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="247,181,375,224"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="131,118,249,172,246,177,128,123"/>
+<area shape="rect" id="Node000003" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="441,5,595,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="372,24,425,24,425,29,372,29"/>
+<area shape="rect" id="Node000006" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="447,93,590,136"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="383,126,431,121,431,126,384,131"/>
+<area shape="rect" id="Node000007" href="$types_8h.html#a1824c547b5262eed148a0bfac2912537" title=" " alt="" coords="432,160,604,187"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="384,146,426,154,425,159,383,152"/>
+</map>

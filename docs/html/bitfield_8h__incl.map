@@ -1,9 +1,9 @@
 <map id="bitfield.h" name="bitfield.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="147,5,216,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="188,5,257,32"/>
 <area shape="rect" id="Node000002" href="$types_8h.html" title=" " alt="" coords="133,155,230,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,33,170,66,168,106,175,139,170,141,163,107,165,65,174,32"/>
-<area shape="rect" id="Node000007" href="$mem_8h.html" title=" " alt="" coords="177,80,271,107"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="191,31,211,65,207,68,186,34"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,33,191,140,186,139,216,32"/>
+<area shape="rect" id="Node000007" href="$mem_8h.html" title=" " alt="" coords="218,80,312,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="232,31,252,65,248,68,228,34"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,229,80,256"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="158,184,82,224,79,219,156,180"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="104,229,171,256"/>
@@ -12,5 +12,7 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="191,180,213,215,208,217,187,183"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="283,229,346,256"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="206,180,279,219,277,224,203,184"/>
-<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="219,109,198,143,194,140,214,106"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="252,109,209,146,205,142,249,105"/>
+<area shape="rect" id="Node000008" href="$cast_8h.html" title=" " alt="" coords="253,155,344,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="273,106,289,139,284,142,269,108"/>
 </map>
