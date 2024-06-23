@@ -54,14 +54,14 @@ zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
 		for(;len--;addr++){
 			*data_ptr++ = pgm_read_byte_far(addr);
 		}
-		ret = EXIT_SUCCESS;
+		ret = ESUCCESS;
 	}
 
 L_OUT:
 	return ret;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(zero,ZRTOS_VFS_PLUGIN_TYPE__FILE,
+ZRTOS_VFS_PLUGIN__INIT(zero,
 	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_avr_progmem__on_read)
 );
 

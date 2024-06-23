@@ -49,7 +49,8 @@ bool zrtos_vfs_dentry__init(
 }
 
 bool zrtos_vfs_dentry__is_filesystem(zrtos_vfs_dentry_t *node){
-	return ZRTOS_VFS_PLUGIN_TYPE__FILESYSTEM == node->inode.plugin->type;
+	//return ZRTOS_VFS_PLUGIN_TYPE__FILESYSTEM == node->inode.plugin->type;
+	return false;
 }
 /*
 zrtos_vfs_dentry_t *zrtos_vfs_dentry__get_first_node(){
@@ -77,7 +78,10 @@ static bool zrtos_vfs_dentry__each_child_cb(zrtos_clist_node_t *node,void *arg){
 		,zrtos_vfs_dentry_t
 		,node
 	);
-	zrtos_vfs_dentry__each_child_cb_args_t *args = arg;
+	zrtos_vfs_dentry__each_child_cb_args_t *args = ZRTOS_CAST(
+		 zrtos_vfs_dentry__each_child_cb_args_t *
+		,arg
+	);
 	if(args->parent == dentry->parent
 	&& args->filter(dentry,args->filter_arg)){
 		ret = args->callback(dentry,args->callback_arg);
@@ -85,7 +89,7 @@ static bool zrtos_vfs_dentry__each_child_cb(zrtos_clist_node_t *node,void *arg){
 	return ret;
 }
 
-bool zrtos_vfs_dentry__each_child(
+void zrtos_vfs_dentry__each_child(
 	 zrtos_vfs_dentry_t *thiz
 	,bool (*callback)(zrtos_vfs_dentry_t *node,void *arg)
 	,void *callback_arg
@@ -99,7 +103,7 @@ bool zrtos_vfs_dentry__each_child(
 		,.filter = filter
 		,.filter_arg = filter_arg
 	};
-	return zrtos_clist__each(
+	zrtos_clist__each(
 		 &zrtos_vfs_dentry__index
 		,zrtos_vfs_dentry__each_child_cb
 		,&args
@@ -107,10 +111,10 @@ bool zrtos_vfs_dentry__each_child(
 }
 
 bool zrtos_vfs_dentry__each_child_filter_name_cb(
-	 zrtos_vfs_dentry_t *node
+	 zrtos_vfs_dentry_t *thiz
 	,void *arg
 ){
-	return 0 == zrtos_str__cmp(dentry->name,(char*)arg);
+	return 0 == zrtos_str__cmp(thiz->name,(char*)arg);
 }
 
 static bool zrtos_vfs_dentry__lookup_callback_cb(zrtos_vfs_dentry_t *node,void *arg){
@@ -178,7 +182,7 @@ zrtos_error_t zrtos_vfs_dentry__umount(
 			,ZRTOS_VFS_PLUGIN_OPERATION__UMOUNT
 			,thiz
 		);
-		if(ret == EXIT_SUCCESS){
+		if(zrtos_error__is_success(ret)){
 			zrtos_vfs_inode__deinit(&thiz->inode);
 		}
 	}

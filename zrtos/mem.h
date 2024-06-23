@@ -12,6 +12,7 @@ extern "C" {
 
 
 #include <zrtos/types.h>
+#include <zrtos/cast.h>
 
 
 /**
@@ -24,8 +25,8 @@ extern "C" {
  * @return Nothing
  */
 void zrtos_mem__swap(void *dest, void *src, size_t len){
-	uint8_t *tmp_dest = dest;
-	uint8_t *tmp_src = src;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
+	uint8_t *tmp_src = ZRTOS_CAST(uint8_t*,src);
 	while(len--){
 		ZRTOS_TYPES__SWAP_PTR_CONTENTS(tmp_src,tmp_dest);
 		tmp_src++;
@@ -79,8 +80,8 @@ void zrtos_mem__move_right_overlapping(
 	,void *src
 	,size_t length
 ){
-	uint8_t *tmp_dest = dest;
-	uint8_t *tmp_src = src;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
+	uint8_t *tmp_src = ZRTOS_CAST(uint8_t*,src);
 	tmp_dest += --length;
 	tmp_src += length++;
 	while(length--){
@@ -93,8 +94,8 @@ void zrtos_mem__move_left_overlapping(
 	 ,void *src
 	 ,size_t length
 ){
-	uint8_t *tmp_dest = dest;
-	uint8_t *tmp_src = src;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
+	uint8_t *tmp_src = ZRTOS_CAST(uint8_t*,src);
 	while(length--){
 		*tmp_dest++ = *tmp_src++;
 	}
@@ -110,19 +111,20 @@ void zrtos_mem__cpy(
 }
 
 int zrtos_mem__cmp(void *str1, void *str2, size_t count){
-	uint8_t *s1 = (uint8_t*)str1;
-	uint8_t *s2 = (uint8_t*)str2;
+	uint8_t *s1 = ZRTOS_CAST(uint8_t*,str1);
+	uint8_t *s2 = ZRTOS_CAST(uint8_t*,str2);
 
 	while(count-- > 0){
 		if(*s1++ != *s2++){
 			return s1[-1] < s2[-1] ? -1 : 1;
 		}
 	}
+
 	return 0;
 }
 
 void zrtos_mem__reverse(void *dest,size_t len){
-	uint8_t *tmp_dest = dest;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
 	uint8_t *tmp_src = tmp_dest + len;
 	len>>=1;
 	while(len--){
@@ -133,9 +135,9 @@ void zrtos_mem__reverse(void *dest,size_t len){
 }
 
 void zrtos_mem__set(void *dest,uint8_t value,size_t len){
-	uint8_t *tmp = dest;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
 	while(len--){
-		*tmp++ = value;
+		*tmp_dest++ = value;
 	}
 }
 
@@ -205,7 +207,7 @@ void zrtos_mem__sort(void  *base,
 }
 
 size_t zrtos_mem__from_hex(void *dest,char *src,size_t len){
-	uint8_t *tmp = dest;
+	uint8_t *tmp_dest = ZRTOS_CAST(uint8_t*,dest);
 	while(len--){
 		uint8_t h = (*src++) - '0';
 		uint8_t l = (*src++) - '0';
@@ -217,9 +219,9 @@ size_t zrtos_mem__from_hex(void *dest,char *src,size_t len){
 			l -= 'A' - '9';
 		}
 
-		*tmp++ = (h << 4) | l;
+		*tmp_dest++ = (h << 4) | l;
 	}
-	return zrtos_types__ptr_get_byte_distance(tmp,dest);
+	return zrtos_types__ptr_get_byte_distance(tmp_dest,dest);
 }
 
 

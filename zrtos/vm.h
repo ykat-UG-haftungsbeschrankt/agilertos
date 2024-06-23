@@ -237,7 +237,7 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 	zrtos_stack_t *stack = &thiz->stack;
 	zrtos_stack_t *program = &thiz->program;
 	zrtos_stack_t *set_offset_stack;
-	zrtos_error_t ret = EXIT_SUCCESS;
+	zrtos_error_t ret = ESUCCESS;
 	zrtos_vm_value_t a;
 	zrtos_vm_value_t b;
 	zrtos_vm_io_type_t io_type;

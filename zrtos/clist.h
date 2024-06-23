@@ -130,20 +130,51 @@ zrtos_clist_node_t *zrtos_clist__shift(zrtos_clist_t *thiz){
 	return ret;
 }
 
+void zrtos_clist__shift_and_push(zrtos_clist_t *thiz){
+	zrtos_clist_node_t *node = zrtos_clist__get_first_node(thiz);
+	if(node){
+		zrtos_clist__set_root(
+			 thiz
+			,zrtos_clist_node__get_next_node(node)
+		);
+	}
+}
+
 void zrtos_clist__each(
 	 zrtos_clist_t *thiz
 	,bool (*callback)(zrtos_clist_node_t *node,void *arg)
 	,void *arg
 ){
 	zrtos_clist_node_t *node = zrtos_clist__get_root(thiz);
-	zrtos_clist_node_t *root = node;
 	if(node){
 		zrtos_clist_node_t *next;
 		do{
-			next = node->next;
-		}while(callback(node,arg) && (node = next) != root);
+			next = zrtos_clist_node__get_next_node(node);
+		}while(callback(node,arg)
+		   && (node = next) != zrtos_clist__get_root(thiz)
+		);
 	}
 }
+
+#define ZRTOS_CLIST__EACH_BEGIN(thiz,node,container,member)                    \
+	do{\
+		zrtos_clist_node_t *tmp = zrtos_clist__get_root(thiz);\
+		zrtos_clist_node_t *next;\
+		container *node;\
+		if(tmp){\
+			do{\
+				next = tmp->next;\
+				node = zrtos_types__get_container_of(\
+					tmp,container,memeber\
+				);\
+				do
+
+#define ZRTOS_CLIST__EACH_END\
+				while(0);\
+				tmp = next;\
+			}while(tmp != zrtos_clist__get_root(thiz));\
+		}\
+	}while(0)
 
 
 #ifdef __cplusplus

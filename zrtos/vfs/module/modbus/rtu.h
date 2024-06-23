@@ -25,7 +25,7 @@ typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 bool zrtos_vfs_module_modbus_rtu_args__init(
 	zrtos_vfs_module_modbus_rtu_args_t *thiz
 ){
-	thiz->error = EXIT_SUCCESS;
+	thiz->error = ESUCCESS;
 	if(zrtos_msg_queue__init(&thiz->msg_queue_in)){
 		if(zrtos_msg_queue__init(&thiz->msg_queue_out)){
 			return true;
@@ -72,7 +72,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_read(
 		thiz
 	);
 	zrtos_error_t ret = mod->error;
-	if(ret == EXIT_SUCCESS){
+	if(zrtos_error__is_success(ret)){
 		ret = zrtos_msg_queue__get(
 			 &mod->msg_queue_in
 			,buf
@@ -95,7 +95,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 		thiz
 	);
 	zrtos_error_t ret = mod->error;
-	if(ret == EXIT_SUCCESS){
+	if(zrtos_error__is_success(ret)){
 		ret = zrtos_msg_queue__put(
 			 &mod->msg_queue_out
 			,buf
@@ -106,7 +106,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 	return ret; 
 }
 
-zrtos_error_t zrtos_vfs_module_uart__on_can_read(
+zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
@@ -115,24 +115,24 @@ zrtos_error_t zrtos_vfs_module_uart__on_can_read(
 	);
 	return zrtos_msg_queue__is_empty(&mod->msg_queue_in)
 	     ? EAGAIN
-	     : EXIT_SUCCESS
+	     : ESUCCESS
 	;
 }
 
-zrtos_error_t zrtos_vfs_module_uart__on_can_write(
+zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_write(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	return EXIT_SUCCESS;
+	return ESUCCESS;
 }
-
-ZRTOS_VFS_PLUGIN__INIT(uart,ZRTOS_VFS_PLUGIN_TYPE__FILE,
-	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_uart__on_read)
-	ZRTOS_VFS_PLUGIN__ON_WRITE(zrtos_vfs_module_uart__on_write)
-	ZRTOS_VFS_PLUGIN__ON_CAN_READ(zrtos_vfs_module_uart__on_can_read)
-	ZRTOS_VFS_PLUGIN__ON_CAN_WRITE(zrtos_vfs_module_uart__on_can_write)
+/*
+ZRTOS_VFS_PLUGIN__INIT(modbus_rtu,
+	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_modbus_rtu__on_read)
+	ZRTOS_VFS_PLUGIN__ON_WRITE(zrtos_vfs_module_modbus_rtu__on_write)
+	ZRTOS_VFS_PLUGIN__ON_CAN_READ(zrtos_vfs_module_modbus_rtu__on_can_read)
+	ZRTOS_VFS_PLUGIN__ON_CAN_WRITE(zrtos_vfs_module_modbus_rtu__on_can_write)
 );
-
+*/
 
 #ifdef __cplusplus
 }

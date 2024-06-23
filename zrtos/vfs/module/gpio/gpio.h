@@ -12,10 +12,11 @@ extern "C" {
 
 
 #include <zrtos/vfs_plugin.h>
+#include <zrtos/gpio.h> 
 
-
-ZRTOS_VFS_PLUGIN__INIT(gpio,ZRTOS_VFS_PLUGIN_TYPE__FILE);
-
+/*
+ZRTOS_VFS_PLUGIN__INIT(gpio);
+*/
 
 #ifdef __cplusplus
 }

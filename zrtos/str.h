@@ -14,6 +14,7 @@ extern "C" {
 #include <stdarg.h>
 
 #include <zrtos/types.h>
+#include <zrtos/cast.h>
 #include <zrtos/mem.h>
 
 
@@ -280,7 +281,7 @@ char *zrtos_str__tok_r(char *s, const char *delim, char **save_ptr){
 }
 
 size_t zrtos_str__to_hex(char *dest,void *src,size_t len){
-	uint8_t *tmp = src;
+	uint8_t *tmp = ZRTOS_CAST(uint8_t*,src);
 	while(len--){
 		uint8_t c = *tmp++;
 		uint8_t l = (c & 0xF) + '0';

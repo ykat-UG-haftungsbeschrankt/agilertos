@@ -14,9 +14,12 @@ extern "C" {
 #if defined(ZRTOS_ARCH__ATMEGA328P) || defined(__DOXYGEN__)
 #define ZRTOS_ARCH__FOUND
 
+#include <util/delay_basic.h>
 
 typedef uint8_t zrtos_arch_stack_t;
 typedef int8_t zrtos_arch_stack_signed_t;
+typedef uint8_t zrtos_arch_gpio_pin_t;
+typedef uint16_t zrtos_arch_gpio_value_analog_t;
 
 #define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
 
@@ -291,6 +294,15 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init_a(
 
 #endif
 
+void zrtos_arch__delay_microseconds(uint16_t us){
+	_delay_loop_2((ZRTOS_ARCH__CPU_CLOCK_HZ/4000000) * us);
+}
+
+void zrtos_arch__delay_milliseconds(uint16_t ms){
+	while(ms--){
+		zrtos_arch__delay_microseconds(1000);
+	}
+}
 
 #ifdef __cplusplus
 }

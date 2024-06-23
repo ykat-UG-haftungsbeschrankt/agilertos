@@ -18,8 +18,8 @@ extern "C" {
 
 typedef enum{
 	 EMIN             = INT_MIN ///< Minimum value of zrtos_error_t
-	,EXIT_SUCCESS     = 0       ///< Successful program execution status
-	,EXIT_FAILURE     = 1       ///< Unsuccessful program execution status
+	,ESUCCESS         = 0       ///< Successful program execution status
+	,EERROR           = 1       ///< Unsuccessful program execution status
 	,EFIRST           = 1       ///< Smallest error code
 	,EPERM            = 1       ///< Operation not permitted
 	,ENOENT           = 2       ///< No such file or directory
@@ -147,6 +147,14 @@ typedef enum{
 }zrtos_error_t;
 
 ZRTOS_ASSERT__STATIC(sizeof(zrtos_error_t) == sizeof(int));
+
+bool zrtos_error__is_success(zrtos_error_t thiz){
+	return thiz >= 0;
+}
+
+bool zrtos_error__is_error(zrtos_error_t thiz){
+	return thiz < 0;
+}
 
 
 #ifdef __cplusplus

@@ -78,13 +78,13 @@ zrtos_error_t zrtos_vfs_module_avr_uart1__on_write(
 		,offset
 		,out
 	);
-	if(EXIT_SUCCESS == ret){
+	if(zrtos_error__is_success(ret)){
 		UART1_CONTROL |= _BV(UART1_UDRIE);
 	}
 	return ret;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(avr_uart1,ZRTOS_VFS_PLUGIN_TYPE__FILE,
+ZRTOS_VFS_PLUGIN__INIT(avr_uart1,
 	ZRTOS_VFS_PLUGIN__ON_MOUNT(zrtos_vfs_module_avr_uart1__on_mount)
 	ZRTOS_VFS_PLUGIN__ON_UMOUNT(zrtos_vfs_module_avr_uart1__on_umount)
 	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_uart__on_read)

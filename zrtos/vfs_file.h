@@ -48,7 +48,7 @@ zrtos_error_t zrtos_vfs_file__open(char *path,size_t *out){
 					,ZRTOS_VFS_PLUGIN_OPERATION__OPEN
 					,file
 				);
-				if(ret == EXIT_SUCCESS){
+				if(zrtos_error__is_success(ret)){
 					*out = fd;
 				}else{
 					dentry->count--;
@@ -74,7 +74,7 @@ zrtos_error_t zrtos_vfs_file__close(size_t fd){
 	ret = ZRTOS_VFS_PLUGIN__INVOKE(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__CLOSE
-		,&file
+		,file
 	);
 	file->dentry = 0;
 	file->offset = 0;
@@ -119,7 +119,7 @@ zrtos_error_t zrtos_vfs_file__ioctl(size_t fd,char *path,int request,...){
 	ret = file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__IOCTL
-		,&file
+		,file
 		,path
 		,request
 		,args

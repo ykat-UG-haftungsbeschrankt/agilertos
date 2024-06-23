@@ -507,7 +507,7 @@ zrtos_error_t callback0(
 ){
 	static uint64_t a = 0;
 	a++;
-	return EXIT_SUCCESS;
+	return ESUCCESS;
 }
 
 zrtos_error_t callback1(
@@ -516,7 +516,7 @@ zrtos_error_t callback1(
 ){
 	static uint64_t a = 0;
 	a++;
-	return EXIT_SUCCESS;
+	return ESUCCESS;
 }
 
 ZRTOS_VM_FUNCTION_INDEX(vm_functions,

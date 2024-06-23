@@ -46,7 +46,7 @@ zrtos_error_t zrtos_msg_queue__put(
 		,data
 		,len
 	);
-	if(EXIT_SUCCESS == ret){
+	if(zrtos_error__is_success(ret)){
 		thiz->msg_count++;
 	}
 	return ret;

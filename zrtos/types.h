@@ -74,18 +74,8 @@ size_t zrtos_types__ceil_size_to_alignment(size_t len){
 
 #define ZRTOS_TYPES__MIN(a,b) ((a)<(b)?(a):(b))
 #define ZRTOS_TYPES__MAX(a,b) ((a)>(b)?(a):(b))
-#define ZRTOS_TYPES__CMP(type,a_len,b_len)\
-	({\
-		int ret;\
-		if(a_len < b_len){\
-			ret = -1;\
-		}else if(a_len > b_len){\
-			ret = 1;\
-		}else{\
-			ret = 0;\
-		}\
-		ret;\
-	})
+#define  ZRTOS_TYPES__CMP(type,a_len,b_len)\
+	((a_len) < (b_len) ? - 1 : ((a_len) > (b_len) ? 1 : 0))
 
 bool zrtos_types__uint32_is_valid_address_range(
 	 uint32_t first_address
@@ -146,6 +136,21 @@ bool zrtos_types__uint64_is_valid_address_range(
 	return false;
 }
 
+#ifdef __cplusplus
+#define ZRTOS_TYPES__SWAP(a,b)              \
+    do{                                     \
+        auto a____ = (a);                   \
+        (a) = (b);                          \
+        (b) = a____;                        \
+    }while(0);
+
+#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
+    do{                                     \
+        auto a____ = *(a);                  \
+        *(a) = *(b);                        \
+        *(b) = a____;                       \
+    }while(0);
+#else
 #define ZRTOS_TYPES__SWAP(a,b)              \
     do{                                     \
         typeof(a) a____ = (a);              \
@@ -159,6 +164,7 @@ bool zrtos_types__uint64_is_valid_address_range(
         *(a) = *(b);                        \
         *(b) = a____;                       \
     }while(0);
+#endif
 
 #define ZRTOS_TYPES__IS_ADD_OVERFLOW(a,b) \
     (((a + b ) < a))

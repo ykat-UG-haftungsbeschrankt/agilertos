@@ -4,17 +4,18 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_ERRNO_H
-#define ZRTOS_ERRNO_H
+#ifndef ZRTOS_CAST_H
+#define ZRTOS_CAST_H
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 
-#include <zrtos/error.h>
-
-
-zrtos_error_t errno = ESUCCESS;
+#ifdef __cplusplus
+#define ZRTOS_CAST(type,value) static_cast<type>(value)
+#else
+#define ZRTOS_CAST(type,value) (type)(value)
+#endif
 
 
 #ifdef __cplusplus

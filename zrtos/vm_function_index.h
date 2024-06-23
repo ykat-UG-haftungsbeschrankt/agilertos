@@ -12,14 +12,15 @@ extern "C" {
 
 
 #include <zrtos/types.h>
+#include <zrtos/cast.h>
 #include <zrtos/mem.h>
 #include <zrtos/vm_function.h>
 
 //#define ZRTOS_VM_FUNCTION_INDEX__CFG_ENABLE_PROGMEM
 #define ZRTOS_VM_FUNCTION_INDEX(name,...) \
-zrtos_vm_function_t name[] = { \
-	 __VA_ARGS__ \
-	,{} \
+zrtos_vm_function_t name[] = {            \
+	 __VA_ARGS__                          \
+	,{}                                   \
 };
 
 typedef struct _zrtos_vm_function_index_t{
@@ -44,12 +45,15 @@ zrtos_vm_function_t *zrtos_vm_function_index__get_function(
 	zrtos_vm_function_t key = {
 		.id = id
 	};
-	return zrtos_mem__search(
-		 &key
-		,thiz->arr
-		,thiz->length
-		,sizeof(zrtos_vm_function_t)
-		,zrtos_vm_function__cmp
+	return ZRTOS_CAST(
+		 zrtos_vm_function_t*
+		,zrtos_mem__search(
+			 &key
+			,thiz->arr
+			,thiz->length
+			,sizeof(zrtos_vm_function_t)
+			,zrtos_vm_function__cmp
+		)
 	);
 }
 

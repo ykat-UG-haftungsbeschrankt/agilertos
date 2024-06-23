@@ -19,6 +19,8 @@ typedef void (*zrtos_arch_callback_t)(void *arg);
 /*
 typedef uint8_t zrtos_arch_stack_t;
 typedef int8_t zrtos_arch_stack_signed_t;
+typedef int zrtos_arch_gpio_pin_t;
+typedef int zrtos_arch_gpio_value_analog_t;
 #define ZRTOS_ARCH__FOUND
 #define ZRTOS_ARCH__CPU_CLOCK_HZ
 #define ZRTOS_ARCH__BYTE_ALIGNMENT
@@ -40,6 +42,8 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init(
 #define ZRTOS_ARCH__SAVE_CPU_STATE(ptr)
 #define ZRTOS_ARCH__LOAD_CPU_STATE(ptr)
 #define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()
+void zrtos_arch__delay_microseconds(uint16_t us);
+void zrtos_arch__delay_milliseconds(uint16_t ms);
 */
 
 #ifdef ZRTOS_ARCH__FOUND

@@ -17,9 +17,11 @@ extern "C" {
 
 typedef uint8_t zrtos_bitfield_mask_t;
 
+#pragma pack(push,1)
 typedef struct{
 	uint8_t val;
-}__attribute__((packed))zrtos_bitfield_t;
+}zrtos_bitfield_t;
+#pragma pack(pop)
 
 #define	ZRTOS_BITFIELD__NFDBITS	(8 * sizeof(zrtos_bitfield_mask_t))
 #define	ZRTOS_BITFIELD__ELT(d)	(((size_t)d) / ZRTOS_BITFIELD__NFDBITS)

@@ -11,6 +11,7 @@ extern "C" {
 #endif
 
 
+#include <zrtos/cast.h>
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/vfs_file.h>
 
@@ -23,7 +24,7 @@ zrtos_error_t zrtos_vfs_module_random__on_open(
 		,(zrtos_vfs_offset_t)0xACE1
 	);
 
-	return EXIT_SUCCESS;
+	return ESUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_random__on_read(
@@ -35,7 +36,7 @@ zrtos_error_t zrtos_vfs_module_random__on_read(
 	,size_t *ret
 ){
 	uint16_t lfsr = (uint16_t)zrtos_vfs_file__get_offset(thiz);
-	uint8_t  *buffer = buf;
+	uint8_t  *buffer = ZRTOS_CAST(uint8_t*,buf);
 
 	*ret = len;
 
@@ -52,12 +53,20 @@ zrtos_error_t zrtos_vfs_module_random__on_read(
 		,(zrtos_vfs_offset_t)lfsr
 	);
 
-	return EXIT_SUCCESS;
+	return ESUCCESS;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(random,ZRTOS_VFS_PLUGIN_TYPE__FILE,
-	ZRTOS_VFS_PLUGIN__ON_OPEN(zrtos_vfs_module_random__on_open)
-	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_random__on_read)
+ZRTOS_VFS_PLUGIN__INIT(random,
+	ZRTOS_VFS_PLUGIN__0_ON_OPEN(zrtos_vfs_module_random__on_open)
+	ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_random__on_read)
+	ZRTOS_VFS_PLUGIN__5_ON_WRITE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ_DEFAULT()
+	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
 );
 
 

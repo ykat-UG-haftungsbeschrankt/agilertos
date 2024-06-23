@@ -14,6 +14,7 @@ extern "C" {
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/gpio.h>
 #include <zrtos/malloc.h>
+#include <zrtos/cbuffer.h>
 
 #ifdef ZRTOS_MALLOC__CFG_DISABLE_FREE
 #error
@@ -57,10 +58,7 @@ typedef struct _zrtos_vfs_module_spi_args_t{
 typedef struct _zrtos_vfs_module_spi_file_t{
 	zrtos_gpio_pin_t           ss_pin;
 	uint8_t                    spcr;
-	uint8_t                    data[ZRTOS_VFS_MODULE_SPI__CFG_DATA_LENGTH];
-	size_t                     offset;
-	size_t                     write_offset;
-	size_t                     read_offset;
+	zrtos_cbuffer_t            cbuffer;
 }zrtos_vfs_module_spi_file_t;
 
 zrtos_error_t zrtos_vfs_module_spi__on_mount(
@@ -97,7 +95,7 @@ zrtos_error_t zrtos_vfs_module_spi__on_open(
 		file_data->write_offset = 0;
 		file_data->read_offset = 0;
 		zrtos_vfs_file__set_data(thiz,file_data);
-		ret = EXIT_SUCCESS;
+		ret = ESUCCESS;
 	}
 	return ret;
 }
@@ -114,7 +112,7 @@ zrtos_error_t zrtos_vfs_module_spi__on_close(
 		file_data->write_offset = 0;
 		file_data->read_offset = 0;
 		zrtos_vfs_file__set_data(thiz,file_data);
-		ret = EXIT_SUCCESS;
+		ret = ESUCCESS;
 	}
 	return ret;
 }
@@ -122,7 +120,7 @@ zrtos_error_t zrtos_vfs_module_spi__on_close(
 zrtos_error_t zrtos_vfs_module_spi__on_umount(
 	 zrtos_vfs_dentry_t *thiz
 ){
-	zrtos_error_t ret = EXIT_SUCCESS;
+	zrtos_error_t ret = ESUCCESS;
 
 	return ret;
 }
@@ -133,16 +131,17 @@ zrtos_error_t zrtos_vfs_module_spi__on_read(
 	,void *buf
 	,size_t len
 	,zrtos_vfs_offset_t offset
-	,size_t *out
+	,size_t *outlen
 ){
-	zrtos_error_t ret = EFAULT;
-	zrtos_vfs_module_spi_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
 		thiz
 	);
-	zrtos_vfs_module_spi.data = 
-	SPCR |= SPIE;
-
-	return ret;
+	return zrtos_cbuffer__get_ex(
+		 &file_data->cbuffer
+		,buf
+		,len
+		,outlen
+	);
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_write(
@@ -156,19 +155,16 @@ zrtos_error_t zrtos_vfs_module_spi__on_write(
 	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
 		thiz
 	);
-	size_t length = ZRTOS_TYPES__MIN(len,ZRTOS_VFS_MODULE_SPI__CFG_DATA_LENGTH);
+	zrtos_error_t ret = zrtos_cbuffer__put_ex(
+		 &file_data->cbuffer
+		,buf
+		,len
+		,outlen
+	);
 
-	if(offset != 0){
-		return EINVAL;
-	}
+	zrtos_vfs_module_spi__start_send();
 
-	zrtos_mem__cpy(file_data->data,buf,length);
-	file_data->len = length;
-	file_data->offset = 0;
-
-	*out = len;
-
-	return zrtos_vfs_module_spi__start_send();
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_can_read(
@@ -178,10 +174,7 @@ zrtos_error_t zrtos_vfs_module_spi__on_can_read(
 	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
 		thiz
 	);
-	return file_data->read_offset < file_data->length
-	     ? EXIT_SUCCESS
-	     : EAGAIN
-	;
+	return zrtos_cbuffer__is_empty(&file_data->cbuffer);
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_can_write(
@@ -191,13 +184,10 @@ zrtos_error_t zrtos_vfs_module_spi__on_can_write(
 	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
 		thiz
 	);
-	return file_data->length < ZRTOS_VFS_MODULE_SPI__CFG_DATA_LENGTH
-	     ? EXIT_SUCCESS
-	     : EAGAIN
-	;
+	return ESUCCESS;
 }
 
-ZRTOS_VFS_PLUGIN__INIT(spi,ZRTOS_VFS_PLUGIN_TYPE__FILE,
+ZRTOS_VFS_PLUGIN__INIT(spi,
 	ZRTOS_VFS_PLUGIN__ON_OPEN(zrtos_vfs_module_spi__on_open)
 	ZRTOS_VFS_PLUGIN__ON_CLOSE(zrtos_vfs_module_spi__on_close)
 	ZRTOS_VFS_PLUGIN__ON_MOUNT(zrtos_vfs_module_spi__on_mount)
