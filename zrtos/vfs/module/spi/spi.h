@@ -14,17 +14,57 @@ extern "C" {
 #include <zrtos/malloc.h>
 #include <zrtos/cbuffer.h>
 #include <zrtos/clist.h>
+#include <zrtos/gpio.h>
 
 #ifndef ZRTOS_VFS_MODULE_SPI__CFG_TRANSFER_LENGTH
 #define ZRTOS_VFS_MODULE_SPI__CFG_TRANSFER_LENGTH ZRTOS_CBUFFER__CFG_DATA_LENGTH
 #endif
 
+typedef enum{
+	 ZRTOS_VFS_MODULE_SPI_CONTROL__MIN             = ZRTOS_TYPES__UINT8_MIN
+
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_4    = ZRTOS_BINARY__00000000 ///< chip clock/4
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_16   = ZRTOS_BINARY__00000001 ///< chip clock/16
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_64   = ZRTOS_BINARY__00000010 ///< chip clock/64
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_128  = ZRTOS_BINARY__00000011 ///< chip clock/128
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_2    = ZRTOS_BINARY__00000100 ///< chip clock/2
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_8    = ZRTOS_BINARY__00000101 ///< chip clock/8
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_32   = ZRTOS_BINARY__00000110 ///< chip clock/32
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_64x  = ZRTOS_BINARY__00000111 ///< chip clock/32
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_MASK = ZRTOS_BINARY__00000111 ///< mask
+
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASTER     = ZRTOS_BINARY__00010000
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_SLAVE      = ZRTOS_BINARY__00000000
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASK       = ZRTOS_BINARY__00010000 ///< mask
+
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__BITORDER_LSB    = ZRTOS_BINARY__00100000 ///< send least significant bit (bit 0) first
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__BITORDER_MSB    = ZRTOS_BINARY__00000000 ///< send most significant bit (bit 7) first
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__BITORDER_MASK   = ZRTOS_BINARY__00100000 ///< mask
+
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__PP_0            = ZRTOS_BINARY__00000000 ///< Sample (Rising) Setup (Falling) CPOL=0, CPHA=0
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__PP_1            = ZRTOS_BINARY__01000000 ///< Setup (Rising) Sample (Falling) CPOL=0, CPHA=1
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__PP_2            = ZRTOS_BINARY__10000000 ///< Sample (Falling) Setup (Rising) CPOL=1, CPHA=0
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__PP_3            = ZRTOS_BINARY__11000000 ///< Setup (Falling) Sample (Rising) CPOL=1, CPHA=1
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__PP_MASK         = ZRTOS_BINARY__11000000 ///< mask
+
+	,ZRTOS_VFS_MODULE_SPI_CONTROL__MAX             = ZRTOS_TYPES__UINT8_MAX
+}zrtos_vfs_module_spi_control_t;
+
+typedef struct _zrtos_vfs_module_spi_args_t{
+	zrtos_gpio_t                    *gpio;
+	zrtos_gpio_pin_t                pin_sck;
+	zrtos_gpio_pin_t                pin_mosi;
+	zrtos_gpio_pin_t                pin_miso;
+}zrtos_vfs_module_spi_args_t;
+
 typedef struct _zrtos_vfs_module_spi_file_t{
-	zrtos_clist_node_t           node;
-	zrtos_cbuffer_t              cbuffer_in;
-	zrtos_cbuffer_t              cbuffer_out;
-	zrtos_error_t                error;
-	void                         *data;
+	zrtos_clist_node_t             node;
+	zrtos_cbuffer_t                cbuffer_in;
+	zrtos_cbuffer_t                cbuffer_out;
+	zrtos_error_t                  error;
+	zrtos_vfs_module_spi_control_t control;
+	zrtos_gpio_pin_t               pin_ss;
+	void                           *data;
 }zrtos_vfs_module_spi_file_t;
 
 typedef struct _zrtos_vfs_module_spi_t{
@@ -63,6 +103,52 @@ bool zrtos_vfs_module_spi__init(
 }
 
 void zrtos_vfs_module_spi__deinit(zrtos_vfs_module_spi_t *thiz){
+}
+
+zrtos_error_t zrtos_vfs_module_spi__on_before_file_transfer(
+	 zrtos_vfs_module_spi_file_t *thiz_
+){
+	zrtos_vfs_file_t *thiz = ((zrtos_vfs_module_avr_spi_file_t *)thiz_)->thiz;
+	zrtos_vfs_module_spi_file_t *file = zrtos_vfs_file__get_data(thiz);
+	zrtos_vfs_module_avr_spi_args_t *inode = zrtos_vfs_file__get_inode_data(thiz);
+	zrtos_gpio_t *gpio = inode->gpio;
+
+	zrtos_gpio__set_mode_ex(
+		 gpio
+		,inode->pin_miso
+		,ZRTOS_GPIO_MODE__OUTPUT
+		,file->pin_ss
+		,ZRTOS_GPIO_MODE__INPUT
+		,inode->pin_mosi
+		,ZRTOS_GPIO_MODE__INPUT
+		,inode->pin_sck
+		,ZRTOS_GPIO_MODE__INPUT
+	);
+
+	zrtos_gpio__set_low(
+		 gpio
+		,file->pin_ss
+	);
+
+	SPCR = file->spcr;
+
+	return ESUCCESS;
+}
+
+zrtos_error_t zrtos_vfs_module_spi__on_after_file_transfer(
+	 zrtos_vfs_module_spi_file_t *thiz_
+){
+	zrtos_vfs_file_t *thiz = ((zrtos_vfs_module_avr_spi_file_t *)thiz_)->thiz;
+	zrtos_vfs_module_spi_file_t *file = zrtos_vfs_file__get_data(thiz);
+	zrtos_vfs_module_avr_spi_args_t *inode = zrtos_vfs_file__get_inode_data(thiz);
+	zrtos_gpio_t *gpio = inode->gpio;
+
+	zrtos_gpio__set_high(
+		 gpio
+		,file->pin_ss
+	);
+
+	return ESUCCESS;
 }
 
 static void zrtos_vfs_module_spi__get(
@@ -127,11 +213,19 @@ void zrtos_vfs_module_spi__transfer(
 	,void                   *data_in
 	,void                   *data_out
 	,size_t                 len
+	,zrtos_error_t (*on_before_file_transfer)(zrtos_vfs_module_spi_file_t *thiz)
+	,zrtos_error_t (*on_after_file_transfer)(zrtos_vfs_module_spi_file_t *thiz)
 ){
 	zrtos_vfs_module_spi__put(thiz,data_in,len);
-	zrtos_vfs_module_spi__get(thiz,data_out,len);
+	zrtos_vfs_module_spi__get(
+		 thiz
+		,data_out
+		,len
+		,on_before_file_transfer
+		,on_after_file_transfer
+	);
 }
-
+/*
 zrtos_error_t zrtos_vfs_module_spi__on_open(
 	 zrtos_vfs_file_t *thiz
 	,char             *path
@@ -155,7 +249,7 @@ zrtos_error_t zrtos_vfs_module_spi__on_close(
 	zrtos_vfs_module_spi_file__free(file_data);
 	return ESUCCESS;
 }
-
+*/
 zrtos_error_t zrtos_vfs_module_spi__on_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
@@ -218,12 +312,16 @@ zrtos_error_t zrtos_vfs_module_spi__on_can_write(
 }
 /*
 ZRTOS_VFS_PLUGIN__INIT(spi,
-	ZRTOS_VFS_PLUGIN__ON_OPEN(zrtos_vfs_module_spi__on_open)
-	ZRTOS_VFS_PLUGIN__ON_CLOSE(zrtos_vfs_module_spi__on_close)
-	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_spi__on_read)
-	ZRTOS_VFS_PLUGIN__ON_WRITE(zrtos_vfs_module_spi__on_write)
-	ZRTOS_VFS_PLUGIN__ON_CAN_READ(zrtos_vfs_module_spi__on_can_read)
-	ZRTOS_VFS_PLUGIN__ON_CAN_WRITE(zrtos_vfs_module_spi__on_can_write)
+	ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT()
+	ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_spi__on_read)
+	ZRTOS_VFS_PLUGIN__5_ON_WRITE(zrtos_vfs_module_spi__on_write)
+	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ(zrtos_vfs_module_spi__on_can_read)
+	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE(zrtos_vfs_module_spi__on_can_write)
+	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
 );
 */
 
