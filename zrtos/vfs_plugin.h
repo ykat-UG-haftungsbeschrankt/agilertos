@@ -122,6 +122,7 @@ zrtos_error_t zrtos_vfs_plugin__default_read(struct _zrtos_vfs_file_t *thiz,char
 zrtos_error_t zrtos_vfs_plugin__default_write(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,zrtos_vfs_offset_t offset,size_t *out){return ENOSYS;}
 zrtos_error_t zrtos_vfs_plugin__default_can_read(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
 zrtos_error_t zrtos_vfs_plugin__default_can_write(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_can_write_read_only(struct _zrtos_vfs_file_t *thiz){return EAGAIN;}
 zrtos_error_t zrtos_vfs_plugin__default_seek(struct _zrtos_vfs_file_t *thiz, zrtos_vfs_offset_t offset, int whence, zrtos_vfs_offset_t *out){return ENOSYS;}
 zrtos_error_t zrtos_vfs_plugin__default_ioctl(struct _zrtos_vfs_file_t *thiz,char *path, int request, va_list args){return ENOSYS;}
 #define ZRTOS_VFS_PLUGIN__INIT(name,...)\

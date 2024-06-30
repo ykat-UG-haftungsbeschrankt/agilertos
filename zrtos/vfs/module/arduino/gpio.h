@@ -60,8 +60,8 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_read(
 	,zrtos_gpio_pin_t           pin
 	,zrtos_gpio_value_analog_t  *val
 ){
-	*val = analogRead(pin);
-	return ESUCCESS;
+	//*val = analogRead(pin);
+	return ENOSYS;
 }
 
 zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_write(
@@ -69,8 +69,8 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_write(
 	,zrtos_gpio_pin_t           pin
 	,zrtos_gpio_value_analog_t  val
 ){
-	analogWrite(pin, val);
-	return ESUCCESS;
+	//analogWrite(pin, val);
+	return ENOSYS;
 }
 
 zrtos_gpio_t zrtos_vfs_module_arduino_gpio = ZRTOS_GPIO__INIT(

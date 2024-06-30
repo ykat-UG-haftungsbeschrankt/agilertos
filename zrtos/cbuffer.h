@@ -11,13 +11,14 @@ extern "C" {
 #endif
 
 
+#include <stdarg.h>
+
 #include <zrtos/types.h>
 #include <zrtos/error.h>
 #include <zrtos/list.h>
 #include <zrtos/malloc.h>
 #include <zrtos/assert.h>
 #include <zrtos/cast.h>
-#include <stdarg.h>
 
 
 #ifndef ZRTOS_CBUFFER__CFG_DATA_LENGTH

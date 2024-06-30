@@ -172,8 +172,26 @@ bool zrtos_types__uint64_is_valid_address_range(
 #define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \
     (sizeof(arr)/sizeof((arr)[0]))
 
+#define ZRTOS_TYPES__SIZE_MIN (0)
 #define ZRTOS_TYPES__SIZE_MAX SIZE_MAX
+
+#define ZRTOS_TYPES__INT8_MIN INT8_MIN
+#define ZRTOS_TYPES__INT8_MAX INT8_MAX
+#define ZRTOS_TYPES__INT16_MIN INT16_MIN
+#define ZRTOS_TYPES__INT16_MAX INT16_MAX
+#define ZRTOS_TYPES__INT32_MIN INT32_MIN
+#define ZRTOS_TYPES__INT32_MAX INT32_MAX
+#define ZRTOS_TYPES__INT64_MIN INT64_MIN
+#define ZRTOS_TYPES__INT64_MAX INT64_MAX
+
+#define ZRTOS_TYPES__UINT8_MIN (0)
+#define ZRTOS_TYPES__UINT8_MAX UINT8_MAX
+#define ZRTOS_TYPES__UINT16_MIN (0)
+#define ZRTOS_TYPES__UINT16_MAX UINT16_MAX
+#define ZRTOS_TYPES__UINT32_MIN (0)
 #define ZRTOS_TYPES__UINT32_MAX UINT32_MAX
+#define ZRTOS_TYPES__UINT64_MIN (0)
+#define ZRTOS_TYPES__UINT64_MAX UINT64_MAX
 
 size_t zrtos_types__uint8_to_hex(uint8_t *dest,uint8_t src){
 	uint8_t h = (src & 0xF) + '0';
@@ -191,6 +209,9 @@ size_t zrtos_types__uint8_to_hex(uint8_t *dest,uint8_t src){
 
 	return 2;
 }
+
+#define ZRTOS_TYPES__MAP(value,in_min,in_max,out_min,out_max)\
+  (((value)-(in_min))*((out_max)-(out_min))/((in_max)-(in_min))+(out_min))
 
 
 #ifdef __cplusplus

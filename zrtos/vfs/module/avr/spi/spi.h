@@ -24,20 +24,6 @@ extern "C" {
 #endif
 
 
-
-
-
-zrtos_error_t zrtos_vfs_module_spi__on_mount(
-	 zrtos_vfs_dirent_t *thiz
-){
-	zrtos_error_t ret = EFAULT;
-	return ret;
-}
-
-zrtos_vfs_module_spi_t zrtos_vfs_module_spi;
-
-
-
 void zrtos_vfs_module_avr_spi__on_interrupt(){
 	if(zrtos_error__is_error(zrtos_vfs_module_spi__transfer(
 		 &zrtos_vfs_module_spi
@@ -80,14 +66,14 @@ zrtos_error_t zrtos_vfs_module_avr_spi__on_write(
 ZRTOS_VFS_PLUGIN__INIT(avr_spi,
 	ZRTOS_VFS_PLUGIN__0_ON_OPEN(zrtos_vfs_module_spi__on_open)
 	ZRTOS_VFS_PLUGIN__1_ON_CLOSE(zrtos_vfs_module_spi__on_close)
-	ZRTOS_VFS_PLUGIN__2_ON_MOUNT(zrtos_vfs_module_spi__on_mount)
-	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT(zrtos_vfs_module_spi__on_umount)
+	ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT()
 	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_spi__on_read)
 	ZRTOS_VFS_PLUGIN__5_ON_WRITE(zrtos_vfs_module_avr_spi__on_write)
 	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ(zrtos_vfs_module_spi__on_can_read)
 	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE(zrtos_vfs_module_spi__on_can_write)
 	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
-	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL(zrtos_vfs_module_spi__on_ioctl)
 );
 
 

@@ -588,10 +588,13 @@ int main(void){
 ```C
 #include <avr/io.h>
 
+#include <stdint.h>
+#include <stddef.h>
+
 #define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
-typedef uint8_t max_align_t;
+//typedef uint8_t max_align_t;
 
 
 #define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX 10
@@ -599,37 +602,67 @@ typedef uint8_t max_align_t;
 #include <zrtos/error.h>
 #include <zrtos/types.h>
 
-typedef size_t off_t;
-
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/vfs_inode.h>
 #include <zrtos/vfs_dentry.h>
 #include <zrtos/vfs_file.h>
 
-#include <zrtos/vfs_module/zero/zero.h>
-#include <zrtos/vfs_module/null/null.h>
+#include <zrtos/vfs/module/zero/zero.h>
+#include <zrtos/vfs/module/null/null.h>
+#include <zrtos/vfs/module/random/random.h>
+#include <zrtos/vfs/module/arduino/gpio.h>
 
-int main(void){
+#define ZRTOS_VFS_MODULE_AVR_ADC__CFG_PRESCALER (ZRTOS_BINARY__00000101)
+#define ZRTOS_VFS_MODULE_AVR_ADC__CFG_VREF (ZRTOS_BINARY__01000000)
+#define ZRTOS_VFS_MODULE_AVR_ADC__CFG_MAX_CHANNEL (6)
+#define ZRTOS_VFS_MODULE_AVR_ADC__CFG_REFERENCE_VOLT (5.0)
+#include <zrtos/vfs/module/avr/adc/adc.h>
 
+void setup(void){
+	Serial.begin(19200);
+}
+
+void loop(void){
 	zrtos_vfs_dentry_t dev;
 	zrtos_vfs_dentry_t dev_zero;
 	zrtos_vfs_dentry_t dev_null;
+	zrtos_vfs_dentry_t dev_random;
+	zrtos_vfs_dentry_t dev_gpiochip0;
+	zrtos_vfs_dentry_t dev_adc;
 
 	zrtos_vfs_dentry__init(
 		 &dev
-		,"dev"
+		,(char*)"dev"
 		,0
 	);
 
 	zrtos_vfs_dentry__init(
 		 &dev_zero
-		,"zero"
+		,(char*)"zero"
 		,&dev
 	);
 
 	zrtos_vfs_dentry__init(
 		 &dev_null
-		,"null"
+		,(char*)"null"
+		,&dev
+	);
+
+	zrtos_vfs_dentry__init(
+		 &dev_random
+		,(char*)"random"
+		,&dev
+	);
+
+	zrtos_vfs_dentry__init(
+		 &dev_gpiochip0
+		,(char*)"gpiochip0"
+		,&dev
+	);
+
+	zrtos_vfs_dentry__init(
+		 &dev_adc
+		,(char*)"adc"
 		,&dev
 	);
 
@@ -639,11 +672,51 @@ int main(void){
 		,0
 	);
 
-	size_t fd;
-	zrtos_vfs_file__open("/dev/zero",&fd);
-	
+	zrtos_vfs_dentry__mount(
+		 &dev_random
+		,ZRTOS_VFS_PLUGIN(random)
+		,0
+	);
 
-	return 0;
+	zrtos_vfs_dentry__mount(
+		 &dev_gpiochip0
+		,ZRTOS_VFS_PLUGIN(arduino_gpio)
+		,0
+	);
+
+	zrtos_vfs_dentry__mount(
+		 &dev_adc
+		,ZRTOS_VFS_PLUGIN(avr_adc)
+		,0
+	);
+
+	size_t ret;
+	size_t fd;
+	size_t fd2;
+	size_t fd3;
+	uint8_t buffer[10];
+	float val;
+		
+	zrtos_vfs_file__open((char*)"/dev/zero",&fd);
+	zrtos_vfs_file__open((char*)"/dev/random",&fd2);
+	zrtos_vfs_file__open((char*)"/dev/adc",&fd3);
+
+	for(size_t l=5;l--;){
+		zrtos_vfs_file__read(fd2,0,buffer,5,0,&ret);
+	}
+	while(1){
+	for(size_t l=0;l<ZRTOS_VFS_MODULE_AVR_ADC__CFG_MAX_CHANNEL;l++){
+		Serial.print(l, DEC);
+    	Serial.print(": ");
+		zrtos_error_t err = zrtos_vfs_file__read(fd3,0,&val,sizeof(val),l*sizeof(val),&ret);
+		Serial.print((int)err, DEC);
+		Serial.print(":");
+		Serial.print(val, DEC);
+    	Serial.print("\n");
+		delay(1000);
+	}
+	}
+	zrtos_vfs_file__read(fd,0,buffer,5,0,&ret);
 }
 
 ```

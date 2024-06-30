@@ -50,7 +50,7 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	)){
 		uint8_t *start_ptr = zrtos_types__ptr_add(
 			 mod->start_addr
-			,start_offset;
+			,start_offset
 		);
 
 		*out = len;
