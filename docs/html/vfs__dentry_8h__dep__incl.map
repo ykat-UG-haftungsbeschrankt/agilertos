@@ -1,9 +1,13 @@
 <map id="vfs_dentry.h" name="vfs_dentry.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="43,5,134,32"/>
-<area shape="rect" id="Node000002" href="$vfs__file_8h.html" title=" " alt="" coords="53,80,124,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,48,91,80,86,80,86,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="91,5,182,32"/>
+<area shape="rect" id="Node000002" href="$vfs__file_8h.html" title=" " alt="" coords="101,80,172,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,48,139,80,134,80,134,48"/>
 <area shape="rect" id="Node000003" href="$random_8h.html" title=" " alt="" coords="5,155,81,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="75,122,53,156,49,153,70,119"/>
-<area shape="rect" id="Node000004" href="$zero_8h.html" title=" " alt="" coords="105,155,162,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="107,119,128,153,124,156,102,122"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="110,119,61,156,57,152,106,114"/>
+<area shape="rect" id="Node000004" href="$vfs__fd_8h.html" title=" " alt="" coords="104,155,169,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="139,122,139,154,134,154,134,122"/>
+<area shape="rect" id="Node000006" href="$zero_8h.html" title=" " alt="" coords="193,155,250,181"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="164,115,209,152,205,156,161,119"/>
+<area shape="rect" id="Node000005" href="$vfs__notify_8h.html" title=" " alt="" coords="94,229,179,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="139,197,139,229,134,229,134,197"/>
 </map>

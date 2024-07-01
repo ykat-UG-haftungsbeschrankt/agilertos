@@ -11,12 +11,16 @@
 <area shape="rect" id="Node000003" href="$avr_2spi_2spi_8h.html" title=" " alt="" coords="5,155,55,181"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="33,123,33,154,28,154,28,122"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="122,120,137,153,132,155,118,122"/>
-<area shape="rect" id="Node000006" href="$task__pthread_8h.html" title=" " alt="" coords="86,229,193,256"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="142,197,142,229,137,229,137,197"/>
-<area shape="rect" id="Node000008" href="$vfs__file_8h.html" title=" " alt="" coords="224,155,295,181"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="261,122,262,154,256,154,256,123"/>
-<area shape="rect" id="Node000009" href="$random_8h.html" title=" " alt="" coords="219,229,294,256"/>
-<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="261,197,260,229,254,229,256,197"/>
-<area shape="rect" id="Node000010" href="$zero_8h.html" title=" " alt="" coords="319,229,376,256"/>
-<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="288,189,334,227,330,231,285,194"/>
+<area shape="rect" id="Node000006" href="$task__pthread_8h.html" title=" " alt="" coords="63,229,170,256"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="133,197,123,230,118,228,128,196"/>
+<area shape="rect" id="Node000008" href="$vfs__file_8h.html" title=" " alt="" coords="268,155,339,181"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="276,119,298,153,293,156,272,122"/>
+<area shape="rect" id="Node000009" href="$random_8h.html" title=" " alt="" coords="195,229,270,256"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="282,194,247,231,243,227,279,191"/>
+<area shape="rect" id="Node000010" href="$vfs__fd_8h.html" title=" " alt="" coords="294,229,358,256"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="314,196,325,228,320,230,309,197"/>
+<area shape="rect" id="Node000012" href="$zero_8h.html" title=" " alt="" coords="383,229,440,256"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="336,188,394,226,391,231,333,193"/>
+<area shape="rect" id="Node000011" href="$vfs__notify_8h.html" title=" " alt="" coords="283,304,369,331"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="329,272,329,304,323,304,323,272"/>
 </map>

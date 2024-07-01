@@ -23,6 +23,7 @@ var types_8h =
     [ "ZRTOS_TYPES__SIZE_MIN", "types_8h.html#a3f3d34a6ded9ce0d0dae6c25d2f929b4", null ],
     [ "ZRTOS_TYPES__SWAP", "types_8h.html#a1c0e45875b5631e6888489bb020e5102", null ],
     [ "ZRTOS_TYPES__SWAP_PTR_CONTENTS", "types_8h.html#a2f4eaa4b4f1a02421779d9923bc8300d", null ],
+    [ "ZRTOS_TYPES__TYPEOF", "types_8h.html#a952b25e331e31b489b8e75f5599f1680", null ],
     [ "ZRTOS_TYPES__UINT16_MAX", "types_8h.html#a989beb8430d7b3eeca2e7524d3b03c0e", null ],
     [ "ZRTOS_TYPES__UINT16_MIN", "types_8h.html#ac42904fece24c3ecdc2044d65d498569", null ],
     [ "ZRTOS_TYPES__UINT32_MAX", "types_8h.html#aa474c15b8036d0952d870324b7d3f36f", null ],

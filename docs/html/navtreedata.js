@@ -65,11 +65,11 @@ var NAVTREEINDEX =
 [
 "adc_8h.html",
 "binary_8h.html#a6dcdf01fb1d353e3eed05a9e4e9d2818",
-"dir_b055b4698aa074fda90d59c953fca1c1.html",
-"index.html#autotoc_md5",
-"struct__zrtos__time__ticks__t.html",
-"types_8h.html#a7c7329fa05fa56c3e9c0ddf095a9625a",
-"vheap__task__pthread_8h.html#a96184290ffb60e04c53a52869cf960a2"
+"debug_8h_source.html",
+"gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd",
+"struct__zrtos__task__scheduler__t.html#a1f9d27b1d9a88dea381af2a632cbcb3c",
+"time_8h_source.html",
+"vheap_8h.html#aca49c0df48c5e07e9a0776f82bb6cc1f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
