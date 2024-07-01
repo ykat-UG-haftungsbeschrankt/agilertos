@@ -15,7 +15,6 @@ extern "C" {
 #include <zrtos/bitfield.h>
 #include <zrtos/vfs_dentry.h>
 
-
 typedef struct _zrtos_vfs_file_t{
 	zrtos_vfs_dentry_t *dentry;
 	zrtos_vfs_offset_t offset;
@@ -26,9 +25,9 @@ typedef struct _zrtos_vfs_file_t{
 #error "define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX"
 #endif
 
-zrtos_vfs_file_t zrtos_vfs_file_index[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX];
+zrtos_vfs_file_t zrtos_vfs_file__index[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX];
 
-zrtos_error_t zrtos_vfs_file__open(char *path,size_t *out){
+zrtos_error_t zrtos_vfs_file__open(char *path,zrtos_vfs_file_t **file){
 	zrtos_error_t ret;
 	zrtos_vfs_dentry_t *dentry = zrtos_vfs_dentry__lookup(
 		 0
@@ -36,23 +35,21 @@ zrtos_error_t zrtos_vfs_file__open(char *path,size_t *out){
 	);
 	if(dentry){ 
 		for(size_t fd=0;fd<ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX;fd++){
-			if(0 == zrtos_vfs_file_index[fd].dentry){
-				zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];
+			if(0 == zrtos_vfs_file__index[fd].dentry){
+				zrtos_vfs_file_t *tmp = *file = &zrtos_vfs_file__index[fd];
 
 				dentry->count++;
-				file->dentry = dentry;
+				tmp->dentry = dentry;
 
-				zrtos_vfs_plugin_t *plugin = file->dentry->inode.plugin;
+				zrtos_vfs_plugin_t *plugin = dentry->inode.plugin;
 				ret = ZRTOS_VFS_PLUGIN__INVOKE(
 					 plugin
 					,ZRTOS_VFS_PLUGIN_OPERATION__OPEN
-					,file
+					,tmp
 				);
-				if(zrtos_error__is_success(ret)){
-					*out = fd;
-				}else{
+				if(!zrtos_error__is_success(ret)){
 					dentry->count--;
-					file->dentry = 0;
+					tmp->dentry = 0;
 				}
 				goto L_OUT;
 			}
@@ -66,9 +63,8 @@ L_OUT:
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_file__close(size_t fd){
+zrtos_error_t zrtos_vfs_file__close(zrtos_vfs_file_t *file){
 	zrtos_error_t ret;
-	zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];
 
 	file->dentry->count--;
 	ret = ZRTOS_VFS_PLUGIN__INVOKE(
@@ -82,8 +78,14 @@ zrtos_error_t zrtos_vfs_file__close(size_t fd){
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_file__read(size_t fd,char *path,void *buffer,size_t len,size_t offset,size_t *ret){
-	zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];
+zrtos_error_t zrtos_vfs_file__read(
+	 zrtos_vfs_file_t *file
+	,char *path
+	,void *buffer
+	,size_t len
+	,size_t offset
+	,size_t *ret
+){
 	return file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__READ
@@ -96,8 +98,14 @@ zrtos_error_t zrtos_vfs_file__read(size_t fd,char *path,void *buffer,size_t len,
 	) : EBADF;
 }
 
-zrtos_error_t zrtos_vfs_file__write(size_t fd,char *path,void *buffer,size_t len,size_t offset,size_t *ret){
-	zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];
+zrtos_error_t zrtos_vfs_file__write(
+	 zrtos_vfs_file_t *file
+	,char *path
+	,void *buffer
+	,size_t len
+	,size_t offset
+	,size_t *ret
+){
 	return file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__WRITE
@@ -110,12 +118,34 @@ zrtos_error_t zrtos_vfs_file__write(size_t fd,char *path,void *buffer,size_t len
 	) : EBADF;
 }
 
-zrtos_error_t zrtos_vfs_file__ioctl(size_t fd,char *path,int request,...){
-	zrtos_error_t ret;
-	zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];
-	va_list       args;
+zrtos_error_t zrtos_vfs_file__can_read(
+	 zrtos_vfs_file_t *file
+){
+	return file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
+		 file->dentry->inode.plugin
+		,ZRTOS_VFS_PLUGIN_OPERATION__CAN_READ
+		,file
+	) : EBADF;
+}
 
-	va_start(args,request);
+zrtos_error_t zrtos_vfs_file__can_write(
+	 zrtos_vfs_file_t *file
+){
+	return file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
+		 file->dentry->inode.plugin
+		,ZRTOS_VFS_PLUGIN_OPERATION__CAN_WRITE
+		,file
+	) : EBADF;
+}
+
+zrtos_error_t zrtos_vfs_file__ioctl_va(
+	 zrtos_vfs_file_t *file
+	,char *path
+	,int request
+	,va_list args
+){
+	zrtos_error_t ret;
+
 	ret = file->dentry ? ZRTOS_VFS_PLUGIN__INVOKE(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__IOCTL
@@ -124,6 +154,26 @@ zrtos_error_t zrtos_vfs_file__ioctl(size_t fd,char *path,int request,...){
 		,request
 		,args
 	) : EBADF;
+
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_file__ioctl(
+	 zrtos_vfs_file_t *file
+	,char *path
+	,int request
+	,...
+){
+	zrtos_error_t ret;
+	va_list       args;
+
+	va_start(args,request);
+	ret = zrtos_vfs_file__ioctl_va(
+		 file
+		,path
+		,request
+		,args
+	);
 	va_end(args);
 
 	return ret;
@@ -155,7 +205,7 @@ zrtos_vfs_offset_t zrtos_vfs_file__get_offset(zrtos_vfs_file_t *thiz){
 
 #define ZRTOS_VFS_FILE__EACH_BEGIN(fd,file)\
 	for(size_t fd = 0;fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX;fd++){\
-		zrtos_vfs_file_t *file = &zrtos_vfs_file_index[fd];\
+		zrtos_vfs_file_t *file = &zrtos_vfs_file__index[fd];\
 		if(0 != file->dentry){
 
 #define ZRTOS_VFS_FILE__EACH_END\

@@ -44,6 +44,7 @@ var vfs__plugin_8h =
     ] ],
     [ "zrtos_vfs_plugin__default_can_read", "vfs__plugin_8h.html#a7f63d393875607f5c0b5f7e20bcdbdfc", null ],
     [ "zrtos_vfs_plugin__default_can_write", "vfs__plugin_8h.html#a7a04af6963798f7aa5d70188baee1ad8", null ],
+    [ "zrtos_vfs_plugin__default_can_write_read_only", "vfs__plugin_8h.html#a0ef2a78a228057aca4aeb49963044b1a", null ],
     [ "zrtos_vfs_plugin__default_close", "vfs__plugin_8h.html#ada995335de9f7b677c77c9485ce9161a", null ],
     [ "zrtos_vfs_plugin__default_ioctl", "vfs__plugin_8h.html#af1186984e033640728a483fe8b57f6fd", null ],
     [ "zrtos_vfs_plugin__default_mount", "vfs__plugin_8h.html#a40285d508fb13c74e29f5bb0b7526968", null ],

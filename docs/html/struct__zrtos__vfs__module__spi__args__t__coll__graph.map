@@ -1,17 +1,41 @@
 <map id="_zrtos_vfs_module_spi_args_t" name="_zrtos_vfs_module_spi_args_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="533,275,685,317"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__gpio__t.html" title=" " alt="" coords="330,243,429,269"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,265,533,280,532,285,444,270"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="18,5,193,80"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,86,207,90,258,128,304,171,368,240,364,244,300,175,254,132,204,94,199,91"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="24,104,187,195"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,184,344,240,342,245,200,189"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="7,219,204,293"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="219,253,329,253,329,259,219,259"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="22,317,189,408"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="202,322,342,267,344,272,204,327"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="5,432,206,507"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="199,421,204,418,256,378,304,333,364,268,367,272,308,337,260,382,207,422,201,426"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="349,321,410,348"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="425,335,466,335,508,331,559,315,561,320,510,336,466,341,425,341"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="933,579,1085,621"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__gpio__t.html" title=" " alt="" coords="723,304,822,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="797,341,991,576,987,580,793,344"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="385,432,560,507"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="562,422,571,418,671,367,744,329,746,333,674,372,574,422,564,427"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="391,5,553,96"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="568,101,574,106,635,157,690,213,763,302,759,305,686,217,631,161,571,110,565,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="374,120,570,195"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="565,200,574,204,748,301,746,306,571,209,563,205"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="389,219,555,309"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="571,279,723,306,722,311,570,284"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="372,333,572,408"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="587,348,722,323,723,329,588,353"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="442,531,502,557"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="518,540,596,537,634,536,673,537,791,552,909,576,933,581,932,586,908,581,791,558,672,543,634,541,596,543,518,545"/>
+<area shape="rect" id="Node000011" href="$struct__zrtos__vfs__module__spi__file__t.html" title=" " alt="" coords="696,655,849,697"/>
+<area shape="poly" id="edge19_Node000011_Node000008" title=" " alt="" coords="518,543,594,556,636,570,674,590,683,598,687,606,698,624,735,652,732,656,694,627,683,609,679,601,671,594,634,575,593,561,517,549"/>
+<area shape="rect" id="Node000009" href="$struct__zrtos__clist__t.html" title=" " alt="" coords="723,587,822,613"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="838,597,932,597,932,603,838,603"/>
+<area shape="rect" id="Node000010" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="405,621,539,648"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="555,623,722,603,723,608,555,628"/>
+<area shape="poly" id="edge10_Node000010_Node000010" title=" " alt="" coords="446,604,455,597,472,595,488,597,498,603,500,613,496,622,492,620,495,612,493,606,486,602,472,600,457,602,450,608"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="555,643,696,663,696,668,555,649"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="855,647,939,619,941,624,857,652"/>
+<area shape="rect" id="Node000012" href="$struct__zrtos__cbuffer__t.html" title=" " alt="" coords="416,845,529,872"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="544,863,577,861,611,855,643,843,670,823,681,810,685,797,684,769,681,739,685,724,694,708,707,696,710,700,698,711,690,726,687,740,689,769,690,798,685,813,674,827,646,847,613,860,578,866,545,868"/>
+<area shape="rect" id="Node000013" href="$struct__zrtos__list__t.html" title=" " alt="" coords="206,845,298,872"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="313,856,415,856,415,861,313,861"/>
+<area shape="rect" id="Node000014" href="$struct__zrtos__list__node__t.html" title=" " alt="" coords="5,845,133,872"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="148,856,205,856,205,861,148,861"/>
+<area shape="poly" id="edge16_Node000014_Node000014" title=" " alt="" coords="50,828,56,821,69,819,81,821,88,827,90,836,87,846,82,844,85,836,84,830,79,826,69,824,59,826,53,832"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="425,672,519,699"/>
+<area shape="poly" id="edge17_Node000011_Node000015" title=" " alt="" coords="535,688,601,691,672,689,695,687,696,692,673,695,601,697,535,694"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="400,723,545,765"/>
+<area shape="poly" id="edge18_Node000011_Node000016" title=" " alt="" coords="560,734,616,726,672,713,723,695,725,700,673,719,616,731,561,739"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="446,789,498,816"/>
+<area shape="poly" id="edge20_Node000011_Node000017" title=" " alt="" coords="514,799,550,796,591,787,633,773,671,751,679,742,682,731,686,719,694,707,710,696,713,700,698,711,691,722,687,733,684,744,674,755,635,778,593,793,551,801,514,805"/>
+<area shape="rect" id="Node000018" title=" " alt="" coords="739,721,806,748"/>
+<area shape="poly" id="edge21_Node000001_Node000018" title=" " alt="" coords="820,718,847,707,920,663,979,620,982,624,923,667,850,712,822,723"/>
 </map>

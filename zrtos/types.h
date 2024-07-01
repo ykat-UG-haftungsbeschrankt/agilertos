@@ -136,35 +136,26 @@ bool zrtos_types__uint64_is_valid_address_range(
 	return false;
 }
 
+
 #ifdef __cplusplus
-#define ZRTOS_TYPES__SWAP(a,b)              \
-    do{                                     \
-        auto a____ = (a);                   \
-        (a) = (b);                          \
-        (b) = a____;                        \
-    }while(0);
-
-#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
-    do{                                     \
-        auto a____ = *(a);                  \
-        *(a) = *(b);                        \
-        *(b) = a____;                       \
-    }while(0);
+#define ZRTOS_TYPES__TYPEOF(a) auto
 #else
-#define ZRTOS_TYPES__SWAP(a,b)              \
-    do{                                     \
-        typeof(a) a____ = (a);              \
-        (a) = (b);                          \
-        (b) = a____;                        \
+#define ZRTOS_TYPES__TYPEOF(a) typeof(a)
+#endif
+
+#define ZRTOS_TYPES__SWAP(a,b)                    \
+    do{                                           \
+        tyZRTOS_TYPES__TYPEOFpeof(a) a____ = (a); \
+        (a) = (b);                                \
+        (b) = a____;                              \
     }while(0);
 
-#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b) \
-    do{                                     \
-        typeof(*a) a____ = *(a);            \
-        *(a) = *(b);                        \
-        *(b) = a____;                       \
+#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b)   \
+    do{                                       \
+        ZRTOS_TYPES__TYPEOF(*a) a____ = *(a); \
+        *(a) = *(b);                          \
+        *(b) = a____;                         \
     }while(0);
-#endif
 
 #define ZRTOS_TYPES__IS_ADD_OVERFLOW(a,b) \
     (((a + b ) < a))

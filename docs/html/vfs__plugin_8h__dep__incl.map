@@ -1,39 +1,41 @@
 <map id="vfs_plugin.h" name="vfs_plugin.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="518,5,607,32"/>
-<area shape="rect" id="Node000002" href="$directory_8h.html" title=" " alt="" coords="5,80,88,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,29,323,49,100,83,88,85,87,80,99,77,322,44,503,23"/>
-<area shape="rect" id="Node000003" href="$vfs_2module_2gpio_2gpio_8h.html" title=" " alt="" coords="112,80,168,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="503,30,359,52,187,83,169,87,168,82,186,77,358,46,502,25"/>
-<area shape="rect" id="Node000005" href="$null_8h.html" title=" " alt="" coords="243,80,295,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="504,35,309,83,296,86,295,81,307,77,503,30"/>
-<area shape="rect" id="Node000008" href="$random_8h.html" title=" " alt="" coords="238,304,314,331"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="503,25,429,30,348,40,276,57,250,68,233,82,217,108,211,138,213,170,221,202,245,261,270,302,265,305,241,263,216,204,208,171,206,138,212,107,228,78,247,64,274,52,347,35,428,24,503,19"/>
-<area shape="rect" id="Node000009" href="$zero_8h.html" title=" " alt="" coords="354,304,411,331"/>
-<area shape="poly" id="edge20_Node000001_Node000009" title=" " alt="" coords="586,43,601,73,604,91,601,108,583,143,560,175,505,232,450,276,406,306,403,301,447,272,502,228,556,172,578,140,596,106,599,90,596,75,581,45"/>
-<area shape="rect" id="Node000010" href="$vfs_2module_2avr_2progmem_8h.html" title=" " alt="" coords="429,80,515,107"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="537,44,489,82,486,78,533,40"/>
-<area shape="rect" id="Node000011" href="$rtu_8h.html" title=" " alt="" coords="539,80,586,107"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="565,48,565,80,560,80,560,48"/>
-<area shape="rect" id="Node000012" href="$avr_2spi_2spi_8h.html" title=" " alt="" coords="817,155,866,181"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="622,17,714,19,819,28,869,36,914,46,950,60,974,78,982,94,979,109,968,122,951,133,908,152,867,164,865,158,906,147,948,129,964,118,974,107,977,95,970,82,947,65,912,51,868,41,818,33,713,25,622,22"/>
-<area shape="rect" id="Node000013" href="$spi_2spi_8h.html" title=" " alt="" coords="662,80,711,107"/>
-<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="598,38,666,77,663,82,595,42"/>
-<area shape="rect" id="Node000014" href="$sram_8h.html" title=" " alt="" coords="736,80,797,107"/>
-<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="613,35,736,79,734,84,611,40"/>
-<area shape="rect" id="Node000015" href="$uart_2uart_8h.html" title=" " alt="" coords="821,80,875,107"/>
-<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="623,31,810,77,821,81,819,86,808,83,621,36"/>
-<area shape="rect" id="Node000016" href="$uart0_8h.html" title=" " alt="" coords="899,80,960,107"/>
-<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="623,27,745,48,887,77,899,80,897,85,886,83,744,53,622,32"/>
-<area shape="rect" id="Node000017" href="$vfs__inode_8h.html" title=" " alt="" coords="320,80,405,107"/>
-<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="514,40,399,82,397,77,513,35"/>
-<area shape="rect" id="Node000004" href="$vfs_2module_2arduino_2gpio_8h.html" title=" " alt="" coords="112,155,168,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,122,143,154,137,154,137,122"/>
-<area shape="rect" id="Node000006" href="$vfs__dentry_8h.html" title=" " alt="" coords="284,155,374,181"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="291,117,321,153,317,156,287,120"/>
-<area shape="rect" id="Node000007" href="$vfs__file_8h.html" title=" " alt="" coords="294,229,364,256"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="332,197,332,229,327,229,327,197"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="313,270,287,305,283,302,309,267"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="350,267,375,302,371,305,345,270"/>
-<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="727,110,817,153,815,157,724,115"/>
-<area shape="poly" id="edge19_Node000017_Node000006" title=" " alt="" coords="353,122,337,155,332,153,348,120"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="551,5,639,32"/>
+<area shape="rect" id="Node000002" href="$adc_8h.html" title=" " alt="" coords="5,80,59,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="535,26,329,43,200,60,71,83,60,85,59,80,70,77,199,55,328,38,535,21"/>
+<area shape="rect" id="Node000003" href="$directory_8h.html" title=" " alt="" coords="83,80,165,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="536,30,374,51,178,83,166,85,165,80,177,77,373,46,535,24"/>
+<area shape="rect" id="Node000004" href="$vfs_2module_2gpio_2gpio_8h.html" title=" " alt="" coords="189,80,246,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="535,32,410,54,265,83,247,87,245,82,263,77,409,48,535,27"/>
+<area shape="rect" id="Node000006" href="$null_8h.html" title=" " alt="" coords="430,80,482,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="558,42,482,82,479,77,556,37"/>
+<area shape="rect" id="Node000009" href="$random_8h.html" title=" " alt="" coords="321,304,396,331"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="535,27,472,33,404,44,346,60,324,70,310,82,295,109,290,139,292,171,301,203,327,261,352,302,347,305,322,264,296,204,287,171,285,139,290,107,306,78,321,66,344,55,403,39,471,28,535,21"/>
+<area shape="rect" id="Node000010" href="$zero_8h.html" title=" " alt="" coords="441,304,498,331"/>
+<area shape="poly" id="edge21_Node000001_Node000010" title=" " alt="" coords="638,38,661,56,678,79,682,93,678,108,661,142,639,175,587,232,534,276,491,306,488,301,530,272,583,228,635,171,656,140,674,106,677,93,674,81,657,59,635,42"/>
+<area shape="rect" id="Node000011" href="$vfs_2module_2avr_2progmem_8h.html" title=" " alt="" coords="506,80,593,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="581,47,559,81,555,78,576,44"/>
+<area shape="rect" id="Node000012" href="$rtu_8h.html" title=" " alt="" coords="616,80,664,107"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="613,44,634,78,630,81,608,47"/>
+<area shape="rect" id="Node000013" href="$avr_2spi_2spi_8h.html" title=" " alt="" coords="889,155,938,181"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="636,37,778,104,889,153,887,158,776,109,633,41"/>
+<area shape="rect" id="Node000014" href="$spi_2spi_8h.html" title=" " alt="" coords="1038,80,1087,107"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="655,22,823,42,924,57,1026,77,1038,81,1037,86,1025,83,924,63,822,47,654,28"/>
+<area shape="rect" id="Node000015" href="$sram_8h.html" title=" " alt="" coords="789,80,851,107"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="649,35,790,79,788,85,647,40"/>
+<area shape="rect" id="Node000016" href="$uart_2uart_8h.html" title=" " alt="" coords="874,80,929,107"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="655,29,863,77,874,81,873,86,862,83,653,34"/>
+<area shape="rect" id="Node000017" href="$uart0_8h.html" title=" " alt="" coords="952,80,1013,107"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="654,26,786,47,941,77,952,80,951,85,939,83,785,52,654,31"/>
+<area shape="rect" id="Node000018" href="$vfs__inode_8h.html" title=" " alt="" coords="320,80,405,107"/>
+<area shape="poly" id="edge19_Node000001_Node000018" title=" " alt="" coords="541,39,404,82,403,77,539,34"/>
+<area shape="rect" id="Node000005" href="$vfs_2module_2arduino_2gpio_8h.html" title=" " alt="" coords="189,155,246,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="220,122,220,154,215,154,215,122"/>
+<area shape="rect" id="Node000007" href="$vfs__dentry_8h.html" title=" " alt="" coords="370,155,460,181"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="444,122,424,156,419,153,439,119"/>
+<area shape="rect" id="Node000008" href="$vfs__file_8h.html" title=" " alt="" coords="380,229,450,256"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="417,197,417,229,412,229,412,197"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="398,270,370,305,366,302,394,267"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="436,267,462,302,458,305,431,270"/>
+<area shape="poly" id="edge15_Node000014_Node000013" title=" " alt="" coords="1025,116,939,157,937,152,1023,111"/>
+<area shape="poly" id="edge20_Node000018_Node000007" title=" " alt="" coords="383,118,408,153,404,156,378,121"/>
 </map>

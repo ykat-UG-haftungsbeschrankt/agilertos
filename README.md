@@ -606,6 +606,8 @@ int main(void){
 #include <zrtos/vfs_inode.h>
 #include <zrtos/vfs_dentry.h>
 #include <zrtos/vfs_file.h>
+#include <zrtos/vfs_fd.h>
+#include <zrtos/vfs_notify.h>
 
 #include <zrtos/vfs/module/zero/zero.h>
 #include <zrtos/vfs/module/null/null.h>
@@ -620,6 +622,56 @@ int main(void){
 
 void setup(void){
 	Serial.begin(19200);
+}
+
+void on_can_read_zero(
+	 zrtos_vfs_notify_t *thiz
+	,zrtos_vfs_fd_t fd
+){
+	size_t outlen;
+	uint8_t buffer[1];
+	zrtos_vfs_fd__read(fd,0,buffer,1,0,&outlen);
+	Serial.print("#ZERO:");
+	Serial.print(buffer[0], HEX);
+	Serial.print("\n");
+}
+
+void on_can_read_random(
+	 zrtos_vfs_notify_t *thiz
+	,zrtos_vfs_fd_t fd
+){
+	size_t outlen;
+	uint8_t buffer[1];
+	zrtos_vfs_fd__read(fd,0,buffer,1,0,&outlen);
+	Serial.print("#RANDOM:");
+	Serial.print(buffer[0], HEX);
+	Serial.print("\n");
+}
+
+void on_can_read_adc(
+	 zrtos_vfs_notify_t *thiz
+	,zrtos_vfs_fd_t fd
+){
+	size_t outlen;
+	float val;
+	for(size_t l=0;l<ZRTOS_VFS_MODULE_AVR_ADC__CFG_MAX_CHANNEL;l++){
+		Serial.print("#ADC:");
+		Serial.print(l, DEC);
+		Serial.print(": ");
+		zrtos_error_t err = zrtos_vfs_fd__read(
+			fd
+			,0
+			,&val
+			,sizeof(val)
+			,l*sizeof(val)
+			,&outlen
+		);
+		Serial.print((int)err, DEC);
+		Serial.print(":");
+		Serial.print(val, DEC);
+		Serial.print("\n");
+		delay(1000);
+	}
 }
 
 void loop(void){
@@ -690,33 +742,25 @@ void loop(void){
 		,0
 	);
 
-	size_t ret;
-	size_t fd;
-	size_t fd2;
-	size_t fd3;
-	uint8_t buffer[10];
-	float val;
-		
-	zrtos_vfs_file__open((char*)"/dev/zero",&fd);
-	zrtos_vfs_file__open((char*)"/dev/random",&fd2);
-	zrtos_vfs_file__open((char*)"/dev/adc",&fd3);
+	zrtos_vfs_fd_t fd_zero;
+	zrtos_vfs_fd_t fd_random;
+	zrtos_vfs_fd_t fd_adc;
 
-	for(size_t l=5;l--;){
-		zrtos_vfs_file__read(fd2,0,buffer,5,0,&ret);
-	}
-	while(1){
-	for(size_t l=0;l<ZRTOS_VFS_MODULE_AVR_ADC__CFG_MAX_CHANNEL;l++){
-		Serial.print(l, DEC);
-    	Serial.print(": ");
-		zrtos_error_t err = zrtos_vfs_file__read(fd3,0,&val,sizeof(val),l*sizeof(val),&ret);
-		Serial.print((int)err, DEC);
-		Serial.print(":");
-		Serial.print(val, DEC);
-    	Serial.print("\n");
-		delay(1000);
-	}
-	}
-	zrtos_vfs_file__read(fd,0,buffer,5,0,&ret);
+	zrtos_vfs_notify_t notify;
+	zrtos_vfs_notify__init(
+		&notify
+	);
+
+	zrtos_vfs_fd__open((char*)"/dev/zero",&fd_zero);
+	zrtos_vfs_fd__open((char*)"/dev/random",&fd_random);
+	zrtos_vfs_fd__open((char*)"/dev/adc",&fd_adc);
+
+	zrtos_vfs_notify__add(&notify,fd_zero,on_can_read_zero,0);
+	zrtos_vfs_notify__add(&notify,fd_random,on_can_read_random,0);
+	zrtos_vfs_notify__add(&notify,fd_adc,on_can_read_adc,0);
+	zrtos_vfs_notify__start(
+		&notify
+	);
 }
 
 ```

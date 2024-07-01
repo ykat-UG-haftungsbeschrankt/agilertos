@@ -11,7 +11,7 @@ var searchData=
   ['close_8',['close',['../structzrtos__vfs__plugin__t.html#a525beb2da1e1bddee0018a3abd642e63',1,'zrtos_vfs_plugin_t']]],
   ['context_9',['context',['../struct__zrtos__vm__function__t.html#ae10bb8b5be89febfcc37a78a6a2fdeef',1,'_zrtos_vm_function_t']]],
   ['control_10',['control',['../struct__zrtos__vfs__module__spi__file__t.html#a7a84b94d97eb40943f7a3af48e2d60ad',1,'_zrtos_vfs_module_spi_file_t']]],
-  ['count_11',['count',['../struct__zrtos__vfs__module__spi__t.html#a5d11c991bb19a3b55dfa563d1850c038',1,'_zrtos_vfs_module_spi_t::count'],['../struct__zrtos__vfs__dentry__t.html#a65f427470689ed46c98e18d5a2c217ba',1,'_zrtos_vfs_dentry_t::count']]],
+  ['count_11',['count',['../struct__zrtos__vfs__module__spi__args__t.html#a10154ada5c0ebd3cad6b93a90ad10b4d',1,'_zrtos_vfs_module_spi_args_t::count'],['../struct__zrtos__vfs__dentry__t.html#a65f427470689ed46c98e18d5a2c217ba',1,'_zrtos_vfs_dentry_t::count']]],
   ['ctx_12',['ctx',['../struct__zrtos__event__handler__t.html#acfb1492aaf23ba15e675d8b7b5a92137',1,'_zrtos_event_handler_t::ctx'],['../struct__zrtos__vfs__file__t.html#ab8e68ab4000ff2f07fb766949e4674aa',1,'_zrtos_vfs_file_t::ctx'],['../struct__zrtos__vfs__inode__t.html#a3a472320bd4c2a7cb38fee643d735f5e',1,'_zrtos_vfs_inode_t::ctx']]],
   ['ctx_5fswitch_5ftask_5fstack_13',['ctx_switch_task_stack',['../struct__zrtos__vheap__task__scheduler__t.html#a29354430041cd1f450c935208480e3f4',1,'_zrtos_vheap_task_scheduler_t']]]
 ];

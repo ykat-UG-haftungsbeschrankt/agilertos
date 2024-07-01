@@ -10,7 +10,7 @@ var searchData=
   ['zrtos_5fvfs_5fdentry_5f_5findex_7',['zrtos_vfs_dentry__index',['../vfs__dentry_8h.html#adc0d6c09e75d63daec873d650f1387a7',1,'vfs_dentry.h']]],
   ['zrtos_5fvfs_5ffile_5findex_8',['zrtos_vfs_file_index',['../vfs__file_8h.html#a66d37d73ae92cd73cb40b1c89f7290a1',1,'vfs_file.h']]],
   ['zrtos_5fvfs_5fmodule_5farduino_5fgpio_9',['zrtos_vfs_module_arduino_gpio',['../vfs_2module_2arduino_2gpio_8h.html#af60881f56906c23cd6a4c5e1f18d6fe4',1,'gpio.h']]],
-  ['zrtos_5fvfs_5fmodule_5favr_5fuart1_10',['zrtos_vfs_module_avr_uart1',['../uart1_8h.html#a67701d8f593ede787f9292498bdfd03c',1,'uart1.h']]],
-  ['zrtos_5fvfs_5fmodule_5fspi_11',['zrtos_vfs_module_spi',['../avr_2spi_2spi_8h.html#ae8273cd2a7bf6d7f894a6355458c705f',1,'spi.h']]],
+  ['zrtos_5fvfs_5fmodule_5favr_5fadc_5f_5fdata_10',['zrtos_vfs_module_avr_adc__data',['../adc_8h.html#a36049701c32e0992d8555be564732fd3',1,'adc.h']]],
+  ['zrtos_5fvfs_5fmodule_5favr_5fuart1_11',['zrtos_vfs_module_avr_uart1',['../uart1_8h.html#a67701d8f593ede787f9292498bdfd03c',1,'uart1.h']]],
   ['zrtos_5fvheap_5ftask_5fscheduler_12',['zrtos_vheap_task_scheduler',['../vheap__task__scheduler_8h.html#a1a98cc2c2d37bf664e8116e0eca63a51',1,'vheap_task_scheduler.h']]]
 ];

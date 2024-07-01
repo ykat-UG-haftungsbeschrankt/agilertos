@@ -31,7 +31,6 @@ var annotated_dup =
     [ "_zrtos_vfs_module_modbus_rtu_args_t", "struct__zrtos__vfs__module__modbus__rtu__args__t.html", "struct__zrtos__vfs__module__modbus__rtu__args__t" ],
     [ "_zrtos_vfs_module_spi_args_t", "struct__zrtos__vfs__module__spi__args__t.html", "struct__zrtos__vfs__module__spi__args__t" ],
     [ "_zrtos_vfs_module_spi_file_t", "struct__zrtos__vfs__module__spi__file__t.html", "struct__zrtos__vfs__module__spi__file__t" ],
-    [ "_zrtos_vfs_module_spi_t", "struct__zrtos__vfs__module__spi__t.html", "struct__zrtos__vfs__module__spi__t" ],
     [ "_zrtos_vfs_module_sram_args_t", "struct__zrtos__vfs__module__sram__args__t.html", "struct__zrtos__vfs__module__sram__args__t" ],
     [ "_zrtos_vfs_module_uart_args_t", "struct__zrtos__vfs__module__uart__args__t.html", "struct__zrtos__vfs__module__uart__args__t" ],
     [ "_zrtos_vheap_chunk_t", "struct__zrtos__vheap__chunk__t.html", "struct__zrtos__vheap__chunk__t" ],
@@ -51,6 +50,7 @@ var annotated_dup =
     [ "pthread_t", "structpthread__t.html", "structpthread__t" ],
     [ "zrtos_bitfield_t", "structzrtos__bitfield__t.html", "structzrtos__bitfield__t" ],
     [ "zrtos_task_pthread__trampoline_cb_args_t", "structzrtos__task__pthread____trampoline__cb__args__t.html", "structzrtos__task__pthread____trampoline__cb__args__t" ],
+    [ "zrtos_vfs_module_avr_adc_t", "structzrtos__vfs__module__avr__adc__t.html", "structzrtos__vfs__module__avr__adc__t" ],
     [ "zrtos_vfs_plugin_t", "structzrtos__vfs__plugin__t.html", "structzrtos__vfs__plugin__t" ],
     [ "zrtos_vm_ioop_t", "structzrtos__vm__ioop__t.html", "structzrtos__vm__ioop__t" ]
 ];

@@ -1,0 +1,29 @@
+<map id="zrtos_vfs_module_spi__transfer" name="zrtos_vfs_module_spi__transfer">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,151,91"/>
+<area shape="rect" id="Node000002" href="$spi_2spi_8h.html#adb3c9d0113d91197fb9440d6cae37701" title=" " alt="" coords="199,31,376,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,58,183,54,183,59,151,63"/>
+<area shape="rect" id="Node000003" href="$spi_2spi_8h.html#accba660071191e6780a20aa392339d59" title=" " alt="" coords="199,81,376,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,75,183,79,183,85,151,81"/>
+<area shape="rect" id="Node000004" href="$cbuffer_8h.html#a5d269503e04946737598d2062c5bfaf4" title=" " alt="" coords="424,56,572,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="376,81,408,77,409,83,377,87"/>
+<area shape="rect" id="Node000013" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="620,107,784,133"/>
+<area shape="poly" id="edge14_Node000003_Node000013" title=" " alt="" coords="377,97,605,111,605,117,376,103"/>
+<area shape="rect" id="Node000005" href="$cbuffer_8h.html#afdb6a6176387d77a0f10e28536ba28f9" title=" " alt="" coords="638,56,766,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="573,67,623,67,623,72,573,72"/>
+<area shape="poly" id="edge13_Node000004_Node000013" title=" " alt="" coords="556,81,631,100,630,105,554,86"/>
+<area shape="rect" id="Node000006" href="$cbuffer_8h.html#a1846e554cfe5e72cc8df6b60ab5c6d84" title=" " alt="" coords="835,31,998,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="766,59,819,53,820,58,767,64"/>
+<area shape="rect" id="Node000012" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="832,81,1001,108"/>
+<area shape="poly" id="edge12_Node000005_Node000012" title=" " alt="" coords="767,74,817,80,816,86,766,80"/>
+<area shape="poly" id="edge11_Node000006_Node000006" title=" " alt="" coords="880,32,874,22,878,12,893,6,916,4,942,7,955,13,953,18,940,12,916,9,894,11,882,16,879,21,884,29"/>
+<area shape="rect" id="Node000007" href="$cbuffer_8h.html#a1749e471b67565254c5dc85e0cb728a1" title=" " alt="" coords="1049,31,1216,57"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="998,41,1034,41,1034,47,998,47"/>
+<area shape="rect" id="Node000008" href="$cbuffer_8h.html#aeb332726de06c905eb2db32ae3d323eb" title=" " alt="" coords="1264,23,1395,65"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1217,41,1249,41,1249,47,1217,47"/>
+<area shape="rect" id="Node000009" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title=" " alt="" coords="1455,5,1571,32"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1395,32,1439,26,1440,31,1395,38"/>
+<area shape="rect" id="Node000011" href="$list_8h.html#a40feeb4cd0cc4e30201a279240b52429" title=" " alt="" coords="1443,56,1583,83"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="1395,50,1428,55,1427,60,1395,56"/>
+<area shape="rect" id="Node000010" href="$list_8h.html#aa2f26b2b6fd722b708eb7e25cc264a90" title=" " alt="" coords="1631,5,1800,32"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1572,16,1615,16,1615,21,1572,21"/>
+</map>
