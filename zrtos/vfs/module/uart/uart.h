@@ -13,17 +13,62 @@ extern "C" {
 
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/cbuffer.h>
+#include <zrtos/binary.h>
+#include <zrtos/types.h>
 
+typedef enum{
+	 ZRTOS_VFS_MODULE_UART_BAUDRATE__300    = 300
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__600    = 600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__1200   = 1200
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__2400   = 2400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__4800   = 4800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__9600   = 9600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__14400  = 14400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__19200  = 19200
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__28800  = 28800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__38400  = 38400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__57600  = 57600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__76800  = 76800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__115200 = 115200
+}zrtos_vfs_module_uart_baudrate_t;
+
+typedef enum{
+	 ZRTOS_VFS_MODULE_UART_MODE__MIN             = ZRTOS_TYPES__UINT8_MIN
+	,ZRTOS_VFS_MODULE_UART_MODE__PARITY_DISABLED = ZRTOS_BINARY__00000000
+	,ZRTOS_VFS_MODULE_UART_MODE__PARITY_EVEN     = ZRTOS_BINARY__00100000
+	,ZRTOS_VFS_MODULE_UART_MODE__PARITY_ODD      = ZRTOS_BINARY__00110000
+	,ZRTOS_VFS_MODULE_UART_MODE__STOP_BITS_1     = ZRTOS_BINARY__00000000
+	,ZRTOS_VFS_MODULE_UART_MODE__STOP_BITS_2     = ZRTOS_BINARY__00001000
+	,ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_5     = ZRTOS_BINARY__00000000
+	,ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_6     = ZRTOS_BINARY__00000001
+	,ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_7     = ZRTOS_BINARY__00000010
+	,ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_8     = ZRTOS_BINARY__00000011
+	,ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_9     = ZRTOS_BINARY__00000111
+	,ZRTOS_VFS_MODULE_UART_MODE__8N1             = (
+		  ZRTOS_VFS_MODULE_UART_MODE__CHAR_SIZE_8
+		| ZRTOS_VFS_MODULE_UART_MODE__PARITY_DISABLED
+		| ZRTOS_VFS_MODULE_UART_MODE__STOP_BITS_1
+	)
+	,ZRTOS_VFS_MODULE_UART_MODE__MAX             = ZRTOS_TYPES__UINT8_MAX
+}zrtos_vfs_module_uart_mode_t;
 
 typedef struct _zrtos_vfs_module_uart_args_t{
-	zrtos_cbuffer_t              cbuffer_in;
-	zrtos_cbuffer_t              cbuffer_out;
-	zrtos_error_t                error;
+	zrtos_cbuffer_t                  cbuffer_in;
+	zrtos_cbuffer_t                  cbuffer_out;
+	zrtos_error_t                    error;
+	zrtos_vfs_module_uart_baudrate_t baudrate;
+	zrtos_vfs_module_uart_mode_t     mode;
 }zrtos_vfs_module_uart_args_t;
 
 
-bool zrtos_vfs_module_uart_args__init(zrtos_vfs_module_uart_args_t *thiz){
+bool zrtos_vfs_module_uart_args__init(
+	 zrtos_vfs_module_uart_args_t *thiz
+	,zrtos_vfs_module_uart_baudrate_t baudrate
+	,zrtos_vfs_module_uart_mode_t mode
+){
 	thiz->error = ESUCCESS;
+	thiz->baudrate = baudrate;
+	thiz->mode = mode;
 	if(zrtos_cbuffer__init(&thiz->cbuffer_in)){
 		if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
 			return true;
@@ -57,6 +102,18 @@ zrtos_error_t zrtos_vfs_module_uart_args__get_error(
 	return thiz->error;
 }
 
+zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_args__get_baudrate(
+	zrtos_vfs_module_uart_args_t *thiz
+){
+	return thiz->baudrate;
+}
+
+zrtos_vfs_module_uart_mode_t zrtos_vfs_module_uart_args__get_mode(
+	zrtos_vfs_module_uart_args_t *thiz
+){
+	return thiz->mode;
+}
+
 zrtos_error_t zrtos_vfs_module_uart__on_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
@@ -65,15 +122,19 @@ zrtos_error_t zrtos_vfs_module_uart__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
+	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(thiz);
 	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
-	return zrtos_cbuffer__get_ex(
-		 &mod->cbuffer_in
-		,buf
-		,len
-		,out
-	);
+	if(zrtos_error__is_success(ret)){
+		ret = zrtos_cbuffer__get_ex(
+			&mod->cbuffer_in
+			,buf
+			,len
+			,out
+		);
+	}
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_uart__on_write(
@@ -84,16 +145,20 @@ zrtos_error_t zrtos_vfs_module_uart__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
+	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(thiz);
 	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
-	return zrtos_cbuffer__put_ex(
-		 &mod->cbuffer_out
-		,1
-		,buf
-		,len
-		,out
-	);
+	if(zrtos_error__is_success(ret)){
+		ret = zrtos_cbuffer__put_ex(
+			&mod->cbuffer_out
+			,1
+			,buf
+			,len
+			,out
+		);
+	}
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_uart__on_can_read(

@@ -16,40 +16,25 @@ extern "C" {
 
 zrtos_vfs_module_uart_args_t *zrtos_vfs_module_avr_uart1;
 
-bool zrtos_vfs_module_avr_uart1__init(uint16_t baudrate){
-	/* Set baud rate */
-	if (baudrate & 0x8000) {
-		UART1_STATUS = (1<<U2X1);  //Enable 2x speed
-		baudrate &= ~0x8000;
-	}
-	UBRR1H = (uint8_t) (baudrate>>8);
-	UBRR1L = (uint8_t) baudrate;
-
-	/* Enable USART receiver and transmitter and receive complete interrupt */
-	UART1_CONTROL = _BV(RXCIE1)|(1<<RXEN1)|(1<<TXEN1);
-
-	/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
-#ifdef URSEL1
-	UCSR1C = (1<<URSEL1)|(3<<UCSZ10);
-#else
-	UCSR1C = (3<<UCSZ10);
-#endif
-
-	return zrtos_cbuffer__init(&zrtos_cbuffer1);
-}
-
 ISR(UART1_RECEIVE_INTERRUPT){
-	zrtos_vfs_module_uart__set_error(
-		 zrtos_vfs_module_avr_uart1
-		,( 
+	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
+		zrtos_vfs_module_avr_uart1
+	);
+	if(zrtos_error__is_success(err)){
+		err = ( 
 			(UART1_STATUS & (_BV(FE1)|_BV(DOR1)|_BV(UPE1))) > 0
 			? zrtos_cbuffer__put(
 				zrtos_vfs_module_uart_args__get_cbuffer(zrtos_vfs_module_avr_uart1)
-				,(UART1_DATA
+				,UART1_DATA
 			)
 			: EIO
-		)
-	);
+		);
+
+		zrtos_vfs_module_uart__set_error(
+			 zrtos_vfs_module_avr_uart1
+			,err
+		);
+	}
 }
 
 ISR(UART1_TRANSMIT_INTERRUPT){
@@ -60,6 +45,44 @@ ISR(UART1_TRANSMIT_INTERRUPT){
 	}else{
 		UART1_CONTROL &= ~_BV(UART1_UDRIE);
 	}
+}
+
+zrtos_error_t zrtos_vfs_module_avr_uart1__on_mount(zrtos_vfs_dentry_t *thiz){
+	zrtos_error_t ret = EINVAL;
+	zrtos_vfs_module_avr_uart1 = zrtos_vfs_dentry__get_inode_data(
+		thiz
+	);
+	uint16_t baudrate;
+
+	if(zrtos_vfs_module_avr_uart1->baudrate <= ZROTS_TYPES__UINT16_MAX){
+		baudrate = zrtos_vfs_module_avr_uart1->baudrate;
+		/* Set baud rate
+		if (baudrate & 0x8000) {
+			UART1_STATUS = (1<<U2X1);  //Enable 2x speed
+			baudrate &= ~0x8000;
+		} */
+		UBRR1H = (uint8_t) (baudrate>>8);
+		UBRR1L = (uint8_t) baudrate;
+
+		/* Enable USART receiver and transmitter and receive complete interrupt */
+		UART1_CONTROL = _BV(RXCIE1)|(1<<RXEN1)|(1<<TXEN1);
+
+		/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
+#ifdef URSEL1
+		UCSR1C = (1<<URSEL1)|(3<<UCSZ10);
+#else
+		UCSR1C = (3<<UCSZ10);
+#endif
+
+		ret = ESUCCESS;
+	}
+
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_avr_uart1__on_umount(zrtos_vfs_dentry_t *thiz){
+	UART1_CONTROL &= ~_BV(UART1_UDRIE);
+	return ESUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_write(
@@ -85,12 +108,17 @@ zrtos_error_t zrtos_vfs_module_avr_uart1__on_write(
 }
 
 ZRTOS_VFS_PLUGIN__INIT(avr_uart1,
-	ZRTOS_VFS_PLUGIN__ON_MOUNT(zrtos_vfs_module_avr_uart1__on_mount)
-	ZRTOS_VFS_PLUGIN__ON_UMOUNT(zrtos_vfs_module_avr_uart1__on_umount)
-	ZRTOS_VFS_PLUGIN__ON_READ(zrtos_vfs_module_uart__on_read)
-	ZRTOS_VFS_PLUGIN__ON_WRITE(zrtos_vfs_module_avr_uart1__on_write)
+	ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT()
+	ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__2_ON_MOUNT(zrtos_vfs_module_avr_uart1__on_mount)
+	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT(zrtos_vfs_module_avr_uart1__on_umount)
+	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_uart__on_read)
+	ZRTOS_VFS_PLUGIN__5_ON_WRITE(zrtos_vfs_module_avr_uart1__on_write)
+	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ(zrtos_vfs_module_uart__on_can_read)
+	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE(zrtos_vfs_module_uart__on_can_write)
+	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
 );
-
 
 #ifdef __cplusplus
 }

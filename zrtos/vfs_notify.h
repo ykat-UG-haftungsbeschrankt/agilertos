@@ -16,14 +16,19 @@ extern "C" {
 
 struct _zrtos_vfs_notify_t;
 
+typedef enum{
+	 ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ
+	,ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE
+}zrtos_vfs_notify_event_type_t;
+
 typedef void (*zrtos_vfs_notify_callback_t)(
-	 struct _zrtos_vfs_notify_t *thiz
-	,zrtos_vfs_fd_t fd
+	 struct _zrtos_vfs_notify_t    *thiz
+	,zrtos_vfs_fd_t                fd
+	,zrtos_vfs_notify_event_type_t event_type
 );
 
 typedef struct _zrtos_vfs_notify_entry_t{
-	zrtos_vfs_notify_callback_t on_can_read;
-	zrtos_vfs_notify_callback_t on_can_write;
+	zrtos_vfs_notify_callback_t callback;
 }zrtos_vfs_notify_entry_t;
 
 typedef struct _zrtos_vfs_notify_t{
@@ -46,13 +51,11 @@ bool zrtos_vfs_notify__init(zrtos_vfs_notify_t *thiz){
 void zrtos_vfs_notify__add(
 	 zrtos_vfs_notify_t *thiz
 	,zrtos_vfs_fd_t fd
-	,zrtos_vfs_notify_callback_t on_can_read
-	,zrtos_vfs_notify_callback_t on_can_write
+	,zrtos_vfs_notify_callback_t callback
 ){
 	zrtos_vfs_fd_set__set(&thiz->fdset,fd);
 	zrtos_vfs_notify_entry_t *entry = &thiz->data[fd.fd];
-	entry->on_can_read = on_can_read;
-	entry->on_can_write = on_can_write;
+	entry->callback = callback;
 }
 
 void zrtos_vfs_notify__remove(
@@ -61,8 +64,7 @@ void zrtos_vfs_notify__remove(
 ){
 	zrtos_vfs_fd_set__clear(&thiz->fdset,fd);
 	zrtos_vfs_notify_entry_t *entry = &thiz->data[fd.fd];
-	entry->on_can_read = 0;
-	entry->on_can_write = 0;
+	entry->callback = 0;
 }
 
 void zrtos_vfs_notify__start(
@@ -76,19 +78,21 @@ void zrtos_vfs_notify__start(
 		zrtos_vfs_fd_set__copy(&fdset_can_write,&thiz->fdset);
 		if(zrtos_vfs_fd__select(&fdset_can_read,&fdset_can_write)>0){
 			ZRTOS_VFS_FD_SET__EACH_BEGIN(&fdset_can_read,fd){
-				if(thiz->data[fd.fd].on_can_read){
-					thiz->data[fd.fd].on_can_read(
+				if(thiz->data[fd.fd].callback){
+					thiz->data[fd.fd].callback(
 						 thiz
 						,fd
+						,ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ
 					);
 				}
 			}ZRTOS_VFS_FD_SET__EACH_END;
 
 			ZRTOS_VFS_FD_SET__EACH_BEGIN(&fdset_can_write,fd){
-				if(thiz->data[fd.fd].on_can_write){
-					thiz->data[fd.fd].on_can_write(
+				if(thiz->data[fd.fd].callback){
+					thiz->data[fd.fd].callback(
 						 thiz
 						,fd
+						,ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE
 					);
 				}
 			}ZRTOS_VFS_FD_SET__EACH_END;

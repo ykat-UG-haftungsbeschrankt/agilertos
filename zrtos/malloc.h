@@ -193,6 +193,16 @@ L_OUT:
 #endif
 }
 
+#ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
+size_t zrtos_malloc__get_length(void *ptr){
+	zrtos_malloc_heap_chunk_t *chunk = ptr;
+	--chunk;
+	chunk->length &= ~((size_t)1);
+
+	return (chunk->length >> 1);
+}
+#endif
+
 /*
 ** defined(ZRTOS_MALLOC__CFG_DISABLE_FREE)
 ** ? noop

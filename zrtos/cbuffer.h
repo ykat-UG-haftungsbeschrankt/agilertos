@@ -16,13 +16,17 @@ extern "C" {
 #include <zrtos/types.h>
 #include <zrtos/error.h>
 #include <zrtos/list.h>
-#include <zrtos/malloc.h>
+#include <zrtos/malloc_limit.h>
 #include <zrtos/assert.h>
 #include <zrtos/cast.h>
 
 
 #ifndef ZRTOS_CBUFFER__CFG_DATA_LENGTH
 #define ZRTOS_CBUFFER__CFG_DATA_LENGTH 16
+#endif
+
+#ifndef ZRTOS_CBUFFER__CFG_MALLOC_LIMIT
+#define ZRTOS_CBUFFER__CFG_MALLOC_LIMIT ZRTOS_TYPES__SIZE_MAX
 #endif
 
 ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(ZRTOS_CBUFFER__CFG_DATA_LENGTH);
@@ -43,6 +47,8 @@ typedef struct _zrtos_cbuffer_state_t{
 	zrtos_cbuffer_node_t *last;
 	uint8_t              head;
 }zrtos_cbuffer_state_t;
+
+zrtos_malloc_limit_t zrtos_cbuffer__malloc_limit = ZRTOS_MALLOC_LIMIT__INIT();
 
 zrtos_cbuffer_node_t *zrtos_cbuffer__get_first_node(zrtos_cbuffer_t *thiz){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
@@ -104,7 +110,11 @@ bool zrtos_cbuffer_node__init(
 }
 
 zrtos_cbuffer_node_t *zrtos_cbuffer_node__new(zrtos_cbuffer_t *ctx){
-	zrtos_cbuffer_node_t *ret = malloc(sizeof(zrtos_cbuffer_node_t));
+	zrtos_cbuffer_node_t *ret = zrtos_malloc_limit__malloc(
+		 &zrtos_cbuffer__malloc_limit
+		,sizeof(zrtos_cbuffer_node_t)
+		,ZRTOS_CBUFFER__CFG_MALLOC_LIMIT
+	);
 	if(ret){
 		zrtos_cbuffer_node__init(ret,ctx);
 	}
@@ -113,7 +123,7 @@ zrtos_cbuffer_node_t *zrtos_cbuffer_node__new(zrtos_cbuffer_t *ctx){
 
 void zrtos_cbuffer_node__free(zrtos_cbuffer_node_t *thiz,zrtos_cbuffer_t *ctx){
 	zrtos_list__delete(&ctx->root,&thiz->node);
-	free(thiz);
+	zrtos_malloc_limit__free(&zrtos_cbuffer__malloc_limit,thiz);
 }
 
 bool zrtos_cbuffer__init(
