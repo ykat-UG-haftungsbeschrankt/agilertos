@@ -28,10 +28,11 @@ void *zrtos_malloc_limit__malloc(
 	,size_t limit
 ){
 	void *ret = 0;
-	if(thiz->length >= limit){
+	size_t len = thiz->length + length;
+	if(len <= limit){
 		ret = malloc(length);
 		if(ret){
-			thiz->length += length;
+			thiz->length = len;
 		}
 	}
 	return ret;

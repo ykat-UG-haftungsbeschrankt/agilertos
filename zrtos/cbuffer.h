@@ -48,6 +48,7 @@ typedef struct _zrtos_cbuffer_state_t{
 	uint8_t              head;
 }zrtos_cbuffer_state_t;
 
+/// @todo mutex lock zrtos_cbuffer__malloc_limit
 zrtos_malloc_limit_t zrtos_cbuffer__malloc_limit = ZRTOS_MALLOC_LIMIT__INIT();
 
 zrtos_cbuffer_node_t *zrtos_cbuffer__get_first_node(zrtos_cbuffer_t *thiz){

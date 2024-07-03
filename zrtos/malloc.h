@@ -12,6 +12,7 @@ extern "C" {
 
 #include <zrtos/assert.h>
 #include <zrtos/types.h>
+#include <zrtos/cast.h>
 #include <zrtos/debug.h>
 
 typedef struct _zrtos_malloc_t{
@@ -195,10 +196,11 @@ L_OUT:
 
 #ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
 size_t zrtos_malloc__get_length(void *ptr){
-	zrtos_malloc_heap_chunk_t *chunk = ptr;
+	zrtos_malloc_heap_chunk_t *chunk = ZRTOS_CAST(
+		 zrtos_malloc_heap_chunk_t*
+		,ptr
+	);
 	--chunk;
-	chunk->length &= ~((size_t)1);
-
 	return (chunk->length >> 1);
 }
 #endif
@@ -210,7 +212,10 @@ size_t zrtos_malloc__get_length(void *ptr){
 **/
 void zrtos_malloc__free(void *ptr){
 #ifndef ZRTOS_MALLOC__CFG_DISABLE_FREE
-	zrtos_malloc_heap_chunk_t *chunk = ptr;
+	zrtos_malloc_heap_chunk_t *chunk = ZRTOS_CAST(
+		 zrtos_malloc_heap_chunk_t*
+		,ptr
+	);
 	--chunk;
 	chunk->length &= ~((size_t)1);
 
