@@ -27,7 +27,7 @@ typedef struct _zrtos_vfs_file_t{
 
 zrtos_vfs_file_t zrtos_vfs_file__index[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX];
 
-zrtos_error_t zrtos_vfs_file__open(char *path,zrtos_vfs_file_t **file){
+zrtos_error_t zrtos_vfs_file__open(char *path,zrtos_vfs_file_t **file,void *file_ctx){
 	zrtos_error_t ret;
 	zrtos_vfs_dentry_t *dentry = zrtos_vfs_dentry__lookup(
 		 0
@@ -40,6 +40,7 @@ zrtos_error_t zrtos_vfs_file__open(char *path,zrtos_vfs_file_t **file){
 
 				dentry->count++;
 				tmp->dentry = dentry;
+				tmp->ctx = file_ctx;
 
 				zrtos_vfs_plugin_t *plugin = dentry->inode.plugin;
 				ret = ZRTOS_VFS_PLUGIN__INVOKE(

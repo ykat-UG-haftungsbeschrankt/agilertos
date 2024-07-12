@@ -93,6 +93,35 @@ void zrtos_list__shift_and_push(zrtos_list_t *thiz){
 	}
 }
 
+void zrtos_list__delete(zrtos_list_t *thiz,zrtos_list_node_t *node){
+	zrtos_list_node_t *next;
+	zrtos_list_node_t *prev = zrtos_list__get_first_node(thiz);
+	if(node == prev){
+		zrtos_list__shift(thiz);
+	}else{
+		while((next = prev->next) != node){
+			prev = next;
+		}
+		if((prev->next = node->next) == 0){
+			thiz->last = prev;
+		}
+	}
+}
+
+bool zrtos_list__is_empty(zrtos_list_t *thiz){
+	return zrtos_list__get_first_node(thiz) == 0;
+}
+
+void zrtos_list__deinit(
+	zrtos_list_t *thiz
+	,void (*callback)(zrtos_list_t *thiz,zrtos_list_node_t *node)
+){
+	while(!zrtos_list__is_empty(thiz)){
+		zrtos_list_node_t *node = zrtos_list__shift(thiz);
+		callback(thiz,node);
+	}
+}
+
 void zrtos_list__each(
 	 zrtos_list_t *thiz
 	,bool (*callback)(zrtos_list_node_t *node,void *arg)

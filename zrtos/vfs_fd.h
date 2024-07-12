@@ -67,9 +67,9 @@ bool zrtos_vfs_fd_set__init(zrtos_vfs_fd_set_t *thiz){
 	return true;
 }
 
-zrtos_error_t zrtos_vfs_fd__open(char *path,zrtos_vfs_fd_t *thiz){
+zrtos_error_t zrtos_vfs_fd__open(char *path,zrtos_vfs_fd_t *thiz,void *file_ctx){
 	zrtos_vfs_file_t *file;
-	zrtos_error_t ret = zrtos_vfs_file__open(path,&file);
+	zrtos_error_t ret = zrtos_vfs_file__open(path,&file,file_ctx);
 	thiz->fd = file - (&zrtos_vfs_file__index[0]);
 	return ret;
 }

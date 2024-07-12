@@ -30,7 +30,7 @@ void *zrtos_malloc_limit__malloc(
 	void *ret = 0;
 	size_t len = thiz->length + length;
 	if(len <= limit){
-		ret = malloc(length);
+		ret = kmalloc(length);
 		if(ret){
 			thiz->length = len;
 		}
@@ -40,6 +40,7 @@ void *zrtos_malloc_limit__malloc(
 
 void zrtos_malloc_limit__free(zrtos_malloc_limit_t *thiz,void *ptr){
 	thiz->length -= zrtos_malloc__get_length(ptr);
+	kfree(ptr);
 }
 
 

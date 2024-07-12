@@ -165,12 +165,12 @@ void zrtos_clist__each(
 			do{\
 				next = tmp->next;\
 				node = zrtos_types__get_container_of(\
-					tmp,container,memeber\
+					tmp,container,member\
 				);\
-				do
+				do{
 
 #define ZRTOS_CLIST__EACH_END\
-				while(0);\
+				}while(0);\
 				tmp = next;\
 			}while(tmp != zrtos_clist__get_root(thiz));\
 		}\

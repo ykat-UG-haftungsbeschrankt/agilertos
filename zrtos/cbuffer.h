@@ -29,6 +29,10 @@ extern "C" {
 #define ZRTOS_CBUFFER__CFG_MALLOC_LIMIT ZRTOS_TYPES__SIZE_MAX
 #endif
 
+#ifdef ZRTOS_MALLOC__CFG_DISABLE_FREE
+#error "ZRTOS_MALLOC__CFG_DISABLE_FREE not supported with cbuffer"
+#endif
+
 ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(ZRTOS_CBUFFER__CFG_DATA_LENGTH);
 
 typedef struct _zrtos_cbuffer_node_t{
@@ -68,7 +72,7 @@ zrtos_cbuffer_node_t *zrtos_cbuffer_node__get_next_node(zrtos_cbuffer_node_t *th
 	);
 	return node;
 }
-
+/*
 void zrtos_cbuffer__start_write_transaction(
 	 zrtos_cbuffer_t *thiz
 	,zrtos_cbuffer_state_t *state
@@ -98,7 +102,7 @@ void zrtos_cbuffer__rollback(
 		);
 	}
 }
-
+*/
 bool zrtos_cbuffer_node__init(
 	 zrtos_cbuffer_node_t *thiz
 	,zrtos_cbuffer_t *ctx
@@ -111,10 +115,13 @@ bool zrtos_cbuffer_node__init(
 }
 
 zrtos_cbuffer_node_t *zrtos_cbuffer_node__new(zrtos_cbuffer_t *ctx){
-	zrtos_cbuffer_node_t *ret = zrtos_malloc_limit__malloc(
-		 &zrtos_cbuffer__malloc_limit
-		,sizeof(zrtos_cbuffer_node_t)
-		,ZRTOS_CBUFFER__CFG_MALLOC_LIMIT
+	zrtos_cbuffer_node_t *ret = ZRTOS_CAST(
+		 zrtos_cbuffer_node_t*
+		,zrtos_malloc_limit__malloc(
+			&zrtos_cbuffer__malloc_limit
+			,sizeof(zrtos_cbuffer_node_t)
+			,ZRTOS_CBUFFER__CFG_MALLOC_LIMIT
+		)
 	);
 	if(ret){
 		zrtos_cbuffer_node__init(ret,ctx);
@@ -132,6 +139,30 @@ bool zrtos_cbuffer__init(
 ){
 	zrtos_list__init(&thiz->root);
 	return zrtos_cbuffer_node__new(thiz) != 0;
+}
+
+void zrtos_cbuffer__deinit_callback(
+	 zrtos_list_t *thiz
+	,zrtos_list_node_t *node
+){
+	zrtos_cbuffer_node__free(
+		zrtos_types__get_container_of(
+			 node
+			,zrtos_cbuffer_node_t
+			,node
+		)
+		,zrtos_types__get_container_of(
+			 thiz
+			,zrtos_cbuffer_t
+			,root
+		)
+	);
+}
+
+void zrtos_cbuffer__deinit(
+	 zrtos_cbuffer_t *thiz
+){
+	zrtos_list__deinit(&thiz->root,zrtos_cbuffer__deinit_callback);
 }
 
 zrtos_error_t zrtos_cbuffer_node__put(
@@ -185,7 +216,7 @@ zrtos_error_t zrtos_cbuffer_node__get(
 
 zrtos_error_t zrtos_cbuffer__put(zrtos_cbuffer_t *thiz,uint8_t val){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
-		 zrtos_list__get_first_node(thiz)
+		 zrtos_list__get_first_node(&thiz->root)
 		,zrtos_cbuffer_node_t
 		,node
 	);
@@ -209,7 +240,7 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 	va_start(args,outlen);
 
 	while(len-- && zrtos_error__is_success(ret)){
-		data = va_arg(args,void*);
+		data = ZRTOS_CAST(uint8_t*,va_arg(args,void*));
 		data_len = va_arg(args,size_t);
 		while(data_len-- && zrtos_error__is_success(ret)){
 			ret = zrtos_cbuffer__put(
@@ -219,14 +250,13 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 		}
 	}
 
-L_RETURN:
 	va_end(args);
 	return ret;
 }
 
 zrtos_error_t zrtos_cbuffer__get(zrtos_cbuffer_t *thiz,uint8_t *out){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
-		 zrtos_list__get_first_node(thiz)
+		 zrtos_list__get_first_node(&thiz->root)
 		,zrtos_cbuffer_node_t
 		,node
 	);

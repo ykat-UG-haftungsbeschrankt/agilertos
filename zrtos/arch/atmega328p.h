@@ -4,8 +4,8 @@
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
  */
-#ifndef ZRTOS_ARCH_ATMEGA328P_H_
-#define ZRTOS_ARCH_ATMEGA328P_H_
+#ifndef ZRTOS_ARCH_ATMEGA328P_H
+#define ZRTOS_ARCH_ATMEGA328P_H
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -24,7 +24,7 @@ typedef uint16_t zrtos_arch_gpio_value_analog_t;
 #define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
 
 
-#define ZRTOS_ARCH__BYTE_ALIGNMENT 1
+#define ZRTOS_ARCH__BYTE_ALIGNMENT (1)
 
 #define ZRTOS_ARCH__FATAL() ((void(*)(void))0)();
 

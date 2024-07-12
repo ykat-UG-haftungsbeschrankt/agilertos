@@ -16,6 +16,8 @@ extern "C" {
 #include <stdint.h>
 #include <limits.h>
 
+#include <zrtos/cast.h>
+
 typedef uint16_t size_t;
 typedef int16_t ssize_t;
 /*
@@ -41,8 +43,8 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 	return ((uint8_t*)bigger)-((uint8_t*)smaller);
 }
 
-#define ZRTOS_TYPES__BYTE_ALIGNMENT (sizeof(max_align_t))
-#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (sizeof(max_align_t)-1)
+#define ZRTOS_TYPES__BYTE_ALIGNMENT (alignof(max_align_t))
+#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (alignof(max_align_t)-1)
 
 void *zrtos_types__ptr_to_alignment(void *ptr){
 	uintptr_t ret = (uintptr_t)ptr;
@@ -65,8 +67,8 @@ size_t zrtos_types__ceil_size_to_alignment(size_t len){
 
 #define zrtos_types__get_container_of(ptr, type, member)                    \
     ({                                                                      \
-        const typeof( ((type *)0)->member ) *__mptr = (ptr);                \
-        (type *)((char *)__mptr - zrtos_types__get_offset_of(type,member)); \
+        typeof( ((type *)0)->member ) *mptr__ = (typeof( ((type *)0)->member ) *)(ptr);         \
+        (type *)((char *)mptr__ - zrtos_types__get_offset_of(type,member)); \
     })
 
 #define zrtos_types__get_container_of_ex(ptr, type, member)                 \
@@ -145,7 +147,7 @@ bool zrtos_types__uint64_is_valid_address_range(
 
 #define ZRTOS_TYPES__SWAP(a,b)                    \
     do{                                           \
-        tyZRTOS_TYPES__TYPEOFpeof(a) a____ = (a); \
+        ZRTOS_TYPES__TYPEOF(a) a____ = (a);       \
         (a) = (b);                                \
         (b) = a____;                              \
     }while(0);

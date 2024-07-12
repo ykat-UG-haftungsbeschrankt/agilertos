@@ -13,8 +13,10 @@ extern "C" {
 
 #ifdef __cplusplus
 #define ZRTOS_CAST(type,value) static_cast<type>(value)
+#define ZRTOS_CAST__REINTERPRET(type,value) reinterpret_cast<type>(value)
 #else
 #define ZRTOS_CAST(type,value) (type)(value)
+#define ZRTOS_CAST__REINTERPRET(type,value) (type)(value)
 #endif
 
 

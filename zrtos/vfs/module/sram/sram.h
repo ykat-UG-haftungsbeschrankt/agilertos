@@ -11,9 +11,7 @@ extern "C" {
 #endif
 
 
-#include <zrtos/error.h>
-#include <zrtos/types.h>
-#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_module.h>
 
 
 typedef struct _zrtos_vfs_module_sram_args_t{
@@ -31,11 +29,14 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	,bool is_write_op
 ){
 	zrtos_error_t ret = EFAULT;
-	zrtos_vfs_module_sram_args_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_sram_args_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_sram_args_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	size_t start_offset = (size_t)offset;
-	uint8_t *data_ptr = data;
+	uint8_t *data_ptr = ZRTOS_CAST(uint8_t *,buf);
 
 	if(offset > ZRTOS_TYPES__SIZE_MAX){
 		ret = EINVAL;
@@ -48,9 +49,12 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 		,start_offset
 		,&len
 	)){
-		uint8_t *start_ptr = zrtos_types__ptr_add(
-			 mod->start_addr
-			,start_offset
+		uint8_t *start_ptr = ZRTOS_CAST(
+			 uint8_t*
+			,zrtos_types__ptr_add(
+				 mod->start_addr
+				,start_offset
+			)
 		);
 
 		*out = len;
@@ -118,7 +122,6 @@ ZRTOS_VFS_PLUGIN__INIT(sram,
 	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE_DEFAULT()
 	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
 	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
-
 );
 
 

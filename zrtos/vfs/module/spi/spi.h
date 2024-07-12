@@ -1,4 +1,4 @@
- * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
+/* Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
  *
  * Permission for non-commercial use is hereby granted,
  * free of charge, without warranty of any kind.
@@ -9,14 +9,13 @@
 extern "C" {
 #endif
 
-
-#include <stdarg.h>
-
-#include <zrtos/vfs_plugin.h>
+#include <zrtos/vfs_module.h>
 #include <zrtos/malloc.h>
 #include <zrtos/cbuffer.h>
 #include <zrtos/clist.h>
 #include <zrtos/gpio.h>
+#include <zrtos/binary.h>
+#include <zrtos/va.h>
 
 #ifndef ZRTOS_VFS_MODULE_SPI__CFG_TRANSFER_LENGTH
 #define ZRTOS_VFS_MODULE_SPI__CFG_TRANSFER_LENGTH ZRTOS_CBUFFER__CFG_DATA_LENGTH
@@ -57,16 +56,6 @@ typedef enum{
 	,ZRTOS_VFS_MODULE_SPI_CONTROL__MAX             = ZRTOS_TYPES__UINT8_MAX
 }zrtos_vfs_module_spi_control_t;
 
-typedef struct _zrtos_vfs_module_spi_args_t{
-	zrtos_gpio_t                    *gpio;
-	zrtos_gpio_pin_t                pin_sck;
-	zrtos_gpio_pin_t                pin_mosi;
-	zrtos_gpio_pin_t                pin_miso;
-	zrtos_clist_t                   root;
-	zrtos_vfs_module_spi_file_t     *last;
-	size_t                          count;
-}zrtos_vfs_module_spi_args_t;
-
 typedef struct _zrtos_vfs_module_spi_file_t{
 	zrtos_clist_node_t             node;
 	zrtos_cbuffer_t                cbuffer_in;
@@ -76,6 +65,16 @@ typedef struct _zrtos_vfs_module_spi_file_t{
 	zrtos_gpio_pin_t               pin_ss;
 	void                           *data;
 }zrtos_vfs_module_spi_file_t;
+
+typedef struct _zrtos_vfs_module_spi_args_t{
+	zrtos_gpio_t                    *gpio;
+	zrtos_gpio_pin_t                pin_sck;
+	zrtos_gpio_pin_t                pin_mosi;
+	zrtos_gpio_pin_t                pin_miso;
+	zrtos_clist_t                   root;
+	zrtos_vfs_module_spi_file_t     *last;
+	size_t                          count;
+}zrtos_vfs_module_spi_args_t;
 
 bool zrtos_vfs_module_spi_args__init(
 	 zrtos_vfs_module_spi_args_t *thiz
@@ -107,7 +106,7 @@ bool zrtos_vfs_module_spi_file__init(
 	thiz->data = data;
 	if(zrtos_cbuffer__init(&thiz->cbuffer_in)){
 		if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
-			zrtos_clist__add(&ctx->root,&thiz->node);
+			zrtos_clist__push(&ctx->root,&thiz->node);
 			return true;
 		}
 		zrtos_cbuffer__deinit(&thiz->cbuffer_in);
@@ -124,31 +123,35 @@ void zrtos_vfs_module_spi_file__deinit(
 	zrtos_clist__delete(&ctx->root,&thiz->node);
 }
 
-bool zrtos_vfs_module_spi_file__new(
+zrtos_vfs_module_spi_file_t *zrtos_vfs_module_spi_file__new(
 	 zrtos_vfs_module_spi_args_t *ctx
 	,void                        *data
 ){
-	zrtos_vfs_module_spi_file_t *thiz = malloc(sizeof(zrtos_vfs_module_spi_file_t));
+	zrtos_vfs_module_spi_file_t *thiz = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t *
+		,kmalloc(sizeof(zrtos_vfs_module_spi_file_t))
+	);
 	if(thiz){
-		if(zrtos_vfs_module_spi_file__init(thiz,data)){
-			return true;
+		if(!zrtos_vfs_module_spi_file__init(thiz,ctx,data)){
+			kfree(thiz);
+			thiz = 0;
 		}
-		free(thiz);
 	}
-	return false;
+	return thiz;
 }
 
 void zrtos_vfs_module_spi_file__free(
 	 zrtos_vfs_module_spi_file_t *thiz
 	,zrtos_vfs_module_spi_args_t *ctx
 ){
-	zrtos_vfs_module_spi_file__deinit(thiz);
+	zrtos_vfs_module_spi_file__deinit(thiz,ctx);
 	free(thiz);
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_before_file_transfer(
 	 zrtos_vfs_module_spi_file_t *thiz_
 ){
+/*
 	zrtos_vfs_file_t *thiz = ((zrtos_vfs_module_avr_spi_file_t *)thiz_)->thiz;
 	zrtos_vfs_module_spi_file_t *file = zrtos_vfs_file__get_data(thiz);
 	zrtos_vfs_module_avr_spi_args_t *inode = zrtos_vfs_file__get_inode_data(thiz);
@@ -173,22 +176,33 @@ zrtos_error_t zrtos_vfs_module_spi__on_before_file_transfer(
 
 	SPCR = file->spcr;
 
+
+*/
 	return ESUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_after_file_transfer(
 	 zrtos_vfs_module_spi_file_t *thiz_
 ){
+/*
 	zrtos_vfs_file_t *thiz = ((zrtos_vfs_module_avr_spi_file_t *)thiz_)->thiz;
-	zrtos_vfs_module_spi_file_t *file = zrtos_vfs_file__get_data(thiz);
-	zrtos_vfs_module_avr_spi_args_t *inode = zrtos_vfs_file__get_inode_data(thiz);
-	zrtos_gpio_t *gpio = inode->gpio;
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
+	);
+	zrtos_vfs_module_spi_args_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_args_t*
+		,zrtos_vfs_file__get_inode_data(thiz)
+	);
+	zrtos_gpio_t *gpio = inode_data->gpio;
 
 	zrtos_gpio__set_high(
 		 gpio
-		,file->pin_ss
+		,file_data->pin_ss
 	);
 
+
+*/
 	return ESUCCESS;
 }
 
@@ -196,7 +210,8 @@ static void zrtos_vfs_module_spi__get(
 	 zrtos_vfs_module_spi_args_t *thiz
 	,void                   *data
 	,size_t                 len
-)
+){
+/*
 	zrtos_clist_node_t *node = zrtos_clist__get_first_node(&thiz->root);
 	if(node){
 		zrtos_vfs_module_spi_file_t *first = zrtos_types__get_container_of(
@@ -211,7 +226,6 @@ static void zrtos_vfs_module_spi__get(
 			count = 0;
 			zrtos_clist__shift_and_push(&thiz->root);
 		}
-
 		ZRTOS_CLIST__EACH_BEGIN(
 			 &thiz->root
 			,node
@@ -220,14 +234,16 @@ static void zrtos_vfs_module_spi__get(
 		){
 			if(!zrtos_cbuffer__is_empty(&first->cbuffer_out)){
 				first->error = zrtos_cbuffer__get_ex(
-					&last->cbuffer_out
+					 &last->cbuffer_out
+					 1
+					,outlen
 					,data
 					,len
-					,outlen
 				);
 			}
 		}ZRTOS_CLIST__EACH_END;
 	}
+*/
 }
 
 static void zrtos_vfs_module_spi__put(
@@ -242,9 +258,9 @@ static void zrtos_vfs_module_spi__put(
 		last->error = zrtos_cbuffer__put_ex(
 			 &last->cbuffer_in
 			,1
+			,&outlen
 			,data
 			,len
-			,outlen
 		);
 	}
 }
@@ -254,16 +270,12 @@ void zrtos_vfs_module_spi__transfer(
 	,void                   *data_in
 	,void                   *data_out
 	,size_t                 len
-	,zrtos_error_t (*on_before_file_transfer)(zrtos_vfs_module_spi_file_t *thiz)
-	,zrtos_error_t (*on_after_file_transfer)(zrtos_vfs_module_spi_file_t *thiz)
 ){
 	zrtos_vfs_module_spi__put(thiz,data_in,len);
 	zrtos_vfs_module_spi__get(
 		 thiz
 		,data_out
 		,len
-		,on_before_file_transfer
-		,on_after_file_transfer
 	);
 }
 
@@ -272,7 +284,10 @@ zrtos_error_t zrtos_vfs_module_spi__on_open(
 	,char             *path
 ){
 	zrtos_error_t ret = ENOMEM;
-	zrtos_vfs_module_spi_args_t *inode_data = zrtos_vfs_file__get_inode_data(thiz);
+	zrtos_vfs_module_spi_args_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_args_t*
+		,zrtos_vfs_file__get_inode_data(thiz)
+	);
 	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_module_spi_file__new(
 		 inode_data
 		,0
@@ -288,8 +303,14 @@ zrtos_error_t zrtos_vfs_module_spi__on_close(
 	 zrtos_vfs_file_t *thiz
 	,char             *path
 ){
-	zrtos_vfs_module_spi_args_t *inode_data = zrtos_vfs_file__get_inode_data(thiz);
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(thiz);
+	zrtos_vfs_module_spi_args_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_args_t*
+		,zrtos_vfs_file__get_inode_data(thiz)
+	);
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
+	);
 	zrtos_vfs_module_spi_file__free(file_data,inode_data);
 	return ESUCCESS;
 }
@@ -302,8 +323,9 @@ zrtos_error_t zrtos_vfs_module_spi__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *outlen
 ){
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
-		thiz
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
 	);
 	return zrtos_cbuffer__get_ex(
 		 &file_data->cbuffer_in
@@ -321,14 +343,17 @@ zrtos_error_t zrtos_vfs_module_spi__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
-		thiz
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
 	);
+	size_t outlen;
 	return zrtos_cbuffer__put_ex(
 		 &file_data->cbuffer_out
+		,1
+		,&outlen
 		,buf
 		,len
-		,outlen
 	);
 }
 
@@ -336,23 +361,22 @@ zrtos_error_t zrtos_vfs_module_spi__on_can_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
-		thiz
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
 	);
-	return zrtos_cbuffer__is_empty(&file_data->cbuffer_in)
-	     ? EAGAIN
-	     : ESUCCESS
-	;
+	return zrtos_cbuffer__can_read(&file_data->cbuffer_in);
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_can_write(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
-		thiz
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
 	);
-	return ESUCCESS;
+	return zrtos_cbuffer__can_write(&file_data->cbuffer_out);
 }
 
 zrtos_error_t zrtos_vfs_module_spi__on_ioctl(
@@ -361,19 +385,21 @@ zrtos_error_t zrtos_vfs_module_spi__on_ioctl(
 	,int request
 	,va_list args
 ){
-	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_file__get_data(
-		thiz
+	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
+		zrtos_vfs_module_spi_file_t*
+		,zrtos_vfs_file__get_data(thiz)
 	);
 	switch(request){
 		case ZRTOS_VFS_MOULE_SPI_IOCTL__CONTROL:
-			file_data->control = va_arg(args,zrtos_vfs_module_spi_control_t);
+			file_data->control = zrtos_va__arg(args,zrtos_vfs_module_spi_control_t);
 		break;
 		case ZRTOS_VFS_MOULE_SPI_IOCTL__PIN_SS:
-			file_data->pin_ss = va_arg(args,zrtos_gpio_pin_t);
+			file_data->pin_ss = zrtos_va__arg(args,zrtos_gpio_pin_t);
 		break;
 	}
 	return ESUCCESS;
 }
+
 /*
 ZRTOS_VFS_PLUGIN__INIT(spi,
 	ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT()

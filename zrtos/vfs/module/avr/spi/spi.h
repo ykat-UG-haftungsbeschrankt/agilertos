@@ -14,16 +14,8 @@ extern "C" {
 
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/vfs/module/spi/spi.h>
-#include <zrtos/gpio.h>
-#include <zrtos/malloc.h>
-#include <zrtos/cbuffer.h>
-#include <zrtos/binary.h>
 
-#ifdef ZRTOS_MALLOC__CFG_DISABLE_FREE
-#error
-#endif
-
-
+/*
 void zrtos_vfs_module_avr_spi__on_interrupt(){
 	if(zrtos_error__is_error(zrtos_vfs_module_spi__transfer(
 		 &zrtos_vfs_module_spi
@@ -75,7 +67,7 @@ ZRTOS_VFS_PLUGIN__INIT(avr_spi,
 	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
 	ZRTOS_VFS_PLUGIN__9_ON_IOCTL(zrtos_vfs_module_spi__on_ioctl)
 );
-
+*/
 
 #ifdef __cplusplus
 }

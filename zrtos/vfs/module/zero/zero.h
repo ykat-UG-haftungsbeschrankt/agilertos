@@ -11,8 +11,7 @@ extern "C" {
 #endif
 
 
-#include <zrtos/vfs_plugin.h>
-#include <zrtos/vfs_file.h>
+#include <zrtos/vfs_module.h>
 #include <zrtos/mem.h>
 
 
