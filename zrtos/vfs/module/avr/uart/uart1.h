@@ -11,8 +11,8 @@ extern "C" {
 #endif
 
 
-#include <zrtos/vfs/module/uart.h>
-#include <zrtos/vfs/module/avr/uart.h>
+#include <zrtos/vfs/module/uart/uart.h>
+#include <zrtos/vfs/module/avr/uart/uart.h>
 
 zrtos_vfs_module_uart_args_t *zrtos_vfs_module_avr_uart1;
 
@@ -20,17 +20,20 @@ ISR(UART1_RECEIVE_INTERRUPT){
 	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
 		zrtos_vfs_module_avr_uart1
 	);
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
+		zrtos_vfs_module_avr_uart1
+	);
 	if(zrtos_error__is_success(err)){
 		err = ( 
 			(UART1_STATUS & (_BV(FE1)|_BV(DOR1)|_BV(UPE1))) > 0
 			? zrtos_cbuffer__put(
-				zrtos_vfs_module_uart_args__get_cbuffer(zrtos_vfs_module_avr_uart1)
+				 buffer
 				,UART1_DATA
 			)
 			: EIO
 		);
 
-		zrtos_vfs_module_uart__set_error(
+		zrtos_vfs_module_uart_args__set_error(
 			 zrtos_vfs_module_avr_uart1
 			,err
 		);
@@ -39,8 +42,14 @@ ISR(UART1_RECEIVE_INTERRUPT){
 
 ISR(UART1_TRANSMIT_INTERRUPT){
 	uint8_t tmp;
-	if(!zrtos_cbuffer__is_empty(zrtos_cbuffer1)){
-		zrtos_cbuffer__get(&zrtos_cbuffer1,&tmp);
+	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
+		zrtos_vfs_module_avr_uart1
+	);
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
+		zrtos_vfs_module_avr_uart1
+	);
+	if(zrtos_error__is_success(err)
+	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))){
 		UART1_DATA = tmp;
 	}else{
 		UART1_CONTROL &= ~_BV(UART1_UDRIE);
@@ -48,36 +57,36 @@ ISR(UART1_TRANSMIT_INTERRUPT){
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_mount(zrtos_vfs_dentry_t *thiz){
-	zrtos_error_t ret = EINVAL;
+	uint16_t baudrate;
 	zrtos_vfs_module_avr_uart1 = zrtos_vfs_dentry__get_inode_data(
 		thiz
 	);
-	uint16_t baudrate;
 
-	if(zrtos_vfs_module_avr_uart1->baudrate <= ZROTS_TYPES__UINT16_MAX){
-		baudrate = zrtos_vfs_module_avr_uart1->baudrate;
-		/* Set baud rate
-		if (baudrate & 0x8000) {
-			UART1_STATUS = (1<<U2X1);  //Enable 2x speed
-			baudrate &= ~0x8000;
-		} */
-		UBRR1H = (uint8_t) (baudrate>>8);
-		UBRR1L = (uint8_t) baudrate;
+	baudrate = zrtos_vfs_module_avr_uart__baud_select(
+		 zrtos_vfs_module_avr_uart1->baudrate
+	);
 
-		/* Enable USART receiver and transmitter and receive complete interrupt */
-		UART1_CONTROL = _BV(RXCIE1)|(1<<RXEN1)|(1<<TXEN1);
+	//Set baud rate
+	if(baudrate & 0x8000){
+		UART1_STATUS = (1<<U2X1);  //Enable 2x speed
+		baudrate &= ~0x8000;
+	}else{
+		UART1_STATUS &= ~(1<<U2X1);
+	}
+	UBRR1H = (uint8_t) (baudrate>>8);
+	UBRR1L = (uint8_t) baudrate;
 
-		/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
+	/* Enable USART receiver and transmitter and receive complete interrupt */
+	UART1_CONTROL = _BV(RXCIE1)|(1<<RXEN1)|(1<<TXEN1);
+
+	/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
 #ifdef URSEL1
-		UCSR1C = (1<<URSEL1)|(3<<UCSZ10);
+	UCSR1C = (1<<URSEL1)|(3<<UCSZ10);
 #else
-		UCSR1C = (3<<UCSZ10);
+	UCSR1C = (3<<UCSZ10);
 #endif
 
-		ret = ESUCCESS;
-	}
-
-	return ret;
+	return ESUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_umount(zrtos_vfs_dentry_t *thiz){

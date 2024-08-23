@@ -265,6 +265,20 @@ extern "C" {
  */
 #define UART_BAUD_SELECT_DOUBLE_SPEED(baudRate,xtalCpu) ((((xtalCpu)+4UL*(baudRate))/(8UL*(baudRate))-1)|0x8000)
 
+uint16_t zrtos_vfs_module_avr_uart__baud_select(
+	zrtos_vfs_module_uart_baudrate_t baudrate
+){
+	uint16_t ret;
+	if(baudrate & ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED){
+		baudrate = (zrtos_vfs_module_uart_baudrate_t)
+			(baudrate & ZRTOS_VFS_MODULE_UART_BAUDRATE__MASK
+		);
+		ret = UART_BAUD_SELECT_DOUBLE_SPEED(baudrate,F_CPU);
+	}else{
+		ret = UART_BAUD_SELECT(baudrate,F_CPU);
+	}
+	return ret;
+}
 
 #ifdef __cplusplus
 }

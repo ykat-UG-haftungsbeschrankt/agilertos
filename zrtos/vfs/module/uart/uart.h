@@ -17,19 +17,23 @@ extern "C" {
 #include <zrtos/types.h>
 
 typedef enum{
-	 ZRTOS_VFS_MODULE_UART_BAUDRATE__300    = 300
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__600    = 600
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__1200   = 1200
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__2400   = 2400
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__4800   = 4800
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__9600   = 9600
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__14400  = 14400
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__19200  = 19200
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__28800  = 28800
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__38400  = 38400
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__57600  = 57600
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__76800  = 76800
-	,ZRTOS_VFS_MODULE_UART_BAUDRATE__115200 = 115200
+	 ZRTOS_VFS_MODULE_UART_BAUDRATE__MIN             = ZRTOS_TYPES__UINT32_MIN
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED    = 1
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__300             = 300
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__600             = 600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__1200            = 1200
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__2400            = 2400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__4800            = 4800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__9600            = 9600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__14400           = 14400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__19200           = 19200
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__28800           = 28800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__38400           = 38400
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__57600           = 57600
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__76800           = 76800
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__115200          = 115200
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__MASK            = (~((uint32_t)1))
+	,ZRTOS_VFS_MODULE_UART_BAUDRATE__MAX             = ZRTOS_TYPES__UINT32_MAX
 }zrtos_vfs_module_uart_baudrate_t;
 
 typedef enum{
@@ -122,10 +126,13 @@ zrtos_error_t zrtos_vfs_module_uart__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(thiz);
-	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_args_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
+	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(mod);
 	if(zrtos_error__is_success(ret)){
 		ret = zrtos_cbuffer__get_ex(
 			&mod->cbuffer_in
@@ -145,17 +152,20 @@ zrtos_error_t zrtos_vfs_module_uart__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(thiz);
-	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_args_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
+	zrtos_error_t ret = zrtos_vfs_module_uart_args__get_error(mod);
 	if(zrtos_error__is_success(ret)){
 		ret = zrtos_cbuffer__put_ex(
 			&mod->cbuffer_out
 			,1
+			,out
 			,buf
 			,len
-			,out
 		);
 	}
 	return ret;
@@ -163,20 +173,24 @@ zrtos_error_t zrtos_vfs_module_uart__on_write(
 
 zrtos_error_t zrtos_vfs_module_uart__on_can_read(
 	 zrtos_vfs_file_t *thiz
-	,char *path
 ){
-	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_args_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	return zrtos_cbuffer__can_read(&mod->cbuffer_in);
 }
 
 zrtos_error_t zrtos_vfs_module_uart__on_can_write(
 	 zrtos_vfs_file_t *thiz
-	,char *path
 ){
-	zrtos_vfs_module_uart_args_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_args_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	return zrtos_cbuffer__can_write(&mod->cbuffer_out);
 }

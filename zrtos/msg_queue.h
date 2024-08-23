@@ -38,9 +38,11 @@ zrtos_error_t zrtos_msg_queue__put(
 	zrtos_msg_queue_header_t header = {
 		.length = len
 	};
+	size_t outlen;
 	zrtos_error_t ret = zrtos_cbuffer__put_ex(
 		 &thiz->cbuffer
 		,2
+		,&outlen
 		,&header
 		,sizeof(header)
 		,data

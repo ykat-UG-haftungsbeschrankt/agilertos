@@ -158,7 +158,8 @@ void zrtos_clist__each(
 
 #define ZRTOS_CLIST__EACH_BEGIN(thiz,node,container,member)                    \
 	do{\
-		zrtos_clist_node_t *tmp = zrtos_clist__get_root(thiz);\
+		zrtos_clist_t *clist = thiz;\
+		zrtos_clist_node_t *tmp = zrtos_clist__get_root(clist);\
 		zrtos_clist_node_t *next;\
 		container *node;\
 		if(tmp){\
@@ -172,7 +173,7 @@ void zrtos_clist__each(
 #define ZRTOS_CLIST__EACH_END\
 				}while(0);\
 				tmp = next;\
-			}while(tmp != zrtos_clist__get_root(thiz));\
+			}while(tmp != zrtos_clist__get_root(clist));\
 		}\
 	}while(0)
 
