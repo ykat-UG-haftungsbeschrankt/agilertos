@@ -24,7 +24,7 @@ zrtos_error_t zrtos_vfs_module_random__on_open(
 		,(zrtos_vfs_offset_t)0xACE1
 	);
 
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_random__on_read(
@@ -53,7 +53,7 @@ zrtos_error_t zrtos_vfs_module_random__on_read(
 		,(zrtos_vfs_offset_t)lfsr
 	);
 
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 ZRTOS_VFS_PLUGIN__INIT(random,

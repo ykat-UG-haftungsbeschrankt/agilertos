@@ -26,7 +26,7 @@ extern "C" {
 #endif
 
 #ifndef ZRTOS_CBUFFER__CFG_MALLOC_LIMIT
-#define ZRTOS_CBUFFER__CFG_MALLOC_LIMIT ZRTOS_TYPES__SIZE_MAX
+#define ZRTOS_CBUFFER__CFG_MALLOC_LIMIT 200
 #endif
 
 #ifdef ZRTOS_MALLOC__CFG_DISABLE_FREE
@@ -37,7 +37,7 @@ ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(ZRTOS_CBUFFER__CFG_DATA_LENGTH);
 
 typedef struct _zrtos_cbuffer_node_t{
 	zrtos_list_node_t   node;
-	uint8_t             data[ZRTOS_CBUFFER__CFG_DATA_LENGTH];
+	uint8_t             data[ZRTOS_CBUFFER__CFG_DATA_LENGTH-1];
 	uint8_t             head;
 	uint8_t             tail;
 }zrtos_cbuffer_node_t;
@@ -170,7 +170,7 @@ zrtos_error_t zrtos_cbuffer_node__put(
 	,zrtos_cbuffer_t *ctx
 	,uint8_t val
 ){
-	zrtos_error_t ret = ESUCCESS;
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	uint8_t head = thiz->head;
 	head = (head + 1) & (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1);
 	if(head != thiz->tail){
@@ -185,7 +185,7 @@ zrtos_error_t zrtos_cbuffer_node__put(
 				,val
 			);
 		}else{
-			ret = ENOMEM;
+			ret = ZRTOS_ERROR__NOMEM;
 		}
 	}
 	return ret;
@@ -200,7 +200,7 @@ zrtos_error_t zrtos_cbuffer_node__get(
 	,zrtos_cbuffer_t *ctx
 	,uint8_t *out
 ){
-	zrtos_error_t ret = ESUCCESS;
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	if(!zrtos_cbuffer_node__is_empty(thiz)){
 		*out = thiz->data[thiz->tail++];
 		thiz->tail &= (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1);
@@ -209,14 +209,14 @@ zrtos_error_t zrtos_cbuffer_node__get(
 			zrtos_cbuffer_node__free(thiz,ctx);
 		}
 	}else{
-		ret = EAGAIN;
+		ret = ZRTOS_ERROR__AGAIN;
 	}
 	return ret;
 }
 
 zrtos_error_t zrtos_cbuffer__put(zrtos_cbuffer_t *thiz,uint8_t val){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
-		 zrtos_list__get_first_node(&thiz->root)
+		 zrtos_list__get_last_node(&thiz->root)
 		,zrtos_cbuffer_node_t
 		,node
 	);
@@ -233,7 +233,7 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 	,size_t len
 */
 ){
-	zrtos_error_t ret = ESUCCESS;
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	uint8_t *data;
 	size_t data_len;
 	va_list args;
@@ -269,10 +269,10 @@ zrtos_error_t zrtos_cbuffer__get_ex(
 	,size_t len
 	,size_t *outlen
 ){
-	zrtos_error_t ret = ESUCCESS;
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	uint8_t *tmp = ZRTOS_CAST(uint8_t*,data);
 	while(len--
-	   && ESUCCESS == (ret = zrtos_cbuffer__get(thiz,tmp++))){
+	   && ZRTOS_ERROR__SUCCESS == (ret = zrtos_cbuffer__get(thiz,tmp++))){
 		;
 	}
 	*outlen = zrtos_types__ptr_get_byte_distance(tmp,data);
@@ -299,15 +299,34 @@ zrtos_error_t zrtos_cbuffer__can_read(
 	 zrtos_cbuffer_t *thiz
 ){
 	return zrtos_cbuffer__is_empty(thiz)
-	     ? EAGAIN
-	     : ESUCCESS
+	     ? ZRTOS_ERROR__AGAIN
+	     : ZRTOS_ERROR__SUCCESS
 	;
+}
+
+bool zrtos_cbuffer__can_read_length(
+	 zrtos_cbuffer_t *thiz
+	,size_t length
+){
+	zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_first_node(thiz);
+
+	while(node
+	&& length
+	&& !zrtos_cbuffer_node__is_empty(node)){
+		length -= ZRTOS_TYPES__MIN(
+			 ((size_t)(node->head - node->tail))
+			,length
+		);
+		node = zrtos_cbuffer_node__get_next_node(node);
+	}
+
+	return length == 0;
 }
 
 zrtos_error_t zrtos_cbuffer__can_write(
 	 zrtos_cbuffer_t *thiz
 ){
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 #ifdef __cplusplus

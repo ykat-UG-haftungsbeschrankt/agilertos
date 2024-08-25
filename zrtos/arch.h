@@ -110,8 +110,6 @@ size_t zrtos_arch__do_not_disturb = 0;
         }                                                 \
     }while(0);
 
-
-
 #ifdef __cplusplus
 }
 #endif

@@ -144,7 +144,7 @@ typedef struct{
 }__attribute__((packed))zrtos_vm_ioop_t;
 
 zrtos_error_t zrtos_vm__icall(zrtos_vm_t *thiz,zrtos_vm_function_id_t id){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	zrtos_vm_function_t *fn = zrtos_vm_function_index__get_function(
 		 &thiz->functions
 		,id
@@ -237,7 +237,7 @@ zrtos_error_t zrtos_vm__run(zrtos_vm_t *thiz){
 	zrtos_stack_t *stack = &thiz->stack;
 	zrtos_stack_t *program = &thiz->program;
 	zrtos_stack_t *set_offset_stack;
-	zrtos_error_t ret = ESUCCESS;
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_vm_value_t a;
 	zrtos_vm_value_t b;
 	zrtos_vm_io_type_t io_type;
@@ -513,10 +513,10 @@ L_OUTPUT__END:
 	}
 
 L_RETURN__EINVAL:
-	ret = EINVAL;
+	ret = ZRTOS_ERROR__INVAL;
 	goto L_RETURN__END;
 L_RETURN__EFAULT:
-	ret = EFAULT;
+	ret = ZRTOS_ERROR__FAULT;
 	goto L_RETURN__END;
 L_RETURN__END:
 	return ret;

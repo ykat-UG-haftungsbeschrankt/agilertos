@@ -32,7 +32,7 @@ zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_error_t ret = EFAULT;
+	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
 	zrtos_vfs_module_avr_progmem_args_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
@@ -40,7 +40,7 @@ zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
 	uint8_t *data_ptr = data;
 
 	if(offset > ZRTOS_TYPES__UINT32_MAX){
-		ret = EINVAL;
+		ret = ZRTOS_ERROR__INVAL;
 		goto L_OUT;
 	}
 
@@ -54,7 +54,7 @@ zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
 		for(;len--;addr++){
 			*data_ptr++ = pgm_read_byte_far(addr);
 		}
-		ret = ESUCCESS;
+		ret = ZRTOS_ERROR__SUCCESS;
 	}
 
 L_OUT:

@@ -31,7 +31,7 @@ void zrtos_task_mutex__deinit(zrtos_task_mutex_t *thiz){
 }
 
 int zrtos_task_mutex__try_lock(zrtos_task_mutex_t *thiz){
-	int ret = EBUSY;
+	int ret = ZRTOS_ERROR__BUSY;
 	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
 		if(thiz->is_locked == false){
 			thiz->is_locked = true;

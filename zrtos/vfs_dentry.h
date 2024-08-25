@@ -156,7 +156,7 @@ zrtos_error_t zrtos_vfs_dentry__mount(
 	,zrtos_vfs_plugin_t *plugin
 	,void *inode_ctx
 ){
-	zrtos_error_t ret = EBUSY;
+	zrtos_error_t ret = ZRTOS_ERROR__BUSY;
 	if(0 == thiz->count){
 		zrtos_vfs_inode__init(
 			 &thiz->inode
@@ -175,7 +175,7 @@ zrtos_error_t zrtos_vfs_dentry__mount(
 zrtos_error_t zrtos_vfs_dentry__umount(
 	 zrtos_vfs_dentry_t *thiz
 ){
-	zrtos_error_t ret = EBUSY;
+	zrtos_error_t ret = ZRTOS_ERROR__BUSY;
 	if(0 == thiz->count){
 		ret = ZRTOS_VFS_PLUGIN__INVOKE(
 			 thiz->inode.plugin

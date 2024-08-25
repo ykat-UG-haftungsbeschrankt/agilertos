@@ -83,7 +83,7 @@ int pthread_mutex_init(
 	 pthread_mutex_t *restrict mutex
 	,const pthread_mutexattr_t *restrict attr
 ){
-	return zrtos_task_mutex__init(&mutex->mutex) ? 0 : EINVAL;
+	return zrtos_task_mutex__init(&mutex->mutex) ? 0 : ZRTOS_ERROR__INVAL;
 }
 
 int pthread_mutex_destroy(pthread_mutex_t *mutex){
@@ -120,7 +120,7 @@ int pthread_create(
 	,void *(*start_routine)(void *)
 	,void *restrict arg
 ){
-	int ret = ENOMEM;
+	int ret = ZRTOS_ERROR__NOMEM;
 
 	ZRTOS_TASK_SCHEDULER__DO_NOT_DISTURB({
 		size_t stack_size_min = ZRTOS_ARCH__GET_CPU_STATE_BUFFER_LENGTH()
@@ -189,7 +189,7 @@ static void zrtos_task_pthread__free(zrtos_task_t *task){
 }
 
 int pthread_join(pthread_t thread, void **retval){
-	int ret = EAGAIN;
+	int ret = ZRTOS_ERROR__AGAIN;
 	zrtos_task_t *task = thread.task;
 
 	while(true){
@@ -210,7 +210,7 @@ int pthread_join(pthread_t thread, void **retval){
 			}
 		});
 		
-		if(ret == EAGAIN){
+		if(ret == ZRTOS_ERROR__AGAIN){
 			_zrtos_task_scheduler__on_tick_ex();
 		}else{
 			break;

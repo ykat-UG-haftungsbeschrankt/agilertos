@@ -28,7 +28,7 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	,size_t *out
 	,bool is_write_op
 ){
-	zrtos_error_t ret = EFAULT;
+	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
 	zrtos_vfs_module_sram_args_t *mod = ZRTOS_CAST(
 		 zrtos_vfs_module_sram_args_t *
 		,zrtos_vfs_file__get_inode_data(
@@ -39,7 +39,7 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	uint8_t *data_ptr = ZRTOS_CAST(uint8_t *,buf);
 
 	if(offset > ZRTOS_TYPES__SIZE_MAX){
-		ret = EINVAL;
+		ret = ZRTOS_ERROR__INVAL;
 		goto L_OUT;
 	}
 
@@ -65,7 +65,7 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 
 		zrtos_mem__cpy(data_ptr,start_ptr,len);
 
-		ret = ESUCCESS;
+		ret = ZRTOS_ERROR__SUCCESS;
 	}
 
 L_OUT:

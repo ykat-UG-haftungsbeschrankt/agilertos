@@ -6,81 +6,85 @@
 #define ZRTOS_ARCH__ATMEGA328P
 #define ZRTOS_BOARD__AVR_SOFTWARE_EMULATOR
 
-typedef uint8_t max_align_t;
-
-
-#define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX 10
-
 #include <zrtos/error.h>
 #include <zrtos/types.h>
+#include <zrtos/malloc.h>
 
-typedef size_t off_t;
+ZRTOS_MALLOC__GLOBAL_HEAP(heap,500);
 
-#include <zrtos/vfs_plugin.h>
-#include <zrtos/vfs_inode.h>
-#include <zrtos/vfs_dentry.h>
-#include <zrtos/vfs_file.h>
+#include <zrtos/cbuffer.h>
 
-#include <zrtos/vfs/module/zero/zero.h>
-#include <zrtos/vfs/module/null/null.h>
-#include <zrtos/vfs/module/random/random.h>
+typedef enum{
+	ZRTOS_VFS_MODULE_MAX7219_OPCODE__NOOP         = 0
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_0      = 1
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_1      = 2
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_2      = 3
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_3      = 4
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_4      = 5
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_5      = 6
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_6      = 7
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_7      = 8
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DECODE_MODE  = 9
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__INTENSITY    = 10
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__SCAN_LIMIT   = 11
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__SHUTDOWN     = 12
+	,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DISPLAY_TEST = 15
+}zrtos_vfs_module_max7219_opcode_t;
 
 int main(void){
-	unsigned maxl = sizeof(max_align_t);
+	ZRTOS_MALLOC__GLOBAL_HEAP_INIT(heap);
+	uint8_t arr[] = {
+		1
+		,2
+		,3
+		,4
+		,5
+		,6
+		,7
+		,8
+		,9
+		,10
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_0
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_1
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_2
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_3
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_4
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_5
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_6
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_7
+		,0x0
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__SHUTDOWN
+		,1
+		,2
+		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_0
+		,0x8
+	};
+	zrtos_cbuffer_t buffer;
+	size_t outlen;
+	zrtos_cbuffer__init(&buffer);
 
-	zrtos_vfs_dentry_t dev;
-	zrtos_vfs_dentry_t dev_zero;
-	zrtos_vfs_dentry_t dev_null;
-	zrtos_vfs_dentry_t dev_random;
-
-	zrtos_vfs_dentry__init(
-		 &dev
-		,"dev"
-		,0
+	zrtos_cbuffer__put_ex(
+		 &buffer
+		,1
+		,&outlen
+		,arr
+		,sizeof(arr)/sizeof(arr[0])
 	);
-
-	zrtos_vfs_dentry__init(
-		 &dev_zero
-		,"zero"
-		,&dev
-	);
-
-	zrtos_vfs_dentry__init(
-		 &dev_null
-		,"null"
-		,&dev
-	);
-
-	zrtos_vfs_dentry__init(
-		 &dev_random
-		,"random"
-		,&dev
-	);
-
-	zrtos_vfs_dentry__mount(
-		 &dev_zero
-		,ZRTOS_VFS_PLUGIN(zero)
-		,0
-	);
-
-	zrtos_vfs_dentry__mount(
-		 &dev_random
-		,ZRTOS_VFS_PLUGIN(random)
-		,0
-	);
-
-	size_t ret;
-	size_t fd;
-	size_t fd2;
-	uint8_t buffer[10];
-		
-	zrtos_vfs_file__open("/dev/zero",&fd);
-	zrtos_vfs_file__open("/dev/random",&fd2);
-
-	for(size_t l=5;l--;){
-		zrtos_vfs_file__read(fd2,0,buffer,5,0,&ret);
-	}
-	zrtos_vfs_file__read(fd,0,buffer,5,0,&ret);
 
 	return 0;
 

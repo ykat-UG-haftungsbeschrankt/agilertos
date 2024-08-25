@@ -55,7 +55,7 @@ ISR(UART0_RECEIVE_INTERRUPT){
 				 buffer
 				,data
 			)
-			: EIO
+			: ZRTOS_ERROR__IO
 		);
 
 		zrtos_vfs_module_uart_args__set_error(
@@ -175,7 +175,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
 	// Default configuration of CTRLC is 8N1 in asynchronous mode
 #endif
 
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart0__on_umount(zrtos_vfs_dentry_t *thiz){
@@ -184,7 +184,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_umount(zrtos_vfs_dentry_t *thiz){
 #else
 	UART0_CONTROL &= ~_BV(UART0_UDRIE);
 #endif
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart0__on_write(

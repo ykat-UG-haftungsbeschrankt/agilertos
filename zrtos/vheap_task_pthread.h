@@ -66,7 +66,7 @@ int pthread_mutex_init(
 	 pthread_mutex_t *restrict mutex
 	,const pthread_mutexattr_t *restrict attr
 ){
-	return zrtos_task_mutex__init(&mutex->mutex) ? 0 : EINVAL;
+	return zrtos_task_mutex__init(&mutex->mutex) ? 0 : ZRTOS_ERROR__INVAL;
 }
 
 int pthread_mutex_destroy(pthread_mutex_t *mutex){
@@ -111,7 +111,7 @@ int pthread_create(
 		,ZRTOS_VHEAP_TYPE__TASK_IDLE
 		,stacksize_min
 	);
-	int ret = ENOMEM;
+	int ret = ZRTOS_ERROR__NOMEM;
 
 	if(chunk){
 		void *mem_chunk_last_address = zrtos_vheap_chunk__get_last_address(

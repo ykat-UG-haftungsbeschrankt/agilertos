@@ -70,7 +70,7 @@ bool zrtos_vfs_module_uart_args__init(
 	,zrtos_vfs_module_uart_baudrate_t baudrate
 	,zrtos_vfs_module_uart_mode_t mode
 ){
-	thiz->error = ESUCCESS;
+	thiz->error = ZRTOS_ERROR__SUCCESS;
 	thiz->baudrate = baudrate;
 	thiz->mode = mode;
 	if(zrtos_cbuffer__init(&thiz->cbuffer_in)){

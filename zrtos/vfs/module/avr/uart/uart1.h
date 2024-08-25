@@ -30,7 +30,7 @@ ISR(UART1_RECEIVE_INTERRUPT){
 				 buffer
 				,UART1_DATA
 			)
-			: EIO
+			: ZRTOS_ERROR__IO
 		);
 
 		zrtos_vfs_module_uart_args__set_error(
@@ -86,12 +86,12 @@ zrtos_error_t zrtos_vfs_module_avr_uart1__on_mount(zrtos_vfs_dentry_t *thiz){
 	UCSR1C = (3<<UCSZ10);
 #endif
 
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_umount(zrtos_vfs_dentry_t *thiz){
 	UART1_CONTROL &= ~_BV(UART1_UDRIE);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_write(

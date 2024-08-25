@@ -14,7 +14,7 @@ extern "C" {
 #include <zrtos/error.h>
 
 
-zrtos_error_t errno = ESUCCESS;
+zrtos_error_t errno = ZRTOS_ERROR__SUCCESS;
 
 
 #ifdef __cplusplus

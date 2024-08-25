@@ -139,7 +139,7 @@ zrtos_error_t zrtos_gpio__set_mode_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t     ret = ESUCCESS;
+	zrtos_error_t     ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t  pin;
 	zrtos_gpio_mode_t val;
 	size_t            len = va_arg(args,size_t);
@@ -186,7 +186,7 @@ zrtos_error_t zrtos_gpio__digital_read_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t              ret = ESUCCESS;
+	zrtos_error_t              ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t           pin;
 	zrtos_gpio_value_digital_t *val;
 	size_t                     len = va_arg(args,size_t);
@@ -233,7 +233,7 @@ zrtos_error_t zrtos_gpio__digital_write_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t              ret = ESUCCESS;
+	zrtos_error_t              ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t           pin;
 	zrtos_gpio_value_digital_t val;
 	size_t                     len = va_arg(args,size_t);
@@ -283,7 +283,7 @@ zrtos_error_t zrtos_gpio__set_high_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t    ret = ESUCCESS;
+	zrtos_error_t    ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t pin;
 	size_t           len = va_arg(args,size_t);
 
@@ -330,7 +330,7 @@ zrtos_error_t zrtos_gpio__set_low_va(
 	zrtos_gpio_t *thiz
 	,va_list     args
 ){
-	zrtos_error_t    ret = ESUCCESS;
+	zrtos_error_t    ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t pin;
 	size_t           len = va_arg(args,size_t);
 
@@ -374,7 +374,7 @@ zrtos_error_t zrtos_gpio__analog_read_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t             ret = ESUCCESS;
+	zrtos_error_t             ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t          pin;
 	zrtos_gpio_value_analog_t *val;
 	size_t                    len = va_arg(args,size_t);
@@ -421,7 +421,7 @@ zrtos_error_t zrtos_gpio__analog_write_va(
 	 zrtos_gpio_t *thiz
 	,va_list      args
 ){
-	zrtos_error_t             ret = ESUCCESS;
+	zrtos_error_t             ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_gpio_pin_t          pin;
 	zrtos_gpio_value_analog_t val;
 	size_t                    len = va_arg(args,size_t);
@@ -502,7 +502,7 @@ zrtos_error_t zrtos_gpio__shift_out(
 		zrtos_gpio__set_low(thiz,clockPin);
 	}
 
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 void zrtos_gpio__delay_microseconds(uint16_t us){

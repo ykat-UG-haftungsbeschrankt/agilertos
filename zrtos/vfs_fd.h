@@ -75,7 +75,7 @@ zrtos_error_t zrtos_vfs_fd__open(char *path,zrtos_vfs_fd_t *thiz,void *file_ctx)
 }
 
 zrtos_error_t zrtos_vfs_fd__close(zrtos_vfs_fd_t thiz){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 
 	if(fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX){
@@ -93,7 +93,7 @@ zrtos_error_t zrtos_vfs_fd__read(
 	,size_t offset
 	,size_t *outlen
 ){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 
 	if(fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX){
@@ -118,7 +118,7 @@ zrtos_error_t zrtos_vfs_fd__write(
 	,size_t offset
 	,size_t *outlen
 ){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 
 	if(fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX){
@@ -141,7 +141,7 @@ zrtos_error_t zrtos_vfs_fd__ioctl(
 	,int request
 	,...
 ){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 	va_list       args;
 
@@ -162,7 +162,7 @@ zrtos_error_t zrtos_vfs_fd__ioctl(
 zrtos_error_t zrtos_vfs_fd__can_read(
 	 zrtos_vfs_fd_t thiz
 ){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 
 	if(fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX){
@@ -177,7 +177,7 @@ zrtos_error_t zrtos_vfs_fd__can_read(
 zrtos_error_t zrtos_vfs_fd__can_write(
 	 zrtos_vfs_fd_t thiz
 ){
-	zrtos_error_t ret = EINVAL;
+	zrtos_error_t ret = ZRTOS_ERROR__INVAL;
 	ZRTOS_TYPES__TYPEOF(thiz.fd) fd = thiz.fd;
 
 	if(fd < ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX){
@@ -205,7 +205,7 @@ size_t zrtos_vfs_fd__select(
 			,pos
 		){
 			zrtos_vfs_fd_t fd = {.fd = pos};
-			if(EAGAIN == callback(fd)){
+			if(ZRTOS_ERROR__AGAIN == callback(fd)){
 				zrtos_bitfield__set(
 					 bitfield
 					,fd.fd

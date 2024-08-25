@@ -25,7 +25,7 @@ zrtos_error_t zrtos_vfs_module_zero__on_read(
 ){
 	zrtos_mem__zero(buf,len);
 	*ret = len;
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 ZRTOS_VFS_PLUGIN__INIT(zero,

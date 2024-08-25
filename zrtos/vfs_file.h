@@ -55,9 +55,9 @@ zrtos_error_t zrtos_vfs_file__open(char *path,zrtos_vfs_file_t **file,void *file
 				goto L_OUT;
 			}
 		}
-		ret = EMFILE;
+		ret = ZRTOS_ERROR__MFILE;
 	}else{
-		ret = ENOENT;
+		ret = ZRTOS_ERROR__NOENT;
 	}
 
 L_OUT:
@@ -96,7 +96,7 @@ zrtos_error_t zrtos_vfs_file__read(
 		,len
 		,offset
 		,ret
-	) : EBADF;
+	) : ZRTOS_ERROR__BADF;
 }
 
 zrtos_error_t zrtos_vfs_file__write(
@@ -116,7 +116,7 @@ zrtos_error_t zrtos_vfs_file__write(
 		,len
 		,offset
 		,ret
-	) : EBADF;
+	) : ZRTOS_ERROR__BADF;
 }
 
 zrtos_error_t zrtos_vfs_file__can_read(
@@ -126,7 +126,7 @@ zrtos_error_t zrtos_vfs_file__can_read(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__CAN_READ
 		,file
-	) : EBADF;
+	) : ZRTOS_ERROR__BADF;
 }
 
 zrtos_error_t zrtos_vfs_file__can_write(
@@ -136,7 +136,7 @@ zrtos_error_t zrtos_vfs_file__can_write(
 		 file->dentry->inode.plugin
 		,ZRTOS_VFS_PLUGIN_OPERATION__CAN_WRITE
 		,file
-	) : EBADF;
+	) : ZRTOS_ERROR__BADF;
 }
 
 zrtos_error_t zrtos_vfs_file__ioctl_va(
@@ -154,7 +154,7 @@ zrtos_error_t zrtos_vfs_file__ioctl_va(
 		,path
 		,request
 		,args
-	) : EBADF;
+	) : ZRTOS_ERROR__BADF;
 
 	return ret;
 }

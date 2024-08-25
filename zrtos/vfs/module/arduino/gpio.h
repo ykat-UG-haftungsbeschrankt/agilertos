@@ -34,7 +34,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__set_mode(
 		break;
 	}
 	pinMode(pin,tmp);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_arduino_gpio__digital_read(
@@ -43,7 +43,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__digital_read(
 	,zrtos_gpio_value_digital_t *val
 ){
 	*val = digitalRead(pin);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_arduino_gpio__digital_write(
@@ -52,7 +52,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__digital_write(
 	,zrtos_gpio_value_digital_t val
 ){
 	digitalWrite(pin, val);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_read(
@@ -61,7 +61,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_read(
 	,zrtos_gpio_value_analog_t  *val
 ){
 	//*val = analogRead(pin);
-	return ENOSYS;
+	return ZRTOS_ERROR__NOSYS;
 }
 
 zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_write(
@@ -70,7 +70,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__analog_write(
 	,zrtos_gpio_value_analog_t  val
 ){
 	//analogWrite(pin, val);
-	return ENOSYS;
+	return ZRTOS_ERROR__NOSYS;
 }
 
 zrtos_gpio_t zrtos_vfs_module_arduino_gpio = ZRTOS_GPIO__INIT(
@@ -85,7 +85,7 @@ zrtos_error_t zrtos_vfs_module_arduino_gpio__on_mount(
 	 zrtos_vfs_dentry_t *thiz
 ){
 	zrtos_vfs_dentry__set_inode_data(thiz,&zrtos_vfs_module_arduino_gpio);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 ZRTOS_VFS_PLUGIN__INIT(arduino_gpio,

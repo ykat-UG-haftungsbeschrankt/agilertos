@@ -15,6 +15,7 @@ extern "C" {
 #include <stddef.h>
 #include <stdint.h>
 #include <limits.h>
+#include <stdalign.h>
 
 #include <zrtos/cast.h>
 
@@ -43,8 +44,8 @@ size_t zrtos_types__ptr_get_byte_distance(void *bigger,void *smaller){
 	return ((uint8_t*)bigger)-((uint8_t*)smaller);
 }
 
-#define ZRTOS_TYPES__BYTE_ALIGNMENT (alignof(max_align_t))
-#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (alignof(max_align_t)-1)
+#define ZRTOS_TYPES__BYTE_ALIGNMENT (__alignof__(max_align_t))
+#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK (__alignof__(max_align_t)-1)
 
 void *zrtos_types__ptr_to_alignment(void *ptr){
 	uintptr_t ret = (uintptr_t)ptr;

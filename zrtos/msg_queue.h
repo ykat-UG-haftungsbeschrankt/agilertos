@@ -73,7 +73,7 @@ L_READ_MESSAGE_BODY:
 		if(thiz->header.length == 0){
 			thiz->msg_count--;
 		}else{
-			ret = EAGAIN;
+			ret = ZRTOS_ERROR__AGAIN;
 		}
 	}else if(thiz->msg_count){
 		zrtos_cbuffer__get_ex(
@@ -84,7 +84,7 @@ L_READ_MESSAGE_BODY:
 		);
 		goto L_READ_MESSAGE_BODY;
 	}else{
-		ret = ENODATA;
+		ret = ZRTOS_ERROR__NODATA;
 	}
 	return ret;
 }

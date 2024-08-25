@@ -43,7 +43,7 @@ bool zrtos_vfs_notify__init(zrtos_vfs_notify_t *thiz){
 		 &thiz->data
 		,sizeof(zrtos_vfs_notify_entry_t)*ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX
 	);
-	thiz->error = ESUCCESS;
+	thiz->error = ZRTOS_ERROR__SUCCESS;
 
 	return true;
 }
@@ -103,7 +103,7 @@ void zrtos_vfs_notify__start(
 void zrtos_vfs_notify__stop(
 	zrtos_vfs_notify_t *thiz
 ){
-	thiz->error = EINTR;
+	thiz->error = ZRTOS_ERROR__INTR;
 }
 
 #ifdef __cplusplus

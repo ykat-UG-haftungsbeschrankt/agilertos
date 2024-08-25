@@ -101,7 +101,7 @@ zrtos_error_t zrtos_vfs_plugin_module_##name##__operation(\
 	switch(operation){\
 		__VA_ARGS__\
 		default:\
-			ZRTOS_VFS_PLUGIN__RETURN(ENOSYS);\
+			ZRTOS_VFS_PLUGIN__RETURN(ZRTOS_ERROR__NOSYS);\
 		break;\
 	}\
 \
@@ -114,17 +114,17 @@ zrtos_vfs_plugin_t zrtos_vfs_plugin_module_##name = {\
 	 .operation = zrtos_vfs_plugin_module_##name##__operation\
 };
 #else
-zrtos_error_t zrtos_vfs_plugin__default_open(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_close(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_mount(struct _zrtos_vfs_dentry_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_umount(struct _zrtos_vfs_dentry_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_read(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,zrtos_vfs_offset_t offset,size_t *out){return ENOSYS;}
-zrtos_error_t zrtos_vfs_plugin__default_write(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,zrtos_vfs_offset_t offset,size_t *out){return ENOSYS;}
-zrtos_error_t zrtos_vfs_plugin__default_can_read(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_can_write(struct _zrtos_vfs_file_t *thiz){return ESUCCESS;}
-zrtos_error_t zrtos_vfs_plugin__default_can_write_read_only(struct _zrtos_vfs_file_t *thiz){return EAGAIN;}
-zrtos_error_t zrtos_vfs_plugin__default_seek(struct _zrtos_vfs_file_t *thiz, zrtos_vfs_offset_t offset, int whence, zrtos_vfs_offset_t *out){return ENOSYS;}
-zrtos_error_t zrtos_vfs_plugin__default_ioctl(struct _zrtos_vfs_file_t *thiz,char *path, int request, va_list args){return ENOSYS;}
+zrtos_error_t zrtos_vfs_plugin__default_open(struct _zrtos_vfs_file_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_close(struct _zrtos_vfs_file_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_mount(struct _zrtos_vfs_dentry_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_umount(struct _zrtos_vfs_dentry_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_read(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,zrtos_vfs_offset_t offset,size_t *out){return ZRTOS_ERROR__NOSYS;}
+zrtos_error_t zrtos_vfs_plugin__default_write(struct _zrtos_vfs_file_t *thiz,char *path,void *buf,size_t len,zrtos_vfs_offset_t offset,size_t *out){return ZRTOS_ERROR__NOSYS;}
+zrtos_error_t zrtos_vfs_plugin__default_can_read(struct _zrtos_vfs_file_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_can_write(struct _zrtos_vfs_file_t *thiz){return ZRTOS_ERROR__SUCCESS;}
+zrtos_error_t zrtos_vfs_plugin__default_can_write_read_only(struct _zrtos_vfs_file_t *thiz){return ZRTOS_ERROR__AGAIN;}
+zrtos_error_t zrtos_vfs_plugin__default_seek(struct _zrtos_vfs_file_t *thiz, zrtos_vfs_offset_t offset, int whence, zrtos_vfs_offset_t *out){return ZRTOS_ERROR__NOSYS;}
+zrtos_error_t zrtos_vfs_plugin__default_ioctl(struct _zrtos_vfs_file_t *thiz,char *path, int request, va_list args){return ZRTOS_ERROR__NOSYS;}
 #define ZRTOS_VFS_PLUGIN__INIT(name,...)\
 zrtos_vfs_plugin_t zrtos_vfs_plugin_module_##name = {\
 	__VA_ARGS__\

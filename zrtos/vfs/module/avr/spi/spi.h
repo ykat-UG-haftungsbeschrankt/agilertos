@@ -17,6 +17,7 @@ extern "C" {
 #include <zrtos/vfs/module/spi/spi.h>
 
 zrtos_vfs_module_spi_args_t *zrtos_vfs_module_avr_spi__ctx;
+bool zrtos_vfs_module_avr_spi__isr_complete = true;
 
 void zrtos_vfs_module_avr_spi__on_interrupt(){
 	uint8_t data_in = SPDR;
@@ -28,38 +29,18 @@ void zrtos_vfs_module_avr_spi__on_interrupt(){
 		,sizeof(uint8_t)
 	);
 
-	Serial.println("##zrtos_vfs_module_avr_spi__on_interrupt##");
-	Serial.println("##zrtos_vfs_module_avr_spi__on_interrupt##");
-	Serial.println("##zrtos_vfs_module_avr_spi__on_interrupt##");
-	Serial.println("##zrtos_vfs_module_avr_spi__on_interrupt##");
-
-	pinMode(11,OUTPUT);
-	pinMode(13,OUTPUT);
-	pinMode(3,OUTPUT);
-	digitalWrite(3,HIGH);
-
-	SPCR |= (1<<MSTR);                 // Set as master
-	SPCR |= (1<<SPR0)|(1<<SPR1);       // divide clock by 128
-	SPCR |= (1<<SPIE);                 // Enable SPI Interrupt
-	SPCR |= (1<<SPE);                  // Enable SPI
-
-	sei();
-
-	SPDR = data_out;
-
-	//Serial.println((int)err);
-	if(zrtos_error__is_error(err)){
-		Serial.println("##SPCR &= ~_BV(SPIE);##");
+	if((zrtos_vfs_module_avr_spi__isr_complete = zrtos_error__is_error(err))){
 		SPCR = 0;
 	}else{
-		Serial.println("##SPCR |= _BV(SPIE);##");
-		//SPCR |= _BV(SPIE);
-		//SPCR = zrtos_vfs_module_avr_spi__ctx->last->control;
+		if(SPCR == 0){
+			SPCR = zrtos_vfs_module_avr_spi__ctx->last->control;
+		}
+		SPDR = data_out;
 	}
 
 }
 
-ISR(SPI_STC_vect){
+ISR(SPI_STC_vect,ISR_NOBLOCK){
 	zrtos_vfs_module_avr_spi__on_interrupt();
 }
 
@@ -68,12 +49,12 @@ zrtos_error_t zrtos_vfs_module_avr_spi__on_mount(zrtos_vfs_dentry_t *thiz){
 		 zrtos_vfs_module_spi_args_t*
 		,zrtos_vfs_dentry__get_inode_data(thiz)
 	);
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_spi__on_umount(zrtos_vfs_dentry_t *thiz){
 	zrtos_vfs_module_avr_spi__ctx = 0;
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_spi__on_write(
@@ -84,7 +65,6 @@ zrtos_error_t zrtos_vfs_module_avr_spi__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	Serial.println("##zrtos_vfs_module_avr_spi__on_write##");
 	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(
 		 zrtos_vfs_module_spi_file_t*
 		,zrtos_vfs_file__get_data(thiz)
@@ -97,17 +77,19 @@ zrtos_error_t zrtos_vfs_module_avr_spi__on_write(
 		,offset
 		,out
 	);
-	Serial.println("##zrtos_vfs_module_avr_spi__on_write2##");
-	Serial.println((uint32_t)file_data);
-	Serial.println(file_data->control);
-	Serial.println(0 == (SPSR & _BV(SPIF)));
+
+	ZRTOS_ARCH__DISABLE_INTERRUPTS();
 	if(zrtos_error__is_success(ret)
 	&& file_data->control & ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASTER
-	&& 0 == (SPSR & _BV(SPIF))){
-		Serial.println("##zrtos_vfs_module_avr_spi__on_write->zrtos_vfs_module_avr_spi__on_interrupt##");
-		Serial.println(zrtos_vfs_module_avr_spi__ctx->last->control);
+	&& zrtos_vfs_module_avr_spi__isr_complete){
+		zrtos_vfs_module_avr_spi__isr_complete = false;
+		ZRTOS_ARCH__ENABLE_INTERRUPTS();
+
 		zrtos_vfs_module_avr_spi__on_interrupt();
+	}else{
+		ZRTOS_ARCH__ENABLE_INTERRUPTS();
 	}
+	
 	return ret;
 }
 

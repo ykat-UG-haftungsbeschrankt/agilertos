@@ -25,7 +25,7 @@ typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 bool zrtos_vfs_module_modbus_rtu_args__init(
 	zrtos_vfs_module_modbus_rtu_args_t *thiz
 ){
-	thiz->error = ESUCCESS;
+	thiz->error = ZRTOS_ERROR__SUCCESS;
 	if(zrtos_msg_queue__init(&thiz->msg_queue_in)){
 		if(zrtos_msg_queue__init(&thiz->msg_queue_out)){
 			return true;
@@ -114,8 +114,8 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_read(
 		thiz
 	);
 	return zrtos_msg_queue__is_empty(&mod->msg_queue_in)
-	     ? EAGAIN
-	     : ESUCCESS
+	     ? ZRTOS_ERROR__AGAIN
+	     : ZRTOS_ERROR__SUCCESS
 	;
 }
 
@@ -123,7 +123,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_write(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 /*
 ZRTOS_VFS_PLUGIN__INIT(modbus_rtu,

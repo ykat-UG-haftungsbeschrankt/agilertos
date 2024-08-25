@@ -101,12 +101,12 @@ zrtos_error_t zrtos_vfs_module_avr_adc__on_mount(zrtos_vfs_dentry_t *thiz){
 	       | _BV(ADIE)
 	       | ZRTOS_VFS_MODULE_AVR_ADC__CFG_PRESCALER
 	;
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_adc__on_umount(zrtos_vfs_dentry_t *thiz){
 	ADCSRA = 0;
-	return ESUCCESS;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_adc__on_read(
@@ -117,13 +117,13 @@ zrtos_error_t zrtos_vfs_module_avr_adc__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_error_t ret = EFAULT;
+	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
 	size_t start_offset = (size_t)offset;
 	size_t channel = start_offset/sizeof(float);
 
 	if(len != sizeof(float)
 	||(start_offset % sizeof(float)) != 0){
-		ret = EINVAL;
+		ret = ZRTOS_ERROR__INVAL;
 	}else if(channel < ZRTOS_VFS_MODULE_AVR_ADC__CFG_MAX_CHANNEL){
 		float val = zrtos_vfs_module_avr_adc__to_volt(
 			 zrtos_vfs_module_avr_adc__data.data[channel]
@@ -132,7 +132,7 @@ zrtos_error_t zrtos_vfs_module_avr_adc__on_read(
 
 		zrtos_mem__cpy(buf,&val,sizeof(float));
 
-		ret = ESUCCESS;
+		ret = ZRTOS_ERROR__SUCCESS;
 	}
 
 	return ret;
