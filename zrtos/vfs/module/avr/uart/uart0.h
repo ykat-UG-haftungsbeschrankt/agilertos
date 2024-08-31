@@ -58,6 +58,12 @@ ISR(UART0_RECEIVE_INTERRUPT){
 			: ZRTOS_ERROR__IO
 		);
 
+		if(zrtos_error__is_success(err)){
+			zrtos_vfs_module_avr_uart0->on_recv(
+				 zrtos_vfs_module_avr_uart0
+			);
+		}
+
 		zrtos_vfs_module_uart_args__set_error(
 			 zrtos_vfs_module_avr_uart0
 			,err
@@ -80,6 +86,9 @@ ISR(UART0_TRANSMIT_INTERRUPT){
 #else
 		UART0_DATA = tmp;
 #endif
+		zrtos_vfs_module_avr_uart0->on_send(
+			zrtos_vfs_module_avr_uart0
+		);
 	}else{
 #if defined(AVR1_USART0)
 		USART0_CTRLA &= ~USART_DREIE_bm;

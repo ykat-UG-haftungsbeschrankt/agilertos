@@ -323,6 +323,26 @@ bool zrtos_cbuffer__can_read_length(
 	return length == 0;
 }
 
+static size_t zrtos_cbuffer_node__get_length(
+	 zrtos_cbuffer_node_t *thiz
+){
+	return thiz->head - thiz->tail;
+}
+
+size_t zrtos_cbuffer__get_length(
+	 zrtos_cbuffer_t *thiz
+){
+	zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_first_node(thiz);
+	size_t length = 0;
+
+	while(node){
+		length += zrtos_cbuffer_node__get_length(node);
+		node = zrtos_cbuffer_node__get_next_node(node);
+	}
+
+	return length == 0;
+}
+
 zrtos_error_t zrtos_cbuffer__can_write(
 	 zrtos_cbuffer_t *thiz
 ){

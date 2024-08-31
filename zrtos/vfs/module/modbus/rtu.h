@@ -15,17 +15,21 @@ extern "C" {
 #include <zrtos/cbuffer.h>
 #include <zrtos/msg_queue.h>
 
+#include <zrtos/vfs/module/uart/uart.h>
+
 typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
-	zrtos_msg_queue_t  msg_queue_in;
-	zrtos_msg_queue_t  msg_queue_out;
-	zrtos_error_t      error;
+	zrtos_msg_queue_t            msg_queue_in;
+	zrtos_msg_queue_t            msg_queue_out;
+	zrtos_error_t                error;
+	zrtos_vfs_module_uart_args_t *uart;
 }zrtos_vfs_module_modbus_rtu_args_t;
 
-
 bool zrtos_vfs_module_modbus_rtu_args__init(
-	zrtos_vfs_module_modbus_rtu_args_t *thiz
+	 zrtos_vfs_module_modbus_rtu_args_t *thiz
+	,zrtos_vfs_module_uart_args_t *uart
 ){
 	thiz->error = ZRTOS_ERROR__SUCCESS;
+	thiz->uart = uart;
 	if(zrtos_msg_queue__init(&thiz->msg_queue_in)){
 		if(zrtos_msg_queue__init(&thiz->msg_queue_out)){
 			return true;
@@ -41,7 +45,7 @@ zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in(
 	return &thiz->msg_queue_in;
 }
 
-zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in(
+zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out(
 	zrtos_vfs_module_modbus_rtu_args_t *thiz
 ){
 	return &thiz->msg_queue_out;
@@ -58,6 +62,23 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu_args__get_error(
 	zrtos_vfs_module_modbus_rtu_args_t *thiz
 ){
 	return thiz->error;
+}
+
+static uint8_t zrtos_vfs_module_modbus_rtu__crc(uint8_t *buf, size_t len){
+	uint16_t crc = 0xFFFF;
+
+	for(size_t pos = 0; pos < len; pos++){
+		crc ^= (uint16_t)buf[pos];
+
+		for(size_t i = 8; i--;){
+			crc >>= 1;
+			if((crc & 0x0001) != 0){
+				crc ^= 0xA001;
+			}
+		}
+	}
+
+	return crc;  
 }
 
 zrtos_error_t zrtos_vfs_module_modbus_rtu__on_read(

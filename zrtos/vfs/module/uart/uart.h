@@ -56,14 +56,23 @@ typedef enum{
 	,ZRTOS_VFS_MODULE_UART_MODE__MAX             = ZRTOS_TYPES__UINT8_MAX
 }zrtos_vfs_module_uart_mode_t;
 
+struct _zrtos_vfs_module_uart_args_t;
+
+typedef void (*zrtos_vfs_module_uart_callback_t)(
+	struct _zrtos_vfs_module_uart_args_t *args
+);
+
 typedef struct _zrtos_vfs_module_uart_args_t{
 	zrtos_cbuffer_t                  cbuffer_in;
 	zrtos_cbuffer_t                  cbuffer_out;
 	zrtos_error_t                    error;
 	zrtos_vfs_module_uart_baudrate_t baudrate;
 	zrtos_vfs_module_uart_mode_t     mode;
+	zrtos_vfs_module_uart_callback_t on_send;
+	zrtos_vfs_module_uart_callback_t on_recv;
 }zrtos_vfs_module_uart_args_t;
 
+void zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_args_t *args){}
 
 bool zrtos_vfs_module_uart_args__init(
 	 zrtos_vfs_module_uart_args_t *thiz
@@ -73,6 +82,8 @@ bool zrtos_vfs_module_uart_args__init(
 	thiz->error = ZRTOS_ERROR__SUCCESS;
 	thiz->baudrate = baudrate;
 	thiz->mode = mode;
+	thiz->on_send = zrtos_vfs_module_uart_args__callback;
+	thiz->on_recv = zrtos_vfs_module_uart_args__callback;
 	if(zrtos_cbuffer__init(&thiz->cbuffer_in)){
 		if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
 			return true;

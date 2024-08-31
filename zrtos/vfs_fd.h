@@ -110,6 +110,42 @@ zrtos_error_t zrtos_vfs_fd__read(
 	return ret;
 }
 
+bool zrtos_vfs_fd__is_sync_again_error(zrtos_error_t ret){
+	return ret == ZRTOS_ERROR__AGAIN
+	    || ret == ZRTOS_ERROR__WOULDBLOCK
+	;
+}
+
+zrtos_error_t zrtos_vfs_fd__read_sync(
+	 zrtos_vfs_fd_t thiz
+	,char *path
+	,void *buffer
+	,size_t len
+	,size_t offset
+){
+	zrtos_error_t ret = ZRTOS_ERROR__AGAIN;
+	size_t outlen;
+	uint8_t *data = ZRTOS_CAST(uint8_t*,buffer);
+
+	while(len && zrtos_vfs_fd__is_sync_again_error(ret)){
+		ret = zrtos_vfs_fd__read(
+			 thiz
+			,path
+			,data
+			,len
+			,offset
+			,&outlen
+		);
+		if(zrtos_error__is_success(ret)){
+			len -= outlen;
+			offset += outlen;
+			data += outlen;
+		}
+	}
+
+	return ret;
+}
+
 zrtos_error_t zrtos_vfs_fd__write(
 	 zrtos_vfs_fd_t thiz
 	,char *path
@@ -130,6 +166,36 @@ zrtos_error_t zrtos_vfs_fd__write(
 			,offset
 			,outlen
 		);
+	}
+
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_fd__write_sync(
+	 zrtos_vfs_fd_t thiz
+	,char *path
+	,void *buffer
+	,size_t len
+	,size_t offset
+){
+	zrtos_error_t ret = ZRTOS_ERROR__AGAIN;
+	size_t outlen;
+	uint8_t *data = ZRTOS_CAST(uint8_t*,buffer);
+
+	while(len && zrtos_vfs_fd__is_sync_again_error(ret)){
+		ret = zrtos_vfs_fd__write(
+			 thiz
+			,path
+			,data
+			,len
+			,offset
+			,&outlen
+		);
+		if(zrtos_error__is_success(ret)){
+			len -= outlen;
+			offset += outlen;
+			data += outlen;
+		}
 	}
 
 	return ret;

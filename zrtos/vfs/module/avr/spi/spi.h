@@ -32,9 +32,7 @@ void zrtos_vfs_module_avr_spi__on_interrupt(){
 	if((zrtos_vfs_module_avr_spi__isr_complete = zrtos_error__is_error(err))){
 		SPCR = 0;
 	}else{
-		if(SPCR == 0){
-			SPCR = zrtos_vfs_module_avr_spi__ctx->last->control;
-		}
+		SPCR = zrtos_vfs_module_avr_spi__ctx->last->control;
 		SPDR = data_out;
 	}
 
