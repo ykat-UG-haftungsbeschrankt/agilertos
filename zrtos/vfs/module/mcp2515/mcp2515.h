@@ -19,46 +19,48 @@ extern "C" {
 	((cfg1) | ((cfg2)<<8) | ((cfg3)<<16))
 
 typedef enum{
-	 ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_1000kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0x80),(0x80))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_500kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0x90), (0x82))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_250kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xB1), (0x85))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_200kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xB4), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_125kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xB1), (0x85))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_100kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xB4), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_80kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xBF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_50kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xB4), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_40kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xBF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_33k3BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x47), (0xE2), (0x85))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_31k25BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07), (0xA4), (0x84))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_20kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xBF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_10kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0F),(0xBF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_5kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x1F),(0xBF), (0x87))
+	 ZRTOS_VFS_MODULE_MCP2515_BITRATE__MIN            = ZRTOS_TYPES__UINT32_MIN
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_1000kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0x80),(0x80))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_500kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0x90), (0x82))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_250kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xB1), (0x85))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_200kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xB4), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_125kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xB1), (0x85))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_100kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xB4), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_80kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xBF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_50kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xB4), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_40kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xBF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_33k3BPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x47), (0xE2), (0x85))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_31k25BPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07), (0xA4), (0x84))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_20kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xBF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_10kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0F),(0xBF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__8MHz_5kBPS     = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x1F),(0xBF), (0x87))
 	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_1000kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xD0), (0x82))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_500kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xF0), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_250kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x41),(0xF1), (0x85))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_200kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_125kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xF0), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_100kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_95kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xAD), (0x07))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_83k3BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03), (0xBE), (0x07))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_80kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_50kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_40kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_33k3BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x4E), (0xF1), (0x85))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_20kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0F),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_10kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x1F),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_5kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x3F),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_500kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xF0), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_250kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x41),(0xF1), (0x85))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_200kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_125kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xF0), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_100kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_95kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xAD), (0x07))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_83k3BPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03), (0xBE), (0x07))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_80kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_50kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_40kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x07),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_33k3BPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x4E), (0xF1), (0x85))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_20kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0F),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_10kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x1F),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__16MHz_5kBPS    = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x3F),(0xFF), (0x87))
 	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_1000kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xD9), (0x82))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_500kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_250kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x41),(0xFB), (0x86))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_200kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_125kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_100kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_83k3BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04), (0xFE), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_80kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_50kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x09),(0xFA), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_40kBPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x09),(0xFF), (0x87))
-	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_33k3BPS = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0B), (0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_500kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x00),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_250kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x41),(0xFB), (0x86))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_200kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x01),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_125kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x03),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_100kBPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_83k3BPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04), (0xFE), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_80kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x04),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_50kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x09),(0xFA), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_40kBPS   = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x09),(0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__20MHz_33k3BPS  = ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE((0x0B), (0xFF), (0x87))
+	,ZRTOS_VFS_MODULE_MCP2515_BITRATE__MAX            = ZRTOS_TYPES__UINT32_MAX
 }zrtos_vfs_module_mcp2515_bitrate_t;
 
 #undef ZRTOS_VFS_MODULE_MCP2515_BITRATE__COMBINE
@@ -76,15 +78,6 @@ uint8_t zrtos_vfs_module_mcp2515_bitrate__get_cfg3(zrtos_vfs_module_mcp2515_bitr
 }
 
 typedef enum{
-	ERROR_OK        = 0,
-	ERROR_FAIL      = 1,
-	ERROR_ALLTXBUSY = 2,
-	ERROR_FAILINIT  = 3,
-	ERROR_FAILTX    = 4,
-	ERROR_NOMSG     = 5
-}zrtos_vfs_module_mcp2515_error_t;
-
-typedef enum{
 	ZRTOS_VFS_MODULE_MCP2515_MASK__MASK0 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXM0SIDH,
 	ZRTOS_VFS_MODULE_MCP2515_MASK__MASK1 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXM1SIDH
 }zrtos_vfs_module_mcp2515_mask_t;
@@ -97,17 +90,6 @@ typedef enum/*enum zrtos_vfs_module_mcp2515_register_rxf_t */{
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_RXF__RXF4 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF4SIDH,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_RXF__RXF5 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF5SIDH
 }zrtos_vfs_module_mcp2515_register_rxf_t;
-
-        enum RXBn {
-            RXB0 = 0,
-            RXB1 = 1
-        };
-
-        enum TXBn {
-            TXB0 = 0,
-            TXB1 = 1,
-            TXB2 = 2
-        };
 
 typedef enum /*class zrtos_vfs_module_mcp2515_register_canintf_t : uint8_t*/{
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RX0IF = 0x01,
@@ -172,12 +154,14 @@ typedef enum /*class zrtos_vfs_module_mcp2515_register_canintf_t : uint8_t*/{
         static uint8_t MCP_DLC  = 4;
         static uint8_t MCP_DATA = 5;
 
-        enum /*class*/ STAT : uint8_t {
-            STAT_RX0IF = (1<<0),
-            STAT_RX1IF = (1<<1)
-        };
-
-        static uint8_t STAT_RXIF_MASK = STAT_RX0IF | STAT_RX1IF;
+typedef enum /*class STAT : uint8_t */{
+	ZRTOS_VFS_MODULE_MCP2515_STATUS__RX0IF = (1<<0),
+	ZRTOS_VFS_MODULE_MCP2515_STATUS__RX1IF = (1<<1),
+	ZRTOS_VFS_MODULE_MCP2515_STATUS__RXIF_MASK = (
+		  ZRTOS_VFS_MODULE_MCP2515_STATUS__RX0IF
+		| ZRTOS_VFS_MODULE_MCP2515_STATUS__RX1IF
+	)
+}zrtos_vfs_module_mcp2515_status_t;
 
         enum /*class*/ TXBnCTRL : uint8_t {
             TXB_ABTF   = 0x40,
@@ -189,11 +173,13 @@ typedef enum /*class zrtos_vfs_module_mcp2515_register_canintf_t : uint8_t*/{
         };
 
 typedef enum{
-    ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DISABLE = -1,
-    ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV1 = 0x0,
-    ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV2 = 0x1,
-    ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV4 = 0x2,
-    ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV8 = 0x3,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__MIN     = ZRTOS_TYPES__INT8_MIN,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DISABLE = -1,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV1    = 0x0,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV2    = 0x1,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV4    = 0x2,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__DIV8    = 0x3,
+	ZRTOS_VFS_MODULE_MCP2515_CLKOUT__MAX     = ZRTOS_TYPES__INT8_MAX
 }zrtos_vfs_module_mcp2515_clkout_t;
 
 typedef enum{
@@ -235,7 +221,7 @@ typedef enum{
 }zrtos_vfs_module_mcp2515_instruction_t;
 
 typedef enum{
-	ZRTOS_VFS_MODULE_MCP2515_REGISTER__MIN         = ZRTOS_TYPES__UINT8_MIN,
+	ZRTOS_VFS_MODULE_MCP2515_REGISTER__MIN      = ZRTOS_TYPES__UINT8_MIN,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF0SIDH = 0x00,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF0SIDL = 0x01,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF0EID8 = 0x02,
@@ -313,58 +299,47 @@ typedef enum{
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1EID0 = 0x74,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1DLC  = 0x75,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1DATA = 0x76,
-	ZRTOS_VFS_MODULE_MCP2515_REGISTER__MAX         = ZRTOS_TYPES__UINT8_MAX
+	ZRTOS_VFS_MODULE_MCP2515_REGISTER__MAX      = ZRTOS_TYPES__UINT8_MAX
 }zrtos_vfs_module_mcp2515_register_t;
 
-        static int N_TXBUFFERS = 3;
-        static int N_RXBUFFERS = 2;
+#define ZRTOS_VFS_MODULE_MCP2515__TX_BUFFER_LENGTH 3
+#define ZRTOS_VFS_MODULE_MCP2515__RX_BUFFER_LENGTH 2
 
-        static struct TXBn_REGS {
-            zrtos_vfs_module_mcp2515_register_t CTRL;
-            zrtos_vfs_module_mcp2515_register_t SIDH;
-            zrtos_vfs_module_mcp2515_register_t DATA;
-        } TXB[N_TXBUFFERS];
+typedef enum/* RXBn */{
+	ZRTOS_VFS_MODULE_MCP2515_RXBN__RXB0 = 0,
+	ZRTOS_VFS_MODULE_MCP2515_RXBN__RXB1 = 1
+}zrtos_vfs_module_mcp2515_rxbn_t;
 
-        static struct RXBn_REGS {
-            zrtos_vfs_module_mcp2515_register_t CTRL;
-            zrtos_vfs_module_mcp2515_register_t SIDH;
-            zrtos_vfs_module_mcp2515_register_t DATA;
-            zrtos_vfs_module_mcp2515_register_canintf_t  ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RXnIF;
-        } RXB[N_RXBUFFERS];
+typedef enum{
+	ZRTOS_VFS_MODULE_MCP2515_TXBN__TXB0 = 0,
+	ZRTOS_VFS_MODULE_MCP2515_TXBN__TXB1 = 1,
+	ZRTOS_VFS_MODULE_MCP2515_TXBN__TXB2 = 2
+}zrtos_vfs_module_mcp2515_txbn_t;
 
+typedef struct{
+	zrtos_vfs_module_mcp2515_register_t CTRL;
+	zrtos_vfs_module_mcp2515_register_t SIDH;
+	zrtos_vfs_module_mcp2515_register_t DATA;
+}zrtos_vfs_module_mcp2515_txbn_regs_t;
 
-struct zrtos_vfs_module_mcp2515__TXBn_REGS zrtos_vfs_module_mcp2515__TXB[zrtos_vfs_module_mcp2515__N_TXBUFFERS] = {
-	{
-		 ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0CTRL
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0SIDH
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0DATA
-	}
-	,{
-		 ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1CTRL
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1SIDH
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1DATA
-	}
-	,{
-		 ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2CTRL
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2SIDH
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2DATA
-	}
-};
+typedef struct{
+	zrtos_vfs_module_mcp2515_register_t CTRL;
+	zrtos_vfs_module_mcp2515_register_t SIDH;
+	zrtos_vfs_module_mcp2515_register_t DATA;
+	zrtos_vfs_module_mcp2515_register_canintf_t  ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RXnIF;
+}zrtos_vfs_module_mcp2515_rxbn_regs_t;
 
-struct zrtos_vfs_module_mcp2515__RXBn_REGS zrtos_vfs_module_mcp2515__RXB[N_RXBUFFERS] = {
-	{
-		 ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0CTRL
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0SIDH
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0DATA
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RX0IF
-	}
-	,{
-		 ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1CTRL
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1SIDH
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1DATA
-		,ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RX1IF
-	}
-};
+typedef struct{
+	uint8_t data[4];
+}zrtos_vfs_module_mcp2515_id_t;
+
+void *zrtos_vfs_module_mcp2515_id__get_buffer(zrtos_vfs_module_mcp2515_id_t *thiz){
+	return thiz->data;
+}
+
+size_t zrtos_vfs_module_mcp2515_id__get_length(zrtos_vfs_module_mcp2515_id_t *thiz){
+	return 4;
+}
 
 zrtos_error_t zrtos_vfs_module_mcp2515__spi_transfer(
 	 zrtos_vfs_fd_t fd
@@ -416,7 +391,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__spi_transfer(
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__read_registers(
+zrtos_error_t zrtos_vfs_module_mcp2515__read_registers(
 	 zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t *values
 	,size_t  values_length
@@ -438,12 +413,12 @@ zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__read_registers
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__read_register(
+zrtos_error_t zrtos_vfs_module_mcp2515__read_register(
 	 zrtos_vfs_fd_t fd
 	,zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t *value
 ){
-	return zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__read_registers(
+	return zrtos_vfs_module_mcp2515__read_registers(
 		 fd
 		,reg
 		,value
@@ -451,7 +426,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__read_register(
 	);
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__set_registers(
+zrtos_error_t zrtos_vfs_module_mcp2515__set_registers(
 	 zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t *values
 	,size_t values_length
@@ -473,12 +448,12 @@ zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__set_registers(
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__set_register(
+zrtos_error_t zrtos_vfs_module_mcp2515__set_register(
 	zrtos_vfs_fd_t fd
 	,zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t value
 ){
-	return zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__set_registers(
+	return zrtos_vfs_module_mcp2515__set_registers(
 		 fd
 		,reg
 		,&value
@@ -486,7 +461,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__set_register(
 	);
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__modify_register(
+zrtos_error_t zrtos_vfs_module_mcp2515__modify_register(
 	zrtos_vfs_fd_t fd
 	,zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t mask
@@ -509,7 +484,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__modify_registe
 	return ret;
 }
 
-uint8_t zrtos_vfs_module_mcp2515__zrtos_vfs_module_mcp2515__get_status(
+uint8_t zrtos_vfs_module_mcp2515__get_status(
 	zrtos_vfs_fd_t fd
 	,uint8_t *res
 ){
@@ -677,18 +652,6 @@ zrtos_error_t zrtos_vfs_module_mcp2515__set_clk_out(
 	return ret;
 }
 
-typedef struct{
-	uint8_t data[4];
-}zrtos_vfs_module_mcp2515_id_t;
-
-void zrtos_vfs_module_mcp2515_id__get_buffer(zrtos_vfs_module_mcp2515_id_t * thiz){
-	return thiz->data;
-}
-
-size_t zrtos_vfs_module_mcp2515_id__get_length(zrtos_vfs_module_mcp2515_id_t * thiz){
-	return 4;
-}
-
 bool zrtos_vfs_module_mcp2515_id__init(
 	 zrtos_vfs_module_mcp2515_id_t *thiz
 	,bool ext
@@ -763,8 +726,6 @@ zrtos_error_t zrtos_vfs_module_mcp2515__set_filter(
 		,ulData
 	);
 }
-
-
 
 zrtos_error_t zrtos_vfs_module_mcp2515__reset(zrtos_vfs_fd_t fd){
 	uint8_t zeros[14] = {};
@@ -890,93 +851,207 @@ L_RETURN:
 	return ret;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__sendMessage(TXBn txbn, struct can_frame *frame)
-{
-    if (frame->can_dlc > CAN_MAX_DLEN) {
-    	return ERROR_FAILTX;
-    }
+zrtos_error_t zrtos_vfs_module_mcp2515__send_message_ex(
+	 zrtos_vfs_fd_t fd
+	,zrtos_vfs_module_mcp2515_txbn_regs_t txbn_regs
+	,struct can_frame *frame
+){
+	zrtos_error_t ret;
+	uint8_t data[13];
+	bool ext;
+	bool rtr;
+	uint32_t id;
+	uint8_t ctrl;
 
-    struct TXBn_REGS *txbuf = &TXB[txbn];
+	if(frame->can_dlc <= CAN_MAX_DLEN){
+		ext = (frame->can_id & CAN_EFF_FLAG);
+		rtr = (frame->can_id & CAN_RTR_FLAG);
+		id = (frame->can_id & (ext ? CAN_EFF_MASK : CAN_SFF_MASK));
 
-    uint8_t data[13];
+		zrtos_vfs_module_mcp2515__prepare_id(data, ext, id);
 
-    bool ext = (frame->can_id & CAN_EFF_FLAG);
-    bool rtr = (frame->can_id & CAN_RTR_FLAG);
-    uint32_t id = (frame->can_id & (ext ? CAN_EFF_MASK : CAN_SFF_MASK));
+		data[MCP_DLC] = rtr ? (frame->can_dlc | RTR_MASK) : frame->can_dlc;
 
-    zrtos_vfs_module_mcp2515__prepare_id(data, ext, id);
+		memcpy(&data[MCP_DATA], frame->data, frame->can_dlc);
 
-    data[MCP_DLC] = rtr ? (frame->can_dlc | RTR_MASK) : frame->can_dlc;
+		if(zrtos_error__is_success((
+			ret = zrtos_vfs_module_mcp2515__set_registers(
+				fd
+				,txbn_regs.SIDH
+				,data
+				,5 + frame->can_dlc
+			)
+		))
+		&& zrtos_error__is_success((
+			ret = zrtos_vfs_module_mcp2515__modify_register(
+				 fd
+				,txbn_regs.CTRL
+				,TXB_TXREQ
+				,TXB_TXREQ
+			)
+		))
+		&& zrtos_error__is_success((
+			ret = zrtos_vfs_module_mcp2515__read_register(
+				 fd
+				,txbn_regs.CTRL
+				,&ctrl
+			)
+		))){
+			if((ctrl & (TXB_ABTF | TXB_MLOA | TXB_TXERR)) != 0){
+				ret = ZRTOS_ERROR__IO;
+			}
+		}
+	}else{
+		ret = ZRTOS_ERROR__IO;
+	}
 
-    memcpy(&data[MCP_DATA], frame->data, frame->can_dlc);
-
-    zrtos_vfs_module_mcp2515__set_registers(txbuf->SIDH, data, 5 + frame->can_dlc);
-
-    zrtos_vfs_module_mcp2515__modify_register(fd,txbuf->CTRL, TXB_TXREQ, TXB_TXREQ);
-
-    uint8_t ctrl = zrtos_vfs_module_mcp2515__read_register(fd,txbuf->CTRL);
-    if ((ctrl & (TXB_ABTF | TXB_MLOA | TXB_TXERR)) != 0) {
-    	return ERROR_FAILTX;
-    }
-	return ERROR_OK;
+	return ret;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__sendMessage(struct can_frame *frame)
-{
-    if (frame->can_dlc > CAN_MAX_DLEN) {
-    	return ERROR_FAILTX;
-    }
+zrtos_vfs_module_mcp2515_txbn_regs_t zrtos_vfs_module_mcp2515__get_txb(
+	zrtos_vfs_module_mcp2515__txbn_t txbn
+){
+	zrtos_vfs_module_mcp2515_txbn_regs_t data[] = {
+		{
+			ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0CTRL
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0SIDH
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB0DATA
+		}
+		,{
+			ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1CTRL
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1SIDH
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB1DATA
+		}
+		,{
+			ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2CTRL
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2SIDH
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__TXB2DATA
+		}
+	};
 
-    TXBn txBuffers[N_TXBUFFERS] = {TXB0, TXB1, TXB2};
+	return data[txbn];
+}
 
-    for (int i=0; i<N_TXBUFFERS; i++) {
-        struct TXBn_REGS *txbuf = &TXB[txBuffers[i]];
-        uint8_t ctrlval = zrtos_vfs_module_mcp2515__read_register(fd,txbuf->CTRL);
-        if ( (ctrlval & TXB_TXREQ) == 0 ) {
-        	return sendMessage(txBuffers[i], frame);
-        }
-    }
+zrtos_error_t zrtos_vfs_module_mcp2515__get_available_txb(
+	 zrtos_vfs_fd_t fd
+	,zrtos_vfs_module_mcp2515_txbn_regs_t *txbn_regs
+){
+	zrtos_error_t ret;
+	uint8_t ctrlval;
 
-	return ERROR_ALLTXBUSY;
+	for(size_t i=0; i<ZRTOS_VFS_MODULE_MCP2515__TX_BUFFER_LENGTH; i++){
+		*txbn_regs = zrtos_vfs_module_mcp2515__get_txb(i);
+		if(zrtos_error__is_success((
+			ret = zrtos_vfs_module_mcp2515__read_register(
+				 fd
+				,txbn_regs->CTRL
+				,&ctrlval
+			)
+		))
+		&& (ctrlval & TXB_TXREQ) == 0
+		){
+			goto L_RETURN;
+		}
+	}
+
+	ret = ZRTOS_ERROR__AGAIN;
+
+L_RETURN:
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_mcp2515__send_message(
+	 zrtos_vfs_fd_t fd
+	,struct can_frame *frame
+){
+	zrtos_error_t ret;
+	zrtos_vfs_module_mcp2515_txbn_regs_t txbn_regs;
+
+	if(zrtos_error__is_success((
+		ret = zrtos_vfs_module_mcp2515__get_available_txb(fd,&txbn_regs)
+	))){
+		ret = zrtos_vfs_module_mcp2515__send_message_ex(
+			 fd
+			,txbn_regs
+			,frame
+		);
+	}
+
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_mcp2515__read_message_ex(
-	RXBn rxbn
+	zrtos_vfs_module_mcp2515_rxbn_t rxbn
 	, struct can_frame *frame
 ){
-    struct RXBn_REGS *rxb = &RXB[rxbn];
+	zrtos_error_t ret;
+	zrtos_vfs_module_mcp2515_rxbn_regs_t rxbn_regs[] = {
+		{
+			 ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0CTRL
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0SIDH
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB0DATA
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RX0IF
+		}
+		,{
+			 ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1CTRL
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1SIDH
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXB1DATA
+			,ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RX1IF
+		}
+	};
+	zrtos_vfs_module_mcp2515_rxbn_regs_t *rxb = &rxbn_regs[rxbn];
+	uint8_t tbufdata[5];
 
-    uint8_t tbufdata[5];
+	if(zrtos_error__is_success((
+		ret = zrtos_vfs_module_mcp2515__read_registers(
+			 fd
+			,rxb->SIDH
+			,tbufdata
+			,5
+		)
+	))){
+		uint32_t id = (tbufdata[MCP_SIDH]<<3) + (tbufdata[MCP_SIDL]>>5);
 
-    zrtos_vfs_module_mcp2515__read_registers(rxb->SIDH, tbufdata, 5);
+		if ( (tbufdata[MCP_SIDL] & TXB_EXIDE_MASK) ==  TXB_EXIDE_MASK ) {
+			id = (id<<2) + (tbufdata[MCP_SIDL] & 0x03);
+			id = (id<<8) + tbufdata[MCP_EID8];
+			id = (id<<8) + tbufdata[MCP_EID0];
+			id |= CAN_EFF_FLAG;
+		}
 
-    uint32_t id = (tbufdata[MCP_SIDH]<<3) + (tbufdata[MCP_SIDL]>>5);
+		uint8_t dlc = (tbufdata[MCP_DLC] & DLC_MASK);
+		if(dlc <= CAN_MAX_DLEN){
+			uint8_t ctrl;
+			ret = zrtos_vfs_module_mcp2515__read_register(fd,rxb->CTRL,&ctrl);
+			if(zrtos_error__is_success(ret)){
+				if (ctrl & RXBnCTRL_RTR) {
+					id |= CAN_RTR_FLAG;
+				}
 
-    if ( (tbufdata[MCP_SIDL] & TXB_EXIDE_MASK) ==  TXB_EXIDE_MASK ) {
-        id = (id<<2) + (tbufdata[MCP_SIDL] & 0x03);
-        id = (id<<8) + tbufdata[MCP_EID8];
-        id = (id<<8) + tbufdata[MCP_EID0];
-        id |= CAN_EFF_FLAG;
-    }
+				frame->can_id = id;
+				frame->can_dlc = dlc;
 
-    uint8_t dlc = (tbufdata[MCP_DLC] & DLC_MASK);
-    if (dlc > CAN_MAX_DLEN) {
-    	return ERROR_FAIL;
-    }
+				ret = zrtos_vfs_module_mcp2515__read_registers(
+					 fd
+					,rxb->DATA
+					,frame->data
+					,dlc
+				);
+				if(zrtos_error__is_success(ret)){
+					ret = zrtos_vfs_module_mcp2515__modify_register(
+						fd
+						,ZRTOS_VFS_MODULE_MCP2515_REGISTER__CANINTF
+						,rxb->ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RXnIF
+						,0
+					);
+				}
+			}
+		}else{
+			ret = ZRTOS_ERROR__IO;
+		}
+	}
 
-    uint8_t ctrl = zrtos_vfs_module_mcp2515__read_register(fd,rxb->CTRL);
-    if (ctrl & RXBnCTRL_RTR) {
-        id |= CAN_RTR_FLAG;
-    }
-
-    frame->can_id = id;
-    frame->can_dlc = dlc;
-
-    zrtos_vfs_module_mcp2515__read_registers(rxb->DATA, frame->data, dlc);
-
-    zrtos_vfs_module_mcp2515__modify_register(fd,ZRTOS_VFS_MODULE_MCP2515_REGISTER__CANINTF, rxb->ZRTOS_VFS_MODULE_MCP2515_REGISTER_CANINTF__RXnIF, 0);
-
-	return ERROR_OK;
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_mcp2515__read_message(
@@ -984,13 +1059,22 @@ zrtos_error_t zrtos_vfs_module_mcp2515__read_message(
 	,struct can_frame *frame
 ){
 	uint8_t res;
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__get_status(fd,&res);;
+	zrtos_error_t ret = zrtos_vfs_module_mcp2515__get_status(fd,&res);
 
 	if(zrtos_error__is_success(ret)){
-		if(res & STAT_RX0IF){
-			ret = zrtos_vfs_module_mcp2515__read_message_ex(RXB0, frame);
-		}else if(res & STAT_RX1IF ){
-			ret = zrtos_vfs_module_mcp2515__read_message_ex(RXB1, frame);
+		if(ret & (
+			  ZRTOS_VFS_MODULE_MCP2515_STATUS__RX0IF
+			| ZRTOS_VFS_MODULE_MCP2515_STATUS__RX1IF
+		)){
+			ret = zrtos_vfs_module_mcp2515__read_message_ex(
+				 fd
+				,(
+					(ret & ZRTOS_VFS_MODULE_MCP2515_STATUS__RX0IF)
+					? ZRTOS_VFS_MODULE_MCP2515_RXBN__RXB0
+					: ZRTOS_VFS_MODULE_MCP2515_RXBN__RXB1
+				)
+				,frame
+			);
 		}else{
 			ret = ZRTOS_ERROR__NOMSG;
 		}
@@ -1004,7 +1088,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__check_receive(zrtos_vfs_fd_t fd){
 	zrtos_error_t ret = zrtos_vfs_module_mcp2515__get_status(fd,&res);
 
 	if(zrtos_error__is_success(ret)){
-		ret = (res & STAT_RXIF_MASK)
+		ret = (res & ZRTOS_VFS_MODULE_MCP2515_STATUS__RXIF_MASK)
 		    ? ZRTOS_ERROR__SUCCESS
 		    : ZRTOS_ERROR__NODATA
 		;
