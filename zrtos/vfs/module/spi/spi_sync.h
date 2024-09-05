@@ -51,7 +51,7 @@ typedef enum{
 
 typedef struct _zrtos_vfs_module_spi_sync_file_t{
 	zrtos_vfs_module_spi_sync_control_t control;
-	zrtos_gpio_pin_t               pin_cs;
+	zrtos_gpio_pin_t                    pin_cs;
 }zrtos_vfs_module_spi_sync_file_t;
 
 typedef struct _zrtos_vfs_module_spi_sync_args_t{
@@ -60,6 +60,7 @@ typedef struct _zrtos_vfs_module_spi_sync_args_t{
 	zrtos_gpio_pin_t                pin_mosi;
 	zrtos_gpio_pin_t                pin_miso;
 	zrtos_task_mutex_t              mutex;
+	uint8_t                         count;
 }zrtos_vfs_module_spi_sync_args_t;
 
 bool zrtos_vfs_module_spi_sync_args__init(
@@ -73,6 +74,7 @@ bool zrtos_vfs_module_spi_sync_args__init(
 	thiz->pin_sclk = pin_sclk;
 	thiz->pin_mosi = pin_mosi;
 	thiz->pin_miso = pin_miso;
+	thiz->count = 0;
 	return zrtos_task_mutex__init(&thiz->mutex);
 }
 
@@ -158,7 +160,7 @@ zrtos_error_t zrtos_vfs_module_spi_sync__on_write_helper(
 		,zrtos_vfs_module_spi_sync_file_t *file_data
 		,void *buf
 		,size_t len
-		,size_t l
+		,size_t *l
 	)
 ){
 	zrtos_vfs_module_spi_sync_args_t *inode_data = ZRTOS_CAST(
@@ -169,24 +171,36 @@ zrtos_error_t zrtos_vfs_module_spi_sync__on_write_helper(
 		 zrtos_vfs_module_spi_sync_file_t*
 		,zrtos_vfs_file__get_data(thiz)
 	);
+	uint8_t *data = ZRTOS_CAST(uint8_t*,buf);
 	zrtos_error_t ret = zrtos_task_mutex__lock(inode_data->mutex);
 	if(zrtos_error__is_success(ret)){
-		ret = zrtos_gpio__set_low(
-			inode_data->gpio
-			,file_data->pin_cs
-		);
 		*out = len;
-		while(len-- && zrtos_error__is_success(ret)){
-			//transfer
-			size_t l;
-			ret = callback(inode_data,file_data,buf,len,l);
-			buf += l;
-			len -= l;
+		while(len){
+			if(inode_data->count == 0){
+				ret = zrtos_gpio__set_low(
+					inode_data->gpio
+					,file_data->pin_cs
+				);
+				inode_data->count = *data++;
+				len--;
+			}
+
+			while(len && inode_data->count && zrtos_error__is_success(ret)){
+				//transfer
+				size_t l;
+				ret = callback(inode_data,file_data,buf,len,l);
+				buf += l;
+				len -= l;
+				inode_data->count -= l;
+			}
+
+			if(inode_data->count == 0){
+				ret = zrtos_gpio__set_high(
+					inode_data->gpio
+					,file_data->pin_cs
+				);
+			}
 		}
-		ret = zrtos_gpio__set_high(
-			inode_data->gpio
-			,file_data->pin_cs
-		);
 		zrtos_task_mutex__unlock(inode_data->mutex);
 	}
 	return ret;
