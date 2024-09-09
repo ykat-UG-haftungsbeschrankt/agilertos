@@ -70,6 +70,7 @@ typedef struct _zrtos_vfs_module_uart_args_t{
 	zrtos_vfs_module_uart_mode_t     mode;
 	zrtos_vfs_module_uart_callback_t on_send;
 	zrtos_vfs_module_uart_callback_t on_recv;
+	void                             *callback_data;
 }zrtos_vfs_module_uart_args_t;
 
 void zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_args_t *args){}

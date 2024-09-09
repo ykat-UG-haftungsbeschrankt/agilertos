@@ -1063,7 +1063,10 @@ zrtos_error_t zrtos_vfs_module_mcp2515__read_message_ex(
 			id |= CAN_EFF_FLAG;
 		}
 
-		uint8_t dlc = (tbufdata[ZRTOS_VFS_MODULE_MCP2515_MCP__DLC] & ZRTOS_VFS_MODULE_MCP2515_MCP_DLC__DLC_MASK);
+		uint8_t dlc = (
+			  tbufdata[ZRTOS_VFS_MODULE_MCP2515_MCP__DLC]
+			& ZRTOS_VFS_MODULE_MCP2515_MCP_DLC__DLC_MASK
+		);
 		if(dlc <= CAN_MAX_DLEN){
 			uint8_t ctrl;
 			ret = zrtos_vfs_module_mcp2515__read_register(fd,rxb->ctrl,&ctrl);

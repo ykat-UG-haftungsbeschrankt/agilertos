@@ -59,8 +59,8 @@ ISR(UART0_RECEIVE_INTERRUPT){
 		);
 
 		if(zrtos_error__is_success(err)){
-			zrtos_vfs_module_avr_uart0->on_recv(
-				 zrtos_vfs_module_avr_uart0
+			err = zrtos_vfs_module_avr_uart0->on_recv(
+				 zrtos_vfs_module_avr_uart0->callback_data
 			);
 		}
 
@@ -79,16 +79,19 @@ ISR(UART0_TRANSMIT_INTERRUPT){
 	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
 		zrtos_vfs_module_avr_uart0
 	);
+
 	if(zrtos_error__is_success(err)
-	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))){
+	&& zrtos_error__is_success((err = zrtos_vfs_module_avr_uart0->on_send(
+		zrtos_vfs_module_avr_uart0->callback_data
+	)))
+	&& zrtos_error__is_success((err = zrtos_cbuffer__get(buffer,&tmp)))
+	){
 #if defined(AVR1_USART0)
 		USART0_TXDATAL = tmp;
 #else
 		UART0_DATA = tmp;
 #endif
-		zrtos_vfs_module_avr_uart0->on_send(
-			zrtos_vfs_module_avr_uart0
-		);
+		;
 	}else{
 #if defined(AVR1_USART0)
 		USART0_CTRLA &= ~USART_DREIE_bm;
@@ -96,6 +99,11 @@ ISR(UART0_TRANSMIT_INTERRUPT){
 		UART0_CONTROL &= ~_BV(UART0_UDRIE);
 #endif
 	}
+
+	zrtos_vfs_module_uart_args__set_error(
+		 zrtos_vfs_module_avr_uart0
+		,err
+	);
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){

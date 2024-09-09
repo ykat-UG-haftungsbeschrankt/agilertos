@@ -349,6 +349,22 @@ zrtos_error_t zrtos_cbuffer__can_write(
 	return ZRTOS_ERROR__SUCCESS;
 }
 
+zrtos_error_t zrtos_cbuffer__pipe(
+	 zrtos_cbuffer_t *thiz
+	,zrtos_cbuffer_t *src
+	,size_t length
+){
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	uint8_t tmp;
+	while(zrtos_error__is_success(ret) && length--){
+		ret = zrtos_cbuffer__get(src,&tmp);
+		if(zrtos_error__is_success(ret)){
+			ret = zrtos_cbuffer__put(thiz,tmp);
+		}
+	}
+	return ret;
+}
+
 #ifdef __cplusplus
 }
 #endif

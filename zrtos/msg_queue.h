@@ -67,6 +67,22 @@ zrtos_error_t zrtos_msg_queue__put_data(
 	return ret;
 }
 
+zrtos_error_t zrtos_msg_queue__put_cbuffer_data(
+	 zrtos_msg_queue_t *thiz
+	,zrtos_cbuffer_t   *data
+	,size_t            length
+){
+	zrtos_error_t ret = zrtos_cbuffer__pipe(
+		 &thiz->cbuffer
+		,data
+		,length
+	);
+	if(zrtos_error__is_success(ret)){
+		thiz->msg_count++;
+	}
+	return ret;
+}
+
 zrtos_error_t zrtos_msg_queue__put(
 	 zrtos_msg_queue_t *thiz
 	,void              *data
