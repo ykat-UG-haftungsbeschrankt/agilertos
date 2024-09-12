@@ -25,6 +25,32 @@ typedef struct _zrtos_msg_queue_t{
 	zrtos_msg_queue_header_t header;
 }zrtos_msg_queue_t;
 
+typedef struct _zrtos_msg_queue_write_transaction_t{
+	zrtos_cbuffer_write_transaction_t txn;
+	size_t                            msg_count;
+}zrtos_msg_queue_write_transaction_t;
+
+void zrtos_msg_queue__start_write_transaction(
+	 zrtos_msg_queue_t *thiz
+	,zrtos_msg_queue_write_transaction_t *txn
+){
+	zrtos_cbuffer__start_write_transaction(
+		 &thiz->cbuffer
+		,&txn->txn
+	);
+	txn->msg_count = thiz->msg_count;
+}
+
+void zrtos_msg_queue__rollback_write_transaction(
+	 zrtos_msg_queue_t *thiz
+	,zrtos_msg_queue_write_transaction_t *txn
+){
+	zrtos_cbuffer__rollback_write_transaction(
+		 &thiz->cbuffer
+		,&txn->txn
+	);
+	thiz->msg_count = txn->msg_count;
+}
 
 bool zrtos_msg_queue__is_empty(zrtos_msg_queue_t *thiz){
 	return thiz->msg_count == 0 && thiz->header.length == 0;
@@ -61,10 +87,14 @@ zrtos_error_t zrtos_msg_queue__put_data(
 		,data
 		,len
 	);
-	if(zrtos_error__is_success(ret)){
-		thiz->msg_count++;
-	}
 	return ret;
+}
+
+zrtos_error_t zrtos_msg_queue__put_end(
+	 zrtos_msg_queue_t *thiz
+){
+	thiz->msg_count++;
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_msg_queue__put_cbuffer_data(

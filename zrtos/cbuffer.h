@@ -46,11 +46,10 @@ typedef struct _zrtos_cbuffer_t{
 	zrtos_list_t      root;
 }zrtos_cbuffer_t;
 
-typedef struct _zrtos_cbuffer_state_t{
-	zrtos_cbuffer_node_t *first;
-	zrtos_cbuffer_node_t *last;
+typedef struct _zrtos_cbuffer_write_transaction_t{
+	zrtos_list_t         root;
 	uint8_t              head;
-}zrtos_cbuffer_state_t;
+}zrtos_cbuffer_write_transaction_t;
 
 /// @todo mutex lock zrtos_cbuffer__malloc_limit
 zrtos_malloc_limit_t zrtos_cbuffer__malloc_limit = ZRTOS_MALLOC_LIMIT__INIT();
@@ -72,37 +71,29 @@ zrtos_cbuffer_node_t *zrtos_cbuffer_node__get_next_node(zrtos_cbuffer_node_t *th
 	);
 	return node;
 }
-/*
+
 void zrtos_cbuffer__start_write_transaction(
 	 zrtos_cbuffer_t *thiz
-	,zrtos_cbuffer_state_t *state
+	,zrtos_cbuffer_write_transaction_t *txn
 ){
-	zrtos_cbuffer_node_t *next;
-	state->last->head = state->head;
-	while((next = zrtos_list_node__get_next_node(&state->last.node))
-	   != state->first){
+	txn->root = thiz->root;
+	txn->head = txn->last->head;
+}
+
+void zrtos_cbuffer__rollback_write_transaction(
+	 zrtos_cbuffer_t *thiz
+	,zrtos_cbuffer_write_transaction_t *txn
+){
+	zrtos_cbuffer_node_t *node = zrtos_list__get_last_node(&txn->root);
+	txn->last->head = txn->head;
+	while((next = zrtos_list_node__get_next_node(node))){
 		zrtos_cbuffer_node__free(
-			 next
+			 node
 			,thiz
 		);
 	}
 }
 
-void zrtos_cbuffer__rollback(
-	 zrtos_cbuffer_t *thiz
-	,zrtos_cbuffer_state_t *state
-){
-	zrtos_cbuffer_node_t *next;
-	state->last->head = state->head;
-	while((next = zrtos_list_node__get_next_node(&state->last.node))
-	   != state->first){
-		zrtos_cbuffer_node__free(
-			 next
-			,thiz
-		);
-	}
-}
-*/
 bool zrtos_cbuffer_node__init(
 	 zrtos_cbuffer_node_t *thiz
 	,zrtos_cbuffer_t *ctx
@@ -214,6 +205,30 @@ zrtos_error_t zrtos_cbuffer_node__get(
 	return ret;
 }
 
+zrtos_error_t zrtos_cbuffer__hash(
+	zrtos_cbuffer_t *thiz
+	,size_t length
+	,void (*callback)(void *callback_args,uint8_t ch)
+	,void *callback_args
+){
+	zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_first_node(thiz);
+	size_t tail;
+	size_t head;
+
+	while(node && length){
+		head = node->head;
+		tail = node->tail;
+
+		while(tail != head && length--){
+			callback(callback_args,node->data[tail++]);
+		}
+
+		node = zrtos_cbuffer_node__get_next_node(node);
+	}
+
+	return length == 0 ? ZRTOS_ERROR__SUCCESS : ZRTOS_ERROR__INVAL;
+}
+
 zrtos_error_t zrtos_cbuffer__put(zrtos_cbuffer_t *thiz,uint8_t val){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
 		 zrtos_list__get_last_node(&thiz->root)
@@ -237,7 +252,11 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 	uint8_t *data;
 	size_t data_len;
 	va_list args;
+	zrtos_cbuffer_write_transaction_t txn;
+
 	va_start(args,outlen);
+
+	zrtos_cbuffer__start_write_transaction(thiz,txn);
 
 	while(len-- && zrtos_error__is_success(ret)){
 		data = ZRTOS_CAST(uint8_t*,va_arg(args,void*));
@@ -250,7 +269,12 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 		}
 	}
 
+	if(zrtos_error__is_error(ret)){
+		zrtos_cbuffer__rollback_write_transaction(thiz,txn);
+	}
+
 	va_end(args);
+
 	return ret;
 }
 
@@ -356,12 +380,21 @@ zrtos_error_t zrtos_cbuffer__pipe(
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	uint8_t tmp;
+	zrtos_cbuffer_write_transaction_t txn;
+
+	zrtos_cbuffer__start_write_transaction(thiz,txn);
+
 	while(zrtos_error__is_success(ret) && length--){
 		ret = zrtos_cbuffer__get(src,&tmp);
 		if(zrtos_error__is_success(ret)){
 			ret = zrtos_cbuffer__put(thiz,tmp);
 		}
 	}
+
+	if(zrtos_error__is_error(ret)){
+		zrtos_cbuffer__rollback_write_transaction(thiz,txn);
+	}
+
 	return ret;
 }
 

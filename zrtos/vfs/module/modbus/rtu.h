@@ -32,6 +32,32 @@ typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 	zrtos_vfs_module_modbus_rtu_state_t state;
 }zrtos_vfs_module_modbus_rtu_args_t;
 
+
+static void zrtos_vfs_module_modbus_rtu__crc(void *callback_args,uint8_t ch){
+	uint16_t *crc_ptr = ZRTOS_CAST(uint16_t*,callback_args);
+	uint16_t crc = *crc_ptr;
+
+	crc ^= (uint16_t)ch;
+
+	for(size_t i = 8; i--;){
+		bool tmp = (crc & 0x0001) != 0;
+		crc >>= 1;
+		if(tmp){
+			crc ^= 0xA001;
+		}
+	}
+
+	*crc_ptr = crc;
+}
+
+static uint16_t zrtos_vfs_module_modbus_rtu__crc_str(uint8_t *data,size_t len){
+	uint16_t crc = 0xffff;
+	while(len--){
+		zrtos_vfs_module_modbus_rtu__crc(&crc,*data++);
+	}
+	return crc;
+}
+
 zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
 	 zrtos_vfs_module_modbus_rtu_args_t *thiz
 ){
@@ -68,6 +94,16 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
 	);
 }
 
+zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
+	 uint16_t crc
+	,uint16_t crc_msg
+){
+	return crc == crc_msg
+	     ? ZRTOS_ERROR__SUCCESS
+	     : ZRTOS_ERROR__IO
+	;
+}
+
 void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	 void *thiz
 ){
@@ -79,16 +115,46 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	size_t cbuffer_length = zrtos_cbuffer__get_length(cbuffer);
 	if(zrtos_error__is_success(mod->error)
 	&& cbuffer_length > 0){
-		zrtos_error_t ret = zrtos_msg_queue__put_length(cbuffer_length-2);
-		if(zrtos_error__is_success(ret)){
-			ret = zrtos_msg_queue__put_cbuffer_data(
-				&thiz->msg_queue_in
-				,cbuffer
-				,cbuffer_length
+		uint16_t crc = 0xffff;
+		uint16_t crc_msg;
+		zrtos_error_t ret;
+		zrtos_msg_queue_write_transaction_t txn;
+
+		zrtos_msg_queue__start_write_transaction(&mod->msg_queue_in,&txn);
+
+		zrtos_cbuffer__hash(
+			 cbuffer
+			,cbuffer_length-2
+			,zrtos_vfs_module_modbus_rtu__crc
+			,&crc
+		);
+
+		if(zrtos_error__is_success((ret = zrtos_msg_queue__put_length(
+			 &mod->msg_queue_in
+			,cbuffer_length-2
+		)))
+		&& zrtos_error__is_success((ret = zrtos_msg_queue__put_cbuffer_data(
+			 &mod->msg_queue_in
+			,cbuffer
+			,cbuffer_length-2
+		)))
+		&& zrtos_error__is_success((ret = zrtos_cbuffer__get_ex(
+			 cbuffer
+			,crc_msg
+			,2
+			,&outlen
+		)))
+		&& zrtos_error__is_success((ret = zrtos_vfs_module_modbus_rtu__cmp_crc(
+			 crc
+			,crc_msg
+		)))
+		){
+			ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
+		}else{
+			zrtos_msg_queue__rollback_write_transaction(
+				 &mod->msg_queue_in
+				,&txn
 			);
-			if(zrtos_error__is_success(ret)){
-				ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
-			}
 		}
 		mod->error = ret;
 	}
@@ -165,23 +231,6 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu_args__get_error(
 	return thiz->error;
 }
 
-static uint8_t zrtos_vfs_module_modbus_rtu__crc(uint8_t *buf, size_t len){
-	uint16_t crc = 0xFFFF;
-
-	for(size_t pos = 0; pos < len; pos++){
-		crc ^= (uint16_t)buf[pos];
-
-		for(size_t i = 8; i--;){
-			crc >>= 1;
-			if((crc & 0x0001) != 0){
-				crc ^= 0xA001;
-			}
-		}
-	}
-
-	return crc;  
-}
-
 zrtos_error_t zrtos_vfs_module_modbus_rtu__on_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
@@ -218,14 +267,39 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 	);
 	zrtos_error_t ret = mod->error;
 	if(zrtos_error__is_success(ret)){
-		ret = zrtos_msg_queue__put(
+		uint16_t crc = zrtos_vfs_module_modbus_rtu__crc_str(buf,len);
+		zrtos_msg_queue_write_transaction_t txn;
+
+		zrtos_msg_queue__start_write_transaction(&mod->msg_queue_out,&txn);
+
+		if(zrtos_error__is_success((ret = zrtos_msg_queue__put_length(
+			 &mod->msg_queue_out
+			,buf
+			,len+2
+			,out
+		)))
+		&& zrtos_error__is_success((ret = zrtos_msg_queue__put_data(
 			 &mod->msg_queue_out
 			,buf
 			,len
 			,out
-		);
-		if(zrtos_error__is_success(ret)){
+		)))
+		&& zrtos_error__is_success((ret = zrtos_msg_queue__put_data(
+			 &mod->msg_queue_out
+			,&crc
+			,2
+			,out
+		)))
+		&& zrtos_error__is_success((ret = zrtos_msg_queue__put_end(
+			 &mod->msg_queue_out
+		)))
+		){
 			ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
+		}else{
+			zrtos_msg_queue__rollback_write_transaction(
+				&mod->msg_queue_out
+				,&txn
+			);
 		}
 	}
 	return ret;
