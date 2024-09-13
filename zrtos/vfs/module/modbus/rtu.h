@@ -104,6 +104,15 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
 	;
 }
 
+void zrtos_vfs_module_modbus_rtu__on_response_timeout(
+	 void *thiz
+){
+	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+		thiz
+	);
+	mod->error = ZRTOS_ERROR__IO;
+}
+
 void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	 void *thiz
 ){
@@ -115,46 +124,50 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	size_t cbuffer_length = zrtos_cbuffer__get_length(cbuffer);
 	if(zrtos_error__is_success(mod->error)
 	&& cbuffer_length > 0){
-		uint16_t crc = 0xffff;
-		uint16_t crc_msg;
-		zrtos_error_t ret;
-		zrtos_msg_queue_write_transaction_t txn;
+		if(cbuffer_length >= 4){
+			uint16_t crc = 0xffff;
+			uint16_t crc_msg;
+			zrtos_error_t ret;
+			zrtos_msg_queue_write_transaction_t txn;
 
-		zrtos_msg_queue__start_write_transaction(&mod->msg_queue_in,&txn);
+			zrtos_msg_queue__start_write_transaction(&mod->msg_queue_in,&txn);
 
-		zrtos_cbuffer__hash(
-			 cbuffer
-			,cbuffer_length-2
-			,zrtos_vfs_module_modbus_rtu__crc
-			,&crc
-		);
-
-		if(zrtos_error__is_success((ret = zrtos_msg_queue__put_length(
-			 &mod->msg_queue_in
-			,cbuffer_length-2
-		)))
-		&& zrtos_error__is_success((ret = zrtos_msg_queue__put_cbuffer_data(
-			 &mod->msg_queue_in
-			,cbuffer
-			,cbuffer_length-2
-		)))
-		&& zrtos_error__is_success((ret = zrtos_cbuffer__get_ex(
-			 cbuffer
-			,crc_msg
-			,2
-			,&outlen
-		)))
-		&& zrtos_error__is_success((ret = zrtos_vfs_module_modbus_rtu__cmp_crc(
-			 crc
-			,crc_msg
-		)))
-		){
-			ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
-		}else{
-			zrtos_msg_queue__rollback_write_transaction(
-				 &mod->msg_queue_in
-				,&txn
+			zrtos_cbuffer__hash(
+				cbuffer
+				,cbuffer_length-2
+				,zrtos_vfs_module_modbus_rtu__crc
+				,&crc
 			);
+
+			if(zrtos_error__is_success((ret = zrtos_msg_queue__put_length(
+				&mod->msg_queue_in
+				,cbuffer_length-2
+			)))
+			&& zrtos_error__is_success((ret = zrtos_msg_queue__put_cbuffer_data(
+				&mod->msg_queue_in
+				,cbuffer
+				,cbuffer_length-2
+			)))
+			&& zrtos_error__is_success((ret = zrtos_cbuffer__get_ex(
+				cbuffer
+				,crc_msg
+				,2
+				,&outlen
+			)))
+			&& zrtos_error__is_success((ret = zrtos_vfs_module_modbus_rtu__cmp_crc(
+				crc
+				,crc_msg
+			)))
+			){
+				ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
+			}else{
+				zrtos_msg_queue__rollback_write_transaction(
+					&mod->msg_queue_in
+					,&txn
+				);
+			}
+		}else{
+			ret = ZRTOS_ERROR__IO;
 		}
 		mod->error = ret;
 	}

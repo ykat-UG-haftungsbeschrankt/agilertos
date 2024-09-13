@@ -60,7 +60,7 @@ ISR(UART0_RECEIVE_INTERRUPT){
 
 		if(zrtos_error__is_success(err)){
 			err = zrtos_vfs_module_avr_uart0->on_recv(
-				 zrtos_vfs_module_avr_uart0->callback_data
+				 zrtos_vfs_module_avr_uart0
 			);
 		}
 
@@ -82,9 +82,9 @@ ISR(UART0_TRANSMIT_INTERRUPT){
 
 	if(zrtos_error__is_success(err)
 	&& zrtos_error__is_success((err = zrtos_vfs_module_avr_uart0->on_send(
-		zrtos_vfs_module_avr_uart0->callback_data
+		zrtos_vfs_module_avr_uart0
 	)))
-	&& zrtos_error__is_success((err = zrtos_cbuffer__get(buffer,&tmp)))
+	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))
 	){
 #if defined(AVR1_USART0)
 		USART0_TXDATAL = tmp;

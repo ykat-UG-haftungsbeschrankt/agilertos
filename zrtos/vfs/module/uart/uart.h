@@ -58,7 +58,7 @@ typedef enum{
 
 struct _zrtos_vfs_module_uart_args_t;
 
-typedef void (*zrtos_vfs_module_uart_callback_t)(
+typedef zrtos_error_t (*zrtos_vfs_module_uart_callback_t)(
 	struct _zrtos_vfs_module_uart_args_t *args
 );
 
@@ -73,7 +73,9 @@ typedef struct _zrtos_vfs_module_uart_args_t{
 	void                             *callback_data;
 }zrtos_vfs_module_uart_args_t;
 
-void zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_args_t *args){}
+zrtos_error_t zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_args_t *args){
+	return ZRTOS_ERROR__SUCCESS;
+}
 
 bool zrtos_vfs_module_uart_args__init(
 	 zrtos_vfs_module_uart_args_t *thiz

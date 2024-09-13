@@ -292,8 +292,6 @@ zrtos_arch_stack_t *zrtos_arch__cpu_state_init_a(
 #define ZRTOS_ARCH__RETURN_FROM_INTERRUPT() \
     __asm__ __volatile__("reti");
 
-#endif
-
 void zrtos_arch__delay_microseconds(uint16_t us){
 	_delay_loop_2((ZRTOS_ARCH__CPU_CLOCK_HZ/4000000) * us);
 }
@@ -303,6 +301,8 @@ void zrtos_arch__delay_milliseconds(uint16_t ms){
 		zrtos_arch__delay_microseconds(1000);
 	}
 }
+
+#endif
 
 #ifdef __cplusplus
 }
