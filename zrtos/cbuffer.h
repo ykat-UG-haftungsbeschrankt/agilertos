@@ -37,7 +37,7 @@ ZRTOS_ASSERT__STATIC_IS_POWER_OF_TWO(ZRTOS_CBUFFER__CFG_DATA_LENGTH);
 
 typedef struct _zrtos_cbuffer_node_t{
 	zrtos_list_node_t   node;
-	uint8_t             data[ZRTOS_CBUFFER__CFG_DATA_LENGTH-1];
+	uint8_t             data[ZRTOS_CBUFFER__CFG_DATA_LENGTH];
 	uint8_t             head;
 	uint8_t             tail;
 }zrtos_cbuffer_node_t;
@@ -166,17 +166,35 @@ void zrtos_cbuffer__rollback_write_transaction(
 	}
 }
 
+static size_t zrtos_cbuffer_node__get_length(
+	 zrtos_cbuffer_node_t *thiz
+){
+	return (thiz->head - thiz->tail) & (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1);
+}
+
+bool zrtos_cbuffer_node__is_empty(zrtos_cbuffer_node_t *thiz){
+	return zrtos_cbuffer_node__get_length(thiz) == 0;
+	//return thiz->head == thiz->tail;
+}
+
+static size_t zrtos_cbuffer_node__get_free_space(
+	 zrtos_cbuffer_node_t *thiz
+){
+	return (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1)
+	     - zrtos_cbuffer_node__get_length(thiz)
+	;
+}
+
 zrtos_error_t zrtos_cbuffer_node__put(
 	 zrtos_cbuffer_node_t *thiz
 	,zrtos_cbuffer_t *ctx
 	,uint8_t val
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	uint8_t head = thiz->head;
-	head = (head + 1) & (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1);
-	if(head != thiz->tail){
-		thiz->data[thiz->head] = val;
-		thiz->head = head;
+
+	if(zrtos_cbuffer_node__get_free_space(thiz) >= 1){
+		thiz->data[thiz->head++] = val;
+		thiz->head &= (ZRTOS_CBUFFER__CFG_DATA_LENGTH - 1);
 	}else{
 		zrtos_cbuffer_node_t *node = zrtos_cbuffer_node__new(ctx);
 		if(node){
@@ -190,10 +208,6 @@ zrtos_error_t zrtos_cbuffer_node__put(
 		}
 	}
 	return ret;
-}
-
-bool zrtos_cbuffer_node__is_empty(zrtos_cbuffer_node_t *thiz){
-	return thiz->head == thiz->tail;
 }
 
 zrtos_error_t zrtos_cbuffer_node__get(
@@ -357,12 +371,6 @@ bool zrtos_cbuffer__can_read_length(
 	return length == 0;
 }
 
-static size_t zrtos_cbuffer_node__get_length(
-	 zrtos_cbuffer_node_t *thiz
-){
-	return thiz->head - thiz->tail;
-}
-
 size_t zrtos_cbuffer__get_length(
 	 zrtos_cbuffer_t *thiz
 ){
@@ -407,6 +415,41 @@ zrtos_error_t zrtos_cbuffer__pipe(
 
 	return ret;
 }
+#if 0
+void zrtos_cbuffer_node__debug(
+	 zrtos_cbuffer_node_t *thiz
+){
+	Serial.println("zrtos_cbuffer_node{");
+	Serial.println("head:");
+	Serial.print(thiz->head);
+	Serial.println("tail:");
+	Serial.print(thiz->tail);
+	Serial.println("data:[");
+
+	size_t length = 0;
+
+	for(;length < ZRTOS_CBUFFER__CFG_DATA_LENGTH-1;length++){
+		Serial.print(length);
+		Serial.print(":[");
+		Serial.print(thiz->data[length],HEX);
+		Serial.println("],");
+	}
+
+	Serial.println("]}");
+}
+
+void zrtos_cbuffer__debug(
+	 zrtos_cbuffer_t *thiz
+){
+	zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_first_node(thiz);
+	Serial.print("zrtos_cbuffer{");
+	while(node){
+		zrtos_cbuffer_node__debug(node);
+		node = zrtos_cbuffer_node__get_next_node(node);
+	}
+	Serial.print("}");
+}
+#endif
 
 #ifdef __cplusplus
 }

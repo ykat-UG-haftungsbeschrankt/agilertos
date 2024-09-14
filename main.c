@@ -9,6 +9,7 @@
 #include <zrtos/error.h>
 #include <zrtos/types.h>
 #include <zrtos/malloc.h>
+#include <zrtos/str.h>
 
 ZRTOS_MALLOC__GLOBAL_HEAP(heap,500);
 
@@ -33,58 +34,54 @@ typedef enum{
 
 int main(void){
 	ZRTOS_MALLOC__GLOBAL_HEAP_INIT(heap);
-	uint8_t arr[] = {
-		1
-		,2
-		,3
-		,4
-		,5
-		,6
-		,7
-		,8
-		,9
-		,10
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_0
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_1
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_2
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_3
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_4
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_5
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_6
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_7
-		,0x0
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__SHUTDOWN
-		,1
-		,2
-		,ZRTOS_VFS_MODULE_MAX7219_OPCODE__DIGIT_0
-		,0x8
-	};
+
+	char data_in[20] = "1234\n";
+	char data_out[20] = "1234\n";
+	zrtos_error_t err;
 	zrtos_cbuffer_t buffer;
 	size_t outlen;
 	zrtos_cbuffer__init(&buffer);
+	size_t len;
+	size_t free_space;
 
-	zrtos_cbuffer__put_ex(
-		 &buffer
-		,1
-		,&outlen
-		,arr
-		,sizeof(arr)/sizeof(arr[0])
-	);
+	while(1){
+	size_t l = 16;
+	while(l--){
+		err = zrtos_cbuffer__put_ex(
+			 &buffer
+			,1
+			,&outlen
+			,data_in
+			,1//zrtos_str__len(data_in)
+		);
+		zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_last_node(&buffer);
+		len = zrtos_cbuffer_node__get_length(node);
+		free_space = zrtos_cbuffer_node__get_free_space(node);
+		continue;
+	}
+	l = 16;
+	while(l--){
+		err = zrtos_cbuffer__get_ex(
+			 &buffer
+			,data_out
+			,1//zrtos_str__len(data_out)
+			,&outlen
+		);
+		zrtos_cbuffer_node_t *node = zrtos_cbuffer__get_first_node(&buffer);
+		len = zrtos_cbuffer_node__get_length(node);
+		free_space = zrtos_cbuffer_node__get_free_space(node);
+		continue;
+	}
+err = err;
+len = len;
+free_space = free_space;
+	}
+/*
+		
+		if(zrtos_str__cmp(data_in,data_out) != 0){
+			break;
+		}
+*/
 
 	return 0;
 
