@@ -16,7 +16,7 @@ extern "C" {
 #include <zrtos/vfs_plugin.h>
 #include <zrtos/vfs/module/spi/spi.h>
 
-zrtos_vfs_module_spi_args_t *zrtos_vfs_module_avr_spi__ctx;
+zrtos_vfs_module_spi_inode_t *zrtos_vfs_module_avr_spi__ctx;
 bool zrtos_vfs_module_avr_spi__isr_complete = true;
 
 void zrtos_vfs_module_avr_spi__on_interrupt(){
@@ -44,7 +44,7 @@ ISR(SPI_STC_vect,ISR_NOBLOCK){
 
 zrtos_error_t zrtos_vfs_module_avr_spi__on_mount(zrtos_vfs_dentry_t *thiz){
 	zrtos_vfs_module_avr_spi__ctx = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_args_t*
+		 zrtos_vfs_module_spi_inode_t*
 		,zrtos_vfs_dentry__get_inode_data(thiz)
 	);
 	return ZRTOS_ERROR__SUCCESS;

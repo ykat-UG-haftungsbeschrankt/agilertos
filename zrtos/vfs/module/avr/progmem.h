@@ -21,7 +21,7 @@ extern "C" {
 typedef struct _zrtos_vfs_module_avr_progmem_args_t{
 	uint32_t start_addr;
 	uint32_t end_addr;
-}zrtos_vfs_module_avr_progmem_args_t;
+}zrtos_vfs_module_avr_progmem_inode_t;
 
 
 zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
@@ -33,7 +33,7 @@ zrtos_error_t zrtos_vfs_module_avr_progmem__on_read(
 	,size_t *out
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
-	zrtos_vfs_module_avr_progmem_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_avr_progmem_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
 	uint32_t addr = offset;

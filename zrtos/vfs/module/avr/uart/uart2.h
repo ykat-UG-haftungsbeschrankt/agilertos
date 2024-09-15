@@ -13,7 +13,7 @@ extern "C" {
 #include <zrtos/vfs/module/uart/uart.h>
 #include <zrtos/vfs/module/avr/uart/uart.h>
 
-zrtos_vfs_module_uart_args_t *zrtos_vfs_module_avr_uart2;
+zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart2;
 
 ISR(UART2_RECEIVE_INTERRUPT){
 	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
@@ -74,7 +74,7 @@ ISR(UART2_TRANSMIT_INTERRUPT){
 zrtos_error_t zrtos_vfs_module_avr_uart2__on_mount(zrtos_vfs_dentry_t *thiz){
 	uint16_t baudrate;
 	zrtos_vfs_module_avr_uart2 = ZRTOS_CAST__REINTERPRET(
-		 zrtos_vfs_module_uart_args_t*
+		 zrtos_vfs_module_uart_inode_t*
 		,zrtos_vfs_dentry__get_inode_data(
 			thiz
 		)

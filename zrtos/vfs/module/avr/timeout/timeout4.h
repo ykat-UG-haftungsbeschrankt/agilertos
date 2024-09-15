@@ -15,7 +15,7 @@ extern "C" {
 
 #include <zrtos/vfs/module/timeout/timeout.h>
 
-zrtos_vfs_module_avr_timeout_args_t *zrtos_vfs_module_avr_timeout4;
+zrtos_vfs_module_avr_timeout_inode_t *zrtos_vfs_module_avr_timeout4;
 
 ISR(TIMER4_OVF_vect){
 	zrtos_vfs_module_avr_timeout4->callback(zrtos_vfs_module_avr_timeout4);
@@ -23,7 +23,7 @@ ISR(TIMER4_OVF_vect){
 
 zrtos_error_t zrtos_vfs_module_avr_timeout4__on_mount(zrtos_vfs_dentry_t *thiz){
 	zrtos_vfs_module_avr_timeout4 = ZRTOS_CAST(
-		 zrtos_vfs_module_avr_timeout_args_t*
+		 zrtos_vfs_module_avr_timeout_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	return ZRTOS_ERROR__SUCCESS;
@@ -42,8 +42,8 @@ zrtos_error_t zrtos_vfs_module_avr_timeout4__on_ioctl(
 	,va_list args
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	zrtos_vfs_module_avr_timeout_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_avr_timeout_args_t*
+	zrtos_vfs_module_avr_timeout_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_avr_timeout_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 

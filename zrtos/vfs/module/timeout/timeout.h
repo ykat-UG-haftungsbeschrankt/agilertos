@@ -18,6 +18,11 @@ typedef enum{
 }zrtos_vfs_module_timeout_ioctl_t;
 
 typedef void (*zrtos_vfs_module_timeout_callback_t)(void *data);
+
+typedef struct{
+	zrtos_vfs_module_timeout_callback_t callback;
+	void                                *callback_data;
+}zrtos_vfs_module_timeout_inode_t;
 /*
 zrtos_error_t zrtos_vfs_module_spi__on_ioctl(
 	 zrtos_vfs_file_t *thiz

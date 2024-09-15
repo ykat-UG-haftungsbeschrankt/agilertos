@@ -69,7 +69,7 @@ typedef struct _zrtos_vfs_dentry__each_child_cb_args_t{
 	void *callback_arg;
 	bool (*filter)(zrtos_vfs_dentry_t *node,void *arg);
 	void *filter_arg;
-}zrtos_vfs_dentry__each_child_cb_args_t;
+}zrtos_vfs_dentry__each_child_cb_inode_t;
 
 static bool zrtos_vfs_dentry__each_child_cb(zrtos_clist_node_t *node,void *arg){
 	bool ret = true;
@@ -78,8 +78,8 @@ static bool zrtos_vfs_dentry__each_child_cb(zrtos_clist_node_t *node,void *arg){
 		,zrtos_vfs_dentry_t
 		,node
 	);
-	zrtos_vfs_dentry__each_child_cb_args_t *args = ZRTOS_CAST(
-		 zrtos_vfs_dentry__each_child_cb_args_t *
+	zrtos_vfs_dentry__each_child_cb_inode_t *args = ZRTOS_CAST(
+		 zrtos_vfs_dentry__each_child_cb_inode_t *
 		,arg
 	);
 	if(args->parent == dentry->parent
@@ -96,7 +96,7 @@ void zrtos_vfs_dentry__each_child(
 	,bool (*filter)(zrtos_vfs_dentry_t *node,void *arg)
 	,void *filter_arg
 ){
-	zrtos_vfs_dentry__each_child_cb_args_t args = {
+	zrtos_vfs_dentry__each_child_cb_inode_t args = {
 		 .parent = thiz
 		,.callback = callback
 		,.callback_arg = callback_arg

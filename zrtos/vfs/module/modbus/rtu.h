@@ -27,10 +27,10 @@ typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 	zrtos_msg_queue_t                   msg_queue_in;
 	zrtos_msg_queue_t                   msg_queue_out;
 	zrtos_error_t                       error;
-	zrtos_vfs_module_uart_args_t        *uart;
+	zrtos_vfs_module_uart_inode_t        *uart;
 	zrtos_vfs_fd_t                      fd_timeout;
 	zrtos_vfs_module_modbus_rtu_state_t state;
-}zrtos_vfs_module_modbus_rtu_args_t;
+}zrtos_vfs_module_modbus_rtu_inode_t;
 
 
 static void zrtos_vfs_module_modbus_rtu__crc(void *callback_args,uint8_t ch){
@@ -59,7 +59,7 @@ static uint16_t zrtos_vfs_module_modbus_rtu__crc_str(uint8_t *data,size_t len){
 }
 
 zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
-	 zrtos_vfs_module_modbus_rtu_args_t *thiz
+	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	zrtos_vfs_module_modbus_rtu_state_t state;
 
@@ -76,7 +76,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
 zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
 	void *callback_data
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *thiz = callback_data;
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz = callback_data;
 	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)){
 		thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV;
 	}
@@ -85,7 +85,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
 zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
 	void *callback_data
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *thiz = callback_data;
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz = callback_data;
 	return zrtos_vfs_fd__ioctl(
 		 thiz->fd_timeout
 		,(char*)""
@@ -107,7 +107,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
 void zrtos_vfs_module_modbus_rtu__on_response_timeout(
 	 void *thiz
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
 	mod->error = ZRTOS_ERROR__IO;
@@ -116,10 +116,10 @@ void zrtos_vfs_module_modbus_rtu__on_response_timeout(
 void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	 void *thiz
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
-	zrtos_vfs_module_uart_args_t *uart = mod->uart;
+	zrtos_vfs_module_uart_inode_t *uart = mod->uart;
 	zrtos_cbuffer_t *cbuffer = zrtos_vfs_module_uart_args__get_cbuffer_in(uart);
 	size_t cbuffer_length = zrtos_cbuffer__get_length(cbuffer);
 	if(zrtos_error__is_success(mod->error)
@@ -174,8 +174,8 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 }
 
 bool zrtos_vfs_module_modbus_rtu_args__init(
-	 zrtos_vfs_module_modbus_rtu_args_t *thiz
-	,zrtos_vfs_module_uart_args_t *uart
+	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
+	,zrtos_vfs_module_uart_inode_t *uart
 	,char *timeout_path
 ){
 	zrtos_error_t ret;
@@ -220,26 +220,26 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 }
 
 zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in(
-	zrtos_vfs_module_modbus_rtu_args_t *thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	return &thiz->msg_queue_in;
 }
 
 zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out(
-	zrtos_vfs_module_modbus_rtu_args_t *thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	return &thiz->msg_queue_out;
 }
 
 void zrtos_vfs_module_modbus_rtu_args__set_error(
-	 zrtos_vfs_module_modbus_rtu_args_t *thiz
+	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
 	,zrtos_error_t error
 ){
 	thiz->error = error;
 }
 
 zrtos_error_t zrtos_vfs_module_modbus_rtu_args__get_error(
-	zrtos_vfs_module_modbus_rtu_args_t *thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	return thiz->error;
 }
@@ -252,7 +252,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
 	zrtos_error_t ret = mod->error;
@@ -275,7 +275,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
 	zrtos_error_t ret = mod->error;
@@ -322,7 +322,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	zrtos_vfs_module_modbus_rtu_args_t *mod = zrtos_vfs_file__get_inode_data(
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
 		thiz
 	);
 	return zrtos_msg_queue__is_empty(&mod->msg_queue_in)

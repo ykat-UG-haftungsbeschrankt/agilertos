@@ -61,10 +61,10 @@ typedef struct _zrtos_vfs_module_spi_sync_args_t{
 	zrtos_gpio_pin_t                pin_miso;
 	zrtos_task_mutex_t              mutex;
 	uint8_t                         count;
-}zrtos_vfs_module_spi_sync_args_t;
+}zrtos_vfs_module_spi_sync_inode_t;
 
 bool zrtos_vfs_module_spi_sync_args__init(
-	 zrtos_vfs_module_spi_sync_args_t *thiz
+	 zrtos_vfs_module_spi_sync_inode_t *thiz
 	,zrtos_gpio_t                *gpio
 	,zrtos_gpio_pin_t            pin_sclk
 	,zrtos_gpio_pin_t            pin_mosi
@@ -83,7 +83,7 @@ void zrtos_vfs_module_spi_sync_args__deinit(zrtos_vfs_module_spi_sync_file_t *th
 
 bool zrtos_vfs_module_spi_sync_file__init(
 	 zrtos_vfs_module_spi_sync_file_t    *thiz
-	,zrtos_vfs_module_spi_sync_args_t    *ctx
+	,zrtos_vfs_module_spi_sync_inode_t    *ctx
 	,zrtos_vfs_module_spi_sync_control_t control
 	,zrtos_gpio_pin_t               pin_cs
 	,void                           *data
@@ -97,8 +97,8 @@ bool zrtos_vfs_module_spi_sync_file__init(
 zrtos_error_t zrtos_vfs_module_spi_sync__on_open(
 	 zrtos_vfs_file_t *thiz
 ){
-	zrtos_vfs_module_spi_sync_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_sync_args_t*
+	zrtos_vfs_module_spi_sync_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_sync_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	zrtos_vfs_module_spi_sync_file_t *file_data = ZRTOS_CAST(
@@ -128,8 +128,8 @@ zrtos_error_t zrtos_vfs_module_spi_sync__on_close(
 
 
 zrtos_error_t zrtos_vfs_module_spi_sync__on_mount(zrtos_vfs_dentry_t *thiz){
-	zrtos_vfs_module_spi_sync_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_sync_args_t*
+	zrtos_vfs_module_spi_sync_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_sync_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	return zrtos_gpio__set_mode_ex(
@@ -156,15 +156,15 @@ zrtos_error_t zrtos_vfs_module_spi_sync__on_write_helper(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 	,zrtos_error_t (*callback)(
-		zrtos_vfs_module_spi_sync_args_t *inode_data
+		zrtos_vfs_module_spi_sync_inode_t *inode_data
 		,zrtos_vfs_module_spi_sync_file_t *file_data
 		,void *buf
 		,size_t len
 		,size_t *l
 	)
 ){
-	zrtos_vfs_module_spi_sync_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_sync_args_t*
+	zrtos_vfs_module_spi_sync_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_sync_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	zrtos_vfs_module_spi_sync_file_t *file_data = ZRTOS_CAST(
@@ -223,7 +223,7 @@ zrtos_error_t zrtos_vfs_module_spi_sync__on_write(
 		,offset
 		,out
 		,zrtos_error_t (*callback)(
-			zrtos_vfs_module_spi_sync_args_t *inode_data
+			zrtos_vfs_module_spi_sync_inode_t *inode_data
 			,zrtos_vfs_module_spi_sync_file_t *file_data
 			,void *buf
 			,size_t len

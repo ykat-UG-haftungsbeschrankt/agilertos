@@ -17,7 +17,7 @@ extern "C" {
 typedef struct _zrtos_vfs_module_sram_args_t{
 	void *start_addr;
 	void *end_addr;
-}zrtos_vfs_module_sram_args_t;
+}zrtos_vfs_module_sram_inode_t;
 
 zrtos_error_t zrtos_vfs_module_sram__rw(
 	 zrtos_vfs_file_t *thiz
@@ -29,8 +29,8 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	,bool is_write_op
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
-	zrtos_vfs_module_sram_args_t *mod = ZRTOS_CAST(
-		 zrtos_vfs_module_sram_args_t *
+	zrtos_vfs_module_sram_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_sram_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)

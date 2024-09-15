@@ -19,7 +19,7 @@ extern "C" {
 
 
 zrtos_error_t zrtos_vfs_module_avr_spi_sync__on_write_callback(
-	 zrtos_vfs_module_spi_sync_args_t *inode_data
+	 zrtos_vfs_module_spi_sync_inode_t *inode_data
 	,zrtos_vfs_module_spi_sync_file_t *file_data
 	,void *buf
 	,size_t len

@@ -75,10 +75,10 @@ typedef struct _zrtos_vfs_module_spi_args_t{
 	zrtos_clist_t                   root;
 	zrtos_vfs_module_spi_file_t     *last;
 	uint8_t                         count;
-}zrtos_vfs_module_spi_args_t;
+}zrtos_vfs_module_spi_inode_t;
 
 bool zrtos_vfs_module_spi_args__init(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,zrtos_gpio_t                *gpio
 	,zrtos_gpio_pin_t            pin_sclk
 	,zrtos_gpio_pin_t            pin_mosi
@@ -99,7 +99,7 @@ void zrtos_vfs_module_spi_args__deinit(zrtos_vfs_module_spi_file_t *thiz){
 
 bool zrtos_vfs_module_spi_file__init(
 	 zrtos_vfs_module_spi_file_t    *thiz
-	,zrtos_vfs_module_spi_args_t    *ctx
+	,zrtos_vfs_module_spi_inode_t    *ctx
 	,zrtos_vfs_module_spi_control_t control
 	,zrtos_gpio_pin_t               pin_cs
 	,void                           *data
@@ -121,7 +121,7 @@ bool zrtos_vfs_module_spi_file__init(
 
 void zrtos_vfs_module_spi_file__deinit(
 	 zrtos_vfs_module_spi_file_t *thiz
-	,zrtos_vfs_module_spi_args_t *ctx
+	,zrtos_vfs_module_spi_inode_t *ctx
 ){
 	zrtos_cbuffer__deinit(&thiz->cbuffer_in);
 	zrtos_cbuffer__deinit(&thiz->cbuffer_out);
@@ -129,7 +129,7 @@ void zrtos_vfs_module_spi_file__deinit(
 }
 
 zrtos_vfs_module_spi_file_t *zrtos_vfs_module_spi_file__new(
-	 zrtos_vfs_module_spi_args_t    *ctx
+	 zrtos_vfs_module_spi_inode_t    *ctx
 	,zrtos_vfs_module_spi_control_t control
 	,zrtos_gpio_pin_t               pin_cs
 	,void                           *data
@@ -149,14 +149,14 @@ zrtos_vfs_module_spi_file_t *zrtos_vfs_module_spi_file__new(
 
 void zrtos_vfs_module_spi_file__free(
 	 zrtos_vfs_module_spi_file_t *thiz
-	,zrtos_vfs_module_spi_args_t *ctx
+	,zrtos_vfs_module_spi_inode_t *ctx
 ){
 	zrtos_vfs_module_spi_file__deinit(thiz,ctx);
 	kfree(thiz);
 }
 
 void zrtos_vfs_module_spi__set_high(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,zrtos_vfs_module_spi_file_t *file
 ){
 	file->error = zrtos_gpio__set_high(
@@ -166,7 +166,7 @@ void zrtos_vfs_module_spi__set_high(
 }
 
 void zrtos_vfs_module_spi__set_low(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,zrtos_vfs_module_spi_file_t *file
 ){
 	file->error = zrtos_gpio__set_low(
@@ -176,7 +176,7 @@ void zrtos_vfs_module_spi__set_low(
 }
 
 void zrtos_vfs_module_spi__transfer_init(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,zrtos_vfs_module_spi_file_t *file
 ){
 	zrtos_gpio_mode_t input;
@@ -205,7 +205,7 @@ void zrtos_vfs_module_spi__transfer_init(
 }
 
 void zrtos_vfs_module_spi__transfer_out(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,void                   *data
 	,size_t                 len
 ){
@@ -265,7 +265,7 @@ void zrtos_vfs_module_spi__transfer_out(
 }
 
 void zrtos_vfs_module_spi__transfer_in(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,void                   *data
 	,size_t                 len
 ){
@@ -284,7 +284,7 @@ void zrtos_vfs_module_spi__transfer_in(
 }
 
 zrtos_error_t zrtos_vfs_module_spi__transfer(
-	 zrtos_vfs_module_spi_args_t *thiz
+	 zrtos_vfs_module_spi_inode_t *thiz
 	,void                   *data_in
 	,void                   *data_out
 	,size_t                 len
@@ -305,8 +305,8 @@ zrtos_error_t zrtos_vfs_module_spi__on_open(
 ){
 /*
 	zrtos_error_t ret = ZRTOS_ERROR__NOMEM;
-	zrtos_vfs_module_spi_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_args_t*
+	zrtos_vfs_module_spi_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	zrtos_vfs_module_spi_file_t *file_data = zrtos_vfs_module_spi_file__new(
@@ -328,8 +328,8 @@ zrtos_error_t zrtos_vfs_module_spi__on_close(
 	 zrtos_vfs_file_t *thiz
 ){
 /*
-	zrtos_vfs_module_spi_args_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_spi_args_t*
+	zrtos_vfs_module_spi_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_spi_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
 	zrtos_vfs_module_spi_file_t *file_data = ZRTOS_CAST(

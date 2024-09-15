@@ -71,14 +71,14 @@ typedef struct _zrtos_vfs_module_uart_args_t{
 	zrtos_vfs_module_uart_callback_t on_send;
 	zrtos_vfs_module_uart_callback_t on_recv;
 	void                             *callback_data;
-}zrtos_vfs_module_uart_args_t;
+}zrtos_vfs_module_uart_inode_t;
 
-zrtos_error_t zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_args_t *args){
+zrtos_error_t zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_inode_t *args){
 	return ZRTOS_ERROR__SUCCESS;
 }
 
 bool zrtos_vfs_module_uart_args__init(
-	 zrtos_vfs_module_uart_args_t *thiz
+	 zrtos_vfs_module_uart_inode_t *thiz
 	,zrtos_vfs_module_uart_baudrate_t baudrate
 	,zrtos_vfs_module_uart_mode_t mode
 ){
@@ -96,38 +96,38 @@ bool zrtos_vfs_module_uart_args__init(
 }
 
 zrtos_cbuffer_t *zrtos_vfs_module_uart_args__get_cbuffer_in(
-	zrtos_vfs_module_uart_args_t *thiz
+	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return &thiz->cbuffer_in;
 }
 
 zrtos_cbuffer_t *zrtos_vfs_module_uart_args__get_cbuffer_out(
-	zrtos_vfs_module_uart_args_t *thiz
+	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return &thiz->cbuffer_out;
 }
 
 void zrtos_vfs_module_uart_args__set_error(
-	 zrtos_vfs_module_uart_args_t *thiz
+	 zrtos_vfs_module_uart_inode_t *thiz
 	,zrtos_error_t error
 ){
 	thiz->error = error;
 }
 
 zrtos_error_t zrtos_vfs_module_uart_args__get_error(
-	zrtos_vfs_module_uart_args_t *thiz
+	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->error;
 }
 
 zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_args__get_baudrate(
-	zrtos_vfs_module_uart_args_t *thiz
+	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->baudrate;
 }
 
 zrtos_vfs_module_uart_mode_t zrtos_vfs_module_uart_args__get_mode(
-	zrtos_vfs_module_uart_args_t *thiz
+	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->mode;
 }
@@ -140,8 +140,8 @@ zrtos_error_t zrtos_vfs_module_uart__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
-		 zrtos_vfs_module_uart_args_t *
+	zrtos_vfs_module_uart_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)
@@ -166,8 +166,8 @@ zrtos_error_t zrtos_vfs_module_uart__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
-		 zrtos_vfs_module_uart_args_t *
+	zrtos_vfs_module_uart_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)
@@ -188,8 +188,8 @@ zrtos_error_t zrtos_vfs_module_uart__on_write(
 zrtos_error_t zrtos_vfs_module_uart__on_can_read(
 	 zrtos_vfs_file_t *thiz
 ){
-	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
-		 zrtos_vfs_module_uart_args_t *
+	zrtos_vfs_module_uart_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)
@@ -200,8 +200,8 @@ zrtos_error_t zrtos_vfs_module_uart__on_can_read(
 zrtos_error_t zrtos_vfs_module_uart__on_can_write(
 	 zrtos_vfs_file_t *thiz
 ){
-	zrtos_vfs_module_uart_args_t *mod = ZRTOS_CAST(
-		 zrtos_vfs_module_uart_args_t *
+	zrtos_vfs_module_uart_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)
