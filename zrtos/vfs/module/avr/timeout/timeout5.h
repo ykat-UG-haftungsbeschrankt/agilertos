@@ -15,23 +15,35 @@ extern "C" {
 
 #include <zrtos/vfs/module/timeout/timeout.h>
 
-zrtos_vfs_module_avr_timeout_inode_t *zrtos_vfs_module_avr_timeout5;
+ZRTOS_ASSERT__STATIC(
+	sizeof(zrtos_vfs_offset_t) >= sizeof(zrtos_vfs_module_timeout_microseconds_t)
+);
+
+zrtos_vfs_module_timeout_inode_t zrtos_vfs_module_avr_timeout5;
 
 ISR(TIMER5_OVF_vect){
-	zrtos_vfs_module_avr_timeout5->callback(zrtos_vfs_module_avr_timeout5);
+	zrtos_vfs_module_avr_timeout5.callback(
+		zrtos_vfs_module_avr_timeout5.callback_data
+	);
+}
+
+zrtos_error_t zrtos_vfs_module_avr_timeout5__on_open(
+	 zrtos_vfs_file_t *thiz
+){
+	return zrtos_vfs_file__get_dentry_count(thiz) == 1
+	     ? ZRTOS_ERROR__SUCCESS
+	     : ZRTOS_ERROR__MFILE
+	;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_timeout5__on_mount(zrtos_vfs_dentry_t *thiz){
-	zrtos_vfs_module_avr_timeout5 = ZRTOS_CAST(
-		 zrtos_vfs_module_avr_timeout_inode_t*
-		,zrtos_vfs_file__get_inode_data(thiz)
-	);
+	TIMSK5 = 0;
 	return ZRTOS_ERROR__SUCCESS;
 }
 
 zrtos_error_t zrtos_vfs_module_avr_timeout5__on_umount(zrtos_vfs_dentry_t *thiz){
 	TIMSK5 = 0;
-	//TIMSK5 &= ~(1<<TOIE5);
+	//TIMSK5 &= ~_BV(TOIE5);
 	return ZRTOS_ERROR__SUCCESS;
 }
 
@@ -42,30 +54,40 @@ zrtos_error_t zrtos_vfs_module_avr_timeout5__on_ioctl(
 	,va_list args
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	zrtos_vfs_module_avr_timeout_inode_t *inode_data = ZRTOS_CAST(
-		 zrtos_vfs_module_avr_timeout_inode_t*
-		,zrtos_vfs_file__get_inode_data(thiz)
-	);
 
 	switch(request){
 		case ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START:
 			TCCR5A = 0;
-			TCCR5B = (inode_data->prescaler) & 0xff;
-			TIMSK5 = (1<<TOIE5);
-			//TIMSK5 |= (1<<TOIE5);
+			//TCCR5B = (inode_data->prescaler) & 0xff;
+			TCCR5B = _BV(CS52) | _BV(CS51) | _BV(CS50);//prescaler 1024
+			TIMSK5 = _BV(TOIE5);
+			//TIMSK5 |= _BV(TOIE5);
+			zrtos_vfs_file__set_offset(
+				 thiz
+				,zrtos_vfs_module_timeout__get_overflow_counter_value(
+					zrtos_va__arg(
+						args
+						,zrtos_vfs_module_timeout_microseconds_t
+					)
+					,1024
+				)
+			);
 		case ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET:
-			TCNT5 = inode_data->counter & 0xffff;
+			TCNT5 = zrtos_vfs_file__get_offset(thiz);
 		break;
 		case ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__STOP:
 			TIMSK5 = 0;
-			//TIMSK5 &= ~(1<<TOIE5);
+			//TIMSK5 &= ~_BV(TOIE5);
 		break;
 		case ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK:
-			zrtos_vfs_module_avr_timeout0__callback = zrtos_va__arg(
+			zrtos_vfs_module_avr_timeout0.callback = zrtos_va__arg(
 				 args
 				,zrtos_vfs_module_timeout_callback_t
 			);
-			zrtos_vfs_module_avr_timeout0__data = zrtos_va__arg(args,void*);
+			zrtos_vfs_module_avr_timeout0.callback_data = zrtos_va__arg(
+				 args
+				,void*
+			);
 		break;
 		default:
 			ret = ZRTOS_ERROR__INVAL;
@@ -76,7 +98,7 @@ zrtos_error_t zrtos_vfs_module_avr_timeout5__on_ioctl(
 }
 
 ZRTOS_VFS_PLUGIN__INIT(avr_timeout5,
-	ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT()
+	ZRTOS_VFS_PLUGIN__0_ON_OPEN(zrtos_vfs_module_avr_timeout5__on_open)
 	ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT()
 	ZRTOS_VFS_PLUGIN__2_ON_MOUNT(zrtos_vfs_module_avr_timeout5__on_mount)
 	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT(zrtos_vfs_module_avr_timeout5__on_umount)

@@ -35,6 +35,8 @@ typedef enum{
 int main(void){
 	ZRTOS_MALLOC__GLOBAL_HEAP_INIT(heap);
 
+	uint16_t tmp = (16000000+1024000-1) / 1024000;
+tmp=tmp;
 	char data_in[20] = "1234\n";
 	char data_out[20] = "1234\n";
 	zrtos_error_t err;

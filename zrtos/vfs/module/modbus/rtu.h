@@ -20,16 +20,19 @@ extern "C" {
 typedef enum{
 	 ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE
 	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__SEND
+	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE
 	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV
 }zrtos_vfs_module_modbus_rtu_state_t;
 
 typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
-	zrtos_msg_queue_t                   msg_queue_in;
-	zrtos_msg_queue_t                   msg_queue_out;
-	zrtos_error_t                       error;
-	zrtos_vfs_module_uart_inode_t        *uart;
-	zrtos_vfs_fd_t                      fd_timeout;
-	zrtos_vfs_module_modbus_rtu_state_t state;
+	zrtos_msg_queue_t                       msg_queue_in;
+	zrtos_msg_queue_t                       msg_queue_out;
+	zrtos_error_t                           error;
+	zrtos_vfs_module_uart_inode_t           *uart;
+	zrtos_vfs_fd_t                          timeout_fd;
+	zrtos_vfs_module_timeout_microseconds_t timeout_frame_us;
+	zrtos_vfs_module_timeout_microseconds_t timeout_response_us;
+	zrtos_vfs_module_modbus_rtu_state_t     state;
 }zrtos_vfs_module_modbus_rtu_inode_t;
 
 
@@ -61,6 +64,7 @@ static uint16_t zrtos_vfs_module_modbus_rtu__crc_str(uint8_t *data,size_t len){
 zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
 	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	zrtos_vfs_module_modbus_rtu_state_t state;
 
 	if(zrtos_msg_queue__is_empty(&thiz->msg_queue_out)){
@@ -71,27 +75,8 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
 	}
 
 	thiz->state = state;
-}
 
-zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
-	void *callback_data
-){
-	zrtos_vfs_module_modbus_rtu_inode_t *thiz = callback_data;
-	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)){
-		thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV;
-	}
-}
-
-zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
-	void *callback_data
-){
-	zrtos_vfs_module_modbus_rtu_inode_t *thiz = callback_data;
-	return zrtos_vfs_fd__ioctl(
-		 thiz->fd_timeout
-		,(char*)""
-		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET
-		,0
-	);
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
@@ -107,8 +92,11 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
 void zrtos_vfs_module_modbus_rtu__on_response_timeout(
 	 void *thiz
 ){
-	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	mod->error = ZRTOS_ERROR__IO;
 }
@@ -116,8 +104,11 @@ void zrtos_vfs_module_modbus_rtu__on_response_timeout(
 void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	 void *thiz
 ){
-	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	zrtos_vfs_module_uart_inode_t *uart = mod->uart;
 	zrtos_cbuffer_t *cbuffer = zrtos_vfs_module_uart_args__get_cbuffer_in(uart);
@@ -173,6 +164,77 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 	}
 }
 
+zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
+	void *callback_data
+){
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,callback_data
+	);
+	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)
+	&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
+		 thiz->timeout_fd
+		,(char*)""
+		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
+		,zrtos_vfs_module_modbus_rtu__on_response_timeout
+		,thiz
+	)))
+	&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
+		 thiz->timeout_fd
+		,(char*)""
+		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
+		,thiz->timeout_response_us
+	)))
+	){
+		thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE;
+	}
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
+	void *callback_data
+){
+	zrtos_error_t ret;
+	zrtos_vfs_module_modbus_rtu_inode_t *thiz = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,callback_data
+	);
+	switch(thiz->state){
+		case ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV:
+			ret = zrtos_vfs_fd__ioctl(
+				 thiz->timeout_fd
+				,(char*)""
+				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET
+			);
+		break;
+		case ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE:
+			if(zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
+				thiz->timeout_fd
+				,(char*)""
+				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
+				,zrtos_vfs_module_modbus_rtu__on_recv_timeout
+				,thiz
+			)))
+			&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
+				thiz->timeout_fd
+				,(char*)""
+				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
+				,thiz->timeout_frame_us
+			)))
+			){
+				thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV;
+			}
+		break;
+		default:
+			ret = ZRTOS_ERROR_IO;
+		break;
+	}
+
+	return ret;
+	return 
+}
+
 bool zrtos_vfs_module_modbus_rtu_args__init(
 	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
 	,zrtos_vfs_module_uart_inode_t *uart
@@ -187,10 +249,10 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 	thiz->uart->callback_data = thiz;
 	thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE;
 
-	ret = zrtos_vfs_fd__open(timeout_path,&thiz->fd_timeout,0);
+	ret = zrtos_vfs_fd__open(timeout_path,&thiz->timeout_fd,0);
 	if(zrtos_error__is_success(ret)){
 		ret = zrtos_vfs_fd__ioctl(
-			 mod->fd_timeout
+			 mod->timeout_fd
 			,(char*)""
 			,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
 			,zrtos_vfs_module_modbus_rtu__on_recv_timeout
@@ -198,7 +260,7 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 		);
 		if(zrtos_error__is_success(ret)){
 			ret = zrtos_vfs_fd__ioctl(
-				mod->fd_timeout
+				mod->timeout_fd
 				,(char*)""
 				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
 				,zrtos_vfs_module_modbus_rtu__on_recv_timeout
@@ -211,7 +273,7 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 					}
 					zrtos_msg_queue__deinit(&thiz->msg_queue_in);
 				}
-				zrtos_vfs_fd__close(thiz->fd_timeout);
+				zrtos_vfs_fd__close(thiz->timeout_fd);
 			}
 		}
 	}
@@ -252,8 +314,11 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	zrtos_error_t ret = mod->error;
 	if(zrtos_error__is_success(ret)){
@@ -275,8 +340,11 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	zrtos_error_t ret = mod->error;
 	if(zrtos_error__is_success(ret)){
@@ -322,8 +390,11 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_can_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
 ){
-	zrtos_vfs_module_modbus_rtu_inode_t *mod = zrtos_vfs_file__get_inode_data(
-		thiz
+	zrtos_vfs_module_modbus_rtu_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_modbus_rtu_inode_t*
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
 	);
 	return zrtos_msg_queue__is_empty(&mod->msg_queue_in)
 	     ? ZRTOS_ERROR__AGAIN

@@ -10,6 +10,8 @@
 extern "C" {
 #endif
 
+#include <zrtos/types.h>
+
 typedef enum{
 	 ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
 	,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__STOP
@@ -19,10 +21,28 @@ typedef enum{
 
 typedef void (*zrtos_vfs_module_timeout_callback_t)(void *data);
 
+typedef uint16_t zrtos_vfs_module_timeout_microseconds_t;
+
 typedef struct{
-	zrtos_vfs_module_timeout_callback_t callback;
-	void                                *callback_data;
+	zrtos_vfs_module_timeout_callback_t        callback;
+	void                                       *callback_data;
 }zrtos_vfs_module_timeout_inode_t;
+
+uint32_t zrtos_vfs_module_timeout__get_overflow_counter_value_divider(
+	uint16_t prescaler
+){
+	return ((ZRTOS_ARCH__CPU_CLOCK_HZ+(prescaler*1000)-1)/prescaler/1000);
+}
+
+uint16_t zrtos_vfs_module_timeout__get_overflow_counter_value(
+	 zrtos_vfs_module_timeout_microseconds_t us
+	,uint16_t prescaler
+){
+	uint32_t tmp = zrtos_vfs_module_timeout__get_overflow_counter_value_divider(
+		prescaler
+	);
+	return (us + tmp - 1) / tmp;
+}
 /*
 zrtos_error_t zrtos_vfs_module_spi__on_ioctl(
 	 zrtos_vfs_file_t *thiz

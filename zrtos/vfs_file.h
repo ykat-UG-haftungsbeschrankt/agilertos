@@ -64,6 +64,10 @@ L_OUT:
 	return ret;
 }
 
+size_t zrtos_vfs_file__get_dentry_count(zrtos_vfs_file_t *file){
+	return file->dentry->count;
+}
+
 zrtos_error_t zrtos_vfs_file__close(zrtos_vfs_file_t *file){
 	zrtos_error_t ret;
 
