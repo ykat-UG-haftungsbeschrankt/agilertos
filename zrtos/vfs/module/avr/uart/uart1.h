@@ -16,7 +16,6 @@ extern "C" {
 zrtos_vfs_module_uart_args_t *zrtos_vfs_module_avr_uart1;
 
 ISR(UART1_RECEIVE_INTERRUPT){
-	//Serial.println("##UART1_RECEIVE_INTERRUPT BEGIN##");
 	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
 		zrtos_vfs_module_avr_uart1
 	);
@@ -47,7 +46,6 @@ ISR(UART1_RECEIVE_INTERRUPT){
 }
 
 ISR(UART1_TRANSMIT_INTERRUPT){
-	//Serial.println("##UART1_TRANSMIT_INTERRUPT##");
 	uint8_t tmp;
 	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
 		zrtos_vfs_module_avr_uart1

@@ -173,8 +173,8 @@ static size_t zrtos_cbuffer_node__get_length(
 }
 
 bool zrtos_cbuffer_node__is_empty(zrtos_cbuffer_node_t *thiz){
-	return zrtos_cbuffer_node__get_length(thiz) == 0;
-	//return thiz->head == thiz->tail;
+	//return zrtos_cbuffer_node__get_length(thiz) == 0;
+	return thiz->head == thiz->tail;
 }
 
 static size_t zrtos_cbuffer_node__get_free_space(
