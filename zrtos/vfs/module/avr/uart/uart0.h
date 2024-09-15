@@ -130,58 +130,58 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
 #elif defined(ATMEGA_USART)
 	/* Set baud rate */
 	if (baudrate & 0x8000) {
-		UART0_STATUS = (1<<U2X);  //Enable 2x speed
+		UART0_STATUS = _BV(U2X);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
-		UART0_STATUS &= ~(1<<U2X);
+		UART0_STATUS &= ~_BV(U2X);
 	}
 	UBRRH = (uint8_t) (baudrate>>8);
 	UBRRL = (uint8_t) baudrate;
 
 	/* Enable USART receiver and transmitter and receive complete interrupt */
-	UART0_CONTROL = _BV(RXCIE)|(1<<RXEN)|(1<<TXEN);
+	UART0_CONTROL = _BV(RXCIE)|_BV(RXEN)|_BV(TXEN);
 
 	/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
 #ifdef URSEL
-	UCSRC = (1<<URSEL)|(3<<UCSZ0);
+	UCSRC = _BV(URSEL)|_BV(UCSZ1)|_BV(UCSZ0);
 #else
-	UCSRC = (3<<UCSZ0);
+	UCSRC = _BV(UCSZ1)|_BV(UCSZ0);
 #endif
 
 #elif defined(ATMEGA_USART0)
 	/* Set baud rate */
 	if (baudrate & 0x8000) {
-		UART0_STATUS = (1<<U2X0);  //Enable 2x speed
+		UART0_STATUS = _BV(U2X0);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
-		UART0_STATUS &= ~(1<<U2X0);
+		UART0_STATUS &= ~_BV(U2X0);
 	}
 	UBRR0H = (uint8_t)(baudrate>>8);
 	UBRR0L = (uint8_t) baudrate;
 
 	/* Enable USART receiver and transmitter and receive complete interrupt */
-	UART0_CONTROL = _BV(RXCIE0)|(1<<RXEN0)|(1<<TXEN0);
+	UART0_CONTROL = _BV(RXCIE0)|_BV(RXEN0)|_BV(TXEN0);
 
 	/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
 #ifdef URSEL0
-	UCSR0C = (1<<URSEL0)|(3<<UCSZ00);
+	UCSR0C = _BV(URSEL0)|_BV(UCSZ01)|_BV(UCSZ00);
 #else
-	UCSR0C = (3<<UCSZ00);
+	UCSR0C = _BV(UCSZ01)|_BV(UCSZ00);
 #endif
 
 #elif defined(ATMEGA_UART)
 	/* set baud rate */
 	if (baudrate & 0x8000) {
-		UART0_STATUS = (1<<U2X);  //Enable 2x speed
+		UART0_STATUS = _BV(U2X);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
-		UART0_STATUS &= ~(1<<U2X);
+		UART0_STATUS &= ~_BV(U2X);
 	}
 	UBRRHI = (uint8_t) (baudrate>>8);
 	UBRR   = (uint8_t) baudrate;
 
 	/* Enable UART receiver and transmitter and receive complete interrupt */
-	UART0_CONTROL = _BV(RXCIE)|(1<<RXEN)|(1<<TXEN);
+	UART0_CONTROL = _BV(RXCIE)|_BV(RXEN)|_BV(TXEN);
 
 #elif defined(AVR1_USART0)
 	// set the baud rate

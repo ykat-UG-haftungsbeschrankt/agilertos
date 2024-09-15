@@ -86,24 +86,24 @@ zrtos_error_t zrtos_vfs_module_avr_uart3__on_mount(zrtos_vfs_dentry_t *thiz){
 
 	//Set baud rate
 	if(baudrate & 0x8000){
-		UART3_STATUS = (1<<U2X3);  //Enable 2x speed
+		UART3_STATUS = _BV(U2X3);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
 		UART3_STATUS = 0;
-		//UART3_STATUS &= ~(1<<U2X3);
+		//UART3_STATUS &= ~_BV(U2X3);
 	}
 	UBRR3H = (uint8_t) (baudrate>>8);
 	UBRR3L = (uint8_t) baudrate;
 
 	/* Enable USART receiver and transmitter and receive complete interrupt */
-	UART3_CONTROL = _BV(RXCIE3)|(1<<RXEN3)|(1<<TXEN3);
+	UART3_CONTROL = _BV(RXCIE3)|_BV(RXEN3)|_BV(TXEN3);
 	//UART3_CONTROL = _BV(RXCIE3)|_BV(TXEN3);
 
 	/* Set frame format: asynchronous, 8data, no parity, 1stop bit */
 #ifdef URSEL3
-	UCSR3C = (1<<URSEL3)|(3<<UCSZ30);
+	UCSR3C = _BV(URSEL3)|_BV(UCSZ31)|_BV(UCSZ30);
 #else
-	UCSR3C = (3<<UCSZ30);
+	UCSR3C = _BV(UCSZ31)|_BV(UCSZ30);
 #endif
 
 	return ZRTOS_ERROR__SUCCESS;
