@@ -147,8 +147,6 @@ typedef enum{
 	,ZRTOS_ERROR__MAX             = INT_MAX ///< Maximum value of zrtos_error_t
 }zrtos_error_t;
 
-typedef uint32_t zrtos_error_count_t;
-
 ZRTOS_ASSERT__STATIC(sizeof(zrtos_error_t) == sizeof(int));
 
 bool zrtos_error__is_success(zrtos_error_t thiz){

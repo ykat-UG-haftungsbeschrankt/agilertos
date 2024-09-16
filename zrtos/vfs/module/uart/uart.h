@@ -21,6 +21,11 @@ extern "C" {
 //#define ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 
 typedef enum{
+	 ZRTOS_VFS_MODULE_UART_IOCTL__GET_RX_ERROR_COUNT
+	,ZRTOS_VFS_MODULE_UART_IOCTL__GET_TX_ERROR_COUNT
+}zrtos_vfs_module_uart_ioctl_t;
+
+typedef enum{
 	 ZRTOS_VFS_MODULE_UART_BAUDRATE__MIN             = ZRTOS_TYPES__UINT32_MIN
 #ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 	,ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED    = 1
@@ -192,11 +197,13 @@ typedef zrtos_error_t (*zrtos_vfs_module_uart_callback_t)(
 	struct _zrtos_vfs_module_uart_args_t *args
 );
 
+typedef uint32_t zrtos_vfs_module_uart_error_count_t;
+
 typedef struct _zrtos_vfs_module_uart_args_t{
 	zrtos_cbuffer_t                  cbuffer_in;
 	zrtos_cbuffer_t                  cbuffer_out;
-	zrtos_error_count_t              rx_error_count;
-	zrtos_error_count_t              tx_error_count;
+	zrtos_vfs_module_uart_error_count_t              rx_error_count;
+	zrtos_vfs_module_uart_error_count_t              tx_error_count;
 	zrtos_vfs_module_uart_baudrate_t baudrate;
 	zrtos_vfs_module_uart_mode_t     mode;
 	zrtos_vfs_module_uart_callback_t on_send;
@@ -252,13 +259,13 @@ void zrtos_vfs_module_uart_args__add_tx_error(
 	thiz->tx_error_count++;
 }
 
-zrtos_error_t zrtos_vfs_module_uart_args__get_rx_error_count(
+zrtos_vfs_module_uart_error_count_t zrtos_vfs_module_uart_args__get_rx_error_count(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->rx_error_count;
 }
 
-zrtos_error_t zrtos_vfs_module_uart_args__get_tx_error_count(
+zrtos_vfs_module_uart_error_count_t zrtos_vfs_module_uart_args__get_tx_error_count(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->rx_error_count;
@@ -370,6 +377,46 @@ zrtos_error_t zrtos_vfs_module_uart__on_can_write(
 		)
 	);
 	return zrtos_cbuffer__can_write(&mod->cbuffer_out);
+}
+
+zrtos_error_t zrtos_vfs_module_uart__on_ioctl(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,int request
+	,va_list args
+){
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	zrtos_vfs_module_uart_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_uart_inode_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
+	);
+
+	switch(ZRTOS_CAST__REINTERPRET(
+		 zrtos_vfs_module_uart_ioctl_t
+		,request
+	)){
+		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_RX_ERROR_COUNT:
+			zrtos_vfs_module_uart_error_count_t *ret = zrtos_va__arg(
+				 args
+				,zrtos_vfs_module_uart_error_count_t*
+			);
+			*ret = mod->rx_error_count;
+		break;
+		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_TX_ERROR_COUNT:
+			zrtos_vfs_module_uart_error_count_t *ret = zrtos_va__arg(
+				 args
+				,zrtos_vfs_module_uart_error_count_t*
+			);
+			*ret = mod->tx_error_count;
+		break;
+		default:
+			ret = ZRTOS_ERROR__INVAL;
+		break;
+	}
+
+	return ret;
 }
 /*
 ZRTOS_VFS_PLUGIN__INIT(uart,

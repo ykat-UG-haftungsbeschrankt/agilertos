@@ -211,7 +211,7 @@ ZRTOS_VFS_PLUGIN__INIT(avr_uart0,
 	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ(zrtos_vfs_module_uart__on_can_read)
 	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE(zrtos_vfs_module_uart__on_can_write)
 	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
-	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL(zrtos_vfs_module_uart__on_ioctl)
 );
 
 #ifdef __cplusplus

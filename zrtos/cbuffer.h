@@ -229,6 +229,19 @@ zrtos_error_t zrtos_cbuffer_node__get(
 	return ret;
 }
 
+zrtos_error_t zrtos_cbuffer_node__peek(
+	 zrtos_cbuffer_node_t *thiz
+	,uint8_t *out
+){
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	if(!zrtos_cbuffer_node__is_empty(thiz)){
+		*out = thiz->data[thiz->tail];
+	}else{
+		ret = ZRTOS_ERROR__AGAIN;
+	}
+	return ret;
+}
+
 zrtos_error_t zrtos_cbuffer__hash(
 	zrtos_cbuffer_t *thiz
 	,size_t length
@@ -302,6 +315,15 @@ zrtos_error_t zrtos_cbuffer__put_ex(
 	return ret;
 }
 
+zrtos_error_t zrtos_cbuffer__peek(zrtos_cbuffer_t *thiz,uint8_t *out){
+	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
+		 zrtos_list__get_first_node(&thiz->root)
+		,zrtos_cbuffer_node_t
+		,node
+	);
+	return zrtos_cbuffer_node__peek(node,thiz,out);
+}
+
 zrtos_error_t zrtos_cbuffer__get(zrtos_cbuffer_t *thiz,uint8_t *out){
 	zrtos_cbuffer_node_t *node = zrtos_types__get_container_of(
 		 zrtos_list__get_first_node(&thiz->root)
@@ -325,6 +347,11 @@ zrtos_error_t zrtos_cbuffer__get_ex(
 	}
 	*outlen = zrtos_types__ptr_get_byte_distance(tmp,data);
 	return ret;
+}
+
+zrtos_error_t zrtos_cbuffer__pop(zrtos_cbuffer_t *thiz){
+	uint8_t *out;
+	return zrtos_cbuffer__get(thiz,&out);
 }
 
 bool zrtos_cbuffer__is_empty(zrtos_cbuffer_t *thiz){
@@ -395,26 +422,29 @@ zrtos_error_t zrtos_cbuffer__pipe(
 	 zrtos_cbuffer_t *thiz
 	,zrtos_cbuffer_t *src
 	,size_t length
+	,size_t *outlen
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 	uint8_t tmp;
-	zrtos_cbuffer_write_transaction_t txn;
 
-	zrtos_cbuffer__start_write_transaction(thiz,&txn);
+	*outlen = length;
 
-	while(zrtos_error__is_success(ret) && length--){
-		ret = zrtos_cbuffer__get(src,&tmp);
-		if(zrtos_error__is_success(ret)){
-			ret = zrtos_cbuffer__put(thiz,tmp);
+	while(length){
+		if(zrtos_error__is_success((ret = zrtos_cbuffer__peek(src,&tmp)))
+		&& zrtos_error__is_success((ret = zrtos_cbuffer__put(thiz,tmp)))
+		){
+			length--;
+			zrtos_cbuffer__pop(src);
+		}else{
+			break;
 		}
 	}
 
-	if(zrtos_error__is_error(ret)){
-		zrtos_cbuffer__rollback_write_transaction(thiz,&txn);
-	}
+	*outlen -= length;
 
 	return ret;
 }
+
 #if 0
 void zrtos_cbuffer_node__debug(
 	 zrtos_cbuffer_node_t *thiz

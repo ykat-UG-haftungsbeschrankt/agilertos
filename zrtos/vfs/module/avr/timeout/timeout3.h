@@ -55,7 +55,10 @@ zrtos_error_t zrtos_vfs_module_avr_timeout3__on_ioctl(
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
 
-	switch(request){
+	switch(ZRTOS_CAST__REINTERPRET(
+		 zrtos_vfs_module_timeout_ioctl_t
+		,request
+	)){
 		case ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START:
 			TCCR3A = 0;
 			//TCCR3B = (inode_data->prescaler) & 0xff;

@@ -22,13 +22,6 @@ extern "C" {
 # define ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US 1000000
 #endif
 
-typedef enum{
-	 ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE
-	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__SEND
-	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE
-	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV
-}zrtos_vfs_module_modbus_rtu_state_t;
-
 typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 	zrtos_msg_queue_t                       msg_queue_in;
 	zrtos_msg_queue_t                       msg_queue_out;
@@ -37,7 +30,6 @@ typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
 	zrtos_vfs_fd_t                          timeout_fd;
 	zrtos_vfs_module_timeout_microseconds_t timeout_frame_us;
 	zrtos_vfs_module_timeout_microseconds_t timeout_response_us;
-	zrtos_vfs_module_modbus_rtu_state_t     state;
 }zrtos_vfs_module_modbus_rtu_inode_t;
 
 
@@ -64,24 +56,6 @@ static uint16_t zrtos_vfs_module_modbus_rtu__crc_str(uint8_t *data,size_t len){
 		zrtos_vfs_module_modbus_rtu__crc(&crc,*data++);
 	}
 	return crc;
-}
-
-zrtos_error_t zrtos_vfs_module_modbus_rtu__set_state_idle(
-	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
-){
-	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	zrtos_vfs_module_modbus_rtu_state_t state;
-
-	if(zrtos_msg_queue__is_empty(&thiz->msg_queue_out)){
-		state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE;
-	}else{
-		state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__SEND;
-		//send next message
-	}
-
-	thiz->state = state;
-
-	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(
@@ -155,7 +129,7 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 				,crc_msg
 			)))
 			){
-				ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
+				break;
 			}else{
 				zrtos_msg_queue__rollback_write_transaction(
 					&mod->msg_queue_in
@@ -177,9 +151,16 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
 		 zrtos_vfs_module_modbus_rtu_inode_t*
 		,callback_data
 	);
-	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)){
+	size_t            outlen;
+	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)
+	&& !zrtos_msg_queue__is_empty(&thiz->msg_queue_out)){
 		zrtos_arch__delay_microseconds(thiz->timeout_frame_us);
-		//copy next message from msg_queue_out to thiz->uart->cbuffer_out
+		ret = zrtos_msg_queue__pipe_next_message_to_cbuffer(
+			 &thiz->msg_queue_out
+			,thiz->uart->cbuffer_out
+			,ZRTOS_TYPES__SIZE_MAX
+			,&outlen
+		);
 	}
 	return ret;
 }
@@ -192,39 +173,13 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
 		 zrtos_vfs_module_modbus_rtu_inode_t*
 		,callback_data
 	);
-	switch(thiz->state){
-		case ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV:
-			ret = zrtos_vfs_fd__ioctl(
-				 thiz->timeout_fd
-				,(char*)""
-				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET
-			);
-		break;
-		case ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE:
-			if(zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
-				thiz->timeout_fd
-				,(char*)""
-				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
-				,zrtos_vfs_module_modbus_rtu__on_recv_timeout
-				,thiz
-			)))
-			&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
-				thiz->timeout_fd
-				,(char*)""
-				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
-				,thiz->timeout_frame_us
-			)))
-			){
-				thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__RECV;
-			}
-		break;
-		default:
-			ret = ZRTOS_ERROR_IO;
-		break;
-	}
+	ret = zrtos_vfs_fd__ioctl(
+		 thiz->timeout_fd
+		,(char*)""
+		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET
+	);
 
 	return ret;
-	return 
 }
 
 bool zrtos_vfs_module_modbus_rtu_args__init(
@@ -244,7 +199,6 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 		 1750
 		,char_transmission_us*3+char_transmission_us/2
 	);
-	thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE;
 
 	ret = zrtos_vfs_fd__open(timeout_path,&thiz->timeout_fd,0);
 	if(zrtos_error__is_success(ret)){
@@ -372,7 +326,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_write(
 			 &mod->msg_queue_out
 		)))
 		){
-			ret = zrtos_vfs_module_modbus_rtu__set_state_idle(mod);
+			ret = rtos_vfs_module_modbus_rtu__on_send(mod);
 		}else{
 			zrtos_msg_queue__rollback_write_transaction(
 				&mod->msg_queue_out

@@ -177,18 +177,18 @@ L_READ_MESSAGE_BODY:
 	return ret;
 }
 
-zrtos_error_t zrtos_msg_queue__get(
+zrtos_error_t zrtos_msg_queue__pipe_next_message_to_cbuffer(
 	 zrtos_msg_queue_t *thiz
-	,void              *data
+	,zrtos_cbuffer_t   *dest
 	,size_t            len
 	,size_t            *outlen
 ){
 	zrtos_error_t ret;
 	if(thiz->header.length){
 L_READ_MESSAGE_BODY:
-		ret = zrtos_cbuffer__get_ex(
+		ret = zrtos_cbuffer__pipe(
 			 &thiz->cbuffer
-			,data
+			,dest
 			,ZRTOS_TYPES__MIN(len,thiz->header.length)
 			,outlen
 		);
