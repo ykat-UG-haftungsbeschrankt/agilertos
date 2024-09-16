@@ -17,6 +17,11 @@ extern "C" {
 
 #include <zrtos/vfs/module/uart/uart.h>
 
+
+#ifndef ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US
+# define ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US 1000000
+#endif
+
 typedef enum{
 	 ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE
 	,ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__SEND
@@ -172,22 +177,9 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(
 		 zrtos_vfs_module_modbus_rtu_inode_t*
 		,callback_data
 	);
-	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)
-	&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
-		 thiz->timeout_fd
-		,(char*)""
-		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
-		,zrtos_vfs_module_modbus_rtu__on_response_timeout
-		,thiz
-	)))
-	&& zrtos_error__is_success((ret = zrtos_vfs_fd__ioctl(
-		 thiz->timeout_fd
-		,(char*)""
-		,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
-		,thiz->timeout_response_us
-	)))
-	){
-		thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__AWAIT_RESPONSE;
+	if(zrtos_cbuffer__is_empty(thiz->uart->cbuffer_out)){
+		zrtos_arch__delay_microseconds(thiz->timeout_frame_us);
+		//copy next message from msg_queue_out to thiz->uart->cbuffer_out
 	}
 	return ret;
 }
@@ -241,18 +233,23 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 	,char *timeout_path
 ){
 	zrtos_error_t ret;
-
+	zrtos_vfs_module_timeout_microseconds_t char_transmission_us = zrtos_vfs_module_uart__get_char_transmission_time(uart);
 	thiz->error = ZRTOS_ERROR__SUCCESS;
 	thiz->uart = uart;
 	thiz->uart->on_send = zrtos_vfs_module_modbus_rtu__on_send;
 	thiz->uart->on_recv = zrtos_vfs_module_modbus_rtu__on_recv;
 	thiz->uart->callback_data = thiz;
+	thiz->timeout_response_us = ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US;
+	thiz->timeout_frame_us = ZRTOS_TYPES__MIN(
+		 1750
+		,char_transmission_us*3+char_transmission_us/2
+	);
 	thiz->state = ZRTOS_VFS_MODULE_MODBUS_RTU_STATE__IDLE;
 
 	ret = zrtos_vfs_fd__open(timeout_path,&thiz->timeout_fd,0);
 	if(zrtos_error__is_success(ret)){
 		ret = zrtos_vfs_fd__ioctl(
-			 mod->timeout_fd
+			 thiz->timeout_fd
 			,(char*)""
 			,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK
 			,zrtos_vfs_module_modbus_rtu__on_recv_timeout
@@ -260,7 +257,7 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 		);
 		if(zrtos_error__is_success(ret)){
 			ret = zrtos_vfs_fd__ioctl(
-				mod->timeout_fd
+				 thiz->timeout_fd
 				,(char*)""
 				,ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START
 				,zrtos_vfs_module_modbus_rtu__on_recv_timeout

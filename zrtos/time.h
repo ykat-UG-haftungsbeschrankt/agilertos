@@ -28,18 +28,21 @@ zrtos_time_ticks_t zrtos_time__get_ticks(){
 	};
 	return ret;
 }
+
 zrtos_time_t zrtos_time__get_microseconds(){
 	zrtos_time_t ret = {
 		.ts = zrtos_board__get_microseconds()
 	};
 	return ret;
 }
+
 zrtos_time_t zrtos_time__get_milliseconds(){
 	zrtos_time_t ret = {
 		.ts = zrtos_board__get_microseconds() / 1000
 	};
 	return ret;
 }
+
 zrtos_time_t zrtos_time__get_seconds(){
 	zrtos_time_t ret = {
 		.ts = zrtos_board__get_microseconds() / 1000000

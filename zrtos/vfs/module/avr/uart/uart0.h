@@ -17,81 +17,57 @@ extern "C" {
 zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart0;
 
 ISR(UART0_RECEIVE_INTERRUPT){
-	uint8_t data;
-	uint8_t usr;
-	uint8_t lastRxError;
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart0
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
-		zrtos_vfs_module_avr_uart0
-	);
-
-	//read UART status register and UART data register
 #if defined(AVR1_USART0)
-	usr  = USART0_RXDATAH;
-	data = USART0.RXDATAL;
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS USART0_RXDATAH
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA   USART0.RXDATAL
 #else
-	usr  = UART0_STATUS;
-	data = UART0_DATA;
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS UART0_STATUS
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA   UART0_DATA
 #endif
 
 #if defined(AT90_UART)
-	lastRxError = (usr & (_BV(FE)|_BV(DOR)));
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\
+	(ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS & (_BV(FE)|_BV(DOR)|_BV(UPE)))
 #elif defined(ATMEGA_USART)
-	lastRxError = (usr & (_BV(FE)|_BV(DOR)));
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\
+	(ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS & (_BV(FE)|_BV(DOR)|_BV(UPE)))
 #elif defined(ATMEGA_USART0)
-	lastRxError = (usr & (_BV(FE0)|_BV(DOR0)));
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\
+	(ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS & (_BV(FE0)|_BV(DOR0)|_BV(UPE0)))
 #elif defined(ATMEGA_UART)
-	lastRxError = (usr & (_BV(FE)|_BV(DOR)));
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\
+	(ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS & (_BV(FE)|_BV(DOR)|_BV(UPE)))
 #elif defined(AVR1_USART0)
-	lastRxError = (usr & (USART_BUFOVF_bm | USART_FERR_bm | USART_PERR_bm));
+# define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\
+	(ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS & (USART_BUFOVF_bm | USART_FERR_bm | USART_PERR_bm))
 #endif
 
-	if(zrtos_error__is_success(err)){
-		err = ( 
-			lastRxError > 0
-			? zrtos_cbuffer__put(
-				 buffer
-				,data
-			)
+	zrtos_vfs_module_avr_uart__on_receive_interrupt(
+		 zrtos_vfs_module_avr_uart0
+		,ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA
+		,(
+			  ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR == 0
+			? ZRTOS_ERROR__SUCCESS
 			: ZRTOS_ERROR__IO
-		);
+		)
+	);
 
-		if(zrtos_error__is_success(err)){
-			err = zrtos_vfs_module_avr_uart0->on_recv(
-				 zrtos_vfs_module_avr_uart0
-			);
-		}
-
-		zrtos_vfs_module_uart_args__set_error(
-			 zrtos_vfs_module_avr_uart0
-			,err
-		);
-	}
+#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS
+#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA
+#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR
 }
 
-ISR(UART0_TRANSMIT_INTERRUPT){
+ISR(UART0_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 	uint8_t tmp;
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart0
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
-		zrtos_vfs_module_avr_uart0
-	);
-
-	if(zrtos_error__is_success(err)
-	&& zrtos_error__is_success((err = zrtos_vfs_module_avr_uart0->on_send(
-		zrtos_vfs_module_avr_uart0
-	)))
-	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))
-	){
+	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
+		 zrtos_vfs_module_avr_uart0
+		,&tmp
+	)){
 #if defined(AVR1_USART0)
 		USART0_TXDATAL = tmp;
 #else
 		UART0_DATA = tmp;
 #endif
-		;
 	}else{
 #if defined(AVR1_USART0)
 		USART0_CTRLA &= ~USART_DREIE_bm;
@@ -99,11 +75,6 @@ ISR(UART0_TRANSMIT_INTERRUPT){
 		UART0_CONTROL &= ~_BV(UART0_UDRIE);
 #endif
 	}
-
-	zrtos_vfs_module_uart_args__set_error(
-		 zrtos_vfs_module_avr_uart0
-		,err
-	);
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
@@ -129,7 +100,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
 
 #elif defined(ATMEGA_USART)
 	/* Set baud rate */
-	if (baudrate & 0x8000) {
+	if(ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)){
 		UART0_STATUS = _BV(U2X);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
@@ -150,7 +121,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
 
 #elif defined(ATMEGA_USART0)
 	/* Set baud rate */
-	if (baudrate & 0x8000) {
+	if(ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)){
 		UART0_STATUS = _BV(U2X0);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
@@ -171,7 +142,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart0__on_mount(zrtos_vfs_dentry_t *thiz){
 
 #elif defined(ATMEGA_UART)
 	/* set baud rate */
-	if (baudrate & 0x8000) {
+	if(ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)){
 		UART0_STATUS = _BV(U2X);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{

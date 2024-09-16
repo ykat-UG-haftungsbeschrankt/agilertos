@@ -15,65 +15,57 @@ extern "C" {
 
 zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart2;
 
-ISR(UART2_RECEIVE_INTERRUPT){
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart2
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
-		zrtos_vfs_module_avr_uart2
-	);
-	if(zrtos_error__is_success(err)){
-		err = (
-			(UART2_STATUS & (_BV(FE2)|_BV(DOR2)|_BV(UPE2))) == 0
-			? zrtos_cbuffer__put(
-				 buffer
-				,UART2_DATA
-			)
+ISR(UART3_RECEIVE_INTERRUPT){
+	zrtos_vfs_module_avr_uart__on_receive_interrupt(
+		 zrtos_vfs_module_avr_uart2
+		,UART2_DATA
+		,(
+			  (UART2_STATUS & (_BV(FE2)|_BV(DOR2)|_BV(UPE2))) == 0
+			? ZRTOS_ERROR__SUCCESS
 			: ZRTOS_ERROR__IO
-		);
-
-		if(zrtos_error__is_success(err)){
-			err = zrtos_vfs_module_avr_uart2->on_recv(
-				 zrtos_vfs_module_avr_uart2
-			);
-		}
-
-		zrtos_vfs_module_uart_args__set_error(
-			 zrtos_vfs_module_avr_uart2
-			,err
-		);
-	}
+		)
+	);
 }
 
-ISR(UART2_TRANSMIT_INTERRUPT){
+ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 	uint8_t tmp;
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart2
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
-		zrtos_vfs_module_avr_uart2
-	);
-
-	if(zrtos_error__is_success(err)
-	&& zrtos_error__is_success((err = zrtos_vfs_module_avr_uart2->on_send(
-		zrtos_vfs_module_avr_uart2
-	)))
-	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))
-	){
+	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
+		 zrtos_vfs_module_avr_uart2
+		,&tmp
+	)){
 		UART2_DATA = tmp;
 	}else{
 		UART2_CONTROL &= ~_BV(UART2_UDRIE);
 	}
+}
 
-	zrtos_vfs_module_uart_args__set_error(
-		 zrtos_vfs_module_avr_uart2
-		,err
+ISR(UART3_RECEIVE_INTERRUPT){
+	zrtos_vfs_module_avr_uart__on_receive_interrupt(
+		 zrtos_vfs_module_avr_uart3
+		,UART3_DATA
+		,(
+			  (UART3_STATUS & (_BV(FE3)|_BV(DOR3)|_BV(UPE3))) == 0
+			? ZRTOS_ERROR__SUCCESS
+			: ZRTOS_ERROR__IO
+		)
 	);
+}
+
+ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
+	uint8_t tmp;
+	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
+		 zrtos_vfs_module_avr_uart3
+		,&tmp
+	)){
+		UART3_DATA = tmp;
+	}else{
+		UART3_CONTROL &= ~_BV(UART3_UDRIE);
+	}
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart2__on_mount(zrtos_vfs_dentry_t *thiz){
 	uint16_t baudrate;
-	zrtos_vfs_module_avr_uart2 = ZRTOS_CAST__REINTERPRET(
+	zrtos_vfs_module_avr_uart2 = ZRTOS_CAST(
 		 zrtos_vfs_module_uart_inode_t*
 		,zrtos_vfs_dentry__get_inode_data(
 			thiz
@@ -85,7 +77,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart2__on_mount(zrtos_vfs_dentry_t *thiz){
 	);
 
 	//Set baud rate
-	if(baudrate & 0x8000){
+	if(ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)){
 		UART2_STATUS = _BV(U2X2);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{

@@ -15,6 +15,9 @@ extern "C" {
 #include <avr/interrupt.h>
 
 
+
+
+
 #if defined(__AVR_AT90S2313__) \
  || defined(__AVR_AT90S4414__) \
  || defined(__AVR_AT90S4434__) \
@@ -247,7 +250,7 @@ extern "C" {
 	#define UART0_RECEIVE_INTERRUPT   USART0_RXC_vect
 	#define UART0_TRANSMIT_INTERRUPT  USART0_DRE_vect
   #define USART0_BAUD_RATE(_br_)    (uint16_t)((float)(F_CPU * 64 / (16 * (float)(_br_)) + 0.5))
-  //	#error "AVR ATtiny814 currently not supported by this libaray !"
+	#error "AVR ATtiny814 currently not supported by this libaray !"
 #else
 	#error "no UART definition for MCU available"
 #endif
@@ -265,9 +268,18 @@ extern "C" {
  */
 #define UART_BAUD_SELECT_DOUBLE_SPEED(baudRate,xtalCpu) ((((xtalCpu)+4UL*(baudRate))/(8UL*(baudRate))-1)|0x8000)
 
+#ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
+#define ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)\
+ (((baudrate) & 0x8000) != 0)
+#else
+#define ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)\
+ (0)
+#endif
+
 uint16_t zrtos_vfs_module_avr_uart__baud_select(
 	zrtos_vfs_module_uart_baudrate_t baudrate
 ){
+#ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 	uint16_t ret;
 	if(baudrate & ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED){
 		baudrate = (zrtos_vfs_module_uart_baudrate_t)
@@ -278,6 +290,59 @@ uint16_t zrtos_vfs_module_avr_uart__baud_select(
 		ret = UART_BAUD_SELECT(baudrate,F_CPU);
 	}
 	return ret;
+#else
+	return UART_BAUD_SELECT(baudrate,F_CPU);
+#endif
+}
+
+void zrtos_vfs_module_avr_uart__on_receive_interrupt(
+	 zrtos_vfs_module_uart_inode_t *thiz
+	,uint8_t data
+	,zrtos_error_t err
+){
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
+		thiz
+	);
+
+	if(zrtos_error__is_error(err)
+	|| zrtos_error__is_error((err = zrtos_cbuffer__put(
+		 buffer
+		,data
+	)))
+	|| zrtos_error__is_error((err = thiz->on_recv(
+			thiz
+	)))
+	){
+		zrtos_vfs_module_uart_args__add_rx_error(
+			 thiz
+			,err
+		);
+	}
+}
+
+bool zrtos_vfs_module_avr_uart__on_transmit_interrupt(
+	 zrtos_vfs_module_uart_inode_t *thiz
+	,uint8_t *data
+){
+	zrtos_error_t err;
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
+		thiz
+	);
+
+	if(zrtos_error__is_success((err = thiz->on_send(
+		thiz
+	)))
+	){
+		if(zrtos_error__is_success(zrtos_cbuffer__get(buffer,data))){
+			return true;
+		}
+	}else{
+		zrtos_vfs_module_uart_args__add_tx_error(
+			thiz
+		);
+	}
+
+	return false;
 }
 
 #ifdef __cplusplus

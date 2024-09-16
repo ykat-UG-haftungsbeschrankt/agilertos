@@ -177,6 +177,46 @@ L_READ_MESSAGE_BODY:
 	return ret;
 }
 
+zrtos_error_t zrtos_msg_queue__get(
+	 zrtos_msg_queue_t *thiz
+	,void              *data
+	,size_t            len
+	,size_t            *outlen
+){
+	zrtos_error_t ret;
+	if(thiz->header.length){
+L_READ_MESSAGE_BODY:
+		ret = zrtos_cbuffer__get_ex(
+			 &thiz->cbuffer
+			,data
+			,ZRTOS_TYPES__MIN(len,thiz->header.length)
+			,outlen
+		);
+		thiz->header.length -= *outlen;
+		if(thiz->header.length == 0){
+			thiz->msg_count--;
+		}else{
+			ret = ZRTOS_ERROR__AGAIN;
+		}
+	}else if(thiz->msg_count && zrtos_cbuffer__can_read_length(
+ 		 &thiz->cbuffer
+		,sizeof(thiz->header)
+	)){
+		ret = zrtos_cbuffer__get_ex(
+			 &thiz->cbuffer
+			,&thiz->header
+			,sizeof(thiz->header)
+			,outlen
+		);
+		if(zrtos_error__is_success(ret)){
+			goto L_READ_MESSAGE_BODY;
+		}
+	}else{
+		ret = ZRTOS_ERROR__NODATA;
+	}
+	return ret;
+}
+
 
 #ifdef __cplusplus
 }

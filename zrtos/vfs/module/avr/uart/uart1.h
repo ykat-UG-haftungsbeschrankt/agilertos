@@ -15,65 +15,33 @@ extern "C" {
 
 zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart1;
 
-ISR(UART1_RECEIVE_INTERRUPT){
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart1
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
-		zrtos_vfs_module_avr_uart1
-	);
-	if(zrtos_error__is_success(err)){
-		err = (
-			(UART1_STATUS & (_BV(FE1)|_BV(DOR1)|_BV(UPE1))) == 0
-			? zrtos_cbuffer__put(
-				 buffer
-				,UART1_DATA
-			)
+ISR(UART3_RECEIVE_INTERRUPT){
+	zrtos_vfs_module_avr_uart__on_receive_interrupt(
+		 zrtos_vfs_module_avr_uart1
+		,UART1_DATA
+		,(
+			  (UART1_STATUS & (_BV(FE1)|_BV(DOR1)|_BV(UPE1))) == 0
+			? ZRTOS_ERROR__SUCCESS
 			: ZRTOS_ERROR__IO
-		);
-
-		if(zrtos_error__is_success(err)){
-			err = zrtos_vfs_module_avr_uart1->on_recv(
-				 zrtos_vfs_module_avr_uart1
-			);
-		}
-
-		zrtos_vfs_module_uart_args__set_error(
-			 zrtos_vfs_module_avr_uart1
-			,err
-		);
-	}
+		)
+	);
 }
 
-ISR(UART1_TRANSMIT_INTERRUPT){
+ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 	uint8_t tmp;
-	zrtos_error_t err = zrtos_vfs_module_uart_args__get_error(
-		zrtos_vfs_module_avr_uart1
-	);
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
-		zrtos_vfs_module_avr_uart1
-	);
-
-	if(zrtos_error__is_success(err)
-	&& zrtos_error__is_success((err = zrtos_vfs_module_avr_uart1->on_send(
-		zrtos_vfs_module_avr_uart1
-	)))
-	&& zrtos_error__is_success(zrtos_cbuffer__get(buffer,&tmp))
-	){
+	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
+		 zrtos_vfs_module_avr_uart1
+		,&tmp
+	)){
 		UART1_DATA = tmp;
 	}else{
 		UART1_CONTROL &= ~_BV(UART1_UDRIE);
 	}
-
-	zrtos_vfs_module_uart_args__set_error(
-		 zrtos_vfs_module_avr_uart1
-		,err
-	);
 }
 
 zrtos_error_t zrtos_vfs_module_avr_uart1__on_mount(zrtos_vfs_dentry_t *thiz){
 	uint16_t baudrate;
-	zrtos_vfs_module_avr_uart1 = ZRTOS_CAST__REINTERPRET(
+	zrtos_vfs_module_avr_uart1 = ZRTOS_CAST(
 		 zrtos_vfs_module_uart_inode_t*
 		,zrtos_vfs_dentry__get_inode_data(
 			thiz
@@ -85,7 +53,7 @@ zrtos_error_t zrtos_vfs_module_avr_uart1__on_mount(zrtos_vfs_dentry_t *thiz){
 	);
 
 	//Set baud rate
-	if(baudrate & 0x8000){
+	if(ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)){
 		UART1_STATUS = _BV(U2X1);  //Enable 2x speed
 		baudrate &= ~0x8000;
 	}else{
