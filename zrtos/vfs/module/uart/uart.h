@@ -15,6 +15,7 @@ extern "C" {
 #include <zrtos/cbuffer.h>
 #include <zrtos/binary.h>
 #include <zrtos/types.h>
+#include <zrtos/error_count.h>
 
 #include <zrtos/vfs/module/timeout.t>
 
@@ -197,13 +198,11 @@ typedef zrtos_error_t (*zrtos_vfs_module_uart_callback_t)(
 	struct _zrtos_vfs_module_uart_args_t *args
 );
 
-typedef uint32_t zrtos_vfs_module_uart_error_count_t;
-
 typedef struct _zrtos_vfs_module_uart_args_t{
 	zrtos_cbuffer_t                  cbuffer_in;
 	zrtos_cbuffer_t                  cbuffer_out;
-	zrtos_vfs_module_uart_error_count_t              rx_error_count;
-	zrtos_vfs_module_uart_error_count_t              tx_error_count;
+	zrtos_error_count_t              rx_error_count;
+	zrtos_error_count_t              tx_error_count;
 	zrtos_vfs_module_uart_baudrate_t baudrate;
 	zrtos_vfs_module_uart_mode_t     mode;
 	zrtos_vfs_module_uart_callback_t on_send;
@@ -220,16 +219,24 @@ bool zrtos_vfs_module_uart_args__init(
 	,zrtos_vfs_module_uart_baudrate_t baudrate
 	,zrtos_vfs_module_uart_mode_t mode
 ){
-	thiz->error = ZRTOS_ERROR__SUCCESS;
 	thiz->baudrate = baudrate;
 	thiz->mode = mode;
 	thiz->on_send = zrtos_vfs_module_uart_args__callback;
 	thiz->on_recv = zrtos_vfs_module_uart_args__callback;
-	if(zrtos_cbuffer__init(&thiz->cbuffer_in)){
-		if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
-			return true;
+
+	if(zrtos_error_count__init(&thiz->rx_error_count)){
+		if(zrtos_error_count__init(&thiz->tx_error_count)){
+			if(zrtos_cbuffer__init(&thiz->cbuffer_in)){
+				if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
+					return true;
+				}
+				zrtos_cbuffer__deinit(&thiz->cbuffer_in)
+			}
+			zrtos_error_count__deinit(&thiz->tx_error_count);
 		}
+		zrtos_error_count__deinit(&thiz->rx_error_count);
 	}
+
 	return false;
 }
 
@@ -243,32 +250,6 @@ zrtos_cbuffer_t *zrtos_vfs_module_uart_args__get_cbuffer_out(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return &thiz->cbuffer_out;
-}
-
-void zrtos_vfs_module_uart_args__add_rx_error(
-	 zrtos_vfs_module_uart_inode_t *thiz
-	,zrtos_error_t error
-){
-	thiz->rx_error_count++;
-}
-
-void zrtos_vfs_module_uart_args__add_tx_error(
-	 zrtos_vfs_module_uart_inode_t *thiz
-	,zrtos_error_t error
-){
-	thiz->tx_error_count++;
-}
-
-zrtos_vfs_module_uart_error_count_t zrtos_vfs_module_uart_args__get_rx_error_count(
-	zrtos_vfs_module_uart_inode_t *thiz
-){
-	return thiz->rx_error_count;
-}
-
-zrtos_vfs_module_uart_error_count_t zrtos_vfs_module_uart_args__get_tx_error_count(
-	zrtos_vfs_module_uart_inode_t *thiz
-){
-	return thiz->rx_error_count;
 }
 
 zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_args__get_baudrate(
@@ -398,18 +379,18 @@ zrtos_error_t zrtos_vfs_module_uart__on_ioctl(
 		,request
 	)){
 		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_RX_ERROR_COUNT:
-			zrtos_vfs_module_uart_error_count_t *ret = zrtos_va__arg(
+			zrtos_error_count_t **ret = zrtos_va__arg(
 				 args
-				,zrtos_vfs_module_uart_error_count_t*
+				,zrtos_error_count_t**
 			);
-			*ret = mod->rx_error_count;
+			*ret = &mod->rx_error_count;
 		break;
 		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_TX_ERROR_COUNT:
-			zrtos_vfs_module_uart_error_count_t *ret = zrtos_va__arg(
+			zrtos_error_count_t **ret = zrtos_va__arg(
 				 args
-				,zrtos_vfs_module_uart_error_count_t*
+				,zrtos_error_count_t**
 			);
-			*ret = mod->tx_error_count;
+			*ret = &mod->tx_error_count;
 		break;
 		default:
 			ret = ZRTOS_ERROR__INVAL;

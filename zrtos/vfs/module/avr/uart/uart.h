@@ -313,8 +313,8 @@ void zrtos_vfs_module_avr_uart__on_receive_interrupt(
 			thiz
 	)))
 	){
-		zrtos_vfs_module_uart_args__add_rx_error(
-			 thiz
+		zrtos_error_count__add(
+			 &thiz->rx_error_count
 			,err
 		);
 	}
@@ -337,8 +337,9 @@ bool zrtos_vfs_module_avr_uart__on_transmit_interrupt(
 			return true;
 		}
 	}else{
-		zrtos_vfs_module_uart_args__add_tx_error(
-			thiz
+		zrtos_error_count__add(
+			 &thiz->tx_error_count
+			,err
 		);
 	}
 
