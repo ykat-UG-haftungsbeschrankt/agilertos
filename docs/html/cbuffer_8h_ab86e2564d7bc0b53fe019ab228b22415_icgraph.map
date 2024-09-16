@@ -1,5 +1,7 @@
 <map id="zrtos_cbuffer__can_read" name="zrtos_cbuffer__can_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="204,13,366,40"/>
-<area shape="rect" id="Node000002" href="$uart_2uart_8h.html#a58df63822c1da14216c0516b3ba3a15b" title=" " alt="" coords="5,5,156,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,29,156,29,156,24,188,24"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="204,47,366,73"/>
+<area shape="rect" id="Node000002" href="$spi_2spi_8h.html#ad4f51bdbefa54f2e6fef1e313ac0f270" title=" " alt="" coords="8,5,153,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,47,153,41,154,36,189,42"/>
+<area shape="rect" id="Node000003" href="$uart_2uart_8h.html#ae0df07d6b2030b70ae3c65b98ab0d15a" title=" " alt="" coords="5,72,156,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,78,156,84,156,78,188,73"/>
 </map>

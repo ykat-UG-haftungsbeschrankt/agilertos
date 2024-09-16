@@ -1,14 +1,14 @@
 <map id="_zrtos_vfs_notify_entry_t" name="_zrtos_vfs_notify_entry_t">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,187,170,213"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__vfs__notify__t.html" title=" " alt="" coords="139,293,268,320"/>
-<area shape="poly" id="edge5_Node000002_Node000001" title=" " alt="" coords="82,229,81,249,87,268,110,287,140,298,138,303,108,292,83,271,75,250,76,228"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,287,144,271,130,256,117,239,97,216,101,212,122,236,134,252,147,267,168,283"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__vfs__notify__t.html" title=" " alt="" coords="137,277,265,304"/>
+<area shape="poly" id="edge5_Node000002_Node000001" title=" " alt="" coords="91,228,95,241,102,252,118,265,137,275,135,279,115,269,98,255,90,243,86,229"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,270,102,216,105,212,174,266"/>
 <area shape="rect" id="Node000003" href="$struct__zrtos__vfs__fd__set__t.html" title=" " alt="" coords="193,187,326,213"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,229,231,271,215,295,211,292,227,268,247,227"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,228,211,278,207,275,241,225"/>
 <area shape="rect" id="Node000004" href="$structzrtos__bitfield__t.html" title=" " alt="" coords="207,96,312,123"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="262,138,262,186,257,186,257,138"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="229,5,290,32"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="262,48,262,95,257,95,257,48"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="350,187,444,213"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="366,224,282,272,233,295,231,290,280,267,363,219"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="356,223,230,279,228,274,354,218"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="wiz_NetTimeout_t" name="wiz_NetTimeout_t">
+<area shape="rect" id="Node000001" title="Used in CN_SET_TIMEOUT or CN_GET_TIMEOUT of ctlwizchip() for timeout configruation." alt="" coords="17,96,142,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,66,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="36,47,42,71,50,83,62,94,58,98,46,87,37,73,31,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="90,5,157,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="113,47,88,97,83,94,108,45"/>
+</map>

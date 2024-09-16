@@ -94,21 +94,19 @@ $(function(){initNavTree('avr_2spi_2spi_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">spi.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/interrupt.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;avr/interrupt.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="vfs__plugin_8h_source.html">zrtos/vfs_plugin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="spi_2spi_8h_source.html">zrtos/vfs/module/spi/spi.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="gpio_8h_source.html">zrtos/gpio.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="malloc_8h_source.html">zrtos/malloc.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="cbuffer_8h_source.html">zrtos/cbuffer.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="binary_8h_source.html">zrtos/binary.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for avr/spi/spi.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h__incl.svg" width="1151" height="427"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h__incl.svg" width="2054" height="667"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="avr_2spi_2spi_8h_source.html">Go to the source code of this file.</a></p>
@@ -117,16 +115,27 @@ Include dependency graph for avr/spi/spi.h:</div>
 Functions</h2></td></tr>
 <tr class="memitem:a3a0f3b324bd986778ccde00670dbabc9" id="r_a3a0f3b324bd986778ccde00670dbabc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a> ()</td></tr>
 <tr class="separator:a3a0f3b324bd986778ccde00670dbabc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4635b3cf0625e8697fcf3c6176f116a3" id="r_a4635b3cf0625e8697fcf3c6176f116a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4635b3cf0625e8697fcf3c6176f116a3">ISR</a> (SPI__STC_vect)</td></tr>
-<tr class="separator:a4635b3cf0625e8697fcf3c6176f116a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0353f98d744b931e541684fe33b272f7" id="r_a0353f98d744b931e541684fe33b272f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0353f98d744b931e541684fe33b272f7">ISR</a> (SPI_STC_vect, ISR_NOBLOCK)</td></tr>
+<tr class="separator:a0353f98d744b931e541684fe33b272f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1429a164723e9eff5e3f28991322267" id="r_ae1429a164723e9eff5e3f28991322267"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1429a164723e9eff5e3f28991322267">zrtos_vfs_module_avr_spi__on_mount</a> (<a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *thiz)</td></tr>
+<tr class="separator:ae1429a164723e9eff5e3f28991322267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ba1c970e4b5a19a4ea6648877089686" id="r_a0ba1c970e4b5a19a4ea6648877089686"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ba1c970e4b5a19a4ea6648877089686">zrtos_vfs_module_avr_spi__on_umount</a> (<a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *thiz)</td></tr>
+<tr class="separator:a0ba1c970e4b5a19a4ea6648877089686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6f547c3ce7ee0463c235abe078f9491" id="r_ab6f547c3ce7ee0463c235abe078f9491"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out)</td></tr>
 <tr class="separator:ab6f547c3ce7ee0463c235abe078f9491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5bd1f43dda2caad5d9123e38f31d3535" id="r_a5bd1f43dda2caad5d9123e38f31d3535"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5bd1f43dda2caad5d9123e38f31d3535">ZRTOS_VFS_PLUGIN__INIT</a> (avr_spi, <a class="el" href="vfs__plugin_8h.html#ad3bc48c9919c812078d73161f5862446">ZRTOS_VFS_PLUGIN__0_ON_OPEN</a>(<a class="el" href="spi_2spi_8h.html#a2b1a737572f04d30eff7cfa9c6911fed">zrtos_vfs_module_spi__on_open</a>) <a class="el" href="vfs__plugin_8h.html#a6cdcc3ba79f039cdb0e1962b9a918eb7">ZRTOS_VFS_PLUGIN__1_ON_CLOSE</a>(<a class="el" href="spi_2spi_8h.html#a826707272b70b23c5ad24939f3115ca1">zrtos_vfs_module_spi__on_close</a>) <a class="el" href="vfs__plugin_8h.html#a5cb5ef84327275a2f1cfd47e3488d3d3">ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a1b36e3d8c2f00cc6ec0cb09536108a50">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="spi_2spi_8h.html#aa716f787c62ac9a980729df0fc9aa6e9">zrtos_vfs_module_spi__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="spi_2spi_8h.html#ae9ec912577b7ab2bf0b54a44d131556a">zrtos_vfs_module_spi__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="spi_2spi_8h.html#ab93abfacf91e2b203789d39463dfb39b">zrtos_vfs_module_spi__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="spi_2spi_8h.html#a9ac4a098eaca792cc002870c820c1a01">zrtos_vfs_module_spi__on_ioctl</a>))</td></tr>
-<tr class="separator:a5bd1f43dda2caad5d9123e38f31d3535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8664c0b21dce3ffb203af0264c0327" id="r_a2f8664c0b21dce3ffb203af0264c0327"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f8664c0b21dce3ffb203af0264c0327">ZRTOS_VFS_PLUGIN__INIT</a> (avr_spi, <a class="el" href="vfs__plugin_8h.html#ad3bc48c9919c812078d73161f5862446">ZRTOS_VFS_PLUGIN__0_ON_OPEN</a>(<a class="el" href="spi_2spi_8h.html#a84e4550a13a34fed223005adbf4b7e26">zrtos_vfs_module_spi__on_open</a>) <a class="el" href="vfs__plugin_8h.html#a6cdcc3ba79f039cdb0e1962b9a918eb7">ZRTOS_VFS_PLUGIN__1_ON_CLOSE</a>(<a class="el" href="spi_2spi_8h.html#a465a4b80404ccda918e86214c769f3c9">zrtos_vfs_module_spi__on_close</a>) <a class="el" href="vfs__plugin_8h.html#a05b8a1bcf795c6ab354030e4c1cd9cd5">ZRTOS_VFS_PLUGIN__2_ON_MOUNT</a>(<a class="el" href="#ae1429a164723e9eff5e3f28991322267">zrtos_vfs_module_avr_spi__on_mount</a>) <a class="el" href="vfs__plugin_8h.html#a095caec19b2f1ad0593770f30e2d5af9">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT</a>(<a class="el" href="#a0ba1c970e4b5a19a4ea6648877089686">zrtos_vfs_module_avr_spi__on_umount</a>) <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="spi_2spi_8h.html#aa716f787c62ac9a980729df0fc9aa6e9">zrtos_vfs_module_spi__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="spi_2spi_8h.html#ad4f51bdbefa54f2e6fef1e313ac0f270">zrtos_vfs_module_spi__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="spi_2spi_8h.html#ac230077948342ec1efa7a370551d09c6">zrtos_vfs_module_spi__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="spi_2spi_8h.html#a9ac4a098eaca792cc002870c820c1a01">zrtos_vfs_module_spi__on_ioctl</a>))</td></tr>
+<tr class="separator:a2f8664c0b21dce3ffb203af0264c0327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a23ef9433c35a9fe8d3efd0182dde5cc2" id="r_a23ef9433c35a9fe8d3efd0182dde5cc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="spi_2spi_8h.html#ad6e11fd525d9eab9f6e1ebbb4170011b">zrtos_vfs_module_spi_inode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a></td></tr>
+<tr class="separator:a23ef9433c35a9fe8d3efd0182dde5cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3770ba28229e7f2f2ff59c27800d4853" id="r_a3770ba28229e7f2f2ff59c27800d4853"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3770ba28229e7f2f2ff59c27800d4853">zrtos_vfs_module_avr_spi__isr_complete</a> = true</td></tr>
+<tr class="separator:a3770ba28229e7f2f2ff59c27800d4853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4635b3cf0625e8697fcf3c6176f116a3" name="a4635b3cf0625e8697fcf3c6176f116a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4635b3cf0625e8697fcf3c6176f116a3">&#9670;&#160;</a></span>ISR()</h2>
+<a id="a0353f98d744b931e541684fe33b272f7" name="a0353f98d744b931e541684fe33b272f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0353f98d744b931e541684fe33b272f7">&#9670;&#160;</a></span>ISR()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,21 +143,25 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ISR </td>
           <td>(</td>
-          <td class="paramtype">SPI__STC_vect</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">SPI_STC_vect</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">ISR_NOBLOCK</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00040">40</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                  {</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a>();</div>
-<div class="line"><span class="lineno">   42</span>}</div>
-<div class="ttc" id="aavr_2spi_2spi_8h_html_a3a0f3b324bd986778ccde00670dbabc9"><div class="ttname"><a href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a></div><div class="ttdeci">void zrtos_vfs_module_avr_spi__on_interrupt()</div><div class="ttdef"><b>Definition</b> <a href="avr_2spi_2spi_8h_source.html#l00027">avr/spi/spi.h:27</a></div></div>
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00041">41</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                             {</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a>();</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="ttc" id="aavr_2spi_2spi_8h_html_a3a0f3b324bd986778ccde00670dbabc9"><div class="ttname"><a href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a></div><div class="ttdeci">void zrtos_vfs_module_avr_spi__on_interrupt()</div><div class="ttdef"><b>Definition</b> <a href="avr_2spi_2spi_8h_source.html#l00022">avr/spi/spi.h:22</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a4635b3cf0625e8697fcf3c6176f116a3_cgraph.svg" width="2088" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a0353f98d744b931e541684fe33b272f7_cgraph.svg" width="2348" height="998"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -168,32 +181,101 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00027">27</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>                                             {</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a>(<a class="code hl_function" href="spi_2spi_8h.html#a1f0a277c921e26c6d3039a3959ca23b5">zrtos_vfs_module_spi__transfer</a>(</div>
-<div class="line"><span class="lineno">   29</span>         &amp;zrtos_vfs_module_spi</div>
-<div class="line"><span class="lineno">   30</span>        ,(<span class="keywordtype">void</span>*)SPDR</div>
-<div class="line"><span class="lineno">   31</span>        ,(<span class="keywordtype">void</span>*)SPDR</div>
-<div class="line"><span class="lineno">   32</span>        ,<span class="keyword">sizeof</span>(uint8_t)</div>
-<div class="line"><span class="lineno">   33</span>    ))){</div>
-<div class="line"><span class="lineno">   34</span>        SPCR &amp;= ~_BV(SPIE);</div>
-<div class="line"><span class="lineno">   35</span>    }<span class="keywordflow">else</span>{</div>
-<div class="line"><span class="lineno">   36</span>        SPCR |= _BV(SPIE);</div>
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00022">22</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>                                             {</div>
+<div class="line"><span class="lineno">   23</span>    uint8_t data_in = SPDR;</div>
+<div class="line"><span class="lineno">   24</span>    uint8_t data_out;</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> err = <a class="code hl_function" href="spi_2spi_8h.html#ab31c12597a3f2932aaf01466ffff59bb">zrtos_vfs_module_spi__transfer</a>(</div>
+<div class="line"><span class="lineno">   26</span>         <a class="code hl_variable" href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a></div>
+<div class="line"><span class="lineno">   27</span>        ,(<span class="keywordtype">void</span>*)&amp;data_in</div>
+<div class="line"><span class="lineno">   28</span>        ,(<span class="keywordtype">void</span>*)&amp;data_out</div>
+<div class="line"><span class="lineno">   29</span>        ,<span class="keyword">sizeof</span>(uint8_t)</div>
+<div class="line"><span class="lineno">   30</span>    );</div>
+<div class="line"><span class="lineno">   31</span> </div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">if</span>((<a class="code hl_variable" href="#a3770ba28229e7f2f2ff59c27800d4853">zrtos_vfs_module_avr_spi__isr_complete</a> = <a class="code hl_function" href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a>(err))){</div>
+<div class="line"><span class="lineno">   33</span>        SPCR = 0;</div>
+<div class="line"><span class="lineno">   34</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   35</span>        SPCR = <a class="code hl_variable" href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__args__t.html#a86b0ea0bc3671f4d4ae2255cad1d5871">last</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__file__t.html#a7a84b94d97eb40943f7a3af48e2d60ad">control</a>;</div>
+<div class="line"><span class="lineno">   36</span>        SPDR = data_out;</div>
 <div class="line"><span class="lineno">   37</span>    }</div>
-<div class="line"><span class="lineno">   38</span>}</div>
-<div class="ttc" id="aerror_8h_html_af58428a30fbc7fd6967e15504df633a0"><div class="ttname"><a href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a></div><div class="ttdeci">bool zrtos_error__is_error(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00155">error.h:155</a></div></div>
-<div class="ttc" id="aspi_2spi_8h_html_a1f0a277c921e26c6d3039a3959ca23b5"><div class="ttname"><a href="spi_2spi_8h.html#a1f0a277c921e26c6d3039a3959ca23b5">zrtos_vfs_module_spi__transfer</a></div><div class="ttdeci">void zrtos_vfs_module_spi__transfer(zrtos_vfs_module_spi_args_t *thiz, void *data_in, void *data_out, size_t len, zrtos_error_t(*on_before_file_transfer)(zrtos_vfs_module_spi_file_t *thiz), zrtos_error_t(*on_after_file_transfer)(zrtos_vfs_module_spi_file_t *thiz))</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00252">spi/spi.h:252</a></div></div>
+<div class="line"><span class="lineno">   38</span> </div>
+<div class="line"><span class="lineno">   39</span>}</div>
+<div class="ttc" id="aavr_2spi_2spi_8h_html_a23ef9433c35a9fe8d3efd0182dde5cc2"><div class="ttname"><a href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a></div><div class="ttdeci">zrtos_vfs_module_spi_inode_t * zrtos_vfs_module_avr_spi__ctx</div><div class="ttdef"><b>Definition</b> <a href="avr_2spi_2spi_8h_source.html#l00019">avr/spi/spi.h:19</a></div></div>
+<div class="ttc" id="aavr_2spi_2spi_8h_html_a3770ba28229e7f2f2ff59c27800d4853"><div class="ttname"><a href="#a3770ba28229e7f2f2ff59c27800d4853">zrtos_vfs_module_avr_spi__isr_complete</a></div><div class="ttdeci">bool zrtos_vfs_module_avr_spi__isr_complete</div><div class="ttdef"><b>Definition</b> <a href="avr_2spi_2spi_8h_source.html#l00020">avr/spi/spi.h:20</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00020">error.h:20</a></div></div>
+<div class="ttc" id="aerror_8h_html_af58428a30fbc7fd6967e15504df633a0"><div class="ttname"><a href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a></div><div class="ttdeci">bool zrtos_error__is_error(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00156">error.h:156</a></div></div>
+<div class="ttc" id="aspi_2spi_8h_html_ab31c12597a3f2932aaf01466ffff59bb"><div class="ttname"><a href="spi_2spi_8h.html#ab31c12597a3f2932aaf01466ffff59bb">zrtos_vfs_module_spi__transfer</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_spi__transfer(zrtos_vfs_module_spi_inode_t *thiz, void *data_in, void *data_out, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00286">spi/spi.h:286</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__args__t_html_a86b0ea0bc3671f4d4ae2255cad1d5871"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__args__t.html#a86b0ea0bc3671f4d4ae2255cad1d5871">_zrtos_vfs_module_spi_args_t::last</a></div><div class="ttdeci">zrtos_vfs_module_spi_file_t * last</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00076">spi/spi.h:76</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__file__t_html_a7a84b94d97eb40943f7a3af48e2d60ad"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__file__t.html#a7a84b94d97eb40943f7a3af48e2d60ad">_zrtos_vfs_module_spi_file_t::control</a></div><div class="ttdeci">zrtos_vfs_module_spi_control_t control</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00065">spi/spi.h:65</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a3a0f3b324bd986778ccde00670dbabc9_cgraph.svg" width="1999" height="147"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a3a0f3b324bd986778ccde00670dbabc9_cgraph.svg" width="2258" height="998"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a3a0f3b324bd986778ccde00670dbabc9_icgraph.svg" width="348" height="128"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_a3a0f3b324bd986778ccde00670dbabc9_icgraph.svg" width="348" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
+</div>
+</div>
+<a id="ae1429a164723e9eff5e3f28991322267" name="ae1429a164723e9eff5e3f28991322267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1429a164723e9eff5e3f28991322267">&#9670;&#160;</a></span>zrtos_vfs_module_avr_spi__on_mount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_avr_spi__on_mount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00045">45</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>                                                                          {</div>
+<div class="line"><span class="lineno">   46</span>    <a class="code hl_variable" href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a> = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">   47</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__args__t.html">zrtos_vfs_module_spi_inode_t</a>*</div>
+<div class="line"><span class="lineno">   48</span>        ,<a class="code hl_function" href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a>(thiz)</div>
+<div class="line"><span class="lineno">   49</span>    );</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00018">cast.h:18</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div><div class="ttdeci">@ ZRTOS_ERROR__SUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00023">error.h:22</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__args__t.html">_zrtos_vfs_module_spi_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00070">spi/spi.h:70</a></div></div>
+<div class="ttc" id="avfs__dentry_8h_html_a8f39a2645b3699977cef8f8d096f9614"><div class="ttname"><a href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_dentry__get_inode_data(zrtos_vfs_dentry_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__dentry_8h_source.html#l00196">vfs_dentry.h:196</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_ae1429a164723e9eff5e3f28991322267_cgraph.svg" width="351" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a0ba1c970e4b5a19a4ea6648877089686" name="a0ba1c970e4b5a19a4ea6648877089686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba1c970e4b5a19a4ea6648877089686">&#9670;&#160;</a></span>zrtos_vfs_module_avr_spi__on_umount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_avr_spi__on_umount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00053">53</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                                           {</div>
+<div class="line"><span class="lineno">   54</span>    <a class="code hl_variable" href="#a23ef9433c35a9fe8d3efd0182dde5cc2">zrtos_vfs_module_avr_spi__ctx</a> = 0;</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   56</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab6f547c3ce7ee0463c235abe078f9491" name="ab6f547c3ce7ee0463c235abe078f9491"></a>
@@ -235,39 +317,52 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00044">44</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span> {</div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a>(</div>
-<div class="line"><span class="lineno">   53</span>         thiz</div>
-<div class="line"><span class="lineno">   54</span>        ,path</div>
-<div class="line"><span class="lineno">   55</span>        ,buf</div>
-<div class="line"><span class="lineno">   56</span>        ,len</div>
-<div class="line"><span class="lineno">   57</span>        ,offset</div>
-<div class="line"><span class="lineno">   58</span>        ,out</div>
-<div class="line"><span class="lineno">   59</span>    );</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
-<div class="line"><span class="lineno">   61</span>        <a class="code hl_function" href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a>();</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">   64</span>}</div>
-<div class="ttc" id="aavr_2spi_2spi_8h_html_ab6f547c3ce7ee0463c235abe078f9491"><div class="ttname"><a href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_avr_spi__on_write(zrtos_vfs_file_t *thiz, char *path, void *buf, size_t len, zrtos_vfs_offset_t offset, size_t *out)</div><div class="ttdef"><b>Definition</b> <a href="avr_2spi_2spi_8h_source.html#l00044">avr/spi/spi.h:44</a></div></div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00019">error.h:19</a></div></div>
-<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00151">error.h:151</a></div></div>
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00058">58</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   65</span> {</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__file__t.html">zrtos_vfs_module_spi_file_t</a> *file_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">   67</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__file__t.html">zrtos_vfs_module_spi_file_t</a>*</div>
+<div class="line"><span class="lineno">   68</span>        ,<a class="code hl_function" href="vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5">zrtos_vfs_file__get_data</a>(thiz)</div>
+<div class="line"><span class="lineno">   69</span>    );</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="spi_2spi_8h.html#ac672df98eac652a9d1925ba73229c475">zrtos_vfs_module_spi__on_write</a>(</div>
+<div class="line"><span class="lineno">   71</span>         thiz</div>
+<div class="line"><span class="lineno">   72</span>        ,path</div>
+<div class="line"><span class="lineno">   73</span>        ,buf</div>
+<div class="line"><span class="lineno">   74</span>        ,len</div>
+<div class="line"><span class="lineno">   75</span>        ,offset</div>
+<div class="line"><span class="lineno">   76</span>        ,out</div>
+<div class="line"><span class="lineno">   77</span>    );</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_define" href="atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a>();</div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)</div>
+<div class="line"><span class="lineno">   81</span>    &amp;&amp; file_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__file__t.html#a7a84b94d97eb40943f7a3af48e2d60ad">control</a> &amp; <a class="code hl_enumvalue" href="spi_2spi_8h.html#aa18c3fc8bd5caf8f0ec8e01101c7af80af689d5e2a51d08432e706a176f2be661">ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASTER</a></div>
+<div class="line"><span class="lineno">   82</span>    &amp;&amp; <a class="code hl_variable" href="#a3770ba28229e7f2f2ff59c27800d4853">zrtos_vfs_module_avr_spi__isr_complete</a>){</div>
+<div class="line"><span class="lineno">   83</span>        <a class="code hl_variable" href="#a3770ba28229e7f2f2ff59c27800d4853">zrtos_vfs_module_avr_spi__isr_complete</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   84</span>        <a class="code hl_define" href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="#a3a0f3b324bd986778ccde00670dbabc9">zrtos_vfs_module_avr_spi__on_interrupt</a>();</div>
+<div class="line"><span class="lineno">   87</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   88</span>        <a class="code hl_define" href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+<div class="line"><span class="lineno">   90</span>    </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">   92</span>}</div>
+<div class="ttc" id="aatmega2560_8h_html_ac6b5c40219e3521c23691efdfc83755a"><div class="ttname"><a href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__ENABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00046">atmega2560.h:46</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_ad5a640e25694a864d28136fc49133f62"><div class="ttname"><a href="atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__DISABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00043">atmega2560.h:43</a></div></div>
+<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00152">error.h:152</a></div></div>
+<div class="ttc" id="aspi_2spi_8h_html_aa18c3fc8bd5caf8f0ec8e01101c7af80af689d5e2a51d08432e706a176f2be661"><div class="ttname"><a href="spi_2spi_8h.html#aa18c3fc8bd5caf8f0ec8e01101c7af80af689d5e2a51d08432e706a176f2be661">ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASTER</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_SPI_CONTROL__MODE_MASTER</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00041">spi/spi.h:40</a></div></div>
+<div class="ttc" id="aspi_2spi_8h_html_ac672df98eac652a9d1925ba73229c475"><div class="ttname"><a href="spi_2spi_8h.html#ac672df98eac652a9d1925ba73229c475">zrtos_vfs_module_spi__on_write</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_spi__on_write(zrtos_vfs_file_t *thiz, char *path, void *buf, size_t len, zrtos_vfs_offset_t offset, size_t *out)</div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00364">spi/spi.h:364</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__file__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__file__t.html">_zrtos_vfs_module_spi_file_t</a></div><div class="ttdef"><b>Definition</b> <a href="spi_2spi_8h_source.html#l00060">spi/spi.h:60</a></div></div>
+<div class="ttc" id="avfs__file_8h_html_a54d958c5b0506ceeba5e57caf04631b5"><div class="ttname"><a href="vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5">zrtos_vfs_file__get_data</a></div><div class="ttdeci">void * zrtos_vfs_file__get_data(zrtos_vfs_file_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__file_8h_source.html#l00199">vfs_file.h:199</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_ab6f547c3ce7ee0463c235abe078f9491_cgraph.svg" width="2191" height="175"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_ab6f547c3ce7ee0463c235abe078f9491_icgraph.svg" width="155" height="78"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2spi_2spi_8h_ab6f547c3ce7ee0463c235abe078f9491_cgraph.svg" width="2226" height="1270"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a5bd1f43dda2caad5d9123e38f31d3535" name="a5bd1f43dda2caad5d9123e38f31d3535"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bd1f43dda2caad5d9123e38f31d3535">&#9670;&#160;</a></span>ZRTOS_VFS_PLUGIN__INIT()</h2>
+<a id="a2f8664c0b21dce3ffb203af0264c0327" name="a2f8664c0b21dce3ffb203af0264c0327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8664c0b21dce3ffb203af0264c0327">&#9670;&#160;</a></span>ZRTOS_VFS_PLUGIN__INIT()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -280,10 +375,43 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="vfs__plugin_8h.html#ad3bc48c9919c812078d73161f5862446">ZRTOS_VFS_PLUGIN__0_ON_OPEN</a>(<a class="el" href="spi_2spi_8h.html#a2b1a737572f04d30eff7cfa9c6911fed">zrtos_vfs_module_spi__on_open</a>) <a class="el" href="vfs__plugin_8h.html#a6cdcc3ba79f039cdb0e1962b9a918eb7">ZRTOS_VFS_PLUGIN__1_ON_CLOSE</a>(<a class="el" href="spi_2spi_8h.html#a826707272b70b23c5ad24939f3115ca1">zrtos_vfs_module_spi__on_close</a>) <a class="el" href="vfs__plugin_8h.html#a5cb5ef84327275a2f1cfd47e3488d3d3">ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a1b36e3d8c2f00cc6ec0cb09536108a50">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="spi_2spi_8h.html#aa716f787c62ac9a980729df0fc9aa6e9">zrtos_vfs_module_spi__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="spi_2spi_8h.html#ae9ec912577b7ab2bf0b54a44d131556a">zrtos_vfs_module_spi__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="spi_2spi_8h.html#ab93abfacf91e2b203789d39463dfb39b">zrtos_vfs_module_spi__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="spi_2spi_8h.html#a9ac4a098eaca792cc002870c820c1a01">zrtos_vfs_module_spi__on_ioctl</a>)</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="vfs__plugin_8h.html#ad3bc48c9919c812078d73161f5862446">ZRTOS_VFS_PLUGIN__0_ON_OPEN</a>(<a class="el" href="spi_2spi_8h.html#a84e4550a13a34fed223005adbf4b7e26">zrtos_vfs_module_spi__on_open</a>) <a class="el" href="vfs__plugin_8h.html#a6cdcc3ba79f039cdb0e1962b9a918eb7">ZRTOS_VFS_PLUGIN__1_ON_CLOSE</a>(<a class="el" href="spi_2spi_8h.html#a465a4b80404ccda918e86214c769f3c9">zrtos_vfs_module_spi__on_close</a>) <a class="el" href="vfs__plugin_8h.html#a05b8a1bcf795c6ab354030e4c1cd9cd5">ZRTOS_VFS_PLUGIN__2_ON_MOUNT</a>(<a class="el" href="#ae1429a164723e9eff5e3f28991322267">zrtos_vfs_module_avr_spi__on_mount</a>) <a class="el" href="vfs__plugin_8h.html#a095caec19b2f1ad0593770f30e2d5af9">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT</a>(<a class="el" href="#a0ba1c970e4b5a19a4ea6648877089686">zrtos_vfs_module_avr_spi__on_umount</a>) <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="spi_2spi_8h.html#aa716f787c62ac9a980729df0fc9aa6e9">zrtos_vfs_module_spi__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ab6f547c3ce7ee0463c235abe078f9491">zrtos_vfs_module_avr_spi__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="spi_2spi_8h.html#ad4f51bdbefa54f2e6fef1e313ac0f270">zrtos_vfs_module_spi__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="spi_2spi_8h.html#ac230077948342ec1efa7a370551d09c6">zrtos_vfs_module_spi__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="spi_2spi_8h.html#a9ac4a098eaca792cc002870c820c1a01">zrtos_vfs_module_spi__on_ioctl</a>)</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a23ef9433c35a9fe8d3efd0182dde5cc2" name="a23ef9433c35a9fe8d3efd0182dde5cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ef9433c35a9fe8d3efd0182dde5cc2">&#9670;&#160;</a></span>zrtos_vfs_module_avr_spi__ctx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="spi_2spi_8h.html#ad6e11fd525d9eab9f6e1ebbb4170011b">zrtos_vfs_module_spi_inode_t</a>* zrtos_vfs_module_avr_spi__ctx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00019">19</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a3770ba28229e7f2f2ff59c27800d4853" name="a3770ba28229e7f2f2ff59c27800d4853"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3770ba28229e7f2f2ff59c27800d4853">&#9670;&#160;</a></span>zrtos_vfs_module_avr_spi__isr_complete</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zrtos_vfs_module_avr_spi__isr_complete = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2spi_2spi_8h_source.html#l00020">20</a> of file <a class="el" href="avr_2spi_2spi_8h_source.html">avr/spi/spi.h</a>.</p>
 
 </div>
 </div>

@@ -95,7 +95,9 @@ $(function(){initNavTree('rtu_8h.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">rtu.h File Reference</div></div>
 </div><!--header-->
@@ -103,10 +105,12 @@ $(function(){initNavTree('rtu_8h.html',''); initResizable(); });
 <div class="textblock"><code>#include &lt;<a class="el" href="vfs__plugin_8h_source.html">zrtos/vfs_plugin.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="cbuffer_8h_source.html">zrtos/cbuffer.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="msg__queue_8h_source.html">zrtos/msg_queue.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="error__count_8h_source.html">zrtos/error_count.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="uart_2uart_8h_source.html">zrtos/vfs/module/uart/uart.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for rtu.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h__incl.svg" width="715" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h__incl.svg" width="1047" height="502"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="rtu_8h_source.html">Go to the source code of this file.</a></p>
@@ -116,21 +120,46 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a24dd0eb19fcaac2ad2d835c432924d62" id="r_a24dd0eb19fcaac2ad2d835c432924d62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24dd0eb19fcaac2ad2d835c432924d62">ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="separator:a24dd0eb19fcaac2ad2d835c432924d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a34ef2e20b12e9dca4447707d73d71b1f" id="r_a34ef2e20b12e9dca4447707d73d71b1f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a></td></tr>
-<tr class="separator:a34ef2e20b12e9dca4447707d73d71b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3df4c8549c5b70b81155252706979c2" id="r_ae3df4c8549c5b70b81155252706979c2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a></td></tr>
+<tr class="separator:ae3df4c8549c5b70b81155252706979c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a46f0aed3482ce6b23d178d7a69654f74" id="r_a46f0aed3482ce6b23d178d7a69654f74"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46f0aed3482ce6b23d178d7a69654f74">zrtos_vfs_module_modbus_rtu_ioctl_t</a> { <br />
+&#160;&#160;<a class="el" href="#a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT</a>
+, <br />
+&#160;&#160;<a class="el" href="#a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT</a>
+<br />
+ }</td></tr>
+<tr class="separator:a46f0aed3482ce6b23d178d7a69654f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad02818ad75f59c11e0e5a2d3606954ca" id="r_ad02818ad75f59c11e0e5a2d3606954ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad02818ad75f59c11e0e5a2d3606954ca">zrtos_vfs_module_modbus_rtu_args__init</a> (<a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *thiz)</td></tr>
-<tr class="separator:ad02818ad75f59c11e0e5a2d3606954ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1855c04ab16d1f94e6b009ea9bf67ebb" id="r_a1855c04ab16d1f94e6b009ea9bf67ebb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msg__queue_8h.html#ac761a0df283af25eef8aade0025c2b4a">zrtos_msg_queue_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1855c04ab16d1f94e6b009ea9bf67ebb">zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in</a> (<a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *thiz)</td></tr>
-<tr class="separator:a1855c04ab16d1f94e6b009ea9bf67ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40ff3dafa0a52205f4aa70ffddd1d305" id="r_a40ff3dafa0a52205f4aa70ffddd1d305"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40ff3dafa0a52205f4aa70ffddd1d305">zrtos_vfs_module_modbus_rtu_args__set_error</a> (<a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *thiz, <a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> error)</td></tr>
-<tr class="separator:a40ff3dafa0a52205f4aa70ffddd1d305"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abbe7a51a95d3f9ae6ae58f59a4acdee3" id="r_abbe7a51a95d3f9ae6ae58f59a4acdee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbe7a51a95d3f9ae6ae58f59a4acdee3">zrtos_vfs_module_modbus_rtu_args__get_error</a> (<a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *thiz)</td></tr>
-<tr class="separator:abbe7a51a95d3f9ae6ae58f59a4acdee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185cffe76be1b6316d00295e31e73fc8" id="r_a185cffe76be1b6316d00295e31e73fc8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a185cffe76be1b6316d00295e31e73fc8">zrtos_vfs_module_modbus_rtu__crc</a> (void *callback_args, <a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> ch)</td></tr>
+<tr class="separator:a185cffe76be1b6316d00295e31e73fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa413ad116104478c8f81c06609da6f3a" id="r_aa413ad116104478c8f81c06609da6f3a"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa413ad116104478c8f81c06609da6f3a">zrtos_vfs_module_modbus_rtu__crc_str</a> (<a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *data, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len)</td></tr>
+<tr class="separator:aa413ad116104478c8f81c06609da6f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb020f95eab8e3890e128952fc2de976" id="r_adb020f95eab8e3890e128952fc2de976"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb020f95eab8e3890e128952fc2de976">zrtos_vfs_module_modbus_rtu__cmp_crc</a> (uint16_t crc, uint16_t crc_msg)</td></tr>
+<tr class="separator:adb020f95eab8e3890e128952fc2de976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223fc39dfd241ff17884c9f5d03f8e78" id="r_a223fc39dfd241ff17884c9f5d03f8e78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223fc39dfd241ff17884c9f5d03f8e78">zrtos_vfs_module_modbus_rtu__on_recv_timeout</a> (void *thiz)</td></tr>
+<tr class="separator:a223fc39dfd241ff17884c9f5d03f8e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab23606290979709ef6fefa7c6970e64e" id="r_ab23606290979709ef6fefa7c6970e64e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab23606290979709ef6fefa7c6970e64e">zrtos_vfs_module_modbus_rtu__on_send</a> (void *callback_data)</td></tr>
+<tr class="separator:ab23606290979709ef6fefa7c6970e64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a54d6a69caba7cbda8da49a5054790" id="r_a87a54d6a69caba7cbda8da49a5054790"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87a54d6a69caba7cbda8da49a5054790">zrtos_vfs_module_modbus_rtu__on_recv</a> (void *callback_data)</td></tr>
+<tr class="separator:a87a54d6a69caba7cbda8da49a5054790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac1c0a8f15ec0cd7540f53a61fe9ff08" id="r_aac1c0a8f15ec0cd7540f53a61fe9ff08"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac1c0a8f15ec0cd7540f53a61fe9ff08">zrtos_vfs_module_modbus_rtu_args__init</a> (<a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *thiz, <a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *uart, char *timeout_path)</td></tr>
+<tr class="separator:aac1c0a8f15ec0cd7540f53a61fe9ff08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2120ac2fb531eed3e9c0ecded6a8e37a" id="r_a2120ac2fb531eed3e9c0ecded6a8e37a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msg__queue_8h.html#ac761a0df283af25eef8aade0025c2b4a">zrtos_msg_queue_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2120ac2fb531eed3e9c0ecded6a8e37a">zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in</a> (<a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *thiz)</td></tr>
+<tr class="separator:a2120ac2fb531eed3e9c0ecded6a8e37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4d2011b7c2380590f89e56ca6f0566" id="r_afd4d2011b7c2380590f89e56ca6f0566"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msg__queue_8h.html#ac761a0df283af25eef8aade0025c2b4a">zrtos_msg_queue_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd4d2011b7c2380590f89e56ca6f0566">zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out</a> (<a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *thiz)</td></tr>
+<tr class="separator:afd4d2011b7c2380590f89e56ca6f0566"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea13c3756fb07d48853e039823a846b1" id="r_aea13c3756fb07d48853e039823a846b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea13c3756fb07d48853e039823a846b1">zrtos_vfs_module_modbus_rtu__on_read</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out)</td></tr>
 <tr class="separator:aea13c3756fb07d48853e039823a846b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0ca767b3e1e9a8b1f290448a122e095" id="r_ac0ca767b3e1e9a8b1f290448a122e095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0ca767b3e1e9a8b1f290448a122e095">zrtos_vfs_module_modbus_rtu__on_write</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out)</td></tr>
@@ -139,23 +168,210 @@ Functions</h2></td></tr>
 <tr class="separator:ab6a665819054d99f132b4cb31b0d6d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b289583342710be77976d7ef9efdc02" id="r_a6b289583342710be77976d7ef9efdc02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b289583342710be77976d7ef9efdc02">zrtos_vfs_module_modbus_rtu__on_can_write</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path)</td></tr>
 <tr class="separator:a6b289583342710be77976d7ef9efdc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08670f8758ac6130c738816d306eb923" id="r_a08670f8758ac6130c738816d306eb923"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08670f8758ac6130c738816d306eb923">zrtos_vfs_module_modbus_rtu__on_ioctl</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, int request, va_list args)</td></tr>
+<tr class="separator:a08670f8758ac6130c738816d306eb923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e683dd0b5859c3bd7f89f7b3baf970" id="r_ae4e683dd0b5859c3bd7f89f7b3baf970"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4e683dd0b5859c3bd7f89f7b3baf970">ZRTOS_VFS_PLUGIN__INIT</a> (modbus_rtu, <a class="el" href="vfs__plugin_8h.html#ae10018ce622e70fee9de5eb674c75fc8">ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5c4839cd4ecbb8e372eaccd141851bc1">ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5cb5ef84327275a2f1cfd47e3488d3d3">ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a1b36e3d8c2f00cc6ec0cb09536108a50">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="#aea13c3756fb07d48853e039823a846b1">zrtos_vfs_module_modbus_rtu__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ac0ca767b3e1e9a8b1f290448a122e095">zrtos_vfs_module_modbus_rtu__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="#ab6a665819054d99f132b4cb31b0d6d1c">zrtos_vfs_module_modbus_rtu__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="#a6b289583342710be77976d7ef9efdc02">zrtos_vfs_module_modbus_rtu__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="#a08670f8758ac6130c738816d306eb923">zrtos_vfs_module_modbus_rtu__on_ioctl</a>))</td></tr>
+<tr class="separator:ae4e683dd0b5859c3bd7f89f7b3baf970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a34ef2e20b12e9dca4447707d73d71b1f" name="a34ef2e20b12e9dca4447707d73d71b1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ef2e20b12e9dca4447707d73d71b1f">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args_t</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a24dd0eb19fcaac2ad2d835c432924d62" name="a24dd0eb19fcaac2ad2d835c432924d62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24dd0eb19fcaac2ad2d835c432924d62">&#9670;&#160;</a></span>ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a> <a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a></td>
+          <td class="memname">#define ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US&#160;&#160;&#160;1000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00023">23</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ae3df4c8549c5b70b81155252706979c2" name="ae3df4c8549c5b70b81155252706979c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3df4c8549c5b70b81155252706979c2">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_inode_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a> <a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a46f0aed3482ce6b23d178d7a69654f74" name="a46f0aed3482ce6b23d178d7a69654f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f0aed3482ce6b23d178d7a69654f74">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_ioctl_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mcp2515_8h.html#a33e07dd7db25f3cc7f69b2828a735eb3">enum</a> <a class="el" href="#a46f0aed3482ce6b23d178d7a69654f74">zrtos_vfs_module_modbus_rtu_ioctl_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091" name="a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091"></a>ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8" name="a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8"></a>ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00026">26</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>            {</div>
+<div class="line"><span class="lineno">   27</span>     <a class="code hl_enumvalue" href="#a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT</a></div>
+<div class="line"><span class="lineno">   28</span>    ,<a class="code hl_enumvalue" href="#a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT</a></div>
+<div class="line"><span class="lineno">   29</span>}<a class="code hl_enumeration" href="#a46f0aed3482ce6b23d178d7a69654f74">zrtos_vfs_module_modbus_rtu_ioctl_t</a>;</div>
+<div class="ttc" id="artu_8h_html_a46f0aed3482ce6b23d178d7a69654f74"><div class="ttname"><a href="#a46f0aed3482ce6b23d178d7a69654f74">zrtos_vfs_module_modbus_rtu_ioctl_t</a></div><div class="ttdeci">zrtos_vfs_module_modbus_rtu_ioctl_t</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00026">rtu.h:26</a></div></div>
+<div class="ttc" id="artu_8h_html_a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8"><div class="ttname"><a href="#a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00029">rtu.h:28</a></div></div>
+<div class="ttc" id="artu_8h_html_a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091"><div class="ttname"><a href="#a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00028">rtu.h:27</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="adb020f95eab8e3890e128952fc2de976" name="adb020f95eab8e3890e128952fc2de976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb020f95eab8e3890e128952fc2de976">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__cmp_crc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_modbus_rtu__cmp_crc </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>crc</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>crc_msg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00068">68</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span> {</div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">return</span> crc == crc_msg</div>
+<div class="line"><span class="lineno">   73</span>         ? <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div>
+<div class="line"><span class="lineno">   74</span>         : <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19">ZRTOS_ERROR__IO</a></div>
+<div class="line"><span class="lineno">   75</span>    ;</div>
+<div class="line"><span class="lineno">   76</span>}</div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19">ZRTOS_ERROR__IO</a></div><div class="ttdeci">@ ZRTOS_ERROR__IO</div><div class="ttdoc">I/O error.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00030">error.h:29</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div><div class="ttdeci">@ ZRTOS_ERROR__SUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00023">error.h:22</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_adb020f95eab8e3890e128952fc2de976_icgraph.svg" width="630" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a185cffe76be1b6316d00295e31e73fc8" name="a185cffe76be1b6316d00295e31e73fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185cffe76be1b6316d00295e31e73fc8">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__crc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void zrtos_vfs_module_modbus_rtu__crc </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>callback_args</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a></td>          <td class="paramname"><span class="paramname"><em>ch</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00043">43</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                            {</div>
+<div class="line"><span class="lineno">   44</span>    uint16_t *crc_ptr = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint16_t*,callback_args);</div>
+<div class="line"><span class="lineno">   45</span>    uint16_t crc = *crc_ptr;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    crc ^= (uint16_t)ch;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 8; i--;){</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordtype">bool</span> tmp = (crc &amp; 0x0001) != 0;</div>
+<div class="line"><span class="lineno">   51</span>        crc &gt;&gt;= 1;</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span>(tmp){</div>
+<div class="line"><span class="lineno">   53</span>            crc ^= 0xA001;</div>
+<div class="line"><span class="lineno">   54</span>        }</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+<div class="line"><span class="lineno">   56</span> </div>
+<div class="line"><span class="lineno">   57</span>    *crc_ptr = crc;</div>
+<div class="line"><span class="lineno">   58</span>}</div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00018">cast.h:18</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a185cffe76be1b6316d00295e31e73fc8_icgraph.svg" width="630" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aa413ad116104478c8f81c06609da6f3a" name="aa413ad116104478c8f81c06609da6f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa413ad116104478c8f81c06609da6f3a">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__crc_str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t zrtos_vfs_module_modbus_rtu__crc_str </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00060">60</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>                                                                              {</div>
+<div class="line"><span class="lineno">   61</span>    uint16_t crc = 0xffff;</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">while</span>(len--){</div>
+<div class="line"><span class="lineno">   63</span>        <a class="code hl_function" href="#a185cffe76be1b6316d00295e31e73fc8">zrtos_vfs_module_modbus_rtu__crc</a>(&amp;crc,*data++);</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> crc;</div>
+<div class="line"><span class="lineno">   66</span>}</div>
+<div class="ttc" id="artu_8h_html_a185cffe76be1b6316d00295e31e73fc8"><div class="ttname"><a href="#a185cffe76be1b6316d00295e31e73fc8">zrtos_vfs_module_modbus_rtu__crc</a></div><div class="ttdeci">static void zrtos_vfs_module_modbus_rtu__crc(void *callback_args, uint8_t ch)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00043">rtu.h:43</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_aa413ad116104478c8f81c06609da6f3a_cgraph.svg" width="408" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_aa413ad116104478c8f81c06609da6f3a_icgraph.svg" width="408" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="ab6a665819054d99f132b4cb31b0d6d1c" name="ab6a665819054d99f132b4cb31b0d6d1c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6a665819054d99f132b4cb31b0d6d1c">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__on_can_read()</h2>
 
@@ -175,22 +391,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00109">109</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  112</span> {</div>
-<div class="line"><span class="lineno">  113</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_args_t</a> *mod = <a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
-<div class="line"><span class="lineno">  114</span>        thiz</div>
-<div class="line"><span class="lineno">  115</span>    );</div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139">zrtos_msg_queue__is_empty</a>(&amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>)</div>
-<div class="line"><span class="lineno">  117</span>         ? <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a4bde0de54c0b708a605ed5095959c14e">EAGAIN</a></div>
-<div class="line"><span class="lineno">  118</span>         : <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a></div>
-<div class="line"><span class="lineno">  119</span>    ;</div>
-<div class="line"><span class="lineno">  120</span>}</div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a></div><div class="ttdeci">@ ESUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00022">error.h:21</a></div></div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a4bde0de54c0b708a605ed5095959c14e"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a4bde0de54c0b708a605ed5095959c14e">EAGAIN</a></div><div class="ttdeci">@ EAGAIN</div><div class="ttdoc">Try again.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00035">error.h:34</a></div></div>
-<div class="ttc" id="amsg__queue_8h_html_adbeda957ab0b749a1d306a34cb42d139"><div class="ttname"><a href="msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139">zrtos_msg_queue__is_empty</a></div><div class="ttdeci">bool zrtos_msg_queue__is_empty(zrtos_msg_queue_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00029">msg_queue.h:29</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00018">rtu.h:18</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a9fcab721c0f757751e0b1065f68224df"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">_zrtos_vfs_module_modbus_rtu_args_t::msg_queue_in</a></div><div class="ttdeci">zrtos_msg_queue_t msg_queue_in</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00019">rtu.h:19</a></div></div>
-<div class="ttc" id="avfs__file_8h_html_adbc392417c3fef015ea0c4728d2be7c6"><div class="ttname"><a href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__file_8h_source.html#l00186">vfs_file.h:186</a></div></div>
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00332">332</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  335</span> {</div>
+<div class="line"><span class="lineno">  336</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *mod = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  337</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">  338</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">  339</span>            thiz</div>
+<div class="line"><span class="lineno">  340</span>        )</div>
+<div class="line"><span class="lineno">  341</span>    );</div>
+<div class="line"><span class="lineno">  342</span> </div>
+<div class="line"><span class="lineno">  343</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139">zrtos_msg_queue__is_empty</a>(&amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>)</div>
+<div class="line"><span class="lineno">  344</span>         ? <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a0d7e02d42bd8b6b6ed594176755849d6">ZRTOS_ERROR__AGAIN</a></div>
+<div class="line"><span class="lineno">  345</span>         : <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div>
+<div class="line"><span class="lineno">  346</span>    ;</div>
+<div class="line"><span class="lineno">  347</span>}</div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a0d7e02d42bd8b6b6ed594176755849d6"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a0d7e02d42bd8b6b6ed594176755849d6">ZRTOS_ERROR__AGAIN</a></div><div class="ttdeci">@ ZRTOS_ERROR__AGAIN</div><div class="ttdoc">Try again.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00036">error.h:35</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_adbeda957ab0b749a1d306a34cb42d139"><div class="ttname"><a href="msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139">zrtos_msg_queue__is_empty</a></div><div class="ttdeci">bool zrtos_msg_queue__is_empty(zrtos_msg_queue_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00055">msg_queue.h:55</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">_zrtos_vfs_module_modbus_rtu_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00031">rtu.h:31</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a9fcab721c0f757751e0b1065f68224df"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">_zrtos_vfs_module_modbus_rtu_args_t::msg_queue_in</a></div><div class="ttdeci">zrtos_msg_queue_t msg_queue_in</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00032">rtu.h:32</a></div></div>
+<div class="ttc" id="avfs__file_8h_html_adbc392417c3fef015ea0c4728d2be7c6"><div class="ttname"><a href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__file_8h_source.html#l00191">vfs_file.h:191</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -218,11 +437,90 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00122">122</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span> {</div>
-<div class="line"><span class="lineno">  126</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a>;</div>
-<div class="line"><span class="lineno">  127</span>}</div>
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00349">349</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span> {</div>
+<div class="line"><span class="lineno">  353</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  354</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a08670f8758ac6130c738816d306eb923" name="a08670f8758ac6130c738816d306eb923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08670f8758ac6130c738816d306eb923">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__on_ioctl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_modbus_rtu__on_ioctl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>path</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>request</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">va_list</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00356">356</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  361</span> {</div>
+<div class="line"><span class="lineno">  362</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  363</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *mod = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  364</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *</div>
+<div class="line"><span class="lineno">  365</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">  366</span>            thiz</div>
+<div class="line"><span class="lineno">  367</span>        )</div>
+<div class="line"><span class="lineno">  368</span>    );</div>
+<div class="line"><span class="lineno">  369</span> </div>
+<div class="line"><span class="lineno">  370</span>    <span class="keywordflow">switch</span>(<a class="code hl_define" href="cast_8h.html#a3c1e4df5659e3b9865b1570a8e51b32f">ZRTOS_CAST__REINTERPRET</a>(</div>
+<div class="line"><span class="lineno">  371</span>         <a class="code hl_enumeration" href="#a46f0aed3482ce6b23d178d7a69654f74">zrtos_vfs_module_modbus_rtu_ioctl_t</a></div>
+<div class="line"><span class="lineno">  372</span>        ,request</div>
+<div class="line"><span class="lineno">  373</span>    )){</div>
+<div class="line"><span class="lineno">  374</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a46f0aed3482ce6b23d178d7a69654f74ae71f98bcd2e067b0751bcea453ad7091">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_RX_ERROR_COUNT</a>:</div>
+<div class="line"><span class="lineno">  375</span>            <a class="code hl_struct" href="struct__zrtos__error__count__t.html">zrtos_error_count_t</a> **ret = <a class="code hl_define" href="va_8h.html#ac679f865bbaf6a6b96b4e3115f4b35b8">zrtos_va__arg</a>(</div>
+<div class="line"><span class="lineno">  376</span>                 args</div>
+<div class="line"><span class="lineno">  377</span>                ,<a class="code hl_struct" href="struct__zrtos__error__count__t.html">zrtos_error_count_t</a>**</div>
+<div class="line"><span class="lineno">  378</span>            );</div>
+<div class="line"><span class="lineno">  379</span>            *ret = &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a3cb9b77bb49b6bdd4515157de1399e2d">rx_error_count</a>;</div>
+<div class="line"><span class="lineno">  380</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  381</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="#a46f0aed3482ce6b23d178d7a69654f74a0f2250ce4117f1e7d6e0a5ea12c5e9a8">ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT</a>:</div>
+<div class="line"><span class="lineno">  382</span>            <a class="code hl_struct" href="struct__zrtos__error__count__t.html">zrtos_error_count_t</a> **ret = <a class="code hl_define" href="va_8h.html#ac679f865bbaf6a6b96b4e3115f4b35b8">zrtos_va__arg</a>(</div>
+<div class="line"><span class="lineno">  383</span>                 args</div>
+<div class="line"><span class="lineno">  384</span>                ,<a class="code hl_struct" href="struct__zrtos__error__count__t.html">zrtos_error_count_t</a>**</div>
+<div class="line"><span class="lineno">  385</span>            );</div>
+<div class="line"><span class="lineno">  386</span>            *ret = &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aa8ffbea3fab599682b379a1f4f1198f8">tx_error_count</a>;</div>
+<div class="line"><span class="lineno">  387</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  388</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  389</span>            ret = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22ab8c3cc792c2aad1065943dba85d7ad24">ZRTOS_ERROR__INVAL</a>;</div>
+<div class="line"><span class="lineno">  390</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  391</span>    }</div>
+<div class="line"><span class="lineno">  392</span> </div>
+<div class="line"><span class="lineno">  393</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  394</span>}</div>
+<div class="ttc" id="acast_8h_html_a3c1e4df5659e3b9865b1570a8e51b32f"><div class="ttname"><a href="cast_8h.html#a3c1e4df5659e3b9865b1570a8e51b32f">ZRTOS_CAST__REINTERPRET</a></div><div class="ttdeci">#define ZRTOS_CAST__REINTERPRET(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00019">cast.h:19</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00020">error.h:20</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22ab8c3cc792c2aad1065943dba85d7ad24"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22ab8c3cc792c2aad1065943dba85d7ad24">ZRTOS_ERROR__INVAL</a></div><div class="ttdeci">@ ZRTOS_ERROR__INVAL</div><div class="ttdoc">Invalid argument.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00047">error.h:46</a></div></div>
+<div class="ttc" id="astruct__zrtos__error__count__t_html"><div class="ttname"><a href="struct__zrtos__error__count__t.html">_zrtos_error_count_t</a></div><div class="ttdef"><b>Definition</b> <a href="error__count_8h_source.html#l00016">error_count.h:16</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a3cb9b77bb49b6bdd4515157de1399e2d"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a3cb9b77bb49b6bdd4515157de1399e2d">_zrtos_vfs_module_modbus_rtu_args_t::rx_error_count</a></div><div class="ttdeci">zrtos_error_count_t rx_error_count</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00034">rtu.h:34</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_aa8ffbea3fab599682b379a1f4f1198f8"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aa8ffbea3fab599682b379a1f4f1198f8">_zrtos_vfs_module_modbus_rtu_args_t::tx_error_count</a></div><div class="ttdeci">zrtos_error_count_t tx_error_count</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00035">rtu.h:35</a></div></div>
+<div class="ttc" id="ava_8h_html_ac679f865bbaf6a6b96b4e3115f4b35b8"><div class="ttname"><a href="va_8h.html#ac679f865bbaf6a6b96b4e3115f4b35b8">zrtos_va__arg</a></div><div class="ttdeci">#define zrtos_va__arg(ap, type)</div><div class="ttdef"><b>Definition</b> <a href="va_8h_source.html#l00021">va.h:21</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a08670f8758ac6130c738816d306eb923_cgraph.svg" width="360" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 <a id="aea13c3756fb07d48853e039823a846b1" name="aea13c3756fb07d48853e039823a846b1"></a>
@@ -264,30 +562,240 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00063">63</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span> {</div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_args_t</a> *mod = <a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
-<div class="line"><span class="lineno">   72</span>        thiz</div>
-<div class="line"><span class="lineno">   73</span>    );</div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">error</a>;</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
-<div class="line"><span class="lineno">   76</span>        ret = <a class="code hl_function" href="msg__queue_8h.html#aa70867560ae58b87682c996ceccee62a">zrtos_msg_queue__get</a>(</div>
-<div class="line"><span class="lineno">   77</span>             &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a></div>
-<div class="line"><span class="lineno">   78</span>            ,buf</div>
-<div class="line"><span class="lineno">   79</span>            ,len</div>
-<div class="line"><span class="lineno">   80</span>            ,out</div>
-<div class="line"><span class="lineno">   81</span>        );</div>
-<div class="line"><span class="lineno">   82</span>    }</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">return</span> ret;</div>
-<div class="line"><span class="lineno">   84</span>}</div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00019">error.h:19</a></div></div>
-<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00151">error.h:151</a></div></div>
-<div class="ttc" id="amsg__queue_8h_html_aa70867560ae58b87682c996ceccee62a"><div class="ttname"><a href="msg__queue_8h.html#aa70867560ae58b87682c996ceccee62a">zrtos_msg_queue__get</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__get(zrtos_msg_queue_t *thiz, void *data, size_t len, size_t *outlen)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00055">msg_queue.h:55</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a0b9e6de404b4c40698c83968f84f7062"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">_zrtos_vfs_module_modbus_rtu_args_t::error</a></div><div class="ttdeci">zrtos_error_t error</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00021">rtu.h:21</a></div></div>
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00253">253</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  260</span> {</div>
+<div class="line"><span class="lineno">  261</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret;</div>
+<div class="line"><span class="lineno">  262</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *mod = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  263</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">  264</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">  265</span>            thiz</div>
+<div class="line"><span class="lineno">  266</span>        )</div>
+<div class="line"><span class="lineno">  267</span>    );</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>    ret = <a class="code hl_function" href="msg__queue_8h.html#aa70867560ae58b87682c996ceccee62a">zrtos_msg_queue__get</a>(</div>
+<div class="line"><span class="lineno">  270</span>         &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a></div>
+<div class="line"><span class="lineno">  271</span>        ,buf</div>
+<div class="line"><span class="lineno">  272</span>        ,len</div>
+<div class="line"><span class="lineno">  273</span>        ,out</div>
+<div class="line"><span class="lineno">  274</span>    );</div>
+<div class="line"><span class="lineno">  275</span> </div>
+<div class="line"><span class="lineno">  276</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  277</span>}</div>
+<div class="ttc" id="amsg__queue_8h_html_aa70867560ae58b87682c996ceccee62a"><div class="ttname"><a href="msg__queue_8h.html#aa70867560ae58b87682c996ceccee62a">zrtos_msg_queue__get</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__get(zrtos_msg_queue_t *thiz, void *data, size_t len, size_t *outlen)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00140">msg_queue.h:140</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_aea13c3756fb07d48853e039823a846b1_cgraph.svg" width="1194" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_aea13c3756fb07d48853e039823a846b1_cgraph.svg" width="1819" height="315"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a87a54d6a69caba7cbda8da49a5054790" name="a87a54d6a69caba7cbda8da49a5054790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a54d6a69caba7cbda8da49a5054790">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__on_recv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_modbus_rtu__on_recv </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>callback_data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00167">167</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span> {</div>
+<div class="line"><span class="lineno">  170</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret;</div>
+<div class="line"><span class="lineno">  171</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *thiz = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  172</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">  173</span>        ,callback_data</div>
+<div class="line"><span class="lineno">  174</span>    );</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    ret = <a class="code hl_function" href="vfs__fd_8h.html#a8b47613498290a479e0e9ef1ed5d04c7">zrtos_vfs_fd__ioctl</a>(</div>
+<div class="line"><span class="lineno">  177</span>         thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">timeout_fd</a></div>
+<div class="line"><span class="lineno">  178</span>        ,(<span class="keywordtype">char</span>*)<span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  179</span>        ,<a class="code hl_enumvalue" href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1aa64f80bdda6a90697c66a3b998ed0666">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET</a></div>
+<div class="line"><span class="lineno">  180</span>    );</div>
+<div class="line"><span class="lineno">  181</span> </div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  183</span>}</div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_ab3f2562b331f21672d5a38d5b1f76fcf"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">_zrtos_vfs_module_modbus_rtu_args_t::timeout_fd</a></div><div class="ttdeci">zrtos_vfs_fd_t timeout_fd</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00037">rtu.h:37</a></div></div>
+<div class="ttc" id="atimeout_8h_html_aa1aad7a2fd14afd5ec4068713fb585c1aa64f80bdda6a90697c66a3b998ed0666"><div class="ttname"><a href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1aa64f80bdda6a90697c66a3b998ed0666">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__RESET</div><div class="ttdef"><b>Definition</b> <a href="timeout_8h_source.html#l00019">timeout.h:18</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_a8b47613498290a479e0e9ef1ed5d04c7"><div class="ttname"><a href="vfs__fd_8h.html#a8b47613498290a479e0e9ef1ed5d04c7">zrtos_vfs_fd__ioctl</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_fd__ioctl(zrtos_vfs_fd_t thiz, char *path, int request,...)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00204">vfs_fd.h:204</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a87a54d6a69caba7cbda8da49a5054790_cgraph.svg" width="562" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a87a54d6a69caba7cbda8da49a5054790_icgraph.svg" width="408" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a223fc39dfd241ff17884c9f5d03f8e78" name="a223fc39dfd241ff17884c9f5d03f8e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a223fc39dfd241ff17884c9f5d03f8e78">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__on_recv_timeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_vfs_module_modbus_rtu__on_recv_timeout </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00078">78</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span> {</div>
+<div class="line"><span class="lineno">   81</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *mod = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">   82</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">   83</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">   84</span>            thiz</div>
+<div class="line"><span class="lineno">   85</span>        )</div>
+<div class="line"><span class="lineno">   86</span>    );</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__uart__args__t.html">zrtos_vfs_module_uart_inode_t</a> *uart = mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>;</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_struct" href="struct__zrtos__cbuffer__t.html">zrtos_cbuffer_t</a> *cbuffer = <a class="code hl_function" href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc">zrtos_vfs_module_uart_args__get_cbuffer_in</a>(uart);</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordtype">size_t</span> cbuffer_length = <a class="code hl_function" href="cbuffer_8h.html#a45799d6eb84106e183f68a629d0d55c0">zrtos_cbuffer__get_length</a>(cbuffer);</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">if</span>(cbuffer_length &gt; 0){</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">if</span>(cbuffer_length &gt;= 4){</div>
+<div class="line"><span class="lineno">   93</span>            uint16_t crc = 0xffff;</div>
+<div class="line"><span class="lineno">   94</span>            uint16_t crc_msg;</div>
+<div class="line"><span class="lineno">   95</span>            <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret;</div>
+<div class="line"><span class="lineno">   96</span>            <a class="code hl_struct" href="struct__zrtos__msg__queue__write__transaction__t.html">zrtos_msg_queue_write_transaction_t</a> txn;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="msg__queue_8h.html#a8d4b5575ad52b762ce101a31c5a29768">zrtos_msg_queue__start_write_transaction</a>(&amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>,&amp;txn);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_function" href="cbuffer_8h.html#a0de747476125e18253e2b006fb9ec995">zrtos_cbuffer__hash</a>(</div>
+<div class="line"><span class="lineno">  101</span>                cbuffer</div>
+<div class="line"><span class="lineno">  102</span>                ,cbuffer_length-2</div>
+<div class="line"><span class="lineno">  103</span>                ,<a class="code hl_function" href="#a185cffe76be1b6316d00295e31e73fc8">zrtos_vfs_module_modbus_rtu__crc</a></div>
+<div class="line"><span class="lineno">  104</span>                ,&amp;crc</div>
+<div class="line"><span class="lineno">  105</span>            );</div>
+<div class="line"><span class="lineno">  106</span> </div>
+<div class="line"><span class="lineno">  107</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#a9f24485c49e6b6ba13406e9a5d1f352d">zrtos_msg_queue__put_length</a>(</div>
+<div class="line"><span class="lineno">  108</span>                &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a></div>
+<div class="line"><span class="lineno">  109</span>                ,cbuffer_length-2</div>
+<div class="line"><span class="lineno">  110</span>            )))</div>
+<div class="line"><span class="lineno">  111</span>            &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#a7b05ddf4bc60700bfe0b9d3a0f11664b">zrtos_msg_queue__put_cbuffer_data</a>(</div>
+<div class="line"><span class="lineno">  112</span>                &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a></div>
+<div class="line"><span class="lineno">  113</span>                ,cbuffer</div>
+<div class="line"><span class="lineno">  114</span>                ,cbuffer_length-2</div>
+<div class="line"><span class="lineno">  115</span>            )))</div>
+<div class="line"><span class="lineno">  116</span>            &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="cbuffer_8h.html#af79ee923f715f4f8d2ea27b725501174">zrtos_cbuffer__get_ex</a>(</div>
+<div class="line"><span class="lineno">  117</span>                cbuffer</div>
+<div class="line"><span class="lineno">  118</span>                ,crc_msg</div>
+<div class="line"><span class="lineno">  119</span>                ,2</div>
+<div class="line"><span class="lineno">  120</span>                ,&amp;outlen</div>
+<div class="line"><span class="lineno">  121</span>            )))</div>
+<div class="line"><span class="lineno">  122</span>            &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="#adb020f95eab8e3890e128952fc2de976">zrtos_vfs_module_modbus_rtu__cmp_crc</a>(</div>
+<div class="line"><span class="lineno">  123</span>                crc</div>
+<div class="line"><span class="lineno">  124</span>                ,crc_msg</div>
+<div class="line"><span class="lineno">  125</span>            )))</div>
+<div class="line"><span class="lineno">  126</span>            ){</div>
+<div class="line"><span class="lineno">  127</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  128</span>            }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  129</span>                <a class="code hl_function" href="msg__queue_8h.html#a0eefe9e5e6f83f1fcd2c66546a05add7">zrtos_msg_queue__rollback_write_transaction</a>(</div>
+<div class="line"><span class="lineno">  130</span>                    &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a></div>
+<div class="line"><span class="lineno">  131</span>                    ,&amp;txn</div>
+<div class="line"><span class="lineno">  132</span>                );</div>
+<div class="line"><span class="lineno">  133</span>            }</div>
+<div class="line"><span class="lineno">  134</span>        }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  135</span>            ret = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19">ZRTOS_ERROR__IO</a>;</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>        <a class="code hl_function" href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a>(&amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a3cb9b77bb49b6bdd4515157de1399e2d">rx_error_count</a>,ret);</div>
+<div class="line"><span class="lineno">  139</span>    }</div>
+<div class="line"><span class="lineno">  140</span>}</div>
+<div class="ttc" id="acbuffer_8h_html_a0de747476125e18253e2b006fb9ec995"><div class="ttname"><a href="cbuffer_8h.html#a0de747476125e18253e2b006fb9ec995">zrtos_cbuffer__hash</a></div><div class="ttdeci">zrtos_error_t zrtos_cbuffer__hash(zrtos_cbuffer_t *thiz, size_t length, void(*callback)(void *callback_args, uint8_t ch), void *callback_args)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00245">cbuffer.h:245</a></div></div>
+<div class="ttc" id="acbuffer_8h_html_a45799d6eb84106e183f68a629d0d55c0"><div class="ttname"><a href="cbuffer_8h.html#a45799d6eb84106e183f68a629d0d55c0">zrtos_cbuffer__get_length</a></div><div class="ttdeci">size_t zrtos_cbuffer__get_length(zrtos_cbuffer_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00401">cbuffer.h:401</a></div></div>
+<div class="ttc" id="acbuffer_8h_html_af79ee923f715f4f8d2ea27b725501174"><div class="ttname"><a href="cbuffer_8h.html#af79ee923f715f4f8d2ea27b725501174">zrtos_cbuffer__get_ex</a></div><div class="ttdeci">zrtos_error_t zrtos_cbuffer__get_ex(zrtos_cbuffer_t *thiz, void *data, size_t len, size_t *outlen)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00336">cbuffer.h:336</a></div></div>
+<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00152">error.h:152</a></div></div>
+<div class="ttc" id="aerror__count_8h_html_a363c818bc6ef2c68e407c999a189a441"><div class="ttname"><a href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a></div><div class="ttdeci">bool zrtos_error_count__add(zrtos_error_count_t *thiz, zrtos_error_t err)</div><div class="ttdef"><b>Definition</b> <a href="error__count_8h_source.html#l00028">error_count.h:28</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_a0eefe9e5e6f83f1fcd2c66546a05add7"><div class="ttname"><a href="msg__queue_8h.html#a0eefe9e5e6f83f1fcd2c66546a05add7">zrtos_msg_queue__rollback_write_transaction</a></div><div class="ttdeci">void zrtos_msg_queue__rollback_write_transaction(zrtos_msg_queue_t *thiz, zrtos_msg_queue_write_transaction_t *txn)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00044">msg_queue.h:44</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_a7b05ddf4bc60700bfe0b9d3a0f11664b"><div class="ttname"><a href="msg__queue_8h.html#a7b05ddf4bc60700bfe0b9d3a0f11664b">zrtos_msg_queue__put_cbuffer_data</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__put_cbuffer_data(zrtos_msg_queue_t *thiz, zrtos_cbuffer_t *data, size_t length)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00100">msg_queue.h:100</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_a8d4b5575ad52b762ce101a31c5a29768"><div class="ttname"><a href="msg__queue_8h.html#a8d4b5575ad52b762ce101a31c5a29768">zrtos_msg_queue__start_write_transaction</a></div><div class="ttdeci">void zrtos_msg_queue__start_write_transaction(zrtos_msg_queue_t *thiz, zrtos_msg_queue_write_transaction_t *txn)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00033">msg_queue.h:33</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_a9f24485c49e6b6ba13406e9a5d1f352d"><div class="ttname"><a href="msg__queue_8h.html#a9f24485c49e6b6ba13406e9a5d1f352d">zrtos_msg_queue__put_length</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__put_length(zrtos_msg_queue_t *thiz, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00059">msg_queue.h:59</a></div></div>
+<div class="ttc" id="artu_8h_html_adb020f95eab8e3890e128952fc2de976"><div class="ttname"><a href="#adb020f95eab8e3890e128952fc2de976">zrtos_vfs_module_modbus_rtu__cmp_crc</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_modbus_rtu__cmp_crc(uint16_t crc, uint16_t crc_msg)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00068">rtu.h:68</a></div></div>
+<div class="ttc" id="astruct__zrtos__cbuffer__t_html"><div class="ttname"><a href="struct__zrtos__cbuffer__t.html">_zrtos_cbuffer_t</a></div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00045">cbuffer.h:45</a></div></div>
+<div class="ttc" id="astruct__zrtos__msg__queue__write__transaction__t_html"><div class="ttname"><a href="struct__zrtos__msg__queue__write__transaction__t.html">_zrtos_msg_queue_write_transaction_t</a></div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00028">msg_queue.h:28</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_aad25281dfdb709a942a8da4f93030396"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">_zrtos_vfs_module_modbus_rtu_args_t::uart</a></div><div class="ttdeci">zrtos_vfs_module_uart_inode_t * uart</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00036">rtu.h:36</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html">_zrtos_vfs_module_uart_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00201">uart/uart.h:201</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_a8b394d1c76748a8e3d98603fe7145ebc"><div class="ttname"><a href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc">zrtos_vfs_module_uart_args__get_cbuffer_in</a></div><div class="ttdeci">zrtos_cbuffer_t * zrtos_vfs_module_uart_args__get_cbuffer_in(zrtos_vfs_module_uart_inode_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00243">uart/uart.h:243</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a223fc39dfd241ff17884c9f5d03f8e78_cgraph.svg" width="2091" height="842"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_a223fc39dfd241ff17884c9f5d03f8e78_icgraph.svg" width="408" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab23606290979709ef6fefa7c6970e64e" name="ab23606290979709ef6fefa7c6970e64e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23606290979709ef6fefa7c6970e64e">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu__on_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_modbus_rtu__on_send </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>callback_data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00142">142</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span> {</div>
+<div class="line"><span class="lineno">  145</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *thiz = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  147</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">  148</span>        ,callback_data</div>
+<div class="line"><span class="lineno">  149</span>    );</div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordtype">size_t</span>            outlen;</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="cbuffer_8h.html#ad43a17ed19b5351451c61a52c7e474d2">zrtos_cbuffer__is_empty</a>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a7c3660fabff4963609c5f887e28d73f7">cbuffer_out</a>)</div>
+<div class="line"><span class="lineno">  153</span>    &amp;&amp; !<a class="code hl_function" href="msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139">zrtos_msg_queue__is_empty</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a>)){</div>
+<div class="line"><span class="lineno">  154</span>        <a class="code hl_function" href="atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5">zrtos_arch__delay_microseconds</a>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a7bc7292fb42dd79123614f4a2e8bc1b2">timeout_frame_us</a>);</div>
+<div class="line"><span class="lineno">  155</span>        ret = <a class="code hl_function" href="msg__queue_8h.html#a40db633a8c0ef5e3bba9cc700e45f7ef">zrtos_msg_queue__pipe_next_message_to_cbuffer</a>(</div>
+<div class="line"><span class="lineno">  156</span>             &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  157</span>            ,thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a7c3660fabff4963609c5f887e28d73f7">cbuffer_out</a></div>
+<div class="line"><span class="lineno">  158</span>            ,<a class="code hl_define" href="types_8h.html#a63724d4a7919e3aa58f59b0062138db8">ZRTOS_TYPES__SIZE_MAX</a></div>
+<div class="line"><span class="lineno">  159</span>            ,&amp;outlen</div>
+<div class="line"><span class="lineno">  160</span>        );</div>
+<div class="line"><span class="lineno">  161</span>        <a class="code hl_function" href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a>(&amp;mod-&gt;tx_error_count,ret);</div>
+<div class="line"><span class="lineno">  162</span>    }</div>
+<div class="line"><span class="lineno">  163</span> </div>
+<div class="line"><span class="lineno">  164</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  165</span>}</div>
+<div class="ttc" id="aatmega2560_8h_html_ae04abf9c6757be157ce34315a0f8aea5"><div class="ttname"><a href="atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5">zrtos_arch__delay_microseconds</a></div><div class="ttdeci">void zrtos_arch__delay_microseconds(uint16_t us)</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00295">atmega2560.h:295</a></div></div>
+<div class="ttc" id="acbuffer_8h_html_ad43a17ed19b5351451c61a52c7e474d2"><div class="ttname"><a href="cbuffer_8h.html#ad43a17ed19b5351451c61a52c7e474d2">zrtos_cbuffer__is_empty</a></div><div class="ttdeci">bool zrtos_cbuffer__is_empty(zrtos_cbuffer_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00357">cbuffer.h:357</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_a40db633a8c0ef5e3bba9cc700e45f7ef"><div class="ttname"><a href="msg__queue_8h.html#a40db633a8c0ef5e3bba9cc700e45f7ef">zrtos_msg_queue__pipe_next_message_to_cbuffer</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__pipe_next_message_to_cbuffer(zrtos_msg_queue_t *thiz, zrtos_cbuffer_t *dest, size_t len, size_t *outlen)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00180">msg_queue.h:180</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a7bc7292fb42dd79123614f4a2e8bc1b2"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a7bc7292fb42dd79123614f4a2e8bc1b2">_zrtos_vfs_module_modbus_rtu_args_t::timeout_frame_us</a></div><div class="ttdeci">zrtos_vfs_module_timeout_microseconds_t timeout_frame_us</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00038">rtu.h:38</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_abefd16238c37eaab60140d20756f96c1"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">_zrtos_vfs_module_modbus_rtu_args_t::msg_queue_out</a></div><div class="ttdeci">zrtos_msg_queue_t msg_queue_out</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00033">rtu.h:33</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a7c3660fabff4963609c5f887e28d73f7"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a7c3660fabff4963609c5f887e28d73f7">_zrtos_vfs_module_uart_args_t::cbuffer_out</a></div><div class="ttdeci">zrtos_cbuffer_t cbuffer_out</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00203">uart/uart.h:203</a></div></div>
+<div class="ttc" id="atypes_8h_html_a63724d4a7919e3aa58f59b0062138db8"><div class="ttname"><a href="types_8h.html#a63724d4a7919e3aa58f59b0062138db8">ZRTOS_TYPES__SIZE_MAX</a></div><div class="ttdeci">#define ZRTOS_TYPES__SIZE_MAX</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00170">types.h:170</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_ab23606290979709ef6fefa7c6970e64e_cgraph.svg" width="2099" height="678"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_ab23606290979709ef6fefa7c6970e64e_icgraph.svg" width="408" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -331,56 +839,65 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00086">86</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span> {</div>
-<div class="line"><span class="lineno">   94</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_args_t</a> *mod = <a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
-<div class="line"><span class="lineno">   95</span>        thiz</div>
-<div class="line"><span class="lineno">   96</span>    );</div>
-<div class="line"><span class="lineno">   97</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">error</a>;</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
-<div class="line"><span class="lineno">   99</span>        ret = <a class="code hl_function" href="msg__queue_8h.html#ab51eb620b09145d1b05966404c9e0ca4">zrtos_msg_queue__put</a>(</div>
-<div class="line"><span class="lineno">  100</span>             &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
-<div class="line"><span class="lineno">  101</span>            ,buf</div>
-<div class="line"><span class="lineno">  102</span>            ,len</div>
-<div class="line"><span class="lineno">  103</span>            ,out</div>
-<div class="line"><span class="lineno">  104</span>        );</div>
-<div class="line"><span class="lineno">  105</span>    }</div>
-<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> ret; </div>
-<div class="line"><span class="lineno">  107</span>}</div>
-<div class="ttc" id="amsg__queue_8h_html_ab51eb620b09145d1b05966404c9e0ca4"><div class="ttname"><a href="msg__queue_8h.html#ab51eb620b09145d1b05966404c9e0ca4">zrtos_msg_queue__put</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__put(zrtos_msg_queue_t *thiz, void *data, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00033">msg_queue.h:33</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_abefd16238c37eaab60140d20756f96c1"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">_zrtos_vfs_module_modbus_rtu_args_t::msg_queue_out</a></div><div class="ttdeci">zrtos_msg_queue_t msg_queue_out</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00020">rtu.h:20</a></div></div>
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00279">279</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  286</span> {</div>
+<div class="line"><span class="lineno">  287</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret;</div>
+<div class="line"><span class="lineno">  288</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a> *mod = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  289</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html">zrtos_vfs_module_modbus_rtu_inode_t</a>*</div>
+<div class="line"><span class="lineno">  290</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">  291</span>            thiz</div>
+<div class="line"><span class="lineno">  292</span>        )</div>
+<div class="line"><span class="lineno">  293</span>    );</div>
+<div class="line"><span class="lineno">  294</span>    uint16_t crc = <a class="code hl_function" href="#aa413ad116104478c8f81c06609da6f3a">zrtos_vfs_module_modbus_rtu__crc_str</a>(buf,len);</div>
+<div class="line"><span class="lineno">  295</span>    <a class="code hl_struct" href="struct__zrtos__msg__queue__write__transaction__t.html">zrtos_msg_queue_write_transaction_t</a> txn;</div>
+<div class="line"><span class="lineno">  296</span> </div>
+<div class="line"><span class="lineno">  297</span>    <a class="code hl_function" href="msg__queue_8h.html#a8d4b5575ad52b762ce101a31c5a29768">zrtos_msg_queue__start_write_transaction</a>(&amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a>,&amp;txn);</div>
+<div class="line"><span class="lineno">  298</span> </div>
+<div class="line"><span class="lineno">  299</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#a9f24485c49e6b6ba13406e9a5d1f352d">zrtos_msg_queue__put_length</a>(</div>
+<div class="line"><span class="lineno">  300</span>            &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  301</span>        ,buf</div>
+<div class="line"><span class="lineno">  302</span>        ,len+2</div>
+<div class="line"><span class="lineno">  303</span>        ,out</div>
+<div class="line"><span class="lineno">  304</span>    )))</div>
+<div class="line"><span class="lineno">  305</span>    &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#a14fb4faf04687986da3435e06db5d587">zrtos_msg_queue__put_data</a>(</div>
+<div class="line"><span class="lineno">  306</span>            &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  307</span>        ,buf</div>
+<div class="line"><span class="lineno">  308</span>        ,len</div>
+<div class="line"><span class="lineno">  309</span>        ,out</div>
+<div class="line"><span class="lineno">  310</span>    )))</div>
+<div class="line"><span class="lineno">  311</span>    &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#a14fb4faf04687986da3435e06db5d587">zrtos_msg_queue__put_data</a>(</div>
+<div class="line"><span class="lineno">  312</span>            &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  313</span>        ,&amp;crc</div>
+<div class="line"><span class="lineno">  314</span>        ,2</div>
+<div class="line"><span class="lineno">  315</span>        ,out</div>
+<div class="line"><span class="lineno">  316</span>    )))</div>
+<div class="line"><span class="lineno">  317</span>    &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((ret = <a class="code hl_function" href="msg__queue_8h.html#adc920d42d263948e762808e1286def07">zrtos_msg_queue__put_end</a>(</div>
+<div class="line"><span class="lineno">  318</span>            &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  319</span>    )))</div>
+<div class="line"><span class="lineno">  320</span>    ){</div>
+<div class="line"><span class="lineno">  321</span>        ret = rtos_vfs_module_modbus_rtu__on_send(mod);</div>
+<div class="line"><span class="lineno">  322</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  323</span>        <a class="code hl_function" href="msg__queue_8h.html#a0eefe9e5e6f83f1fcd2c66546a05add7">zrtos_msg_queue__rollback_write_transaction</a>(</div>
+<div class="line"><span class="lineno">  324</span>            &amp;mod-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a></div>
+<div class="line"><span class="lineno">  325</span>            ,&amp;txn</div>
+<div class="line"><span class="lineno">  326</span>        );</div>
+<div class="line"><span class="lineno">  327</span>    }</div>
+<div class="line"><span class="lineno">  328</span> </div>
+<div class="line"><span class="lineno">  329</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  330</span>}</div>
+<div class="ttc" id="amsg__queue_8h_html_a14fb4faf04687986da3435e06db5d587"><div class="ttname"><a href="msg__queue_8h.html#a14fb4faf04687986da3435e06db5d587">zrtos_msg_queue__put_data</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__put_data(zrtos_msg_queue_t *thiz, void *data, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00077">msg_queue.h:77</a></div></div>
+<div class="ttc" id="amsg__queue_8h_html_adc920d42d263948e762808e1286def07"><div class="ttname"><a href="msg__queue_8h.html#adc920d42d263948e762808e1286def07">zrtos_msg_queue__put_end</a></div><div class="ttdeci">zrtos_error_t zrtos_msg_queue__put_end(zrtos_msg_queue_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="msg__queue_8h_source.html#l00093">msg_queue.h:93</a></div></div>
+<div class="ttc" id="artu_8h_html_aa413ad116104478c8f81c06609da6f3a"><div class="ttname"><a href="#aa413ad116104478c8f81c06609da6f3a">zrtos_vfs_module_modbus_rtu__crc_str</a></div><div class="ttdeci">static uint16_t zrtos_vfs_module_modbus_rtu__crc_str(uint8_t *data, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00060">rtu.h:60</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_ac0ca767b3e1e9a8b1f290448a122e095_cgraph.svg" width="1814" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_ac0ca767b3e1e9a8b1f290448a122e095_cgraph.svg" width="1942" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="abbe7a51a95d3f9ae6ae58f59a4acdee3" name="abbe7a51a95d3f9ae6ae58f59a4acdee3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbe7a51a95d3f9ae6ae58f59a4acdee3">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__get_error()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_modbus_rtu_args__get_error </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00057">57</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   59</span> {</div>
-<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">error</a>;</div>
-<div class="line"><span class="lineno">   61</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a1855c04ab16d1f94e6b009ea9bf67ebb" name="a1855c04ab16d1f94e6b009ea9bf67ebb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1855c04ab16d1f94e6b009ea9bf67ebb">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in()</h2>
+<a id="a2120ac2fb531eed3e9c0ecded6a8e37a" name="a2120ac2fb531eed3e9c0ecded6a8e37a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2120ac2fb531eed3e9c0ecded6a8e37a">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -388,21 +905,43 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="msg__queue_8h.html#ac761a0df283af25eef8aade0025c2b4a">zrtos_msg_queue_t</a> * zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00038">38</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span> {</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>;</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00241">241</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  243</span> {</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">return</span> &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>;</div>
+<div class="line"><span class="lineno">  245</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad02818ad75f59c11e0e5a2d3606954ca" name="ad02818ad75f59c11e0e5a2d3606954ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad02818ad75f59c11e0e5a2d3606954ca">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__init()</h2>
+<a id="afd4d2011b7c2380590f89e56ca6f0566" name="afd4d2011b7c2380590f89e56ca6f0566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4d2011b7c2380590f89e56ca6f0566">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="msg__queue_8h.html#ac761a0df283af25eef8aade0025c2b4a">zrtos_msg_queue_t</a> * zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00247">247</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  249</span> {</div>
+<div class="line"><span class="lineno">  250</span>    <span class="keywordflow">return</span> &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a>;</div>
+<div class="line"><span class="lineno">  251</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aac1c0a8f15ec0cd7540f53a61fe9ff08" name="aac1c0a8f15ec0cd7540f53a61fe9ff08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac1c0a8f15ec0cd7540f53a61fe9ff08">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,50 +949,117 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">bool zrtos_vfs_module_modbus_rtu_args__init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#ae3df4c8549c5b70b81155252706979c2">zrtos_vfs_module_modbus_rtu_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>uart</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>timeout_path</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00025">25</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span> {</div>
-<div class="line"><span class="lineno">   28</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">error</a> = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a>;</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span>(zrtos_msg_queue__init(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>)){</div>
-<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span>(zrtos_msg_queue__init(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a>)){</div>
-<div class="line"><span class="lineno">   31</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   32</span>        }</div>
-<div class="line"><span class="lineno">   33</span>        zrtos_msg_queue__deinit(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>);</div>
-<div class="line"><span class="lineno">   34</span>    }</div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   36</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00185">185</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span> {</div>
+<div class="line"><span class="lineno">  190</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret;</div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_typedef" href="timeout_8h.html#a0d6e3924663fa5468d130e95c38e1c3f">zrtos_vfs_module_timeout_microseconds_t</a> char_transmission_us = <a class="code hl_function" href="uart_2uart_8h.html#a4661f180ccd2c72d332a70c3b065a9f6">zrtos_vfs_module_uart__get_char_transmission_time</a>(uart);</div>
+<div class="line"><span class="lineno">  192</span> </div>
+<div class="line"><span class="lineno">  193</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a> = uart;</div>
+<div class="line"><span class="lineno">  194</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#ad4a993c03609fcdc40ffa54e6ce24e3a">on_send</a> = <a class="code hl_function" href="#ab23606290979709ef6fefa7c6970e64e">zrtos_vfs_module_modbus_rtu__on_send</a>;</div>
+<div class="line"><span class="lineno">  195</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a536f256622d40507b13ffc4861aab0e7">on_recv</a> = <a class="code hl_function" href="#a87a54d6a69caba7cbda8da49a5054790">zrtos_vfs_module_modbus_rtu__on_recv</a>;</div>
+<div class="line"><span class="lineno">  196</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aad25281dfdb709a942a8da4f93030396">uart</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a4cd7a4e325a07e7cfe2deedd3984e254">callback_data</a> = thiz;</div>
+<div class="line"><span class="lineno">  197</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a282f56513dfa78e5ed701a701893fd29">timeout_response_us</a> = <a class="code hl_define" href="#a24dd0eb19fcaac2ad2d835c432924d62">ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US</a>;</div>
+<div class="line"><span class="lineno">  198</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a7bc7292fb42dd79123614f4a2e8bc1b2">timeout_frame_us</a> = <a class="code hl_define" href="types_8h.html#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
+<div class="line"><span class="lineno">  199</span>         1750</div>
+<div class="line"><span class="lineno">  200</span>        ,char_transmission_us*3+char_transmission_us/2</div>
+<div class="line"><span class="lineno">  201</span>    );</div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>    ret = <a class="code hl_function" href="vfs__fd_8h.html#a3d77749f16d0a3f932c58f9ae0c20e1c">zrtos_vfs_fd__open</a>(timeout_path,&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">timeout_fd</a>,0);</div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
+<div class="line"><span class="lineno">  205</span>        ret = <a class="code hl_function" href="vfs__fd_8h.html#a8b47613498290a479e0e9ef1ed5d04c7">zrtos_vfs_fd__ioctl</a>(</div>
+<div class="line"><span class="lineno">  206</span>             thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">timeout_fd</a></div>
+<div class="line"><span class="lineno">  207</span>            ,(<span class="keywordtype">char</span>*)<span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  208</span>            ,<a class="code hl_enumvalue" href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1ae225692acf6846204964df0a16debd0a">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK</a></div>
+<div class="line"><span class="lineno">  209</span>            ,<a class="code hl_function" href="#a223fc39dfd241ff17884c9f5d03f8e78">zrtos_vfs_module_modbus_rtu__on_recv_timeout</a></div>
+<div class="line"><span class="lineno">  210</span>            ,thiz</div>
+<div class="line"><span class="lineno">  211</span>        );</div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
+<div class="line"><span class="lineno">  213</span>            ret = <a class="code hl_function" href="vfs__fd_8h.html#a8b47613498290a479e0e9ef1ed5d04c7">zrtos_vfs_fd__ioctl</a>(</div>
+<div class="line"><span class="lineno">  214</span>                 thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">timeout_fd</a></div>
+<div class="line"><span class="lineno">  215</span>                ,(<span class="keywordtype">char</span>*)<span class="stringliteral">&quot;&quot;</span></div>
+<div class="line"><span class="lineno">  216</span>                ,<a class="code hl_enumvalue" href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1acd2408291609a68c2e726e501c32a335">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START</a></div>
+<div class="line"><span class="lineno">  217</span>                ,<a class="code hl_function" href="#a223fc39dfd241ff17884c9f5d03f8e78">zrtos_vfs_module_modbus_rtu__on_recv_timeout</a></div>
+<div class="line"><span class="lineno">  218</span>                ,thiz</div>
+<div class="line"><span class="lineno">  219</span>            );</div>
+<div class="line"><span class="lineno">  220</span>            <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
+<div class="line"><span class="lineno">  221</span>                <span class="keywordflow">if</span>(<a class="code hl_function" href="error__count_8h.html#a18688a8d7e690569df54b5ed82f93efa">zrtos_error_count__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a3cb9b77bb49b6bdd4515157de1399e2d">rx_error_count</a>)){</div>
+<div class="line"><span class="lineno">  222</span>                    <span class="keywordflow">if</span>(<a class="code hl_function" href="error__count_8h.html#a18688a8d7e690569df54b5ed82f93efa">zrtos_error_count__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aa8ffbea3fab599682b379a1f4f1198f8">tx_error_count</a>)){</div>
+<div class="line"><span class="lineno">  223</span>                        <span class="keywordflow">if</span>(zrtos_msg_queue__init(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>)){</div>
+<div class="line"><span class="lineno">  224</span>                            <span class="keywordflow">if</span>(zrtos_msg_queue__init(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1">msg_queue_out</a>)){</div>
+<div class="line"><span class="lineno">  225</span>                                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  226</span>                            }</div>
+<div class="line"><span class="lineno">  227</span>                            zrtos_msg_queue__deinit(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df">msg_queue_in</a>);</div>
+<div class="line"><span class="lineno">  228</span>                        }</div>
+<div class="line"><span class="lineno">  229</span>                        <a class="code hl_function" href="error__count_8h.html#af82dae96e08d09cea3031f7393a1c2ea">zrtos_error_count__deinit</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#aa8ffbea3fab599682b379a1f4f1198f8">tx_error_count</a>);</div>
+<div class="line"><span class="lineno">  230</span>                    }</div>
+<div class="line"><span class="lineno">  231</span>                    <a class="code hl_function" href="error__count_8h.html#af82dae96e08d09cea3031f7393a1c2ea">zrtos_error_count__deinit</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a3cb9b77bb49b6bdd4515157de1399e2d">rx_error_count</a>);</div>
+<div class="line"><span class="lineno">  232</span>                }</div>
+<div class="line"><span class="lineno">  233</span>                <a class="code hl_function" href="vfs__fd_8h.html#aedfcf7515f1b31b3c17586ee9e90f229">zrtos_vfs_fd__close</a>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#ab3f2562b331f21672d5a38d5b1f76fcf">timeout_fd</a>);</div>
+<div class="line"><span class="lineno">  234</span>            }</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="line"><span class="lineno">  236</span>    }</div>
+<div class="line"><span class="lineno">  237</span>    </div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+<div class="ttc" id="aerror__count_8h_html_a18688a8d7e690569df54b5ed82f93efa"><div class="ttname"><a href="error__count_8h.html#a18688a8d7e690569df54b5ed82f93efa">zrtos_error_count__init</a></div><div class="ttdeci">bool zrtos_error_count__init(zrtos_error_count_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="error__count_8h_source.html#l00020">error_count.h:20</a></div></div>
+<div class="ttc" id="aerror__count_8h_html_af82dae96e08d09cea3031f7393a1c2ea"><div class="ttname"><a href="error__count_8h.html#af82dae96e08d09cea3031f7393a1c2ea">zrtos_error_count__deinit</a></div><div class="ttdeci">void zrtos_error_count__deinit(zrtos_error_count_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="error__count_8h_source.html#l00024">error_count.h:24</a></div></div>
+<div class="ttc" id="artu_8h_html_a223fc39dfd241ff17884c9f5d03f8e78"><div class="ttname"><a href="#a223fc39dfd241ff17884c9f5d03f8e78">zrtos_vfs_module_modbus_rtu__on_recv_timeout</a></div><div class="ttdeci">void zrtos_vfs_module_modbus_rtu__on_recv_timeout(void *thiz)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00078">rtu.h:78</a></div></div>
+<div class="ttc" id="artu_8h_html_a24dd0eb19fcaac2ad2d835c432924d62"><div class="ttname"><a href="#a24dd0eb19fcaac2ad2d835c432924d62">ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US</a></div><div class="ttdeci">#define ZRTOS_VFS_MODULE_MODBUS_RTU__CFG_RESPONSE_TIMEOUT_US</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00023">rtu.h:23</a></div></div>
+<div class="ttc" id="artu_8h_html_a87a54d6a69caba7cbda8da49a5054790"><div class="ttname"><a href="#a87a54d6a69caba7cbda8da49a5054790">zrtos_vfs_module_modbus_rtu__on_recv</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(void *callback_data)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00167">rtu.h:167</a></div></div>
+<div class="ttc" id="artu_8h_html_ab23606290979709ef6fefa7c6970e64e"><div class="ttname"><a href="#ab23606290979709ef6fefa7c6970e64e">zrtos_vfs_module_modbus_rtu__on_send</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_modbus_rtu__on_send(void *callback_data)</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00142">rtu.h:142</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__modbus__rtu__args__t_html_a282f56513dfa78e5ed701a701893fd29"><div class="ttname"><a href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a282f56513dfa78e5ed701a701893fd29">_zrtos_vfs_module_modbus_rtu_args_t::timeout_response_us</a></div><div class="ttdeci">zrtos_vfs_module_timeout_microseconds_t timeout_response_us</div><div class="ttdef"><b>Definition</b> <a href="rtu_8h_source.html#l00039">rtu.h:39</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a4cd7a4e325a07e7cfe2deedd3984e254"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a4cd7a4e325a07e7cfe2deedd3984e254">_zrtos_vfs_module_uart_args_t::callback_data</a></div><div class="ttdeci">void * callback_data</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00210">uart/uart.h:210</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a536f256622d40507b13ffc4861aab0e7"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a536f256622d40507b13ffc4861aab0e7">_zrtos_vfs_module_uart_args_t::on_recv</a></div><div class="ttdeci">zrtos_vfs_module_uart_callback_t on_recv</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00209">uart/uart.h:209</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_ad4a993c03609fcdc40ffa54e6ce24e3a"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#ad4a993c03609fcdc40ffa54e6ce24e3a">_zrtos_vfs_module_uart_args_t::on_send</a></div><div class="ttdeci">zrtos_vfs_module_uart_callback_t on_send</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00208">uart/uart.h:208</a></div></div>
+<div class="ttc" id="atimeout_8h_html_a0d6e3924663fa5468d130e95c38e1c3f"><div class="ttname"><a href="timeout_8h.html#a0d6e3924663fa5468d130e95c38e1c3f">zrtos_vfs_module_timeout_microseconds_t</a></div><div class="ttdeci">uint16_t zrtos_vfs_module_timeout_microseconds_t</div><div class="ttdef"><b>Definition</b> <a href="timeout_8h_source.html#l00024">timeout.h:24</a></div></div>
+<div class="ttc" id="atimeout_8h_html_aa1aad7a2fd14afd5ec4068713fb585c1acd2408291609a68c2e726e501c32a335"><div class="ttname"><a href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1acd2408291609a68c2e726e501c32a335">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__START</div><div class="ttdef"><b>Definition</b> <a href="timeout_8h_source.html#l00017">timeout.h:16</a></div></div>
+<div class="ttc" id="atimeout_8h_html_aa1aad7a2fd14afd5ec4068713fb585c1ae225692acf6846204964df0a16debd0a"><div class="ttname"><a href="timeout_8h.html#aa1aad7a2fd14afd5ec4068713fb585c1ae225692acf6846204964df0a16debd0a">ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK</a></div><div class="ttdeci">@ ZRTOS_VFS_MODULE_TIMEOUT_IOCTL__SET_CALLBACK</div><div class="ttdef"><b>Definition</b> <a href="timeout_8h_source.html#l00020">timeout.h:19</a></div></div>
+<div class="ttc" id="atypes_8h_html_a2b31407f452e9602f42514f071d68386"><div class="ttname"><a href="types_8h.html#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a></div><div class="ttdeci">#define ZRTOS_TYPES__MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00078">types.h:78</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_a4661f180ccd2c72d332a70c3b065a9f6"><div class="ttname"><a href="uart_2uart_8h.html#a4661f180ccd2c72d332a70c3b065a9f6">zrtos_vfs_module_uart__get_char_transmission_time</a></div><div class="ttdeci">zrtos_vfs_module_timeout_microseconds_t zrtos_vfs_module_uart__get_char_transmission_time(zrtos_vfs_module_uart_inode_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00281">uart/uart.h:281</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_a3d77749f16d0a3f932c58f9ae0c20e1c"><div class="ttname"><a href="vfs__fd_8h.html#a3d77749f16d0a3f932c58f9ae0c20e1c">zrtos_vfs_fd__open</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_fd__open(char *path, zrtos_vfs_fd_t *thiz, void *file_ctx)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00070">vfs_fd.h:70</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_aedfcf7515f1b31b3c17586ee9e90f229"><div class="ttname"><a href="vfs__fd_8h.html#aedfcf7515f1b31b3c17586ee9e90f229">zrtos_vfs_fd__close</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_fd__close(zrtos_vfs_fd_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00077">vfs_fd.h:77</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="rtu_8h_aac1c0a8f15ec0cd7540f53a61fe9ff08_cgraph.svg" width="1320" height="1607"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
-<a id="a40ff3dafa0a52205f4aa70ffddd1d305" name="a40ff3dafa0a52205f4aa70ffddd1d305"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40ff3dafa0a52205f4aa70ffddd1d305">&#9670;&#160;</a></span>zrtos_vfs_module_modbus_rtu_args__set_error()</h2>
+<a id="ae4e683dd0b5859c3bd7f89f7b3baf970" name="ae4e683dd0b5859c3bd7f89f7b3baf970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e683dd0b5859c3bd7f89f7b3baf970">&#9670;&#160;</a></span>ZRTOS_VFS_PLUGIN__INIT()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zrtos_vfs_module_modbus_rtu_args__set_error </td>
+          <td class="memname">ZRTOS_VFS_PLUGIN__INIT </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="#a34ef2e20b12e9dca4447707d73d71b1f">zrtos_vfs_module_modbus_rtu_args_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+          <td class="paramtype">modbus_rtu</td>          <td class="paramname"><span class="paramname">, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></td>          <td class="paramname"><span class="paramname"><em>error</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="vfs__plugin_8h.html#ae10018ce622e70fee9de5eb674c75fc8">ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5c4839cd4ecbb8e372eaccd141851bc1">ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5cb5ef84327275a2f1cfd47e3488d3d3">ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a1b36e3d8c2f00cc6ec0cb09536108a50">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="#aea13c3756fb07d48853e039823a846b1">zrtos_vfs_module_modbus_rtu__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#ac0ca767b3e1e9a8b1f290448a122e095">zrtos_vfs_module_modbus_rtu__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="#ab6a665819054d99f132b4cb31b0d6d1c">zrtos_vfs_module_modbus_rtu__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="#a6b289583342710be77976d7ef9efdc02">zrtos_vfs_module_modbus_rtu__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="#a08670f8758ac6130c738816d306eb923">zrtos_vfs_module_modbus_rtu__on_ioctl</a>)</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="rtu_8h_source.html#l00050">50</a> of file <a class="el" href="rtu_8h_source.html">rtu.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span> {</div>
-<div class="line"><span class="lineno">   54</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__modbus__rtu__args__t.html#a0b9e6de404b4c40698c83968f84f7062">error</a> = error;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

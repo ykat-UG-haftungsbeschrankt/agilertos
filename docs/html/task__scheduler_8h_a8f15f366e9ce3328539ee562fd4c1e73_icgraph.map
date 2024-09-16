@@ -1,17 +1,21 @@
 <map id="_zrtos_task_scheduler__on_tick_ex" name="_zrtos_task_scheduler__on_tick_ex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="596,89,749,132"/>
-<area shape="rect" id="Node000002" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="430,5,521,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="620,84,547,46,519,35,521,30,549,42,622,79"/>
-<area shape="rect" id="Node000003" href="$task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title=" " alt="" coords="410,56,542,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="581,98,542,91,543,86,582,93"/>
-<area shape="rect" id="Node000005" href="$task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f" title=" " alt="" coords="403,123,548,165"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="582,129,549,134,548,129,581,123"/>
-<area shape="rect" id="Node000008" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="403,189,548,232"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="620,142,550,180,526,191,524,186,547,175,618,137"/>
-<area shape="rect" id="Node000004" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="220,64,327,91"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="394,80,328,80,328,75,394,75"/>
-<area shape="rect" id="Node000006" href="$task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="192,131,355,157"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="387,147,356,147,356,141,387,141"/>
-<area shape="rect" id="Node000007" href="$task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="5,131,144,157"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="176,147,144,147,144,141,176,141"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="811,89,963,132"/>
+<area shape="rect" id="Node000002" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="644,5,736,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="834,84,762,46,733,35,735,30,764,42,837,79"/>
+<area shape="rect" id="Node000003" href="$task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title=" " alt="" coords="624,56,756,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="795,98,756,91,757,86,796,93"/>
+<area shape="rect" id="Node000005" href="$task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f" title=" " alt="" coords="617,123,763,165"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="796,129,763,134,763,129,795,123"/>
+<area shape="rect" id="Node000010" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="617,189,763,232"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="835,142,764,180,740,191,738,186,761,175,832,137"/>
+<area shape="rect" id="Node000004" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="434,64,541,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="608,80,542,80,542,75,608,75"/>
+<area shape="rect" id="Node000006" href="$task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title=" " alt="" coords="406,131,569,157"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="602,147,570,147,570,141,602,141"/>
+<area shape="rect" id="Node000007" href="$task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="209,101,347,128"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="390,133,347,127,348,122,391,128"/>
+<area shape="rect" id="Node000008" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title=" " alt="" coords="198,152,358,195"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="391,160,359,165,358,159,390,155"/>
+<area shape="rect" id="Node000009" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title=" " alt="" coords="5,152,150,195"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="182,176,150,176,150,171,182,171"/>
 </map>

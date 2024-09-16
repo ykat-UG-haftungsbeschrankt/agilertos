@@ -104,24 +104,26 @@ $(function(){initNavTree('types_8h.html',''); initResizable(); });
 <code>#include &lt;stddef.h&gt;</code><br />
 <code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;stdalign.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="cast_8h_source.html">zrtos/cast.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for types.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h__incl.svg" width="352" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h__incl.svg" width="568" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h__dep__incl.svg" width="3152" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h__dep__incl.svg" width="2915" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="types_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae67abae612ba714e619ebc711fd29203" id="r_ae67abae612ba714e619ebc711fd29203"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a>&#160;&#160;&#160;(sizeof(max_align_t))</td></tr>
+<tr class="memitem:ae67abae612ba714e619ebc711fd29203" id="r_ae67abae612ba714e619ebc711fd29203"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a>&#160;&#160;&#160;(__alignof__(max_align_t))</td></tr>
 <tr class="separator:ae67abae612ba714e619ebc711fd29203"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecf1d08ea8654220bbda6e602f9c68a9" id="r_aecf1d08ea8654220bbda6e602f9c68a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>&#160;&#160;&#160;(sizeof(max_align_t)-1)</td></tr>
+<tr class="memitem:aecf1d08ea8654220bbda6e602f9c68a9" id="r_aecf1d08ea8654220bbda6e602f9c68a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>&#160;&#160;&#160;(__alignof__(max_align_t)-1)</td></tr>
 <tr class="separator:aecf1d08ea8654220bbda6e602f9c68a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cad3edf3d078710c83349e149e0666b" id="r_a5cad3edf3d078710c83349e149e0666b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5cad3edf3d078710c83349e149e0666b">zrtos_types__get_offset_of</a>(type,  member)&#160;&#160;&#160;    __builtin_offsetof(type,member)</td></tr>
 <tr class="separator:a5cad3edf3d078710c83349e149e0666b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,7 +213,7 @@ Functions</h2></td></tr>
 <tr class="separator:adceb6a2ba8243aab5d92233fe7bb9778"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab829436e5ffed129b2fac128a21347c7" id="r_ab829436e5ffed129b2fac128a21347c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab829436e5ffed129b2fac128a21347c7">zrtos_types__uint64_is_valid_address_range</a> (uint64_t first_address, uint64_t last_address, uint64_t offset, <a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a> *length)</td></tr>
 <tr class="separator:ab829436e5ffed129b2fac128a21347c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae198a0484558438dfa74c5c72cedf853" id="r_ae198a0484558438dfa74c5c72cedf853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae198a0484558438dfa74c5c72cedf853">zrtos_types__uint8_to_hex</a> (uint8_t *dest, uint8_t src)</td></tr>
+<tr class="memitem:ae198a0484558438dfa74c5c72cedf853" id="r_ae198a0484558438dfa74c5c72cedf853"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae198a0484558438dfa74c5c72cedf853">zrtos_types__uint8_to_hex</a> (<a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *dest, <a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> src)</td></tr>
 <tr class="separator:ae198a0484558438dfa74c5c72cedf853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
@@ -222,12 +224,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ZRTOS_TYPES__BYTE_ALIGNMENT&#160;&#160;&#160;(sizeof(max_align_t))</td>
+          <td class="memname">#define ZRTOS_TYPES__BYTE_ALIGNMENT&#160;&#160;&#160;(__alignof__(max_align_t))</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00044">44</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00047">47</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -238,12 +240,12 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK&#160;&#160;&#160;(sizeof(max_align_t)-1)</td>
+          <td class="memname">#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK&#160;&#160;&#160;(__alignof__(max_align_t)-1)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00045">45</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00048">48</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -271,9 +273,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00077">77</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span><span class="preprocessor">#define  ZRTOS_TYPES__CMP(type,a_len,b_len)\</span></div>
-<div class="line"><span class="lineno">   78</span><span class="preprocessor">    ((a_len) &lt; (b_len) ? - 1 : ((a_len) &gt; (b_len) ? 1 : 0))</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00080">80</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span><span class="preprocessor">#define  ZRTOS_TYPES__CMP(type,a_len,b_len)\</span></div>
+<div class="line"><span class="lineno">   81</span><span class="preprocessor">    ((a_len) &lt; (b_len) ? - 1 : ((a_len) &gt; (b_len) ? 1 : 0))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,17 +303,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    ({                                                                      \</div>
-<div class="line">        <span class="keyword">const</span> typeof( ((type *)0)-&gt;member ) *__mptr = (ptr);                \</div>
-<div class="line">        (type *)((<span class="keywordtype">char</span> *)__mptr - <a class="code hl_define" href="#a5cad3edf3d078710c83349e149e0666b">zrtos_types__get_offset_of</a>(type,member)); \</div>
+<div class="line">        typeof( ((type *)0)-&gt;member ) *mptr__ = (typeof( ((type *)0)-&gt;member ) *)(ptr);         \</div>
+<div class="line">        (type *)((<span class="keywordtype">char</span> *)mptr__ - <a class="code hl_define" href="#a5cad3edf3d078710c83349e149e0666b">zrtos_types__get_offset_of</a>(type,member)); \</div>
 <div class="line">    })</div>
-<div class="ttc" id="atypes_8h_html_a5cad3edf3d078710c83349e149e0666b"><div class="ttname"><a href="#a5cad3edf3d078710c83349e149e0666b">zrtos_types__get_offset_of</a></div><div class="ttdeci">#define zrtos_types__get_offset_of(type, member)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00063">types.h:63</a></div></div>
+<div class="ttc" id="atypes_8h_html_a5cad3edf3d078710c83349e149e0666b"><div class="ttname"><a href="#a5cad3edf3d078710c83349e149e0666b">zrtos_types__get_offset_of</a></div><div class="ttdeci">#define zrtos_types__get_offset_of(type, member)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00066">types.h:66</a></div></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00066">66</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span><span class="preprocessor">#define zrtos_types__get_container_of(ptr, type, member)                    \</span></div>
-<div class="line"><span class="lineno">   67</span><span class="preprocessor">    ({                                                                      \</span></div>
-<div class="line"><span class="lineno">   68</span><span class="preprocessor">        const typeof( ((type *)0)-&gt;member ) *__mptr = (ptr);                \</span></div>
-<div class="line"><span class="lineno">   69</span><span class="preprocessor">        (type *)((char *)__mptr - zrtos_types__get_offset_of(type,member)); \</span></div>
-<div class="line"><span class="lineno">   70</span><span class="preprocessor">    })</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00069">69</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span><span class="preprocessor">#define zrtos_types__get_container_of(ptr, type, member)                    \</span></div>
+<div class="line"><span class="lineno">   70</span><span class="preprocessor">    ({                                                                      \</span></div>
+<div class="line"><span class="lineno">   71</span><span class="preprocessor">        typeof( ((type *)0)-&gt;member ) *mptr__ = (typeof( ((type *)0)-&gt;member ) *)(ptr);         \</span></div>
+<div class="line"><span class="lineno">   72</span><span class="preprocessor">        (type *)((char *)mptr__ - zrtos_types__get_offset_of(type,member)); \</span></div>
+<div class="line"><span class="lineno">   73</span><span class="preprocessor">    })</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -339,10 +341,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00072">72</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span><span class="preprocessor">#define zrtos_types__get_container_of_ex(ptr, type, member)                 \</span></div>
-<div class="line"><span class="lineno">   73</span><span class="preprocessor">    ((ptr) ? zrtos_types__get_container_of(ptr, type, member) : 0)          \</span></div>
-<div class="line"><span class="lineno">   74</span><span class="preprocessor"></span> </div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00075">75</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span><span class="preprocessor">#define zrtos_types__get_container_of_ex(ptr, type, member)                 \</span></div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">    ((ptr) ? zrtos_types__get_container_of(ptr, type, member) : 0)          \</span></div>
+<div class="line"><span class="lineno">   77</span><span class="preprocessor"></span> </div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -365,9 +367,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00063">63</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span><span class="preprocessor">#define zrtos_types__get_offset_of(type,member) \</span></div>
-<div class="line"><span class="lineno">   64</span><span class="preprocessor">    __builtin_offsetof(type,member)</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00066">66</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span><span class="preprocessor">#define zrtos_types__get_offset_of(type,member) \</span></div>
+<div class="line"><span class="lineno">   67</span><span class="preprocessor">    __builtin_offsetof(type,member)</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -386,9 +388,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00163">163</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  163</span><span class="preprocessor">#define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \</span></div>
-<div class="line"><span class="lineno">  164</span><span class="preprocessor">    (sizeof(arr)/sizeof((arr)[0]))</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00166">166</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span><span class="preprocessor">#define ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(arr) \</span></div>
+<div class="line"><span class="lineno">  167</span><span class="preprocessor">    (sizeof(arr)/sizeof((arr)[0]))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,7 +406,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00172">172</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00175">175</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -420,7 +422,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00171">171</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00174">174</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -436,7 +438,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00174">174</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00177">177</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -452,7 +454,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00173">173</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00176">176</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -468,7 +470,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00176">176</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00179">179</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -484,7 +486,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00175">175</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00178">178</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -500,7 +502,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00170">170</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00173">173</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -516,7 +518,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00169">169</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00172">172</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -539,9 +541,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00160">160</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  160</span><span class="preprocessor">#define ZRTOS_TYPES__IS_ADD_OVERFLOW(a,b) \</span></div>
-<div class="line"><span class="lineno">  161</span><span class="preprocessor">    (((a + b ) &lt; a))</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00163">163</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span><span class="preprocessor">#define ZRTOS_TYPES__IS_ADD_OVERFLOW(a,b) \</span></div>
+<div class="line"><span class="lineno">  164</span><span class="preprocessor">    (((a + b ) &lt; a))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -579,9 +581,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00204">204</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span><span class="preprocessor">#define ZRTOS_TYPES__MAP(value,in_min,in_max,out_min,out_max)\</span></div>
-<div class="line"><span class="lineno">  205</span><span class="preprocessor">  (((value)-(in_min))*((out_max)-(out_min))/((in_max)-(in_min))+(out_min))</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00207">207</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  207</span><span class="preprocessor">#define ZRTOS_TYPES__MAP(value,in_min,in_max,out_min,out_max)\</span></div>
+<div class="line"><span class="lineno">  208</span><span class="preprocessor">  (((value)-(in_min))*((out_max)-(out_min))/((in_max)-(in_min))+(out_min))</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -604,7 +606,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00076">76</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00079">79</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -627,7 +629,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00075">75</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00078">78</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -643,7 +645,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00167">167</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00170">170</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -659,7 +661,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00166">166</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00169">169</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -682,18 +684,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">do</span>{                                           \</div>
-<div class="line">        tyZRTOS_TYPES__TYPEOFpeof(a) a____ = (a); \</div>
+<div class="line">        ZRTOS_TYPES__TYPEOF(a) a____ = (a);       \</div>
 <div class="line">        (a) = (b);                                \</div>
 <div class="line">        (b) = a____;                              \</div>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00146">146</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP(a,b)                    \</span></div>
-<div class="line"><span class="lineno">  147</span><span class="preprocessor">    do{                                           \</span></div>
-<div class="line"><span class="lineno">  148</span><span class="preprocessor">        tyZRTOS_TYPES__TYPEOFpeof(a) a____ = (a); \</span></div>
-<div class="line"><span class="lineno">  149</span><span class="preprocessor">        (a) = (b);                                \</span></div>
-<div class="line"><span class="lineno">  150</span><span class="preprocessor">        (b) = a____;                              \</span></div>
-<div class="line"><span class="lineno">  151</span><span class="preprocessor">    }while(0);</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00149">149</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP(a,b)                    \</span></div>
+<div class="line"><span class="lineno">  150</span><span class="preprocessor">    do{                                           \</span></div>
+<div class="line"><span class="lineno">  151</span><span class="preprocessor">        ZRTOS_TYPES__TYPEOF(a) a____ = (a);       \</span></div>
+<div class="line"><span class="lineno">  152</span><span class="preprocessor">        (a) = (b);                                \</span></div>
+<div class="line"><span class="lineno">  153</span><span class="preprocessor">        (b) = a____;                              \</span></div>
+<div class="line"><span class="lineno">  154</span><span class="preprocessor">    }while(0);</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -721,13 +723,13 @@ Functions</h2></td></tr>
 <div class="line">        *(b) = a____;                         \</div>
 <div class="line">    }<span class="keywordflow">while</span>(0);</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00153">153</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b)   \</span></div>
-<div class="line"><span class="lineno">  154</span><span class="preprocessor">    do{                                       \</span></div>
-<div class="line"><span class="lineno">  155</span><span class="preprocessor">        ZRTOS_TYPES__TYPEOF(*a) a____ = *(a); \</span></div>
-<div class="line"><span class="lineno">  156</span><span class="preprocessor">        *(a) = *(b);                          \</span></div>
-<div class="line"><span class="lineno">  157</span><span class="preprocessor">        *(b) = a____;                         \</span></div>
-<div class="line"><span class="lineno">  158</span><span class="preprocessor">    }while(0);</span></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00156">156</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  156</span><span class="preprocessor">#define ZRTOS_TYPES__SWAP_PTR_CONTENTS(a,b)   \</span></div>
+<div class="line"><span class="lineno">  157</span><span class="preprocessor">    do{                                       \</span></div>
+<div class="line"><span class="lineno">  158</span><span class="preprocessor">        ZRTOS_TYPES__TYPEOF(*a) a____ = *(a); \</span></div>
+<div class="line"><span class="lineno">  159</span><span class="preprocessor">        *(a) = *(b);                          \</span></div>
+<div class="line"><span class="lineno">  160</span><span class="preprocessor">        *(b) = a____;                         \</span></div>
+<div class="line"><span class="lineno">  161</span><span class="preprocessor">    }while(0);</span></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -746,7 +748,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00143">143</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00146">146</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -762,7 +764,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00181">181</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00184">184</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -778,7 +780,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00180">180</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00183">183</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -794,7 +796,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00183">183</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00186">186</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -810,7 +812,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00182">182</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00185">185</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -826,7 +828,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00185">185</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00188">188</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -842,7 +844,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00184">184</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00187">187</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -858,7 +860,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00179">179</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00182">182</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -874,7 +876,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00178">178</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00181">181</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -891,7 +893,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00019">19</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00022">22</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -907,7 +909,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00020">20</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00023">23</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
 
 </div>
 </div>
@@ -927,15 +929,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00056">56</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                      {</div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">return</span> len</div>
-<div class="line"><span class="lineno">   58</span>         + <a class="code hl_define" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div>
-<div class="line"><span class="lineno">   59</span>         - (len &amp; <a class="code hl_define" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>)</div>
-<div class="line"><span class="lineno">   60</span>    ;</div>
-<div class="line"><span class="lineno">   61</span>}</div>
-<div class="ttc" id="atypes_8h_html_ae67abae612ba714e619ebc711fd29203"><div class="ttname"><a href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div><div class="ttdeci">#define ZRTOS_TYPES__BYTE_ALIGNMENT</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00044">types.h:44</a></div></div>
-<div class="ttc" id="atypes_8h_html_aecf1d08ea8654220bbda6e602f9c68a9"><div class="ttname"><a href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a></div><div class="ttdeci">#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00045">types.h:45</a></div></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00059">59</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                      {</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> len</div>
+<div class="line"><span class="lineno">   61</span>         + <a class="code hl_define" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div>
+<div class="line"><span class="lineno">   62</span>         - (len &amp; <a class="code hl_define" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>)</div>
+<div class="line"><span class="lineno">   63</span>    ;</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+<div class="ttc" id="atypes_8h_html_ae67abae612ba714e619ebc711fd29203"><div class="ttname"><a href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div><div class="ttdeci">#define ZRTOS_TYPES__BYTE_ALIGNMENT</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00047">types.h:47</a></div></div>
+<div class="ttc" id="atypes_8h_html_aecf1d08ea8654220bbda6e602f9c68a9"><div class="ttname"><a href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a></div><div class="ttdeci">#define ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00048">types.h:48</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -963,10 +965,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00032">32</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   32</span>                                                     {</div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)+byte_len;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00035">35</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                     {</div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)+byte_len;</div>
+<div class="line"><span class="lineno">   37</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -994,10 +996,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00028">28</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   28</span>                                         {</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">return</span> ((ptrdiff_t)a)-((ptrdiff_t)b);</div>
-<div class="line"><span class="lineno">   30</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00031">31</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>                                         {</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> ((ptrdiff_t)a)-((ptrdiff_t)b);</div>
+<div class="line"><span class="lineno">   33</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1025,14 +1027,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00040">40</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                     {</div>
-<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">return</span> ((uint8_t*)bigger)-((uint8_t*)smaller);</div>
-<div class="line"><span class="lineno">   42</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00043">43</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                                     {</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">return</span> ((uint8_t*)bigger)-((uint8_t*)smaller);</div>
+<div class="line"><span class="lineno">   45</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph.svg" width="1687" height="1016"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="types_8h_adbc4238237e656eb247fd49ffbfb1a6d_icgraph.svg" width="1587" height="1176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1066,29 +1068,29 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00097">97</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  102</span> {</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span>(offset &lt;= <a class="code hl_function" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
-<div class="line"><span class="lineno">  104</span>         last_address</div>
-<div class="line"><span class="lineno">  105</span>        ,first_address</div>
-<div class="line"><span class="lineno">  106</span>    )){</div>
-<div class="line"><span class="lineno">  107</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
-<div class="line"><span class="lineno">  108</span>             *length</div>
-<div class="line"><span class="lineno">  109</span>            ,<a class="code hl_function" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
-<div class="line"><span class="lineno">  110</span>                 last_address</div>
-<div class="line"><span class="lineno">  111</span>                ,<a class="code hl_function" href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a>(</div>
-<div class="line"><span class="lineno">  112</span>                     last_address</div>
-<div class="line"><span class="lineno">  113</span>                    ,offset</div>
-<div class="line"><span class="lineno">  114</span>                )</div>
-<div class="line"><span class="lineno">  115</span>            )</div>
-<div class="line"><span class="lineno">  116</span>        );</div>
-<div class="line"><span class="lineno">  117</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  118</span>    }</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  120</span>}</div>
-<div class="ttc" id="atypes_8h_html_a1824c547b5262eed148a0bfac2912537"><div class="ttname"><a href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a></div><div class="ttdeci">void * zrtos_types__ptr_subtract(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00036">types.h:36</a></div></div>
-<div class="ttc" id="atypes_8h_html_a2b31407f452e9602f42514f071d68386"><div class="ttname"><a href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a></div><div class="ttdeci">#define ZRTOS_TYPES__MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00075">types.h:75</a></div></div>
-<div class="ttc" id="atypes_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00040">types.h:40</a></div></div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00100">100</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span> {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">if</span>(offset &lt;= <a class="code hl_function" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
+<div class="line"><span class="lineno">  107</span>         last_address</div>
+<div class="line"><span class="lineno">  108</span>        ,first_address</div>
+<div class="line"><span class="lineno">  109</span>    )){</div>
+<div class="line"><span class="lineno">  110</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
+<div class="line"><span class="lineno">  111</span>             *length</div>
+<div class="line"><span class="lineno">  112</span>            ,<a class="code hl_function" href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a>(</div>
+<div class="line"><span class="lineno">  113</span>                 last_address</div>
+<div class="line"><span class="lineno">  114</span>                ,<a class="code hl_function" href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a>(</div>
+<div class="line"><span class="lineno">  115</span>                     last_address</div>
+<div class="line"><span class="lineno">  116</span>                    ,offset</div>
+<div class="line"><span class="lineno">  117</span>                )</div>
+<div class="line"><span class="lineno">  118</span>            )</div>
+<div class="line"><span class="lineno">  119</span>        );</div>
+<div class="line"><span class="lineno">  120</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  121</span>    }</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+<div class="ttc" id="atypes_8h_html_a1824c547b5262eed148a0bfac2912537"><div class="ttname"><a href="#a1824c547b5262eed148a0bfac2912537">zrtos_types__ptr_subtract</a></div><div class="ttdeci">void * zrtos_types__ptr_subtract(void *ptr, size_t byte_len)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00039">types.h:39</a></div></div>
+<div class="ttc" id="atypes_8h_html_a2b31407f452e9602f42514f071d68386"><div class="ttname"><a href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a></div><div class="ttdeci">#define ZRTOS_TYPES__MIN(a, b)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00078">types.h:78</a></div></div>
+<div class="ttc" id="atypes_8h_html_adbc4238237e656eb247fd49ffbfb1a6d"><div class="ttname"><a href="#adbc4238237e656eb247fd49ffbfb1a6d">zrtos_types__ptr_get_byte_distance</a></div><div class="ttdeci">size_t zrtos_types__ptr_get_byte_distance(void *bigger, void *smaller)</div><div class="ttdef"><b>Definition</b> <a href="types_8h_source.html#l00043">types.h:43</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1121,10 +1123,10 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00036">36</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   36</span>                                                          {</div>
-<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)-byte_len;</div>
-<div class="line"><span class="lineno">   38</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00039">39</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                                          {</div>
+<div class="line"><span class="lineno">   40</span>    <span class="keywordflow">return</span> ((uint8_t*)ptr)-byte_len;</div>
+<div class="line"><span class="lineno">   41</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1148,15 +1150,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00047">47</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>                                              {</div>
-<div class="line"><span class="lineno">   48</span>    uintptr_t ret = (uintptr_t)ptr;</div>
-<div class="line"><span class="lineno">   49</span>    ret = ret</div>
-<div class="line"><span class="lineno">   50</span>        + <a class="code hl_define" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div>
-<div class="line"><span class="lineno">   51</span>        - (ret &amp; <a class="code hl_define" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>)</div>
-<div class="line"><span class="lineno">   52</span>    ;</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*)ret;</div>
-<div class="line"><span class="lineno">   54</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00050">50</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>                                              {</div>
+<div class="line"><span class="lineno">   51</span>    uintptr_t ret = (uintptr_t)ptr;</div>
+<div class="line"><span class="lineno">   52</span>    ret = ret</div>
+<div class="line"><span class="lineno">   53</span>        + <a class="code hl_define" href="#ae67abae612ba714e619ebc711fd29203">ZRTOS_TYPES__BYTE_ALIGNMENT</a></div>
+<div class="line"><span class="lineno">   54</span>        - (ret &amp; <a class="code hl_define" href="#aecf1d08ea8654220bbda6e602f9c68a9">ZRTOS_TYPES__BYTE_ALIGNMENT_MASK</a>)</div>
+<div class="line"><span class="lineno">   55</span>    ;</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*)ret;</div>
+<div class="line"><span class="lineno">   57</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1189,18 +1191,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00080">80</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   85</span> {</div>
-<div class="line"><span class="lineno">   86</span>    <span class="keywordflow">if</span>(offset &gt;= first_address</div>
-<div class="line"><span class="lineno">   87</span>    &amp;&amp; offset &lt;= last_address){</div>
-<div class="line"><span class="lineno">   88</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
-<div class="line"><span class="lineno">   89</span>             *length</div>
-<div class="line"><span class="lineno">   90</span>            ,last_address - offset</div>
-<div class="line"><span class="lineno">   91</span>        );</div>
-<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   93</span>    }</div>
-<div class="line"><span class="lineno">   94</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   95</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00083">83</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   88</span> {</div>
+<div class="line"><span class="lineno">   89</span>    <span class="keywordflow">if</span>(offset &gt;= first_address</div>
+<div class="line"><span class="lineno">   90</span>    &amp;&amp; offset &lt;= last_address){</div>
+<div class="line"><span class="lineno">   91</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
+<div class="line"><span class="lineno">   92</span>             *length</div>
+<div class="line"><span class="lineno">   93</span>            ,last_address - offset</div>
+<div class="line"><span class="lineno">   94</span>        );</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="line"><span class="lineno">   97</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   98</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1238,18 +1240,18 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00122">122</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  127</span> {</div>
-<div class="line"><span class="lineno">  128</span>    <span class="keywordflow">if</span>(offset &gt;= first_address</div>
-<div class="line"><span class="lineno">  129</span>    &amp;&amp; offset &lt;= last_address){</div>
-<div class="line"><span class="lineno">  130</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
-<div class="line"><span class="lineno">  131</span>             *length</div>
-<div class="line"><span class="lineno">  132</span>            ,last_address - offset</div>
-<div class="line"><span class="lineno">  133</span>        );</div>
-<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  135</span>    }</div>
-<div class="line"><span class="lineno">  136</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  137</span>}</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00125">125</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span> {</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span>(offset &gt;= first_address</div>
+<div class="line"><span class="lineno">  132</span>    &amp;&amp; offset &lt;= last_address){</div>
+<div class="line"><span class="lineno">  133</span>        *length = <a class="code hl_define" href="#a2b31407f452e9602f42514f071d68386">ZRTOS_TYPES__MIN</a>(</div>
+<div class="line"><span class="lineno">  134</span>             *length</div>
+<div class="line"><span class="lineno">  135</span>            ,last_address - offset</div>
+<div class="line"><span class="lineno">  136</span>        );</div>
+<div class="line"><span class="lineno">  137</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  138</span>    }</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  140</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1262,33 +1264,33 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#af5439e19eec032e96a3561505be8ec35">size_t</a> zrtos_types__uint8_to_hex </td>
           <td>(</td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>dest</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a></td>          <td class="paramname"><span class="paramname"><em>src</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00187">187</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>                                                           {</div>
-<div class="line"><span class="lineno">  188</span>    uint8_t h = (src &amp; 0xF) + <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno">  189</span>    uint8_t l = (src &gt;&gt; 4) + <span class="charliteral">&#39;0&#39;</span>;</div>
-<div class="line"><span class="lineno">  190</span> </div>
-<div class="line"><span class="lineno">  191</span>    <span class="keywordflow">if</span>(h &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
-<div class="line"><span class="lineno">  192</span>        h += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
-<div class="line"><span class="lineno">  193</span>    }</div>
-<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span>(l &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
-<div class="line"><span class="lineno">  195</span>        l += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<p class="definition">Definition at line <a class="el" href="types_8h_source.html#l00190">190</a> of file <a class="el" href="types_8h_source.html">types.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>                                                           {</div>
+<div class="line"><span class="lineno">  191</span>    uint8_t h = (src &amp; 0xF) + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  192</span>    uint8_t l = (src &gt;&gt; 4) + <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span>(h &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
+<div class="line"><span class="lineno">  195</span>        h += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
 <div class="line"><span class="lineno">  196</span>    }</div>
-<div class="line"><span class="lineno">  197</span> </div>
-<div class="line"><span class="lineno">  198</span>    dest[0] = h;</div>
-<div class="line"><span class="lineno">  199</span>    dest[1] = l;</div>
+<div class="line"><span class="lineno">  197</span>    <span class="keywordflow">if</span>(l &gt; <span class="charliteral">&#39;9&#39;</span>){</div>
+<div class="line"><span class="lineno">  198</span>        l += <span class="charliteral">&#39;A&#39;</span> - <span class="charliteral">&#39;9&#39;</span>;</div>
+<div class="line"><span class="lineno">  199</span>    }</div>
 <div class="line"><span class="lineno">  200</span> </div>
-<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">return</span> 2;</div>
-<div class="line"><span class="lineno">  202</span>}</div>
+<div class="line"><span class="lineno">  201</span>    dest[0] = h;</div>
+<div class="line"><span class="lineno">  202</span>    dest[1] = l;</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keywordflow">return</span> 2;</div>
+<div class="line"><span class="lineno">  205</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>

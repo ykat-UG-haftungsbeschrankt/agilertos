@@ -97,10 +97,32 @@ $(function(){initNavTree('todo.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a96368b8e55bcca9d9b15b8b695331443">_WIZCHIP_IO_BASE_</a>  </dt>
+<dd><a class="anchor" id="_todo000004"></a>Should re-define it to fit your system when BUS IF Mode (<a class="el" href="wizchip__conf_8h.html#ab278798369281104991526236f5e1a40">_WIZCHIP_IO_MODE_BUS_</a>, <a class="el" href="wizchip__conf_8h.html#a640a909820498d82446aa1dc7f4307eb">_WIZCHIP_IO_MODE_BUS_DIR_</a>, <a class="el" href="wizchip__conf_8h.html#a1acac79a10d2550d4387bd9506f8843f">_WIZCHIP_IO_MODE_BUS_INDIR_</a>). <br  />
+<br  />
+ ex&gt; <code> #define _WIZCHIP_IO_BASE_ 0x00008000 </code>  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a564c20a8415e89b641b600bf4542e94c">_WIZCHIP_IO_MODE_</a>  </dt>
+<dd><a class="anchor" id="_todo000003"></a>you should select interface mode as chip. Select one of <a class="el" href="wizchip__conf_8h.html#a6179151fb8739a740799328f4f2beaa8">_WIZCHIP_IO_MODE_SPI_</a> , <a class="el" href="wizchip__conf_8h.html#a640a909820498d82446aa1dc7f4307eb">_WIZCHIP_IO_MODE_BUS_DIR_</a> or <a class="el" href="wizchip__conf_8h.html#a1acac79a10d2550d4387bd9506f8843f">_WIZCHIP_IO_MODE_BUS_INDIR_</a>  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a67a82552d83baa52a8012ad37af1679a">reg_wizchip_bus_cbfunc</a>  (<a class="el" href="wizchip__conf_8h.html#a873b0fe21f7e83d9e91736fa8b9d1f19">iodata_t(*bus_rb)</a>(uint32_t addr), void(*bus_wb)(uint32_t addr, iodata_t wb))</dt>
+<dd><a class="anchor" id="_todo000007"></a>Describe wizchip_bus_readbyte and wizchip_bus_writebyte function or register your functions.  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a658e320e9c986ecab81857a8716b8b87">reg_wizchip_cris_cbfunc</a>  (void(*cris_en)(void), void(*cris_ex)(void))</dt>
+<dd><a class="anchor" id="_todo000005"></a>Describe <a class="el" href="w5500_8h.html#ac59d6ec9327da0fd3ea8fa3fd21b9701">WIZCHIP_CRITICAL_ENTER</a> and <a class="el" href="w5500_8h.html#a0bfaa1b1d5c9582dddf46b6265b96ab7">WIZCHIP_CRITICAL_EXIT</a> marco or register your functions.  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a63208f3ad63e6290be0ed33705baa27e">reg_wizchip_cs_cbfunc</a>  (void(*cs_sel)(void), void(*cs_desel)(void))</dt>
+<dd><a class="anchor" id="_todo000006"></a>Describe wizchip_cs_select and wizchip_cs_deselect function or register your functions.  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#ab8b1906597683424d5f599e6fd720386">reg_wizchip_spi_cbfunc</a>  (<a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t(*spi_rb)</a>(void), void(*spi_wb)(uint8_t wb))</dt>
+<dd><a class="anchor" id="_todo000008"></a>Describe wizchip_spi_readbyte and wizchip_spi_writebyte function or register your functions.  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#a7940414d35e6b355c620e046de60afba">reg_wizchip_spiburst_cbfunc</a>  (void(*spi_rb)(uint8_t *pBuf, uint16_t len), void(*spi_wb)(uint8_t *pBuf, uint16_t len))</dt>
+<dd><a class="anchor" id="_todo000009"></a>Describe wizchip_spi_readbyte and wizchip_spi_writebyte function or register your functions.  </dd>
+<dt>Global <a class="el" href="wizchip__conf_8h.html#aced62b5ad0da484e43bc7b5eeac377e8">W5100</a>  </dt>
+<dd><a class="anchor" id="_todo000002"></a>You should select one, <b>W5100</b>, <b>W5100S</b>, <b>W5200</b>, <b>W5300</b>, <b>W5500</b> or etc. <br  />
+<br  />
+ ex&gt; <code> #define _WIZCHIP_ W5500 </code>  </dd>
+<dt>Global <a class="el" href="cbuffer_8h.html#a50fae358271b5264bba5580e71904781">zrtos_cbuffer__malloc_limit</a>  </dt>
+<dd><a class="anchor" id="_todo000001"></a>mutex lock zrtos_cbuffer__malloc_limit  </dd>
 <dt>Global <a class="el" href="vheap_8h.html#a8d6d03b6b309d0782887c006e8527398">zrtos_vheap__free_helper</a>  (zrtos_vheap_t *thiz, zrtos_vheap_chunk_t *chunk)</dt>
-<dd><a class="anchor" id="_todo000001"></a>cancel running task...  </dd>
+<dd><a class="anchor" id="_todo000010"></a>cancel running task...  </dd>
 <dt>Global <a class="el" href="vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9">zrtos_vm__run</a>  (zrtos_vm_t *thiz)</dt>
-<dd><a class="anchor" id="_todo000002"></a>shift left </dd>
+<dd><a class="anchor" id="_todo000011"></a>shift left </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

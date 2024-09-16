@@ -1,0 +1,29 @@
+<map id="__WIZCHIP" name="__WIZCHIP">
+<area shape="rect" id="Node000001" title="WIZCHIP BASIC IF functions for SPI, SDIO, I2C , ETC." alt="" coords="516,243,604,269"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="319,5,386,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="402,17,449,26,473,37,494,51,513,73,528,99,548,153,558,204,561,242,556,243,553,205,543,154,524,101,509,77,490,55,470,41,448,32,401,22"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="55,59,116,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,69,194,74,262,88,348,123,428,165,495,207,542,240,539,244,492,212,425,170,346,127,261,93,194,79,131,75"/>
+<area shape="rect" id="Node000007" href="$union_____w_i_z_c_h_i_p_1_1___i_f.html" title="The set of interface IO callback func." alt="" coords="295,243,410,269"/>
+<area shape="poly" id="edge11_Node000007_Node000003" title=" " alt="" coords="132,82,167,95,218,115,263,145,289,169,312,195,344,240,340,244,308,198,285,172,260,149,215,120,165,100,130,87"/>
+<area shape="rect" id="Node000004" href="$struct_____w_i_z_c_h_i_p_1_1___c_r_i_s.html" title="The set of critical section callback func." alt="" coords="286,339,419,365"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="396,329,528,268,530,272,398,334"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="42,492,129,519"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="144,503,203,494,233,485,260,471,289,447,313,418,343,365,347,367,317,421,293,451,263,476,235,490,204,499,145,508"/>
+<area shape="rect" id="Node000006" href="$struct_____w_i_z_c_h_i_p_1_1___c_s.html" title="The set of _WIZCHIP_ select control callback func." alt="" coords="292,479,413,505"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="135,522,196,535,229,537,261,533,298,520,329,503,331,508,300,525,262,539,229,543,195,541,134,527"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="373,465,545,268,549,271,377,469"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="425,253,516,253,516,259,425,259"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="26,109,145,152"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="161,153,263,196,333,240,330,244,260,201,159,158"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="5,176,166,219"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="181,214,262,232,295,240,294,245,261,237,180,220"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="26,243,145,269"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="161,253,295,253,295,259,161,259"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="24,293,147,320"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="162,292,261,275,295,267,296,273,262,280,163,298"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="16,344,155,387"/>
+<area shape="poly" id="edge13_Node000007_Node000012" title=" " alt="" coords="169,353,216,342,260,326,304,298,336,268,340,272,307,302,263,330,217,347,171,358"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="29,411,142,437"/>
+<area shape="poly" id="edge14_Node000007_Node000013" title=" " alt="" coords="157,414,211,399,237,387,260,371,269,361,273,351,283,325,309,293,334,268,338,271,313,297,288,328,278,353,273,364,263,375,239,392,212,404,158,419"/>
+</map>

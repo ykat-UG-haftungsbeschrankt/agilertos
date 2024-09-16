@@ -1,7 +1,9 @@
 <map id="zrtos_cbuffer_node__new" name="zrtos_cbuffer_node__new">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,173,57"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,173,91"/>
 <area shape="rect" id="Node000002" href="$cbuffer_8h.html#aeb332726de06c905eb2db32ae3d323eb" title=" " alt="" coords="221,23,351,65"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,41,205,41,205,47,173,47"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,61,205,55,206,60,172,66"/>
+<area shape="rect" id="Node000006" href="$malloc__limit_8h.html#a219ea8916b582afe8c2120d09abf8656" title=" " alt="" coords="223,89,349,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="172,89,208,95,207,100,171,94"/>
 <area shape="rect" id="Node000003" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title=" " alt="" coords="411,5,527,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="351,32,395,26,396,31,352,38"/>
 <area shape="rect" id="Node000005" href="$list_8h.html#a40feeb4cd0cc4e30201a279240b52429" title=" " alt="" coords="399,56,539,83"/>

@@ -1,0 +1,7 @@
+<map id="zrtos_vfs_module_spi__on_can_write" name="zrtos_vfs_module_spi__on_can_write">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,151,77"/>
+<area shape="rect" id="Node000002" href="$cbuffer_8h.html#af7e1a18084c22778a744d9a44a243a5c" title=" " alt="" coords="213,5,344,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,43,197,36,198,41,152,48"/>
+<area shape="rect" id="Node000003" href="$vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5" title=" " alt="" coords="199,72,358,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,64,183,69,183,74,151,69"/>
+</map>

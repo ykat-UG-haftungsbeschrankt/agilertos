@@ -1,0 +1,11 @@
+<map id="zrtos_vfs_module_avr_timeout4__on_ioctl" name="zrtos_vfs_module_avr_timeout4__on_ioctl">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,150,115"/>
+<area shape="rect" id="Node000002" href="$vfs__file_8h.html#af74fd0459f24c9b7181d514760774410" title=" " alt="" coords="230,5,357,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,69,214,48,215,53,149,74"/>
+<area shape="rect" id="Node000003" href="$vfs__file_8h.html#a7f3b6e275325d6d776d1eb4a91335023" title=" " alt="" coords="230,72,357,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,91,214,91,214,96,150,96"/>
+<area shape="rect" id="Node000004" href="$timeout_8h.html#a06b1e137244f90f0ef2218c874c4712b" title=" " alt="" coords="198,139,389,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,113,208,131,206,136,148,118"/>
+<area shape="rect" id="Node000005" href="$timeout_8h.html#a60f1be70922ea65aa9c7beedbe30f9d0" title=" " alt="" coords="437,131,608,189"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="389,157,421,157,421,163,389,163"/>
+</map>

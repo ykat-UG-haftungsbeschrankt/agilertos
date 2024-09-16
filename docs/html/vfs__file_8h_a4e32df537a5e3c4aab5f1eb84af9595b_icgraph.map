@@ -1,5 +1,7 @@
 <map id="zrtos_vfs_file__close" name="zrtos_vfs_file__close">
-<area shape="rect" id="Node000001" title=" " alt="" coords="188,5,328,32"/>
-<area shape="rect" id="Node000002" href="$vfs__fd_8h.html#aedfcf7515f1b31b3c17586ee9e90f229" title=" " alt="" coords="5,5,140,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,21,140,21,140,16,172,16"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="410,13,550,40"/>
+<area shape="rect" id="Node000002" href="$vfs__fd_8h.html#aedfcf7515f1b31b3c17586ee9e90f229" title=" " alt="" coords="228,13,362,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="395,29,362,29,362,24,395,24"/>
+<area shape="rect" id="Node000003" href="$rtu_8h.html#aac1c0a8f15ec0cd7540f53a61fe9ff08" title=" " alt="" coords="5,5,180,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,29,180,29,180,24,212,24"/>
 </map>

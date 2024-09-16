@@ -1,27 +1,30 @@
 <map id="vheap.h" name="vheap.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="266,5,331,32"/>
-<area shape="rect" id="Node000002" href="$debug_8h.html" title=" " alt="" coords="127,80,227,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="279,35,213,74,210,69,276,30"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html" title=" " alt="" coords="251,80,346,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="301,33,301,64,296,64,296,33"/>
-<area shape="rect" id="Node000010" href="$vheap__chunk_8h.html" title=" " alt="" coords="380,80,521,107"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="326,30,411,70,409,75,324,35"/>
-<area shape="rect" id="Node000004" href="$types_8h.html" title=" " alt="" coords="133,155,230,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="279,109,216,149,213,144,277,105"/>
-<area shape="rect" id="Node000009" href="$cast_8h.html" title=" " alt="" coords="253,155,344,181"/>
-<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="301,107,301,139,296,139,296,107"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="421,5,486,32"/>
+<area shape="rect" id="Node000002" href="$debug_8h.html" title=" " alt="" coords="282,80,382,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="433,35,368,74,365,69,431,30"/>
+<area shape="rect" id="Node000003" href="$mem_8h.html" title=" " alt="" coords="406,80,500,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="456,33,456,64,451,64,451,33"/>
+<area shape="rect" id="Node000011" href="$vheap__chunk_8h.html" title=" " alt="" coords="524,80,665,107"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="479,30,557,70,555,75,477,35"/>
+<area shape="rect" id="Node000004" href="$types_8h.html" title=" " alt="" coords="266,155,363,181"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="430,110,354,149,351,145,428,105"/>
+<area shape="rect" id="Node000010" href="$cast_8h.html" title=" " alt="" coords="472,229,562,256"/>
+<area shape="poly" id="edge10_Node000003_Node000010" title=" " alt="" coords="461,106,508,214,503,216,456,108"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="5,229,80,256"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="158,184,82,224,79,219,156,180"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="268,184,95,230,94,225,266,179"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="104,229,171,256"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="176,183,155,217,150,215,171,180"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="285,184,183,226,181,221,283,179"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="194,229,259,256"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="191,180,213,215,208,217,187,183"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="301,184,255,221,252,217,297,180"/>
 <area shape="rect" id="Node000008" title=" " alt="" coords="283,229,346,256"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="206,180,279,219,277,224,203,184"/>
-<area shape="rect" id="Node000011" href="$vheap__chunk__uid_8h.html" title=" " alt="" coords="368,155,533,181"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="453,107,453,139,448,139,448,107"/>
-<area shape="rect" id="Node000012" href="$vheap__chunk__type_8h.html" title=" " alt="" coords="556,155,729,181"/>
-<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="485,105,596,146,594,151,483,110"/>
-<area shape="rect" id="Node000013" href="$vheap__type_8h.html" title=" " alt="" coords="577,229,708,256"/>
-<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="645,182,645,214,640,214,640,182"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="317,182,317,214,312,214,312,182"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="371,229,448,256"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="333,180,382,218,379,222,329,184"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="351,179,468,221,466,226,349,184"/>
+<area shape="rect" id="Node000012" href="$vheap__chunk__uid_8h.html" title=" " alt="" coords="507,155,671,181"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="596,107,594,139,589,139,591,107"/>
+<area shape="rect" id="Node000013" href="$vheap__chunk__type_8h.html" title=" " alt="" coords="695,155,867,181"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="628,105,735,146,733,151,626,110"/>
+<area shape="rect" id="Node000014" href="$vheap__type_8h.html" title=" " alt="" coords="716,229,846,256"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="784,182,784,214,779,214,779,182"/>
 </map>

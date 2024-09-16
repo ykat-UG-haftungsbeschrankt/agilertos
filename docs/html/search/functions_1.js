@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['copyright_0',['Copyright',['../spi_2spi_8h.html#a5a52d1f558ffa844d243009457feaa2a',1,'spi.h']]]
+  ['ctlnetwork_0',['ctlnetwork',['../group__extra__functions.html#ga315235b3215e09b1230f4fae093a26b3',1,'wizchip_conf.h']]],
+  ['ctlwizchip_1',['ctlwizchip',['../group__extra__functions.html#ga0ff8fc15549599a1d08dc5ec378779d9',1,'wizchip_conf.h']]]
 ];

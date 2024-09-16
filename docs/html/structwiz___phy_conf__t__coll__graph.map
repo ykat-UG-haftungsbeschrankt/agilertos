@@ -1,0 +1,5 @@
+<map id="wiz_PhyConf_t" name="wiz_PhyConf_t">
+<area shape="rect" id="Node000001" title="It configures PHY configuration when CW_SET PHYCONF or CW_GET_PHYCONF in W5500, &#160;&#160;and it indicates th..." alt="" coords="5,144,113,171"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="29,5,89,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="62,48,62,143,56,143,56,48"/>
+</map>

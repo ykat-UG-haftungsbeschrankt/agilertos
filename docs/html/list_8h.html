@@ -104,12 +104,12 @@ $(function(){initNavTree('list_8h.html',''); initResizable(); });
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for list.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h__incl.svg" width="352" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h__incl.svg" width="568" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h__dep__incl.svg" width="534" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h__dep__incl.svg" width="474" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="list_8h_source.html">Go to the source code of this file.</a></p>
@@ -150,6 +150,12 @@ Functions</h2></td></tr>
 <tr class="separator:a4ecf7568bdda1cd815956c391f29bf1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b32c7536d371537eea58176e69cb2cb" id="r_a1b32c7536d371537eea58176e69cb2cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b32c7536d371537eea58176e69cb2cb">zrtos_list__shift_and_push</a> (<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz)</td></tr>
 <tr class="separator:a1b32c7536d371537eea58176e69cb2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b11d9c6f775a209430f16b719a19617" id="r_a2b11d9c6f775a209430f16b719a19617"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b11d9c6f775a209430f16b719a19617">zrtos_list__delete</a> (<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz, <a class="el" href="#a74c92f024541c68e8aebcd760aaddf8d">zrtos_list_node_t</a> *node)</td></tr>
+<tr class="separator:a2b11d9c6f775a209430f16b719a19617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f2741be75dd514c2227963d8c629dd" id="r_a19f2741be75dd514c2227963d8c629dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19f2741be75dd514c2227963d8c629dd">zrtos_list__is_empty</a> (<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz)</td></tr>
+<tr class="separator:a19f2741be75dd514c2227963d8c629dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2efaa1af7b804994b227ea5436bea39" id="r_ab2efaa1af7b804994b227ea5436bea39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2efaa1af7b804994b227ea5436bea39">zrtos_list__deinit</a> (<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz, void(*callback)(<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz, <a class="el" href="#a74c92f024541c68e8aebcd760aaddf8d">zrtos_list_node_t</a> *node))</td></tr>
+<tr class="separator:ab2efaa1af7b804994b227ea5436bea39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af07a0f1fc987ae26560ae593416684bd" id="r_af07a0f1fc987ae26560ae593416684bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af07a0f1fc987ae26560ae593416684bd">zrtos_list__each</a> (<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz, bool(*callback)(<a class="el" href="#a74c92f024541c68e8aebcd760aaddf8d">zrtos_list_node_t</a> *node, void *arg), void *arg)</td></tr>
 <tr class="separator:af07a0f1fc987ae26560ae593416684bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -183,6 +189,98 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ab2efaa1af7b804994b227ea5436bea39" name="ab2efaa1af7b804994b227ea5436bea39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2efaa1af7b804994b227ea5436bea39">&#9670;&#160;</a></span>zrtos_list__deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_list__deinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(<a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *thiz, <a class="el" href="#a74c92f024541c68e8aebcd760aaddf8d">zrtos_list_node_t</a> *node)</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="list_8h_source.html#l00115">115</a> of file <a class="el" href="list_8h_source.html">list.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span> {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">while</span>(!<a class="code hl_function" href="#a19f2741be75dd514c2227963d8c629dd">zrtos_list__is_empty</a>(thiz)){</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *node = <a class="code hl_function" href="#a4ecf7568bdda1cd815956c391f29bf1e">zrtos_list__shift</a>(thiz);</div>
+<div class="line"><span class="lineno">  121</span>        callback(thiz,node);</div>
+<div class="line"><span class="lineno">  122</span>    }</div>
+<div class="line"><span class="lineno">  123</span>}</div>
+<div class="ttc" id="alist_8h_html_a19f2741be75dd514c2227963d8c629dd"><div class="ttname"><a href="#a19f2741be75dd514c2227963d8c629dd">zrtos_list__is_empty</a></div><div class="ttdeci">bool zrtos_list__is_empty(zrtos_list_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00111">list.h:111</a></div></div>
+<div class="ttc" id="alist_8h_html_a4ecf7568bdda1cd815956c391f29bf1e"><div class="ttname"><a href="#a4ecf7568bdda1cd815956c391f29bf1e">zrtos_list__shift</a></div><div class="ttdeci">zrtos_list_node_t * zrtos_list__shift(zrtos_list_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00078">list.h:78</a></div></div>
+<div class="ttc" id="astruct__zrtos__list__node__t_html"><div class="ttname"><a href="struct__zrtos__list__node__t.html">_zrtos_list_node_t</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00017">list.h:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_ab2efaa1af7b804994b227ea5436bea39_cgraph.svg" width="538" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_ab2efaa1af7b804994b227ea5436bea39_icgraph.svg" width="711" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2b11d9c6f775a209430f16b719a19617" name="a2b11d9c6f775a209430f16b719a19617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b11d9c6f775a209430f16b719a19617">&#9670;&#160;</a></span>zrtos_list__delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_list__delete </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a74c92f024541c68e8aebcd760aaddf8d">zrtos_list_node_t</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="list_8h_source.html#l00096">96</a> of file <a class="el" href="list_8h_source.html">list.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                                   {</div>
+<div class="line"><span class="lineno">   97</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *next;</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *prev = <a class="code hl_function" href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a>(thiz);</div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span>(node == prev){</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_function" href="#a4ecf7568bdda1cd815956c391f29bf1e">zrtos_list__shift</a>(thiz);</div>
+<div class="line"><span class="lineno">  101</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  102</span>        <span class="keywordflow">while</span>((next = prev-&gt;<a class="code hl_variable" href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">next</a>) != node){</div>
+<div class="line"><span class="lineno">  103</span>            prev = next;</div>
+<div class="line"><span class="lineno">  104</span>        }</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">if</span>((prev-&gt;<a class="code hl_variable" href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">next</a> = node-&gt;<a class="code hl_variable" href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">next</a>) == 0){</div>
+<div class="line"><span class="lineno">  106</span>            thiz-&gt;<a class="code hl_variable" href="struct__zrtos__list__t.html#aeb0710da79c6e5a4a70e7de1b04d0d95">last</a> = prev;</div>
+<div class="line"><span class="lineno">  107</span>        }</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="ttc" id="alist_8h_html_a0039f0f08299038ab1a71e271a43a086"><div class="ttname"><a href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a></div><div class="ttdeci">zrtos_list_node_t * zrtos_list__get_first_node(zrtos_list_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00026">list.h:26</a></div></div>
+<div class="ttc" id="astruct__zrtos__list__node__t_html_afabaab2200db541faf63286c8d66c182"><div class="ttname"><a href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">_zrtos_list_node_t::next</a></div><div class="ttdeci">struct _zrtos_list_node_t * next</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00018">list.h:18</a></div></div>
+<div class="ttc" id="astruct__zrtos__list__t_html_aeb0710da79c6e5a4a70e7de1b04d0d95"><div class="ttname"><a href="struct__zrtos__list__t.html#aeb0710da79c6e5a4a70e7de1b04d0d95">_zrtos_list_t::last</a></div><div class="ttdeci">zrtos_list_node_t * last</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00023">list.h:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a2b11d9c6f775a209430f16b719a19617_cgraph.svg" width="512" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a2b11d9c6f775a209430f16b719a19617_icgraph.svg" width="2015" height="1040"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="af07a0f1fc987ae26560ae593416684bd" name="af07a0f1fc987ae26560ae593416684bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af07a0f1fc987ae26560ae593416684bd">&#9670;&#160;</a></span>zrtos_list__each()</h2>
 
@@ -207,20 +305,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="list_8h_source.html#l00096">96</a> of file <a class="el" href="list_8h_source.html">list.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  100</span> {</div>
-<div class="line"><span class="lineno">  101</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *node = <a class="code hl_function" href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a>(thiz);</div>
-<div class="line"><span class="lineno">  102</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *root = node;</div>
-<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span>(node){</div>
-<div class="line"><span class="lineno">  104</span>        <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *next;</div>
-<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">do</span>{</div>
-<div class="line"><span class="lineno">  106</span>            next = node-&gt;<a class="code hl_variable" href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">next</a>;</div>
-<div class="line"><span class="lineno">  107</span>        }<span class="keywordflow">while</span>(callback(node,arg) &amp;&amp; (node = next) != root);</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
-<div class="line"><span class="lineno">  109</span>}</div>
-<div class="ttc" id="alist_8h_html_a0039f0f08299038ab1a71e271a43a086"><div class="ttname"><a href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a></div><div class="ttdeci">zrtos_list_node_t * zrtos_list__get_first_node(zrtos_list_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00026">list.h:26</a></div></div>
-<div class="ttc" id="astruct__zrtos__list__node__t_html"><div class="ttname"><a href="struct__zrtos__list__node__t.html">_zrtos_list_node_t</a></div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00017">list.h:17</a></div></div>
-<div class="ttc" id="astruct__zrtos__list__node__t_html_afabaab2200db541faf63286c8d66c182"><div class="ttname"><a href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">_zrtos_list_node_t::next</a></div><div class="ttdeci">struct _zrtos_list_node_t * next</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00018">list.h:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="list_8h_source.html#l00125">125</a> of file <a class="el" href="list_8h_source.html">list.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span> {</div>
+<div class="line"><span class="lineno">  130</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *node = <a class="code hl_function" href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a>(thiz);</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *root = node;</div>
+<div class="line"><span class="lineno">  132</span>    <span class="keywordflow">if</span>(node){</div>
+<div class="line"><span class="lineno">  133</span>        <a class="code hl_struct" href="struct__zrtos__list__node__t.html">zrtos_list_node_t</a> *next;</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">do</span>{</div>
+<div class="line"><span class="lineno">  135</span>            next = node-&gt;<a class="code hl_variable" href="struct__zrtos__list__node__t.html#afabaab2200db541faf63286c8d66c182">next</a>;</div>
+<div class="line"><span class="lineno">  136</span>        }<span class="keywordflow">while</span>(callback(node,arg) &amp;&amp; (node = next) != root);</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="line"><span class="lineno">  138</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -252,7 +347,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a0039f0f08299038ab1a71e271a43a086_icgraph.svg" width="1442" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a0039f0f08299038ab1a71e271a43a086_icgraph.svg" width="2324" height="859"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -276,11 +371,10 @@ Here is the caller graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   30</span>                                                                {</div>
 <div class="line"><span class="lineno">   31</span>    <span class="keywordflow">return</span> thiz-&gt;<a class="code hl_variable" href="struct__zrtos__list__t.html#aeb0710da79c6e5a4a70e7de1b04d0d95">last</a>;</div>
 <div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="astruct__zrtos__list__t_html_aeb0710da79c6e5a4a70e7de1b04d0d95"><div class="ttname"><a href="struct__zrtos__list__t.html#aeb0710da79c6e5a4a70e7de1b04d0d95">_zrtos_list_t::last</a></div><div class="ttdeci">zrtos_list_node_t * last</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00023">list.h:23</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_aa2f26b2b6fd722b708eb7e25cc264a90_icgraph.svg" width="2220" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_aa2f26b2b6fd722b708eb7e25cc264a90_icgraph.svg" width="2296" height="828"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -309,7 +403,39 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a2da91c03abf243dc0485a6027e970605_icgraph.svg" width="876" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a2da91c03abf243dc0485a6027e970605_icgraph.svg" width="683" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a19f2741be75dd514c2227963d8c629dd" name="a19f2741be75dd514c2227963d8c629dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f2741be75dd514c2227963d8c629dd">&#9670;&#160;</a></span>zrtos_list__is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zrtos_list__is_empty </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a7aa3562c160d92cbad505585fb0072e7">zrtos_list_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="list_8h_source.html#l00111">111</a> of file <a class="el" href="list_8h_source.html">list.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>                                             {</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0039f0f08299038ab1a71e271a43a086">zrtos_list__get_first_node</a>(thiz) == 0;</div>
+<div class="line"><span class="lineno">  113</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a19f2741be75dd514c2227963d8c629dd_cgraph.svg" width="370" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a19f2741be75dd514c2227963d8c629dd_icgraph.svg" width="900" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -352,7 +478,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_aa734984fb49603438b179f49fff38477_icgraph.svg" width="2003" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_aa734984fb49603438b179f49fff38477_icgraph.svg" width="2075" height="672"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -391,7 +517,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a4ecf7568bdda1cd815956c391f29bf1e_icgraph.svg" width="347" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a4ecf7568bdda1cd815956c391f29bf1e_icgraph.svg" width="2228" height="990"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -418,7 +544,6 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">   92</span>        <a class="code hl_function" href="#aa734984fb49603438b179f49fff38477">zrtos_list__push</a>(thiz,node);</div>
 <div class="line"><span class="lineno">   93</span>    }</div>
 <div class="line"><span class="lineno">   94</span>}</div>
-<div class="ttc" id="alist_8h_html_a4ecf7568bdda1cd815956c391f29bf1e"><div class="ttname"><a href="#a4ecf7568bdda1cd815956c391f29bf1e">zrtos_list__shift</a></div><div class="ttdeci">zrtos_list_node_t * zrtos_list__shift(zrtos_list_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00078">list.h:78</a></div></div>
 <div class="ttc" id="alist_8h_html_aa734984fb49603438b179f49fff38477"><div class="ttname"><a href="#aa734984fb49603438b179f49fff38477">zrtos_list__push</a></div><div class="ttdeci">bool zrtos_list__push(zrtos_list_t *thiz, zrtos_list_node_t *node)</div><div class="ttdef"><b>Definition</b> <a href="list_8h_source.html#l00057">list.h:57</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -488,7 +613,7 @@ Here is the call graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a870446d2221a7ce60ce4b2d336f2a577_icgraph.svg" width="355" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a870446d2221a7ce60ce4b2d336f2a577_icgraph.svg" width="1603" height="746"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -515,7 +640,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a7262d2a0c144ef76b0f45193cebb8227_icgraph.svg" width="1164" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a7262d2a0c144ef76b0f45193cebb8227_icgraph.svg" width="1834" height="451"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -543,7 +668,7 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a40feeb4cd0cc4e30201a279240b52429_icgraph.svg" width="1983" height="534"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="list_8h_a40feeb4cd0cc4e30201a279240b52429_icgraph.svg" width="2055" height="672"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

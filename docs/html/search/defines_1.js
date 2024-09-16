@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uart_5fbaud_5fselect_0',['UART_BAUD_SELECT',['../avr_2uart_2uart_8h.html#a367ff7b5de225ed936a63239ad4adb0b',1,'uart.h']]],
-  ['uart_5fbaud_5fselect_5fdouble_5fspeed_1',['UART_BAUD_SELECT_DOUBLE_SPEED',['../avr_2uart_2uart_8h.html#a1a02d45130520cb651ab313e69039382',1,'uart.h']]]
+  ['getsn_5frxmax_0',['getSn_RxMAX',['../w5500_8h.html#a6ea2cfdeb5b8fb71ff05db08990e0df4',1,'w5500.h']]],
+  ['getsn_5ftxmax_1',['getSn_TxMAX',['../w5500_8h.html#aba5cffa90ce609d64d0027285d41336d',1,'w5500.h']]]
 ];

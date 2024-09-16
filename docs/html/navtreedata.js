@@ -38,12 +38,13 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Todo List", "todo.html", null ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -64,12 +65,17 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "adc_8h.html",
-"binary_8h.html#a6dcdf01fb1d353e3eed05a9e4e9d2818",
-"debug_8h_source.html",
-"gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd",
-"struct__zrtos__task__scheduler__t.html#a1f9d27b1d9a88dea381af2a632cbcb3c",
-"time_8h_source.html",
-"vheap_8h.html#aca49c0df48c5e07e9a0776f82bb6cc1f"
+"binary_8h.html#a523f11589ae65d105e4c0a902ec1f866",
+"cbuffer_8h.html#afba4965ffa46fe3c983fa22b9ed75191",
+"functions_c.html",
+"group___socket__register__group.html#ga9d485719088a4f1a18e29a0f9be921a4",
+"mcp2515_8h.html#aadb144b70b1931a14f3293a647ba742aad72de099f605c0fc7f437a0a1a00e1b2",
+"sdm630_8h.html#ab680c2d7e5863dcfad6133e77cbd1628a6a273679e4a6e9660038aaccf0a1d345",
+"struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391",
+"task_8h_source.html",
+"uart_2uart_8h.html#af1e044ef30e61c5e17b757fc81d6ed5ea687528ec72619453ce3ff05fb2cb7d3b",
+"vheap__task_8h.html#a9a6382869bc3582f4c52e85d4915fea5",
+"w5500_8h.html#ac786108aec4528dd98cf6fb7ebae4841"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

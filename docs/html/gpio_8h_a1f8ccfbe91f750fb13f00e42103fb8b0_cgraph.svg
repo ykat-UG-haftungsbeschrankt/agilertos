@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="atmega328p_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="atmega2560_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="344.75,-20 190,-20 190,0 344.75,0 344.75,-20"/>
 <text text-anchor="middle" x="267.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_arch__delay_milliseconds</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="atmega328p_8h.html#ae04abf9c6757be157ce34315a0f8aea5" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="542.25,-20 380.75,-20 380.75,0 542.25,0 542.25,-20"/>
 <text text-anchor="middle" x="461.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_arch__delay_microseconds</text>
 </a>

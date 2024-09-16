@@ -1,4 +1,5 @@
 var dir_3838ad9f0d9587f7dd68f4f107c52caa =
 [
-    [ "spi.h", "avr_2spi_2spi_8h.html", "avr_2spi_2spi_8h" ]
+    [ "spi.h", "avr_2spi_2spi_8h.html", "avr_2spi_2spi_8h" ],
+    [ "sync.h", "sync_8h.html", "sync_8h" ]
 ];

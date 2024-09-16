@@ -94,29 +94,78 @@ $(function(){initNavTree('uart0_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">uart0.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/pgmspace.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="error_8h_source.html">zrtos/error.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="types_8h_source.html">zrtos/types.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="vfs__plugin_8h_source.html">zrtos/vfs_plugin.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="uart_2uart_8h_source.html">zrtos/vfs/module/uart/uart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="avr_2uart_2uart_8h_source.html">zrtos/vfs/module/avr/uart/uart.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for uart0.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h__incl.svg" width="532" height="262"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h__incl.svg" width="1196" height="502"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="uart0_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ae4b1a91d65c784681fcb91959aa45b7c" id="r_ae4b1a91d65c784681fcb91959aa45b7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4b1a91d65c784681fcb91959aa45b7c">ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS</a>&#160;&#160;&#160;UART0_STATUS</td></tr>
+<tr class="separator:ae4b1a91d65c784681fcb91959aa45b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a867f4022fa04a76ab8e21e595758f879" id="r_a867f4022fa04a76ab8e21e595758f879"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a867f4022fa04a76ab8e21e595758f879">ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</a>&#160;&#160;&#160;UART0_DATA</td></tr>
+<tr class="separator:a867f4022fa04a76ab8e21e595758f879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a69856cc389c8b76c8cf8c45ea5a33bc7" id="r_a69856cc389c8b76c8cf8c45ea5a33bc7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69856cc389c8b76c8cf8c45ea5a33bc7">ISR</a> (UART0_RECEIVE_INTERRUPT)</td></tr>
 <tr class="separator:a69856cc389c8b76c8cf8c45ea5a33bc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1352d957b6ae35391ae1fc5ff015fbba" id="r_a1352d957b6ae35391ae1fc5ff015fbba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1352d957b6ae35391ae1fc5ff015fbba">ISR</a> (UART0_TRANSMIT_INTERRUPT)</td></tr>
-<tr class="separator:a1352d957b6ae35391ae1fc5ff015fbba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91dc2a9d312bdd124f13347731b7e1bd" id="r_a91dc2a9d312bdd124f13347731b7e1bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a91dc2a9d312bdd124f13347731b7e1bd">ISR</a> (UART0_TRANSMIT_INTERRUPT, ISR_NOBLOCK)</td></tr>
+<tr class="separator:a91dc2a9d312bdd124f13347731b7e1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d4b2d66f34cb9716c8ff3364349555e" id="r_a6d4b2d66f34cb9716c8ff3364349555e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d4b2d66f34cb9716c8ff3364349555e">zrtos_vfs_module_avr_uart0__on_mount</a> (<a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *thiz)</td></tr>
+<tr class="separator:a6d4b2d66f34cb9716c8ff3364349555e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13b92d02f3b141e8567ad5883d10eff3" id="r_a13b92d02f3b141e8567ad5883d10eff3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13b92d02f3b141e8567ad5883d10eff3">zrtos_vfs_module_avr_uart0__on_umount</a> (<a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *thiz)</td></tr>
+<tr class="separator:a13b92d02f3b141e8567ad5883d10eff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c08ba1c9bac4dd9a045d06a07dbe0b4" id="r_a1c08ba1c9bac4dd9a045d06a07dbe0b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c08ba1c9bac4dd9a045d06a07dbe0b4">zrtos_vfs_module_avr_uart0__on_write</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out)</td></tr>
+<tr class="separator:a1c08ba1c9bac4dd9a045d06a07dbe0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d0fcf311ea43910e5b659a5b1d925e4" id="r_a2d0fcf311ea43910e5b659a5b1d925e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d0fcf311ea43910e5b659a5b1d925e4">ZRTOS_VFS_PLUGIN__INIT</a> (avr_uart0, <a class="el" href="vfs__plugin_8h.html#ae10018ce622e70fee9de5eb674c75fc8">ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5c4839cd4ecbb8e372eaccd141851bc1">ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a05b8a1bcf795c6ab354030e4c1cd9cd5">ZRTOS_VFS_PLUGIN__2_ON_MOUNT</a>(<a class="el" href="#a6d4b2d66f34cb9716c8ff3364349555e">zrtos_vfs_module_avr_uart0__on_mount</a>) <a class="el" href="vfs__plugin_8h.html#a095caec19b2f1ad0593770f30e2d5af9">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT</a>(<a class="el" href="#a13b92d02f3b141e8567ad5883d10eff3">zrtos_vfs_module_avr_uart0__on_umount</a>) <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="uart_2uart_8h.html#a6a55bd7ce001957fedb1647045d64cf9">zrtos_vfs_module_uart__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#a1c08ba1c9bac4dd9a045d06a07dbe0b4">zrtos_vfs_module_avr_uart0__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="uart_2uart_8h.html#ae0df07d6b2030b70ae3c65b98ab0d15a">zrtos_vfs_module_uart__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="uart_2uart_8h.html#aceac60cc4f8d7474e117088335ff0db7">zrtos_vfs_module_uart__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="uart_2uart_8h.html#ad7c2b1650fefd09f873588725a30a2be">zrtos_vfs_module_uart__on_ioctl</a>))</td></tr>
+<tr class="separator:a2d0fcf311ea43910e5b659a5b1d925e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5e95cbb6b227bf2e3b609852655e90a0" id="r_a5e95cbb6b227bf2e3b609852655e90a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a></td></tr>
+<tr class="separator:a5e95cbb6b227bf2e3b609852655e90a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a867f4022fa04a76ab8e21e595758f879" name="a867f4022fa04a76ab8e21e595758f879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a867f4022fa04a76ab8e21e595758f879">&#9670;&#160;</a></span>ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA&#160;&#160;&#160;UART0_DATA</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4b1a91d65c784681fcb91959aa45b7c" name="ae4b1a91d65c784681fcb91959aa45b7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4b1a91d65c784681fcb91959aa45b7c">&#9670;&#160;</a></span>ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS&#160;&#160;&#160;UART0_STATUS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a69856cc389c8b76c8cf8c45ea5a33bc7" name="a69856cc389c8b76c8cf8c45ea5a33bc7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a69856cc389c8b76c8cf8c45ea5a33bc7">&#9670;&#160;</a></span>ISR() <span class="overload">[1/2]</span></h2>
@@ -133,56 +182,62 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function: UART Receive Complete interrupt Purpose: called when the UART has received a character. </p>
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00019">19</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>                            {</div>
+<div class="line"><span class="lineno">   20</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">   21</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS USART0_RXDATAH</span></div>
+<div class="line"><span class="lineno">   22</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA   USART0.RXDATAL</span></div>
+<div class="line"><span class="lineno">   23</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   24</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS UART0_STATUS</span></div>
+<div class="line"><span class="lineno">   25</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA   UART0_DATA</span></div>
+<div class="line"><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span><span class="preprocessor">#if defined(AT90_UART)</span></div>
+<div class="line"><span class="lineno">   29</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\</span></div>
+<div class="line"><span class="lineno">   30</span><span class="preprocessor">    (ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS &amp; (_BV(FE)|_BV(DOR)|_BV(UPE)))</span></div>
+<div class="line"><span class="lineno">   31</span><span class="preprocessor">#elif defined(ATMEGA_USART)</span></div>
+<div class="line"><span class="lineno">   32</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\</span></div>
+<div class="line"><span class="lineno">   33</span><span class="preprocessor">    (ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS &amp; (_BV(FE)|_BV(DOR)|_BV(UPE)))</span></div>
+<div class="line"><span class="lineno">   34</span><span class="preprocessor">#elif defined(ATMEGA_USART0)</span></div>
+<div class="line"><span class="lineno">   35</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\</span></div>
+<div class="line"><span class="lineno">   36</span><span class="preprocessor">    (ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS &amp; (_BV(FE0)|_BV(DOR0)|_BV(UPE0)))</span></div>
+<div class="line"><span class="lineno">   37</span><span class="preprocessor">#elif defined(ATMEGA_UART)</span></div>
+<div class="line"><span class="lineno">   38</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\</span></div>
+<div class="line"><span class="lineno">   39</span><span class="preprocessor">    (ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS &amp; (_BV(FE)|_BV(DOR)|_BV(UPE)))</span></div>
+<div class="line"><span class="lineno">   40</span><span class="preprocessor">#elif defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">   41</span><span class="preprocessor"># define ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR\</span></div>
+<div class="line"><span class="lineno">   42</span><span class="preprocessor">    (ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS &amp; (USART_BUFOVF_bm | USART_FERR_bm | USART_PERR_bm))</span></div>
+<div class="line"><span class="lineno">   43</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span>    <a class="code hl_function" href="avr_2uart_2uart_8h.html#aea39870a896298195c0769800af5b3e2">zrtos_vfs_module_avr_uart__on_receive_interrupt</a>(</div>
+<div class="line"><span class="lineno">   46</span>         <a class="code hl_variable" href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a></div>
+<div class="line"><span class="lineno">   47</span>        ,<a class="code hl_define" href="#a867f4022fa04a76ab8e21e595758f879">ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</a></div>
+<div class="line"><span class="lineno">   48</span>        ,(</div>
+<div class="line"><span class="lineno">   49</span>              ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR == 0</div>
+<div class="line"><span class="lineno">   50</span>            ? <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div>
+<div class="line"><span class="lineno">   51</span>            : <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19">ZRTOS_ERROR__IO</a></div>
+<div class="line"><span class="lineno">   52</span>        )</div>
+<div class="line"><span class="lineno">   53</span>    );</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span><span class="preprocessor">#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__STATUS</span></div>
+<div class="line"><span class="lineno">   56</span><span class="preprocessor">#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</span></div>
+<div class="line"><span class="lineno">   57</span><span class="preprocessor">#undef ZRTOS_VFS_MODULE_AVR_UART_UART0__ERROR</span></div>
+<div class="line"><span class="lineno">   58</span>}</div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_aea39870a896298195c0769800af5b3e2"><div class="ttname"><a href="avr_2uart_2uart_8h.html#aea39870a896298195c0769800af5b3e2">zrtos_vfs_module_avr_uart__on_receive_interrupt</a></div><div class="ttdeci">void zrtos_vfs_module_avr_uart__on_receive_interrupt(zrtos_vfs_module_uart_inode_t *thiz, uint8_t data, zrtos_error_t err)</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00298">avr/uart/uart.h:298</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a18be9b7859b0daed2abdfd2f82ff8a19">ZRTOS_ERROR__IO</a></div><div class="ttdeci">@ ZRTOS_ERROR__IO</div><div class="ttdoc">I/O error.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00030">error.h:29</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div><div class="ttdeci">@ ZRTOS_ERROR__SUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00023">error.h:22</a></div></div>
+<div class="ttc" id="auart0_8h_html_a5e95cbb6b227bf2e3b609852655e90a0"><div class="ttname"><a href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a></div><div class="ttdeci">zrtos_vfs_module_uart_inode_t * zrtos_vfs_module_avr_uart0</div><div class="ttdef"><b>Definition</b> <a href="uart0_8h_source.html#l00017">uart0.h:17</a></div></div>
+<div class="ttc" id="auart0_8h_html_a867f4022fa04a76ab8e21e595758f879"><div class="ttname"><a href="#a867f4022fa04a76ab8e21e595758f879">ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</a></div><div class="ttdeci">#define ZRTOS_VFS_MODULE_AVR_UART_UART0__DATA</div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h_a69856cc389c8b76c8cf8c45ea5a33bc7_cgraph.svg" width="1496" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
-<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00021">21</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
-<div class="line"><span class="lineno">   27</span>    uint16_t tmphead;</div>
-<div class="line"><span class="lineno">   28</span>    uint8_t data;</div>
-<div class="line"><span class="lineno">   29</span>    uint8_t usr;</div>
-<div class="line"><span class="lineno">   30</span>    uint8_t lastRxError;</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">/* read UART status register and UART data register */</span></div>
-<div class="line"><span class="lineno">   33</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
-<div class="line"><span class="lineno">   34</span>    usr  = USART0_RXDATAH;</div>
-<div class="line"><span class="lineno">   35</span>    data = USART0.RXDATAL;</div>
-<div class="line"><span class="lineno">   36</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   37</span>    usr  = UART0_STATUS;</div>
-<div class="line"><span class="lineno">   38</span>    data = UART0_DATA;</div>
-<div class="line"><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   40</span> </div>
-<div class="line"><span class="lineno">   41</span>    <span class="comment">/* */</span></div>
-<div class="line"><span class="lineno">   42</span><span class="preprocessor">#if defined(AT90_UART)</span></div>
-<div class="line"><span class="lineno">   43</span>    lastRxError = (usr &amp; (_BV(FE)|_BV(DOR)));</div>
-<div class="line"><span class="lineno">   44</span><span class="preprocessor">#elif defined(ATMEGA_USART)</span></div>
-<div class="line"><span class="lineno">   45</span>    lastRxError = (usr &amp; (_BV(FE)|_BV(DOR)));</div>
-<div class="line"><span class="lineno">   46</span><span class="preprocessor">#elif defined(ATMEGA_USART0)</span></div>
-<div class="line"><span class="lineno">   47</span>    lastRxError = (usr &amp; (_BV(FE0)|_BV(DOR0)));</div>
-<div class="line"><span class="lineno">   48</span><span class="preprocessor">#elif defined(ATMEGA_UART)</span></div>
-<div class="line"><span class="lineno">   49</span>    lastRxError = (usr &amp; (_BV(FE)|_BV(DOR)));</div>
-<div class="line"><span class="lineno">   50</span><span class="preprocessor">#elif defined(AVR1_USART0)</span></div>
-<div class="line"><span class="lineno">   51</span>    lastRxError = (usr &amp; (USART_BUFOVF_bm | USART_FERR_bm | USART_PERR_bm));</div>
-<div class="line"><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   53</span> </div>
-<div class="line"><span class="lineno">   54</span>    <span class="comment">/* calculate buffer index */</span></div>
-<div class="line"><span class="lineno">   55</span>    tmphead = (UART_RxHead + 1) &amp; UART_RX0_BUFFER_MASK;</div>
-<div class="line"><span class="lineno">   56</span> </div>
-<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">if</span> (tmphead == UART_RxTail) {</div>
-<div class="line"><span class="lineno">   58</span>        <span class="comment">/* error: receive buffer overflow */</span></div>
-<div class="line"><span class="lineno">   59</span>        lastRxError = UART_BUFFER_OVERFLOW &gt;&gt; 8;</div>
-<div class="line"><span class="lineno">   60</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   61</span>        <span class="comment">/* store new index */</span></div>
-<div class="line"><span class="lineno">   62</span>        UART_RxHead = tmphead;</div>
-<div class="line"><span class="lineno">   63</span>        <span class="comment">/* store received data in buffer */</span></div>
-<div class="line"><span class="lineno">   64</span>        UART_RxBuf[tmphead] = data;</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
-<div class="line"><span class="lineno">   66</span>    UART_LastRxError = lastRxError;</div>
-<div class="line"><span class="lineno">   67</span>}</div>
-</div><!-- fragment -->
 </div>
 </div>
-<a id="a1352d957b6ae35391ae1fc5ff015fbba" name="a1352d957b6ae35391ae1fc5ff015fbba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1352d957b6ae35391ae1fc5ff015fbba">&#9670;&#160;</a></span>ISR() <span class="overload">[2/2]</span></h2>
+<a id="a91dc2a9d312bdd124f13347731b7e1bd" name="a91dc2a9d312bdd124f13347731b7e1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91dc2a9d312bdd124f13347731b7e1bd">&#9670;&#160;</a></span>ISR() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,38 +245,296 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">ISR </td>
           <td>(</td>
-          <td class="paramtype">UART0_TRANSMIT_INTERRUPT</td>          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype">UART0_TRANSMIT_INTERRUPT</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ISR_NOBLOCK</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00060">60</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>                                         {</div>
+<div class="line"><span class="lineno">   61</span>    uint8_t tmp;</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="avr_2uart_2uart_8h.html#a4ad82b41bf19a0c78e59277745226a13">zrtos_vfs_module_avr_uart__on_transmit_interrupt</a>(</div>
+<div class="line"><span class="lineno">   63</span>         <a class="code hl_variable" href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a></div>
+<div class="line"><span class="lineno">   64</span>        ,&amp;tmp</div>
+<div class="line"><span class="lineno">   65</span>    )){</div>
+<div class="line"><span class="lineno">   66</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">   67</span>        USART0_TXDATAL = tmp;</div>
+<div class="line"><span class="lineno">   68</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   69</span>        UART0_DATA = tmp;</div>
+<div class="line"><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   71</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   72</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">   73</span>        USART0_CTRLA &amp;= ~USART_DREIE_bm;</div>
+<div class="line"><span class="lineno">   74</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">   75</span>        UART0_CONTROL &amp;= ~_BV(UART0_UDRIE);</div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+<div class="line"><span class="lineno">   78</span>}</div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_a4ad82b41bf19a0c78e59277745226a13"><div class="ttname"><a href="avr_2uart_2uart_8h.html#a4ad82b41bf19a0c78e59277745226a13">zrtos_vfs_module_avr_uart__on_transmit_interrupt</a></div><div class="ttdeci">bool zrtos_vfs_module_avr_uart__on_transmit_interrupt(zrtos_vfs_module_uart_inode_t *thiz, uint8_t *data)</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00323">avr/uart/uart.h:323</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h_a91dc2a9d312bdd124f13347731b7e1bd_cgraph.svg" width="1511" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a6d4b2d66f34cb9716c8ff3364349555e" name="a6d4b2d66f34cb9716c8ff3364349555e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d4b2d66f34cb9716c8ff3364349555e">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart0__on_mount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_avr_uart0__on_mount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function: UART Data Register Empty interrupt Purpose: called when the UART is ready to transmit the next byte. </p>
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00080">80</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>                                                                            {</div>
+<div class="line"><span class="lineno">   81</span>    uint16_t baudrate;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a> = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">   84</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__uart__args__t.html">zrtos_vfs_module_uart_inode_t</a>*</div>
+<div class="line"><span class="lineno">   85</span>        ,<a class="code hl_function" href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a>(</div>
+<div class="line"><span class="lineno">   86</span>            thiz</div>
+<div class="line"><span class="lineno">   87</span>        )</div>
+<div class="line"><span class="lineno">   88</span>    );</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>    baudrate = <a class="code hl_function" href="avr_2uart_2uart_8h.html#ae7970c6edb532436a6886394d1bdf42f">zrtos_vfs_module_avr_uart__baud_select</a>(</div>
+<div class="line"><span class="lineno">   91</span>         <a class="code hl_variable" href="#a5e95cbb6b227bf2e3b609852655e90a0">zrtos_vfs_module_avr_uart0</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a2e9dd5a1b132cf34ded8f77ddc450389">baudrate</a></div>
+<div class="line"><span class="lineno">   92</span>    );</div>
+<div class="line"><span class="lineno">   93</span> </div>
+<div class="line"><span class="lineno">   94</span><span class="preprocessor">#if defined(AT90_UART)</span></div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">/* set baud rate */</span></div>
+<div class="line"><span class="lineno">   96</span>    UBRR = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) baudrate;</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">/* enable UART receiver and transmitter and receive complete interrupt */</span></div>
+<div class="line"><span class="lineno">   99</span>    UART0_CONTROL = _BV(RXCIE)|_BV(RXEN)|_BV(TXEN);</div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span><span class="preprocessor">#elif defined(ATMEGA_USART)</span></div>
+<div class="line"><span class="lineno">  102</span>    <span class="comment">/* Set baud rate */</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="avr_2uart_2uart_8h.html#a4ce082cf03247eba049caa0a35551272">ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</a>(baudrate)){</div>
+<div class="line"><span class="lineno">  104</span>        UART0_STATUS = _BV(U2X);  <span class="comment">//Enable 2x speed</span></div>
+<div class="line"><span class="lineno">  105</span>        baudrate &amp;= ~0x8000;</div>
+<div class="line"><span class="lineno">  106</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  107</span>        UART0_STATUS &amp;= ~_BV(U2X);</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+<div class="line"><span class="lineno">  109</span>    UBRRH = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) (baudrate&gt;&gt;8);</div>
+<div class="line"><span class="lineno">  110</span>    UBRRL = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) baudrate;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>    <span class="comment">/* Enable USART receiver and transmitter and receive complete interrupt */</span></div>
+<div class="line"><span class="lineno">  113</span>    UART0_CONTROL = _BV(RXCIE)|_BV(RXEN)|_BV(TXEN);</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">/* Set frame format: asynchronous, 8data, no parity, 1stop bit */</span></div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">#ifdef URSEL</span></div>
+<div class="line"><span class="lineno">  117</span>    UCSRC = _BV(URSEL)|_BV(UCSZ1)|_BV(UCSZ0);</div>
+<div class="line"><span class="lineno">  118</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  119</span>    UCSRC = _BV(UCSZ1)|_BV(UCSZ0);</div>
+<div class="line"><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  121</span> </div>
+<div class="line"><span class="lineno">  122</span><span class="preprocessor">#elif defined(ATMEGA_USART0)</span></div>
+<div class="line"><span class="lineno">  123</span>    <span class="comment">/* Set baud rate */</span></div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="avr_2uart_2uart_8h.html#a4ce082cf03247eba049caa0a35551272">ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</a>(baudrate)){</div>
+<div class="line"><span class="lineno">  125</span>        UART0_STATUS = _BV(U2X0);  <span class="comment">//Enable 2x speed</span></div>
+<div class="line"><span class="lineno">  126</span>        baudrate &amp;= ~0x8000;</div>
+<div class="line"><span class="lineno">  127</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  128</span>        UART0_STATUS &amp;= ~_BV(U2X0);</div>
+<div class="line"><span class="lineno">  129</span>    }</div>
+<div class="line"><span class="lineno">  130</span>    UBRR0H = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>)(baudrate&gt;&gt;8);</div>
+<div class="line"><span class="lineno">  131</span>    UBRR0L = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) baudrate;</div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span>    <span class="comment">/* Enable USART receiver and transmitter and receive complete interrupt */</span></div>
+<div class="line"><span class="lineno">  134</span>    UART0_CONTROL = _BV(RXCIE0)|_BV(RXEN0)|_BV(TXEN0);</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <span class="comment">/* Set frame format: asynchronous, 8data, no parity, 1stop bit */</span></div>
+<div class="line"><span class="lineno">  137</span><span class="preprocessor">#ifdef URSEL0</span></div>
+<div class="line"><span class="lineno">  138</span>    UCSR0C = _BV(URSEL0)|_BV(UCSZ01)|_BV(UCSZ00);</div>
+<div class="line"><span class="lineno">  139</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  140</span>    UCSR0C = _BV(UCSZ01)|_BV(UCSZ00);</div>
+<div class="line"><span class="lineno">  141</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  142</span> </div>
+<div class="line"><span class="lineno">  143</span><span class="preprocessor">#elif defined(ATMEGA_UART)</span></div>
+<div class="line"><span class="lineno">  144</span>    <span class="comment">/* set baud rate */</span></div>
+<div class="line"><span class="lineno">  145</span>    <span class="keywordflow">if</span>(<a class="code hl_define" href="avr_2uart_2uart_8h.html#a4ce082cf03247eba049caa0a35551272">ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</a>(baudrate)){</div>
+<div class="line"><span class="lineno">  146</span>        UART0_STATUS = _BV(U2X);  <span class="comment">//Enable 2x speed</span></div>
+<div class="line"><span class="lineno">  147</span>        baudrate &amp;= ~0x8000;</div>
+<div class="line"><span class="lineno">  148</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  149</span>        UART0_STATUS &amp;= ~_BV(U2X);</div>
+<div class="line"><span class="lineno">  150</span>    }</div>
+<div class="line"><span class="lineno">  151</span>    UBRRHI = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) (baudrate&gt;&gt;8);</div>
+<div class="line"><span class="lineno">  152</span>    UBRR   = (<a class="code hl_variable" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a>) baudrate;</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">/* Enable UART receiver and transmitter and receive complete interrupt */</span></div>
+<div class="line"><span class="lineno">  155</span>    UART0_CONTROL = _BV(RXCIE)|_BV(RXEN)|_BV(TXEN);</div>
+<div class="line"><span class="lineno">  156</span> </div>
+<div class="line"><span class="lineno">  157</span><span class="preprocessor">#elif defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">  158</span>    <span class="comment">// set the baud rate</span></div>
+<div class="line"><span class="lineno">  159</span>    USART0.BAUD = USART0_BAUD_RATE(baudrate);</div>
+<div class="line"><span class="lineno">  160</span> </div>
+<div class="line"><span class="lineno">  161</span>    USART0.CTRLA = USART_RXCIE_bm;</div>
+<div class="line"><span class="lineno">  162</span>    USART0.CTRLB = USART_TXEN_bm | USART_RXEN_bm | USART_RXMODE_NORMAL_gc;</div>
+<div class="line"><span class="lineno">  163</span>    <span class="comment">// Default configuration of CTRLC is 8N1 in asynchronous mode</span></div>
+<div class="line"><span class="lineno">  164</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  167</span>}</div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_a4ce082cf03247eba049caa0a35551272"><div class="ttname"><a href="avr_2uart_2uart_8h.html#a4ce082cf03247eba049caa0a35551272">ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</a></div><div class="ttdeci">#define ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00275">avr/uart/uart.h:275</a></div></div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_ae7970c6edb532436a6886394d1bdf42f"><div class="ttname"><a href="avr_2uart_2uart_8h.html#ae7970c6edb532436a6886394d1bdf42f">zrtos_vfs_module_avr_uart__baud_select</a></div><div class="ttdeci">uint16_t zrtos_vfs_module_avr_uart__baud_select(zrtos_vfs_module_uart_baudrate_t baudrate)</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00279">avr/uart/uart.h:279</a></div></div>
+<div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00018">cast.h:18</a></div></div>
+<div class="ttc" id="amcp2515_8h_html_ae1affc9ca37cfb624959c866a73f83c2"><div class="ttname"><a href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a></div><div class="ttdeci">static uint8_t</div><div class="ttdef"><b>Definition</b> <a href="mcp2515_8h_source.html#l00159">mcp2515.h:159</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html">_zrtos_vfs_module_uart_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00201">uart/uart.h:201</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a2e9dd5a1b132cf34ded8f77ddc450389"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a2e9dd5a1b132cf34ded8f77ddc450389">_zrtos_vfs_module_uart_args_t::baudrate</a></div><div class="ttdeci">zrtos_vfs_module_uart_baudrate_t baudrate</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00206">uart/uart.h:206</a></div></div>
+<div class="ttc" id="avfs__dentry_8h_html_a8f39a2645b3699977cef8f8d096f9614"><div class="ttname"><a href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_dentry__get_inode_data(zrtos_vfs_dentry_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__dentry_8h_source.html#l00196">vfs_dentry.h:196</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h_a6d4b2d66f34cb9716c8ff3364349555e_cgraph.svg" width="351" height="120"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
-<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00070">70</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
-<div class="line"><span class="lineno">   76</span>    uint16_t tmptail;</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">if</span> (UART_TxHead != UART_TxTail) {</div>
-<div class="line"><span class="lineno">   79</span>        <span class="comment">/* calculate and store new buffer index */</span></div>
-<div class="line"><span class="lineno">   80</span>        tmptail = (UART_TxTail + 1) &amp; UART_TX0_BUFFER_MASK;</div>
-<div class="line"><span class="lineno">   81</span>        UART_TxTail = tmptail;</div>
-<div class="line"><span class="lineno">   82</span>        <span class="comment">/* get one byte from buffer and write it to UART */</span></div>
-<div class="line"><span class="lineno">   83</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
-<div class="line"><span class="lineno">   84</span>        USART0_TXDATAL = UART_TxBuf[tmptail];  <span class="comment">/* start transmission */</span></div>
-<div class="line"><span class="lineno">   85</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   86</span>        UART0_DATA = UART_TxBuf[tmptail];  <span class="comment">/* start transmission */</span></div>
-<div class="line"><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   88</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">   89</span>        <span class="comment">/* tx buffer empty, disable UDRE interrupt */</span></div>
-<div class="line"><span class="lineno">   90</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
-<div class="line"><span class="lineno">   91</span>        USART0_CTRLA &amp;= ~USART_DREIE_bm;</div>
-<div class="line"><span class="lineno">   92</span><span class="preprocessor">#else</span></div>
-<div class="line"><span class="lineno">   93</span>        UART0_CONTROL &amp;= ~_BV(UART0_UDRIE);</div>
-<div class="line"><span class="lineno">   94</span><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="lineno">   95</span>    }</div>
-<div class="line"><span class="lineno">   96</span>}</div>
+</div>
+</div>
+<a id="a13b92d02f3b141e8567ad5883d10eff3" name="a13b92d02f3b141e8567ad5883d10eff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13b92d02f3b141e8567ad5883d10eff3">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart0__on_umount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_avr_uart0__on_umount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00169">169</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  169</span>                                                                             {</div>
+<div class="line"><span class="lineno">  170</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">  171</span>    USART0_CTRLA &amp;= ~USART_DREIE_bm;</div>
+<div class="line"><span class="lineno">  172</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  173</span>    UART0_CONTROL &amp;= ~_BV(UART0_UDRIE);</div>
+<div class="line"><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  175</span>    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">  176</span>}</div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="a1c08ba1c9bac4dd9a045d06a07dbe0b4" name="a1c08ba1c9bac4dd9a045d06a07dbe0b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c08ba1c9bac4dd9a045d06a07dbe0b4">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart0__on_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> zrtos_vfs_module_avr_uart0__on_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>path</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>buf</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a></td>          <td class="paramname"><span class="paramname"><em>len</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a></td>          <td class="paramname"><span class="paramname"><em>offset</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00178">178</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span> {</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="uart_2uart_8h.html#a9e735d9796aaa30e4a5fce9c763adf92">zrtos_vfs_module_uart__on_write</a>(</div>
+<div class="line"><span class="lineno">  187</span>         thiz</div>
+<div class="line"><span class="lineno">  188</span>        ,path</div>
+<div class="line"><span class="lineno">  189</span>        ,buf</div>
+<div class="line"><span class="lineno">  190</span>        ,len</div>
+<div class="line"><span class="lineno">  191</span>        ,offset</div>
+<div class="line"><span class="lineno">  192</span>        ,out</div>
+<div class="line"><span class="lineno">  193</span>    );</div>
+<div class="line"><span class="lineno">  194</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
+<div class="line"><span class="lineno">  195</span><span class="preprocessor">#if defined(AVR1_USART0)</span></div>
+<div class="line"><span class="lineno">  196</span>        USART0_CTRLA |= USART_DREIE_bm;</div>
+<div class="line"><span class="lineno">  197</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  198</span>        UART0_CONTROL |= _BV(UART0_UDRIE);</div>
+<div class="line"><span class="lineno">  199</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  200</span>    }</div>
+<div class="line"><span class="lineno">  201</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  202</span>}</div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00020">error.h:20</a></div></div>
+<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00152">error.h:152</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_a9e735d9796aaa30e4a5fce9c763adf92"><div class="ttname"><a href="uart_2uart_8h.html#a9e735d9796aaa30e4a5fce9c763adf92">zrtos_vfs_module_uart__on_write</a></div><div class="ttdeci">zrtos_error_t zrtos_vfs_module_uart__on_write(zrtos_vfs_file_t *thiz, char *path, void *buf, size_t len, zrtos_vfs_offset_t offset, size_t *out)</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00316">uart/uart.h:316</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="uart0_8h_a1c08ba1c9bac4dd9a045d06a07dbe0b4_cgraph.svg" width="1839" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2d0fcf311ea43910e5b659a5b1d925e4" name="a2d0fcf311ea43910e5b659a5b1d925e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d0fcf311ea43910e5b659a5b1d925e4">&#9670;&#160;</a></span>ZRTOS_VFS_PLUGIN__INIT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ZRTOS_VFS_PLUGIN__INIT </td>
+          <td>(</td>
+          <td class="paramtype">avr_uart0</td>          <td class="paramname"><span class="paramname">, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="vfs__plugin_8h.html#ae10018ce622e70fee9de5eb674c75fc8">ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a5c4839cd4ecbb8e372eaccd141851bc1">ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a05b8a1bcf795c6ab354030e4c1cd9cd5">ZRTOS_VFS_PLUGIN__2_ON_MOUNT</a>(<a class="el" href="#a6d4b2d66f34cb9716c8ff3364349555e">zrtos_vfs_module_avr_uart0__on_mount</a>) <a class="el" href="vfs__plugin_8h.html#a095caec19b2f1ad0593770f30e2d5af9">ZRTOS_VFS_PLUGIN__3_ON_UMOUNT</a>(<a class="el" href="#a13b92d02f3b141e8567ad5883d10eff3">zrtos_vfs_module_avr_uart0__on_umount</a>) <a class="el" href="vfs__plugin_8h.html#aba15ad18eba59e6feba58b7d61c6d586">ZRTOS_VFS_PLUGIN__4_ON_READ</a>(<a class="el" href="uart_2uart_8h.html#a6a55bd7ce001957fedb1647045d64cf9">zrtos_vfs_module_uart__on_read</a>) <a class="el" href="vfs__plugin_8h.html#a19246ae5a6ae31b2c50b9b718b501c4b">ZRTOS_VFS_PLUGIN__5_ON_WRITE</a>(<a class="el" href="#a1c08ba1c9bac4dd9a045d06a07dbe0b4">zrtos_vfs_module_avr_uart0__on_write</a>) <a class="el" href="vfs__plugin_8h.html#aff1863ea85a1b3e4c06d876f8ce0b69a">ZRTOS_VFS_PLUGIN__6_ON_CAN_READ</a>(<a class="el" href="uart_2uart_8h.html#ae0df07d6b2030b70ae3c65b98ab0d15a">zrtos_vfs_module_uart__on_can_read</a>) <a class="el" href="vfs__plugin_8h.html#a1689c8303ec9732c5da0e5ff7ef35755">ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE</a>(<a class="el" href="uart_2uart_8h.html#aceac60cc4f8d7474e117088335ff0db7">zrtos_vfs_module_uart__on_can_write</a>) <a class="el" href="vfs__plugin_8h.html#a2ec09be970ef0bf834a59f7b6f9c59e0">ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT</a>() <a class="el" href="vfs__plugin_8h.html#a915ff71bc964d1d959d23a806744a068">ZRTOS_VFS_PLUGIN__9_ON_IOCTL</a>(<a class="el" href="uart_2uart_8h.html#ad7c2b1650fefd09f873588725a30a2be">zrtos_vfs_module_uart__on_ioctl</a>)</td>          <td class="paramname"><span class="paramname"></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a5e95cbb6b227bf2e3b609852655e90a0" name="a5e95cbb6b227bf2e3b609852655e90a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e95cbb6b227bf2e3b609852655e90a0">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a>* zrtos_vfs_module_avr_uart0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uart0_8h_source.html#l00017">17</a> of file <a class="el" href="uart0_8h_source.html">uart0.h</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

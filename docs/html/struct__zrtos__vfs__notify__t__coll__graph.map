@@ -1,14 +1,14 @@
 <map id="_zrtos_vfs_notify_t" name="_zrtos_vfs_notify_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="75,277,204,304"/>
-<area shape="rect" id="Node000005" href="$struct__zrtos__vfs__notify__entry__t.html" title=" " alt="" coords="57,384,222,411"/>
-<area shape="poly" id="edge5_Node000005_Node000001" title=" " alt="" coords="96,315,84,329,79,344,84,359,94,371,108,381,105,386,91,375,79,361,74,344,79,327,92,311"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,277,238,304"/>
+<area shape="rect" id="Node000005" href="$struct__zrtos__vfs__notify__entry__t.html" title=" " alt="" coords="92,368,256,395"/>
+<area shape="poly" id="edge5_Node000005_Node000001" title=" " alt="" coords="141,316,131,329,130,339,134,348,153,365,149,369,129,351,124,340,126,327,137,312"/>
 <area shape="rect" id="Node000002" href="$struct__zrtos__vfs__fd__set__t.html" title=" " alt="" coords="5,187,138,213"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,224,132,275,128,278,88,228"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,222,161,275,158,279,96,226"/>
 <area shape="rect" id="Node000003" href="$structzrtos__bitfield__t.html" title=" " alt="" coords="19,96,124,123"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,138,74,186,69,186,69,138"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="41,5,102,32"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="74,48,74,95,69,95,69,48"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="157,370,162,359,165,344,162,329,149,306,153,303,167,327,171,344,167,361,162,372"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="182,353,184,344,183,323,177,305,182,304,188,323,189,344,187,354"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="162,187,256,213"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="192,228,152,278,147,275,187,224"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="201,229,182,278,177,276,196,227"/>
 </map>

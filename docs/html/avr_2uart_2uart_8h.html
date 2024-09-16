@@ -94,7 +94,8 @@ $(function(){initNavTree('avr_2uart_2uart_8h.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">uart.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -108,7 +109,7 @@ Include dependency graph for avr/uart/uart.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h__dep__incl.svg" width="158" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h__dep__incl.svg" width="328" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="avr_2uart_2uart_8h_source.html">Go to the source code of this file.</a></p>
@@ -119,6 +120,17 @@ Macros</h2></td></tr>
 <tr class="separator:a367ff7b5de225ed936a63239ad4adb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a02d45130520cb651ab313e69039382" id="r_a1a02d45130520cb651ab313e69039382"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a02d45130520cb651ab313e69039382">UART_BAUD_SELECT_DOUBLE_SPEED</a>(baudRate,  xtalCpu)&#160;&#160;&#160;((((xtalCpu)+4UL*(baudRate))/(8UL*(baudRate))-1)|0x8000)</td></tr>
 <tr class="separator:a1a02d45130520cb651ab313e69039382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ce082cf03247eba049caa0a35551272" id="r_a4ce082cf03247eba049caa0a35551272"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ce082cf03247eba049caa0a35551272">ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</a>(baudrate)&#160;&#160;&#160; (0)</td></tr>
+<tr class="separator:a4ce082cf03247eba049caa0a35551272"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ae7970c6edb532436a6886394d1bdf42f" id="r_ae7970c6edb532436a6886394d1bdf42f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7970c6edb532436a6886394d1bdf42f">zrtos_vfs_module_avr_uart__baud_select</a> (<a class="el" href="uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393">zrtos_vfs_module_uart_baudrate_t</a> baudrate)</td></tr>
+<tr class="separator:ae7970c6edb532436a6886394d1bdf42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea39870a896298195c0769800af5b3e2" id="r_aea39870a896298195c0769800af5b3e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea39870a896298195c0769800af5b3e2">zrtos_vfs_module_avr_uart__on_receive_interrupt</a> (<a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *thiz, <a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> data, <a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> err)</td></tr>
+<tr class="separator:aea39870a896298195c0769800af5b3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ad82b41bf19a0c78e59277745226a13" id="r_a4ad82b41bf19a0c78e59277745226a13"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ad82b41bf19a0c78e59277745226a13">zrtos_vfs_module_avr_uart__on_transmit_interrupt</a> (<a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *thiz, <a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *data)</td></tr>
+<tr class="separator:a4ad82b41bf19a0c78e59277745226a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a367ff7b5de225ed936a63239ad4adb0b" name="a367ff7b5de225ed936a63239ad4adb0b"></a>
@@ -149,7 +161,7 @@ Macros</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00260">260</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00263">263</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
 
 </div>
 </div>
@@ -181,7 +193,198 @@ Macros</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00266">266</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00269">269</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ce082cf03247eba049caa0a35551272" name="a4ce082cf03247eba049caa0a35551272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce082cf03247eba049caa0a35551272">&#9670;&#160;</a></span>ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">baudrate</span></td><td>)</td>
+          <td>&#160;&#160;&#160; (0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00275">275</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span><span class="preprocessor">#define ZRTOS_VFS_MODULE_AVR_UART__IS_DOUBLE_SPEED(baudrate)\</span></div>
+<div class="line"><span class="lineno">  276</span><span class="preprocessor"> (0)</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ae7970c6edb532436a6886394d1bdf42f" name="ae7970c6edb532436a6886394d1bdf42f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7970c6edb532436a6886394d1bdf42f">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart__baud_select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t zrtos_vfs_module_avr_uart__baud_select </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393">zrtos_vfs_module_uart_baudrate_t</a></td>          <td class="paramname"><span class="paramname"><em>baudrate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00279">279</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span> {</div>
+<div class="line"><span class="lineno">  282</span><span class="preprocessor">#ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED</span></div>
+<div class="line"><span class="lineno">  283</span>    uint16_t ret;</div>
+<div class="line"><span class="lineno">  284</span>    <span class="keywordflow">if</span>(baudrate &amp; ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED){</div>
+<div class="line"><span class="lineno">  285</span>        baudrate = (<a class="code hl_enumeration" href="uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393">zrtos_vfs_module_uart_baudrate_t</a>)</div>
+<div class="line"><span class="lineno">  286</span>            (baudrate &amp; ZRTOS_VFS_MODULE_UART_BAUDRATE__MASK</div>
+<div class="line"><span class="lineno">  287</span>        );</div>
+<div class="line"><span class="lineno">  288</span>        ret = <a class="code hl_define" href="#a1a02d45130520cb651ab313e69039382">UART_BAUD_SELECT_DOUBLE_SPEED</a>(baudrate,F_CPU);</div>
+<div class="line"><span class="lineno">  289</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  290</span>        ret = <a class="code hl_define" href="#a367ff7b5de225ed936a63239ad4adb0b">UART_BAUD_SELECT</a>(baudrate,F_CPU);</div>
+<div class="line"><span class="lineno">  291</span>    }</div>
+<div class="line"><span class="lineno">  292</span>    <span class="keywordflow">return</span> ret;</div>
+<div class="line"><span class="lineno">  293</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">return</span> <a class="code hl_define" href="#a367ff7b5de225ed936a63239ad4adb0b">UART_BAUD_SELECT</a>(baudrate,F_CPU);</div>
+<div class="line"><span class="lineno">  295</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  296</span>}</div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_a1a02d45130520cb651ab313e69039382"><div class="ttname"><a href="#a1a02d45130520cb651ab313e69039382">UART_BAUD_SELECT_DOUBLE_SPEED</a></div><div class="ttdeci">#define UART_BAUD_SELECT_DOUBLE_SPEED(baudRate, xtalCpu)</div><div class="ttdoc">UART Baudrate Expression for ATmega double speed mode.</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00269">avr/uart/uart.h:269</a></div></div>
+<div class="ttc" id="aavr_2uart_2uart_8h_html_a367ff7b5de225ed936a63239ad4adb0b"><div class="ttname"><a href="#a367ff7b5de225ed936a63239ad4adb0b">UART_BAUD_SELECT</a></div><div class="ttdeci">#define UART_BAUD_SELECT(baudRate, xtalCpu)</div><div class="ttdoc">UART Baudrate Expression.</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00263">avr/uart/uart.h:263</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_a26b51d64f0a115e8ddd5c5fdca24e393"><div class="ttname"><a href="uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393">zrtos_vfs_module_uart_baudrate_t</a></div><div class="ttdeci">zrtos_vfs_module_uart_baudrate_t</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00029">uart/uart.h:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h_ae7970c6edb532436a6886394d1bdf42f_icgraph.svg" width="348" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aea39870a896298195c0769800af5b3e2" name="aea39870a896298195c0769800af5b3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea39870a896298195c0769800af5b3e2">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart__on_receive_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_vfs_module_avr_uart__on_receive_interrupt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a></td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></td>          <td class="paramname"><span class="paramname"><em>err</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00298">298</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span> {</div>
+<div class="line"><span class="lineno">  303</span>    <a class="code hl_struct" href="struct__zrtos__cbuffer__t.html">zrtos_cbuffer_t</a> *buffer = <a class="code hl_function" href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc">zrtos_vfs_module_uart_args__get_cbuffer_in</a>(</div>
+<div class="line"><span class="lineno">  304</span>        thiz</div>
+<div class="line"><span class="lineno">  305</span>    );</div>
+<div class="line"><span class="lineno">  306</span> </div>
+<div class="line"><span class="lineno">  307</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a>(err)</div>
+<div class="line"><span class="lineno">  308</span>    || <a class="code hl_function" href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a>((err = <a class="code hl_function" href="cbuffer_8h.html#afdb6a6176387d77a0f10e28536ba28f9">zrtos_cbuffer__put</a>(</div>
+<div class="line"><span class="lineno">  309</span>         buffer</div>
+<div class="line"><span class="lineno">  310</span>        ,data</div>
+<div class="line"><span class="lineno">  311</span>    )))</div>
+<div class="line"><span class="lineno">  312</span>    || <a class="code hl_function" href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a>((err = thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a536f256622d40507b13ffc4861aab0e7">on_recv</a>(</div>
+<div class="line"><span class="lineno">  313</span>            thiz</div>
+<div class="line"><span class="lineno">  314</span>    )))</div>
+<div class="line"><span class="lineno">  315</span>    ){</div>
+<div class="line"><span class="lineno">  316</span>        <a class="code hl_function" href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a>(</div>
+<div class="line"><span class="lineno">  317</span>             &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#af3a9f8b7f942b6141a5b4e98fa13d009">rx_error_count</a></div>
+<div class="line"><span class="lineno">  318</span>            ,err</div>
+<div class="line"><span class="lineno">  319</span>        );</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
+<div class="line"><span class="lineno">  321</span>}</div>
+<div class="ttc" id="acbuffer_8h_html_afdb6a6176387d77a0f10e28536ba28f9"><div class="ttname"><a href="cbuffer_8h.html#afdb6a6176387d77a0f10e28536ba28f9">zrtos_cbuffer__put</a></div><div class="ttdeci">zrtos_error_t zrtos_cbuffer__put(zrtos_cbuffer_t *thiz, uint8_t val)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00269">cbuffer.h:269</a></div></div>
+<div class="ttc" id="aerror_8h_html_af58428a30fbc7fd6967e15504df633a0"><div class="ttname"><a href="error_8h.html#af58428a30fbc7fd6967e15504df633a0">zrtos_error__is_error</a></div><div class="ttdeci">bool zrtos_error__is_error(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00156">error.h:156</a></div></div>
+<div class="ttc" id="aerror__count_8h_html_a363c818bc6ef2c68e407c999a189a441"><div class="ttname"><a href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a></div><div class="ttdeci">bool zrtos_error_count__add(zrtos_error_count_t *thiz, zrtos_error_t err)</div><div class="ttdef"><b>Definition</b> <a href="error__count_8h_source.html#l00028">error_count.h:28</a></div></div>
+<div class="ttc" id="astruct__zrtos__cbuffer__t_html"><div class="ttname"><a href="struct__zrtos__cbuffer__t.html">_zrtos_cbuffer_t</a></div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00045">cbuffer.h:45</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a536f256622d40507b13ffc4861aab0e7"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a536f256622d40507b13ffc4861aab0e7">_zrtos_vfs_module_uart_args_t::on_recv</a></div><div class="ttdeci">zrtos_vfs_module_uart_callback_t on_recv</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00209">uart/uart.h:209</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_af3a9f8b7f942b6141a5b4e98fa13d009"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#af3a9f8b7f942b6141a5b4e98fa13d009">_zrtos_vfs_module_uart_args_t::rx_error_count</a></div><div class="ttdeci">zrtos_error_count_t rx_error_count</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00204">uart/uart.h:204</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_a8b394d1c76748a8e3d98603fe7145ebc"><div class="ttname"><a href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc">zrtos_vfs_module_uart_args__get_cbuffer_in</a></div><div class="ttdeci">zrtos_cbuffer_t * zrtos_vfs_module_uart_args__get_cbuffer_in(zrtos_vfs_module_uart_inode_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00243">uart/uart.h:243</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h_aea39870a896298195c0769800af5b3e2_cgraph.svg" width="1406" height="392"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h_aea39870a896298195c0769800af5b3e2_icgraph.svg" width="280" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a4ad82b41bf19a0c78e59277745226a13" name="a4ad82b41bf19a0c78e59277745226a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ad82b41bf19a0c78e59277745226a13">&#9670;&#160;</a></span>zrtos_vfs_module_avr_uart__on_transmit_interrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zrtos_vfs_module_avr_uart__on_transmit_interrupt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a> *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="avr_2uart_2uart_8h_source.html#l00323">323</a> of file <a class="el" href="avr_2uart_2uart_8h_source.html">avr/uart/uart.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span> {</div>
+<div class="line"><span class="lineno">  327</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> err;</div>
+<div class="line"><span class="lineno">  328</span>    <a class="code hl_struct" href="struct__zrtos__cbuffer__t.html">zrtos_cbuffer_t</a> *buffer = <a class="code hl_function" href="uart_2uart_8h.html#ae8cfe275c44dfd342fcfd16b9c5de616">zrtos_vfs_module_uart_args__get_cbuffer_out</a>(</div>
+<div class="line"><span class="lineno">  329</span>        thiz</div>
+<div class="line"><span class="lineno">  330</span>    );</div>
+<div class="line"><span class="lineno">  331</span> </div>
+<div class="line"><span class="lineno">  332</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>((err = thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#ad4a993c03609fcdc40ffa54e6ce24e3a">on_send</a>(</div>
+<div class="line"><span class="lineno">  333</span>        thiz</div>
+<div class="line"><span class="lineno">  334</span>    )))</div>
+<div class="line"><span class="lineno">  335</span>    ){</div>
+<div class="line"><span class="lineno">  336</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(<a class="code hl_function" href="cbuffer_8h.html#a1a9cc4256c634d99003e2397924df20a">zrtos_cbuffer__get</a>(buffer,data))){</div>
+<div class="line"><span class="lineno">  337</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  338</span>        }</div>
+<div class="line"><span class="lineno">  339</span>    }<span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  340</span>        <a class="code hl_function" href="error__count_8h.html#a363c818bc6ef2c68e407c999a189a441">zrtos_error_count__add</a>(</div>
+<div class="line"><span class="lineno">  341</span>             &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a720c1a3f8958667f32b1ab53509c9ef6">tx_error_count</a></div>
+<div class="line"><span class="lineno">  342</span>            ,err</div>
+<div class="line"><span class="lineno">  343</span>        );</div>
+<div class="line"><span class="lineno">  344</span>    }</div>
+<div class="line"><span class="lineno">  345</span> </div>
+<div class="line"><span class="lineno">  346</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  347</span>}</div>
+<div class="ttc" id="acbuffer_8h_html_a1a9cc4256c634d99003e2397924df20a"><div class="ttname"><a href="cbuffer_8h.html#a1a9cc4256c634d99003e2397924df20a">zrtos_cbuffer__get</a></div><div class="ttdeci">zrtos_error_t zrtos_cbuffer__get(zrtos_cbuffer_t *thiz, uint8_t *out)</div><div class="ttdef"><b>Definition</b> <a href="cbuffer_8h_source.html#l00327">cbuffer.h:327</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a></div><div class="ttdeci">zrtos_error_t</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00020">error.h:20</a></div></div>
+<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00152">error.h:152</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a720c1a3f8958667f32b1ab53509c9ef6"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a720c1a3f8958667f32b1ab53509c9ef6">_zrtos_vfs_module_uart_args_t::tx_error_count</a></div><div class="ttdeci">zrtos_error_count_t tx_error_count</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00205">uart/uart.h:205</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_ad4a993c03609fcdc40ffa54e6ce24e3a"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#ad4a993c03609fcdc40ffa54e6ce24e3a">_zrtos_vfs_module_uart_args_t::on_send</a></div><div class="ttdeci">zrtos_vfs_module_uart_callback_t on_send</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00208">uart/uart.h:208</a></div></div>
+<div class="ttc" id="auart_2uart_8h_html_ae8cfe275c44dfd342fcfd16b9c5de616"><div class="ttname"><a href="uart_2uart_8h.html#ae8cfe275c44dfd342fcfd16b9c5de616">zrtos_vfs_module_uart_args__get_cbuffer_out</a></div><div class="ttdeci">zrtos_cbuffer_t * zrtos_vfs_module_uart_args__get_cbuffer_out(zrtos_vfs_module_uart_inode_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00249">uart/uart.h:249</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h_a4ad82b41bf19a0c78e59277745226a13_cgraph.svg" width="1420" height="380"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="avr_2uart_2uart_8h_a4ad82b41bf19a0c78e59277745226a13_icgraph.svg" width="288" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>

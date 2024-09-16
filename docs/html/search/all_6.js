@@ -1,11 +1,18 @@
 var searchData=
 [
-  ['fd_0',['fd',['../struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134',1,'_zrtos_vfs_fd_t']]],
-  ['fds_5fbits_1',['fds_bits',['../struct__zrtos__vfs__fd__set__t.html#a431a183bb09e68a92dfd7adf13747ccd',1,'_zrtos_vfs_fd_set_t']]],
-  ['fdset_2',['fdset',['../struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523',1,'_zrtos_vfs_notify_t']]],
-  ['filter_3',['filter',['../struct__zrtos__vfs__dentry____each__child__cb__args__t.html#a6231abbdb28d305a0a2ed959a2287221',1,'_zrtos_vfs_dentry__each_child_cb_args_t']]],
-  ['filter_5farg_4',['filter_arg',['../struct__zrtos__vfs__dentry____each__child__cb__args__t.html#a95c42ea3ab106f5a34f3f2848e104375',1,'_zrtos_vfs_dentry__each_child_cb_args_t']]],
-  ['first_5',['first',['../struct__zrtos__cbuffer__state__t.html#acd87ac8fe01caba4e04d96f528669b99',1,'_zrtos_cbuffer_state_t::first'],['../struct__zrtos__list__t.html#a9523155584b2c8c9e6bbfbc98cd2d50f',1,'_zrtos_list_t::first'],['../struct__zrtos__vheap__chunk__t.html#a8dbc6dbaa9921142ec2d5d367cb4e556',1,'_zrtos_vheap_chunk_t::first']]],
-  ['free_6',['malloc() / free()',['../index.html#autotoc_md2',1,'']]],
-  ['functions_7',['functions',['../struct__zrtos__vm__t.html#ac2181fb1aab27d26f72332812f7b4333',1,'_zrtos_vm_t']]]
+  ['end_5faddr_0',['end_addr',['../struct__zrtos__vfs__module__avr__progmem__args__t.html#a519e9463e63a12c86db082236a61b379',1,'_zrtos_vfs_module_avr_progmem_args_t::end_addr'],['../struct__zrtos__vfs__module__sram__args__t.html#a700c2fadb1c5d4b431b77b7a335f3be5',1,'_zrtos_vfs_module_sram_args_t::end_addr']]],
+  ['enum_1',['enum',['../mcp2515_8h.html#a33e07dd7db25f3cc7f69b2828a735eb3',1,'mcp2515.h']]],
+  ['errno_2',['errno',['../struct__zrtos__vheap__task__t.html#acb47daf12a808d17fd707b4df7b01df3',1,'_zrtos_vheap_task_t::errno'],['../errno_8h.html#a6a7166818722fee0839a0c342f40dfbd',1,'errno:&#160;errno.h']]],
+  ['errno_2eh_3',['errno.h',['../errno_8h.html',1,'']]],
+  ['error_4',['error',['../struct__zrtos__vfs__module__spi__file__t.html#adbbafee19633b08641018640b0c13325',1,'_zrtos_vfs_module_spi_file_t::error'],['../struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e',1,'_zrtos_vfs_notify_t::error']]],
+  ['error_2eh_5',['error.h',['../error_8h.html',1,'']]],
+  ['error_5fcode_6',['error_code',['../struct__zrtos__task__t.html#a760a7d23c6ea7ce8993363caf2c9a1f8',1,'_zrtos_task_t']]],
+  ['error_5fcount_2eh_7',['error_count.h',['../error__count_8h.html',1,'']]],
+  ['event_2eh_8',['event.h',['../event_8h.html',1,'']]],
+  ['event_5fhandler_2eh_9',['event_handler.h',['../event__handler_8h.html',1,'']]],
+  ['event_5findex_2eh_10',['event_index.h',['../event__index_8h.html',1,'']]],
+  ['event_5ftype_2eh_11',['event_type.h',['../event__type_8h.html',1,'']]],
+  ['events_12',['events',['../index.html#autotoc_md4',1,'']]],
+  ['examples_13',['Examples',['../index.html#autotoc_md1',1,'']]],
+  ['extra_20functions_14',['2. WIZnet Extra Functions',['../group__extra__functions.html',1,'']]]
 ];

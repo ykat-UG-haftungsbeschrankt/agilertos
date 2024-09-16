@@ -126,7 +126,7 @@ $(function(){initNavTree('avr__software__emulator_8h_source.html',''); initResiz
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="avr__software__emulator_8h.html#a84fe65069f6a5d34d06f587ee4d53269">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="avr__software__emulator_8h.html#a84fe65069f6a5d34d06f587ee4d53269">zrtos_board__start_tick_timer</a>(<span class="keywordtype">void</span>){</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_define" href="atmega328p_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_define" href="atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a>();</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// Clear registers</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    TCCR1A = 0;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    TCCR1B = 0;</div>
@@ -140,26 +140,26 @@ $(function(){initNavTree('avr__software__emulator_8h_source.html',''); initResiz
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    TCCR1B |= (1 &lt;&lt; CS11) | (1 &lt;&lt; CS10);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Output Compare Match A Interrupt Enable</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    TIMSK1 |= (1 &lt;&lt; OCIE1A);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_define" href="atmega328p_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_define" href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="avr__software__emulator_8h.html#ac02f29632e2f14657bb37b17a2afbfa0">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="avr__software__emulator_8h.html#ac02f29632e2f14657bb37b17a2afbfa0">zrtos_board__stop_tick_timer</a>(<span class="keywordtype">void</span>){</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_define" href="atmega328p_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_define" href="atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a>();</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    TIMSK1 &amp;= ~(1 &lt;&lt; OCIE1A);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_define" href="atmega328p_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_define" href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a>();</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
 </div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="foldopen" id="foldopen00048" data-start="{" data-end="}">
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="avr__software__emulator_8h.html#ac81f3dd76d429da4f3dae11cf14ef821">   48</a></span><a class="code hl_function" href="avr__software__emulator_8h.html#ac81f3dd76d429da4f3dae11cf14ef821">ISR</a>(TIMER1_COMPA_vect,ISR_NAKED){</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_define" href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_define" href="atmega2560_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a>();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_variable" href="board_8h.html#ad7e85a8be90115b03950e72b72e5c0d3">zrtos_board__on_tick</a>();</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//avr/time.h system_tick();</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_define" href="atmega2560_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a>();</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_variable" href="board_8h.html#a42a3f8dd109dd5024a599bb69766a09b">zrtos_board__on_tick_naked</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_define" href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a>();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_define" href="atmega2560_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a>();</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
@@ -180,7 +180,7 @@ $(function(){initNavTree('avr__software__emulator_8h_source.html',''); initResiz
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
 <div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="avr__software__emulator_8h.html#a4eef992d489ff10ed2f1aa1405510ab5">   66</a></span><a class="code hl_function" href="avr__software__emulator_8h.html#ac81f3dd76d429da4f3dae11cf14ef821">ISR</a>(WDT_vect,ISR_NAKED){</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_define" href="atmega328p_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_define" href="atmega2560_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a>();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
@@ -191,12 +191,12 @@ $(function(){initNavTree('avr__software__emulator_8h_source.html',''); initResiz
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aatmega328p_8h_html_a1bb4fc060fe3f863a6209873f4b052f0"><div class="ttname"><a href="atmega328p_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__LOAD_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00244">atmega328p.h:244</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_a5147fe8b6fc6553050c0f115bf7091c0"><div class="ttname"><a href="atmega328p_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a></div><div class="ttdeci">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00292">atmega328p.h:292</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_a6f0738e44b5c061f62d7f6957c06c23f"><div class="ttname"><a href="atmega328p_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a></div><div class="ttdeci">#define ZRTOS_ARCH__FATAL()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00029">atmega328p.h:29</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="atmega328p_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00194">atmega328p.h:194</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_ac6b5c40219e3521c23691efdfc83755a"><div class="ttname"><a href="atmega328p_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__ENABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00046">atmega328p.h:46</a></div></div>
-<div class="ttc" id="aatmega328p_8h_html_ad5a640e25694a864d28136fc49133f62"><div class="ttname"><a href="atmega328p_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__DISABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega328p_8h_source.html#l00043">atmega328p.h:43</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_a1bb4fc060fe3f863a6209873f4b052f0"><div class="ttname"><a href="atmega2560_8h.html#a1bb4fc060fe3f863a6209873f4b052f0">ZRTOS_ARCH__LOAD_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__LOAD_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00244">atmega2560.h:244</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_a5147fe8b6fc6553050c0f115bf7091c0"><div class="ttname"><a href="atmega2560_8h.html#a5147fe8b6fc6553050c0f115bf7091c0">ZRTOS_ARCH__RETURN_FROM_INTERRUPT</a></div><div class="ttdeci">#define ZRTOS_ARCH__RETURN_FROM_INTERRUPT()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00292">atmega2560.h:292</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_a6f0738e44b5c061f62d7f6957c06c23f"><div class="ttname"><a href="atmega2560_8h.html#a6f0738e44b5c061f62d7f6957c06c23f">ZRTOS_ARCH__FATAL</a></div><div class="ttdeci">#define ZRTOS_ARCH__FATAL()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00029">atmega2560.h:29</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_abd8d20125ff9bea325027747731bb4d4"><div class="ttname"><a href="atmega2560_8h.html#abd8d20125ff9bea325027747731bb4d4">ZRTOS_ARCH__SAVE_CPU_STATE</a></div><div class="ttdeci">#define ZRTOS_ARCH__SAVE_CPU_STATE()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00194">atmega2560.h:194</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_ac6b5c40219e3521c23691efdfc83755a"><div class="ttname"><a href="atmega2560_8h.html#ac6b5c40219e3521c23691efdfc83755a">ZRTOS_ARCH__ENABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__ENABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00046">atmega2560.h:46</a></div></div>
+<div class="ttc" id="aatmega2560_8h_html_ad5a640e25694a864d28136fc49133f62"><div class="ttname"><a href="atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62">ZRTOS_ARCH__DISABLE_INTERRUPTS</a></div><div class="ttdeci">#define ZRTOS_ARCH__DISABLE_INTERRUPTS()</div><div class="ttdef"><b>Definition</b> <a href="atmega2560_8h_source.html#l00043">atmega2560.h:43</a></div></div>
 <div class="ttc" id="aavr__software__emulator_8h_html_a84fe65069f6a5d34d06f587ee4d53269"><div class="ttname"><a href="avr__software__emulator_8h.html#a84fe65069f6a5d34d06f587ee4d53269">zrtos_board__start_tick_timer</a></div><div class="ttdeci">void zrtos_board__start_tick_timer(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00024">avr_software_emulator.h:24</a></div></div>
 <div class="ttc" id="aavr__software__emulator_8h_html_ac02f29632e2f14657bb37b17a2afbfa0"><div class="ttname"><a href="avr__software__emulator_8h.html#ac02f29632e2f14657bb37b17a2afbfa0">zrtos_board__stop_tick_timer</a></div><div class="ttdeci">void zrtos_board__stop_tick_timer(void)</div><div class="ttdef"><b>Definition</b> <a href="#l00042">avr_software_emulator.h:42</a></div></div>
 <div class="ttc" id="aavr__software__emulator_8h_html_ac81f3dd76d429da4f3dae11cf14ef821"><div class="ttname"><a href="avr__software__emulator_8h.html#ac81f3dd76d429da4f3dae11cf14ef821">ISR</a></div><div class="ttdeci">ISR(TIMER1_COMPA_vect, ISR_NAKED)</div><div class="ttdef"><b>Definition</b> <a href="#l00048">avr_software_emulator.h:48</a></div></div>

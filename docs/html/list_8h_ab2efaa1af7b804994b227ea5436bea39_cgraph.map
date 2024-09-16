@@ -1,0 +1,10 @@
+<map id="zrtos_list__deinit" name="zrtos_list__deinit">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,125,57"/>
+<area shape="rect" id="Node000002" href="$list_8h.html#a19f2741be75dd514c2227963d8c629dd" title=" " alt="" coords="173,5,314,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,33,157,28,158,33,126,38"/>
+<area shape="rect" id="Node000004" href="$list_8h.html#a4ecf7568bdda1cd815956c391f29bf1e" title=" " alt="" coords="187,56,300,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="126,50,172,57,172,62,125,55"/>
+<area shape="rect" id="Node000003" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="362,31,531,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,25,347,29,346,34,314,30"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="300,60,346,54,347,59,300,65"/>
+</map>

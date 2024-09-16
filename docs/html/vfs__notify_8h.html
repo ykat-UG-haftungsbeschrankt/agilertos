@@ -96,6 +96,7 @@ $(function(){initNavTree('vfs__notify_8h.html',''); initResizable(); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">vfs_notify.h File Reference</div></div>
 </div><!--header-->
@@ -105,7 +106,7 @@ $(function(){initNavTree('vfs__notify_8h.html',''); initResizable(); });
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for vfs_notify.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="vfs__notify_8h__incl.svg" width="575" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="vfs__notify_8h__incl.svg" width="734" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="vfs__notify_8h_source.html">Go to the source code of this file.</a></p>
@@ -119,19 +120,29 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ad60e4892079ce46528a1632dc679a1fb" id="r_ad60e4892079ce46528a1632dc679a1fb"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad60e4892079ce46528a1632dc679a1fb">zrtos_vfs_notify_callback_t</a>) (struct <a class="el" href="struct__zrtos__vfs__notify__t.html">_zrtos_vfs_notify_t</a> *thiz, <a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd)</td></tr>
-<tr class="separator:ad60e4892079ce46528a1632dc679a1fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261c0843871d3d1acdedf749909fa210" id="r_a261c0843871d3d1acdedf749909fa210"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a261c0843871d3d1acdedf749909fa210">zrtos_vfs_notify_callback_t</a>) (struct <a class="el" href="struct__zrtos__vfs__notify__t.html">_zrtos_vfs_notify_t</a> *thiz, <a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd, <a class="el" href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a> event_type)</td></tr>
+<tr class="separator:a261c0843871d3d1acdedf749909fa210"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92282893d1413e812a4427284a77f486" id="r_a92282893d1413e812a4427284a77f486"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__notify__entry__t.html">_zrtos_vfs_notify_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92282893d1413e812a4427284a77f486">zrtos_vfs_notify_entry_t</a></td></tr>
 <tr class="separator:a92282893d1413e812a4427284a77f486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a086468de350b458dc3c5d3761f8a30" id="r_a6a086468de350b458dc3c5d3761f8a30"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__notify__t.html">_zrtos_vfs_notify_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a></td></tr>
 <tr class="separator:a6a086468de350b458dc3c5d3761f8a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a1da443505499531ad79b791ba277cce3" id="r_a1da443505499531ad79b791ba277cce3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a> { <br />
+&#160;&#160;<a class="el" href="#a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411">ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ</a>
+, <br />
+&#160;&#160;<a class="el" href="#a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368">ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE</a>
+<br />
+ }</td></tr>
+<tr class="separator:a1da443505499531ad79b791ba277cce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a390aa07da245cc02fe5949e98e6f48e5" id="r_a390aa07da245cc02fe5949e98e6f48e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a390aa07da245cc02fe5949e98e6f48e5">zrtos_vfs_notify__init</a> (<a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a> *thiz)</td></tr>
 <tr class="separator:a390aa07da245cc02fe5949e98e6f48e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a348895324c36d0f93cc512189846fc" id="r_a2a348895324c36d0f93cc512189846fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2a348895324c36d0f93cc512189846fc">zrtos_vfs_notify__add</a> (<a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a> *thiz, <a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd, <a class="el" href="#ad60e4892079ce46528a1632dc679a1fb">zrtos_vfs_notify_callback_t</a> on_can_read, <a class="el" href="#ad60e4892079ce46528a1632dc679a1fb">zrtos_vfs_notify_callback_t</a> on_can_write)</td></tr>
-<tr class="separator:a2a348895324c36d0f93cc512189846fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a851d2ca069dbbc6fa68211665cda1e4a" id="r_a851d2ca069dbbc6fa68211665cda1e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851d2ca069dbbc6fa68211665cda1e4a">zrtos_vfs_notify__add</a> (<a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a> *thiz, <a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd, <a class="el" href="#a261c0843871d3d1acdedf749909fa210">zrtos_vfs_notify_callback_t</a> callback)</td></tr>
+<tr class="separator:a851d2ca069dbbc6fa68211665cda1e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6652913171a56f9022b4dd9e00722d9" id="r_ac6652913171a56f9022b4dd9e00722d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6652913171a56f9022b4dd9e00722d9">zrtos_vfs_notify__remove</a> (<a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a> *thiz, <a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd)</td></tr>
 <tr class="separator:ac6652913171a56f9022b4dd9e00722d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9abba884c837a89754c83d36d6430778" id="r_a9abba884c837a89754c83d36d6430778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9abba884c837a89754c83d36d6430778">zrtos_vfs_notify__start</a> (<a class="el" href="#a6a086468de350b458dc3c5d3761f8a30">zrtos_vfs_notify_t</a> *thiz)</td></tr>
@@ -140,19 +151,19 @@ Functions</h2></td></tr>
 <tr class="separator:ad4f8fe4b5281d6bb3a8778e1f0026fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ad60e4892079ce46528a1632dc679a1fb" name="ad60e4892079ce46528a1632dc679a1fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad60e4892079ce46528a1632dc679a1fb">&#9670;&#160;</a></span>zrtos_vfs_notify_callback_t</h2>
+<a id="a261c0843871d3d1acdedf749909fa210" name="a261c0843871d3d1acdedf749909fa210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a261c0843871d3d1acdedf749909fa210">&#9670;&#160;</a></span>zrtos_vfs_notify_callback_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* zrtos_vfs_notify_callback_t) (struct <a class="el" href="struct__zrtos__vfs__notify__t.html">_zrtos_vfs_notify_t</a> *thiz,<a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd)</td>
+          <td class="memname">typedef void(* zrtos_vfs_notify_callback_t) (struct <a class="el" href="struct__zrtos__vfs__notify__t.html">_zrtos_vfs_notify_t</a> *thiz,<a class="el" href="vfs__fd_8h.html#a5e8cedf3fb65f0b2b755846c0583809a">zrtos_vfs_fd_t</a> fd,<a class="el" href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a> event_type)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00019">19</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00024">24</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
 
 </div>
 </div>
@@ -184,9 +195,37 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a1da443505499531ad79b791ba277cce3" name="a1da443505499531ad79b791ba277cce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da443505499531ad79b791ba277cce3">&#9670;&#160;</a></span>zrtos_vfs_notify_event_type_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="mcp2515_8h.html#a33e07dd7db25f3cc7f69b2828a735eb3">enum</a> <a class="el" href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411" name="a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411"></a>ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368" name="a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368"></a>ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00019">19</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   19</span>            {</div>
+<div class="line"><span class="lineno">   20</span>     <a class="code hl_enumvalue" href="#a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411">ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ</a></div>
+<div class="line"><span class="lineno">   21</span>    ,<a class="code hl_enumvalue" href="#a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368">ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE</a></div>
+<div class="line"><span class="lineno">   22</span>}<a class="code hl_enumeration" href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a>;</div>
+<div class="ttc" id="avfs__notify_8h_html_a1da443505499531ad79b791ba277cce3"><div class="ttname"><a href="#a1da443505499531ad79b791ba277cce3">zrtos_vfs_notify_event_type_t</a></div><div class="ttdeci">zrtos_vfs_notify_event_type_t</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00019">vfs_notify.h:19</a></div></div>
+<div class="ttc" id="avfs__notify_8h_html_a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411"><div class="ttname"><a href="#a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411">ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ</a></div><div class="ttdeci">@ ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00021">vfs_notify.h:20</a></div></div>
+<div class="ttc" id="avfs__notify_8h_html_a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368"><div class="ttname"><a href="#a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368">ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE</a></div><div class="ttdeci">@ ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00022">vfs_notify.h:21</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2a348895324c36d0f93cc512189846fc" name="a2a348895324c36d0f93cc512189846fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a348895324c36d0f93cc512189846fc">&#9670;&#160;</a></span>zrtos_vfs_notify__add()</h2>
+<a id="a851d2ca069dbbc6fa68211665cda1e4a" name="a851d2ca069dbbc6fa68211665cda1e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851d2ca069dbbc6fa68211665cda1e4a">&#9670;&#160;</a></span>zrtos_vfs_notify__add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -204,34 +243,27 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#ad60e4892079ce46528a1632dc679a1fb">zrtos_vfs_notify_callback_t</a></td>          <td class="paramname"><span class="paramname"><em>on_can_read</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#ad60e4892079ce46528a1632dc679a1fb">zrtos_vfs_notify_callback_t</a></td>          <td class="paramname"><span class="paramname"><em>on_can_write</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="#a261c0843871d3d1acdedf749909fa210">zrtos_vfs_notify_callback_t</a></td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00046">46</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span> {</div>
-<div class="line"><span class="lineno">   52</span>    <a class="code hl_function" href="vfs__fd_8h.html#a4f1ec4e10e75a6a8a3c5f4f6fd555a13">zrtos_vfs_fd_set__set</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>,fd);</div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a> *entry = &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.<a class="code hl_variable" href="struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134">fd</a>];</div>
-<div class="line"><span class="lineno">   54</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a02715b39881462037b74e2ec9e86297f">on_can_read</a> = on_can_read;</div>
-<div class="line"><span class="lineno">   55</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a637ea19846bf19d28ccf818d931f877c">on_can_write</a> = on_can_write;</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00051">51</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span> {</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_function" href="vfs__fd_8h.html#a4f1ec4e10e75a6a8a3c5f4f6fd555a13">zrtos_vfs_fd_set__set</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>,fd);</div>
+<div class="line"><span class="lineno">   57</span>    <a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a> *entry = &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.<a class="code hl_variable" href="struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134">fd</a>];</div>
+<div class="line"><span class="lineno">   58</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a> = callback;</div>
+<div class="line"><span class="lineno">   59</span>}</div>
 <div class="ttc" id="astruct__zrtos__vfs__fd__t_html_a959ce5ce84ec4676c6349a48d4c43134"><div class="ttname"><a href="struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134">_zrtos_vfs_fd_t::fd</a></div><div class="ttdeci">size_t fd</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00018">vfs_fd.h:18</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__entry__t_html"><div class="ttname"><a href="struct__zrtos__vfs__notify__entry__t.html">_zrtos_vfs_notify_entry_t</a></div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00024">vfs_notify.h:24</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__entry__t_html_a02715b39881462037b74e2ec9e86297f"><div class="ttname"><a href="struct__zrtos__vfs__notify__entry__t.html#a02715b39881462037b74e2ec9e86297f">_zrtos_vfs_notify_entry_t::on_can_read</a></div><div class="ttdeci">zrtos_vfs_notify_callback_t on_can_read</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00025">vfs_notify.h:25</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__entry__t_html_a637ea19846bf19d28ccf818d931f877c"><div class="ttname"><a href="struct__zrtos__vfs__notify__entry__t.html#a637ea19846bf19d28ccf818d931f877c">_zrtos_vfs_notify_entry_t::on_can_write</a></div><div class="ttdeci">zrtos_vfs_notify_callback_t on_can_write</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00026">vfs_notify.h:26</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a34c7c8adfb9b10ce4b9723761c857523"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">_zrtos_vfs_notify_t::fdset</a></div><div class="ttdeci">zrtos_vfs_fd_set_t fdset</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00030">vfs_notify.h:30</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a8063500e9fcd7c260391a39602d4fbea"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">_zrtos_vfs_notify_t::data</a></div><div class="ttdeci">zrtos_vfs_notify_entry_t data[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX]</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00031">vfs_notify.h:31</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__notify__entry__t_html"><div class="ttname"><a href="struct__zrtos__vfs__notify__entry__t.html">_zrtos_vfs_notify_entry_t</a></div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00030">vfs_notify.h:30</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__notify__entry__t_html_a60349cdfbe0dde9212b12582b6e9e255"><div class="ttname"><a href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">_zrtos_vfs_notify_entry_t::callback</a></div><div class="ttdeci">zrtos_vfs_notify_callback_t callback</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00031">vfs_notify.h:31</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a34c7c8adfb9b10ce4b9723761c857523"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">_zrtos_vfs_notify_t::fdset</a></div><div class="ttdeci">zrtos_vfs_fd_set_t fdset</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00035">vfs_notify.h:35</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a8063500e9fcd7c260391a39602d4fbea"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">_zrtos_vfs_notify_t::data</a></div><div class="ttdeci">zrtos_vfs_notify_entry_t data[ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX]</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00036">vfs_notify.h:36</a></div></div>
 <div class="ttc" id="avfs__fd_8h_html_a4f1ec4e10e75a6a8a3c5f4f6fd555a13"><div class="ttname"><a href="vfs__fd_8h.html#a4f1ec4e10e75a6a8a3c5f4f6fd555a13">zrtos_vfs_fd_set__set</a></div><div class="ttdeci">void zrtos_vfs_fd_set__set(zrtos_vfs_fd_set_t *thiz, zrtos_vfs_fd_t fd)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00042">vfs_fd.h:42</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="vfs__notify_8h_a2a348895324c36d0f93cc512189846fc_cgraph.svg" width="526" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="vfs__notify_8h_a851d2ca069dbbc6fa68211665cda1e4a_cgraph.svg" width="526" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -251,21 +283,21 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00035">35</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                                     {</div>
-<div class="line"><span class="lineno">   36</span>    <a class="code hl_function" href="vfs__fd_8h.html#a8747abe85b66255bf04adc7610b87374">zrtos_vfs_fd_set__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
-<div class="line"><span class="lineno">   37</span>    <a class="code hl_function" href="mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7">zrtos_mem__zero</a>(</div>
-<div class="line"><span class="lineno">   38</span>         &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a></div>
-<div class="line"><span class="lineno">   39</span>        ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a>)*<a class="code hl_define" href="cfg_8h.html#aa798d36747138a958d3b6beb826c95d9">ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX</a></div>
-<div class="line"><span class="lineno">   40</span>    );</div>
-<div class="line"><span class="lineno">   41</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a> = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a>;</div>
-<div class="line"><span class="lineno">   42</span> </div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   44</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00040">40</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                     {</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_function" href="vfs__fd_8h.html#a8747abe85b66255bf04adc7610b87374">zrtos_vfs_fd_set__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7">zrtos_mem__zero</a>(</div>
+<div class="line"><span class="lineno">   43</span>         &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a></div>
+<div class="line"><span class="lineno">   44</span>        ,<span class="keyword">sizeof</span>(<a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a>)*<a class="code hl_define" href="cfg_8h.html#aa798d36747138a958d3b6beb826c95d9">ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX</a></div>
+<div class="line"><span class="lineno">   45</span>    );</div>
+<div class="line"><span class="lineno">   46</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a> = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a>;</div>
+<div class="line"><span class="lineno">   47</span> </div>
+<div class="line"><span class="lineno">   48</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   49</span>}</div>
 <div class="ttc" id="acfg_8h_html_aa798d36747138a958d3b6beb826c95d9"><div class="ttname"><a href="cfg_8h.html#aa798d36747138a958d3b6beb826c95d9">ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX</a></div><div class="ttdeci">#define ZRTOS_VFS_FILE_DESCRIPTOR__CFG_MAX</div><div class="ttdef"><b>Definition</b> <a href="cfg_8h_source.html#l00026">cfg.h:26</a></div></div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a32bedffce683de89ce91982e83c7e1d9">ESUCCESS</a></div><div class="ttdeci">@ ESUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00022">error.h:21</a></div></div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a24c238e40be558c250df612dea5ff119">ZRTOS_ERROR__SUCCESS</a></div><div class="ttdeci">@ ZRTOS_ERROR__SUCCESS</div><div class="ttdoc">Successful program execution status.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00023">error.h:22</a></div></div>
 <div class="ttc" id="amem_8h_html_a419d9f9e6d69f2577fdce04166a8b8a7"><div class="ttname"><a href="mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7">zrtos_mem__zero</a></div><div class="ttdeci">void zrtos_mem__zero(void *dest, size_t len)</div><div class="ttdef"><b>Definition</b> <a href="mem_8h_source.html#l00144">mem.h:144</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a3c3fc5593e9d3585acadc37caa80e88e"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">_zrtos_vfs_notify_t::error</a></div><div class="ttdeci">zrtos_error_t error</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00032">vfs_notify.h:32</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__notify__t_html_a3c3fc5593e9d3585acadc37caa80e88e"><div class="ttname"><a href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">_zrtos_vfs_notify_t::error</a></div><div class="ttdeci">zrtos_error_t error</div><div class="ttdef"><b>Definition</b> <a href="vfs__notify_8h_source.html#l00037">vfs_notify.h:37</a></div></div>
 <div class="ttc" id="avfs__fd_8h_html_a8747abe85b66255bf04adc7610b87374"><div class="ttname"><a href="vfs__fd_8h.html#a8747abe85b66255bf04adc7610b87374">zrtos_vfs_fd_set__init</a></div><div class="ttdeci">bool zrtos_vfs_fd_set__init(zrtos_vfs_fd_set_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00065">vfs_fd.h:65</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -294,13 +326,12 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00058">58</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span> {</div>
-<div class="line"><span class="lineno">   62</span>    <a class="code hl_function" href="vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990">zrtos_vfs_fd_set__clear</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>,fd);</div>
-<div class="line"><span class="lineno">   63</span>    <a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a> *entry = &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.<a class="code hl_variable" href="struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134">fd</a>];</div>
-<div class="line"><span class="lineno">   64</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a02715b39881462037b74e2ec9e86297f">on_can_read</a> = 0;</div>
-<div class="line"><span class="lineno">   65</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a637ea19846bf19d28ccf818d931f877c">on_can_write</a> = 0;</div>
-<div class="line"><span class="lineno">   66</span>}</div>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00061">61</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span> {</div>
+<div class="line"><span class="lineno">   65</span>    <a class="code hl_function" href="vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990">zrtos_vfs_fd_set__clear</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>,fd);</div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_struct" href="struct__zrtos__vfs__notify__entry__t.html">zrtos_vfs_notify_entry_t</a> *entry = &amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.<a class="code hl_variable" href="struct__zrtos__vfs__fd__t.html#a959ce5ce84ec4676c6349a48d4c43134">fd</a>];</div>
+<div class="line"><span class="lineno">   67</span>    entry-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a> = 0;</div>
+<div class="line"><span class="lineno">   68</span>}</div>
 <div class="ttc" id="avfs__fd_8h_html_ad15bcee237278a1e0d14f758b3cd0990"><div class="ttname"><a href="vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990">zrtos_vfs_fd_set__clear</a></div><div class="ttdeci">void zrtos_vfs_fd_set__clear(zrtos_vfs_fd_set_t *thiz, zrtos_vfs_fd_t fd)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00027">vfs_fd.h:27</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -325,41 +356,43 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00068">68</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   70</span> {</div>
-<div class="line"><span class="lineno">   71</span>    <a class="code hl_struct" href="struct__zrtos__vfs__fd__set__t.html">zrtos_vfs_fd_set_t</a> fdset_can_read;</div>
-<div class="line"><span class="lineno">   72</span>    <a class="code hl_struct" href="struct__zrtos__vfs__fd__set__t.html">zrtos_vfs_fd_set_t</a> fdset_can_write;</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">while</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a>)){</div>
-<div class="line"><span class="lineno">   75</span>        <a class="code hl_function" href="vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e">zrtos_vfs_fd_set__copy</a>(&amp;fdset_can_read,&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
-<div class="line"><span class="lineno">   76</span>        <a class="code hl_function" href="vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e">zrtos_vfs_fd_set__copy</a>(&amp;fdset_can_write,&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
-<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd">zrtos_vfs_fd__select</a>(&amp;fdset_can_read,&amp;fdset_can_write)&gt;0){</div>
-<div class="line"><span class="lineno">   78</span>            <a class="code hl_define" href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a>(&amp;fdset_can_read,fd){</div>
-<div class="line"><span class="lineno">   79</span>                <span class="keywordflow">if</span>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a02715b39881462037b74e2ec9e86297f">on_can_read</a>){</div>
-<div class="line"><span class="lineno">   80</span>                    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a02715b39881462037b74e2ec9e86297f">on_can_read</a>(</div>
-<div class="line"><span class="lineno">   81</span>                         thiz</div>
-<div class="line"><span class="lineno">   82</span>                        ,fd</div>
-<div class="line"><span class="lineno">   83</span>                    );</div>
-<div class="line"><span class="lineno">   84</span>                }</div>
-<div class="line"><span class="lineno">   85</span>            }<a class="code hl_define" href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a>;</div>
-<div class="line"><span class="lineno">   86</span> </div>
-<div class="line"><span class="lineno">   87</span>            <a class="code hl_define" href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a>(&amp;fdset_can_write,fd){</div>
-<div class="line"><span class="lineno">   88</span>                <span class="keywordflow">if</span>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a637ea19846bf19d28ccf818d931f877c">on_can_write</a>){</div>
-<div class="line"><span class="lineno">   89</span>                    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a637ea19846bf19d28ccf818d931f877c">on_can_write</a>(</div>
-<div class="line"><span class="lineno">   90</span>                         thiz</div>
-<div class="line"><span class="lineno">   91</span>                        ,fd</div>
-<div class="line"><span class="lineno">   92</span>                    );</div>
-<div class="line"><span class="lineno">   93</span>                }</div>
-<div class="line"><span class="lineno">   94</span>            }<a class="code hl_define" href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a>;</div>
-<div class="line"><span class="lineno">   95</span>        }</div>
-<div class="line"><span class="lineno">   96</span>    }</div>
-<div class="line"><span class="lineno">   97</span>}</div>
-<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00151">error.h:151</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00070">70</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span> {</div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_struct" href="struct__zrtos__vfs__fd__set__t.html">zrtos_vfs_fd_set_t</a> fdset_can_read;</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_struct" href="struct__zrtos__vfs__fd__set__t.html">zrtos_vfs_fd_set_t</a> fdset_can_write;</div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">while</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a>)){</div>
+<div class="line"><span class="lineno">   77</span>        <a class="code hl_function" href="vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e">zrtos_vfs_fd_set__copy</a>(&amp;fdset_can_read,&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_function" href="vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e">zrtos_vfs_fd_set__copy</a>(&amp;fdset_can_write,&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a34c7c8adfb9b10ce4b9723761c857523">fdset</a>);</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">if</span>(<a class="code hl_function" href="vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd">zrtos_vfs_fd__select</a>(&amp;fdset_can_read,&amp;fdset_can_write)&gt;0){</div>
+<div class="line"><span class="lineno">   80</span>            <a class="code hl_define" href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a>(&amp;fdset_can_read,fd){</div>
+<div class="line"><span class="lineno">   81</span>                <span class="keywordflow">if</span>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a>){</div>
+<div class="line"><span class="lineno">   82</span>                    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a>(</div>
+<div class="line"><span class="lineno">   83</span>                         thiz</div>
+<div class="line"><span class="lineno">   84</span>                        ,fd</div>
+<div class="line"><span class="lineno">   85</span>                        ,<a class="code hl_enumvalue" href="#a1da443505499531ad79b791ba277cce3a207dfd0ca1e70e0be766acb99639a411">ZRTOS_VFS_NOTIFY_EVENT_TYPE__READ</a></div>
+<div class="line"><span class="lineno">   86</span>                    );</div>
+<div class="line"><span class="lineno">   87</span>                }</div>
+<div class="line"><span class="lineno">   88</span>            }<a class="code hl_define" href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a>;</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span>            <a class="code hl_define" href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a>(&amp;fdset_can_write,fd){</div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">if</span>(thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a>){</div>
+<div class="line"><span class="lineno">   92</span>                    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a8063500e9fcd7c260391a39602d4fbea">data</a>[fd.fd].<a class="code hl_variable" href="struct__zrtos__vfs__notify__entry__t.html#a60349cdfbe0dde9212b12582b6e9e255">callback</a>(</div>
+<div class="line"><span class="lineno">   93</span>                         thiz</div>
+<div class="line"><span class="lineno">   94</span>                        ,fd</div>
+<div class="line"><span class="lineno">   95</span>                        ,<a class="code hl_enumvalue" href="#a1da443505499531ad79b791ba277cce3aa132d5a05cc4a6dab2201b9dd872d368">ZRTOS_VFS_NOTIFY_EVENT_TYPE__WRITE</a></div>
+<div class="line"><span class="lineno">   96</span>                    );</div>
+<div class="line"><span class="lineno">   97</span>                }</div>
+<div class="line"><span class="lineno">   98</span>            }<a class="code hl_define" href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a>;</div>
+<div class="line"><span class="lineno">   99</span>        }</div>
+<div class="line"><span class="lineno">  100</span>    }</div>
+<div class="line"><span class="lineno">  101</span>}</div>
+<div class="ttc" id="aerror_8h_html_add13298163f63b7d37ed9f12d57e1a31"><div class="ttname"><a href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a></div><div class="ttdeci">bool zrtos_error__is_success(zrtos_error_t thiz)</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00152">error.h:152</a></div></div>
 <div class="ttc" id="astruct__zrtos__vfs__fd__set__t_html"><div class="ttname"><a href="struct__zrtos__vfs__fd__set__t.html">_zrtos_vfs_fd_set_t</a></div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00021">vfs_fd.h:21</a></div></div>
-<div class="ttc" id="avfs__fd_8h_html_a0ece60a784cce2a28fc9568e2621bf2a"><div class="ttname"><a href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a></div><div class="ttdeci">#define ZRTOS_VFS_FD_SET__EACH_END</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00233">vfs_fd.h:233</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_a0ece60a784cce2a28fc9568e2621bf2a"><div class="ttname"><a href="vfs__fd_8h.html#a0ece60a784cce2a28fc9568e2621bf2a">ZRTOS_VFS_FD_SET__EACH_END</a></div><div class="ttdeci">#define ZRTOS_VFS_FD_SET__EACH_END</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00299">vfs_fd.h:299</a></div></div>
 <div class="ttc" id="avfs__fd_8h_html_a71a8f21157553c2313c2395e516d962e"><div class="ttname"><a href="vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e">zrtos_vfs_fd_set__copy</a></div><div class="ttdeci">void zrtos_vfs_fd_set__copy(zrtos_vfs_fd_set_t *thiz, zrtos_vfs_fd_set_t *src)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00057">vfs_fd.h:57</a></div></div>
-<div class="ttc" id="avfs__fd_8h_html_a84fc04e826e763875c52716c0006143e"><div class="ttname"><a href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a></div><div class="ttdeci">#define ZRTOS_VFS_FD_SET__EACH_BEGIN(thiz, fd_)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00225">vfs_fd.h:225</a></div></div>
-<div class="ttc" id="avfs__fd_8h_html_a8804d81bd731c8b3df5763a432c1ebdd"><div class="ttname"><a href="vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd">zrtos_vfs_fd__select</a></div><div class="ttdeci">size_t zrtos_vfs_fd__select(zrtos_vfs_fd_set_t *readfds, zrtos_vfs_fd_set_t *writefds)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00192">vfs_fd.h:192</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_a84fc04e826e763875c52716c0006143e"><div class="ttname"><a href="vfs__fd_8h.html#a84fc04e826e763875c52716c0006143e">ZRTOS_VFS_FD_SET__EACH_BEGIN</a></div><div class="ttdeci">#define ZRTOS_VFS_FD_SET__EACH_BEGIN(thiz, fd_)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00291">vfs_fd.h:291</a></div></div>
+<div class="ttc" id="avfs__fd_8h_html_a8804d81bd731c8b3df5763a432c1ebdd"><div class="ttname"><a href="vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd">zrtos_vfs_fd__select</a></div><div class="ttdeci">size_t zrtos_vfs_fd__select(zrtos_vfs_fd_set_t *readfds, zrtos_vfs_fd_set_t *writefds)</div><div class="ttdef"><b>Definition</b> <a href="vfs__fd_8h_source.html#l00258">vfs_fd.h:258</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -383,11 +416,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00099">99</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span> {</div>
-<div class="line"><span class="lineno">  102</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a> = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a8cc241d56d59d11ceea8efc37bec8ed4">EINTR</a>;</div>
-<div class="line"><span class="lineno">  103</span>}</div>
-<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22a8cc241d56d59d11ceea8efc37bec8ed4"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22a8cc241d56d59d11ceea8efc37bec8ed4">EINTR</a></div><div class="ttdeci">@ EINTR</div><div class="ttdoc">Interrupted system call.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00028">error.h:27</a></div></div>
+<p class="definition">Definition at line <a class="el" href="vfs__notify_8h_source.html#l00103">103</a> of file <a class="el" href="vfs__notify_8h_source.html">vfs_notify.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span> {</div>
+<div class="line"><span class="lineno">  106</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__notify__t.html#a3c3fc5593e9d3585acadc37caa80e88e">error</a> = <a class="code hl_enumvalue" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22aef95c050f36e73806fd4fb7fa39d4af6">ZRTOS_ERROR__INTR</a>;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="aerror_8h_html_a858141c8990203d8ff36f82cf43f0e22aef95c050f36e73806fd4fb7fa39d4af6"><div class="ttname"><a href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22aef95c050f36e73806fd4fb7fa39d4af6">ZRTOS_ERROR__INTR</a></div><div class="ttdeci">@ ZRTOS_ERROR__INTR</div><div class="ttdoc">Interrupted system call.</div><div class="ttdef"><b>Definition</b> <a href="error_8h_source.html#l00029">error.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

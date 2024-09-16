@@ -1,21 +1,21 @@
 <map id="_zrtos_vfs_module_spi_file_t" name="_zrtos_vfs_module_spi_file_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="628,175,781,217"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="378,45,512,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,68,568,79,606,96,631,113,653,133,689,172,685,176,650,137,627,117,603,101,566,84,527,73"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="424,28,431,21,445,19,458,21,466,27,468,36,465,46,460,44,463,36,461,30,455,26,445,24,433,26,427,32"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__cbuffer__t.html" title=" " alt="" coords="388,100,501,127"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="517,127,605,152,655,172,653,177,603,157,516,132"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="631,175,784,217"/>
+<area shape="rect" id="Node000002" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="379,45,513,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="529,68,570,79,609,96,634,113,657,133,692,173,688,176,653,137,631,118,606,101,568,84,528,73"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="425,28,432,21,446,19,459,21,467,27,470,36,466,46,461,44,464,36,463,30,457,26,446,24,435,26,428,32"/>
+<area shape="rect" id="Node000003" href="$struct__zrtos__cbuffer__t.html" title=" " alt="" coords="390,100,503,127"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="519,127,608,152,659,172,657,177,606,157,517,132"/>
 <area shape="rect" id="Node000004" href="$struct__zrtos__list__t.html" title=" " alt="" coords="206,100,298,127"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="313,111,387,111,387,116,313,116"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="314,111,389,111,389,116,314,116"/>
 <area shape="rect" id="Node000005" href="$struct__zrtos__list__node__t.html" title=" " alt="" coords="5,100,133,127"/>
 <area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="148,111,205,111,205,116,148,116"/>
 <area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="50,82,56,76,69,73,81,76,88,82,90,91,87,100,82,99,85,91,84,85,79,80,69,79,59,81,53,86"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="398,151,492,177"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="507,169,628,184,628,189,507,174"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="372,201,517,244"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="533,217,604,211,627,208,628,213,605,216,533,222"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="415,268,475,295"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="489,269,603,237,657,215,659,220,605,243,490,275"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="419,319,471,345"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="485,320,542,303,603,276,645,247,680,216,684,220,649,251,606,281,544,308,487,326"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="399,151,493,177"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="509,169,631,184,631,189,508,174"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="374,201,519,244"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="534,217,607,211,630,208,631,213,608,216,535,222"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="372,268,520,295"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="525,261,606,237,660,216,662,220,608,243,527,266"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="420,319,472,345"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="486,321,544,303,606,276,649,247,683,216,687,220,652,251,609,281,546,308,488,326"/>
 </map>
