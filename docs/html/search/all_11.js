@@ -124,7 +124,7 @@ var searchData=
   ['stack_5fptr_121',['stack_ptr',['../struct__zrtos__task__t.html#ae8166fe6c42d53214f7a7a26ef1a7d79',1,'_zrtos_task_t::stack_ptr'],['../struct__zrtos__vheap__task__t.html#af55d49b9520c3bcdb23771f7975ee3d5',1,'_zrtos_vheap_task_t::stack_ptr']]],
   ['stacksize_122',['stacksize',['../structpthread__attr__t.html#a3d2ad0d1ef88006603a8ca555fdac0b6',1,'pthread_attr_t']]],
   ['stacksize_5fmin_123',['stacksize_min',['../struct__zrtos__vheap__task__t.html#aaae06b6b48cd8ab190302cba766e1ee3',1,'_zrtos_vheap_task_t']]],
-  ['start_5faddr_124',['start_addr',['../struct__zrtos__vfs__module__avr__progmem__args__t.html#a0dfc98fafbef065d114506d416331e77',1,'_zrtos_vfs_module_avr_progmem_args_t::start_addr'],['../struct__zrtos__vfs__module__sram__args__t.html#a1c1270c8edd2f13db0b935434bd70084',1,'_zrtos_vfs_module_sram_args_t::start_addr']]],
+  ['start_5faddr_124',['start_addr',['../struct__zrtos__vfs__module__avr__progmem__inode__t.html#aaa5ae5836caa1bbe55370b434b022b13',1,'_zrtos_vfs_module_avr_progmem_inode_t::start_addr'],['../struct__zrtos__vfs__module__sram__inode__t.html#aacde47d9d8566e0b447eba4472d8bb79',1,'_zrtos_vfs_module_sram_inode_t::start_addr']]],
   ['start_5foffset_125',['start_offset',['../struct__zrtos__vheap__task__scheduler__t.html#a5ab9fb5bdd08564f1c0aa5db90c336ab',1,'_zrtos_vheap_task_scheduler_t']]],
   ['static_20pthread_126',['static pthread',['../index.html#autotoc_md6',1,'']]],
   ['static_20tasks_127',['static tasks',['../index.html#autotoc_md5',1,'']]],

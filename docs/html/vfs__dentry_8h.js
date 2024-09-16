@@ -1,8 +1,8 @@
 var vfs__dentry_8h =
 [
     [ "_zrtos_vfs_dentry_t", "struct__zrtos__vfs__dentry__t.html", "struct__zrtos__vfs__dentry__t" ],
-    [ "_zrtos_vfs_dentry__each_child_cb_args_t", "struct__zrtos__vfs__dentry____each__child__cb__args__t.html", "struct__zrtos__vfs__dentry____each__child__cb__args__t" ],
-    [ "zrtos_vfs_dentry__each_child_cb_inode_t", "vfs__dentry_8h.html#aa311067aac662d0138d37d8d2507ac5c", null ],
+    [ "_zrtos_vfs_dentry__each_child_cb_inode_t", "struct__zrtos__vfs__dentry____each__child__cb__inode__t.html", "struct__zrtos__vfs__dentry____each__child__cb__inode__t" ],
+    [ "zrtos_vfs_dentry__each_child_cb_inode_t", "vfs__dentry_8h.html#a1b24d89813663fa048b6bf9abba5656d", null ],
     [ "zrtos_vfs_dentry_t", "vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e", null ],
     [ "zrtos_vfs_dentry__each_child", "vfs__dentry_8h.html#a911f5eb8673c68fe4147f56a21062ed7", null ],
     [ "zrtos_vfs_dentry__each_child_cb", "vfs__dentry_8h.html#a05f11e0155e29bdfa726f3407120a19d", null ],

@@ -7,7 +7,7 @@ var searchData=
   ['max7219_2eh_4',['max7219.h',['../max7219_8h.html',1,'']]],
   ['mcp2515_2eh_5',['mcp2515.h',['../mcp2515_8h.html',1,'']]],
   ['mem_2eh_6',['mem.h',['../mem_8h.html',1,'']]],
-  ['mode_7',['mode',['../struct__zrtos__vfs__module__uart__args__t.html#a2df1a316123f0ab083c0954f6448113a',1,'_zrtos_vfs_module_uart_args_t::mode'],['../structwiz___phy_conf__t.html#a08fbc557790c3a9ffd15e179d8c1884f',1,'wiz_PhyConf_t::mode']]],
+  ['mode_7',['mode',['../struct__zrtos__vfs__module__uart__inode__t.html#a1fc6a38340398fcc3f6ff29b95417f67',1,'_zrtos_vfs_module_uart_inode_t::mode'],['../structwiz___phy_conf__t.html#a08fbc557790c3a9ffd15e179d8c1884f',1,'wiz_PhyConf_t::mode']]],
   ['mount_8',['mount',['../structzrtos__vfs__plugin__t.html#a33b5203076c7bfa05c6db641eaff57e8',1,'zrtos_vfs_plugin_t']]],
   ['mr_9',['MR',['../group___common__register__group.html#ga9ecbd9f86f95534f1bcf71015d5ae81a',1,'w5500.h']]],
   ['mr_5ffarp_10',['MR_FARP',['../w5500_8h.html#a1a533a5a873851cd3276fd461c189004',1,'w5500.h']]],
@@ -17,7 +17,7 @@ var searchData=
   ['mr_5fwol_14',['MR_WOL',['../w5500_8h.html#a879ae2c8148119e79607337735d78f37',1,'w5500.h']]],
   ['msg_5fcount_15',['msg_count',['../struct__zrtos__msg__queue__t.html#a5df6322163266a44fbd11e507e0f35c7',1,'_zrtos_msg_queue_t::msg_count'],['../struct__zrtos__msg__queue__write__transaction__t.html#a738487a8781ba4c1226b606f5e1d2f31',1,'_zrtos_msg_queue_write_transaction_t::msg_count']]],
   ['msg_5fqueue_2eh_16',['msg_queue.h',['../msg__queue_8h.html',1,'']]],
-  ['msg_5fqueue_5fin_17',['msg_queue_in',['../struct__zrtos__vfs__module__modbus__rtu__args__t.html#a9fcab721c0f757751e0b1065f68224df',1,'_zrtos_vfs_module_modbus_rtu_args_t']]],
-  ['msg_5fqueue_5fout_18',['msg_queue_out',['../struct__zrtos__vfs__module__modbus__rtu__args__t.html#abefd16238c37eaab60140d20756f96c1',1,'_zrtos_vfs_module_modbus_rtu_args_t']]],
-  ['mutex_19',['mutex',['../structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95',1,'pthread_mutex_t::mutex'],['../struct__zrtos__vfs__module__spi__sync__args__t.html#a6a10c7960fc0dab673a1e5fcf29360f4',1,'_zrtos_vfs_module_spi_sync_args_t::mutex']]]
+  ['msg_5fqueue_5fin_17',['msg_queue_in',['../struct__zrtos__vfs__module__modbus__rtu__inode__t.html#a0420fe79d18595b53fa788d4557d70f0',1,'_zrtos_vfs_module_modbus_rtu_inode_t']]],
+  ['msg_5fqueue_5fout_18',['msg_queue_out',['../struct__zrtos__vfs__module__modbus__rtu__inode__t.html#a466199fb075d1a74af126edcd75614fb',1,'_zrtos_vfs_module_modbus_rtu_inode_t']]],
+  ['mutex_19',['mutex',['../structpthread__mutex__t.html#a73a2102908f4804073bafd45e0edcd95',1,'pthread_mutex_t::mutex'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#a382075999e50bac4a07fefccf731f24a',1,'_zrtos_vfs_module_spi_sync_inode_t::mutex']]]
 ];

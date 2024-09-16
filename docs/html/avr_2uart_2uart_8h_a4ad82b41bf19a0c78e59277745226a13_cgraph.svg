@@ -75,10 +75,10 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="uart_2uart_8h.html#ae8cfe275c44dfd342fcfd16b9c5de616" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="295.25,-32 178.75,-32 178.75,0 295.25,0 295.25,-32"/>
-<text text-anchor="start" x="186.75" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
-<text text-anchor="middle" x="237" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_args__get_cbuffer_out</text>
+<g id="a_Node000015"><a xlink:href="uart_2uart_8h.html#a2f0d81468ee5d1c929a8665929f737cd" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="297.5,-32 176.5,-32 176.5,0 297.5,0 297.5,-32"/>
+<text text-anchor="start" x="184.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
+<text text-anchor="middle" x="237" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_inode__get_cbuffer_out</text>
 </a>
 </g>
 </g>

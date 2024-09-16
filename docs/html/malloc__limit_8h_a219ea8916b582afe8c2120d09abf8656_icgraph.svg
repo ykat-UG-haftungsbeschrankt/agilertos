@@ -94,10 +94,10 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="uart_2uart_8h.html#a16dccccd733cb90cb8f46ddd1ed04b4d" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="938.25,-400 825.5,-400 825.5,-368 938.25,-368 938.25,-400"/>
 <text text-anchor="start" x="833.5" y="-386.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
-<text text-anchor="middle" x="881.88" y="-374.5" font-family="Helvetica,sans-Serif" font-size="10.00">_args__init</text>
+<text text-anchor="middle" x="881.88" y="-374.5" font-family="Helvetica,sans-Serif" font-size="10.00">_inode__init</text>
 </a>
 </g>
 </g>
@@ -271,10 +271,10 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="rtu_8h.html#aac1c0a8f15ec0cd7540f53a61fe9ff08" target="_top" xlink:title=" ">
+<g id="a_Node000012"><a xlink:href="rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="275,-471 144.25,-471 144.25,-439 275,-439 275,-471"/>
 <text text-anchor="start" x="152.25" y="-457.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_modbus</text>
-<text text-anchor="middle" x="209.62" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">_rtu_args__init</text>
+<text text-anchor="middle" x="209.62" y="-445.5" font-family="Helvetica,sans-Serif" font-size="10.00">_rtu_inode__init</text>
 </a>
 </g>
 </g>

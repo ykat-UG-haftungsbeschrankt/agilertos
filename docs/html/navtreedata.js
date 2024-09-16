@@ -73,7 +73,7 @@ var NAVTREEINDEX =
 "sdm630_8h.html#ab680c2d7e5863dcfad6133e77cbd1628a6a273679e4a6e9660038aaccf0a1d345",
 "struct__zrtos__str____vsnprintf__cb__args__t.html#ac93661e7158589be8164eef3a95bf391",
 "task_8h_source.html",
-"uart_2uart_8h.html#af1e044ef30e61c5e17b757fc81d6ed5ea687528ec72619453ce3ff05fb2cb7d3b",
+"uart_2uart_8h.html#af1e044ef30e61c5e17b757fc81d6ed5ea7a375e77e182ff421945d06b24a809e4",
 "vheap__task_8h.html#a9a6382869bc3582f4c52e85d4915fea5",
 "w5500_8h.html#ac786108aec4528dd98cf6fb7ebae4841"
 ];

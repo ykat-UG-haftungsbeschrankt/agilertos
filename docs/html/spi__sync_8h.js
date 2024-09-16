@@ -1,9 +1,9 @@
 var spi__sync_8h =
 [
     [ "_zrtos_vfs_module_spi_sync_file_t", "struct__zrtos__vfs__module__spi__sync__file__t.html", "struct__zrtos__vfs__module__spi__sync__file__t" ],
-    [ "_zrtos_vfs_module_spi_sync_args_t", "struct__zrtos__vfs__module__spi__sync__args__t.html", "struct__zrtos__vfs__module__spi__sync__args__t" ],
+    [ "_zrtos_vfs_module_spi_sync_inode_t", "struct__zrtos__vfs__module__spi__sync__inode__t.html", "struct__zrtos__vfs__module__spi__sync__inode__t" ],
     [ "zrtos_vfs_module_spi_sync_file_t", "spi__sync_8h.html#a1b338a9705ef040bd4cfc4d69061c1b2", null ],
-    [ "zrtos_vfs_module_spi_sync_inode_t", "spi__sync_8h.html#a2f75d9cd25001cb9a0da6ea55f61acb2", null ],
+    [ "zrtos_vfs_module_spi_sync_inode_t", "spi__sync_8h.html#ad009e98fc01ea6258e50489361ae3100", null ],
     [ "zrtos_vfs_module_spi_sync_control_t", "spi__sync_8h.html#a2db9590fca319957f47112218f73eaeb", [
       [ "ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__MIN", "spi__sync_8h.html#a2db9590fca319957f47112218f73eaeba2d5da8b41afebc3b34a7afbea9e3313c", null ],
       [ "ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__CLOCK_RATE_4", "spi__sync_8h.html#a2db9590fca319957f47112218f73eaeba52b3f0ee38dcbe85c0919d071a0b4861", null ],
@@ -30,7 +30,7 @@ var spi__sync_8h =
     [ "zrtos_vfs_module_spi_sync__on_open", "spi__sync_8h.html#a29c9d8a32af2717c5e9ed8e11d0800fa", null ],
     [ "zrtos_vfs_module_spi_sync__on_umount", "spi__sync_8h.html#a75cc4e8410c87be8def40a99d541aa20", null ],
     [ "zrtos_vfs_module_spi_sync__on_write_helper", "spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61", null ],
-    [ "zrtos_vfs_module_spi_sync_args__deinit", "spi__sync_8h.html#ac955fffc685c4b30e912a94cce5b6924", null ],
-    [ "zrtos_vfs_module_spi_sync_args__init", "spi__sync_8h.html#ac15a978ffb64df92d13ab445f520981e", null ],
-    [ "zrtos_vfs_module_spi_sync_file__init", "spi__sync_8h.html#aeee355b38fcff02713a093a26ad702b2", null ]
+    [ "zrtos_vfs_module_spi_sync_file__init", "spi__sync_8h.html#aeee355b38fcff02713a093a26ad702b2", null ],
+    [ "zrtos_vfs_module_spi_sync_inode__deinit", "spi__sync_8h.html#aa54c465a319296a9318175039e8c25b3", null ],
+    [ "zrtos_vfs_module_spi_sync_inode__init", "spi__sync_8h.html#aaa9cd7808bfafe148af57d453633aec8", null ]
 ];

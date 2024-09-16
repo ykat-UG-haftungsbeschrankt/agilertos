@@ -46,7 +46,7 @@ var searchData=
   ['getuipr_43',['getUIPR',['../group___common__register__access__function.html#ga99a011636cf4ce7f234aa60f65987154',1,'w5500.h']]],
   ['getuportr_44',['getUPORTR',['../group___common__register__access__function.html#gab8e38e3f8ae2c63998ac19beab8be40e',1,'w5500.h']]],
   ['getversionr_45',['getVERSIONR',['../group___common__register__access__function.html#gaa8c9fea2d2ed62147f86b27e595fedd1',1,'w5500.h']]],
-  ['gpio_46',['gpio',['../struct__zrtos__vfs__module__spi__args__t.html#ac779d1394784fa2267a713aded0a2c9e',1,'_zrtos_vfs_module_spi_args_t::gpio'],['../struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59',1,'_zrtos_vfs_module_spi_sync_args_t::gpio']]],
+  ['gpio_46',['gpio',['../struct__zrtos__vfs__module__spi__inode__t.html#ae8055932d66b03c0d118d9defe2fe3b9',1,'_zrtos_vfs_module_spi_inode_t::gpio'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f',1,'_zrtos_vfs_module_spi_sync_inode_t::gpio']]],
   ['gpio_2eh_47',['gpio.h',['../gpio_8h.html',1,'']]],
   ['gw_48',['gw',['../structwiz___net_info__t.html#a6a78be2d765ba8e6f00ab9570ea6d702',1,'wiz_NetInfo_t']]]
 ];

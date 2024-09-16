@@ -1,9 +1,9 @@
 var spi_2spi_8h =
 [
     [ "_zrtos_vfs_module_spi_file_t", "struct__zrtos__vfs__module__spi__file__t.html", "struct__zrtos__vfs__module__spi__file__t" ],
-    [ "_zrtos_vfs_module_spi_args_t", "struct__zrtos__vfs__module__spi__args__t.html", "struct__zrtos__vfs__module__spi__args__t" ],
+    [ "_zrtos_vfs_module_spi_inode_t", "struct__zrtos__vfs__module__spi__inode__t.html", "struct__zrtos__vfs__module__spi__inode__t" ],
     [ "zrtos_vfs_module_spi_file_t", "spi_2spi_8h.html#acacc1092ebc4518626fd1c9da2a3e436", null ],
-    [ "zrtos_vfs_module_spi_inode_t", "spi_2spi_8h.html#ad6e11fd525d9eab9f6e1ebbb4170011b", null ],
+    [ "zrtos_vfs_module_spi_inode_t", "spi_2spi_8h.html#a97ca120bd94f4a43565999e299726597", null ],
     [ "zrtos_vfs_module_spi_control_t", "spi_2spi_8h.html#aa18c3fc8bd5caf8f0ec8e01101c7af80", [
       [ "ZRTOS_VFS_MODULE_SPI_CONTROL__MIN", "spi_2spi_8h.html#aa18c3fc8bd5caf8f0ec8e01101c7af80a36e80eebf28f066223c81cd6d13f0bbe", null ],
       [ "ZRTOS_VFS_MODULE_SPI_CONTROL__CLOCK_RATE_4", "spi_2spi_8h.html#aa18c3fc8bd5caf8f0ec8e01101c7af80ae108f0ae48443304666d903e096030bb", null ],
@@ -43,10 +43,10 @@ var spi_2spi_8h =
     [ "zrtos_vfs_module_spi__transfer_in", "spi_2spi_8h.html#a7f9adeb6314d47b2442b0a17d1cc2f37", null ],
     [ "zrtos_vfs_module_spi__transfer_init", "spi_2spi_8h.html#ad77e6ecb4213305b573cbf5a8989c1f1", null ],
     [ "zrtos_vfs_module_spi__transfer_out", "spi_2spi_8h.html#a7cc1a52aa2cec6b681b7732681bda10b", null ],
-    [ "zrtos_vfs_module_spi_args__deinit", "spi_2spi_8h.html#ac96664d6c2c21b549e8bb933d851f64c", null ],
-    [ "zrtos_vfs_module_spi_args__init", "spi_2spi_8h.html#ade03b4f5f1c0bcc687753c94ded7fdf3", null ],
     [ "zrtos_vfs_module_spi_file__deinit", "spi_2spi_8h.html#a32046c6fe4df16f4795a3de4fdf61f8f", null ],
     [ "zrtos_vfs_module_spi_file__free", "spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de", null ],
     [ "zrtos_vfs_module_spi_file__init", "spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842", null ],
-    [ "zrtos_vfs_module_spi_file__new", "spi_2spi_8h.html#a233cf747fcbc04752c320e48e8101632", null ]
+    [ "zrtos_vfs_module_spi_file__new", "spi_2spi_8h.html#a233cf747fcbc04752c320e48e8101632", null ],
+    [ "zrtos_vfs_module_spi_inode__deinit", "spi_2spi_8h.html#adccd535c87f4e9d46408cce4494e7bb2", null ],
+    [ "zrtos_vfs_module_spi_inode__init", "spi_2spi_8h.html#ac71d0c5a0a719470ac191341e1bc47e4", null ]
 ];

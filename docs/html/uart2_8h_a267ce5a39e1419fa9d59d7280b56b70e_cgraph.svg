@@ -93,10 +93,10 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="353.62,-32 240.88,-32 240.88,0 353.62,0 353.62,-32"/>
-<text text-anchor="start" x="248.88" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
-<text text-anchor="middle" x="297.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_args__get_cbuffer_in</text>
+<g id="a_Node000015"><a xlink:href="uart_2uart_8h.html#a1a74572693be9273dead4731184fa735" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="354.75,-32 239.75,-32 239.75,0 354.75,0 354.75,-32"/>
+<text text-anchor="start" x="247.75" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
+<text text-anchor="middle" x="297.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_inode__get_cbuffer_in</text>
 </a>
 </g>
 </g>

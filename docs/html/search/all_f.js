@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parent_0',['parent',['../struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd',1,'_zrtos_task_t::parent'],['../struct__zrtos__vfs__dentry__t.html#a434de1d794713094354ae5460c662d0f',1,'_zrtos_vfs_dentry_t::parent'],['../struct__zrtos__vfs__dentry____each__child__cb__args__t.html#af2d5bbf4238e481d304aa366dec3fc18',1,'_zrtos_vfs_dentry__each_child_cb_args_t::parent'],['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t::parent']]],
+  ['parent_0',['parent',['../struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd',1,'_zrtos_task_t::parent'],['../struct__zrtos__vfs__dentry__t.html#a434de1d794713094354ae5460c662d0f',1,'_zrtos_vfs_dentry_t::parent'],['../struct__zrtos__vfs__dentry____each__child__cb__inode__t.html#a033ca98bc2cd032b0bedfd77acd18d3d',1,'_zrtos_vfs_dentry__each_child_cb_inode_t::parent'],['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t::parent']]],
   ['phar_1',['PHAR',['../group___common__register__group.html#ga3ed5558b8cfbba78bf63fb2b8c907c38',1,'w5500.h']]],
   ['phy_5fconfby_5fhw_2',['PHY_CONFBY_HW',['../wizchip__conf_8h.html#a041ee84835137a0e9b44195c59094058',1,'wizchip_conf.h']]],
   ['phy_5fconfby_5fsw_3',['PHY_CONFBY_SW',['../wizchip__conf_8h.html#a2c4dfff024962b4a520a0f64c5b482c7',1,'wizchip_conf.h']]],
@@ -32,9 +32,9 @@ var searchData=
   ['phycfgr_5fspd_5f10_29',['PHYCFGR_SPD_10',['../w5500_8h.html#a86e2ca22e41ce4d77e2b3ab6c1aa97c0',1,'w5500.h']]],
   ['phycfgr_5fspd_5f100_30',['PHYCFGR_SPD_100',['../w5500_8h.html#a005718e74f17bcdff506d15e51510c9e',1,'w5500.h']]],
   ['pin_5fcs_31',['pin_cs',['../struct__zrtos__vfs__module__spi__file__t.html#a5a30149f7e1c9eff7bfac06ddfe3de69',1,'_zrtos_vfs_module_spi_file_t::pin_cs'],['../struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b',1,'_zrtos_vfs_module_spi_sync_file_t::pin_cs']]],
-  ['pin_5fmiso_32',['pin_miso',['../struct__zrtos__vfs__module__spi__args__t.html#aa6ccd393f34e89b3219e91b1255ad539',1,'_zrtos_vfs_module_spi_args_t::pin_miso'],['../struct__zrtos__vfs__module__spi__sync__args__t.html#a285ad48927a3122ae468d07f9250d62b',1,'_zrtos_vfs_module_spi_sync_args_t::pin_miso']]],
-  ['pin_5fmosi_33',['pin_mosi',['../struct__zrtos__vfs__module__spi__args__t.html#a029cc7bd0fea46218916ee70e01e0e94',1,'_zrtos_vfs_module_spi_args_t::pin_mosi'],['../struct__zrtos__vfs__module__spi__sync__args__t.html#a592885f5b6508c21cd7b2f76b91ff9ea',1,'_zrtos_vfs_module_spi_sync_args_t::pin_mosi']]],
-  ['pin_5fsclk_34',['pin_sclk',['../struct__zrtos__vfs__module__spi__args__t.html#a8adab328405c80493b3f5fa2f138aff8',1,'_zrtos_vfs_module_spi_args_t::pin_sclk'],['../struct__zrtos__vfs__module__spi__sync__args__t.html#a3740902cce4adbd685119d491876d23a',1,'_zrtos_vfs_module_spi_sync_args_t::pin_sclk']]],
+  ['pin_5fmiso_32',['pin_miso',['../struct__zrtos__vfs__module__spi__inode__t.html#a47f880da84b0d6c3fd1f8b5ca9794eab',1,'_zrtos_vfs_module_spi_inode_t::pin_miso'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#ac3f7d2100f3ea0c710e625586277b4aa',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_miso']]],
+  ['pin_5fmosi_33',['pin_mosi',['../struct__zrtos__vfs__module__spi__inode__t.html#a51956a9f24a6f59bd8898c71369dc11e',1,'_zrtos_vfs_module_spi_inode_t::pin_mosi'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#a3ed262c5fad088c3220d4d2fe472c55b',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_mosi']]],
+  ['pin_5fsclk_34',['pin_sclk',['../struct__zrtos__vfs__module__spi__inode__t.html#ae4c95d6c65683dda50286b38f16ea611',1,'_zrtos_vfs_module_spi_inode_t::pin_sclk'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#acee4e0e7d83e26646105468b70999ae0',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_sclk']]],
   ['plugin_35',['plugin',['../struct__zrtos__vfs__inode__t.html#a013004f622eb58f4474d540fb408aff3',1,'_zrtos_vfs_inode_t']]],
   ['pmagic_36',['PMAGIC',['../group___common__register__group.html#ga162ee07110c2c639f7fa2de585d65e23',1,'w5500.h']]],
   ['pmru_37',['PMRU',['../group___common__register__group.html#ga5d3d5eb120bed5e04464780d82ca5f2e',1,'w5500.h']]],

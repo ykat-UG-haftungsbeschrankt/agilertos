@@ -245,10 +245,10 @@
 <!-- Node47 -->
 <g id="Node000047" class="node">
 <title>Node47</title>
-<g id="a_Node000047"><a xlink:href="uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="288.5,-32 175.75,-32 175.75,0 288.5,0 288.5,-32"/>
-<text text-anchor="start" x="183.75" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
-<text text-anchor="middle" x="232.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_args__get_cbuffer_in</text>
+<g id="a_Node000047"><a xlink:href="uart_2uart_8h.html#a1a74572693be9273dead4731184fa735" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="289.62,-32 174.62,-32 174.62,0 289.62,0 289.62,-32"/>
+<text text-anchor="start" x="182.62" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_uart</text>
+<text text-anchor="middle" x="232.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">_inode__get_cbuffer_in</text>
 </a>
 </g>
 </g>

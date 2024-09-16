@@ -1,8 +1,8 @@
 var uart_2uart_8h =
 [
-    [ "_zrtos_vfs_module_uart_args_t", "struct__zrtos__vfs__module__uart__args__t.html", "struct__zrtos__vfs__module__uart__args__t" ],
-    [ "zrtos_vfs_module_uart_callback_t", "uart_2uart_8h.html#a8676d2eb30078b990ed264cfad3136f7", null ],
-    [ "zrtos_vfs_module_uart_inode_t", "uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7", null ],
+    [ "_zrtos_vfs_module_uart_inode_t", "struct__zrtos__vfs__module__uart__inode__t.html", "struct__zrtos__vfs__module__uart__inode__t" ],
+    [ "zrtos_vfs_module_uart_callback_t", "uart_2uart_8h.html#afdec7d3aa1208ef92faff543dc2b1fa3", null ],
+    [ "zrtos_vfs_module_uart_inode_t", "uart_2uart_8h.html#aab28e4564dbc19ea6f2741a3b26cc181", null ],
     [ "zrtos_vfs_module_uart_baudrate_t", "uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393", [
       [ "ZRTOS_VFS_MODULE_UART_BAUDRATE__MIN", "uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393a104af0fce07fa6db880f634cdf92f6ba", null ],
       [ "ZRTOS_VFS_MODULE_UART_BAUDRATE__300", "uart_2uart_8h.html#a26b51d64f0a115e8ddd5c5fdca24e393abbe92f9e473d653866b6c6b611c38b83", null ],
@@ -68,11 +68,11 @@ var uart_2uart_8h =
     [ "zrtos_vfs_module_uart__on_ioctl", "uart_2uart_8h.html#ad7c2b1650fefd09f873588725a30a2be", null ],
     [ "zrtos_vfs_module_uart__on_read", "uart_2uart_8h.html#a6a55bd7ce001957fedb1647045d64cf9", null ],
     [ "zrtos_vfs_module_uart__on_write", "uart_2uart_8h.html#a9e735d9796aaa30e4a5fce9c763adf92", null ],
-    [ "zrtos_vfs_module_uart_args__callback", "uart_2uart_8h.html#a2ed4588edee3786f4fc26a3ecca2bc83", null ],
-    [ "zrtos_vfs_module_uart_args__get_baudrate", "uart_2uart_8h.html#a158b6339c0f0335988f38d5cc989262e", null ],
-    [ "zrtos_vfs_module_uart_args__get_cbuffer_in", "uart_2uart_8h.html#a8b394d1c76748a8e3d98603fe7145ebc", null ],
-    [ "zrtos_vfs_module_uart_args__get_cbuffer_out", "uart_2uart_8h.html#ae8cfe275c44dfd342fcfd16b9c5de616", null ],
-    [ "zrtos_vfs_module_uart_args__get_mode", "uart_2uart_8h.html#a02307999d9aa00c4ba774542d4d555dc", null ],
-    [ "zrtos_vfs_module_uart_args__init", "uart_2uart_8h.html#a16dccccd733cb90cb8f46ddd1ed04b4d", null ],
-    [ "zrtos_vfs_module_uart_args__is_double_speed", "uart_2uart_8h.html#ab000e16d0fbfe0d33de8505d0cf67aba", null ]
+    [ "zrtos_vfs_module_uart_inode__callback", "uart_2uart_8h.html#a2cfa02b4d5409f52b9c6e87d01f7d6ec", null ],
+    [ "zrtos_vfs_module_uart_inode__get_baudrate", "uart_2uart_8h.html#ace368faca705c4fcf504415dd494aebc", null ],
+    [ "zrtos_vfs_module_uart_inode__get_cbuffer_in", "uart_2uart_8h.html#a1a74572693be9273dead4731184fa735", null ],
+    [ "zrtos_vfs_module_uart_inode__get_cbuffer_out", "uart_2uart_8h.html#a2f0d81468ee5d1c929a8665929f737cd", null ],
+    [ "zrtos_vfs_module_uart_inode__get_mode", "uart_2uart_8h.html#a13b7f87ebe33915ace508d5d35ab640d", null ],
+    [ "zrtos_vfs_module_uart_inode__init", "uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3", null ],
+    [ "zrtos_vfs_module_uart_inode__is_double_speed", "uart_2uart_8h.html#afbcbb54423af0395f0b907e31c085085", null ]
 ];

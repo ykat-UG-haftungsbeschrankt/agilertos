@@ -118,15 +118,15 @@ Include dependency graph for spi_sync.h:</div>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__vfs__module__spi__sync__file__t.html">_zrtos_vfs_module_spi_sync_file_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__vfs__module__spi__sync__args__t.html">_zrtos_vfs_module_spi_sync_args_t</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">_zrtos_vfs_module_spi_sync_inode_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a1b338a9705ef040bd4cfc4d69061c1b2" id="r_a1b338a9705ef040bd4cfc4d69061c1b2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__module__spi__sync__file__t.html">_zrtos_vfs_module_spi_sync_file_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a></td></tr>
 <tr class="separator:a1b338a9705ef040bd4cfc4d69061c1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f75d9cd25001cb9a0da6ea55f61acb2" id="r_a2f75d9cd25001cb9a0da6ea55f61acb2"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__module__spi__sync__args__t.html">_zrtos_vfs_module_spi_sync_args_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a></td></tr>
-<tr class="separator:a2f75d9cd25001cb9a0da6ea55f61acb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad009e98fc01ea6258e50489361ae3100" id="r_ad009e98fc01ea6258e50489361ae3100"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">_zrtos_vfs_module_spi_sync_inode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a></td></tr>
+<tr class="separator:ad009e98fc01ea6258e50489361ae3100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -174,11 +174,11 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac15a978ffb64df92d13ab445f520981e" id="r_ac15a978ffb64df92d13ab445f520981e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac15a978ffb64df92d13ab445f520981e">zrtos_vfs_module_spi_sync_args__init</a> (<a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *thiz, <a class="el" href="gpio_8h.html#a1a0007e1e5dfc40fcb32962e1f4f0547">zrtos_gpio_t</a> *gpio, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_sclk, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_mosi, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_miso)</td></tr>
-<tr class="separator:ac15a978ffb64df92d13ab445f520981e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac955fffc685c4b30e912a94cce5b6924" id="r_ac955fffc685c4b30e912a94cce5b6924"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac955fffc685c4b30e912a94cce5b6924">zrtos_vfs_module_spi_sync_args__deinit</a> (<a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *thiz)</td></tr>
-<tr class="separator:ac955fffc685c4b30e912a94cce5b6924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeee355b38fcff02713a093a26ad702b2" id="r_aeee355b38fcff02713a093a26ad702b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeee355b38fcff02713a093a26ad702b2">zrtos_vfs_module_spi_sync_file__init</a> (<a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *thiz, <a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *ctx, <a class="el" href="#a2db9590fca319957f47112218f73eaeb">zrtos_vfs_module_spi_sync_control_t</a> control, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_cs, void *data)</td></tr>
+<tr class="memitem:aaa9cd7808bfafe148af57d453633aec8" id="r_aaa9cd7808bfafe148af57d453633aec8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa9cd7808bfafe148af57d453633aec8">zrtos_vfs_module_spi_sync_inode__init</a> (<a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *thiz, <a class="el" href="gpio_8h.html#a1a0007e1e5dfc40fcb32962e1f4f0547">zrtos_gpio_t</a> *gpio, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_sclk, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_mosi, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_miso)</td></tr>
+<tr class="separator:aaa9cd7808bfafe148af57d453633aec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa54c465a319296a9318175039e8c25b3" id="r_aa54c465a319296a9318175039e8c25b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa54c465a319296a9318175039e8c25b3">zrtos_vfs_module_spi_sync_inode__deinit</a> (<a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *thiz)</td></tr>
+<tr class="separator:aa54c465a319296a9318175039e8c25b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee355b38fcff02713a093a26ad702b2" id="r_aeee355b38fcff02713a093a26ad702b2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeee355b38fcff02713a093a26ad702b2">zrtos_vfs_module_spi_sync_file__init</a> (<a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *thiz, <a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *ctx, <a class="el" href="#a2db9590fca319957f47112218f73eaeb">zrtos_vfs_module_spi_sync_control_t</a> control, <a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a> pin_cs, void *data)</td></tr>
 <tr class="separator:aeee355b38fcff02713a093a26ad702b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29c9d8a32af2717c5e9ed8e11d0800fa" id="r_a29c9d8a32af2717c5e9ed8e11d0800fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29c9d8a32af2717c5e9ed8e11d0800fa">zrtos_vfs_module_spi_sync__on_open</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz)</td></tr>
 <tr class="separator:a29c9d8a32af2717c5e9ed8e11d0800fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,7 +188,7 @@ Functions</h2></td></tr>
 <tr class="separator:aafe8ef69f297fdd4855c8f8e2ad4931c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75cc4e8410c87be8def40a99d541aa20" id="r_a75cc4e8410c87be8def40a99d541aa20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75cc4e8410c87be8def40a99d541aa20">zrtos_vfs_module_spi_sync__on_umount</a> (<a class="el" href="vfs__dentry_8h.html#aabe47ee172337a042f5aece2583dcf3e">zrtos_vfs_dentry_t</a> *thiz)</td></tr>
 <tr class="separator:a75cc4e8410c87be8def40a99d541aa20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acad5edb178ed84b8a1b7b3a877dbcd61" id="r_acad5edb178ed84b8a1b7b3a877dbcd61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acad5edb178ed84b8a1b7b3a877dbcd61">zrtos_vfs_module_spi_sync__on_write_helper</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out, <a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>(*callback)(<a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data, <a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *file_data, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *l))</td></tr>
+<tr class="memitem:acad5edb178ed84b8a1b7b3a877dbcd61" id="r_acad5edb178ed84b8a1b7b3a877dbcd61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acad5edb178ed84b8a1b7b3a877dbcd61">zrtos_vfs_module_spi_sync__on_write_helper</a> (<a class="el" href="vfs__file_8h.html#a1612c3275123b03e2ab1a067a4d2fa68">zrtos_vfs_file_t</a> *thiz, char *path, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="vfs__plugin_8h.html#aa5052dc22c2da1b5ca3dde0b3fa69ac8">zrtos_vfs_offset_t</a> offset, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *out, <a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>(*callback)(<a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data, <a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *file_data, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *l))</td></tr>
 <tr class="separator:acad5edb178ed84b8a1b7b3a877dbcd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -206,14 +206,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2f75d9cd25001cb9a0da6ea55f61acb2" name="a2f75d9cd25001cb9a0da6ea55f61acb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f75d9cd25001cb9a0da6ea55f61acb2">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_inode_t</h2>
+<a id="ad009e98fc01ea6258e50489361ae3100" name="ad009e98fc01ea6258e50489361ae3100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad009e98fc01ea6258e50489361ae3100">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_inode_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="struct__zrtos__vfs__module__spi__sync__args__t.html">_zrtos_vfs_module_spi_sync_args_t</a> <a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a></td>
+          <td class="memname">typedef struct <a class="el" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">_zrtos_vfs_module_spi_sync_inode_t</a> <a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -384,18 +384,18 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00130">130</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  130</span>                                                                           {</div>
-<div class="line"><span class="lineno">  131</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
-<div class="line"><span class="lineno">  132</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
+<div class="line"><span class="lineno">  131</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  132</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
 <div class="line"><span class="lineno">  133</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz)</div>
 <div class="line"><span class="lineno">  134</span>    );</div>
 <div class="line"><span class="lineno">  135</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="gpio_8h.html#a09265f640ff70e6c6a30db445b052069">zrtos_gpio__set_mode_ex</a>(</div>
-<div class="line"><span class="lineno">  136</span>         inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a></div>
+<div class="line"><span class="lineno">  136</span>         inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a></div>
 <div class="line"><span class="lineno">  137</span>        ,3</div>
-<div class="line"><span class="lineno">  138</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a285ad48927a3122ae468d07f9250d62b">pin_miso</a></div>
+<div class="line"><span class="lineno">  138</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac3f7d2100f3ea0c710e625586277b4aa">pin_miso</a></div>
 <div class="line"><span class="lineno">  139</span>        ,<a class="code hl_enumvalue" href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89faf979697f431adc025d149bd02c04d8fc">ZRTOS_GPIO_MODE__INPUT</a></div>
-<div class="line"><span class="lineno">  140</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a592885f5b6508c21cd7b2f76b91ff9ea">pin_mosi</a></div>
+<div class="line"><span class="lineno">  140</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a3ed262c5fad088c3220d4d2fe472c55b">pin_mosi</a></div>
 <div class="line"><span class="lineno">  141</span>        ,<a class="code hl_enumvalue" href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2">ZRTOS_GPIO_MODE__OUTPUT</a></div>
-<div class="line"><span class="lineno">  142</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a3740902cce4adbd685119d491876d23a">pin_sclk</a></div>
+<div class="line"><span class="lineno">  142</span>        ,inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#acee4e0e7d83e26646105468b70999ae0">pin_sclk</a></div>
 <div class="line"><span class="lineno">  143</span>        ,<a class="code hl_enumvalue" href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2">ZRTOS_GPIO_MODE__OUTPUT</a></div>
 <div class="line"><span class="lineno">  144</span>    );</div>
 <div class="line"><span class="lineno">  145</span>}</div>
@@ -403,11 +403,11 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="agpio_8h_html_a09265f640ff70e6c6a30db445b052069"><div class="ttname"><a href="gpio_8h.html#a09265f640ff70e6c6a30db445b052069">zrtos_gpio__set_mode_ex</a></div><div class="ttdeci">zrtos_error_t zrtos_gpio__set_mode_ex(zrtos_gpio_t *thiz,...)</div><div class="ttdef"><b>Definition</b> <a href="gpio_8h_source.html#l00160">gpio.h:160</a></div></div>
 <div class="ttc" id="agpio_8h_html_afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2"><div class="ttname"><a href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2">ZRTOS_GPIO_MODE__OUTPUT</a></div><div class="ttdeci">@ ZRTOS_GPIO_MODE__OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio_8h_source.html#l00027">gpio.h:26</a></div></div>
 <div class="ttc" id="agpio_8h_html_afe46bfe1c3bbe9d8efdc502eda39b89faf979697f431adc025d149bd02c04d8fc"><div class="ttname"><a href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89faf979697f431adc025d149bd02c04d8fc">ZRTOS_GPIO_MODE__INPUT</a></div><div class="ttdeci">@ ZRTOS_GPIO_MODE__INPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio_8h_source.html#l00026">gpio.h:25</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html">_zrtos_vfs_module_spi_sync_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00057">spi_sync.h:57</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_a285ad48927a3122ae468d07f9250d62b"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#a285ad48927a3122ae468d07f9250d62b">_zrtos_vfs_module_spi_sync_args_t::pin_miso</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_miso</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00061">spi_sync.h:61</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_a3740902cce4adbd685119d491876d23a"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#a3740902cce4adbd685119d491876d23a">_zrtos_vfs_module_spi_sync_args_t::pin_sclk</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_sclk</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00059">spi_sync.h:59</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_a5801d1ee975772d8c328f6846a9c5a59"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">_zrtos_vfs_module_spi_sync_args_t::gpio</a></div><div class="ttdeci">zrtos_gpio_t * gpio</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00058">spi_sync.h:58</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_a592885f5b6508c21cd7b2f76b91ff9ea"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#a592885f5b6508c21cd7b2f76b91ff9ea">_zrtos_vfs_module_spi_sync_args_t::pin_mosi</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_mosi</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00060">spi_sync.h:60</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html">_zrtos_vfs_module_spi_sync_inode_t</a></div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00057">spi_sync.h:57</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_a3ed262c5fad088c3220d4d2fe472c55b"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a3ed262c5fad088c3220d4d2fe472c55b">_zrtos_vfs_module_spi_sync_inode_t::pin_mosi</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_mosi</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00060">spi_sync.h:60</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_a4b73414c331c3a68a0e1eb25778d6c0f"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">_zrtos_vfs_module_spi_sync_inode_t::gpio</a></div><div class="ttdeci">zrtos_gpio_t * gpio</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00058">spi_sync.h:58</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_ac3f7d2100f3ea0c710e625586277b4aa"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac3f7d2100f3ea0c710e625586277b4aa">_zrtos_vfs_module_spi_sync_inode_t::pin_miso</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_miso</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00061">spi_sync.h:61</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_acee4e0e7d83e26646105468b70999ae0"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#acee4e0e7d83e26646105468b70999ae0">_zrtos_vfs_module_spi_sync_inode_t::pin_sclk</a></div><div class="ttdeci">zrtos_gpio_pin_t pin_sclk</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00059">spi_sync.h:59</a></div></div>
 <div class="ttc" id="avfs__file_8h_html_adbc392417c3fef015ea0c4728d2be7c6"><div class="ttname"><a href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_file__get_inode_data(zrtos_vfs_file_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__file_8h_source.html#l00191">vfs_file.h:191</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -434,8 +434,8 @@ Here is the call graph for this function:</div>
 
 <p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00097">97</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   99</span> {</div>
-<div class="line"><span class="lineno">  100</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
-<div class="line"><span class="lineno">  101</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
+<div class="line"><span class="lineno">  100</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  101</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
 <div class="line"><span class="lineno">  102</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz)</div>
 <div class="line"><span class="lineno">  103</span>    );</div>
 <div class="line"><span class="lineno">  104</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__file__t.html">zrtos_vfs_module_spi_sync_file_t</a> *file_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
@@ -443,14 +443,14 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">  106</span>        ,<a class="code hl_function" href="vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5">zrtos_vfs_file__get_data</a>(thiz)</div>
 <div class="line"><span class="lineno">  107</span>    );</div>
 <div class="line"><span class="lineno">  108</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8">zrtos_gpio__set_mode</a>(</div>
-<div class="line"><span class="lineno">  109</span>         inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a></div>
+<div class="line"><span class="lineno">  109</span>         inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a></div>
 <div class="line"><span class="lineno">  110</span>        ,file_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b">pin_cs</a></div>
 <div class="line"><span class="lineno">  111</span>        ,<a class="code hl_enumvalue" href="gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2">ZRTOS_GPIO_MODE__OUTPUT</a></div>
 <div class="line"><span class="lineno">  112</span>    );</div>
 <div class="line"><span class="lineno">  113</span> </div>
 <div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)</div>
 <div class="line"><span class="lineno">  115</span>         ? <a class="code hl_function" href="gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0">zrtos_gpio__set_high</a>(</div>
-<div class="line"><span class="lineno">  116</span>              inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a></div>
+<div class="line"><span class="lineno">  116</span>              inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a></div>
 <div class="line"><span class="lineno">  117</span>             ,file_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b">pin_cs</a></div>
 <div class="line"><span class="lineno">  118</span>           )</div>
 <div class="line"><span class="lineno">  119</span>         : ret</div>
@@ -538,15 +538,15 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>(*)(<a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data, <a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *file_data, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *l)</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a>(*)(<a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data, <a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *file_data, void *buf, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> len, <a class="el" href="types_8h.html#af5439e19eec032e96a3561505be8ec35">size_t</a> *l)</td>          <td class="paramname"><span class="paramname"><em>callback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00151">151</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">  165</span> {</div>
-<div class="line"><span class="lineno">  166</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
-<div class="line"><span class="lineno">  167</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__args__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a> *inode_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
+<div class="line"><span class="lineno">  167</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__inode__t.html">zrtos_vfs_module_spi_sync_inode_t</a>*</div>
 <div class="line"><span class="lineno">  168</span>        ,<a class="code hl_function" href="vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6">zrtos_vfs_file__get_inode_data</a>(thiz)</div>
 <div class="line"><span class="lineno">  169</span>    );</div>
 <div class="line"><span class="lineno">  170</span>    <a class="code hl_struct" href="struct__zrtos__vfs__module__spi__sync__file__t.html">zrtos_vfs_module_spi_sync_file_t</a> *file_data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
@@ -554,42 +554,42 @@ Here is the caller graph for this function:</div>
 <div class="line"><span class="lineno">  172</span>        ,<a class="code hl_function" href="vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5">zrtos_vfs_file__get_data</a>(thiz)</div>
 <div class="line"><span class="lineno">  173</span>    );</div>
 <div class="line"><span class="lineno">  174</span>    uint8_t *data = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(uint8_t*,buf);</div>
-<div class="line"><span class="lineno">  175</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a6a10c7960fc0dab673a1e5fcf29360f4">mutex</a>);</div>
+<div class="line"><span class="lineno">  175</span>    <a class="code hl_enumeration" href="error_8h.html#a858141c8990203d8ff36f82cf43f0e22">zrtos_error_t</a> ret = <a class="code hl_function" href="task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a382075999e50bac4a07fefccf731f24a">mutex</a>);</div>
 <div class="line"><span class="lineno">  176</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
 <div class="line"><span class="lineno">  177</span>        *out = len;</div>
 <div class="line"><span class="lineno">  178</span>        <span class="keywordflow">while</span>(len){</div>
-<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">if</span>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> == 0){</div>
+<div class="line"><span class="lineno">  179</span>            <span class="keywordflow">if</span>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> == 0){</div>
 <div class="line"><span class="lineno">  180</span>                ret = <a class="code hl_function" href="gpio_8h.html#a54c6a96e2e8cb2b5bd47e9863328d499">zrtos_gpio__set_low</a>(</div>
-<div class="line"><span class="lineno">  181</span>                    inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a></div>
+<div class="line"><span class="lineno">  181</span>                    inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a></div>
 <div class="line"><span class="lineno">  182</span>                    ,file_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b">pin_cs</a></div>
 <div class="line"><span class="lineno">  183</span>                );</div>
-<div class="line"><span class="lineno">  184</span>                inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> = *data++;</div>
+<div class="line"><span class="lineno">  184</span>                inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> = *data++;</div>
 <div class="line"><span class="lineno">  185</span>                len--;</div>
 <div class="line"><span class="lineno">  186</span>            }</div>
 <div class="line"><span class="lineno">  187</span> </div>
-<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">while</span>(len &amp;&amp; inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
+<div class="line"><span class="lineno">  188</span>            <span class="keywordflow">while</span>(len &amp;&amp; inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> &amp;&amp; <a class="code hl_function" href="error_8h.html#add13298163f63b7d37ed9f12d57e1a31">zrtos_error__is_success</a>(ret)){</div>
 <div class="line"><span class="lineno">  189</span>                <span class="comment">//transfer</span></div>
 <div class="line"><span class="lineno">  190</span>                <span class="keywordtype">size_t</span> l;</div>
 <div class="line"><span class="lineno">  191</span>                ret = callback(inode_data,file_data,buf,len,l);</div>
 <div class="line"><span class="lineno">  192</span>                buf += l;</div>
 <div class="line"><span class="lineno">  193</span>                len -= l;</div>
-<div class="line"><span class="lineno">  194</span>                inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> -= l;</div>
+<div class="line"><span class="lineno">  194</span>                inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> -= l;</div>
 <div class="line"><span class="lineno">  195</span>            }</div>
 <div class="line"><span class="lineno">  196</span> </div>
-<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> == 0){</div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> == 0){</div>
 <div class="line"><span class="lineno">  198</span>                ret = <a class="code hl_function" href="gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0">zrtos_gpio__set_high</a>(</div>
-<div class="line"><span class="lineno">  199</span>                    inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a></div>
+<div class="line"><span class="lineno">  199</span>                    inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a></div>
 <div class="line"><span class="lineno">  200</span>                    ,file_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b">pin_cs</a></div>
 <div class="line"><span class="lineno">  201</span>                );</div>
 <div class="line"><span class="lineno">  202</span>            }</div>
 <div class="line"><span class="lineno">  203</span>        }</div>
-<div class="line"><span class="lineno">  204</span>        <a class="code hl_function" href="task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a6a10c7960fc0dab673a1e5fcf29360f4">mutex</a>);</div>
+<div class="line"><span class="lineno">  204</span>        <a class="code hl_function" href="task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a>(inode_data-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a382075999e50bac4a07fefccf731f24a">mutex</a>);</div>
 <div class="line"><span class="lineno">  205</span>    }</div>
 <div class="line"><span class="lineno">  206</span>    <span class="keywordflow">return</span> ret;</div>
 <div class="line"><span class="lineno">  207</span>}</div>
 <div class="ttc" id="agpio_8h_html_a54c6a96e2e8cb2b5bd47e9863328d499"><div class="ttname"><a href="gpio_8h.html#a54c6a96e2e8cb2b5bd47e9863328d499">zrtos_gpio__set_low</a></div><div class="ttdeci">zrtos_error_t zrtos_gpio__set_low(zrtos_gpio_t *thiz, zrtos_gpio_pin_t pin)</div><div class="ttdef"><b>Definition</b> <a href="gpio_8h_source.html#l00318">gpio.h:318</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_a6a10c7960fc0dab673a1e5fcf29360f4"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#a6a10c7960fc0dab673a1e5fcf29360f4">_zrtos_vfs_module_spi_sync_args_t::mutex</a></div><div class="ttdeci">zrtos_task_mutex_t mutex</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00062">spi_sync.h:62</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__args__t_html_ab290590a3d8fe0eb8ebb5dbc26ecefff"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">_zrtos_vfs_module_spi_sync_args_t::count</a></div><div class="ttdeci">uint8_t count</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00063">spi_sync.h:63</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_a382075999e50bac4a07fefccf731f24a"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a382075999e50bac4a07fefccf731f24a">_zrtos_vfs_module_spi_sync_inode_t::mutex</a></div><div class="ttdeci">zrtos_task_mutex_t mutex</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00062">spi_sync.h:62</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__inode__t_html_ac65a4068966f6b69e7cd6c6c07ba4bc5"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">_zrtos_vfs_module_spi_sync_inode_t::count</a></div><div class="ttdeci">uint8_t count</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00063">spi_sync.h:63</a></div></div>
 <div class="ttc" id="atask__mutex_8h_html_a123e93e1f2eac3befe64178fba0bbcbd"><div class="ttname"><a href="task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd">zrtos_task_mutex__lock</a></div><div class="ttdeci">int zrtos_task_mutex__lock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="task__mutex_8h_source.html#l00044">task_mutex.h:44</a></div></div>
 <div class="ttc" id="atask__mutex_8h_html_a7f508255a1ffb900d7b0da403be75e0d"><div class="ttname"><a href="task__mutex_8h.html#a7f508255a1ffb900d7b0da403be75e0d">zrtos_task_mutex__unlock</a></div><div class="ttdeci">int zrtos_task_mutex__unlock(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="task__mutex_8h_source.html#l00062">task_mutex.h:62</a></div></div>
 </div><!-- fragment --><div class="dynheader">
@@ -601,79 +601,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="spi__sync_8h_acad5edb178ed84b8a1b7b3a877dbcd61_icgraph.svg" width="364" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="ac955fffc685c4b30e912a94cce5b6924" name="ac955fffc685c4b30e912a94cce5b6924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac955fffc685c4b30e912a94cce5b6924">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_args__deinit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void zrtos_vfs_module_spi_sync_args__deinit </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00081">81</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                                                   {</div>
-<div class="line"><span class="lineno">   82</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ac15a978ffb64df92d13ab445f520981e" name="ac15a978ffb64df92d13ab445f520981e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac15a978ffb64df92d13ab445f520981e">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_args__init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zrtos_vfs_module_spi_sync_args__init </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gpio_8h.html#a1a0007e1e5dfc40fcb32962e1f4f0547">zrtos_gpio_t</a> *</td>          <td class="paramname"><span class="paramname"><em>gpio</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_sclk</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_mosi</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_miso</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00066">66</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span> {</div>
-<div class="line"><span class="lineno">   73</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a5801d1ee975772d8c328f6846a9c5a59">gpio</a> = gpio;</div>
-<div class="line"><span class="lineno">   74</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a3740902cce4adbd685119d491876d23a">pin_sclk</a> = pin_sclk;</div>
-<div class="line"><span class="lineno">   75</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a592885f5b6508c21cd7b2f76b91ff9ea">pin_mosi</a> = pin_mosi;</div>
-<div class="line"><span class="lineno">   76</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a285ad48927a3122ae468d07f9250d62b">pin_miso</a> = pin_miso;</div>
-<div class="line"><span class="lineno">   77</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#ab290590a3d8fe0eb8ebb5dbc26ecefff">count</a> = 0;</div>
-<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">zrtos_task_mutex__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__args__t.html#a6a10c7960fc0dab673a1e5fcf29360f4">mutex</a>);</div>
-<div class="line"><span class="lineno">   79</span>}</div>
-<div class="ttc" id="atask__mutex_8h_html_a10d5e29487722205316cd71f618c59b7"><div class="ttname"><a href="task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">zrtos_task_mutex__init</a></div><div class="ttdeci">bool zrtos_task_mutex__init(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="task__mutex_8h_source.html#l00024">task_mutex.h:24</a></div></div>
-</div><!-- fragment --><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="spi__sync_8h_ac15a978ffb64df92d13ab445f520981e_cgraph.svg" width="360" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -692,7 +619,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="#a2f75d9cd25001cb9a0da6ea55f61acb2">zrtos_vfs_module_spi_sync_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em>, </span></td>
+          <td class="paramtype"><a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>ctx</em>, </span></td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -721,6 +648,79 @@ Here is the call graph for this function:</div>
 <div class="line"><span class="lineno">   95</span>}</div>
 <div class="ttc" id="astruct__zrtos__vfs__module__spi__sync__file__t_html_af670055e73c07c601cb24db44c8e4c46"><div class="ttname"><a href="struct__zrtos__vfs__module__spi__sync__file__t.html#af670055e73c07c601cb24db44c8e4c46">_zrtos_vfs_module_spi_sync_file_t::control</a></div><div class="ttdeci">zrtos_vfs_module_spi_sync_control_t control</div><div class="ttdef"><b>Definition</b> <a href="spi__sync_8h_source.html#l00053">spi_sync.h:53</a></div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<a id="aa54c465a319296a9318175039e8c25b3" name="aa54c465a319296a9318175039e8c25b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa54c465a319296a9318175039e8c25b3">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_inode__deinit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zrtos_vfs_module_spi_sync_inode__deinit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a1b338a9705ef040bd4cfc4d69061c1b2">zrtos_vfs_module_spi_sync_file_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00081">81</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                                                                    {</div>
+<div class="line"><span class="lineno">   82</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aaa9cd7808bfafe148af57d453633aec8" name="aaa9cd7808bfafe148af57d453633aec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa9cd7808bfafe148af57d453633aec8">&#9670;&#160;</a></span>zrtos_vfs_module_spi_sync_inode__init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zrtos_vfs_module_spi_sync_inode__init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#ad009e98fc01ea6258e50489361ae3100">zrtos_vfs_module_spi_sync_inode_t</a> *</td>          <td class="paramname"><span class="paramname"><em>thiz</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gpio_8h.html#a1a0007e1e5dfc40fcb32962e1f4f0547">zrtos_gpio_t</a> *</td>          <td class="paramname"><span class="paramname"><em>gpio</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_sclk</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_mosi</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="gpio_8h.html#a4a39528bd8be1b4c8e2cff5b2b860374">zrtos_gpio_pin_t</a></td>          <td class="paramname"><span class="paramname"><em>pin_miso</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="spi__sync_8h_source.html#l00066">66</a> of file <a class="el" href="spi__sync_8h_source.html">spi_sync.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span> {</div>
+<div class="line"><span class="lineno">   73</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a4b73414c331c3a68a0e1eb25778d6c0f">gpio</a> = gpio;</div>
+<div class="line"><span class="lineno">   74</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#acee4e0e7d83e26646105468b70999ae0">pin_sclk</a> = pin_sclk;</div>
+<div class="line"><span class="lineno">   75</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a3ed262c5fad088c3220d4d2fe472c55b">pin_mosi</a> = pin_mosi;</div>
+<div class="line"><span class="lineno">   76</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac3f7d2100f3ea0c710e625586277b4aa">pin_miso</a> = pin_miso;</div>
+<div class="line"><span class="lineno">   77</span>    thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#ac65a4068966f6b69e7cd6c6c07ba4bc5">count</a> = 0;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">zrtos_task_mutex__init</a>(&amp;thiz-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__spi__sync__inode__t.html#a382075999e50bac4a07fefccf731f24a">mutex</a>);</div>
+<div class="line"><span class="lineno">   79</span>}</div>
+<div class="ttc" id="atask__mutex_8h_html_a10d5e29487722205316cd71f618c59b7"><div class="ttname"><a href="task__mutex_8h.html#a10d5e29487722205316cd71f618c59b7">zrtos_task_mutex__init</a></div><div class="ttdeci">bool zrtos_task_mutex__init(zrtos_task_mutex_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="task__mutex_8h_source.html#l00024">task_mutex.h:24</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="spi__sync_8h_aaa9cd7808bfafe148af57d453633aec8_cgraph.svg" width="360" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
 </div>
 </div>
 </div><!-- contents -->

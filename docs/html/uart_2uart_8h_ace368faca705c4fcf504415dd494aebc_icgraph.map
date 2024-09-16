@@ -1,0 +1,7 @@
+<map id="zrtos_vfs_module_uart_inode__get_baudrate" name="zrtos_vfs_module_uart_inode__get_baudrate">
+<area shape="rect" id="Node000001" title=" " alt="" coords="474,5,624,48"/>
+<area shape="rect" id="Node000002" href="$uart_2uart_8h.html#a4661f180ccd2c72d332a70c3b065a9f6" title=" " alt="" coords="228,5,426,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,29,427,29,427,24,458,24"/>
+<area shape="rect" id="Node000003" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title=" " alt="" coords="5,5,180,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,29,180,29,180,24,212,24"/>
+</map>

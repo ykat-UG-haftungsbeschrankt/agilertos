@@ -126,7 +126,7 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a42503fd8388683ffb7b29a3131116da8" id="r_a42503fd8388683ffb7b29a3131116da8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42503fd8388683ffb7b29a3131116da8">zrtos_vfs_module_avr_uart1</a></td></tr>
+<tr class="memitem:a42503fd8388683ffb7b29a3131116da8" id="r_a42503fd8388683ffb7b29a3131116da8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uart_2uart_8h.html#aab28e4564dbc19ea6f2741a3b26cc181">zrtos_vfs_module_uart_inode_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42503fd8388683ffb7b29a3131116da8">zrtos_vfs_module_avr_uart1</a></td></tr>
 <tr class="separator:a42503fd8388683ffb7b29a3131116da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -228,14 +228,14 @@ Here is the call graph for this function:</div>
 <div class="fragment"><div class="line"><span class="lineno">   42</span>                                                                            {</div>
 <div class="line"><span class="lineno">   43</span>    uint16_t baudrate;</div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="#a42503fd8388683ffb7b29a3131116da8">zrtos_vfs_module_avr_uart1</a> = <a class="code hl_define" href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a>(</div>
-<div class="line"><span class="lineno">   45</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__uart__args__t.html">zrtos_vfs_module_uart_inode_t</a>*</div>
+<div class="line"><span class="lineno">   45</span>         <a class="code hl_struct" href="struct__zrtos__vfs__module__uart__inode__t.html">zrtos_vfs_module_uart_inode_t</a>*</div>
 <div class="line"><span class="lineno">   46</span>        ,<a class="code hl_function" href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a>(</div>
 <div class="line"><span class="lineno">   47</span>            thiz</div>
 <div class="line"><span class="lineno">   48</span>        )</div>
 <div class="line"><span class="lineno">   49</span>    );</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>    baudrate = <a class="code hl_function" href="avr_2uart_2uart_8h.html#ae7970c6edb532436a6886394d1bdf42f">zrtos_vfs_module_avr_uart__baud_select</a>(</div>
-<div class="line"><span class="lineno">   52</span>         <a class="code hl_variable" href="#a42503fd8388683ffb7b29a3131116da8">zrtos_vfs_module_avr_uart1</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__args__t.html#a2e9dd5a1b132cf34ded8f77ddc450389">baudrate</a></div>
+<div class="line"><span class="lineno">   52</span>         <a class="code hl_variable" href="#a42503fd8388683ffb7b29a3131116da8">zrtos_vfs_module_avr_uart1</a>-&gt;<a class="code hl_variable" href="struct__zrtos__vfs__module__uart__inode__t.html#ae1d15a25ac282af6fc1ac489afa1559e">baudrate</a></div>
 <div class="line"><span class="lineno">   53</span>    );</div>
 <div class="line"><span class="lineno">   54</span> </div>
 <div class="line"><span class="lineno">   55</span>    <span class="comment">//Set baud rate</span></div>
@@ -266,8 +266,8 @@ Here is the call graph for this function:</div>
 <div class="ttc" id="aavr_2uart_2uart_8h_html_ae7970c6edb532436a6886394d1bdf42f"><div class="ttname"><a href="avr_2uart_2uart_8h.html#ae7970c6edb532436a6886394d1bdf42f">zrtos_vfs_module_avr_uart__baud_select</a></div><div class="ttdeci">uint16_t zrtos_vfs_module_avr_uart__baud_select(zrtos_vfs_module_uart_baudrate_t baudrate)</div><div class="ttdef"><b>Definition</b> <a href="avr_2uart_2uart_8h_source.html#l00279">avr/uart/uart.h:279</a></div></div>
 <div class="ttc" id="acast_8h_html_a83e6297ca293b9f5fa2649985cbce686"><div class="ttname"><a href="cast_8h.html#a83e6297ca293b9f5fa2649985cbce686">ZRTOS_CAST</a></div><div class="ttdeci">#define ZRTOS_CAST(type, value)</div><div class="ttdef"><b>Definition</b> <a href="cast_8h_source.html#l00018">cast.h:18</a></div></div>
 <div class="ttc" id="amcp2515_8h_html_ae1affc9ca37cfb624959c866a73f83c2"><div class="ttname"><a href="mcp2515_8h.html#ae1affc9ca37cfb624959c866a73f83c2">uint8_t</a></div><div class="ttdeci">static uint8_t</div><div class="ttdef"><b>Definition</b> <a href="mcp2515_8h_source.html#l00159">mcp2515.h:159</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html">_zrtos_vfs_module_uart_args_t</a></div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00201">uart/uart.h:201</a></div></div>
-<div class="ttc" id="astruct__zrtos__vfs__module__uart__args__t_html_a2e9dd5a1b132cf34ded8f77ddc450389"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__args__t.html#a2e9dd5a1b132cf34ded8f77ddc450389">_zrtos_vfs_module_uart_args_t::baudrate</a></div><div class="ttdeci">zrtos_vfs_module_uart_baudrate_t baudrate</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00206">uart/uart.h:206</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__inode__t_html"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__inode__t.html">_zrtos_vfs_module_uart_inode_t</a></div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00201">uart/uart.h:201</a></div></div>
+<div class="ttc" id="astruct__zrtos__vfs__module__uart__inode__t_html_ae1d15a25ac282af6fc1ac489afa1559e"><div class="ttname"><a href="struct__zrtos__vfs__module__uart__inode__t.html#ae1d15a25ac282af6fc1ac489afa1559e">_zrtos_vfs_module_uart_inode_t::baudrate</a></div><div class="ttdeci">zrtos_vfs_module_uart_baudrate_t baudrate</div><div class="ttdef"><b>Definition</b> <a href="uart_2uart_8h_source.html#l00206">uart/uart.h:206</a></div></div>
 <div class="ttc" id="avfs__dentry_8h_html_a8f39a2645b3699977cef8f8d096f9614"><div class="ttname"><a href="vfs__dentry_8h.html#a8f39a2645b3699977cef8f8d096f9614">zrtos_vfs_dentry__get_inode_data</a></div><div class="ttdeci">void * zrtos_vfs_dentry__get_inode_data(zrtos_vfs_dentry_t *thiz)</div><div class="ttdef"><b>Definition</b> <a href="vfs__dentry_8h_source.html#l00196">vfs_dentry.h:196</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -394,7 +394,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uart_2uart_8h.html#a74d7ddbc9c8109abdfce68215fe0f2f7">zrtos_vfs_module_uart_inode_t</a>* zrtos_vfs_module_avr_uart1</td>
+          <td class="memname"><a class="el" href="uart_2uart_8h.html#aab28e4564dbc19ea6f2741a3b26cc181">zrtos_vfs_module_uart_inode_t</a>* zrtos_vfs_module_avr_uart1</td>
         </tr>
       </table>
 </div><div class="memdoc">

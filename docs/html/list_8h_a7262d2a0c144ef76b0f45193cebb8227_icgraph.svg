@@ -281,10 +281,10 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="rtu_8h.html#aac1c0a8f15ec0cd7540f53a61fe9ff08" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="275,-267 144.25,-267 144.25,-235 275,-235 275,-267"/>
 <text text-anchor="start" x="152.25" y="-253.5" font-family="Helvetica,sans-Serif" font-size="10.00">zrtos_vfs_module_modbus</text>
-<text text-anchor="middle" x="209.62" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">_rtu_args__init</text>
+<text text-anchor="middle" x="209.62" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">_rtu_inode__init</text>
 </a>
 </g>
 </g>
