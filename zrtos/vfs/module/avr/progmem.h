@@ -18,7 +18,7 @@ extern "C" {
 #include <zrtos/vfs_plugin.h>
 
 
-typedef struct _zrtos_vfs_module_avr_progmem_args_t{
+typedef struct _zrtos_vfs_module_avr_progmem_inode_t{
 	uint32_t start_addr;
 	uint32_t end_addr;
 }zrtos_vfs_module_avr_progmem_inode_t;

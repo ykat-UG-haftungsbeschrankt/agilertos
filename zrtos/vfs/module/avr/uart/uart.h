@@ -300,7 +300,7 @@ void zrtos_vfs_module_avr_uart__on_receive_interrupt(
 	,uint8_t data
 	,zrtos_error_t err
 ){
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_in(
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_inode__get_cbuffer_in(
 		thiz
 	);
 
@@ -325,7 +325,7 @@ bool zrtos_vfs_module_avr_uart__on_transmit_interrupt(
 	,uint8_t *data
 ){
 	zrtos_error_t err;
-	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_args__get_cbuffer_out(
+	zrtos_cbuffer_t *buffer = zrtos_vfs_module_uart_inode__get_cbuffer_out(
 		thiz
 	);
 

@@ -192,13 +192,13 @@ typedef enum{
 	,ZRTOS_VFS_MODULE_UART_MODE__MAX             = ZRTOS_TYPES__UINT8_MAX
 }zrtos_vfs_module_uart_mode_t;
 
-struct _zrtos_vfs_module_uart_args_t;
+struct _zrtos_vfs_module_uart_inode_t;
 
 typedef zrtos_error_t (*zrtos_vfs_module_uart_callback_t)(
-	struct _zrtos_vfs_module_uart_args_t *args
+	struct _zrtos_vfs_module_uart_inode_t *args
 );
 
-typedef struct _zrtos_vfs_module_uart_args_t{
+typedef struct _zrtos_vfs_module_uart_inode_t{
 	zrtos_cbuffer_t                  cbuffer_in;
 	zrtos_cbuffer_t                  cbuffer_out;
 	zrtos_error_count_t              rx_error_count;
@@ -210,19 +210,19 @@ typedef struct _zrtos_vfs_module_uart_args_t{
 	void                             *callback_data;
 }zrtos_vfs_module_uart_inode_t;
 
-zrtos_error_t zrtos_vfs_module_uart_args__callback(zrtos_vfs_module_uart_inode_t *args){
+zrtos_error_t zrtos_vfs_module_uart_inode__callback(zrtos_vfs_module_uart_inode_t *args){
 	return ZRTOS_ERROR__SUCCESS;
 }
 
-bool zrtos_vfs_module_uart_args__init(
+bool zrtos_vfs_module_uart_inode__init(
 	 zrtos_vfs_module_uart_inode_t *thiz
 	,zrtos_vfs_module_uart_baudrate_t baudrate
 	,zrtos_vfs_module_uart_mode_t mode
 ){
 	thiz->baudrate = baudrate;
 	thiz->mode = mode;
-	thiz->on_send = zrtos_vfs_module_uart_args__callback;
-	thiz->on_recv = zrtos_vfs_module_uart_args__callback;
+	thiz->on_send = zrtos_vfs_module_uart_inode__callback;
+	thiz->on_recv = zrtos_vfs_module_uart_inode__callback;
 
 	if(zrtos_error_count__init(&thiz->rx_error_count)){
 		if(zrtos_error_count__init(&thiz->tx_error_count)){
@@ -240,19 +240,19 @@ bool zrtos_vfs_module_uart_args__init(
 	return false;
 }
 
-zrtos_cbuffer_t *zrtos_vfs_module_uart_args__get_cbuffer_in(
+zrtos_cbuffer_t *zrtos_vfs_module_uart_inode__get_cbuffer_in(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return &thiz->cbuffer_in;
 }
 
-zrtos_cbuffer_t *zrtos_vfs_module_uart_args__get_cbuffer_out(
+zrtos_cbuffer_t *zrtos_vfs_module_uart_inode__get_cbuffer_out(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return &thiz->cbuffer_out;
 }
 
-zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_args__get_baudrate(
+zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_inode__get_baudrate(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 #ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
@@ -262,7 +262,7 @@ else
 #endif
 }
 
-bool zrtos_vfs_module_uart_args__is_double_speed(
+bool zrtos_vfs_module_uart_inode__is_double_speed(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 #ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
@@ -272,7 +272,7 @@ else
 #endif
 }
 
-zrtos_vfs_module_uart_mode_t zrtos_vfs_module_uart_args__get_mode(
+zrtos_vfs_module_uart_mode_t zrtos_vfs_module_uart_inode__get_mode(
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return thiz->mode;
@@ -282,9 +282,9 @@ zrtos_vfs_module_timeout_microseconds_t zrtos_vfs_module_uart__get_char_transmis
 	zrtos_vfs_module_uart_inode_t *thiz
 ){
 	return 11 * 1000000 / (
-		  zrtos_vfs_module_uart_args__get_baudrate(thiz)
+		  zrtos_vfs_module_uart_inode__get_baudrate(thiz)
 		* (
-			zrtos_vfs_module_uart_args__is_double_speed(thiz)
+			zrtos_vfs_module_uart_inode__is_double_speed(thiz)
 			? 2
 			: 1
 		)

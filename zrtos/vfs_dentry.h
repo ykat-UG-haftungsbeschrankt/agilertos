@@ -63,7 +63,7 @@ zrtos_vfs_dentry_t *zrtos_vfs_dentry__get_next_node(zrtos_vfs_dentry_t *thiz){
 	return zrtos_types__get_container_of(node,zrtos_vfs_dentry_t,node);
 }
 */
-typedef struct _zrtos_vfs_dentry__each_child_cb_args_t{
+typedef struct _zrtos_vfs_dentry__each_child_cb_inode_t{
 	zrtos_vfs_dentry_t *parent;
 	bool (*callback)(zrtos_vfs_dentry_t *node,void *arg);
 	void *callback_arg;

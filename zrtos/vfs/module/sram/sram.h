@@ -14,7 +14,7 @@ extern "C" {
 #include <zrtos/vfs_module.h>
 
 
-typedef struct _zrtos_vfs_module_sram_args_t{
+typedef struct _zrtos_vfs_module_sram_inode_t{
 	void *start_addr;
 	void *end_addr;
 }zrtos_vfs_module_sram_inode_t;

@@ -54,7 +54,7 @@ typedef struct _zrtos_vfs_module_spi_sync_file_t{
 	zrtos_gpio_pin_t                    pin_cs;
 }zrtos_vfs_module_spi_sync_file_t;
 
-typedef struct _zrtos_vfs_module_spi_sync_args_t{
+typedef struct _zrtos_vfs_module_spi_sync_inode_t{
 	zrtos_gpio_t                    *gpio;
 	zrtos_gpio_pin_t                pin_sclk;
 	zrtos_gpio_pin_t                pin_mosi;
@@ -63,7 +63,7 @@ typedef struct _zrtos_vfs_module_spi_sync_args_t{
 	uint8_t                         count;
 }zrtos_vfs_module_spi_sync_inode_t;
 
-bool zrtos_vfs_module_spi_sync_args__init(
+bool zrtos_vfs_module_spi_sync_inode__init(
 	 zrtos_vfs_module_spi_sync_inode_t *thiz
 	,zrtos_gpio_t                *gpio
 	,zrtos_gpio_pin_t            pin_sclk
@@ -78,7 +78,7 @@ bool zrtos_vfs_module_spi_sync_args__init(
 	return zrtos_task_mutex__init(&thiz->mutex);
 }
 
-void zrtos_vfs_module_spi_sync_args__deinit(zrtos_vfs_module_spi_sync_file_t *thiz){
+void zrtos_vfs_module_spi_sync_inode__deinit(zrtos_vfs_module_spi_sync_file_t *thiz){
 }
 
 bool zrtos_vfs_module_spi_sync_file__init(

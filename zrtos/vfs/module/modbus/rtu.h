@@ -28,7 +28,7 @@ typedef enum{
 	,ZRTOS_VFS_MODULE_MODBUS_RTU_IOCTL__GET_TX_ERROR_COUNT
 }zrtos_vfs_module_modbus_rtu_ioctl_t;
 
-typedef struct _zrtos_vfs_module_modbus_rtu_args_t{
+typedef struct _zrtos_vfs_module_modbus_rtu_inode_t{
 	zrtos_msg_queue_t                       msg_queue_in;
 	zrtos_msg_queue_t                       msg_queue_out;
 	zrtos_error_count_t                     rx_error_count;
@@ -85,7 +85,7 @@ void zrtos_vfs_module_modbus_rtu__on_recv_timeout(
 		)
 	);
 	zrtos_vfs_module_uart_inode_t *uart = mod->uart;
-	zrtos_cbuffer_t *cbuffer = zrtos_vfs_module_uart_args__get_cbuffer_in(uart);
+	zrtos_cbuffer_t *cbuffer = zrtos_vfs_module_uart_inode__get_cbuffer_in(uart);
 	size_t cbuffer_length = zrtos_cbuffer__get_length(cbuffer);
 
 	if(cbuffer_length > 0){
@@ -182,7 +182,7 @@ zrtos_error_t zrtos_vfs_module_modbus_rtu__on_recv(
 	return ret;
 }
 
-bool zrtos_vfs_module_modbus_rtu_args__init(
+bool zrtos_vfs_module_modbus_rtu_inode__init(
 	 zrtos_vfs_module_modbus_rtu_inode_t *thiz
 	,zrtos_vfs_module_uart_inode_t *uart
 	,char *timeout_path
@@ -238,13 +238,13 @@ bool zrtos_vfs_module_modbus_rtu_args__init(
 	return false;
 }
 
-zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_in(
+zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_in(
 	zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	return &thiz->msg_queue_in;
 }
 
-zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_args__get_msg_queue_out(
+zrtos_msg_queue_t *zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_out(
 	zrtos_vfs_module_modbus_rtu_inode_t *thiz
 ){
 	return &thiz->msg_queue_out;
