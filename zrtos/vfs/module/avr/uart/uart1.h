@@ -15,7 +15,7 @@ extern "C" {
 
 zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart1;
 
-ISR(UART3_RECEIVE_INTERRUPT){
+ISR(UART1_RECEIVE_INTERRUPT){
 	zrtos_vfs_module_avr_uart__on_receive_interrupt(
 		 zrtos_vfs_module_avr_uart1
 		,UART1_DATA
@@ -27,7 +27,7 @@ ISR(UART3_RECEIVE_INTERRUPT){
 	);
 }
 
-ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
+ISR(UART1_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 	uint8_t tmp;
 	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
 		 zrtos_vfs_module_avr_uart1

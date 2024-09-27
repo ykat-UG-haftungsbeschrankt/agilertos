@@ -321,7 +321,7 @@ zrtos_error_t zrtos_cbuffer__peek(zrtos_cbuffer_t *thiz,uint8_t *out){
 		,zrtos_cbuffer_node_t
 		,node
 	);
-	return zrtos_cbuffer_node__peek(node,thiz,out);
+	return zrtos_cbuffer_node__peek(node,out);
 }
 
 zrtos_error_t zrtos_cbuffer__get(zrtos_cbuffer_t *thiz,uint8_t *out){
@@ -350,7 +350,7 @@ zrtos_error_t zrtos_cbuffer__get_ex(
 }
 
 zrtos_error_t zrtos_cbuffer__pop(zrtos_cbuffer_t *thiz){
-	uint8_t *out;
+	uint8_t out;
 	return zrtos_cbuffer__get(thiz,&out);
 }
 

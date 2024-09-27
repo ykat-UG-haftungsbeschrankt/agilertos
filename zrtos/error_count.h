@@ -19,19 +19,23 @@ typedef struct _zrtos_error_count_t{
 
 bool zrtos_error_count__init(zrtos_error_count_t *thiz){
 	thiz->length = 0;
+
+	return true;
 }
 
 void zrtos_error_count__deinit(zrtos_error_count_t *thiz){
 	thiz->length = 0;
 }
 
-bool zrtos_error_count__add(
+zrtos_error_t zrtos_error_count__add(
 	 zrtos_error_count_t *thiz
 	,zrtos_error_t err
 ){
 	if(zrtos_error__is_error(err)){
 		thiz->length++;
 	}
+
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 #ifdef __cplusplus

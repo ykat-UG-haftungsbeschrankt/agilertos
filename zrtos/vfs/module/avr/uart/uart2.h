@@ -15,7 +15,7 @@ extern "C" {
 
 zrtos_vfs_module_uart_inode_t *zrtos_vfs_module_avr_uart2;
 
-ISR(UART3_RECEIVE_INTERRUPT){
+ISR(UART2_RECEIVE_INTERRUPT){
 	zrtos_vfs_module_avr_uart__on_receive_interrupt(
 		 zrtos_vfs_module_avr_uart2
 		,UART2_DATA
@@ -27,7 +27,7 @@ ISR(UART3_RECEIVE_INTERRUPT){
 	);
 }
 
-ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
+ISR(UART2_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 	uint8_t tmp;
 	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
 		 zrtos_vfs_module_avr_uart2
@@ -36,30 +36,6 @@ ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
 		UART2_DATA = tmp;
 	}else{
 		UART2_CONTROL &= ~_BV(UART2_UDRIE);
-	}
-}
-
-ISR(UART3_RECEIVE_INTERRUPT){
-	zrtos_vfs_module_avr_uart__on_receive_interrupt(
-		 zrtos_vfs_module_avr_uart3
-		,UART3_DATA
-		,(
-			  (UART3_STATUS & (_BV(FE3)|_BV(DOR3)|_BV(UPE3))) == 0
-			? ZRTOS_ERROR__SUCCESS
-			: ZRTOS_ERROR__IO
-		)
-	);
-}
-
-ISR(UART3_TRANSMIT_INTERRUPT,ISR_NOBLOCK){
-	uint8_t tmp;
-	if(zrtos_vfs_module_avr_uart__on_transmit_interrupt(
-		 zrtos_vfs_module_avr_uart3
-		,&tmp
-	)){
-		UART3_DATA = tmp;
-	}else{
-		UART3_CONTROL &= ~_BV(UART3_UDRIE);
 	}
 }
 

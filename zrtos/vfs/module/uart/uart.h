@@ -16,8 +16,9 @@ extern "C" {
 #include <zrtos/binary.h>
 #include <zrtos/types.h>
 #include <zrtos/error_count.h>
+#include <zrtos/va.h>
 
-#include <zrtos/vfs/module/timeout.t>
+#include <zrtos/vfs/module/timeout/timeout.h>
 
 //#define ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 
@@ -230,7 +231,7 @@ bool zrtos_vfs_module_uart_inode__init(
 				if(zrtos_cbuffer__init(&thiz->cbuffer_out)){
 					return true;
 				}
-				zrtos_cbuffer__deinit(&thiz->cbuffer_in)
+				zrtos_cbuffer__deinit(&thiz->cbuffer_in);
 			}
 			zrtos_error_count__deinit(&thiz->tx_error_count);
 		}
@@ -257,7 +258,7 @@ zrtos_vfs_module_uart_baudrate_t zrtos_vfs_module_uart_inode__get_baudrate(
 ){
 #ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 	return thiz->baudrate & ZRTOS_VFS_MODULE_UART_BAUDRATE__MASK;
-else
+#else
 	return thiz->baudrate;
 #endif
 }
@@ -267,7 +268,7 @@ bool zrtos_vfs_module_uart_inode__is_double_speed(
 ){
 #ifdef ZRTOS_VFS_MODULE_UART__CFG_ENABLE_DOUBLE_SPEED
 	return (thiz->baudrate & ZRTOS_VFS_MODULE_UART_BAUDRATE__DOUBLE_SPEED) > 0;
-else
+#else
 	return false;
 #endif
 }
@@ -373,24 +374,25 @@ zrtos_error_t zrtos_vfs_module_uart__on_ioctl(
 			thiz
 		)
 	);
+	zrtos_error_count_t **out;
 
-	switch(ZRTOS_CAST__REINTERPRET(
+	switch(ZRTOS_CAST(
 		 zrtos_vfs_module_uart_ioctl_t
 		,request
 	)){
 		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_RX_ERROR_COUNT:
-			zrtos_error_count_t **ret = zrtos_va__arg(
+			out = zrtos_va__arg_ptr(
 				 args
 				,zrtos_error_count_t**
 			);
-			*ret = &mod->rx_error_count;
+			*out = &mod->rx_error_count;
 		break;
 		case ZRTOS_VFS_MODULE_UART_IOCTL__GET_TX_ERROR_COUNT:
-			zrtos_error_count_t **ret = zrtos_va__arg(
+			out = zrtos_va__arg_ptr(
 				 args
 				,zrtos_error_count_t**
 			);
-			*ret = &mod->tx_error_count;
+			*out = &mod->tx_error_count;
 		break;
 		default:
 			ret = ZRTOS_ERROR__INVAL;
