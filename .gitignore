@@ -2,7 +2,6 @@ GccApplication1.componentinfo.xml
 GccApplication1.cproj
 Debug/
 trash/
-.vscode/
 trash/zrtos_task_scheduler.h
 zrtos/vfs_module/fat16/_fat16.h
 zrtos/vfs_module/fat16/fat16_header.h
