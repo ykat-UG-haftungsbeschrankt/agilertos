@@ -21,6 +21,7 @@ typedef uint8_t zrtos_arch_stack_t;
 typedef int8_t zrtos_arch_stack_signed_t;
 typedef int zrtos_arch_gpio_pin_t;
 typedef int zrtos_arch_gpio_value_analog_t;
+#define ZRTOS_ARCH__BYTE_ORDER
 #define ZRTOS_ARCH__FOUND
 #define ZRTOS_ARCH__CPU_CLOCK_HZ
 #define ZRTOS_ARCH__BYTE_ALIGNMENT
@@ -49,6 +50,10 @@ void zrtos_arch__delay_milliseconds(uint16_t ms);
 #ifdef ZRTOS_ARCH__FOUND
 #error "ZRTOS_ARCH__FOUND defined"
 #endif
+
+#define ZRTOS_ARCH__BYTE_ORDER_LITTLE_ENDIAN        1234
+#define ZRTOS_ARCH__BYTE_ORDER_BIG_ENDIAN           4321
+#define ZRTOS_ARCH__BYTE_ORDER_PDP_ENDIAN           3412
 
 #include <zrtos/arch/atmega328p.h>
 #include <zrtos/arch/atmega2560.h>

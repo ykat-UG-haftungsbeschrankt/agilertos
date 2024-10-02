@@ -352,56 +352,6 @@ size_t zrtos_vfs_module_mcp2515_id__get_length(zrtos_vfs_module_mcp2515_id_t *th
 	return 4;
 }
 
-zrtos_error_t zrtos_vfs_module_mcp2515__spi_transfer(
-	 zrtos_vfs_fd_t fd
-	,size_t len
-	,...
-){
-	size_t l = 0;
-	uint8_t ll;
-	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	zrtos_va_t args1;
-	zrtos_va_t args2;
-	size_t outlen;
-
-	zrtos_va__start(len,args1);
-	zrtos_va__copy(args2,args1);
-
-	while(len--){
-		zrtos_va__arg_ptr(args2,void*);
-		l += zrtos_va__arg(args2,size_t);
-	}
-
-	ll = l;
-
-	ret = zrtos_vfs_fd__read(
-		 fd
-		,(char*)""
-		,&ll
-		,1
-		,0
-		,&outlen
-	);
-
-	while(zrtos_error__is_success(ret) && len--){
-		void *buffer = zrtos_va__arg_ptr(args,void*);
-		size_t length = zrtos_va__arg(args,size_t);
-		ret = zrtos_vfs_fd__read(
-			 fd
-			,(char*)""
-			,buffer
-			,length
-			,0
-			,&outlen
-		);
-	}
-
-	zrtos_va__end(args1);
-	zrtos_va__end(args2);
-
-	return ret;
-}
-
 zrtos_error_t zrtos_vfs_module_mcp2515__read_registers(
 	 zrtos_vfs_module_mcp2515_register_t reg
 	,uint8_t *values
@@ -412,7 +362,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__read_registers(
 		,reg
 	};
 	
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__spi_transfer(
+	zrtos_error_t ret = zrtos_vfs_fd__spi_transfer(
 		 fd
 		,2
 		,buffer
@@ -447,7 +397,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__set_registers(
 		,reg
 	};
 	
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__spi_transfer(
+	zrtos_error_t ret = zrtos_vfs_fd__spi_transfer(
 		 fd
 		,2
 		,buffer
@@ -485,7 +435,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__modify_register(
 		,data
 	};
 
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__spi_transfer(
+	zrtos_error_t ret = zrtos_vfs_fd__spi_transfer(
 		 fd
 		,1
 		,buffer
@@ -503,7 +453,7 @@ uint8_t zrtos_vfs_module_mcp2515__get_status(
 		 ZRTOS_VFS_MODULE_MCP2515_INSTRUCTION__READ_STATUS
 	};
 
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__spi_transfer(
+	zrtos_error_t ret = zrtos_vfs_fd__spi_transfer(
 		 fd
 		,2
 		,buffer
@@ -766,7 +716,7 @@ zrtos_error_t zrtos_vfs_module_mcp2515__reset(zrtos_vfs_fd_t fd){
 	uint8_t buffer[] = {
 		 ZRTOS_VFS_MODULE_MCP2515_INSTRUCTION__RESET
 	};
-	zrtos_error_t ret = zrtos_vfs_module_mcp2515__spi_transfer(
+	zrtos_error_t ret = zrtos_vfs_fd__spi_transfer(
 		 fd
 		,1
 		,buffer

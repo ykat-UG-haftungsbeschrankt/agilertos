@@ -207,6 +207,63 @@ size_t zrtos_types__uint8_to_hex(uint8_t *dest,uint8_t src){
 #define ZRTOS_TYPES__MAP(value,in_min,in_max,out_min,out_max)\
   (((value)-(in_min))*((out_max)-(out_min))/((in_max)-(in_min))+(out_min))
 
+uint16_t zrtos_types__uint16_bswap(uint16_t x){
+	return ((__uint16_t) ((((x) >> 8) & 0xff) | (((x) & 0xff) << 8)));
+}
+
+uint32_t zrtos_types__uint32_bswap(uint32_t x){
+	return ((((x) & 0xff000000u) >> 24) | (((x) & 0x00ff0000u) >> 8)
+   | (((x) & 0x0000ff00u) << 8) | (((x) & 0x000000ffu) << 24));
+}
+
+uint64_t zrtos_types__uint64_bswap(uint64_t x){
+	return 
+  ((((x) & 0xff00000000000000ull) >> 56)
+   | (((x) & 0x00ff000000000000ull) >> 40)
+   | (((x) & 0x0000ff0000000000ull) >> 24)
+   | (((x) & 0x000000ff00000000ull) >> 8)
+   | (((x) & 0x00000000ff000000ull) << 8)
+   | (((x) & 0x0000000000ff0000ull) << 24)
+   | (((x) & 0x000000000000ff00ull) << 40)
+   | (((x) & 0x00000000000000ffull) << 56))
+   ;
+}
+
+#if ZRTOS_ARCH__BYTE_ORDER == ZRTOS_ARCH__BYTE_ORDER_LITTLE_ENDIAN
+# define zrtos_types__htobe16(x) zrtos_types__uint16_bswap(x)
+# define zrtos_types__htole16(x) (x)
+# define zrtos_types__be16toh(x) zrtos_types__uint16_bswap(x)
+# define zrtos_types__le16toh(x) (x)
+
+# define zrtos_types__htobe32(x) zrtos_types__uint32_bswap(x)
+# define zrtos_types__htole32(x) (x)
+# define zrtos_types__be32toh(x) zrtos_types__uint32_bswap(x)
+# define zrtos_types__le32toh(x) (x)
+
+# define zrtos_types__htobe64(x) zrtos_types__uint64_bswap(x)
+# define zrtos_types__htole64(x) (x)
+# define zrtos_types__be64toh(x) zrtos_types__uint64_bswap(x)
+# define zrtos_types__le64toh(x) (x)
+#else
+# define zrtos_types__htobe16(x) (x)
+# define zrtos_types__htole16(x) zrtos_types__uint16_bswap(x)
+# define zrtos_types__be16toh(x) (x)
+# define zrtos_types__le16toh(x) zrtos_types__uint16_bswap(x)
+
+# define zrtos_types__htobe32(x) (x)
+# define zrtos_types__htole32(x) zrtos_types__uint32_bswap(x)
+# define zrtos_types__be32toh(x) (x)
+# define zrtos_types__le32toh(x) zrtos_types__uint32_bswap(x)
+
+# define zrtos_types__htobe64(x) (x)
+# define zrtos_types__htole64(x) zrtos_types__uint64_bswap(x)
+# define zrtos_types__be64toh(x) (x)
+# define zrtos_types__le64toh(x) zrtos_types__uint64_bswap(x)
+#endif
+
+uint64_t zrtos_types__is_digit(char c){
+	return c >= '0' && c <= '9';
+}
 
 #ifdef __cplusplus
 }

@@ -21,8 +21,9 @@ typedef int8_t zrtos_arch_stack_signed_t;
 typedef uint8_t zrtos_arch_gpio_pin_t;
 typedef uint16_t zrtos_arch_gpio_value_analog_t;
 
-#define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
+#define ZRTOS_ARCH__BYTE_ORDER ZRTOS_ARCH__BYTE_ORDER_LITTLE_ENDIAN
 
+#define ZRTOS_ARCH__CPU_CLOCK_HZ    ( ( uint32_t ) F_CPU )          // thiz F_CPU variable set by the environment
 
 #define ZRTOS_ARCH__BYTE_ALIGNMENT (1)
 
