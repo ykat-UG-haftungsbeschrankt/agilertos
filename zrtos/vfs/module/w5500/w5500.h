@@ -71,7 +71,7 @@ zrtos_error_t zrtos_vfs_module_w5500__reset(
 	uint8_t ctl = _W5500_SPI_WRITE_;
 	uint8_t mode = MR_RST;
 	
-	for(size_t l = 1;l--;){
+	for(size_t l = 2;l--;){
 		while(llimit-- && zrtos_error__is_success((ret = zrtos_vfs_fd__spi_transfer(
 			inode_data->fd
 			,3
@@ -151,7 +151,7 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_GATEWAY_IP:
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_IP_ADDRESS:
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_IP_ADDRESS:
-		 	data.ip = zrtos_va__arg(
+		 	data.ip = zrtos_va__arg_ptr(
 				 args
 				,zrtos_vfs_module_network_ip4_t*
 			);
@@ -160,7 +160,7 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		break;
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SUBNET_MASK:
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SUBNET_MASK:
-			data.subnet_mask = zrtos_va__arg(
+			data.subnet_mask = zrtos_va__arg_ptr(
 				 args
 				,zrtos_vfs_module_network_subnet_mask_t*
 			);
@@ -169,7 +169,7 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		break;
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_MAC_ADDRESS:
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_MAC_ADDRESS:
-			data.mac = zrtos_va__arg(
+			data.mac = zrtos_va__arg_ptr(
 				 args
 				,zrtos_vfs_module_network_mac_t*
 			);
@@ -187,7 +187,7 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRANSMISSION_COUNT:
 			data.rcr = zrtos_va__arg(
 				 args
-				,uint8_t
+				,uint16_t
 			);
 			value = &data.rcr;
 			value_length = sizeof(data.rcr);

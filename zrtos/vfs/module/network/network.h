@@ -48,11 +48,11 @@ bool zrtos_vfs_module_network_ip4__init(
 				break;
 			}
 		}else{
-			goto L_ERROR;
+			break;
 		}
 	}
 
-	return pos < 4;
+	return pos == 4;
 }
 
 #ifdef __cplusplus

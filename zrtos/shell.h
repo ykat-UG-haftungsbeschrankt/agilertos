@@ -15,58 +15,82 @@ extern "C" {
 #include <zrtos/types.h>
 #include <zrtos/mem.h>
 
-//https://github.com/google/esh/blob/main/shell/shell/shell.c
+#ifndef ZRTOS_SHELL__CFG_LINE_BUFFER_LENGTH
+#define ZRTOS_SHELL__CFG_LINE_BUFFER_LENGTH 80
+#endif
+#ifndef ZRTOS_SHELL__CFG_MAX_ARG_COUNT
+#define ZRTOS_SHELL__CFG_MAX_ARG_COUNT      8
+#endif
 
 typedef enum{
-	ZRTOS_SHELL_STATE__RUNNING
-}zrtos_shell_state_t;
+	 ZRTOS_SHELL_FD__MIN    = 0
+	,ZRTOS_SHELL_FD__STDIN  = 0
+	,ZRTOS_SHELL_FD__STDOUT = 1
+	,ZRTOS_SHELL_FD__STDERR = 2
+	,ZRTOS_SHELL_FD__MAX    = 2
+}zrtos_shell_fd_t;
+
+struct _zrtos_shell_t;
+
+typedef struct{
+	char *name;
+	zrtos_error_t (*callback)(struct _zrtos_shell_t *thiz,size_t argc,char **argv);
+}zrtos_shell_fn_t;
+
+typedef struct{
+	zrtos_vfs_fd_t      cwd;
+	zrtos_vfs_fd_t      fd[ZRTOS_SHELL_FD__MAX + 1];
+}zrtos_shell_fd_array_t;
 
 typedef struct _zrtos_shell_t{
-	void    *data;
-	size_t  offset;
-	size_t  length;
-	zrtos_shell_state_t state;
+	zrtos_shell_fd_array_t files;
+	zrtos_shell_fn_t       **fn;
+	void                   *data;
 }zrtos_shell_t;
 
 bool zrtos_shell__init(
-	 zrtos_stack_t *thiz
-	,void *data
-	,size_t length
+	 zrtos_shell_t          *thiz
+	,zrtos_shell_fd_array_t files
+	,zrtos_shell_fn_t       **fn
+	,void                   *data
 ){
+	thiz->files = files;
+	thiz->fn = fn;
 	thiz->data = data;
-	thiz->offset = 0;
-	thiz->length = length;
+
 	return true;
 }
 
 zrtos_error_t zrtos_shell__parse_line(
 	 zrtos_shell_t *thiz
-	,string_t *line_buffer
 	,size_t *argc
 	,char **argv
-	,size_t argv_max_len
+	,char *line
 ){
-	int argc = 0;
-	int pos = 0;
-	int length = strlen(line_buff);
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	size_t pos = 0;
+	char *arg;
+	size_t offset;
 
-	while (pos <= length) {
-		if (line_buff[pos] != '\t' && line_buff[pos] != SPACE &&
-			line_buff[pos] != END_OF_LINE)
-		argv[argc++] = &line_buff[pos];
-
-		for (; line_buff[pos] != '\t' && line_buff[pos] != SPACE &&
-			line_buff[pos] != END_OF_LINE;
-			pos++)
-		;
-
-		if (line_buff[pos] == '\t' || line_buff[pos] == SPACE)
-		line_buff[pos] = END_OF_LINE;
-
-		pos++;
+	line += zrtos_str__spn(line," \t\r\n");
+	offset = zrtos_str__cspn(line,"\r\n");
+	if(offset){
+		line[offset] = 0;
+		while((arg = zrtos_str__tok_r(line," \t", &line))){
+			if(pos < ZRTOS_SHELL__CFG_MAX_ARG_COUNT){
+				argv[pos++] = arg;
+				continue;
+			}else{
+				ret = ZRTOS_ERROR__2BIG;
+				break;
+			}
+		}
+		*argc = pos;
+	}else{
+		*argc = 0;
 	}
 
-	return argc;
+	return ret;
 }
 
 zrtos_error_t zrtos_shell__execute(
@@ -74,35 +98,34 @@ zrtos_error_t zrtos_shell__execute(
 	,size_t argc
 	,char **argv
 ){
-	int match_found = FALSE;
+	zrtos_error_t ret = ZRTOS_ERROR__NOSYS;
+	zrtos_shell_fn_t **fn = thiz->fn;
 
-	for (int i = 0; table[i].command_name != NULL; i++) {
-	if (strcmp(argv[0], table[i].command_name) == 0) {
-		__cmd_exec_status = table[i].command(argc, &argv[0]);
-		match_found = TRUE;
-		break;
-	}
+	for(;*fn;fn++){
+		if(zrtos_str__cmp(argv[0],fn->name) == 0){
+			ret = fn->callback(thiz,argc,argv);
+			break;
+		}
 	}
 
-	if (match_found == FALSE) {
-	printf("\"%s\": command not found. Use \"help\" to list all command.\n",
-			argv[0]);
-	__cmd_exec_status = -1;
-	}
+	return ret;
 }
 
 zrtos_error_t zrtos_shell__run(
 	 zrtos_shell_t *thiz
+	,char      *line
 ){
-	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-
-	while(zrtos_error__is_success(ret)
-	&& thiz->state == ZRTOS_SHELL_STATE__RUNNING){
-		ret = zrtos_shell__parse_line(thiz,&argc,argv,line_buff,MAX_ARG_COUNT);
-		if(zrtos_error__is_success(ret)
-		&& argc > 0){
-			ret = zrtos_shell__execute(thiz,argc,argv);
-		}
+	size_t argc;
+	char *argv[ZRTOS_SHELL__CFG_MAX_ARG_COUNT];
+	zrtos_error_t ret = zrtos_shell__parse_line(
+		 thiz
+		,&argc
+		,argv
+		,line
+	);
+	if(zrtos_error__is_success(ret)
+	&& argc > 0){
+		ret = zrtos_shell__execute(thiz,argc,argv);
 	}
 
 	return ret;

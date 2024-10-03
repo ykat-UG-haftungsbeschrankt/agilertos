@@ -261,8 +261,16 @@ uint64_t zrtos_types__uint64_bswap(uint64_t x){
 # define zrtos_types__le64toh(x) zrtos_types__uint64_bswap(x)
 #endif
 
-uint64_t zrtos_types__is_digit(char c){
+bool zrtos_types__is_digit(char c){
 	return c >= '0' && c <= '9';
+}
+
+bool zrtos_types__is_whitespace(char c){
+	return c == ' ' || c == '\t';
+}
+
+bool zrtos_types__is_newline(char c){
+	return c == '\r' || c == '\n';
 }
 
 #ifdef __cplusplus
