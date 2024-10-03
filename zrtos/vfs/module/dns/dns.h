@@ -37,7 +37,7 @@ typedef struct{
 	uint16_t answers_length;
 	uint16_t authrr_length;
 	uint16_t extrarr_length;
-}zrtos_vfs_module_dns_header_t;
+}__attribute__((packed))zrtos_vfs_module_dns_header_t;
 
 typedef struct{
   /* DNS query record starts with either a domain name or a pointer

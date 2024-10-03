@@ -15,52 +15,44 @@ extern "C" {
 
 typedef struct{
 	uint8_t data[6];
-}zrtos_vfs_module_network_mac_t;
+}__attribute__((packed))zrtos_vfs_module_network_mac_t;
 
 typedef struct{
 	uint8_t data[4];
-}zrtos_vfs_module_network_ip_t;
+}__attribute__((packed))zrtos_vfs_module_network_ip4_t;
 
 typedef struct{
 	uint8_t data[4];
-}zrtos_vfs_module_network_subnet_mask_t;
+}__attribute__((packed))zrtos_vfs_module_network_subnet_mask_t;
 
-bool zrtos_vfs_module_network_ip__init(
-	 zrtos_vfs_module_network_ip_t *thiz
+bool zrtos_vfs_module_network_ip4__init(
+	 zrtos_vfs_module_network_ip4_t *thiz
 	,const char *src
 ){
 	char ch;
 	uint16_t val = 0;
 	size_t pos = 0;
-	size_t octets = 0;
 
 	while(true){
 		ch = *src++;
 		if(zrtos_types__is_digit(ch)){
 			val += (ch - '0') * 10;
-		}else if(ch == '.'){
-			if(++octets < 4){
-				if(val < 2560){
-					thiz->data[pos++] = val/10;
-					val = 0;
-				}else{
-					goto L_ERROR;
-				}
-			}else{
-				goto L_ERROR;
-			}
-		}else if(ch == '\0'){
+		}else if(
+			(ch == '.' || ch == '\0')
+			&& pos < 4
+			&& val < 2560
+		){
 			thiz->data[pos++] = val/10;
 			val = 0;
+			if(ch == '\0'){
+				break;
+			}
 		}else{
 			goto L_ERROR;
 		}
 	}
 
-	if (octets < 4)
-		return (0);
-	memcpy(dst, tmp, NS_INADDRSZ);
-	return (1);
+	return pos < 4;
 }
 
 #ifdef __cplusplus
