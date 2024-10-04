@@ -1,9 +1,5 @@
 <map id="task_mutex.h" name="task_mutex.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="117,5,218,32"/>
-<area shape="rect" id="Node000002" href="$spi__sync_8h.html" title=" " alt="" coords="5,80,90,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,43,70,82,67,77,132,38"/>
-<area shape="rect" id="Node000003" href="$task__pthread_8h.html" title=" " alt="" coords="114,80,221,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,48,170,80,165,80,165,48"/>
-<area shape="rect" id="Node000004" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="246,80,393,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,37,294,77,292,82,206,41"/>
+<area shape="rect" id="node2" href="$task__pthread_8h.html" title="task_pthread.h" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node3" href="$spi__sync_8h.html" title="spi_sync.h" alt="" coords="138,80,223,107"/>
+<area shape="rect" id="node4" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="248,80,399,107"/>
 </map>

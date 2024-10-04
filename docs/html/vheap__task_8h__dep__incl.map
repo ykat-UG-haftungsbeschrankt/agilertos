@@ -1,7 +1,4 @@
 <map id="vheap_task.h" name="vheap_task.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="37,5,134,32"/>
-<area shape="rect" id="Node000002" href="$vheap__task__scheduler_8h.html" title=" " alt="" coords="5,80,166,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,48,88,80,83,80,83,48"/>
-<area shape="rect" id="Node000003" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="12,155,159,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,122,88,154,83,154,83,122"/>
+<area shape="rect" id="node2" href="$vheap__task__scheduler_8h.html" title="vheap_task_scheduler.h" alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node3" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="11,155,162,181"/>
 </map>

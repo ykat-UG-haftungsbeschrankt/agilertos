@@ -1,22 +1,12 @@
 <map id="board.h" name="board.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="185,5,250,32"/>
-<area shape="rect" id="Node000002" href="$time_8h.html" title=" " alt="" coords="148,80,205,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,47,186,81,181,78,201,44"/>
-<area shape="rect" id="Node000003" href="$zrtos_8h.html" title=" " alt="" coords="230,80,291,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,44,255,78,251,81,230,47"/>
-<area shape="rect" id="Node000004" href="$stack_8h.html" title=" " alt="" coords="60,155,124,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="218,116,123,156,121,152,216,111"/>
-<area shape="rect" id="Node000006" href="$task__mutex_8h.html" title=" " alt="" coords="210,155,310,181"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="263,122,263,154,258,154,258,122"/>
-<area shape="rect" id="Node000010" href="$task__scheduler_8h.html" title=" " alt="" coords="343,155,463,181"/>
-<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="300,112,379,152,377,156,297,116"/>
-<area shape="rect" id="Node000005" href="$vm_8h.html" title=" " alt="" coords="5,229,54,256"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="73,195,42,231,38,227,69,192"/>
-<area shape="rect" id="Node000007" href="$spi__sync_8h.html" title=" " alt="" coords="78,229,162,256"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="223,191,146,231,144,226,221,186"/>
-<area shape="rect" id="Node000008" href="$task__pthread_8h.html" title=" " alt="" coords="359,229,466,256"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="301,186,387,226,384,231,299,191"/>
-<area shape="rect" id="Node000009" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="187,229,334,256"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="263,197,263,229,258,229,258,197"/>
-<area shape="poly" id="edge10_Node000010_Node000008" title=" " alt="" coords="409,196,413,229,408,229,404,197"/>
+<area shape="rect" id="node2" href="$time_8h.html" title="time.h" alt="" coords="66,80,125,107"/>
+<area shape="rect" id="node3" href="$zrtos_8h.html" title="zrtos.h" alt="" coords="149,80,212,107"/>
+<area shape="rect" id="node4" href="$shell_8h.html" title="shell.h" alt="" coords="5,155,65,181"/>
+<area shape="rect" id="node5" href="$stack_8h.html" title="stack.h" alt="" coords="89,155,155,181"/>
+<area shape="rect" id="node7" href="$task__mutex_8h.html" title="task_mutex.h" alt="" coords="325,155,426,181"/>
+<area shape="rect" id="node11" href="$task__scheduler_8h.html" title="task_scheduler.h" alt="" coords="179,155,300,181"/>
+<area shape="rect" id="node6" href="$vm_8h.html" title="vm.h" alt="" coords="97,229,147,256"/>
+<area shape="rect" id="node8" href="$task__pthread_8h.html" title="task_pthread.h" alt="" coords="189,229,297,256"/>
+<area shape="rect" id="node9" href="$spi__sync_8h.html" title="spi_sync.h" alt="" coords="329,229,414,256"/>
+<area shape="rect" id="node10" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="439,229,589,256"/>
 </map>

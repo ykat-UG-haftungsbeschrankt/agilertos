@@ -1,0 +1,6 @@
+<map id="_zrtos_vheap_task_scheduler__get_active_task" name="_zrtos_vheap_task_scheduler__get_active_task">
+<area shape="rect" id="node2" href="$types_8h.html#ab287a3ab3a7be12ae8e1a7caaa8669a4" title="zrtos_types__ptr_subtract" alt="" coords="255,5,429,32"/>
+<area shape="rect" id="node3" href="$vheap_8h.html#a4b2a8e30df4a416638232339c09f4cbe" title="zrtos_vheap__get_last\l_address" alt="" coords="265,57,419,98"/>
+<area shape="rect" id="node5" href="$vheap__task__scheduler_8h.html#a2205b06b30712719cfe0f785f5898425" title="zrtos_vheap_task_scheduler\l__get_heap" alt="" coords="248,122,436,163"/>
+<area shape="rect" id="node4" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="484,64,631,91"/>
+</map>

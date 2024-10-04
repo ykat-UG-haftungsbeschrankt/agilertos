@@ -1,10 +1,5 @@
 <map id="vheap_chunk.h" name="vheap_chunk.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="25,5,133,32"/>
-<area shape="rect" id="Node000002" href="$vheap_8h.html" title=" " alt="" coords="46,80,112,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,48,82,80,76,80,76,48"/>
-<area shape="rect" id="Node000003" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="5,229,153,256"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="64,121,48,155,47,175,52,195,71,227,66,230,48,197,42,176,43,154,59,119"/>
-<area shape="rect" id="Node000004" href="$vheap__task__scheduler_8h.html" title=" " alt="" coords="58,155,218,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="101,117,130,153,125,156,97,121"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="120,195,91,231,87,227,116,192"/>
+<area shape="rect" id="node2" href="$vheap_8h.html" title="vheap.h" alt="" coords="47,80,115,107"/>
+<area shape="rect" id="node3" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="5,229,156,256"/>
+<area shape="rect" id="node4" href="$vheap__task__scheduler_8h.html" title="vheap_task_scheduler.h" alt="" coords="59,155,222,181"/>
 </map>

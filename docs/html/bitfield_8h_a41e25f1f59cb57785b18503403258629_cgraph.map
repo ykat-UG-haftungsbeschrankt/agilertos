@@ -1,7 +1,4 @@
 <map id="zrtos_bitfield__zero" name="zrtos_bitfield__zero">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,139,32"/>
-<area shape="rect" id="Node000002" href="$mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7" title=" " alt="" coords="187,5,312,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,16,171,16,171,21,139,21"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html#ad6c786590236d1d560b6277f638bf766" title=" " alt="" coords="360,5,478,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,16,344,16,344,21,312,21"/>
+<area shape="rect" id="node2" href="$mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7" title="zrtos_mem__zero" alt="" coords="188,5,315,32"/>
+<area shape="rect" id="node3" href="$mem_8h.html#ad6c786590236d1d560b6277f638bf766" title="zrtos_mem__set" alt="" coords="363,5,481,32"/>
 </map>

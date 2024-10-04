@@ -1,31 +1,16 @@
 <map id="arch.h" name="arch.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="184,5,241,32"/>
-<area shape="rect" id="Node000002" href="$gpio_8h.html" title=" " alt="" coords="115,80,171,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,45,157,81,153,78,188,41"/>
-<area shape="rect" id="Node000008" href="$zrtos_8h.html" title=" " alt="" coords="379,80,440,107"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="257,33,379,78,377,83,255,38"/>
-<area shape="rect" id="Node000003" href="$vfs_2module_2gpio_2gpio_8h.html" title=" " alt="" coords="12,155,68,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,118,60,156,57,152,111,114"/>
-<area shape="rect" id="Node000005" href="$spi_2spi_8h.html" title=" " alt="" coords="93,155,142,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="136,122,124,155,119,153,131,120"/>
-<area shape="rect" id="Node000007" href="$spi__sync_8h.html" title=" " alt="" coords="159,229,244,256"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="156,120,199,228,194,230,151,122"/>
-<area shape="rect" id="Node000004" href="$vfs_2module_2arduino_2gpio_8h.html" title=" " alt="" coords="5,229,62,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="40,197,37,229,32,229,35,197"/>
-<area shape="rect" id="Node000006" href="$avr_2spi_2spi_8h.html" title=" " alt="" coords="86,229,136,256"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="118,197,115,229,109,229,112,197"/>
-<area shape="rect" id="Node000009" href="$stack_8h.html" title=" " alt="" coords="561,155,626,181"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="456,110,562,152,561,157,454,115"/>
-<area shape="rect" id="Node000011" href="$task__mutex_8h.html" title=" " alt="" coords="291,155,392,181"/>
-<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="389,120,355,156,351,152,385,116"/>
-<area shape="rect" id="Node000014" href="$task__scheduler_8h.html" title=" " alt="" coords="417,155,538,181"/>
-<area shape="poly" id="edge14_Node000008_Node000014" title=" " alt="" coords="434,116,468,152,464,156,430,120"/>
-<area shape="rect" id="Node000010" href="$vm_8h.html" title=" " alt="" coords="571,229,619,256"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="597,197,597,229,592,229,591,197"/>
-<area shape="poly" id="edge11_Node000011_Node000007" title=" " alt="" coords="305,191,227,231,225,226,302,186"/>
-<area shape="rect" id="Node000012" href="$task__pthread_8h.html" title=" " alt="" coords="440,229,547,256"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="383,186,468,226,466,231,380,191"/>
-<area shape="rect" id="Node000013" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="268,229,415,256"/>
-<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="344,197,344,229,339,229,339,197"/>
-<area shape="poly" id="edge15_Node000014_Node000012" title=" " alt="" coords="486,196,493,228,488,230,481,197"/>
+<area shape="rect" id="node2" href="$gpio_8h.html" title="gpio.h" alt="" coords="115,80,173,107"/>
+<area shape="rect" id="node8" href="$zrtos_8h.html" title="zrtos.h" alt="" coords="355,80,418,107"/>
+<area shape="rect" id="node3" href="$vfs_2module_2gpio_2gpio_8h.html" title="gpio.h" alt="" coords="85,155,142,181"/>
+<area shape="rect" id="node5" href="$spi_2spi_8h.html" title="spi.h" alt="" coords="9,155,60,181"/>
+<area shape="rect" id="node7" href="$spi__sync_8h.html" title="spi_sync.h" alt="" coords="163,229,248,256"/>
+<area shape="rect" id="node4" href="$vfs_2module_2arduino_2gpio_8h.html" title="gpio.h" alt="" coords="81,229,138,256"/>
+<area shape="rect" id="node6" href="$avr_2spi_2spi_8h.html" title="spi.h" alt="" coords="5,229,56,256"/>
+<area shape="rect" id="node9" href="$shell_8h.html" title="shell.h" alt="" coords="357,155,417,181"/>
+<area shape="rect" id="node10" href="$stack_8h.html" title="stack.h" alt="" coords="586,155,651,181"/>
+<area shape="rect" id="node12" href="$task__mutex_8h.html" title="task_mutex.h" alt="" coords="231,155,332,181"/>
+<area shape="rect" id="node15" href="$task__scheduler_8h.html" title="task_scheduler.h" alt="" coords="441,155,562,181"/>
+<area shape="rect" id="node11" href="$vm_8h.html" title="vm.h" alt="" coords="593,229,644,256"/>
+<area shape="rect" id="node13" href="$task__pthread_8h.html" title="task_pthread.h" alt="" coords="447,229,555,256"/>
+<area shape="rect" id="node14" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="273,229,423,256"/>
 </map>

@@ -1,7 +1,4 @@
 <map id="zrtos_error_count__init" name="zrtos_error_count__init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="228,47,381,73"/>
-<area shape="rect" id="Node000002" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title=" " alt="" coords="5,5,180,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,48,180,43,181,38,213,43"/>
-<area shape="rect" id="Node000003" href="$uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" title=" " alt="" coords="17,72,168,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,77,169,84,168,79,212,72"/>
+<area shape="rect" id="node2" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="208,5,387,47"/>
+<area shape="rect" id="node3" href="$uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" title="zrtos_vfs_module_uart\l_inode__init" alt="" coords="220,71,375,112"/>
 </map>

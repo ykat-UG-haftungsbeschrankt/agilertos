@@ -1,7 +1,3 @@
 <map id="zrtos_vfs_module_avr_uart__on_transmit_interrupt" name="zrtos_vfs_module_avr_uart__on_transmit_interrupt">
-<area shape="rect" id="Node000001" title=" " alt="" coords="96,23,282,65"/>
-<area shape="rect" id="Node000002" href="$uart0_8h.html#a91dc2a9d312bdd124f13347731b7e1bd" title=" " alt="" coords="5,5,48,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,30,48,25,49,19,80,24"/>
-<area shape="rect" id="Node000003" href="$uart1_8h.html#ac57d848063d5538df7bd4dcf291210eb" title=" " alt="" coords="5,56,48,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,64,49,69,48,63,80,58"/>
+<area shape="rect" id="node2" href="$uart0_8h.html#a91dc2a9d312bdd124f13347731b7e1bd" title="ISR" alt="" coords="240,13,285,39"/>
 </map>

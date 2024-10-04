@@ -1,7 +1,4 @@
 <map id="zrtos_types__ceil_size_to_alignment" name="zrtos_types__ceil_size_to_alignment">
-<area shape="rect" id="Node000001" title=" " alt="" coords="356,5,510,48"/>
-<area shape="rect" id="Node000002" href="$malloc_8h.html#a886b38a033247d17a6681a94b237aab7" title=" " alt="" coords="161,13,308,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="340,29,308,29,308,24,340,24"/>
-<area shape="rect" id="Node000003" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="5,13,113,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,29,113,29,113,24,145,24"/>
+<area shape="rect" id="node2" href="$malloc_8h.html#afaf0d7525e37b61185bb2556719de0c4" title="zrtos_malloc__malloc" alt="" coords="208,13,356,39"/>
+<area shape="rect" id="node3" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title="pthread_create" alt="" coords="404,13,512,39"/>
 </map>

@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_module_modbus_rtu__on_can_read" name="zrtos_vfs_module_modbus_rtu__on_can_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,180,81"/>
-<area shape="rect" id="Node000002" href="$msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139" title=" " alt="" coords="228,5,376,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,43,212,38,213,43,181,49"/>
-<area shape="rect" id="Node000003" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="238,72,366,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,71,223,78,222,83,180,77"/>
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="241,5,373,47"/>
+<area shape="rect" id="node3" href="$msg__queue_8h.html#adbeda957ab0b749a1d306a34cb42d139" title="zrtos_msg_queue__is\l_empty" alt="" coords="232,71,381,112"/>
 </map>

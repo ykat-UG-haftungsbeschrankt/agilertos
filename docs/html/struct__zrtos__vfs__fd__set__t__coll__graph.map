@@ -1,7 +1,3 @@
 <map id="_zrtos_vfs_fd_set_t" name="_zrtos_vfs_fd_set_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,138,213"/>
-<area shape="rect" id="Node000002" href="$structzrtos__bitfield__t.html" title=" " alt="" coords="19,96,124,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,138,74,186,69,186,69,138"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="41,5,102,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="74,48,74,95,69,95,69,48"/>
+<area shape="rect" id="node2" href="$structzrtos__bitfield__t.html" title="zrtos_bitfield_t" alt="" coords="21,95,127,121"/>
 </map>

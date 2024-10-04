@@ -1,0 +1,10 @@
+<map id="rtos_vfs_module_w5500_socket__on_read" name="rtos_vfs_module_w5500_socket__on_read">
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="235,5,367,47"/>
+<area shape="rect" id="node3" href="$vfs__file_8h.html#a04a201b5b034eb09d22292ec8700a144" title="zrtos_vfs_file__get_data" alt="" coords="219,71,383,98"/>
+<area shape="rect" id="node4" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="659,177,823,203"/>
+<area shape="rect" id="node5" href="$w5500_8h.html#a5d6bea1b0c1248b87ccebb1f52beccc5" title="zrtos_vfs_module_w5500\l__spi_transfer_uint16" alt="" coords="216,239,387,280"/>
+<area shape="rect" id="node9" href="$w5500__socket_8h.html#a8580d9d092c4e4ce36d1a22ba43fd2e3" title="rtos_vfs_module_w5500\l_socket__read_data" alt="" coords="220,173,383,215"/>
+<area shape="rect" id="node6" href="$vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053" title="zrtos_vfs_fd__spi_transfer" alt="" coords="435,227,611,254"/>
+<area shape="rect" id="node7" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title="zrtos_vfs_fd__read" alt="" coords="674,227,807,254"/>
+<area shape="rect" id="node8" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title="zrtos_vfs_file__read" alt="" coords="871,227,1009,254"/>
+</map>

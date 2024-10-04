@@ -1,13 +1,7 @@
 <map id="_zrtos_vheap__get_free_space" name="_zrtos_vheap__get_free_space">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,68,163,111"/>
-<area shape="rect" id="Node000002" href="$vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title=" " alt="" coords="224,39,381,81"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,76,208,70,209,75,164,81"/>
-<area shape="rect" id="Node000006" href="$vheap_8h.html#a8db165ab2eef6113422d6f72c9321ea9" title=" " alt="" coords="211,105,394,132"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="164,97,195,102,195,107,163,103"/>
-<area shape="rect" id="Node000003" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="446,5,589,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,45,430,38,430,43,382,50"/>
-<area shape="rect" id="Node000004" href="$vheap_8h.html#a9cff4e6aefa63154b78bcb1a5f442d72" title=" " alt="" coords="442,72,592,115"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="382,70,427,77,426,82,381,75"/>
-<area shape="rect" id="Node000005" href="$types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="640,80,787,107"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="593,91,625,91,625,96,593,96"/>
+<area shape="rect" id="node2" href="$vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title="_zrtos_vheap__get_free\l_space_ex" alt="" coords="227,39,389,80"/>
+<area shape="rect" id="node6" href="$vheap_8h.html#ac2aa4978f16950ae57e7532d94df5d4f" title="zrtos_vheap__get_stack_ptr" alt="" coords="215,105,401,131"/>
+<area shape="rect" id="node3" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title="zrtos_types__ptr_get\l_byte_distance" alt="" coords="454,5,598,47"/>
+<area shape="rect" id="node4" href="$vheap_8h.html#a4b2a8e30df4a416638232339c09f4cbe" title="zrtos_vheap__get_last\l_address" alt="" coords="449,71,603,112"/>
+<area shape="rect" id="node5" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="651,78,797,105"/>
 </map>

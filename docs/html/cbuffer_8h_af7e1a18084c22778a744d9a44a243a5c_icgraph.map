@@ -1,7 +1,9 @@
 <map id="zrtos_cbuffer__can_write" name="zrtos_cbuffer__can_write">
-<area shape="rect" id="Node000001" title=" " alt="" coords="204,39,334,81"/>
-<area shape="rect" id="Node000002" href="$spi_2spi_8h.html#ac230077948342ec1efa7a370551d09c6" title=" " alt="" coords="8,5,153,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,48,153,42,154,37,189,43"/>
-<area shape="rect" id="Node000003" href="$uart_2uart_8h.html#aceac60cc4f8d7474e117088335ff0db7" title=" " alt="" coords="5,72,156,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,77,157,83,156,77,188,72"/>
+<area shape="rect" id="node2" href="$spi_2spi_8h.html#ac230077948342ec1efa7a370551d09c6" title="zrtos_vfs_module_spi\l__on_can_write" alt="" coords="189,39,339,80"/>
+<area shape="rect" id="node4" href="$uart_2uart_8h.html#aceac60cc4f8d7474e117088335ff0db7" title="zrtos_vfs_module_uart\l__on_can_write" alt="" coords="187,136,341,177"/>
+<area shape="rect" id="node3" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="389,5,540,47"/>
+<area shape="rect" id="node5" href="$uart0_8h.html#a1c08ba1c9bac4dd9a045d06a07dbe0b4" title="zrtos_vfs_module_avr\l_uart0__on_write" alt="" coords="389,71,540,112"/>
+<area shape="rect" id="node6" href="$uart1_8h.html#af04452122e72ab7408b2e207191cdd33" title="zrtos_vfs_module_avr\l_uart1__on_write" alt="" coords="389,136,540,177"/>
+<area shape="rect" id="node7" href="$uart2_8h.html#a244148efdde4e736bdcba74328e85415" title="zrtos_vfs_module_avr\l_uart2__on_write" alt="" coords="389,201,540,243"/>
+<area shape="rect" id="node8" href="$uart3_8h.html#a0ac21cf2483f89180a91b9ca480eb7b8" title="zrtos_vfs_module_avr\l_uart3__on_write" alt="" coords="389,267,540,308"/>
 </map>

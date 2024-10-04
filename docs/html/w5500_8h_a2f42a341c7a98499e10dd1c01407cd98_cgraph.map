@@ -1,0 +1,10 @@
+<map id="zrtos_vfs_module_w5500__on_mount" name="zrtos_vfs_module_w5500__on_mount">
+<area shape="rect" id="node2" href="$gpio_8h.html#a1f8ccfbe91f750fb13f00e42103fb8b0" title="zrtos_gpio__delay_milliseconds" alt="" coords="224,5,431,32"/>
+<area shape="rect" id="node5" href="$w5500_8h.html#ad25fc05bb698d49979b174d8d9a282bc" title="zrtos_vfs_module_w5500\l__reset" alt="" coords="242,57,413,98"/>
+<area shape="rect" id="node3" href="$atmega2560_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" title="zrtos_arch__delay_milliseconds" alt="" coords="479,5,685,32"/>
+<area shape="rect" id="node4" href="$atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5" title="zrtos_arch__delay_microseconds" alt="" coords="733,5,949,32"/>
+<area shape="rect" id="node6" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="759,60,923,87"/>
+<area shape="rect" id="node7" href="$vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053" title="zrtos_vfs_fd__spi_transfer" alt="" coords="494,111,670,137"/>
+<area shape="rect" id="node8" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title="zrtos_vfs_fd__read" alt="" coords="775,111,908,137"/>
+<area shape="rect" id="node9" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title="zrtos_vfs_file__read" alt="" coords="997,111,1136,137"/>
+</map>

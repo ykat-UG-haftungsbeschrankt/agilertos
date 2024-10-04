@@ -1,7 +1,4 @@
 <map id="zrtos_bitfield__copy" name="zrtos_bitfield__copy">
-<area shape="rect" id="Node000001" title=" " alt="" coords="408,5,544,32"/>
-<area shape="rect" id="Node000002" href="$vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e" title=" " alt="" coords="204,5,360,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="393,21,360,21,360,16,393,16"/>
-<area shape="rect" id="Node000003" href="$vfs__notify_8h.html#a9abba884c837a89754c83d36d6430778" title=" " alt="" coords="5,5,156,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="188,21,156,21,156,16,188,16"/>
+<area shape="rect" id="node2" href="$vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e" title="zrtos_vfs_fd_set__copy" alt="" coords="192,5,353,32"/>
+<area shape="rect" id="node3" href="$vfs__notify_8h.html#a9abba884c837a89754c83d36d6430778" title="zrtos_vfs_notify__start" alt="" coords="401,5,556,32"/>
 </map>

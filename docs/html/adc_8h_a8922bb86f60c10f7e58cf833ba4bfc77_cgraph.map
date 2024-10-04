@@ -1,9 +1,9 @@
 <map id="zrtos_vfs_module_avr_adc__on_read" name="zrtos_vfs_module_avr_adc__on_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,150,77"/>
-<area shape="rect" id="Node000002" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="209,13,331,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,42,194,36,194,41,150,48"/>
-<area shape="rect" id="Node000004" href="$adc_8h.html#a0856083e8efa21689d5bc6ced44c123f" title=" " alt="" coords="198,64,342,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,64,183,69,182,75,150,70"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="390,5,544,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,24,374,24,374,29,331,29"/>
+<area shape="rect" id="node2" href="$adc_8h.html#a0856083e8efa21689d5bc6ced44c123f" title="zrtos_vfs_module_avr\l_adc__to_volt" alt="" coords="227,5,378,47"/>
+<area shape="rect" id="node3" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title="zrtos_mem__cpy" alt="" coords="241,71,364,98"/>
+<area shape="rect" id="node5" href="$adc_8h.html#a9fa53b76bfdb02f6b5683ec4a5171fc6" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="204,122,401,149"/>
+<area shape="rect" id="node6" href="$adc_8h.html#a4dcf469440165b0d8381dbedc4f44d1a" title="zrtos_vfs_module_avr\l_adc__on_mount" alt="" coords="227,173,378,215"/>
+<area shape="rect" id="node7" href="$adc_8h.html#a48983d0f29f931543b5cf8b43a9efa84" title="zrtos_vfs_module_avr\l_adc__on_umount" alt="" coords="227,239,378,280"/>
+<area shape="rect" id="node8" href="$vfs__plugin_8h.html#a0ef2a78a228057aca4aeb49963044b1a" title="zrtos_vfs_plugin__default\l_can_write_read_only" alt="" coords="217,304,388,345"/>
+<area shape="rect" id="node4" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title="zrtos_mem__move_left\l_overlapping" alt="" coords="449,64,608,105"/>
 </map>

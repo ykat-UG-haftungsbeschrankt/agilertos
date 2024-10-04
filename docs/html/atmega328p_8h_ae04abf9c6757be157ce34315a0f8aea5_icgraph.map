@@ -1,5 +1,3 @@
 <map id="zrtos_arch__delay_microseconds" name="zrtos_arch__delay_microseconds">
-<area shape="rect" id="Node000001" title=" " alt="" coords="260,5,475,32"/>
-<area shape="rect" id="Node000002" href="$atmega328p_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" title=" " alt="" coords="5,5,212,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="244,21,212,21,212,16,244,16"/>
+<area shape="rect" id="node2" href="$atmega328p_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" title="zrtos_arch__delay_milliseconds" alt="" coords="269,5,476,32"/>
 </map>

@@ -1,13 +1,7 @@
 <map id="zrtos_cbuffer__deinit" name="zrtos_cbuffer__deinit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="397,80,537,107"/>
-<area shape="rect" id="Node000002" href="$spi_2spi_8h.html#a32046c6fe4df16f4795a3de4fdf61f8f" title=" " alt="" coords="201,5,347,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="411,77,337,51,339,46,412,72"/>
-<area shape="rect" id="Node000004" href="$spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842" title=" " alt="" coords="201,72,347,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="381,96,347,96,347,91,381,91"/>
-<area shape="rect" id="Node000006" href="$uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" title=" " alt="" coords="199,139,349,181"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="412,115,339,141,337,136,411,110"/>
-<area shape="rect" id="Node000003" href="$spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="185,29,151,29,151,24,185,24"/>
-<area shape="rect" id="Node000005" href="$spi_2spi_8h.html#a233cf747fcbc04752c320e48e8101632" title=" " alt="" coords="5,72,151,115"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="185,96,151,96,151,91,185,91"/>
+<area shape="rect" id="node2" href="$spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842" title="zrtos_vfs_module_spi\l_file__init" alt="" coords="199,5,348,47"/>
+<area shape="rect" id="node4" href="$spi_2spi_8h.html#a32046c6fe4df16f4795a3de4fdf61f8f" title="zrtos_vfs_module_spi\l_file__deinit" alt="" coords="199,71,348,112"/>
+<area shape="rect" id="node6" href="$uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" title="zrtos_vfs_module_uart\l_inode__init" alt="" coords="196,136,351,177"/>
+<area shape="rect" id="node3" href="$spi_2spi_8h.html#a21ab487a7fecc72c5c1de2068586548a" title="zrtos_vfs_module_spi\l_file__new" alt="" coords="399,5,548,47"/>
+<area shape="rect" id="node5" href="$spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de" title="zrtos_vfs_module_spi\l_file__free" alt="" coords="399,71,548,112"/>
 </map>

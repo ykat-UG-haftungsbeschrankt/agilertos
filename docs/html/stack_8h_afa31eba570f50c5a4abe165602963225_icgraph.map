@@ -1,5 +1,3 @@
 <map id="zrtos_stack__shift" name="zrtos_stack__shift">
-<area shape="rect" id="Node000001" title=" " alt="" coords="159,5,286,32"/>
-<area shape="rect" id="Node000002" href="$vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9" title=" " alt="" coords="5,5,111,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,21,111,21,111,16,143,16"/>
+<area shape="rect" id="node2" href="$vm_8h.html#a8d1a7bee17e7bc3e2f5b16385b8108d9" title="zrtos_vm__run" alt="" coords="183,5,291,32"/>
 </map>

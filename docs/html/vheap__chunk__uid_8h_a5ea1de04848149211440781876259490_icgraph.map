@@ -1,13 +1,7 @@
 <map id="zrtos_vheap_chunk_uid__cmp" name="zrtos_vheap_chunk_uid__cmp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="563,31,759,57"/>
-<area shape="rect" id="Node000002" href="$vheap__task__pthread_8h.html#a98ec817164a6641eda2341de473b659d" title=" " alt="" coords="386,5,488,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="548,34,489,27,489,22,549,29"/>
-<area shape="rect" id="Node000003" href="$vheap_8h.html#a8a3fefca8c0f8ef89bea12c8cf3a7eaa" title=" " alt="" coords="359,56,515,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="549,59,516,63,516,58,548,54"/>
-<area shape="rect" id="Node000004" href="$vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title=" " alt="" coords="179,56,311,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="343,72,311,72,311,67,343,67"/>
-<area shape="rect" id="Node000005" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="22,31,114,57"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="163,60,114,53,114,48,164,55"/>
-<area shape="rect" id="Node000006" href="$vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="5,81,131,108"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="163,84,131,88,131,83,163,78"/>
+<area shape="rect" id="node2" href="$vheap_8h.html#a68ab37710064e12145e5786f254b865f" title="zrtos_vheap__get_child" alt="" coords="252,31,411,57"/>
+<area shape="rect" id="node6" href="$vheap__task__pthread_8h.html#a98ec817164a6641eda2341de473b659d" title="pthread_equal" alt="" coords="280,81,383,108"/>
+<area shape="rect" id="node3" href="$vheap_8h.html#a9b492c659e97e04a4c480621cf8ea4fa" title="_zrtos_vheap__free" alt="" coords="459,31,595,57"/>
+<area shape="rect" id="node4" href="$vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title="zrtos_vheap__free" alt="" coords="643,5,772,32"/>
+<area shape="rect" id="node5" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="661,56,753,83"/>
 </map>

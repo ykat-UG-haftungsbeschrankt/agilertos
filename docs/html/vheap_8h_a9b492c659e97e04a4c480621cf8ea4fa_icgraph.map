@@ -1,7 +1,4 @@
 <map id="_zrtos_vheap__free" name="_zrtos_vheap__free">
-<area shape="rect" id="Node000001" title=" " alt="" coords="179,31,311,57"/>
-<area shape="rect" id="Node000002" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="22,5,114,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,35,114,28,114,23,164,30"/>
-<area shape="rect" id="Node000003" href="$vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title=" " alt="" coords="5,56,131,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,58,131,63,131,58,163,53"/>
+<area shape="rect" id="node2" href="$vheap_8h.html#a8cb25649260ebcdadebc5cc733e01254" title="zrtos_vheap__free" alt="" coords="189,5,319,32"/>
+<area shape="rect" id="node3" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="208,56,300,83"/>
 </map>

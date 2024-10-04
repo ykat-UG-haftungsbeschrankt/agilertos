@@ -1,11 +1,11 @@
 <map id="zrtos_vfs_module_avr_timeout1__on_ioctl" name="zrtos_vfs_module_avr_timeout1__on_ioctl">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,150,115"/>
-<area shape="rect" id="Node000002" href="$vfs__file_8h.html#af74fd0459f24c9b7181d514760774410" title=" " alt="" coords="230,5,357,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,69,214,48,215,53,149,74"/>
-<area shape="rect" id="Node000003" href="$vfs__file_8h.html#a7f3b6e275325d6d776d1eb4a91335023" title=" " alt="" coords="230,72,357,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,91,214,91,214,96,150,96"/>
-<area shape="rect" id="Node000004" href="$timeout_8h.html#a06b1e137244f90f0ef2218c874c4712b" title=" " alt="" coords="198,139,389,181"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,113,208,131,206,136,148,118"/>
-<area shape="rect" id="Node000005" href="$timeout_8h.html#a60f1be70922ea65aa9c7beedbe30f9d0" title=" " alt="" coords="437,131,608,189"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="389,157,421,157,421,163,389,163"/>
+<area shape="rect" id="node2" href="$vfs__file_8h.html#a7f3b6e275325d6d776d1eb4a91335023" title="zrtos_vfs_file__set\l_offset" alt="" coords="237,5,369,47"/>
+<area shape="rect" id="node3" href="$timeout_8h.html#a06b1e137244f90f0ef2218c874c4712b" title="zrtos_vfs_module_timeout\l__get_overflow_counter_value" alt="" coords="204,71,403,112"/>
+<area shape="rect" id="node5" href="$vfs__file_8h.html#af74fd0459f24c9b7181d514760774410" title="zrtos_vfs_file__get\l_offset" alt="" coords="237,136,369,177"/>
+<area shape="rect" id="node6" href="$timeout1_8h.html#afc35cb3b5e06e8eecbeb67d11c24f529" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="205,202,402,229"/>
+<area shape="rect" id="node7" href="$timeout1_8h.html#a855f9f7524a495a882489ecae8d5042a" title="zrtos_vfs_module_avr\l_timeout1__on_open" alt="" coords="228,253,379,295"/>
+<area shape="rect" id="node9" href="$timeout1_8h.html#a9bf36ff209e24d67d18adfcbf105f71a" title="zrtos_vfs_module_avr\l_timeout1__on_mount" alt="" coords="228,319,379,360"/>
+<area shape="rect" id="node10" href="$timeout1_8h.html#ac810d6e2bd4b26357f55aad8b90e435f" title="zrtos_vfs_module_avr\l_timeout1__on_umount" alt="" coords="225,384,382,425"/>
+<area shape="rect" id="node4" href="$timeout_8h.html#a60f1be70922ea65aa9c7beedbe30f9d0" title="zrtos_vfs_module_timeout\l__get_overflow_counter\l_value_divider" alt="" coords="451,63,625,119"/>
+<area shape="rect" id="node8" href="$vfs__file_8h.html#a101b5bed191412de1a6e994b37aabfd5" title="zrtos_vfs_file__get\l_dentry_count" alt="" coords="472,253,604,295"/>
 </map>

@@ -1,5 +1,4 @@
 <map id="zrtos_msg_queue__put_data" name="zrtos_msg_queue__put_data">
-<area shape="rect" id="Node000001" title=" " alt="" coords="228,13,416,40"/>
-<area shape="rect" id="Node000002" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title=" " alt="" coords="5,5,180,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,29,180,29,180,24,212,24"/>
+<area shape="rect" id="node2" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title="zrtos_vfs_module_modbus\l_rtu__on_write" alt="" coords="243,5,421,47"/>
+<area shape="rect" id="node3" href="$rtu_8h.html#a08670f8758ac6130c738816d306eb923" title="zrtos_vfs_module_modbus\l_rtu__on_ioctl" alt="" coords="469,5,648,47"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="zrtos_vfs_module_w5500__spi_transfer_uint16" name="zrtos_vfs_module_w5500__spi_transfer_uint16">
+<area shape="rect" id="node2" href="$w5500__socket_8h.html#ad5ebfa57bf612747510f6ee4e34ab7a0" title="rtos_vfs_module_w5500\l_socket__on_read" alt="" coords="224,5,387,47"/>
+<area shape="rect" id="node4" href="$w5500__socket_8h.html#a1ebd4ede0a97f704e762ccbc1ac194f4" title="rtos_vfs_module_w5500\l_socket__on_can_read\l_write_helper" alt="" coords="224,71,387,127"/>
+<area shape="rect" id="node3" href="$w5500__socket_8h.html#ad72fd59b1d4ff9fec448680d4d97a3fe" title="zrtos_vfs_module_w5500\l_socket__on_ioctl" alt="" coords="645,64,816,105"/>
+<area shape="rect" id="node5" href="$w5500__socket_8h.html#a5fcc60fbc21a29204dee2ec89f88b7cf" title="rtos_vfs_module_w5500\l_socket__on_can_read" alt="" coords="435,64,597,105"/>
+<area shape="rect" id="node6" href="$w5500__socket_8h.html#a6c41067dd75702313739a0842b229fa2" title="rtos_vfs_module_w5500\l_socket__on_can_write" alt="" coords="435,129,597,171"/>
+</map>

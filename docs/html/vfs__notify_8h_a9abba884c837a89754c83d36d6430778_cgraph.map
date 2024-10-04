@@ -1,25 +1,13 @@
 <map id="zrtos_vfs_notify__start" name="zrtos_vfs_notify__start">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,104,156,131"/>
-<area shape="rect" id="Node000002" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="204,53,367,80"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,101,213,82,214,87,138,106"/>
-<area shape="rect" id="Node000003" href="$vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd" title=" " alt="" coords="216,104,355,131"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,115,201,115,201,120,156,120"/>
-<area shape="rect" id="Node000009" href="$vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e" title=" " alt="" coords="207,156,364,183"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="137,129,216,149,214,154,135,134"/>
-<area shape="rect" id="Node000004" href="$bitfield_8h.html#a31e4cbdaf65df7464b28c25d1780eb84" title=" " alt="" coords="431,5,557,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="342,101,366,90,380,78,389,66,398,54,414,42,423,36,426,41,416,46,402,58,393,70,384,82,368,94,344,106"/>
-<area shape="rect" id="Node000005" href="$vfs__fd_8h.html#adf388ba2df2bcae398b2a985609d364e" title=" " alt="" coords="416,56,572,83"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="346,101,418,84,419,89,347,106"/>
-<area shape="rect" id="Node000007" href="$vfs__fd_8h.html#a0c49dac81e96abdc11ac15deda3da529" title=" " alt="" coords="415,107,573,133"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="355,116,400,116,399,121,355,121"/>
-<area shape="rect" id="Node000006" href="$vfs__file_8h.html#ac71e6005c8d8d45e13ed13c7e35e525c" title=" " alt="" coords="621,48,784,75"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="573,64,606,62,606,68,573,69"/>
-<area shape="rect" id="Node000008" href="$vfs__file_8h.html#a891c512b98778579fb6487504a6cb058" title=" " alt="" coords="637,99,768,141"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="574,117,622,117,622,123,574,123"/>
-<area shape="rect" id="Node000010" href="$bitfield_8h.html#a35443b315a5b7cf5939dca9de8582dc2" title=" " alt="" coords="426,160,562,187"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="364,168,411,169,411,174,364,174"/>
-<area shape="rect" id="Node000011" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="642,165,763,192"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="563,172,627,174,626,179,563,178"/>
-<area shape="rect" id="Node000012" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="832,157,986,200"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="763,176,816,176,816,181,763,181"/>
+<area shape="rect" id="node2" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="208,5,372,32"/>
+<area shape="rect" id="node3" href="$vfs__fd_8h.html#a71a8f21157553c2313c2395e516d962e" title="zrtos_vfs_fd_set__copy" alt="" coords="209,56,371,83"/>
+<area shape="rect" id="node7" href="$vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd" title="zrtos_vfs_fd__select" alt="" coords="219,119,361,145"/>
+<area shape="rect" id="node4" href="$bitfield_8h.html#a35443b315a5b7cf5939dca9de8582dc2" title="zrtos_bitfield__copy" alt="" coords="433,43,571,69"/>
+<area shape="rect" id="node5" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title="zrtos_mem__cpy" alt="" coords="654,43,777,69"/>
+<area shape="rect" id="node6" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title="zrtos_mem__move_left\l_overlapping" alt="" coords="847,35,1005,77"/>
+<area shape="rect" id="node8" href="$vfs__fd_8h.html#adf388ba2df2bcae398b2a985609d364e" title="zrtos_vfs_fd__can_read" alt="" coords="421,93,583,120"/>
+<area shape="rect" id="node10" href="$bitfield_8h.html#a31e4cbdaf65df7464b28c25d1780eb84" title="zrtos_bitfield__set" alt="" coords="438,144,566,171"/>
+<area shape="rect" id="node11" href="$vfs__fd_8h.html#a0c49dac81e96abdc11ac15deda3da529" title="zrtos_vfs_fd__can_write" alt="" coords="420,195,584,221"/>
+<area shape="rect" id="node9" href="$vfs__file_8h.html#ac71e6005c8d8d45e13ed13c7e35e525c" title="zrtos_vfs_file__can_read" alt="" coords="632,93,799,120"/>
+<area shape="rect" id="node12" href="$vfs__file_8h.html#a891c512b98778579fb6487504a6cb058" title="zrtos_vfs_file__can\l_write" alt="" coords="648,187,783,229"/>
 </map>

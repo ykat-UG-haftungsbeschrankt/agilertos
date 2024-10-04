@@ -1,0 +1,14 @@
+<map id="zrtos_vfs_file__get_data" name="zrtos_vfs_file__get_data">
+<area shape="rect" id="node2" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="438,142,589,183"/>
+<area shape="rect" id="node3" href="$spi_2spi_8h.html#aa716f787c62ac9a980729df0fc9aa6e9" title="zrtos_vfs_module_spi\l__on_read" alt="" coords="224,43,373,85"/>
+<area shape="rect" id="node4" href="$spi_2spi_8h.html#ac672df98eac652a9d1925ba73229c475" title="zrtos_vfs_module_spi\l__on_write" alt="" coords="224,109,373,150"/>
+<area shape="rect" id="node5" href="$spi_2spi_8h.html#ad4f51bdbefa54f2e6fef1e313ac0f270" title="zrtos_vfs_module_spi\l__on_can_read" alt="" coords="224,174,373,215"/>
+<area shape="rect" id="node6" href="$spi_2spi_8h.html#ac230077948342ec1efa7a370551d09c6" title="zrtos_vfs_module_spi\l__on_can_write" alt="" coords="224,239,373,281"/>
+<area shape="rect" id="node7" href="$spi_2spi_8h.html#a9ac4a098eaca792cc002870c820c1a01" title="zrtos_vfs_module_spi\l__on_ioctl" alt="" coords="224,305,373,346"/>
+<area shape="rect" id="node8" href="$spi__sync_8h.html#a29c9d8a32af2717c5e9ed8e11d0800fa" title="zrtos_vfs_module_spi\l_sync__on_open" alt="" coords="224,370,373,411"/>
+<area shape="rect" id="node11" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title="zrtos_vfs_module_spi\l_sync__on_write_helper" alt="" coords="432,429,595,470"/>
+<area shape="rect" id="node12" href="$w5500__socket_8h.html#ad5ebfa57bf612747510f6ee4e34ab7a0" title="rtos_vfs_module_w5500\l_socket__on_read" alt="" coords="217,487,380,529"/>
+<area shape="rect" id="node13" href="$w5500__socket_8h.html#ad72fd59b1d4ff9fec448680d4d97a3fe" title="zrtos_vfs_module_w5500\l_socket__on_ioctl" alt="" coords="428,519,599,561"/>
+<area shape="rect" id="node9" href="$spi__sync_8h.html#a2e3a53c5cd6e19f7859fcf16506d44ec" title="zrtos_vfs_module_spi\l_sync__on_close" alt="" coords="439,311,588,353"/>
+<area shape="rect" id="node10" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title="zrtos_vfs_module_avr\l_spi_sync__on_write" alt="" coords="647,370,797,411"/>
+</map>

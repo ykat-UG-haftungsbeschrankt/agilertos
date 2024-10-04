@@ -1,19 +1,5 @@
 <map id="pthread_t" name="pthread_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="492,203,568,229"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__task__t.html" title=" " alt="" coords="377,104,477,131"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="453,140,519,200,515,204,450,143"/>
-<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="495,108,504,117,496,127,478,130,477,125,493,122,499,117,491,112"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__clist__node__t.html" title=" " alt="" coords="5,5,140,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="135,34,382,101,380,106,133,39"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="156,10,166,19,158,27,141,29,140,24,156,22,161,19,153,15"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="217,5,358,32"/>
-<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="320,39,410,101,407,106,317,43"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="382,5,473,32"/>
-<area shape="poly" id="edge6_Node000002_Node000005" title=" " alt="" coords="430,48,430,104,425,104,425,48"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="497,5,592,32"/>
-<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="519,44,444,106,441,101,516,40"/>
-<area shape="rect" id="Node000007" href="$struct__zrtos__vheap__chunk__uid__t.html" title=" " alt="" coords="571,96,710,139"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="607,151,546,204,542,200,604,147"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="616,5,676,32"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="647,48,644,96,639,95,642,48"/>
+<area shape="rect" id="node2" href="$struct__zrtos__task__t.html" title="_zrtos_task_t" alt="" coords="286,102,387,129"/>
+<area shape="rect" id="node6" href="$struct__zrtos__clist__node__t.html" title="_zrtos_clist_node_t" alt="" coords="407,5,541,32"/>
+<area shape="rect" id="node7" href="$struct__zrtos__vheap__chunk__uid__t.html" title="_zrtos_vheap_chunk\l_uid_t" alt="" coords="528,95,671,136"/>
 </map>

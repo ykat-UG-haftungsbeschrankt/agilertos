@@ -1,0 +1,6 @@
+<map id="zrtos_vfs_module_uart__on_ioctl" name="zrtos_vfs_module_uart__on_ioctl">
+<area shape="rect" id="node2" href="$uart0_8h.html#a1c08ba1c9bac4dd9a045d06a07dbe0b4" title="zrtos_vfs_module_avr\l_uart0__on_write" alt="" coords="208,5,359,47"/>
+<area shape="rect" id="node3" href="$uart1_8h.html#af04452122e72ab7408b2e207191cdd33" title="zrtos_vfs_module_avr\l_uart1__on_write" alt="" coords="208,71,359,112"/>
+<area shape="rect" id="node4" href="$uart2_8h.html#a244148efdde4e736bdcba74328e85415" title="zrtos_vfs_module_avr\l_uart2__on_write" alt="" coords="208,136,359,177"/>
+<area shape="rect" id="node5" href="$uart3_8h.html#a0ac21cf2483f89180a91b9ca480eb7b8" title="zrtos_vfs_module_avr\l_uart3__on_write" alt="" coords="208,201,359,243"/>
+</map>

@@ -1,5 +1,3 @@
 <map id="zrtos_list__each" name="zrtos_list__each">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,122,32"/>
-<area shape="rect" id="Node000002" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="170,5,339,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,16,154,16,154,21,122,21"/>
+<area shape="rect" id="node2" href="$list_8h.html#a5a9358f4b25c9376dbdef338fa8333a6" title="zrtos_list__get_first_node" alt="" coords="171,5,341,32"/>
 </map>

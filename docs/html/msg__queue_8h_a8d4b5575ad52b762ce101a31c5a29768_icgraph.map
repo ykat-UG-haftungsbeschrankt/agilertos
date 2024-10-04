@@ -1,9 +1,6 @@
 <map id="zrtos_msg_queue__start_write_transaction" name="zrtos_msg_queue__start_write_transaction">
-<area shape="rect" id="Node000001" title=" " alt="" coords="450,39,614,81"/>
-<area shape="rect" id="Node000002" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title=" " alt="" coords="228,5,402,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="434,48,402,43,403,37,435,42"/>
-<area shape="rect" id="Node000004" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title=" " alt="" coords="228,72,402,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="435,78,403,83,402,77,434,72"/>
-<area shape="rect" id="Node000003" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title=" " alt="" coords="5,5,180,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,29,180,29,180,24,212,24"/>
+<area shape="rect" id="node2" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title="zrtos_vfs_module_modbus\l_rtu__on_recv_timeout" alt="" coords="219,5,397,47"/>
+<area shape="rect" id="node4" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title="zrtos_vfs_module_modbus\l_rtu__on_write" alt="" coords="219,71,397,112"/>
+<area shape="rect" id="node3" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="445,5,624,47"/>
+<area shape="rect" id="node5" href="$rtu_8h.html#a08670f8758ac6130c738816d306eb923" title="zrtos_vfs_module_modbus\l_rtu__on_ioctl" alt="" coords="445,71,624,112"/>
 </map>

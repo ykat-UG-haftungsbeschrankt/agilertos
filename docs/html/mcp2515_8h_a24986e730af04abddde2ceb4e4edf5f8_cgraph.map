@@ -1,18 +1,9 @@
 <map id="zrtos_vfs_module_mcp2515__get_available_txb" name="zrtos_vfs_module_mcp2515__get_available_txb">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,37,187,80"/>
-<area shape="rect" id="Node000002" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="923,7,1086,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,34,234,23,421,7,607,3,775,5,908,11,907,16,775,11,607,8,421,13,235,28,175,39"/>
-<area shape="rect" id="Node000003" href="$mcp2515_8h.html#a5c332568587b05952fcb879ef276910f" title=" " alt="" coords="235,37,416,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,56,219,56,219,61,187,61"/>
-<area shape="rect" id="Node000004" href="$mcp2515_8h.html#a18c1133ba60ff7ea81147e0a76bb0d44" title=" " alt="" coords="235,104,416,147"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="172,78,236,97,234,102,171,83"/>
-<area shape="rect" id="Node000005" href="$mcp2515_8h.html#af0bd06ab9cb60e9f7a3b5d77ae76057d" title=" " alt="" coords="464,87,645,129"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="416,116,448,114,449,119,416,121"/>
-<area shape="rect" id="Node000006" href="$mcp2515_8h.html#a757cc129737831c901694878ce1acba1" title=" " alt="" coords="693,53,875,96"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="645,92,677,88,678,93,646,98"/>
-<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="872,50,933,35,934,40,873,55"/>
-<area shape="rect" id="Node000007" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title=" " alt="" coords="940,61,1069,88"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="875,72,925,72,925,77,875,77"/>
-<area shape="rect" id="Node000008" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title=" " alt="" coords="1134,61,1268,88"/>
-<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1069,72,1118,72,1118,77,1069,77"/>
+<area shape="rect" id="node2" href="$mcp2515_8h.html#a5c332568587b05952fcb879ef276910f" title="zrtos_vfs_module_mcp2515\l__get_txb" alt="" coords="239,5,424,47"/>
+<area shape="rect" id="node3" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="929,75,1093,102"/>
+<area shape="rect" id="node4" href="$mcp2515_8h.html#a18c1133ba60ff7ea81147e0a76bb0d44" title="zrtos_vfs_module_mcp2515\l__read_register" alt="" coords="239,123,424,164"/>
+<area shape="rect" id="node5" href="$mcp2515_8h.html#af0bd06ab9cb60e9f7a3b5d77ae76057d" title="zrtos_vfs_module_mcp2515\l__read_registers" alt="" coords="472,123,657,164"/>
+<area shape="rect" id="node6" href="$vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053" title="zrtos_vfs_fd__spi_transfer" alt="" coords="705,126,881,153"/>
+<area shape="rect" id="node7" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title="zrtos_vfs_fd__read" alt="" coords="945,126,1078,153"/>
+<area shape="rect" id="node8" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title="zrtos_vfs_file__read" alt="" coords="1141,126,1280,153"/>
 </map>

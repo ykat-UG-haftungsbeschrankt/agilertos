@@ -18,8 +18,8 @@ var rtu_8h =
     [ "zrtos_vfs_module_modbus_rtu__on_recv_timeout", "rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78", null ],
     [ "zrtos_vfs_module_modbus_rtu__on_send", "rtu_8h.html#ab23606290979709ef6fefa7c6970e64e", null ],
     [ "zrtos_vfs_module_modbus_rtu__on_write", "rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095", null ],
-    [ "zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_in", "rtu_8h.html#ae398f2ff60092f80921c9423bd5c2115", null ],
-    [ "zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_out", "rtu_8h.html#ac16fb6b32e87dd2719c618f9dedc926a", null ],
+    [ "zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_in", "rtu_8h.html#af54b3acae1488a43c1852e588d5004a1", null ],
+    [ "zrtos_vfs_module_modbus_rtu_inode__get_msg_queue_out", "rtu_8h.html#adaf0f8c1c572912d72e15ec3c63ea749", null ],
     [ "zrtos_vfs_module_modbus_rtu_inode__init", "rtu_8h.html#a2376d02a52d42eef634ef843afc499f3", null ],
     [ "ZRTOS_VFS_PLUGIN__INIT", "rtu_8h.html#ae4e683dd0b5859c3bd7f89f7b3baf970", null ]
 ];

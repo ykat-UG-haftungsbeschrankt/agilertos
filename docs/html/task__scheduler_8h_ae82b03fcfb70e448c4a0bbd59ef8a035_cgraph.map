@@ -1,18 +1,9 @@
 <map id="zrtos_task_scheduler__add_task" name="zrtos_task_scheduler__add_task">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,64,151,107"/>
-<area shape="rect" id="Node000002" href="$task__scheduler_8h.html#a6034c1a6c6888d05559bb9e2cfa7619b" title=" " alt="" coords="416,5,568,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,66,198,57,400,32,401,37,199,63,152,72"/>
-<area shape="rect" id="Node000004" href="$clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="216,72,339,99"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="151,83,200,83,200,88,151,88"/>
-<area shape="rect" id="Node000008" href="$task_8h.html#a34aca34833e1ab06a5e0d26fda080286" title=" " alt="" coords="199,123,356,149"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="152,101,208,116,207,121,150,106"/>
-<area shape="rect" id="Node000003" href="$clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="631,13,774,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="568,24,615,24,615,29,568,29"/>
-<area shape="rect" id="Node000005" href="$clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="404,72,580,99"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="339,83,388,83,388,88,339,88"/>
-<area shape="rect" id="Node000007" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title=" " alt="" coords="406,123,578,149"/>
-<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="338,97,418,116,417,121,337,102"/>
-<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="542,69,637,42,638,47,543,74"/>
-<area shape="rect" id="Node000006" href="$clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="628,64,777,107"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="581,83,613,83,613,88,581,88"/>
+<area shape="rect" id="node2" href="$task_8h.html#a34aca34833e1ab06a5e0d26fda080286" title="zrtos_task__set_parent" alt="" coords="200,5,359,32"/>
+<area shape="rect" id="node3" href="$task__scheduler_8h.html#ab70567884a5fe24345f654d1213b0699" title="_zrtos_task_scheduler\l__get_active_task" alt="" coords="419,45,572,86"/>
+<area shape="rect" id="node5" href="$clist_8h.html#a853d4178de18748d3bee28700929bda4" title="zrtos_clist__push" alt="" coords="217,111,341,137"/>
+<area shape="rect" id="node4" href="$clist_8h.html#afb7e643d242da19562a3584abcfca015" title="zrtos_clist__get_root" alt="" coords="635,52,778,79"/>
+<area shape="rect" id="node6" href="$clist_8h.html#ac963d632abfc835ef63877a4cfd401e6" title="zrtos_clist__get_last_node" alt="" coords="407,111,584,137"/>
+<area shape="rect" id="node8" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title="zrtos_clist_node__append" alt="" coords="409,161,582,188"/>
+<area shape="rect" id="node7" href="$clist_8h.html#adc7d3acc850be7934c1c38390033a93d" title="zrtos_clist_node__get\l_previous_node" alt="" coords="632,103,781,145"/>
 </map>

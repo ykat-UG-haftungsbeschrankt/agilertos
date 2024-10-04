@@ -1,9 +1,5 @@
 <map id="zrtos_cbuffer__peek" name="zrtos_cbuffer__peek">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,143,69"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#a2db82192303acfcb9c8328eb96f3ef8a" title=" " alt="" coords="210,5,341,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,43,194,36,195,41,144,49"/>
-<area shape="rect" id="Node000004" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="191,72,360,99"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="144,63,176,68,175,73,143,69"/>
-<area shape="rect" id="Node000003" href="$cbuffer_8h.html#aa70b33844c0b38a531615564dc35840e" title=" " alt="" coords="408,5,538,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="341,24,392,24,392,29,341,29"/>
+<area shape="rect" id="node2" href="$list_8h.html#a5a9358f4b25c9376dbdef338fa8333a6" title="zrtos_list__get_first_node" alt="" coords="193,5,364,32"/>
+<area shape="rect" id="node3" href="$cbuffer_8h.html#a2db82192303acfcb9c8328eb96f3ef8a" title="zrtos_cbuffer_node\l__peek" alt="" coords="212,57,345,98"/>
+<area shape="rect" id="node4" href="$cbuffer_8h.html#aa70b33844c0b38a531615564dc35840e" title="zrtos_cbuffer_node\l__is_empty" alt="" coords="412,57,545,98"/>
 </map>

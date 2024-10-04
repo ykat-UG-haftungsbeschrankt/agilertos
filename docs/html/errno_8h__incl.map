@@ -1,11 +1,4 @@
 <map id="errno.h" name="errno.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="100,5,161,32"/>
-<area shape="rect" id="Node000002" href="$error_8h.html" title=" " alt="" coords="85,80,176,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,33,133,64,128,64,128,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,69,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="116,109,67,147,63,143,112,105"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="93,155,168,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="133,107,133,139,128,139,128,107"/>
-<area shape="rect" id="Node000005" href="$assert_8h.html" title=" " alt="" coords="192,155,293,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="151,105,212,144,209,148,148,109"/>
+<area shape="rect" id="node2" href="$error_8h.html" title="zrtos/error.h" alt="" coords="85,80,177,107"/>
+<area shape="rect" id="node5" href="$assert_8h.html" title="zrtos/assert.h" alt="" coords="193,155,295,181"/>
 </map>

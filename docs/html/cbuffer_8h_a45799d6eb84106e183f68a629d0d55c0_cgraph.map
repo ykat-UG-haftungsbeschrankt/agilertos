@@ -1,13 +1,7 @@
 <map id="zrtos_cbuffer__get_length" name="zrtos_cbuffer__get_length">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,133,115"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#aefc6499f17723606801f954ac9c35be2" title=" " alt="" coords="182,5,310,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,69,172,52,174,57,128,74"/>
-<area shape="rect" id="Node000004" href="$cbuffer_8h.html#a640a4e58217d5c24d6e795f0fca19440" title=" " alt="" coords="181,72,311,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,91,165,91,165,96,133,96"/>
-<area shape="rect" id="Node000005" href="$cbuffer_8h.html#a8228f34a6acad5cce8802e61ec87c9ca" title=" " alt="" coords="181,139,311,181"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="128,113,174,130,172,135,126,118"/>
-<area shape="rect" id="Node000003" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="359,13,528,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,24,344,24,344,29,310,29"/>
-<area shape="rect" id="Node000006" href="$list_8h.html#a870446d2221a7ce60ce4b2d336f2a577" title=" " alt="" coords="373,139,514,181"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="312,157,357,157,357,163,312,163"/>
+<area shape="rect" id="node2" href="$cbuffer_8h.html#ae8c248c36fbad46279f2a84d60dba91d" title="zrtos_cbuffer__get\l_first_node" alt="" coords="185,5,316,47"/>
+<area shape="rect" id="node4" href="$cbuffer_8h.html#a640a4e58217d5c24d6e795f0fca19440" title="zrtos_cbuffer_node\l__get_length" alt="" coords="184,71,317,112"/>
+<area shape="rect" id="node5" href="$cbuffer_8h.html#ae358d265d5a1d44fa930473e3834bc4c" title="zrtos_cbuffer_node\l__get_next_node" alt="" coords="184,136,317,177"/>
+<area shape="rect" id="node3" href="$list_8h.html#a5a9358f4b25c9376dbdef338fa8333a6" title="zrtos_list__get_first_node" alt="" coords="365,13,536,39"/>
+<area shape="rect" id="node6" href="$list_8h.html#a454de0a8188c1b5a4ffeddd230b42c93" title="zrtos_list_node__get\l_next_node" alt="" coords="379,136,522,177"/>
 </map>

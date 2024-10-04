@@ -1,7 +1,4 @@
 <map id="zrtos_gpio__analog_write_va" name="zrtos_gpio__analog_write_va">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,139,69"/>
-<area shape="rect" id="Node000002" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="187,5,350,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,35,171,31,172,36,139,41"/>
-<area shape="rect" id="Node000003" href="$gpio_8h.html#a083c38af2b88ce14ef0ac8dd5aa766a4" title=" " alt="" coords="202,56,335,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,55,187,63,186,68,139,61"/>
+<area shape="rect" id="node2" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="188,5,352,32"/>
+<area shape="rect" id="node3" href="$gpio_8h.html#a083c38af2b88ce14ef0ac8dd5aa766a4" title="zrtos_gpio__analog\l_write" alt="" coords="203,57,337,98"/>
 </map>

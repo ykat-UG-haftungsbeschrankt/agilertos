@@ -1,15 +1,8 @@
 <map id="zrtos_bitfield__set" name="zrtos_bitfield__set">
-<area shape="rect" id="Node000001" title=" " alt="" coords="423,56,549,83"/>
-<area shape="rect" id="Node000002" href="$vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd" title=" " alt="" coords="228,5,366,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,54,349,35,350,30,419,49"/>
-<area shape="rect" id="Node000004" href="$vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990" title=" " alt="" coords="219,56,375,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="408,72,376,72,376,67,408,67"/>
-<area shape="rect" id="Node000006" href="$vfs__fd_8h.html#a4f1ec4e10e75a6a8a3c5f4f6fd555a13" title=" " alt="" coords="224,107,370,133"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="419,90,350,109,349,103,418,85"/>
-<area shape="rect" id="Node000003" href="$vfs__notify_8h.html#a9abba884c837a89754c83d36d6430778" title=" " alt="" coords="13,5,163,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="212,21,164,21,164,16,212,16"/>
-<area shape="rect" id="Node000005" href="$vfs__notify_8h.html#ac6652913171a56f9022b4dd9e00722d9" title=" " alt="" coords="5,56,171,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="203,72,171,72,171,67,203,67"/>
-<area shape="rect" id="Node000007" href="$vfs__notify_8h.html#a851d2ca069dbbc6fa68211665cda1e4a" title=" " alt="" coords="15,107,161,133"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="208,123,161,123,161,117,208,117"/>
+<area shape="rect" id="node2" href="$vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990" title="zrtos_vfs_fd_set__clear" alt="" coords="181,5,343,32"/>
+<area shape="rect" id="node4" href="$vfs__fd_8h.html#a4f1ec4e10e75a6a8a3c5f4f6fd555a13" title="zrtos_vfs_fd_set__set" alt="" coords="187,56,337,83"/>
+<area shape="rect" id="node6" href="$vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd" title="zrtos_vfs_fd__select" alt="" coords="191,107,333,133"/>
+<area shape="rect" id="node3" href="$vfs__notify_8h.html#ac6652913171a56f9022b4dd9e00722d9" title="zrtos_vfs_notify__remove" alt="" coords="391,5,563,32"/>
+<area shape="rect" id="node5" href="$vfs__notify_8h.html#a851d2ca069dbbc6fa68211665cda1e4a" title="zrtos_vfs_notify__add" alt="" coords="401,56,552,83"/>
+<area shape="rect" id="node7" href="$vfs__notify_8h.html#a9abba884c837a89754c83d36d6430778" title="zrtos_vfs_notify__start" alt="" coords="399,107,554,133"/>
 </map>

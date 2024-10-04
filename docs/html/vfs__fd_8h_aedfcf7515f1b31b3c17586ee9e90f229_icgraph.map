@@ -1,5 +1,3 @@
 <map id="zrtos_vfs_fd__close" name="zrtos_vfs_fd__close">
-<area shape="rect" id="Node000001" title=" " alt="" coords="228,13,362,40"/>
-<area shape="rect" id="Node000002" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title=" " alt="" coords="5,5,180,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,29,180,29,180,24,212,24"/>
+<area shape="rect" id="node2" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="192,5,371,47"/>
 </map>

@@ -1,5 +1,4 @@
 <map id="zrtos_vfs_module_arduino_gpio__on_mount" name="zrtos_vfs_module_arduino_gpio__on_mount">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,176,48"/>
-<area shape="rect" id="Node000002" href="$vfs__dentry_8h.html#a6d43dfafe958023b156ea7e768651123" title=" " alt="" coords="224,5,371,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,24,208,24,208,29,176,29"/>
+<area shape="rect" id="node2" href="$vfs__dentry_8h.html#a6d43dfafe958023b156ea7e768651123" title="zrtos_vfs_dentry__set\l_inode_data" alt="" coords="251,5,402,47"/>
+<area shape="rect" id="node3" href="$vfs_2module_2arduino_2gpio_8h.html#a1123006f962381ce94173c826a0b0f31" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="228,71,425,98"/>
 </map>

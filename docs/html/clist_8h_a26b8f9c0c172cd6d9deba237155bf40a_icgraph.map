@@ -1,17 +1,9 @@
 <map id="zrtos_clist_node__init" name="zrtos_clist_node__init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="548,93,696,120"/>
-<area shape="rect" id="Node000002" href="$task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6" title=" " alt="" coords="371,43,484,69"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="552,91,481,73,482,67,554,86"/>
-<area shape="rect" id="Node000006" href="$vfs__dentry_8h.html#a568a74f7d927fbb181bcbf96621ffd8c" title=" " alt="" coords="354,93,500,120"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="533,109,501,109,501,104,533,104"/>
-<area shape="rect" id="Node000007" href="$spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842" title=" " alt="" coords="355,144,500,187"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="562,127,501,146,500,141,560,122"/>
-<area shape="rect" id="Node000003" href="$task_8h.html#a6834fca580b85c21da7be34f815f5f50" title=" " alt="" coords="166,5,301,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="355,45,301,34,302,29,356,40"/>
-<area shape="rect" id="Node000005" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title=" " alt="" coords="161,56,306,99"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="355,67,307,72,306,67,355,61"/>
-<area shape="rect" id="Node000004" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="5,5,113,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="150,21,113,21,113,16,150,16"/>
-<area shape="rect" id="Node000008" href="$spi_2spi_8h.html#a233cf747fcbc04752c320e48e8101632" title=" " alt="" coords="161,144,306,187"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="339,168,306,168,306,163,339,163"/>
+<area shape="rect" id="node2" href="$spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842" title="zrtos_vfs_module_spi\l_file__init" alt="" coords="202,5,351,47"/>
+<area shape="rect" id="node4" href="$task_8h.html#a57b11c5affd2719f0abf5fa9bc8feaa6" title="zrtos_task__init" alt="" coords="219,71,334,98"/>
+<area shape="rect" id="node8" href="$vfs__dentry_8h.html#a568a74f7d927fbb181bcbf96621ffd8c" title="zrtos_vfs_dentry__init" alt="" coords="201,122,352,149"/>
+<area shape="rect" id="node3" href="$spi_2spi_8h.html#a21ab487a7fecc72c5c1de2068586548a" title="zrtos_vfs_module_spi\l_file__new" alt="" coords="400,5,549,47"/>
+<area shape="rect" id="node5" href="$task_8h.html#a6834fca580b85c21da7be34f815f5f50" title="zrtos_task__init_ex" alt="" coords="407,71,542,98"/>
+<area shape="rect" id="node7" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title="zrtos_task_scheduler\l__init" alt="" coords="401,123,548,164"/>
+<area shape="rect" id="node6" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title="pthread_create" alt="" coords="597,71,705,98"/>
 </map>

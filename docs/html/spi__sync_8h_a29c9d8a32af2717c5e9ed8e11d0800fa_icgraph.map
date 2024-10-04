@@ -1,5 +1,4 @@
 <map id="zrtos_vfs_module_spi_sync__on_open" name="zrtos_vfs_module_spi_sync__on_open">
-<area shape="rect" id="Node000001" title=" " alt="" coords="199,5,344,48"/>
-<area shape="rect" id="Node000002" href="$spi__sync_8h.html#a2e3a53c5cd6e19f7859fcf16506d44ec" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,29,151,29,151,24,183,24"/>
+<area shape="rect" id="node2" href="$spi__sync_8h.html#a2e3a53c5cd6e19f7859fcf16506d44ec" title="zrtos_vfs_module_spi\l_sync__on_close" alt="" coords="203,5,352,47"/>
+<area shape="rect" id="node3" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title="zrtos_vfs_module_avr\l_spi_sync__on_write" alt="" coords="400,35,551,76"/>
 </map>

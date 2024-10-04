@@ -7,5 +7,5 @@ var vm__function_8h =
     [ "zrtos_vm_function_t", "vm__function_8h.html#a1691e261dc570d6447e0a227b3541896", null ],
     [ "zrtos_vm_function__cmp", "vm__function_8h.html#a186820ec779e59081b10e3a45b708613", null ],
     [ "zrtos_vm_function__get_callback", "vm__function_8h.html#afa6afdd7c3796f4013f14fa2d2285ad5", null ],
-    [ "zrtos_vm_function__get_context", "vm__function_8h.html#af6021f86403b4b63f6cf07fcbf25dbcb", null ]
+    [ "zrtos_vm_function__get_context", "vm__function_8h.html#adbac779fba092962de2a3b44a71108d2", null ]
 ];

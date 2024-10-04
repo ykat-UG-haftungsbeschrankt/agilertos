@@ -1,0 +1,34 @@
+<map id="zrtos_malloc_limit__malloc" name="zrtos_malloc_limit__malloc">
+<area shape="rect" id="node2" href="$cbuffer_8h.html#a3cbe982fcebf0d5bbcdae29e3caca316" title="zrtos_cbuffer_node__new" alt="" coords="180,430,351,457"/>
+<area shape="rect" id="node3" href="$cbuffer_8h.html#a6a1ffb32acbece23be59f84aa29cf306" title="zrtos_cbuffer__init" alt="" coords="417,401,546,427"/>
+<area shape="rect" id="node7" href="$cbuffer_8h.html#a1846e554cfe5e72cc8df6b60ab5c6d84" title="zrtos_cbuffer_node__put" alt="" coords="399,455,564,482"/>
+<area shape="rect" id="node4" href="$spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842" title="zrtos_vfs_module_spi\l_file__init" alt="" coords="615,321,764,363"/>
+<area shape="rect" id="node6" href="$uart_2uart_8h.html#af8b2335443595fdc65e31aa7faa070a3" title="zrtos_vfs_module_uart\l_inode__init" alt="" coords="612,393,767,435"/>
+<area shape="rect" id="node5" href="$spi_2spi_8h.html#a21ab487a7fecc72c5c1de2068586548a" title="zrtos_vfs_module_spi\l_file__new" alt="" coords="831,292,981,333"/>
+<area shape="rect" id="node8" href="$cbuffer_8h.html#afdb6a6176387d77a0f10e28536ba28f9" title="zrtos_cbuffer__put" alt="" coords="624,473,755,499"/>
+<area shape="rect" id="node9" href="$cbuffer_8h.html#a5d269503e04946737598d2062c5bfaf4" title="zrtos_cbuffer__put_ex" alt="" coords="831,358,981,385"/>
+<area shape="rect" id="node28" href="$cbuffer_8h.html#a77458b7cd6238ed911ffdab0fe328e04" title="zrtos_cbuffer__pipe" alt="" coords="838,559,974,586"/>
+<area shape="rect" id="node32" href="$avr_2uart_2uart_8h.html#aea39870a896298195c0769800af5b3e2" title="zrtos_vfs_module_avr\l_uart__on_receive_interrupt" alt="" coords="815,491,997,532"/>
+<area shape="rect" id="node10" href="$msg__queue_8h.html#a9f24485c49e6b6ba13406e9a5d1f352d" title="zrtos_msg_queue__put\l_length" alt="" coords="1061,435,1219,476"/>
+<area shape="rect" id="node15" href="$msg__queue_8h.html#a14fb4faf04687986da3435e06db5d587" title="zrtos_msg_queue__put_data" alt="" coords="1045,383,1235,410"/>
+<area shape="rect" id="node16" href="$msg__queue_8h.html#ab51eb620b09145d1b05966404c9e0ca4" title="zrtos_msg_queue__put" alt="" coords="1061,215,1219,242"/>
+<area shape="rect" id="node17" href="$spi_2spi_8h.html#a7f9adeb6314d47b2442b0a17d1cc2f37" title="zrtos_vfs_module_spi\l__transfer_in" alt="" coords="1065,267,1215,308"/>
+<area shape="rect" id="node22" href="$spi_2spi_8h.html#ac672df98eac652a9d1925ba73229c475" title="zrtos_vfs_module_spi\l__on_write" alt="" coords="1524,329,1673,371"/>
+<area shape="rect" id="node23" href="$uart_2uart_8h.html#a9e735d9796aaa30e4a5fce9c763adf92" title="zrtos_vfs_module_uart\l__on_write" alt="" coords="1063,136,1217,177"/>
+<area shape="rect" id="node11" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title="zrtos_vfs_module_modbus\l_rtu__on_recv_timeout" alt="" coords="1283,552,1461,593"/>
+<area shape="rect" id="node13" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title="zrtos_vfs_module_modbus\l_rtu__on_write" alt="" coords="1283,416,1461,457"/>
+<area shape="rect" id="node12" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="1509,584,1688,625"/>
+<area shape="rect" id="node14" href="$rtu_8h.html#a08670f8758ac6130c738816d306eb923" title="zrtos_vfs_module_modbus\l_rtu__on_ioctl" alt="" coords="1509,416,1688,457"/>
+<area shape="rect" id="node18" href="$spi_2spi_8h.html#ab31c12597a3f2932aaf01466ffff59bb" title="zrtos_vfs_module_spi\l__transfer" alt="" coords="1297,267,1447,308"/>
+<area shape="rect" id="node19" href="$avr_2spi_2spi_8h.html#a3a0f3b324bd986778ccde00670dbabc9" title="zrtos_vfs_module_avr\l_spi__on_interrupt" alt="" coords="1523,264,1674,305"/>
+<area shape="rect" id="node20" href="$avr_2spi_2spi_8h.html#a0353f98d744b931e541684fe33b272f7" title="ISR" alt="" coords="1789,271,1834,298"/>
+<area shape="rect" id="node21" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="1736,325,1887,367"/>
+<area shape="rect" id="node24" href="$uart0_8h.html#a1c08ba1c9bac4dd9a045d06a07dbe0b4" title="zrtos_vfs_module_avr\l_uart0__on_write" alt="" coords="1297,136,1447,177"/>
+<area shape="rect" id="node25" href="$uart1_8h.html#af04452122e72ab7408b2e207191cdd33" title="zrtos_vfs_module_avr\l_uart1__on_write" alt="" coords="1297,201,1447,243"/>
+<area shape="rect" id="node26" href="$uart2_8h.html#a244148efdde4e736bdcba74328e85415" title="zrtos_vfs_module_avr\l_uart2__on_write" alt="" coords="1297,5,1447,47"/>
+<area shape="rect" id="node27" href="$uart3_8h.html#a0ac21cf2483f89180a91b9ca480eb7b8" title="zrtos_vfs_module_avr\l_uart3__on_write" alt="" coords="1297,71,1447,112"/>
+<area shape="rect" id="node29" href="$msg__queue_8h.html#a7b05ddf4bc60700bfe0b9d3a0f11664b" title="zrtos_msg_queue__put\l_cbuffer_data" alt="" coords="1061,552,1219,593"/>
+<area shape="rect" id="node30" href="$msg__queue_8h.html#a40db633a8c0ef5e3bba9cc700e45f7ef" title="zrtos_msg_queue__pipe\l_next_message_to_cbuffer" alt="" coords="1051,617,1229,659"/>
+<area shape="rect" id="node31" href="$rtu_8h.html#ab23606290979709ef6fefa7c6970e64e" title="zrtos_vfs_module_modbus\l_rtu__on_send" alt="" coords="1283,617,1461,659"/>
+<area shape="rect" id="node33" href="$uart0_8h.html#a69856cc389c8b76c8cf8c45ea5a33bc7" title="ISR" alt="" coords="1117,501,1163,527"/>
+</map>

@@ -1,7 +1,4 @@
 <map id="zrtos_vheap_chunk__is_type_eq" name="zrtos_vheap_chunk__is_type_eq">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,145,81"/>
-<area shape="rect" id="Node000002" href="$vheap__chunk_8h.html#a3978314ac8798dae3dcc70fd39f49ade" title=" " alt="" coords="205,5,345,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,46,190,38,191,43,146,51"/>
-<area shape="rect" id="Node000003" href="$vheap__chunk__type_8h.html#a258bcb11ffc79b5a7b55e1b46abe7717" title=" " alt="" coords="193,72,357,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="146,69,177,74,177,80,145,74"/>
+<area shape="rect" id="node2" href="$vheap__chunk__type_8h.html#a258bcb11ffc79b5a7b55e1b46abe7717" title="zrtos_vheap_chunk_type\l__is_eq" alt="" coords="196,5,363,47"/>
+<area shape="rect" id="node3" href="$vheap__chunk_8h.html#a9a30b9412445830746c70bba872306ed" title="zrtos_vheap_chunk_\l_get_type" alt="" coords="208,71,351,112"/>
 </map>

@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['id_0',['id',['../struct_____w_i_z_c_h_i_p.html#a3c25a464bd796e523b562b563d4a60e7',1,'__WIZCHIP::id'],['../structpthread__t.html#aa1157a456706161f09fcf811fbf6ad65',1,'pthread_t::id'],['../struct__zrtos__vm__function__t.html#a72d1871ed9bdfed97bbae69242fef051',1,'_zrtos_vm_function_t::id']]],
-  ['if_1',['IF',['../struct_____w_i_z_c_h_i_p.html#a291506b4dba5a525c3fb088809909dfe',1,'__WIZCHIP']]],
-  ['if_5fmode_2',['if_mode',['../struct_____w_i_z_c_h_i_p.html#a32fec318d5bfa58b3ebd8493959a1b31',1,'__WIZCHIP']]],
-  ['inode_3',['inode',['../struct__zrtos__vfs__dentry__t.html#a80d7319c9c4c91f0a38e8b5c75effff3',1,'_zrtos_vfs_dentry_t']]],
-  ['io_4',['io',['../structzrtos__vm__ioop__t.html#a7b732a006abc98168b7590ca979e7567',1,'zrtos_vm_ioop_t']]],
-  ['ioctl_5',['ioctl',['../structzrtos__vfs__plugin__t.html#a6b8edf7e02ddb8efa9d41875a432a9c8',1,'zrtos_vfs_plugin_t']]],
-  ['ip_6',['ip',['../structwiz___net_info__t.html#acf3c4fdbc1f0701b795c9962c66f6979',1,'wiz_NetInfo_t']]],
-  ['is_5finterrupted_7',['is_interrupted',['../struct__zrtos__vm__t.html#aa4814d2caf4462c96599db5d3d5f0d9b',1,'_zrtos_vm_t']]],
-  ['is_5flocked_8',['is_locked',['../struct__zrtos__task__mutex__t.html#a5ed5d37c291ecd611668c6eb7471170c',1,'_zrtos_task_mutex_t']]]
+  ['last',['last',['../struct__zrtos__list__t.html#aeb0710da79c6e5a4a70e7de1b04d0d95',1,'_zrtos_list_t::last()'],['../struct__zrtos__vfs__module__spi__inode__t.html#af496463bf725cb1c0367788e1ed6a849',1,'_zrtos_vfs_module_spi_inode_t::last()'],['../struct__zrtos__vheap__chunk__t.html#a13b47aff402e6f84a47042fd16f0ff27',1,'_zrtos_vheap_chunk_t::last()']]],
+  ['len',['len',['../struct__zrtos__str____vsnprintf__cb__args__t.html#afad63d6f731f92e95b299f922da3de07',1,'_zrtos_str__vsnprintf_cb_args_t::len()'],['../structzrtos__vfs__module__dns__answer__t.html#ad3678ed6ef82457f66b5c90c534a0e3d',1,'zrtos_vfs_module_dns_answer_t::len()']]],
+  ['length',['length',['../struct__zrtos__error__count__t.html#a4eca5534e00ac4adcd9f97914b61fd48',1,'_zrtos_error_count_t::length()'],['../struct__zrtos__malloc__heap__chunk__t.html#ac3007b647e2bc38796e98057a302ec4d',1,'_zrtos_malloc_heap_chunk_t::length()'],['../struct__zrtos__malloc__internal__t.html#ac50e8df4659548f59913b794151f71a9',1,'_zrtos_malloc_internal_t::length()'],['../struct__zrtos__malloc__limit__t.html#a4234cea8bd90351ea10695becd5b3a8e',1,'_zrtos_malloc_limit_t::length()'],['../struct__zrtos__msg__queue__header__t.html#a0065ab334151467d5f610f825d6f7b66',1,'_zrtos_msg_queue_header_t::length()'],['../struct__zrtos__stack__t.html#a81a7e4cb0eaf53a987a4a7f7de5cc965',1,'_zrtos_stack_t::length()'],['../struct__zrtos__string__t.html#a1941f10d03bc19b86d902f32b81d2bfd',1,'_zrtos_string_t::length()'],['../struct__zrtos__vheap__t.html#a500d7b8822da4d36961ca44f6cddfec9',1,'_zrtos_vheap_t::length()'],['../struct__zrtos__vheap__chunk__t.html#a059d263ed596d813a36be0b81cfd9468',1,'_zrtos_vheap_chunk_t::length()'],['../struct__zrtos__vm__function__index__t.html#a5ec8bfcfa7b2f8d48ca9d92dd94db7cc',1,'_zrtos_vm_function_index_t::length()']]]
 ];

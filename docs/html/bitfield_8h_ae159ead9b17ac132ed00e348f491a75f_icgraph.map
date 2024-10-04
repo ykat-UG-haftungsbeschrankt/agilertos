@@ -1,7 +1,4 @@
 <map id="zrtos_bitfield__find_first" name="zrtos_bitfield__find_first">
-<area shape="rect" id="Node000001" title=" " alt="" coords="182,39,310,81"/>
-<area shape="rect" id="Node000002" href="$bitfield_8h.html#a2eaa50d4017c09f5bb42a9c9d5857061" title=" " alt="" coords="5,5,134,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,48,134,41,135,36,167,42"/>
-<area shape="rect" id="Node000003" href="$bitfield_8h.html#a8af20acb2c9cd25ddfcb574505c48a4a" title=" " alt="" coords="5,72,134,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,78,135,84,134,79,166,72"/>
+<area shape="rect" id="node2" href="$bitfield_8h.html#a8af20acb2c9cd25ddfcb574505c48a4a" title="zrtos_bitfield__find\l_first_zero" alt="" coords="184,5,315,47"/>
+<area shape="rect" id="node3" href="$bitfield_8h.html#a2eaa50d4017c09f5bb42a9c9d5857061" title="zrtos_bitfield__find\l_first_set" alt="" coords="184,71,315,112"/>
 </map>

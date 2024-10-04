@@ -1,9 +1,5 @@
 <map id="zrtos_msg_queue__start_write_transaction" name="zrtos_msg_queue__start_write_transaction">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,170,48"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#aaf9c5c04a1350c2cdd906f7c7081ee38" title=" " alt="" coords="218,5,353,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,24,202,24,202,29,170,29"/>
-<area shape="rect" id="Node000003" href="$cbuffer_8h.html#a0866b42eeda6c649a07a451372bad55a" title=" " alt="" coords="401,5,528,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,24,385,24,385,29,353,29"/>
-<area shape="rect" id="Node000004" href="$list_8h.html#aa2f26b2b6fd722b708eb7e25cc264a90" title=" " alt="" coords="576,13,746,40"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,24,561,24,561,29,529,29"/>
+<area shape="rect" id="node2" href="$cbuffer_8h.html#aaf9c5c04a1350c2cdd906f7c7081ee38" title="zrtos_cbuffer__start\l_write_transaction" alt="" coords="219,5,357,47"/>
+<area shape="rect" id="node3" href="$cbuffer_8h.html#afe959077d3357696d26590a123e56d62" title="zrtos_cbuffer__get\l_last_node" alt="" coords="405,5,536,47"/>
+<area shape="rect" id="node4" href="$list_8h.html#a0f2fe7ff1e14a9237a955a4925b062e2" title="zrtos_list__get_last_node" alt="" coords="584,13,755,39"/>
 </map>

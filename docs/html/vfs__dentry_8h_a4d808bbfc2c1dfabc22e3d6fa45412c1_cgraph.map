@@ -1,11 +1,6 @@
 <map id="zrtos_vfs_dentry__each_child_filter_name_cb" name="zrtos_vfs_dentry__each_child_filter_name_cb">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,163,65"/>
-<area shape="rect" id="Node000002" href="$str_8h.html#a7e9860a6921e03fd013bbb20bf4a88b3" title=" " alt="" coords="211,31,322,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,41,195,41,195,47,163,47"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3" title=" " alt="" coords="370,5,495,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,33,354,28,355,33,323,38"/>
-<area shape="rect" id="Node000004" href="$str_8h.html#a0bbbf024b181a2c7d5ec9056efb84743" title=" " alt="" coords="381,56,484,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="323,50,366,57,365,62,322,55"/>
-<area shape="rect" id="Node000005" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title=" " alt="" coords="543,48,687,91"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="485,67,528,67,528,72,485,72"/>
+<area shape="rect" id="node2" href="$str_8h.html#a7e9860a6921e03fd013bbb20bf4a88b3" title="zrtos_str__cmp" alt="" coords="215,38,327,65"/>
+<area shape="rect" id="node3" href="$str_8h.html#a0bbbf024b181a2c7d5ec9056efb84743" title="zrtos_str__len" alt="" coords="386,13,490,39"/>
+<area shape="rect" id="node5" href="$mem_8h.html#abc92c0f931688ddf8da31714fff6a8d3" title="zrtos_mem__cmp" alt="" coords="375,63,501,90"/>
+<area shape="rect" id="node4" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title="zrtos_types__ptr_get\l_byte_distance" alt="" coords="549,5,693,47"/>
 </map>

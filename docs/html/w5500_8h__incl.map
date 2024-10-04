@@ -1,10 +1,18 @@
 <map id="w5500.h" name="w5500.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,118,32"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,155,70,181"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,33,65,81,48,141,43,139,60,79,76,32"/>
-<area shape="rect" id="Node000003" href="$wizchip__conf_8h.html" title="WIZCHIP Config Header File." alt="" coords="75,80,181,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="93,31,114,65,110,68,88,34"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="114,109,66,147,63,143,111,105"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="94,155,208,181"/>
-<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="135,106,145,139,140,141,130,108"/>
+<area shape="rect" id="node2" href="$vfs__module_8h.html" title="zrtos/vfs_module.h" alt="" coords="509,87,642,114"/>
+<area shape="rect" id="node22" href="$network_8h.html" title="zrtos/vfs/module/network\l/network.h" alt="" coords="5,169,175,211"/>
+<area shape="rect" id="node23" href="$lib_2w5500_8h.html" title="zrtos/vfs/module/w5500\l/lib/w5500.h" alt="" coords="667,80,828,121"/>
+<area shape="rect" id="node3" href="$error_8h.html" title="zrtos/error.h" alt="" coords="865,497,957,524"/>
+<area shape="rect" id="node7" href="$types_8h.html" title="zrtos/types.h" alt="" coords="573,497,671,524"/>
+<area shape="rect" id="node11" href="$cast_8h.html" title="zrtos/cast.h" alt="" coords="363,572,454,599"/>
+<area shape="rect" id="node12" href="$vfs__plugin_8h.html" title="zrtos/vfs_plugin.h" alt="" coords="845,423,970,449"/>
+<area shape="rect" id="node14" href="$vfs__file_8h.html" title="zrtos/vfs_file.h" alt="" coords="613,177,721,203"/>
+<area shape="rect" id="node17" href="$vfs__dentry_8h.html" title="zrtos/vfs_dentry.h" alt="" coords="604,259,731,285"/>
+<area shape="rect" id="node6" href="$assert_8h.html" title="zrtos/assert.h" alt="" coords="963,572,1065,599"/>
+<area shape="rect" id="node15" href="$bitfield_8h.html" title="zrtos/bitfield.h" alt="" coords="343,341,447,367"/>
+<area shape="rect" id="node16" href="$mem_8h.html" title="zrtos/mem.h" alt="" coords="352,423,447,449"/>
+<area shape="rect" id="node18" href="$str_8h.html" title="zrtos/str.h" alt="" coords="523,341,604,367"/>
+<area shape="rect" id="node19" href="$clist_8h.html" title="zrtos/clist.h" alt="" coords="623,423,714,449"/>
+<area shape="rect" id="node20" href="$vfs__inode_8h.html" title="zrtos/vfs_inode.h" alt="" coords="898,341,1021,367"/>
+<area shape="rect" id="node21" href="$null_8h.html" title="zrtos/vfs/module/null\l/null.h" alt="" coords="731,333,873,375"/>
 </map>

@@ -1,9 +1,5 @@
 <map id="zrtos_stack__shift" name="zrtos_stack__shift">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,133,65"/>
-<area shape="rect" id="Node000002" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="193,13,315,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,41,177,34,178,40,133,46"/>
-<area shape="rect" id="Node000004" href="$types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="181,64,327,91"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,58,165,63,165,68,133,63"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="375,5,529,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="315,24,359,24,359,29,315,29"/>
+<area shape="rect" id="node2" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title="zrtos_mem__cpy" alt="" coords="195,13,317,39"/>
+<area shape="rect" id="node4" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="183,63,329,90"/>
+<area shape="rect" id="node3" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title="zrtos_mem__move_left\l_overlapping" alt="" coords="377,5,536,47"/>
 </map>

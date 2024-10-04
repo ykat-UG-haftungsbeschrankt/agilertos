@@ -1,5 +1,3 @@
 <map id="zrtos_board_arduino__on_ovf" name="zrtos_board_arduino__on_ovf">
-<area shape="rect" id="Node000001" title=" " alt="" coords="96,5,234,48"/>
-<area shape="rect" id="Node000002" href="$arduino_8h.html#ab8c3e5f10628a4889944004c7791729c" title=" " alt="" coords="5,13,48,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,29,48,29,48,24,80,24"/>
+<area shape="rect" id="node2" href="$arduino_8h.html#ab8c3e5f10628a4889944004c7791729c" title="ISR" alt="" coords="192,13,237,39"/>
 </map>

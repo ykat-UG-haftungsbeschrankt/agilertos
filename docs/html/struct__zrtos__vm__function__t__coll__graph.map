@@ -1,19 +1,5 @@
 <map id="_zrtos_vm_function_t" name="_zrtos_vm_function_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="137,112,280,139"/>
-<area shape="rect" id="Node000006" href="$struct__zrtos__vm__function__index__t.html" title=" " alt="" coords="256,203,388,245"/>
-<area shape="poly" id="edge7_Node000006_Node000001" title=" " alt="" coords="236,147,299,200,296,204,233,151"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="232,5,299,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,48,239,89,221,113,217,110,234,87,254,45"/>
-<area shape="rect" id="Node000004" href="$struct__zrtos__stack__t.html" title=" " alt="" coords="5,112,113,139"/>
-<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="220,41,194,58,182,74,169,90,142,105,114,115,112,110,140,100,165,86,178,71,190,54,217,37"/>
-<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="276,46,295,111,319,202,314,203,290,113,271,47"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__vm__t.html" title=" " alt="" coords="204,309,295,336"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,300,204,275,188,246,184,216,186,186,200,138,205,140,191,187,189,216,194,244,208,273,227,296"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="73,151,97,197,133,243,179,280,224,307,222,311,176,285,129,247,93,200,68,154"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="64,5,116,32"/>
-<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="99,46,108,67,122,86,140,99,160,109,158,114,137,104,118,90,103,70,94,48"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="69,45,63,57,58,86,60,111,54,112,53,85,58,55,65,43"/>
-<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="299,259,261,311,257,307,295,256"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="412,211,458,237"/>
-<area shape="poly" id="edge9_Node000003_Node000007" title=" " alt="" coords="409,249,350,288,292,311,290,306,347,283,406,245"/>
+<area shape="rect" id="node6" href="$struct__zrtos__vm__function__index__t.html" title="_zrtos_vm_function\l_index_t" alt="" coords="257,199,393,240"/>
+<area shape="rect" id="node5" href="$struct__zrtos__stack__t.html" title="_zrtos_stack_t" alt="" coords="5,109,113,136"/>
+<area shape="rect" id="node4" href="$struct__zrtos__vm__t.html" title="_zrtos_vm_t" alt="" coords="204,303,299,329"/>
 </map>

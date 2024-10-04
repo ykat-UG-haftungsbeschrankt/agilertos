@@ -1,19 +1,4 @@
 var searchData=
 [
-  ['_5fw5500_5fio_5fbase_5f_0',['_W5500_IO_BASE_',['../w5500_8h.html#af89b081530cae025a4c85cf9e39e110c',1,'w5500.h']]],
-  ['_5fw5500_5fspi_5fread_5f_1',['_W5500_SPI_READ_',['../w5500_8h.html#a8ba30fe1dc1592d80e9cc0af1870e8a3',1,'w5500.h']]],
-  ['_5fw5500_5fspi_5fwrite_5f_2',['_W5500_SPI_WRITE_',['../w5500_8h.html#a67797240dfc3f66cabc0e242dc13888b',1,'w5500.h']]],
-  ['_5fwizchip_5f_3',['_WIZCHIP_',['../wizchip__conf_8h.html#a716142232d6577dcb49c4a3f27c89fdd',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fid_5f_4',['_WIZCHIP_ID_',['../wizchip__conf_8h.html#a205bfecb2fd9a65b896384de0e957e4b',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fbase_5f_5',['_WIZCHIP_IO_BASE_',['../wizchip__conf_8h.html#a96368b8e55bcca9d9b15b8b695331443',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5f_6',['_WIZCHIP_IO_MODE_',['../wizchip__conf_8h.html#a564c20a8415e89b641b600bf4542e94c',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fbus_5f_7',['_WIZCHIP_IO_MODE_BUS_',['../wizchip__conf_8h.html#ab278798369281104991526236f5e1a40',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fbus_5fdir_5f_8',['_WIZCHIP_IO_MODE_BUS_DIR_',['../wizchip__conf_8h.html#a640a909820498d82446aa1dc7f4307eb',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fbus_5findir_5f_9',['_WIZCHIP_IO_MODE_BUS_INDIR_',['../wizchip__conf_8h.html#a1acac79a10d2550d4387bd9506f8843f',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fnone_5f_10',['_WIZCHIP_IO_MODE_NONE_',['../wizchip__conf_8h.html#a92092941e58af1e46aeca604a1d52017',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fspi_5f_11',['_WIZCHIP_IO_MODE_SPI_',['../wizchip__conf_8h.html#a6179151fb8739a740799328f4f2beaa8',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fspi_5f5500_5f_12',['_WIZCHIP_IO_MODE_SPI_5500_',['../wizchip__conf_8h.html#a17115ffd1c3e538674d8875698216a7a',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fspi_5ffdm_5f_13',['_WIZCHIP_IO_MODE_SPI_FDM_',['../wizchip__conf_8h.html#a85505e996758563e203995e79522b035',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fio_5fmode_5fspi_5fvdm_5f_14',['_WIZCHIP_IO_MODE_SPI_VDM_',['../wizchip__conf_8h.html#a87fae122f24f057f386f1e12b9a91eab',1,'wizchip_conf.h']]],
-  ['_5fwizchip_5fsock_5fnum_5f_15',['_WIZCHIP_SOCK_NUM_',['../wizchip__conf_8h.html#a70a4c5d01d3afb9fab3b6070ac27c857',1,'wizchip_conf.h']]]
+  ['authoritative_5fflag',['AUTHORITATIVE_FLAG',['../dns_8h.html#ad60c90e2d869d4aac4121e0fd0be4b2e',1,'dns.h']]]
 ];

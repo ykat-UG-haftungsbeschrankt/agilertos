@@ -1,0 +1,12 @@
+<map id="zrtos_vfs_dentry__get_inode_data" name="zrtos_vfs_dentry__get_inode_data">
+<area shape="rect" id="node2" href="$avr_2spi_2spi_8h.html#ae1429a164723e9eff5e3f28991322267" title="zrtos_vfs_module_avr\l_spi__on_mount" alt="" coords="204,5,355,47"/>
+<area shape="rect" id="node4" href="$uart0_8h.html#a6d4b2d66f34cb9716c8ff3364349555e" title="zrtos_vfs_module_avr\l_uart0__on_mount" alt="" coords="204,71,355,112"/>
+<area shape="rect" id="node6" href="$uart1_8h.html#afa55913686cef53e9c0299b65cb3afd0" title="zrtos_vfs_module_avr\l_uart1__on_mount" alt="" coords="204,136,355,177"/>
+<area shape="rect" id="node8" href="$uart2_8h.html#a38a5cf860eb80ff299465dace7624a9a" title="zrtos_vfs_module_avr\l_uart2__on_mount" alt="" coords="204,201,355,243"/>
+<area shape="rect" id="node10" href="$uart3_8h.html#a4e9ea3b1efdb9c3d1a6c2e4be4f8823c" title="zrtos_vfs_module_avr\l_uart3__on_mount" alt="" coords="204,267,355,308"/>
+<area shape="rect" id="node3" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="403,5,553,47"/>
+<area shape="rect" id="node5" href="$uart0_8h.html#a1c08ba1c9bac4dd9a045d06a07dbe0b4" title="zrtos_vfs_module_avr\l_uart0__on_write" alt="" coords="403,71,553,112"/>
+<area shape="rect" id="node7" href="$uart1_8h.html#af04452122e72ab7408b2e207191cdd33" title="zrtos_vfs_module_avr\l_uart1__on_write" alt="" coords="403,136,553,177"/>
+<area shape="rect" id="node9" href="$uart2_8h.html#a244148efdde4e736bdcba74328e85415" title="zrtos_vfs_module_avr\l_uart2__on_write" alt="" coords="403,201,553,243"/>
+<area shape="rect" id="node11" href="$uart3_8h.html#a0ac21cf2483f89180a91b9ca480eb7b8" title="zrtos_vfs_module_avr\l_uart3__on_write" alt="" coords="403,267,553,308"/>
+</map>

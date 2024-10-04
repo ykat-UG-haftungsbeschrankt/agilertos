@@ -1,5 +1,3 @@
 <map id="zrtos_gpio__set_high" name="zrtos_gpio__set_high">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,150,40"/>
-<area shape="rect" id="Node000002" href="$gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414" title=" " alt="" coords="198,5,327,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,24,182,24,182,29,150,29"/>
+<area shape="rect" id="node2" href="$gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414" title="zrtos_gpio__digital\l_write" alt="" coords="199,5,329,47"/>
 </map>

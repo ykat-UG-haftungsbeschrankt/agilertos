@@ -1,0 +1,5 @@
+<map id="zrtos_clist__shift" name="zrtos_clist__shift">
+<area shape="rect" id="node2" href="$clist_8h.html#a22e07bfa2fa52e989a4239f4d359df4a" title="zrtos_clist__get_first_node" alt="" coords="175,5,353,32"/>
+<area shape="rect" id="node3" href="$clist_8h.html#a383b927f3eeb7f78f5ae9929138a635f" title="zrtos_clist__delete" alt="" coords="199,56,329,83"/>
+<area shape="rect" id="node4" href="$clist_8h.html#adc7d3acc850be7934c1c38390033a93d" title="zrtos_clist_node__get\l_previous_node" alt="" coords="401,49,551,90"/>
+</map>

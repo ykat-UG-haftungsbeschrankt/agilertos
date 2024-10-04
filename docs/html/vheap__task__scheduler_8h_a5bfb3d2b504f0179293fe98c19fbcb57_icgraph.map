@@ -1,0 +1,11 @@
+<map id="_zrtos_vheap_task_scheduler__get_active_task" name="_zrtos_vheap_task_scheduler__get_active_task">
+<area shape="rect" id="node2" href="$vheap__task__scheduler_8h.html#aff9fd65d1ee753d63d6749a7d18ccb05" title="zrtos_vheap_task_scheduler\l__page_task_out" alt="" coords="248,64,436,105"/>
+<area shape="rect" id="node6" href="$vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title="zrtos_vheap_task_scheduler\l__delay_ms" alt="" coords="1212,5,1400,47"/>
+<area shape="rect" id="node9" href="$vheap__task__scheduler_8h.html#ac3ceec0a4016b00c1670ddce858c6bac" title="zrtos_vheap_task_scheduler\l__page_task_in" alt="" coords="248,129,436,171"/>
+<area shape="rect" id="node3" href="$vheap__task__scheduler_8h.html#af69e917ca8bd27891eb335dda8289faf" title="_zrtos_vheap_task_scheduler\l__set_active_task" alt="" coords="484,64,679,105"/>
+<area shape="rect" id="node4" href="$vheap__task__scheduler_8h.html#a1a1be02692a671c368f4e2335179a042" title="_zrtos_vheap_task_scheduler\l__switch_task" alt="" coords="727,64,921,105"/>
+<area shape="rect" id="node5" href="$vheap__task__scheduler_8h.html#acd810187c2b0b8d63548170c9da4b73d" title="_zrtos_vheap_task_scheduler\l__on_tick" alt="" coords="969,64,1164,105"/>
+<area shape="rect" id="node8" href="$vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title="zrtos_vheap_task_scheduler\l__trampoline_cb" alt="" coords="1212,71,1400,112"/>
+<area shape="rect" id="node7" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="1448,13,1540,39"/>
+<area shape="rect" id="node10" href="$vheap__task__scheduler_8h.html#add5545a77a9d66f232fa03da168ca02f" title="zrtos_vheap_task_scheduler\l__start" alt="" coords="487,129,675,171"/>
+</map>

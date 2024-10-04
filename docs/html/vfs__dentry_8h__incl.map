@@ -1,45 +1,12 @@
 <map id="vfs_dentry.h" name="vfs_dentry.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="279,5,370,32"/>
-<area shape="rect" id="Node000002" href="$str_8h.html" title=" " alt="" coords="450,88,530,115"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="351,30,452,79,449,83,349,35"/>
-<area shape="rect" id="Node000004" href="$types_8h.html" title=" " alt="" coords="359,245,456,272"/>
-<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="326,32,329,105,337,151,352,196,365,216,381,233,377,237,361,219,347,199,331,152,323,105,321,32"/>
-<area shape="rect" id="Node000012" href="$clist_8h.html" title=" " alt="" coords="363,171,452,197"/>
-<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="333,31,396,156,392,158,328,33"/>
-<area shape="rect" id="Node000013" href="$vfs__inode_8h.html" title=" " alt="" coords="5,88,124,115"/>
-<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="285,35,121,86,119,80,283,30"/>
-<area shape="rect" id="Node000017" href="$null_8h.html" title=" " alt="" coords="148,80,288,123"/>
-<area shape="poly" id="edge25_Node000001_Node000017" title=" " alt="" coords="309,35,259,72,256,68,306,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="240,245,308,272"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,118,405,140,351,173,319,203,293,234,289,231,315,199,348,169,402,136,454,113"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="491,116,484,154,467,199,453,219,436,236,432,233,448,216,462,196,479,152,486,115"/>
-<area shape="rect" id="Node000010" href="$cast_8h.html" title=" " alt="" coords="599,320,690,347"/>
-<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="531,108,586,129,613,146,635,169,650,203,656,240,656,275,653,305,647,305,651,275,651,240,645,205,630,172,610,150,584,133,529,113"/>
-<area shape="rect" id="Node000011" href="$mem_8h.html" title=" " alt="" coords="527,171,621,197"/>
-<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="505,113,552,158,549,162,501,117"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="133,320,207,347"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="367,275,223,319,221,314,365,270"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="508,320,576,347"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="432,270,506,310,503,315,429,275"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="319,320,383,347"/>
-<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="400,274,372,309,368,306,395,271"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="232,320,295,347"/>
-<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="383,275,303,315,301,310,381,270"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="407,320,485,347"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="416,271,434,305,430,308,412,274"/>
-<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="449,270,589,312,588,318,448,275"/>
-<area shape="poly" id="edge12_Node000011_Node000004" title=" " alt="" coords="546,200,451,241,449,236,544,195"/>
-<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="582,197,634,305,629,307,577,199"/>
-<area shape="poly" id="edge16_Node000012_Node000004" title=" " alt="" coords="410,198,410,230,405,230,405,198"/>
-<area shape="rect" id="Node000014" href="$vfs__plugin_8h.html" title=" " alt="" coords="115,171,236,197"/>
-<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="83,113,147,159,144,163,80,117"/>
-<area shape="poly" id="edge19_Node000014_Node000003" title=" " alt="" coords="194,196,246,234,243,238,191,200"/>
-<area shape="poly" id="edge20_Node000014_Node000004" title=" " alt="" coords="216,195,353,238,351,243,215,200"/>
-<area shape="rect" id="Node000015" href="$error_8h.html" title=" " alt="" coords="124,245,216,272"/>
-<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="177,198,175,230,169,229,172,198"/>
-<area shape="poly" id="edge23_Node000015_Node000005" title=" " alt="" coords="173,273,173,304,167,304,167,273"/>
-<area shape="poly" id="edge22_Node000015_Node000008" title=" " alt="" coords="188,270,237,308,234,313,184,275"/>
-<area shape="rect" id="Node000016" href="$assert_8h.html" title=" " alt="" coords="7,320,109,347"/>
-<area shape="poly" id="edge24_Node000015_Node000016" title=" " alt="" coords="152,275,92,314,89,309,149,270"/>
-<area shape="poly" id="edge26_Node000017_Node000014" title=" " alt="" coords="209,125,191,158,187,155,204,122"/>
+<area shape="rect" id="node2" href="$str_8h.html" title="zrtos/str.h" alt="" coords="458,87,539,114"/>
+<area shape="rect" id="node4" href="$types_8h.html" title="zrtos/types.h" alt="" coords="367,244,465,271"/>
+<area shape="rect" id="node12" href="$clist_8h.html" title="zrtos/clist.h" alt="" coords="371,169,461,196"/>
+<area shape="rect" id="node13" href="$vfs__inode_8h.html" title="zrtos/vfs_inode.h" alt="" coords="5,87,128,114"/>
+<area shape="rect" id="node17" href="$null_8h.html" title="zrtos/vfs/module/null\l/null.h" alt="" coords="153,80,295,121"/>
+<area shape="rect" id="node10" href="$cast_8h.html" title="zrtos/cast.h" alt="" coords="613,319,704,345"/>
+<area shape="rect" id="node11" href="$mem_8h.html" title="zrtos/mem.h" alt="" coords="537,169,631,196"/>
+<area shape="rect" id="node14" href="$vfs__plugin_8h.html" title="zrtos/vfs_plugin.h" alt="" coords="120,169,245,196"/>
+<area shape="rect" id="node15" href="$error_8h.html" title="zrtos/error.h" alt="" coords="131,244,223,271"/>
+<area shape="rect" id="node16" href="$assert_8h.html" title="zrtos/assert.h" alt="" coords="13,319,115,345"/>
 </map>

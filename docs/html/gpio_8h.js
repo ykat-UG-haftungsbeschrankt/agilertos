@@ -15,9 +15,9 @@ var gpio_8h =
       [ "ZRTOS_GPIO_MODE__OUTPUT", "gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa5283d3f9ff75a765f4b744d5006196f2", null ],
       [ "ZRTOS_GPIO_MODE__PULLUP", "gpio_8h.html#afe46bfe1c3bbe9d8efdc502eda39b89fa149e67e61c23990647e9c14333169b63", null ]
     ] ],
+    [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a12c06fcda8eb3bdfde93aabd3b9e6290", null ],
     [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a724ff13a36342baaadc0bd9a592a42d3", null ],
     [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a5fb50802cf0eeb3c75a369c812e96b23", null ],
-    [ "ZRTOS_ASSERT__STATIC", "gpio_8h.html#a12c06fcda8eb3bdfde93aabd3b9e6290", null ],
     [ "zrtos_gpio__analog_read", "gpio_8h.html#a9acc1b32d920b82eabb137dc36f92f46", null ],
     [ "zrtos_gpio__analog_read_ex", "gpio_8h.html#a91eb5a276c776b3831d8045a119adb49", null ],
     [ "zrtos_gpio__analog_read_va", "gpio_8h.html#acdcdd31be74dcb564f43d4fc612ce21a", null ],

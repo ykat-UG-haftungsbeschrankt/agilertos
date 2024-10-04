@@ -1,7 +1,4 @@
 <map id="zrtos_task__set_done" name="zrtos_task__set_done">
-<area shape="rect" id="Node000001" title=" " alt="" coords="341,13,490,40"/>
-<area shape="rect" id="Node000002" href="$task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title=" " alt="" coords="161,5,293,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="326,29,293,29,293,24,326,24"/>
-<area shape="rect" id="Node000003" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="5,13,113,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,29,113,29,113,24,145,24"/>
+<area shape="rect" id="node2" href="$task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title="zrtos_task_pthread\l__trampoline_cb" alt="" coords="204,5,337,47"/>
+<area shape="rect" id="node3" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title="pthread_create" alt="" coords="385,13,493,39"/>
 </map>

@@ -1,20 +1,10 @@
 <map id="zrtos_cbuffer_node__put" name="zrtos_cbuffer_node__put">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,51,168,77"/>
-<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="51,52,44,42,48,32,63,26,87,24,112,27,125,33,123,38,110,32,86,29,64,31,52,36,49,41,55,49"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#a0f069b28d310b9b6586aeb37ec2fb1f3" title=" " alt="" coords="234,9,365,52"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,49,218,41,219,46,168,54"/>
-<area shape="rect" id="Node000004" href="$cbuffer_8h.html#a1749e471b67565254c5dc85e0cb728a1" title=" " alt="" coords="216,80,383,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,73,200,77,200,82,168,78"/>
-<area shape="rect" id="Node000003" href="$cbuffer_8h.html#a640a4e58217d5c24d6e795f0fca19440" title=" " alt="" coords="431,5,561,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="365,27,415,26,416,31,365,32"/>
-<area shape="rect" id="Node000005" href="$cbuffer_8h.html#aeb332726de06c905eb2db32ae3d323eb" title=" " alt="" coords="431,72,561,115"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="384,91,415,91,415,96,384,96"/>
-<area shape="rect" id="Node000009" href="$malloc__limit_8h.html#a219ea8916b582afe8c2120d09abf8656" title=" " alt="" coords="433,139,559,181"/>
-<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="342,105,419,131,417,136,341,110"/>
-<area shape="rect" id="Node000006" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title=" " alt="" coords="621,55,738,81"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="561,82,605,75,606,81,562,87"/>
-<area shape="rect" id="Node000008" href="$list_8h.html#a40feeb4cd0cc4e30201a279240b52429" title=" " alt="" coords="609,105,750,132"/>
-<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="562,100,595,104,594,110,561,105"/>
-<area shape="rect" id="Node000007" href="$list_8h.html#aa2f26b2b6fd722b708eb7e25cc264a90" title=" " alt="" coords="798,55,967,81"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="738,65,782,65,782,71,738,71"/>
+<area shape="rect" id="node2" href="$cbuffer_8h.html#a0f069b28d310b9b6586aeb37ec2fb1f3" title="zrtos_cbuffer_node\l__get_free_space" alt="" coords="237,9,371,51"/>
+<area shape="rect" id="node4" href="$cbuffer_8h.html#a3cbe982fcebf0d5bbcdae29e3caca316" title="zrtos_cbuffer_node__new" alt="" coords="219,78,389,105"/>
+<area shape="rect" id="node3" href="$cbuffer_8h.html#a640a4e58217d5c24d6e795f0fca19440" title="zrtos_cbuffer_node\l__get_length" alt="" coords="437,5,571,47"/>
+<area shape="rect" id="node5" href="$malloc__limit_8h.html#ad8180a24feb846d598a7a5a6053eb3cc" title="zrtos_malloc_limit\l__malloc" alt="" coords="441,71,567,112"/>
+<area shape="rect" id="node6" href="$cbuffer_8h.html#aeb332726de06c905eb2db32ae3d323eb" title="zrtos_cbuffer_node\l__init" alt="" coords="437,136,571,177"/>
+<area shape="rect" id="node7" href="$list_8h.html#a40feeb4cd0cc4e30201a279240b52429" title="zrtos_list_node__init" alt="" coords="619,118,760,145"/>
+<area shape="rect" id="node8" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title="zrtos_list__push" alt="" coords="631,169,748,195"/>
+<area shape="rect" id="node9" href="$list_8h.html#a0f2fe7ff1e14a9237a955a4925b062e2" title="zrtos_list__get_last_node" alt="" coords="808,169,979,195"/>
 </map>

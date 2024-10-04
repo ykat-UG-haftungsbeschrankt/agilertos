@@ -1,11 +1,6 @@
 <map id="zrtos_clist__push" name="zrtos_clist__push">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,60,129,87"/>
-<area shape="rect" id="Node000002" href="$clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="177,35,353,61"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,63,161,59,162,64,129,68"/>
-<area shape="rect" id="Node000005" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title=" " alt="" coords="179,85,351,112"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="129,79,163,83,163,88,129,84"/>
-<area shape="rect" id="Node000003" href="$clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="404,5,546,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,33,388,28,389,33,354,38"/>
-<area shape="rect" id="Node000004" href="$clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="401,56,549,99"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="354,58,386,62,386,68,353,63"/>
+<area shape="rect" id="node2" href="$clist_8h.html#ac963d632abfc835ef63877a4cfd401e6" title="zrtos_clist__get_last_node" alt="" coords="177,35,355,61"/>
+<area shape="rect" id="node5" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title="zrtos_clist_node__append" alt="" coords="179,85,353,112"/>
+<area shape="rect" id="node3" href="$clist_8h.html#afb7e643d242da19562a3584abcfca015" title="zrtos_clist__get_root" alt="" coords="406,5,549,32"/>
+<area shape="rect" id="node4" href="$clist_8h.html#adc7d3acc850be7934c1c38390033a93d" title="zrtos_clist_node__get\l_previous_node" alt="" coords="403,57,552,98"/>
 </map>

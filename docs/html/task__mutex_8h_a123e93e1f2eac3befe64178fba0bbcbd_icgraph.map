@@ -1,9 +1,5 @@
 <map id="zrtos_task_mutex__lock" name="zrtos_task_mutex__lock">
-<area shape="rect" id="Node000001" title=" " alt="" coords="406,35,569,61"/>
-<area shape="rect" id="Node000002" href="$task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title=" " alt="" coords="209,5,347,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="390,37,347,31,348,26,391,32"/>
-<area shape="rect" id="Node000003" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title=" " alt="" coords="198,56,358,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="391,64,359,69,358,63,390,59"/>
-<area shape="rect" id="Node000004" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title=" " alt="" coords="5,56,150,99"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,80,150,80,150,75,182,75"/>
+<area shape="rect" id="node2" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title="zrtos_vfs_module_spi\l_sync__on_write_helper" alt="" coords="217,5,380,47"/>
+<area shape="rect" id="node4" href="$task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title="pthread_mutex_lock" alt="" coords="229,71,368,98"/>
+<area shape="rect" id="node3" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title="zrtos_vfs_module_avr\l_spi_sync__on_write" alt="" coords="428,5,579,47"/>
 </map>

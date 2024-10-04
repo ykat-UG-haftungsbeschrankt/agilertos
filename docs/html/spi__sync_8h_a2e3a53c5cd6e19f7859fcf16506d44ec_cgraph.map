@@ -1,17 +1,9 @@
 <map id="zrtos_vfs_module_spi_sync__on_close" name="zrtos_vfs_module_spi_sync__on_close">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,99,151,141"/>
-<area shape="rect" id="Node000002" href="$spi__sync_8h.html#a29c9d8a32af2717c5e9ed8e11d0800fa" title=" " alt="" coords="199,99,344,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,117,183,117,183,123,151,123"/>
-<area shape="rect" id="Node000003" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="392,5,555,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,96,342,68,391,42,406,35,408,40,393,46,345,73,304,100"/>
-<area shape="rect" id="Node000004" href="$gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0" title=" " alt="" coords="402,56,546,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="344,99,402,84,403,90,345,104"/>
-<area shape="rect" id="Node000006" href="$gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8" title=" " alt="" coords="398,107,550,133"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="344,117,382,117,382,123,344,123"/>
-<area shape="rect" id="Node000007" href="$vfs__file_8h.html#a54d958c5b0506ceeba5e57caf04631b5" title=" " alt="" coords="394,157,553,184"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="345,136,403,150,402,156,344,141"/>
-<area shape="rect" id="Node000008" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="410,208,537,251"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="305,140,393,194,403,199,401,204,391,198,302,144"/>
-<area shape="rect" id="Node000005" href="$gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414" title=" " alt="" coords="603,48,733,91"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="546,67,588,67,588,72,546,72"/>
+<area shape="rect" id="node2" href="$spi__sync_8h.html#a29c9d8a32af2717c5e9ed8e11d0800fa" title="zrtos_vfs_module_spi\l_sync__on_open" alt="" coords="203,115,352,156"/>
+<area shape="rect" id="node3" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="416,5,548,47"/>
+<area shape="rect" id="node4" href="$vfs__file_8h.html#a04a201b5b034eb09d22292ec8700a144" title="zrtos_vfs_file__get_data" alt="" coords="400,71,564,98"/>
+<area shape="rect" id="node5" href="$gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8" title="zrtos_gpio__set_mode" alt="" coords="405,122,559,149"/>
+<area shape="rect" id="node6" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="400,173,564,199"/>
+<area shape="rect" id="node7" href="$gpio_8h.html#adf182ae6089f6e514abe34869ea54fb0" title="zrtos_gpio__set_high" alt="" coords="409,223,555,250"/>
+<area shape="rect" id="node8" href="$gpio_8h.html#ab031db7c74dcac4dbc16bfa8f00c8414" title="zrtos_gpio__digital\l_write" alt="" coords="612,216,743,257"/>
 </map>

@@ -1,0 +1,11 @@
+<map id="_zrtos_vheap__malloc" name="_zrtos_vheap__malloc">
+<area shape="rect" id="node2" href="$vheap_8h.html#afaa17fa156a136951a309b102c38e71e" title="_zrtos_vheap__get_free\l_space" alt="" coords="215,67,377,108"/>
+<area shape="rect" id="node8" href="$mem_8h.html#a1590269d1001c17c2c99725ef85f6386" title="zrtos_mem__move_right\l_overlapping" alt="" coords="213,132,379,173"/>
+<area shape="rect" id="node9" href="$vheap_8h.html#a8681e975680d07e73d260e73bac6e74a" title="zrtos_vheap__get_next_uid" alt="" coords="205,198,387,225"/>
+<area shape="rect" id="node3" href="$vheap_8h.html#ad2723df7cc03e8a85b5886b8fd2c2b4e" title="_zrtos_vheap__get_free\l_space_ex" alt="" coords="447,37,609,79"/>
+<area shape="rect" id="node7" href="$vheap_8h.html#ac2aa4978f16950ae57e7532d94df5d4f" title="zrtos_vheap__get_stack_ptr" alt="" coords="435,103,621,130"/>
+<area shape="rect" id="node4" href="$types_8h.html#adbc4238237e656eb247fd49ffbfb1a6d" title="zrtos_types__ptr_get\l_byte_distance" alt="" coords="674,5,818,47"/>
+<area shape="rect" id="node5" href="$vheap_8h.html#a4b2a8e30df4a416638232339c09f4cbe" title="zrtos_vheap__get_last\l_address" alt="" coords="669,71,823,112"/>
+<area shape="rect" id="node6" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="871,78,1017,105"/>
+<area shape="rect" id="node10" href="$vheap_8h.html#ad64ed97d65218c007f9548e0f1adb82f" title="zrtos_vheap__get_by_id" alt="" coords="447,198,609,225"/>
+</map>

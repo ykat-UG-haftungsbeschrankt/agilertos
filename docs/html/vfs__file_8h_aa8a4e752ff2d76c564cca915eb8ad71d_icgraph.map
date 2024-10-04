@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_file__write" name="zrtos_vfs_file__write">
-<area shape="rect" id="Node000001" title=" " alt="" coords="397,5,533,32"/>
-<area shape="rect" id="Node000002" href="$vfs__fd_8h.html#a823e991e7f073e7c8f835309fe4ba2aa" title=" " alt="" coords="219,5,349,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,21,350,21,350,16,382,16"/>
-<area shape="rect" id="Node000003" href="$vfs__fd_8h.html#ad2e1f59b4c70fbc7dc35cab85a0ff367" title=" " alt="" coords="5,5,171,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="203,21,171,21,171,16,203,16"/>
+<area shape="rect" id="node2" href="$vfs__fd_8h.html#a823e991e7f073e7c8f835309fe4ba2aa" title="zrtos_vfs_fd__write" alt="" coords="196,5,332,32"/>
+<area shape="rect" id="node3" href="$vfs__fd_8h.html#ad2e1f59b4c70fbc7dc35cab85a0ff367" title="zrtos_vfs_fd__write_sync" alt="" coords="380,5,551,32"/>
 </map>

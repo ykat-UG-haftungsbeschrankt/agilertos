@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['offset_0',['offset',['../struct__zrtos__stack__t.html#af353a9412f15c5646e32ce7a7af8c679',1,'_zrtos_stack_t::offset'],['../struct__zrtos__vfs__file__t.html#a08ccd3f79d82bdf5e77eb6d5e1c8f208',1,'_zrtos_vfs_file_t::offset']]],
-  ['on_5frecv_1',['on_recv',['../struct__zrtos__vfs__module__uart__inode__t.html#afc639ec7c12159f7fa6b6a2f39d5a5a3',1,'_zrtos_vfs_module_uart_inode_t']]],
-  ['on_5fsend_2',['on_send',['../struct__zrtos__vfs__module__uart__inode__t.html#a7faf8019dbff8d17f38f7b67f506116c',1,'_zrtos_vfs_module_uart_inode_t']]],
-  ['op_3',['op',['../structzrtos__vm__ioop__t.html#ae09b03d732d97b63b95a59f619f168a8',1,'zrtos_vm_ioop_t']]],
-  ['open_4',['open',['../structzrtos__vfs__plugin__t.html#a86f233736f0536d8a4e926bf5dbc1311',1,'zrtos_vfs_plugin_t']]]
+  ['parent',['parent',['../struct__zrtos__task__t.html#ad37affc0d846b49dc717cbc5049d4bcd',1,'_zrtos_task_t::parent()'],['../struct__zrtos__vfs__dentry__t.html#a434de1d794713094354ae5460c662d0f',1,'_zrtos_vfs_dentry_t::parent()'],['../struct__zrtos__vfs__dentry____each__child__cb__inode__t.html#a033ca98bc2cd032b0bedfd77acd18d3d',1,'_zrtos_vfs_dentry__each_child_cb_inode_t::parent()'],['../struct__zrtos__vheap__chunk__t.html#a1a5c5bbf45db240a8a156f27404873b1',1,'_zrtos_vheap_chunk_t::parent()']]],
+  ['pin_5fcs',['pin_cs',['../struct__zrtos__vfs__module__spi__file__t.html#a5a30149f7e1c9eff7bfac06ddfe3de69',1,'_zrtos_vfs_module_spi_file_t::pin_cs()'],['../struct__zrtos__vfs__module__spi__sync__file__t.html#aff5f006031b5e6f6419de3ed330cb74b',1,'_zrtos_vfs_module_spi_sync_file_t::pin_cs()']]],
+  ['pin_5fmiso',['pin_miso',['../struct__zrtos__vfs__module__spi__inode__t.html#a47f880da84b0d6c3fd1f8b5ca9794eab',1,'_zrtos_vfs_module_spi_inode_t::pin_miso()'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#ac3f7d2100f3ea0c710e625586277b4aa',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_miso()']]],
+  ['pin_5fmosi',['pin_mosi',['../struct__zrtos__vfs__module__spi__inode__t.html#a51956a9f24a6f59bd8898c71369dc11e',1,'_zrtos_vfs_module_spi_inode_t::pin_mosi()'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#a3ed262c5fad088c3220d4d2fe472c55b',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_mosi()']]],
+  ['pin_5fsclk',['pin_sclk',['../struct__zrtos__vfs__module__spi__inode__t.html#ae4c95d6c65683dda50286b38f16ea611',1,'_zrtos_vfs_module_spi_inode_t::pin_sclk()'],['../struct__zrtos__vfs__module__spi__sync__inode__t.html#acee4e0e7d83e26646105468b70999ae0',1,'_zrtos_vfs_module_spi_sync_inode_t::pin_sclk()']]],
+  ['plugin',['plugin',['../struct__zrtos__vfs__inode__t.html#a013004f622eb58f4474d540fb408aff3',1,'_zrtos_vfs_inode_t']]],
+  ['program',['program',['../struct__zrtos__vm__t.html#ac35995f278cab541f00eb88969110eb1',1,'_zrtos_vm_t']]],
+  ['ptr',['ptr',['../struct__zrtos__malloc__internal__t.html#a07166710ef3af30b473203dc9880259b',1,'_zrtos_malloc_internal_t::ptr()'],['../struct__zrtos__vheap__t.html#acd6cb0f8c2ef805ceec17546f5ff609a',1,'_zrtos_vheap_t::ptr()'],['../struct__zrtos__vheap__chunk__t.html#a337d809a2134a475ebc2f361bef2dfc9',1,'_zrtos_vheap_chunk_t::ptr()']]]
 ];

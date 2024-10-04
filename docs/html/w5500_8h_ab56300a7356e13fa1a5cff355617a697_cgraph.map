@@ -1,0 +1,17 @@
+<map id="zrtos_vfs_module_w5500__on_ioctl" name="zrtos_vfs_module_w5500__on_ioctl">
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="257,5,389,47"/>
+<area shape="rect" id="node3" href="$w5500_8h.html#a5792a090a793ba034b221019d1f6bc85" title="zrtos_vfs_module_w5500\l__on_ioctl_helper" alt="" coords="487,57,658,99"/>
+<area shape="rect" id="node8" href="$w5500__socket_8h.html#aab3bddf6bbca482fe3971a9ca3dc0e25" title="zrtos_vfs_module_w5500\l_socket__on_ioctl_helper\l_validate_addr" alt="" coords="237,189,408,245"/>
+<area shape="rect" id="node9" href="$w5500_8h.html#a7e56200d9f7de2c18bc6be984afba72c" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="224,269,421,295"/>
+<area shape="rect" id="node10" href="$w5500_8h.html#a2f42a341c7a98499e10dd1c01407cd98" title="zrtos_vfs_module_w5500\l__on_mount" alt="" coords="237,123,408,164"/>
+<area shape="rect" id="node15" href="$w5500_8h.html#a229f92a91e459171e6e2af5fd9332de9" title="zrtos_vfs_module_w5500\l__on_umount" alt="" coords="237,320,408,361"/>
+<area shape="rect" id="node4" href="$vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053" title="zrtos_vfs_fd__spi_transfer" alt="" coords="739,79,915,106"/>
+<area shape="rect" id="node5" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title="zrtos_vfs_fd__read" alt="" coords="1020,79,1153,106"/>
+<area shape="rect" id="node7" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="1005,130,1169,157"/>
+<area shape="rect" id="node6" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title="zrtos_vfs_file__read" alt="" coords="1243,79,1381,106"/>
+<area shape="rect" id="node11" href="$gpio_8h.html#a1f8ccfbe91f750fb13f00e42103fb8b0" title="zrtos_gpio__delay_milliseconds" alt="" coords="469,189,676,215"/>
+<area shape="rect" id="node14" href="$w5500_8h.html#ad25fc05bb698d49979b174d8d9a282bc" title="zrtos_vfs_module_w5500\l__reset" alt="" coords="487,123,658,164"/>
+<area shape="rect" id="node12" href="$atmega2560_8h.html#a4a4aae738e9511b66c4a4ae90d93f210" title="zrtos_arch__delay_milliseconds" alt="" coords="724,189,931,215"/>
+<area shape="rect" id="node13" href="$atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5" title="zrtos_arch__delay_microseconds" alt="" coords="979,189,1195,215"/>
+<area shape="rect" id="node16" href="$w5500_8h.html#a88a5aead92f6c4c1d29f102dd879a570" title="ZRTOS_ASSERT__STATIC" alt="" coords="477,327,668,354"/>
+</map>

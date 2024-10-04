@@ -1,7 +1,5 @@
 <map id="zrtos_vfs_module_zero__on_read" name="zrtos_vfs_module_zero__on_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,159,48"/>
-<area shape="rect" id="Node000002" href="$mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7" title=" " alt="" coords="207,13,332,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,24,191,24,191,29,159,29"/>
-<area shape="rect" id="Node000003" href="$mem_8h.html#ad6c786590236d1d560b6277f638bf766" title=" " alt="" coords="380,13,498,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="332,24,364,24,364,29,332,29"/>
+<area shape="rect" id="node2" href="$mem_8h.html#a419d9f9e6d69f2577fdce04166a8b8a7" title="zrtos_mem__zero" alt="" coords="246,5,373,32"/>
+<area shape="rect" id="node4" href="$zero_8h.html#a435c7fae56d1c71c8595e883d6f8f546" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="211,56,408,83"/>
+<area shape="rect" id="node3" href="$mem_8h.html#ad6c786590236d1d560b6277f638bf766" title="zrtos_mem__set" alt="" coords="456,5,575,32"/>
 </map>

@@ -1,0 +1,28 @@
+<map id="zrtos_clist_node__get_next_node" name="zrtos_clist_node__get_next_node">
+<area shape="rect" id="node2" href="$clist_8h.html#a2c9ceea8a0bb3230c7d4ee52fe351872" title="zrtos_clist__shift\l_and_push" alt="" coords="231,5,353,47"/>
+<area shape="rect" id="node3" href="$clist_8h.html#a7cc31f994820f2b59d07e96ab9dcce0b" title="zrtos_clist__each" alt="" coords="230,71,354,98"/>
+<area shape="rect" id="node9" href="$spi_2spi_8h.html#a7cc1a52aa2cec6b681b7732681bda10b" title="zrtos_vfs_module_spi\l__transfer_out" alt="" coords="217,123,367,164"/>
+<area shape="rect" id="node14" href="$task_8h.html#a2051d6d2075855207e5aab40a5f93c6c" title="zrtos_task__get_next_task" alt="" coords="203,201,381,227"/>
+<area shape="rect" id="node4" href="$vfs__dentry_8h.html#a911f5eb8673c68fe4147f56a21062ed7" title="zrtos_vfs_dentry__each\l_child" alt="" coords="429,49,591,91"/>
+<area shape="rect" id="node5" href="$vfs__dentry_8h.html#a993f8558c29043f4405698f2d4f2747e" title="zrtos_vfs_dentry__lookup" alt="" coords="639,42,809,69"/>
+<area shape="rect" id="node6" href="$vfs__file_8h.html#a5e35099a788e6bd302890a2da12cdb10" title="zrtos_vfs_file__open" alt="" coords="863,37,1005,63"/>
+<area shape="rect" id="node7" href="$vfs__fd_8h.html#a3d77749f16d0a3f932c58f9ae0c20e1c" title="zrtos_vfs_fd__open" alt="" coords="1064,37,1200,63"/>
+<area shape="rect" id="node8" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="1253,29,1432,71"/>
+<area shape="rect" id="node10" href="$spi_2spi_8h.html#ab31c12597a3f2932aaf01466ffff59bb" title="zrtos_vfs_module_spi\l__transfer" alt="" coords="435,123,585,164"/>
+<area shape="rect" id="node11" href="$avr_2spi_2spi_8h.html#a3a0f3b324bd986778ccde00670dbabc9" title="zrtos_vfs_module_avr\l_spi__on_interrupt" alt="" coords="649,123,799,164"/>
+<area shape="rect" id="node12" href="$avr_2spi_2spi_8h.html#a0353f98d744b931e541684fe33b272f7" title="ISR" alt="" coords="911,87,957,114"/>
+<area shape="rect" id="node13" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="859,139,1009,180"/>
+<area shape="rect" id="node15" href="$task__scheduler_8h.html#ae5915a01574e06572708120eaea79d3b" title="zrtos_task_scheduler\l__has_task" alt="" coords="651,193,797,235"/>
+<area shape="rect" id="node17" href="$task__scheduler_8h.html#aa63cd785e44d31b9ae87297fad4de032" title="_zrtos_task_scheduler\l__switch_task" alt="" coords="433,255,587,296"/>
+<area shape="rect" id="node16" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="1086,205,1178,231"/>
+<area shape="rect" id="node18" href="$task__scheduler_8h.html#ab670d7e1ab8db82279714a56efc3c99a" title="_zrtos_task_scheduler\l__on_tick" alt="" coords="647,259,801,300"/>
+<area shape="rect" id="node19" href="$task__scheduler_8h.html#a8f15f366e9ce3328539ee562fd4c1e73" title="_zrtos_task_scheduler\l__on_tick_ex" alt="" coords="857,259,1011,300"/>
+<area shape="rect" id="node20" href="$task__pthread_8h.html#ace168cf0d23cd4b085a2da31b881c750" title="zrtos_task_pthread\l__trampoline_cb" alt="" coords="1065,256,1199,297"/>
+<area shape="rect" id="node22" href="$task__scheduler_8h.html#ae070a60f724cc39d3a4118b57004e82f" title="zrtos_task_scheduler\l__delay_ms" alt="" coords="1059,321,1205,363"/>
+<area shape="rect" id="node27" href="$task__scheduler_8h.html#a1e85f61c031a36a33f08d891597103b2" title="zrtos_task_scheduler\l__init" alt="" coords="1059,387,1205,428"/>
+<area shape="rect" id="node21" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title="pthread_create" alt="" coords="1289,263,1397,290"/>
+<area shape="rect" id="node23" href="$task__mutex_8h.html#a123e93e1f2eac3befe64178fba0bbcbd" title="zrtos_task_mutex__lock" alt="" coords="1261,329,1425,355"/>
+<area shape="rect" id="node24" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title="zrtos_vfs_module_spi\l_sync__on_write_helper" alt="" coords="1480,292,1643,333"/>
+<area shape="rect" id="node26" href="$task__pthread_8h.html#a12809c44718c21544ceb280dc1a53573" title="pthread_mutex_lock" alt="" coords="1492,358,1631,385"/>
+<area shape="rect" id="node25" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title="zrtos_vfs_module_avr\l_spi_sync__on_write" alt="" coords="1691,292,1841,333"/>
+</map>

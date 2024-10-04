@@ -1,5 +1,3 @@
 <map id="zrtos_types__uint32_is_valid_address_range" name="zrtos_types__uint32_is_valid_address_range">
-<area shape="rect" id="Node000001" title=" " alt="" coords="198,5,360,48"/>
-<area shape="rect" id="Node000002" href="$vfs_2module_2avr_2progmem_8h.html#aa87e2c298b856cf12a5db65f0a27432d" title=" " alt="" coords="5,5,150,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,29,150,29,150,24,182,24"/>
+<area shape="rect" id="node2" href="$vfs_2module_2avr_2progmem_8h.html#aa87e2c298b856cf12a5db65f0a27432d" title="zrtos_vfs_module_avr\l_progmem__on_read" alt="" coords="219,5,369,47"/>
 </map>

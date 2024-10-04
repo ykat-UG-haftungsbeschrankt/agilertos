@@ -1,14 +1,7 @@
 <map id="zrtos_vfs_module_mcp2515__check_receive" name="zrtos_vfs_module_mcp2515__check_receive">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,187,65"/>
-<area shape="rect" id="Node000002" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="693,5,857,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,38,678,20,678,25,187,43"/>
-<area shape="rect" id="Node000003" href="$mcp2515_8h.html#a681fc2207cb87e9d86c3203e4bd1ff31" title=" " alt="" coords="235,52,416,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,53,220,57,219,62,187,58"/>
-<area shape="rect" id="Node000004" href="$mcp2515_8h.html#a757cc129737831c901694878ce1acba1" title=" " alt="" coords="464,52,645,95"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="416,71,449,71,449,76,416,76"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="643,49,703,34,705,39,644,54"/>
-<area shape="rect" id="Node000005" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title=" " alt="" coords="711,60,839,87"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="646,71,696,71,696,76,646,76"/>
-<area shape="rect" id="Node000006" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title=" " alt="" coords="905,60,1039,87"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="839,71,889,71,889,76,839,76"/>
+<area shape="rect" id="node2" href="$mcp2515_8h.html#a681fc2207cb87e9d86c3203e4bd1ff31" title="zrtos_vfs_module_mcp2515\l__get_status" alt="" coords="239,5,424,47"/>
+<area shape="rect" id="node6" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="696,67,860,94"/>
+<area shape="rect" id="node3" href="$vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053" title="zrtos_vfs_fd__spi_transfer" alt="" coords="472,15,648,42"/>
+<area shape="rect" id="node4" href="$vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1" title="zrtos_vfs_fd__read" alt="" coords="711,15,845,42"/>
+<area shape="rect" id="node5" href="$vfs__file_8h.html#a27e4ed3d3306da0eaccc004eebc8d3c4" title="zrtos_vfs_file__read" alt="" coords="908,15,1047,42"/>
 </map>

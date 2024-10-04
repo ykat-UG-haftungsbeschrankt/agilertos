@@ -1,16 +1,8 @@
 <map id="zrtos_cbuffer__peek" name="zrtos_cbuffer__peek">
-<area shape="rect" id="Node000001" title=" " alt="" coords="856,47,993,73"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#a77458b7cd6238ed911ffdab0fe328e04" title=" " alt="" coords="674,47,808,73"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="840,63,808,63,808,57,840,57"/>
-<area shape="rect" id="Node000003" href="$msg__queue_8h.html#a40db633a8c0ef5e3bba9cc700e45f7ef" title=" " alt="" coords="450,5,626,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="659,49,626,44,627,39,660,44"/>
-<area shape="rect" id="Node000006" href="$msg__queue_8h.html#a7b05ddf4bc60700bfe0b9d3a0f11664b" title=" " alt="" coords="460,72,616,115"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="660,76,617,83,616,78,659,71"/>
-<area shape="rect" id="Node000004" href="$rtu_8h.html#ab23606290979709ef6fefa7c6970e64e" title=" " alt="" coords="228,5,402,48"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="435,29,402,29,402,24,435,24"/>
-<area shape="rect" id="Node000005" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title=" " alt="" coords="5,39,180,81"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,45,181,50,180,44,212,39"/>
-<area shape="rect" id="Node000007" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title=" " alt="" coords="228,72,402,115"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="445,96,402,96,402,91,445,91"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="212,81,180,76,181,70,213,75"/>
+<area shape="rect" id="node2" href="$cbuffer_8h.html#a77458b7cd6238ed911ffdab0fe328e04" title="zrtos_cbuffer__pipe" alt="" coords="193,46,329,73"/>
+<area shape="rect" id="node3" href="$msg__queue_8h.html#a7b05ddf4bc60700bfe0b9d3a0f11664b" title="zrtos_msg_queue__put\l_cbuffer_data" alt="" coords="388,5,545,47"/>
+<area shape="rect" id="node6" href="$msg__queue_8h.html#a40db633a8c0ef5e3bba9cc700e45f7ef" title="zrtos_msg_queue__pipe\l_next_message_to_cbuffer" alt="" coords="377,71,556,112"/>
+<area shape="rect" id="node4" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title="zrtos_vfs_module_modbus\l_rtu__on_recv_timeout" alt="" coords="604,5,783,47"/>
+<area shape="rect" id="node5" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="831,39,1009,80"/>
+<area shape="rect" id="node7" href="$rtu_8h.html#ab23606290979709ef6fefa7c6970e64e" title="zrtos_vfs_module_modbus\l_rtu__on_send" alt="" coords="604,71,783,112"/>
 </map>

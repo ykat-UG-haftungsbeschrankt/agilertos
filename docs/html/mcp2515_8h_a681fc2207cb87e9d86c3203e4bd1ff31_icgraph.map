@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_module_mcp2515__get_status" name="zrtos_vfs_module_mcp2515__get_status">
-<area shape="rect" id="Node000001" title=" " alt="" coords="235,39,416,81"/>
-<area shape="rect" id="Node000002" href="$mcp2515_8h.html#aeb2ece93088fc44a365bcef1c751ec18" title=" " alt="" coords="5,5,187,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,47,187,42,187,37,220,42"/>
-<area shape="rect" id="Node000003" href="$mcp2515_8h.html#aedd1e5a30c6f1d8150213a81926e9728" title=" " alt="" coords="5,72,187,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,78,187,83,187,78,219,73"/>
+<area shape="rect" id="node2" href="$mcp2515_8h.html#aedd1e5a30c6f1d8150213a81926e9728" title="zrtos_vfs_module_mcp2515\l__read_message" alt="" coords="239,5,424,47"/>
+<area shape="rect" id="node3" href="$mcp2515_8h.html#aeb2ece93088fc44a365bcef1c751ec18" title="zrtos_vfs_module_mcp2515\l__check_receive" alt="" coords="239,71,424,112"/>
 </map>

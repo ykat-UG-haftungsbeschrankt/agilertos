@@ -1,9 +1,5 @@
 <map id="_zrtos_vheap_task_scheduler__on_tick" name="_zrtos_vheap_task_scheduler__on_tick">
-<area shape="rect" id="Node000001" title=" " alt="" coords="378,39,570,81"/>
-<area shape="rect" id="Node000002" href="$vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title=" " alt="" coords="145,5,330,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,47,330,42,331,37,363,42"/>
-<area shape="rect" id="Node000004" href="$vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title=" " alt="" coords="145,72,330,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="363,78,331,83,330,78,362,73"/>
-<area shape="rect" id="Node000003" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,13,97,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="129,29,97,29,97,24,129,24"/>
+<area shape="rect" id="node2" href="$vheap__task__scheduler_8h.html#a51ae476e29565ebfde1ec3340150ca06" title="zrtos_vheap_task_scheduler\l__delay_ms" alt="" coords="248,5,436,47"/>
+<area shape="rect" id="node4" href="$vheap__task__scheduler_8h.html#a3734a190668294fe1e91009e3cf6f72a" title="zrtos_vheap_task_scheduler\l__trampoline_cb" alt="" coords="248,71,436,112"/>
+<area shape="rect" id="node3" href="$vheap__task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="484,13,576,39"/>
 </map>

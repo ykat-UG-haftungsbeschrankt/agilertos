@@ -1,6 +1,7 @@
 var atmega2560_8h =
 [
     [ "ZRTOS_ARCH__BYTE_ALIGNMENT", "atmega2560_8h.html#a04f2f242c34f581faf5b31331d0d6bdb", null ],
+    [ "ZRTOS_ARCH__BYTE_ORDER", "atmega2560_8h.html#a8069cfc0c998f8fd9da095349d737066", null ],
     [ "ZRTOS_ARCH__CPU_CLOCK_HZ", "atmega2560_8h.html#a52712692b0ac48d8b86b36066406785b", null ],
     [ "zrtos_arch__cpu_state_init", "atmega2560_8h.html#af0a24f4af1f5fddd9b171d6ddc51d9b3", null ],
     [ "ZRTOS_ARCH__DISABLE_INTERRUPTS", "atmega2560_8h.html#ad5a640e25694a864d28136fc49133f62", null ],
@@ -22,9 +23,9 @@ var atmega2560_8h =
     [ "zrtos_arch_gpio_value_analog_t", "atmega2560_8h.html#a32d9dfb7082a813ea6f81e1d1c108b8f", null ],
     [ "zrtos_arch_stack_signed_t", "atmega2560_8h.html#a7456b566c8ab6b738a5795f419b0f319", null ],
     [ "zrtos_arch_stack_t", "atmega2560_8h.html#acaf56dbc954fa5dd28b5e1ad7c0f72c9", null ],
-    [ "zrtos_arch__cpu_state_init_a", "atmega2560_8h.html#a0a7f99406f33a248301b9f008bf58ca9", null ],
-    [ "zrtos_arch__cpu_state_init_b", "atmega2560_8h.html#a5599edd96083ebf96ce87853d5f408f2", null ],
-    [ "zrtos_arch__cpu_state_init_helper", "atmega2560_8h.html#a10f065b40729c7ec718bfcb83bfcb96a", null ],
+    [ "zrtos_arch__cpu_state_init_a", "atmega2560_8h.html#a55676829dd732b9e3696e78aa612cdfc", null ],
+    [ "zrtos_arch__cpu_state_init_b", "atmega2560_8h.html#a7a7017f6a5689696f9743a2b33f0b933", null ],
+    [ "zrtos_arch__cpu_state_init_helper", "atmega2560_8h.html#a935122beacdabfa114e680dffa49bd45", null ],
     [ "zrtos_arch__delay_microseconds", "atmega2560_8h.html#ae04abf9c6757be157ce34315a0f8aea5", null ],
     [ "zrtos_arch__delay_milliseconds", "atmega2560_8h.html#a4a4aae738e9511b66c4a4ae90d93f210", null ]
 ];

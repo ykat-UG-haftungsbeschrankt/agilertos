@@ -1,0 +1,5 @@
+<map id="zrtos_vheap_chunk__get_last_address" name="zrtos_vheap_chunk__get_last_address">
+<area shape="rect" id="node2" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="196,5,343,32"/>
+<area shape="rect" id="node3" href="$vheap__chunk_8h.html#aa70f012cfcb71ca5ed145487689738bd" title="zrtos_vheap_chunk_\l_get_ptr" alt="" coords="198,57,341,98"/>
+<area shape="rect" id="node4" href="$vheap__chunk_8h.html#a26bcd8779d88d67764f563058787008a" title="zrtos_vheap_chunk_\l_get_length" alt="" coords="198,122,341,163"/>
+</map>

@@ -1,7 +1,4 @@
 <map id="zrtos_gpio__analog_read_va" name="zrtos_gpio__analog_read_va">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,139,65"/>
-<area shape="rect" id="Node000002" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="188,5,351,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,33,172,28,173,34,140,38"/>
-<area shape="rect" id="Node000003" href="$gpio_8h.html#a9acc1b32d920b82eabb137dc36f92f46" title=" " alt="" coords="187,56,352,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,50,171,54,171,59,139,55"/>
+<area shape="rect" id="node2" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="189,5,353,32"/>
+<area shape="rect" id="node3" href="$gpio_8h.html#a9acc1b32d920b82eabb137dc36f92f46" title="zrtos_gpio__analog_read" alt="" coords="188,56,355,83"/>
 </map>

@@ -1,15 +1,8 @@
 <map id="zrtos_stack__write_ex" name="zrtos_stack__write_ex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,157,57"/>
-<area shape="rect" id="Node000002" href="$stack_8h.html#a57ec254b26faf939e4214820af6c2200" title=" " alt="" coords="205,5,385,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,32,189,29,190,34,157,38"/>
-<area shape="rect" id="Node000003" href="$stack_8h.html#aebaaa2b5cc93359116c7c7cee1f77bca" title=" " alt="" coords="230,56,360,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,50,215,57,214,62,156,56"/>
-<area shape="rect" id="Node000004" href="$stack_8h.html#aa86feb2b5c314393a0624e3aefee9ed6" title=" " alt="" coords="441,31,572,57"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="360,59,425,51,425,56,361,64"/>
-<area shape="rect" id="Node000007" href="$types_8h.html#ab0b4ddf54b9e9f4a54504f833babbc1c" title=" " alt="" coords="433,81,579,108"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="361,74,418,81,417,87,360,80"/>
-<area shape="rect" id="Node000005" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="627,31,749,57"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="572,41,612,41,612,47,572,47"/>
-<area shape="rect" id="Node000006" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="797,23,951,65"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="749,41,781,41,781,47,749,47"/>
+<area shape="rect" id="node2" href="$stack_8h.html#a57ec254b26faf939e4214820af6c2200" title="zrtos_stack__get_offset_ex" alt="" coords="207,5,389,32"/>
+<area shape="rect" id="node3" href="$stack_8h.html#aebaaa2b5cc93359116c7c7cee1f77bca" title="zrtos_stack__write" alt="" coords="232,56,364,83"/>
+<area shape="rect" id="node4" href="$stack_8h.html#aa86feb2b5c314393a0624e3aefee9ed6" title="_zrtos_stack__cpy" alt="" coords="445,31,577,57"/>
+<area shape="rect" id="node7" href="$types_8h.html#aba57d347db551b6b1bc7f791433322ad" title="zrtos_types__ptr_add" alt="" coords="437,81,584,108"/>
+<area shape="rect" id="node5" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title="zrtos_mem__cpy" alt="" coords="632,31,755,57"/>
+<area shape="rect" id="node6" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title="zrtos_mem__move_left\l_overlapping" alt="" coords="803,23,961,65"/>
 </map>

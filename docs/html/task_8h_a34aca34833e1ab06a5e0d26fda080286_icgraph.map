@@ -1,13 +1,7 @@
 <map id="zrtos_task__set_parent" name="zrtos_task__set_parent">
-<area shape="rect" id="Node000001" title=" " alt="" coords="518,47,676,73"/>
-<area shape="rect" id="Node000002" href="$task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035" title=" " alt="" coords="325,5,470,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,47,470,41,471,36,504,42"/>
-<area shape="rect" id="Node000004" href="$task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27" title=" " alt="" coords="325,72,470,115"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="504,78,471,84,470,79,503,73"/>
-<area shape="rect" id="Node000003" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title=" " alt="" coords="157,13,265,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="310,29,265,29,265,24,310,24"/>
-<area shape="rect" id="Node000005" href="$task__pthread_8h.html#a138580b425fd21586b4efd4ab448d593" title=" " alt="" coords="145,72,277,115"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="309,96,277,96,277,91,309,91"/>
-<area shape="rect" id="Node000006" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title=" " alt="" coords="5,80,97,107"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="129,96,97,96,97,91,129,91"/>
+<area shape="rect" id="node2" href="$task__scheduler_8h.html#ae82b03fcfb70e448c4a0bbd59ef8a035" title="zrtos_task_scheduler\l__add_task" alt="" coords="212,5,359,47"/>
+<area shape="rect" id="node4" href="$task__scheduler_8h.html#a8eaf55f184537faea5e8e9641ed4ad27" title="zrtos_task_scheduler\l__remove_task" alt="" coords="212,71,359,112"/>
+<area shape="rect" id="node3" href="$task__pthread_8h.html#a091adcef6201bebbf231763328c15286" title="pthread_create" alt="" coords="419,13,527,39"/>
+<area shape="rect" id="node5" href="$task__pthread_8h.html#a138580b425fd21586b4efd4ab448d593" title="zrtos_task_pthread\l__free" alt="" coords="407,71,540,112"/>
+<area shape="rect" id="node6" href="$task__pthread_8h.html#a28a15bba47cab57cbc9f5dac9af99c8b" title="pthread_join" alt="" coords="588,78,680,105"/>
 </map>

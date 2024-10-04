@@ -46,7 +46,7 @@ var spi_2spi_8h =
     [ "zrtos_vfs_module_spi_file__deinit", "spi_2spi_8h.html#a32046c6fe4df16f4795a3de4fdf61f8f", null ],
     [ "zrtos_vfs_module_spi_file__free", "spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de", null ],
     [ "zrtos_vfs_module_spi_file__init", "spi_2spi_8h.html#a18e98b2ff2735e9c263e143d51880842", null ],
-    [ "zrtos_vfs_module_spi_file__new", "spi_2spi_8h.html#a233cf747fcbc04752c320e48e8101632", null ],
+    [ "zrtos_vfs_module_spi_file__new", "spi_2spi_8h.html#a21ab487a7fecc72c5c1de2068586548a", null ],
     [ "zrtos_vfs_module_spi_inode__deinit", "spi_2spi_8h.html#adccd535c87f4e9d46408cce4494e7bb2", null ],
     [ "zrtos_vfs_module_spi_inode__init", "spi_2spi_8h.html#ac71d0c5a0a719470ac191341e1bc47e4", null ]
 ];

@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_module_uart__get_char_transmission_time" name="zrtos_vfs_module_uart__get_char_transmission_time">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,204,81"/>
-<area shape="rect" id="Node000002" href="$uart_2uart_8h.html#ace368faca705c4fcf504415dd494aebc" title=" " alt="" coords="262,5,412,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,43,246,37,247,42,204,48"/>
-<area shape="rect" id="Node000003" href="$uart_2uart_8h.html#afbcbb54423af0395f0b907e31c085085" title=" " alt="" coords="252,72,422,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,72,237,76,236,82,204,77"/>
+<area shape="rect" id="node2" href="$uart_2uart_8h.html#ace368faca705c4fcf504415dd494aebc" title="zrtos_vfs_module_uart\l_inode__get_baudrate" alt="" coords="260,5,415,47"/>
+<area shape="rect" id="node3" href="$uart_2uart_8h.html#afbcbb54423af0395f0b907e31c085085" title="zrtos_vfs_module_uart\l_inode__is_double_speed" alt="" coords="252,71,423,112"/>
 </map>

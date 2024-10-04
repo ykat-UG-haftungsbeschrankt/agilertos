@@ -1,26 +1,7 @@
 <map id="arch.h" name="arch.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="445,5,502,32"/>
-<area shape="rect" id="Node000002" href="$types_8h.html" title=" " alt="" coords="222,80,319,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,33,321,77,319,72,443,28"/>
-<area shape="rect" id="Node000009" href="$assert_8h.html" title=" " alt="" coords="344,80,445,107"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="461,35,421,71,417,67,458,31"/>
-<area shape="rect" id="Node000010" href="$atmega328p_8h.html" title=" " alt="" coords="469,80,635,107"/>
-<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="489,31,529,67,525,71,485,35"/>
-<area shape="rect" id="Node000012" href="$atmega2560_8h.html" title=" " alt="" coords="659,80,824,107"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="503,25,680,73,679,78,502,30"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,80,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="232,110,96,153,94,148,230,105"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="104,155,171,181"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="249,110,175,149,172,145,246,105"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="194,155,259,181"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="265,109,244,143,240,140,261,106"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="283,155,346,181"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="280,106,301,140,297,143,276,109"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="371,155,448,181"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="296,105,373,145,370,149,293,110"/>
-<area shape="rect" id="Node000008" href="$cast_8h.html" title=" " alt="" coords="472,155,562,181"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="314,105,460,147,459,152,313,110"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="633,155,756,181"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="578,105,657,145,655,150,575,110"/>
-<area shape="poly" id="edge12_Node000012_Node000011" title=" " alt="" coords="735,109,713,143,708,140,731,106"/>
+<area shape="rect" id="node2" href="$types_8h.html" title="zrtos/types.h" alt="" coords="225,80,324,107"/>
+<area shape="rect" id="node9" href="$assert_8h.html" title="zrtos/assert.h" alt="" coords="349,80,451,107"/>
+<area shape="rect" id="node10" href="$atmega328p_8h.html" title="zrtos/arch/atmega328p.h" alt="" coords="475,80,642,107"/>
+<area shape="rect" id="node12" href="$atmega2560_8h.html" title="zrtos/arch/atmega2560.h" alt="" coords="666,80,833,107"/>
+<area shape="rect" id="node8" href="$cast_8h.html" title="zrtos/cast.h" alt="" coords="480,155,571,181"/>
 </map>

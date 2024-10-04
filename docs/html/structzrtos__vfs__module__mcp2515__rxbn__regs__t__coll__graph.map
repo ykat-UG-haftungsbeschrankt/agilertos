@@ -1,7 +1,2 @@
 <map id="zrtos_vfs_module_mcp2515_rxbn_regs_t" name="zrtos_vfs_module_mcp2515_rxbn_regs_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="108,144,289,187"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,187,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,59,185,142,181,145,119,62"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="211,5,392,48"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="279,62,216,145,212,142,274,59"/>
 </map>

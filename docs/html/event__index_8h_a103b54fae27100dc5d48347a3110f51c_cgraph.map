@@ -1,15 +1,8 @@
 <map id="zrtos_event_index__invoke" name="zrtos_event_index__invoke">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,73,138,116"/>
-<area shape="rect" id="Node000002" href="$event_8h.html#af1328cd513b60ad2241d6f404b7da06d" title=" " alt="" coords="212,5,331,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,70,185,42,204,35,206,40,187,46,119,75"/>
-<area shape="rect" id="Node000003" href="$event__type_8h.html#a0ad028c45084de5a2a2d24c08433159e" title=" " alt="" coords="192,56,351,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,84,176,79,177,84,138,89"/>
-<area shape="rect" id="Node000004" href="$event__type_8h.html#aff2d2f65e95c74a81c4a979c79bd7bc9" title=" " alt="" coords="186,107,357,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,100,171,105,170,110,138,106"/>
-<area shape="rect" id="Node000005" href="$progmem_8h.html#a7185db18272b8514d094ac443ad989eb" title=" " alt="" coords="198,157,345,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="119,114,187,143,206,150,204,155,185,148,117,119"/>
-<area shape="rect" id="Node000006" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title=" " alt="" coords="405,157,526,184"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="345,168,390,168,390,173,345,173"/>
-<area shape="rect" id="Node000007" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title=" " alt="" coords="574,149,729,192"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="527,168,559,168,559,173,527,173"/>
+<area shape="rect" id="node2" href="$event_8h.html#af1328cd513b60ad2241d6f404b7da06d" title="zrtos_event__init" alt="" coords="215,5,336,32"/>
+<area shape="rect" id="node3" href="$event__type_8h.html#aff2d2f65e95c74a81c4a979c79bd7bc9" title="zrtos_event_type__is_any" alt="" coords="188,56,363,83"/>
+<area shape="rect" id="node4" href="$event__type_8h.html#a0ad028c45084de5a2a2d24c08433159e" title="zrtos_event_type__cmp" alt="" coords="195,107,356,133"/>
+<area shape="rect" id="node5" href="$progmem_8h.html#a7185db18272b8514d094ac443ad989eb" title="zrtos_progmem__cpy" alt="" coords="202,157,349,184"/>
+<area shape="rect" id="node6" href="$mem_8h.html#ac36c32ce5585de38fd4b77b2a322ac78" title="zrtos_mem__cpy" alt="" coords="411,157,533,184"/>
+<area shape="rect" id="node7" href="$mem_8h.html#a9054cc3824c6ffdaf4ed24fde2f80f32" title="zrtos_mem__move_left\l_overlapping" alt="" coords="581,150,740,191"/>
 </map>

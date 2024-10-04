@@ -1,14 +1,7 @@
 <map id="zrtos_cbuffer_node__free" name="zrtos_cbuffer_node__free">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,136,91"/>
-<area shape="rect" id="Node000002" href="$list_8h.html#a2b11d9c6f775a209430f16b719a19617" title=" " alt="" coords="185,27,309,53"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,56,170,50,171,55,136,61"/>
-<area shape="rect" id="Node000005" href="$malloc__limit_8h.html#ad9dc03f9dd447b3ffb64b0ec3873f61f" title=" " alt="" coords="184,77,310,120"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="136,78,169,83,168,88,136,83"/>
-<area shape="rect" id="Node000003" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="575,5,745,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="308,23,358,16,462,11,560,11,560,17,462,16,358,21,309,29"/>
-<area shape="rect" id="Node000004" href="$list_8h.html#a4ecf7568bdda1cd815956c391f29bf1e" title=" " alt="" coords="387,31,499,57"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="309,39,371,40,371,45,309,44"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="499,35,559,28,560,33,500,40"/>
-<area shape="rect" id="Node000006" href="$malloc_8h.html#aeba49dabb0a21ae4e02fa137e195bb1d" title=" " alt="" coords="358,85,527,112"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="310,96,342,96,342,101,310,101"/>
+<area shape="rect" id="node2" href="$list_8h.html#a2b11d9c6f775a209430f16b719a19617" title="zrtos_list__delete" alt="" coords="188,27,312,53"/>
+<area shape="rect" id="node5" href="$malloc__limit_8h.html#ad9dc03f9dd447b3ffb64b0ec3873f61f" title="zrtos_malloc_limit\l__free" alt="" coords="187,78,313,119"/>
+<area shape="rect" id="node3" href="$list_8h.html#a5a9358f4b25c9376dbdef338fa8333a6" title="zrtos_list__get_first_node" alt="" coords="580,5,751,32"/>
+<area shape="rect" id="node4" href="$list_8h.html#aee76d71632ab03e18ad9358fc8b35044" title="zrtos_list__shift" alt="" coords="389,31,504,57"/>
+<area shape="rect" id="node6" href="$malloc_8h.html#aeba49dabb0a21ae4e02fa137e195bb1d" title="zrtos_malloc__get_length" alt="" coords="361,85,532,112"/>
 </map>

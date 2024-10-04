@@ -1,15 +1,8 @@
 <map id="errno.h" name="errno.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="116,5,178,32"/>
-<area shape="rect" id="Node000002" href="$task_8h.html" title=" " alt="" coords="68,80,125,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,46,107,81,103,78,127,43"/>
-<area shape="rect" id="Node000005" href="$vheap__task_8h.html" title=" " alt="" coords="165,80,262,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="171,42,204,78,200,81,167,45"/>
-<area shape="rect" id="Node000003" href="$task__scheduler_8h.html" title=" " alt="" coords="5,155,126,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,122,73,155,68,153,82,120"/>
-<area shape="rect" id="Node000004" href="$task__pthread_8h.html" title=" " alt="" coords="12,229,119,256"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="68,197,68,229,63,229,63,197"/>
-<area shape="rect" id="Node000006" href="$vheap__task__scheduler_8h.html" title=" " alt="" coords="149,155,310,181"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="222,122,229,154,224,155,217,123"/>
-<area shape="rect" id="Node000007" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="156,229,303,256"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="232,197,232,229,227,229,227,197"/>
+<area shape="rect" id="node2" href="$task_8h.html" title="task.h" alt="" coords="67,80,126,107"/>
+<area shape="rect" id="node5" href="$vheap__task_8h.html" title="vheap_task.h" alt="" coords="167,80,267,107"/>
+<area shape="rect" id="node3" href="$task__scheduler_8h.html" title="task_scheduler.h" alt="" coords="5,155,127,181"/>
+<area shape="rect" id="node4" href="$task__pthread_8h.html" title="task_pthread.h" alt="" coords="12,229,120,256"/>
+<area shape="rect" id="node6" href="$vheap__task__scheduler_8h.html" title="vheap_task_scheduler.h" alt="" coords="151,155,314,181"/>
+<area shape="rect" id="node7" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="157,229,308,256"/>
 </map>

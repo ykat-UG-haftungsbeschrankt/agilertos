@@ -1,0 +1,32 @@
+<map id="zrtos_vfs_file__get_inode_data" name="zrtos_vfs_file__get_inode_data">
+<area shape="rect" id="node2" href="$vfs_2module_2avr_2progmem_8h.html#aa87e2c298b856cf12a5db65f0a27432d" title="zrtos_vfs_module_avr\l_progmem__on_read" alt="" coords="205,5,355,47"/>
+<area shape="rect" id="node3" href="$rtu_8h.html#a223fc39dfd241ff17884c9f5d03f8e78" title="zrtos_vfs_module_modbus\l_rtu__on_recv_timeout" alt="" coords="191,71,369,112"/>
+<area shape="rect" id="node5" href="$rtu_8h.html#aea13c3756fb07d48853e039823a846b1" title="zrtos_vfs_module_modbus\l_rtu__on_read" alt="" coords="191,253,369,295"/>
+<area shape="rect" id="node6" href="$rtu_8h.html#a08670f8758ac6130c738816d306eb923" title="zrtos_vfs_module_modbus\l_rtu__on_ioctl" alt="" coords="423,216,601,257"/>
+<area shape="rect" id="node7" href="$rtu_8h.html#ac0ca767b3e1e9a8b1f290448a122e095" title="zrtos_vfs_module_modbus\l_rtu__on_write" alt="" coords="191,319,369,360"/>
+<area shape="rect" id="node8" href="$rtu_8h.html#ab6a665819054d99f132b4cb31b0d6d1c" title="zrtos_vfs_module_modbus\l_rtu__on_can_read" alt="" coords="191,136,369,177"/>
+<area shape="rect" id="node9" href="$spi__sync_8h.html#a29c9d8a32af2717c5e9ed8e11d0800fa" title="zrtos_vfs_module_spi\l_sync__on_open" alt="" coords="205,384,355,425"/>
+<area shape="rect" id="node12" href="$spi__sync_8h.html#aafe8ef69f297fdd4855c8f8e2ad4931c" title="zrtos_vfs_module_spi\l_sync__on_mount" alt="" coords="437,420,587,461"/>
+<area shape="rect" id="node13" href="$spi__sync_8h.html#acad5edb178ed84b8a1b7b3a877dbcd61" title="zrtos_vfs_module_spi\l_sync__on_write_helper" alt="" coords="431,485,593,527"/>
+<area shape="rect" id="node14" href="$sram_8h.html#ae81a59adc54eb479f21bf266c427b309" title="zrtos_vfs_module_sram__rw" alt="" coords="185,551,375,578"/>
+<area shape="rect" id="node17" href="$uart_2uart_8h.html#a6a55bd7ce001957fedb1647045d64cf9" title="zrtos_vfs_module_uart\l__on_read" alt="" coords="203,799,357,840"/>
+<area shape="rect" id="node22" href="$uart_2uart_8h.html#a9e735d9796aaa30e4a5fce9c763adf92" title="zrtos_vfs_module_uart\l__on_write" alt="" coords="203,864,357,905"/>
+<area shape="rect" id="node23" href="$uart_2uart_8h.html#ae0df07d6b2030b70ae3c65b98ab0d15a" title="zrtos_vfs_module_uart\l__on_can_read" alt="" coords="203,603,357,644"/>
+<area shape="rect" id="node24" href="$uart_2uart_8h.html#aceac60cc4f8d7474e117088335ff0db7" title="zrtos_vfs_module_uart\l__on_can_write" alt="" coords="203,668,357,709"/>
+<area shape="rect" id="node25" href="$uart_2uart_8h.html#ad7c2b1650fefd09f873588725a30a2be" title="zrtos_vfs_module_uart\l__on_ioctl" alt="" coords="203,733,357,775"/>
+<area shape="rect" id="node26" href="$w5500_8h.html#ab56300a7356e13fa1a5cff355617a697" title="zrtos_vfs_module_w5500\l__on_ioctl" alt="" coords="195,929,365,971"/>
+<area shape="rect" id="node27" href="$w5500__socket_8h.html#ad5ebfa57bf612747510f6ee4e34ab7a0" title="rtos_vfs_module_w5500\l_socket__on_read" alt="" coords="431,1047,593,1088"/>
+<area shape="rect" id="node28" href="$w5500__socket_8h.html#ad72fd59b1d4ff9fec448680d4d97a3fe" title="zrtos_vfs_module_w5500\l_socket__on_ioctl" alt="" coords="649,1079,820,1120"/>
+<area shape="rect" id="node29" href="$w5500__socket_8h.html#a1ebd4ede0a97f704e762ccbc1ac194f4" title="rtos_vfs_module_w5500\l_socket__on_can_read\l_write_helper" alt="" coords="199,1105,361,1161"/>
+<area shape="rect" id="node4" href="$rtu_8h.html#a2376d02a52d42eef634ef843afc499f3" title="zrtos_vfs_module_modbus\l_rtu_inode__init" alt="" coords="423,71,601,112"/>
+<area shape="rect" id="node10" href="$spi__sync_8h.html#a2e3a53c5cd6e19f7859fcf16506d44ec" title="zrtos_vfs_module_spi\l_sync__on_close" alt="" coords="437,355,587,396"/>
+<area shape="rect" id="node11" href="$sync_8h.html#affc4ed32d5b66e97fb25c63faaf49eed" title="zrtos_vfs_module_avr\l_spi_sync__on_write" alt="" coords="659,388,810,429"/>
+<area shape="rect" id="node15" href="$sram_8h.html#ab0d0a1a04578c8af262001c024ae57e5" title="zrtos_vfs_module_sram\l__on_read" alt="" coords="431,603,593,644"/>
+<area shape="rect" id="node16" href="$sram_8h.html#ab1fc9892618f21a25027bc7ac993dfe7" title="zrtos_vfs_module_sram\l__on_write" alt="" coords="654,573,815,615"/>
+<area shape="rect" id="node18" href="$uart0_8h.html#a1c08ba1c9bac4dd9a045d06a07dbe0b4" title="zrtos_vfs_module_avr\l_uart0__on_write" alt="" coords="437,799,587,840"/>
+<area shape="rect" id="node19" href="$uart1_8h.html#af04452122e72ab7408b2e207191cdd33" title="zrtos_vfs_module_avr\l_uart1__on_write" alt="" coords="437,864,587,905"/>
+<area shape="rect" id="node20" href="$uart2_8h.html#a244148efdde4e736bdcba74328e85415" title="zrtos_vfs_module_avr\l_uart2__on_write" alt="" coords="437,668,587,709"/>
+<area shape="rect" id="node21" href="$uart3_8h.html#a0ac21cf2483f89180a91b9ca480eb7b8" title="zrtos_vfs_module_avr\l_uart3__on_write" alt="" coords="437,733,587,775"/>
+<area shape="rect" id="node30" href="$w5500__socket_8h.html#a5fcc60fbc21a29204dee2ec89f88b7cf" title="rtos_vfs_module_w5500\l_socket__on_can_read" alt="" coords="431,1112,593,1153"/>
+<area shape="rect" id="node31" href="$w5500__socket_8h.html#a6c41067dd75702313739a0842b229fa2" title="rtos_vfs_module_w5500\l_socket__on_can_write" alt="" coords="431,1177,593,1219"/>
+</map>

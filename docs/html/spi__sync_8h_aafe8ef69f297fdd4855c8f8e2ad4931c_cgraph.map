@@ -1,13 +1,7 @@
 <map id="zrtos_vfs_module_spi_sync__on_mount" name="zrtos_vfs_module_spi_sync__on_mount">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,52,151,95"/>
-<area shape="rect" id="Node000002" href="$gpio_8h.html#a09265f640ff70e6c6a30db445b052069" title=" " alt="" coords="199,31,372,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,60,182,56,183,61,151,66"/>
-<area shape="rect" id="Node000006" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="222,81,349,124"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="151,81,207,89,206,94,151,86"/>
-<area shape="rect" id="Node000003" href="$gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd" title=" " alt="" coords="420,31,591,57"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="372,41,404,41,404,47,372,47"/>
-<area shape="rect" id="Node000004" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title=" " alt="" coords="639,5,803,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="591,31,623,27,624,33,592,37"/>
-<area shape="rect" id="Node000005" href="$gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8" title=" " alt="" coords="645,56,797,83"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="592,51,630,56,629,61,591,57"/>
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="224,5,356,47"/>
+<area shape="rect" id="node3" href="$gpio_8h.html#a09265f640ff70e6c6a30db445b052069" title="zrtos_gpio__set_mode_ex" alt="" coords="203,71,377,98"/>
+<area shape="rect" id="node4" href="$gpio_8h.html#af2a9eeeb5290c0a90ebe5ebceefb8ccd" title="zrtos_gpio__set_mode_va" alt="" coords="425,71,600,98"/>
+<area shape="rect" id="node5" href="$error_8h.html#add13298163f63b7d37ed9f12d57e1a31" title="zrtos_error__is_success" alt="" coords="648,46,812,73"/>
+<area shape="rect" id="node6" href="$gpio_8h.html#a256ab7a19b884f6960ccbbc56c1e6cf8" title="zrtos_gpio__set_mode" alt="" coords="653,97,807,123"/>
 </map>

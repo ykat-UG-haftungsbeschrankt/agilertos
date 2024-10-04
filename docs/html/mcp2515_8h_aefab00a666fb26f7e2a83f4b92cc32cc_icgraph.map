@@ -1,5 +1,3 @@
 <map id="zrtos_vfs_module_mcp2515__clear_interrupts" name="zrtos_vfs_module_mcp2515__clear_interrupts">
-<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,416,48"/>
-<area shape="rect" id="Node000002" href="$mcp2515_8h.html#a0efa06269912d6ba6c23a5fbbea49150" title=" " alt="" coords="5,5,187,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,29,187,29,187,24,219,24"/>
+<area shape="rect" id="node2" href="$mcp2515_8h.html#a0efa06269912d6ba6c23a5fbbea49150" title="zrtos_vfs_module_mcp2515\l__clear_rx_and_ovr" alt="" coords="239,5,424,47"/>
 </map>

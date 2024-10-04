@@ -1,16 +1,6 @@
 <map id="_zrtos_msg_queue_write_transaction_t" name="_zrtos_msg_queue_write_transaction_t">
-<area shape="rect" id="Node000001" title=" " alt="" coords="105,400,270,443"/>
-<area shape="rect" id="Node000002" href="$struct__zrtos__cbuffer__write__transaction__t.html" title=" " alt="" coords="57,293,193,336"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,348,178,398,173,401,143,351"/>
-<area shape="rect" id="Node000003" href="$struct__zrtos__cbuffer__t.html" title=" " alt="" coords="12,203,126,229"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="86,241,115,291,111,294,82,244"/>
-<area shape="rect" id="Node000004" href="$struct__zrtos__list__t.html" title=" " alt="" coords="23,112,115,139"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="72,154,72,202,66,202,66,154"/>
-<area shape="rect" id="Node000005" href="$struct__zrtos__list__node__t.html" title=" " alt="" coords="5,5,133,32"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="72,47,72,112,66,112,66,47"/>
-<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="150,9,159,19,151,28,134,31,133,26,149,23,154,19,146,13"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="150,203,210,229"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="167,244,139,294,134,291,163,241"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="217,301,284,328"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="237,343,202,401,198,398,233,340"/>
+<area shape="rect" id="node3" href="$struct__zrtos__cbuffer__write__transaction__t.html" title="_zrtos_cbuffer_write\l_transaction_t" alt="" coords="97,288,237,329"/>
+<area shape="rect" id="node5" href="$struct__zrtos__cbuffer__t.html" title="_zrtos_cbuffer_t" alt="" coords="179,199,295,225"/>
+<area shape="rect" id="node6" href="$struct__zrtos__list__t.html" title="_zrtos_list_t" alt="" coords="190,109,283,136"/>
+<area shape="rect" id="node7" href="$struct__zrtos__list__node__t.html" title="_zrtos_list_node_t" alt="" coords="173,5,301,32"/>
 </map>

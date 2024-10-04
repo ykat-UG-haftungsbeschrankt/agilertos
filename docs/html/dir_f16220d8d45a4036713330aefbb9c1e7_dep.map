@@ -1,10 +1,6 @@
 <map id="arduino" name="arduino">
-<area shape="rect" id="node1" href="dir_b055b4698aa074fda90d59c953fca1c1.html" title="gpio" alt="" coords="36,128,81,155"/>
-<area shape="rect" id="node2" href="dir_f16220d8d45a4036713330aefbb9c1e7.html" title="arduino" alt="" coords="27,53,90,80"/>
-<area shape="poly" id="edge1" href="dir_000002_000006.html" alt="" coords="61,81,61,112,56,112,56,81"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000002_000006.html" title="1" alt="" coords="64,101,71,117"/>
-<area shape="rect" id="node3" href="dir_f04b423965c07ce5f2c4da56e14dc653.html" title="board" alt="" coords="112,128,165,155"/>
-<area shape="poly" id="edge2" href="dir_000002_000004.html" alt="" coords="74,79,116,116,112,120,71,83"/>
-<area shape="rect" id="edge2-headlabel" href="dir_000002_000004.html" title="1" alt="" coords="114,101,121,117"/>
-<area shape="rect" id="clust1" href="dir_278173988d65b476d0538235309879a9.html" title="module" alt="" coords="16,16,101,165"/>
+<area shape="rect" id="node1" href="dir_f16220d8d45a4036713330aefbb9c1e7.html" title="arduino" alt="" coords="27,52,99,100"/>
+<area shape="rect" id="node2" href="dir_b055b4698aa074fda90d59c953fca1c1.html" title="gpio" alt="" coords="27,148,99,196"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000010_000011.html" title="1" alt="" coords="67,122,75,137"/>
+<area shape="rect" id="clust1" href="dir_278173988d65b476d0538235309879a9.html" title="module" alt="" coords="16,16,109,111"/>
 </map>

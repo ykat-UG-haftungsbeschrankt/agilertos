@@ -1,5 +1,3 @@
 <map id="zrtos_vfs_module_spi_file__deinit" name="zrtos_vfs_module_spi_file__deinit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="199,5,344,48"/>
-<area shape="rect" id="Node000002" href="$spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de" title=" " alt="" coords="5,5,151,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,29,151,29,151,24,183,24"/>
+<area shape="rect" id="node2" href="$spi_2spi_8h.html#ae37ac67ac292b108b745f060bd34c7de" title="zrtos_vfs_module_spi\l_file__free" alt="" coords="203,5,352,47"/>
 </map>

@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_module_uart__on_can_write" name="zrtos_vfs_module_uart__on_can_write">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,156,81"/>
-<area shape="rect" id="Node000002" href="$cbuffer_8h.html#af7e1a18084c22778a744d9a44a243a5c" title=" " alt="" coords="204,5,334,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,44,188,38,189,43,157,49"/>
-<area shape="rect" id="Node000003" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="205,72,333,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,71,190,77,190,82,156,76"/>
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="209,5,341,47"/>
+<area shape="rect" id="node3" href="$cbuffer_8h.html#af7e1a18084c22778a744d9a44a243a5c" title="zrtos_cbuffer__can\l_write" alt="" coords="208,71,341,112"/>
 </map>

@@ -1,15 +1,7 @@
 <map id="vheap_chunk_uid.h" name="vheap_chunk_uid.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="41,5,173,32"/>
-<area shape="rect" id="Node000002" href="$vheap__chunk_8h.html" title=" " alt="" coords="5,80,113,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,47,69,81,65,78,88,44"/>
-<area shape="rect" id="Node000006" href="$vheap__task_8h.html" title=" " alt="" coords="112,155,209,181"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="119,46,158,153,153,155,114,48"/>
-<area shape="rect" id="Node000003" href="$vheap_8h.html" title=" " alt="" coords="22,155,88,181"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="60,123,58,154,53,154,55,122"/>
-<area shape="rect" id="Node000004" href="$vheap__task__pthread_8h.html" title=" " alt="" coords="28,304,175,331"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="59,196,63,225,71,255,82,281,95,302,91,305,78,283,66,257,58,226,54,197"/>
-<area shape="rect" id="Node000005" href="$vheap__task__scheduler_8h.html" title=" " alt="" coords="80,229,241,256"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="87,188,143,226,140,231,84,193"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="143,270,114,305,110,302,138,267"/>
-<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="163,197,163,229,158,229,158,197"/>
+<area shape="rect" id="node2" href="$vheap__chunk_8h.html" title="vheap_chunk.h" alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node6" href="$vheap__task_8h.html" title="vheap_task.h" alt="" coords="112,155,212,181"/>
+<area shape="rect" id="node3" href="$vheap_8h.html" title="vheap.h" alt="" coords="20,155,88,181"/>
+<area shape="rect" id="node4" href="$vheap__task__pthread_8h.html" title="vheap_task_pthread.h" alt="" coords="27,304,177,331"/>
+<area shape="rect" id="node5" href="$vheap__task__scheduler_8h.html" title="vheap_task_scheduler.h" alt="" coords="81,229,243,256"/>
 </map>

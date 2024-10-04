@@ -1,7 +1,5 @@
 <map id="zrtos_vfs_module_avr_progmem__on_read" name="zrtos_vfs_module_avr_progmem__on_read">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,150,81"/>
-<area shape="rect" id="Node000002" href="$types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329" title=" " alt="" coords="198,5,360,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,45,181,40,182,45,150,51"/>
-<area shape="rect" id="Node000003" href="$vfs__file_8h.html#adbc392417c3fef015ea0c4728d2be7c6" title=" " alt="" coords="215,72,343,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,69,200,78,199,83,150,75"/>
+<area shape="rect" id="node2" href="$vfs__file_8h.html#af192d2176bcd9a795fe8253a0759b0c7" title="zrtos_vfs_file__get\l_inode_data" alt="" coords="237,5,369,47"/>
+<area shape="rect" id="node3" href="$types_8h.html#a1918d62f1f167d9ce5817b8ec5e2c329" title="zrtos_types__uint32\l_is_valid_address_range" alt="" coords="220,71,385,112"/>
+<area shape="rect" id="node4" href="$vfs_2module_2avr_2progmem_8h.html#ac980b35eceb73136cae45977244914ea" title="ZRTOS_VFS_PLUGIN__INIT" alt="" coords="204,137,401,163"/>
 </map>

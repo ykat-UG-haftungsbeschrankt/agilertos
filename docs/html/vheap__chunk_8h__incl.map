@@ -1,9 +1,5 @@
 <map id="vheap_chunk.h" name="vheap_chunk.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="130,5,237,32"/>
-<area shape="rect" id="Node000002" href="$vheap__chunk__uid_8h.html" title=" " alt="" coords="5,80,170,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,35,118,73,115,68,165,30"/>
-<area shape="rect" id="Node000003" href="$vheap__chunk__type_8h.html" title=" " alt="" coords="193,80,366,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,30,252,68,249,73,199,35"/>
-<area shape="rect" id="Node000004" href="$vheap__type_8h.html" title=" " alt="" coords="214,155,345,181"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="282,107,282,139,277,139,277,107"/>
+<area shape="rect" id="node2" href="$vheap__chunk__uid_8h.html" title="zrtos/vheap_chunk_uid.h" alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node3" href="$vheap__chunk__type_8h.html" title="zrtos/vheap_chunk_type.h" alt="" coords="196,80,371,107"/>
+<area shape="rect" id="node4" href="$vheap__type_8h.html" title="zrtos/vheap_type.h" alt="" coords="217,155,350,181"/>
 </map>

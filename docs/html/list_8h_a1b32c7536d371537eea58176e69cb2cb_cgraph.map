@@ -1,11 +1,6 @@
 <map id="zrtos_list__shift_and_push" name="zrtos_list__shift_and_push">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,181,57"/>
-<area shape="rect" id="Node000002" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title=" " alt="" coords="229,5,345,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,30,213,26,213,31,181,35"/>
-<area shape="rect" id="Node000004" href="$list_8h.html#a4ecf7568bdda1cd815956c391f29bf1e" title=" " alt="" coords="231,56,343,83"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,53,216,57,215,63,181,58"/>
-<area shape="rect" id="Node000003" href="$list_8h.html#aa2f26b2b6fd722b708eb7e25cc264a90" title=" " alt="" coords="393,5,562,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,16,377,16,377,21,346,21"/>
-<area shape="rect" id="Node000005" href="$list_8h.html#a0039f0f08299038ab1a71e271a43a086" title=" " alt="" coords="393,56,562,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="344,67,377,67,377,72,344,72"/>
+<area shape="rect" id="node2" href="$list_8h.html#aee76d71632ab03e18ad9358fc8b35044" title="zrtos_list__shift" alt="" coords="232,5,347,32"/>
+<area shape="rect" id="node4" href="$list_8h.html#aa734984fb49603438b179f49fff38477" title="zrtos_list__push" alt="" coords="231,56,348,83"/>
+<area shape="rect" id="node3" href="$list_8h.html#a5a9358f4b25c9376dbdef338fa8333a6" title="zrtos_list__get_first_node" alt="" coords="396,5,567,32"/>
+<area shape="rect" id="node5" href="$list_8h.html#a0f2fe7ff1e14a9237a955a4925b062e2" title="zrtos_list__get_last_node" alt="" coords="396,56,567,83"/>
 </map>

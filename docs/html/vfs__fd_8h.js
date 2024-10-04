@@ -15,6 +15,7 @@ var vfs__fd_8h =
     [ "zrtos_vfs_fd__read", "vfs__fd_8h.html#a1c176ae3990492b9deae02682a6782e1", null ],
     [ "zrtos_vfs_fd__read_sync", "vfs__fd_8h.html#ae737855f8418bd0b815a5113c0b2203e", null ],
     [ "zrtos_vfs_fd__select", "vfs__fd_8h.html#a8804d81bd731c8b3df5763a432c1ebdd", null ],
+    [ "zrtos_vfs_fd__spi_transfer", "vfs__fd_8h.html#a1e3e2241dc54e1283f012b7ecc641053", null ],
     [ "zrtos_vfs_fd__write", "vfs__fd_8h.html#a823e991e7f073e7c8f835309fe4ba2aa", null ],
     [ "zrtos_vfs_fd__write_sync", "vfs__fd_8h.html#ad2e1f59b4c70fbc7dc35cab85a0ff367", null ],
     [ "zrtos_vfs_fd_set__clear", "vfs__fd_8h.html#ad15bcee237278a1e0d14f758b3cd0990", null ],

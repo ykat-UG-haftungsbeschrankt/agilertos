@@ -1,7 +1,4 @@
 <map id="zrtos_vfs_module_avr_spi__on_interrupt" name="zrtos_vfs_module_avr_spi__on_interrupt">
-<area shape="rect" id="Node000001" title=" " alt="" coords="198,27,342,69"/>
-<area shape="rect" id="Node000002" href="$avr_2spi_2spi_8h.html#a0353f98d744b931e541684fe33b272f7" title=" " alt="" coords="56,5,99,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,37,99,24,100,19,183,32"/>
-<area shape="rect" id="Node000003" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title=" " alt="" coords="5,56,150,99"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,64,150,69,149,64,182,59"/>
+<area shape="rect" id="node2" href="$avr_2spi_2spi_8h.html#a0353f98d744b931e541684fe33b272f7" title="ISR" alt="" coords="257,5,302,32"/>
+<area shape="rect" id="node3" href="$avr_2spi_2spi_8h.html#ab6f547c3ce7ee0463c235abe078f9491" title="zrtos_vfs_module_avr\l_spi__on_write" alt="" coords="204,57,355,98"/>
 </map>

@@ -1,9 +1,5 @@
 <map id="zrtos_types__ptr_is_valid_address_range" name="zrtos_types__ptr_is_valid_address_range">
-<area shape="rect" id="Node000001" title=" " alt="" coords="443,39,588,81"/>
-<area shape="rect" id="Node000002" href="$sram_8h.html#ae81a59adc54eb479f21bf266c427b309" title=" " alt="" coords="211,47,395,73"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="427,63,396,63,396,57,427,57"/>
-<area shape="rect" id="Node000003" href="$sram_8h.html#ab0d0a1a04578c8af262001c024ae57e5" title=" " alt="" coords="5,5,163,48"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="196,46,163,41,163,36,196,41"/>
-<area shape="rect" id="Node000004" href="$sram_8h.html#ab1fc9892618f21a25027bc7ac993dfe7" title=" " alt="" coords="5,72,163,115"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="196,79,163,84,163,79,196,74"/>
+<area shape="rect" id="node2" href="$sram_8h.html#ae81a59adc54eb479f21bf266c427b309" title="zrtos_vfs_module_sram__rw" alt="" coords="201,42,391,69"/>
+<area shape="rect" id="node3" href="$sram_8h.html#ab0d0a1a04578c8af262001c024ae57e5" title="zrtos_vfs_module_sram\l__on_read" alt="" coords="439,5,600,47"/>
+<area shape="rect" id="node4" href="$sram_8h.html#ab1fc9892618f21a25027bc7ac993dfe7" title="zrtos_vfs_module_sram\l__on_write" alt="" coords="648,35,809,76"/>
 </map>

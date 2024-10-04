@@ -1,17 +1,9 @@
 <map id="zrtos_vfs_dentry__init" name="zrtos_vfs_dentry__init">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,111,152,137"/>
-<area shape="rect" id="Node000002" href="$clist_8h.html#a853d4178de18748d3bee28700929bda4" title=" " alt="" coords="212,60,335,87"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,107,204,89,205,94,134,113"/>
-<area shape="rect" id="Node000007" href="$clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a" title=" " alt="" coords="200,111,347,137"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="152,121,184,121,184,127,152,127"/>
-<area shape="rect" id="Node000008" href="$vfs__inode_8h.html#a017cf6850f11efa189da7d3655d9ea53" title=" " alt="" coords="203,161,344,188"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="134,135,205,154,204,159,132,141"/>
-<area shape="rect" id="Node000003" href="$clist_8h.html#ad48884723dee26734c89f80bef68d0d5" title=" " alt="" coords="395,35,571,61"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="335,63,379,58,380,63,335,69"/>
-<area shape="rect" id="Node000006" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title=" " alt="" coords="397,85,569,112"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="335,78,382,84,381,89,335,83"/>
-<area shape="rect" id="Node000004" href="$clist_8h.html#acab2b5c771ea45635a9621a9dc1382d4" title=" " alt="" coords="622,5,765,32"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="572,33,607,28,607,33,572,38"/>
-<area shape="rect" id="Node000005" href="$clist_8h.html#a7e4e2a2b78267e86a322ece473242b47" title=" " alt="" coords="619,56,768,99"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="572,58,605,62,604,68,572,63"/>
+<area shape="rect" id="node2" href="$clist_8h.html#a26b8f9c0c172cd6d9deba237155bf40a" title="zrtos_clist_node__init" alt="" coords="204,5,352,32"/>
+<area shape="rect" id="node3" href="$vfs__inode_8h.html#a017cf6850f11efa189da7d3655d9ea53" title="zrtos_vfs_inode__init" alt="" coords="205,56,351,83"/>
+<area shape="rect" id="node4" href="$clist_8h.html#a853d4178de18748d3bee28700929bda4" title="zrtos_clist__push" alt="" coords="216,107,340,133"/>
+<area shape="rect" id="node5" href="$clist_8h.html#ac963d632abfc835ef63877a4cfd401e6" title="zrtos_clist__get_last_node" alt="" coords="400,81,577,108"/>
+<area shape="rect" id="node8" href="$clist_8h.html#a2795f97f269d0259065d7c7219d09341" title="zrtos_clist_node__append" alt="" coords="402,132,575,159"/>
+<area shape="rect" id="node6" href="$clist_8h.html#afb7e643d242da19562a3584abcfca015" title="zrtos_clist__get_root" alt="" coords="629,52,771,79"/>
+<area shape="rect" id="node7" href="$clist_8h.html#adc7d3acc850be7934c1c38390033a93d" title="zrtos_clist_node__get\l_previous_node" alt="" coords="625,103,775,145"/>
 </map>

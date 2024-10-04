@@ -1,11 +1,6 @@
 <map id="zrtos_vm__icall" name="zrtos_vm__icall">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,116,73"/>
-<area shape="rect" id="Node000002" href="$vm__function_8h.html#afa6afdd7c3796f4013f14fa2d2285ad5" title=" " alt="" coords="179,5,312,48"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,47,164,39,165,44,116,53"/>
-<area shape="rect" id="Node000003" href="$vm__function__index_8h.html#ac1e14e6160e751c15e1c3a35bac559f5" title=" " alt="" coords="164,72,327,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,67,149,73,148,78,116,73"/>
-<area shape="rect" id="Node000004" href="$mem_8h.html#aab5ba8aca3f57d2f28ec20b9ae5dceaf" title=" " alt="" coords="388,55,527,81"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="327,81,372,76,372,81,328,86"/>
-<area shape="rect" id="Node000005" href="$vm__function_8h.html#a186820ec779e59081b10e3a45b708613" title=" " alt="" coords="375,105,539,132"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="328,100,360,104,359,110,327,106"/>
+<area shape="rect" id="node2" href="$vm__function__index_8h.html#a7eb54c1041506caa79756f78e34cc246" title="zrtos_vm_function_index\l__get_function" alt="" coords="167,23,333,65"/>
+<area shape="rect" id="node5" href="$vm__function_8h.html#afa6afdd7c3796f4013f14fa2d2285ad5" title="zrtos_vm_function_\l_get_callback" alt="" coords="182,89,318,130"/>
+<area shape="rect" id="node3" href="$mem_8h.html#a6ad907a00878b6b05591fa32bc01b1f5" title="zrtos_mem__search" alt="" coords="395,5,535,32"/>
+<area shape="rect" id="node4" href="$vm__function_8h.html#a186820ec779e59081b10e3a45b708613" title="zrtos_vm_function__cmp" alt="" coords="381,56,549,83"/>
 </map>
