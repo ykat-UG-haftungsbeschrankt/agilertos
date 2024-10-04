@@ -189,6 +189,16 @@ https://github.com/Wiznet/ioLibrary_Driver/tree/master/Ethernet
  * @brief These are functions to access <b>socket registers</b>.
  */
  #endif
+
+
+typedef enum{
+	 ZRTOS_VFS_MODULE_W5500_CTL__READ  = 0
+	,ZRTOS_VFS_MODULE_W5500_CTL__WRITE = (1<<2)
+}zrtos_vfs_module_w5500_ctl_t;
+
+#define ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(n)	(((1+4*(n)) << 3) | ZRTOS_VFS_MODULE_W5500_CTL__READ)
+#define ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_WRITE(n)	(((1+4*(n)) << 3) | ZRTOS_VFS_MODULE_W5500_CTL__WRITE)
+
 //------------------------------- defgroup end --------------------------------------------
 //----------------------------- W5500 Common Registers IOMAP -----------------------------
 typedef enum{
@@ -277,9 +287,7 @@ typedef enum{
 	* - \ref IM_IR5 : PPPoE Close Interrupt Mask
 	* - \ref IM_IR4 : Magic Packet Interrupt Mask
 	*/
-	//M20150401 : Rename SYMBOE ( Re-define error in a compile) 
-	//,ZRTOS_VFS_MODULE_W5500_REGISTER__IMR                = 0x0016
-	,ZRTOS_VFS_MODULE_W5500_REGISTER___IMR_                = 0x0016
+	,ZRTOS_VFS_MODULE_W5500_REGISTER__IMR                = 0x0016
 
 	/**
 	* @ingroup Common_register_group
@@ -306,9 +314,7 @@ typedef enum{
 	* to the packet that is transmitted by \ref Sn_CR (CONNECT, DISCON, CLOSE, SEND, SEND_MAC, SEND_KEEP command).
 	* If the peer does not respond within the @ref _RTR_ time, W5500 retransmits the packet or issues timeout.
 	*/
-	//M20150401 : Rename SYMBOE ( Re-define error in a compile)  
-	//,ZRTOS_VFS_MODULE_W5500_REGISTER__RTR                = 0x0019
-	,ZRTOS_VFS_MODULE_W5500_REGISTER___RTR_                = 0x0019
+	,ZRTOS_VFS_MODULE_W5500_REGISTER__RTR                = 0x0019
 
 	/**
 	* @ingroup Common_register_group
@@ -316,9 +322,7 @@ typedef enum{
 	* @details @ref _RCR_ configures the number of time of retransmission.
 	* When retransmission occurs as many as ref _RCR_+1 Timeout interrupt is issued (@ref Sn_IR_TIMEOUT = '1').
 	*/
-	//M20150401 : Rename SYMBOE ( Re-define error in a compile)
-	//,ZRTOS_VFS_MODULE_W5500_REGISTER__RCR                = 0x001B  
-	,ZRTOS_VFS_MODULE_W5500_REGISTER___RCR_                = 0x001B
+	,ZRTOS_VFS_MODULE_W5500_REGISTER__RCR                = 0x001B
 
 	/**
 	* @ingroup Common_register_group
@@ -433,6 +437,7 @@ typedef enum{
 	*  @note MACRAW mode should be only used in Socket 0.
 	*/
 	 ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__MR            = 0x0000
+	,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__MODE            = 0x0000
 
 	/**
 	* @ingroup Socket_register_group
@@ -1166,16 +1171,16 @@ typedef enum{
 
 /* IP PROTOCOL */
 typedef enum{
-	 ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_IP                  = 0        //< Dummy for IP 
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_ICMP                = 1        //< Control message protocol
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_IGMP                = 2        //< Internet group management protocol
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_GGP                 = 3        //< Gateway^2 (deprecated)
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_TCP                 = 6        //< TCP
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_PUP                 = 12       //< PUP
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_UDP                 = 17       //< UDP
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_IDP                 = 22       //< XNS idp
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_ND                  = 77       //< UNOFFICIAL net disk protocol
-	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IPPROTO_RAW                 = 255      //< Raw IP packet
+	 ZRTOS_VFS_MODULE_W5500_IPPROTO__IP                  = 0        //< Dummy for IP 
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__ICMP                = 1        //< Control message protocol
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IGMP                = 2        //< Internet group management protocol
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__GGP                 = 3        //< Gateway^2 (deprecated)
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__TCP                 = 6        //< TCP
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__PUP                 = 12       //< PUP
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__UDP                 = 17       //< UDP
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__IDP                 = 22       //< XNS idp
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__ND                  = 77       //< UNOFFICIAL net disk protocol
+	,ZRTOS_VFS_MODULE_W5500_IPPROTO__RAW                 = 255      //< Raw IP packet
 }zrtos_vfs_module_w5500_ipproto_t;
 
 #if 0

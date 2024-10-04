@@ -108,7 +108,7 @@ typedef struct{
 }zrtos_vfs_module_w5500_socket_file_t;
 
 typedef struct{
-    zrtos_vfs_module_w5500_inode_t *w5500;
+	zrtos_vfs_fd_t fd;
 }zrtos_vfs_module_w5500_socket_inode_t;
 
 zrtos_error_t rtos_vfs_module_w5500_socket__read_data(
@@ -122,10 +122,10 @@ zrtos_error_t rtos_vfs_module_w5500_socket__read_data(
 	uint16_t src_mask;
 	uint16_t addr;
 	size_t l;
-	uint8_t ctl = _W5500_SPI_READ_;
+	uint8_t ctl = ZRTOS_VFS_MODULE_W5500_CTL__READ;
 	
 	src_mask = src & ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_MASK;
-	addr = ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_ADDR(n) + src_mask;
+	addr = zrtos_types__htobe16(ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_ADDR(n) + src_mask);
 	l = ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_SIZE - src_mask;
 
 	do{
@@ -140,11 +140,33 @@ zrtos_error_t rtos_vfs_module_w5500_socket__read_data(
 			,l
 		);
 		dest += l;
-		addr = ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_ADDR(n);
+		addr = zrtos_types__htobe16(ZRTOS_VFS_MODULE_W5500_SOCKET__RX_BUFFER_ADDR(n));
 		l = len - l;
 	}while(zrtos_error__is_success(ret) && l);
 
 	return ret;
+}
+
+zrtos_error_t rtos_vfs_module_w5500_socket__write_data(
+	 zrtos_vfs_fd_t fd
+	,uint8_t n
+	,uint16_t src
+	,uint8_t *dest
+	,uint16_t len
+){
+	uint16_t addr = zrtos_types__htobe16(ZRTOS_VFS_MODULE_W5500_SOCKET__TX_BUFFER_ADDR(n));
+	uint8_t ctl = ZRTOS_VFS_MODULE_W5500_CTL__WRITE;
+
+	return zrtos_vfs_fd__spi_transfer(
+		 fd
+		,3
+		,addr
+		,sizeof(addr)
+		,&ctl
+		,sizeof(ctl)
+		,dest
+		,len
+	);
 }
 
 zrtos_error_t rtos_vfs_module_w5500_socket__on_read(
@@ -170,14 +192,14 @@ zrtos_error_t rtos_vfs_module_w5500_socket__on_read(
 
 	if(zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
 		 inode_data->fd
-		,(Sn_RX_RSR(0)>>8)
-		,(WIZCHIP_SREG_BLOCK(file_data->fd) << 3) | _W5500_SPI_READ_
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__RX_RSR
+		,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(file_data->fd)
 		,&rx_len
 	)))
 	&& zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
-		inode_data->fd
-		,Sn_RX_RD(0)>>8
-		,(WIZCHIP_SREG_BLOCK(file_data->fd) << 3) | _W5500_SPI_READ_
+		 inode_data->fd
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__RX_RD
+		,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(file_data->fd)
 		,ptr
 	)))){
 		rx_len = ZRTOS_TYPES__MIN(len,rx_len);
@@ -185,14 +207,14 @@ zrtos_error_t rtos_vfs_module_w5500_socket__on_read(
 			 inode_data->fd
 			,file_data->fd
 			,ptr
-			,buf
+			,(uint8_t*)buf
 			,rx_len
 		)))){
 			ptr += rx_len;
 			ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
-				file_data->w5500->fd
-				,Sn_RX_RD(0)>>8
-				,(WIZCHIP_SREG_BLOCK(file_data->fd) << 3) | _W5500_SPI_WRITE_
+				 inode_data->fd
+				,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__RX_RD
+				,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_WRITE(file_data->fd)
 				,ptr
 			);
 		}
@@ -209,77 +231,86 @@ zrtos_error_t rtos_vfs_module_w5500_socket__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-/*
-    zrtos_vfs_module_w5500_socket_inode_t *file_data = ZRTOS_CAST(
+	zrtos_vfs_module_w5500_socket_inode_t *inode_data = ZRTOS_CAST(
 		 zrtos_vfs_module_w5500_socket_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
-    zrtos_error_t ret;
-    uint16_t ptr;
-    ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
-        zrtos_vfs_fd_t fd
-        ,uint16_t addr
-        ,uint8_t ctl
-        ,&ptr
-    );
+	zrtos_vfs_module_w5500_socket_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_w5500_socket_file_t*
+		,zrtos_vfs_file__get_data(thiz)
+	);
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	uint16_t ptr;
+	uint16_t tx_len;
+	uint16_t tx_base_addr;
 
-    ret = zrtos_vfs_module_w5500__spi_transfer(
-        zrtos_vfs_fd_t fd
-        ,uint16_t addr
-        ,uint8_t ctl
-        ,uint16_t *val
-    );
-    ptr += 
-    ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
-        zrtos_vfs_fd_t fd
-        ,uint16_t addr
-        ,uint8_t ctl
-        ,&ptr
-    );
+	if(zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
+		 inode_data->fd
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__TX_FSR
+		,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(file_data->fd)
+		,&tx_len
+	)))
+	&& zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
+		 inode_data->fd
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__TX_WR
+		,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(file_data->fd)
+		,ptr
+	)))){
+		tx_len = ZRTOS_TYPES__MIN(len,tx_len);
+		if(zrtos_error__is_success((ret = rtos_vfs_module_w5500_socket__write_data(
+			 inode_data->fd
+			,file_data->fd
+			,ptr
+			,(uint8_t*)buf
+			,tx_len
+		)))){
+			ptr += tx_len;
+			ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
+				 inode_data->fd
+				,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__TX_WR
+				,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_WRITE(file_data->fd)
+				,ptr
+			);
+		}
+	}
 
+	return ret;
+/*
     uint16_t ptr = readSnTX_WR(s);
     uint8_t cntl_byte = (0x14+(s<<5));
     ptr += data_offset;
     write(ptr, cntl_byte, data, len);
     ptr += len;
     writeSnTX_WR(s, ptr);
-
-	return zrtos_vfs_module_sram__rw(
-		 thiz
-		,path
-		,buf
-		,len
-		,offset
-		,out
-		,true
-	);
 */
 }
 
 zrtos_error_t rtos_vfs_module_w5500_socket__on_can_read_write_helper(
 	 zrtos_vfs_file_t *thiz
-	,char *path
-    ,uint16_t addr
+	,uint16_t addr
 ){
-    zrtos_error_t ret;
 	zrtos_vfs_module_w5500_socket_inode_t *inode_data = ZRTOS_CAST(
 		 zrtos_vfs_module_w5500_socket_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
-    uint16_t val;
+	zrtos_vfs_module_w5500_socket_file_t *file_data = ZRTOS_CAST(
+		 zrtos_vfs_module_w5500_socket_file_t*
+		,zrtos_vfs_file__get_data(thiz)
+	);
+	zrtos_error_t ret;
+	uint16_t val;
 
-    if(zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
-         inode_data->fd
-        ,addr
-        ,(WIZCHIP_SREG_BLOCK(inode_data->num) << 3) | _W5500_SPI_READ_
-        ,&val
-    )))
-    ){
-        ret = val > 0
-            ? ZRTOS_ERROR__SUCCESS
-            : ZRTOS_ERROR__AGAIN
-        ;
-    }
+	if(zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint16(
+		 inode_data->fd
+		,addr
+		,ZRTOS_VFS_MODULE_W5500_CTL__SOCKET_READ(file_data->fd)
+		,&val
+	)))){
+		ret = val > 0
+			? ZRTOS_ERROR__SUCCESS
+			: ZRTOS_ERROR__AGAIN
+		;
+	}
 
 	return ret;
 }
@@ -290,8 +321,7 @@ zrtos_error_t rtos_vfs_module_w5500_socket__on_can_read(
 ){
 	return rtos_vfs_module_w5500_socket__on_can_read_write_helper(
 		 thiz
-		,path
-		,(Sn_RX_RSR(0)>>8)
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__RX_RSR
 	);
 }
 
@@ -301,8 +331,7 @@ zrtos_error_t rtos_vfs_module_w5500_socket__on_can_write(
 ){
 	return rtos_vfs_module_w5500_socket__on_can_read_write_helper(
 		 thiz
-		,path
-		,(Sn_TX_FSR(0)>>8)
+		,ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__TX_FSR
 	);
 }
 

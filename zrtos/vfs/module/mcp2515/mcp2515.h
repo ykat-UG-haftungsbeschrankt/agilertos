@@ -82,7 +82,7 @@ typedef enum{
 	ZRTOS_VFS_MODULE_MCP2515_MASK__MASK1 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXM1SIDH
 }zrtos_vfs_module_mcp2515_mask_t;
 
-typedef enum/*enum zrtos_vfs_module_mcp2515_register_rxf_t */{
+typedef enum /*enum zrtos_vfs_module_mcp2515_register_rxf_t */{
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_RXF__RXF0 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF0SIDH,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_RXF__RXF1 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF1SIDH,
 	ZRTOS_VFS_MODULE_MCP2515_REGISTER_RXF__RXF2 = ZRTOS_VFS_MODULE_MCP2515_REGISTER__RXF2SIDH,
@@ -156,7 +156,6 @@ typedef enum /*uint8_t*/{
 	 ZRTOS_VFS_MODULE_MCP2515_REGISTER_CNF3__SOF = 0x80
 }zrtos_vfs_module_mcp2515_register_cnf3_t;
 
-        static uint8_t  = 0x08;
 typedef enum /*uint8_t */{
 	 ZRTOS_VFS_MODULE_MCP2515_MCP_SIDL__TXB_EXIDE_MASK       = 0x08
 }zrtos_vfs_module_mcp2515_mcp_sidl_t;

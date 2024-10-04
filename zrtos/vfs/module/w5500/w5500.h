@@ -45,14 +45,6 @@ extern "C" {
 	|ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__BITORDER_MSB\
 	|ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__PP_0)
 
-typedef enum{
-	 ZRTOS_VFS_MODULE_W5500_MODE__RST  = 0
-}zrtos_vfs_module_w5500_mode_t;
-
-typedef enum{
-	 ZRTOS_VFS_MODULE_W5500_CTL__READ  = 0
-	,ZRTOS_VFS_MODULE_W5500_CTL__WRITE = (1<<2)
-}zrtos_vfs_module_w5500_ctl_t;
 
 #define ZRTOS_VFS_MODULE_W5500_IOCTL__GET(addr,len)\
 	((addr << 8) | (0x00 << 6) | len)
@@ -134,6 +126,7 @@ zrtos_error_t zrtos_vfs_module_w5500__spi_transfer_uint8(
 	,uint8_t ctl
 	,uint8_t *val
 ){
+	addr = zrtos_types__htobe16(addr);
 	return zrtos_vfs_fd__spi_transfer(
 		 fd
 		,3
@@ -152,6 +145,7 @@ zrtos_error_t zrtos_vfs_module_w5500__spi_transfer_uint16(
 	,uint8_t ctl
 	,uint16_t *val
 ){
+	addr = zrtos_types__htobe16(addr);
 	return zrtos_vfs_fd__spi_transfer(
 		 fd
 		,3
@@ -169,31 +163,27 @@ zrtos_error_t zrtos_vfs_module_w5500__reset(
 ){
 	zrtos_error_t ret;
 	size_t llimit = 1;
-	uint16_t cmd = zrtos_types__htobe16(MR);
-	uint8_t ctl = _W5500_SPI_WRITE_;
-	uint8_t mode = MR_RST;
+	uint16_t cmd = ZRTOS_VFS_MODULE_W5500_SOCKET_REGISTER__MODE;
+	uint8_t ctl = ZRTOS_VFS_MODULE_W5500_CTL__WRITE;
+	uint8_t mode = ZRTOS_VFS_MODULE_W5500_REGISTER_MODE__RST;
 	
 	for(size_t l = 2;l--;){
-		while(llimit-- && zrtos_error__is_success((ret = zrtos_vfs_fd__spi_transfer(
-			inode_data->fd
-			,3
-			,&cmd
-			,sizeof(cmd)
-			,&ctl
-			,sizeof(ctl)
+		while(llimit-- && zrtos_error__is_success((ret = zrtos_vfs_module_w5500__spi_transfer_uint8(
+			 fd
+			,cmd
+			,ctl
 			,&mode
-			,sizeof(mode)
-		))) && (mode & MR_RST) != 0){
+		))) && (mode & ZRTOS_VFS_MODULE_W5500_REGISTER_MODE__RST) != 0){
 			continue;
 		}
 
-		ctl = _W5500_SPI_READ_;
+		ctl = ZRTOS_VFS_MODULE_W5500_CTL__READ;
 		llimit = ZRTOS_TYPES__SIZE_MAX;
 	}
 
 	return zrtos_error__is_success(ret)
 	     ? (
-			  (mode & MR_RST) == 0
+			  (mode & ZRTOS_VFS_MODULE_W5500_REGISTER_MODE__RST) == 0
 			? ZRTOS_ERROR__SUCCESS
 			: ZRTOS_ERROR__AGAIN
 		 )
@@ -293,7 +283,7 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		,request
 		,args
 		,0
-		,zrtos_vfs_module_w5500_socket__on_ioctl_helper_validate_addr
+		,zrtos_vfs_module_w5500__on_ioctl_helper_validate_addr
 	);
 }
 
