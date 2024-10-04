@@ -12,9 +12,9 @@ extern "C" {
 
 
 #include <zrtos/vfs_module.h>
-#include <zrtos/vfs/network/network.h>
+#include <zrtos/vfs/module/network/network.h>
 
-#include <zrtos/vfs/w5500/lib/w5500.h>
+#include <zrtos/vfs/module/w5500/lib/w5500.h>
 
 #ifndef ZRTOS_VFS_MODULE_W5500__CFG_STARTUP_DELAY
 #define ZRTOS_VFS_MODULE_W5500__CFG_STARTUP_DELAY 600
@@ -45,22 +45,124 @@ extern "C" {
 	|ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__BITORDER_MSB\
 	|ZRTOS_VFS_MODULE_SPI_SYNC_CONTROL__PP_0)
 
+typedef enum{
+	 ZRTOS_VFS_MODULE_W5500_MODE__RST  = 0
+}zrtos_vfs_module_w5500_mode_t;
+
+typedef enum{
+	 ZRTOS_VFS_MODULE_W5500_CTL__READ  = 0
+	,ZRTOS_VFS_MODULE_W5500_CTL__WRITE = (1<<2)
+}zrtos_vfs_module_w5500_ctl_t;
+
+#define ZRTOS_VFS_MODULE_W5500_IOCTL__GET(addr,len)\
+	((addr << 8) | (0x00 << 6) | len)
+#define ZRTOS_VFS_MODULE_W5500_IOCTL__SET(addr,len)\
+	((addr << 8) | (0x01 << 6) | len)
+
 typedef struct _zrtos_vfs_module_w5500_ioctl_t{
-	 ZRTOS_VFS_MODULE_W5500_IOCTL__SET_GATEWAY_IP           = ((GAR)   | (_W5500_SPI_WRITE_))
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_GATEWAY_IP           = ((GAR)   | (_W5500_SPI_READ_) )
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SUBNET_MASK          = ((SUBR)  | (_W5500_SPI_WRITE_))
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SUBNET_MASK          = ((SUBR)  | (_W5500_SPI_READ_) )
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_IP_ADDRESS           = ((SIPR)  | (_W5500_SPI_WRITE_))
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_IP_ADDRESS           = ((SIPR)  | (_W5500_SPI_READ_) )
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_MAC_ADDRESS          = ((SHAR)  | (_W5500_SPI_WRITE_))
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_MAC_ADDRESS          = ((SHAR)  | (_W5500_SPI_READ_) )
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRANSMISSION_TIME  = ((_RTR_) | (_W5500_SPI_WRITE_))
-	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRANSMISSION_COUNT = ((_RCR_) | (_W5500_SPI_WRITE_))
+	 ZRTOS_VFS_MODULE_W5500_IOCTL__SET_MODE                      = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x00,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_MODE                      = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x00,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_GATEWAY_ADDRESS           = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x01,4)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_GATEWAY_ADDRESS           = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x01,4)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SUBNET_MASK               = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x05,4)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SUBNET_MASK               = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x05,4)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SOURCE_MAC_ADDRESS        = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x09,6)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SOURCE_MAC_ADDRESS        = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x09,6)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SOURCE_IP_ADDRESS         = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x0F,4)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SOURCE_IP_ADDRESS         = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x0F,4)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_INTERRUPT_LOW_LEVEL_TIMER = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x13,2)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_INTERRUPT_LOW_LEVEL_TIMER = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x13,2)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_INTERRUPT                 = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x15,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_INTERRUPT                 = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x15,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_INTERRUPT_MASK            = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x16,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_INTERRUPT_MASK            = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x16,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SOCKET_INTERRUPT          = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x17,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SOCKET_INTERRUPT          = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x17,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SOCKET_INTERRUPT_MASK     = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x18,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SOCKET_INTERRUPT_MASK     = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x18,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRY_TIME                = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x19,2)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_RETRY_TIME                = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x19,2)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRY_COUNT               = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x1B,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_RETRY_COUNT               = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x1B,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PPP_LCP_REQUEST_TIMER     = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x1C,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PPP_LCP_REQUEST_TIMER     = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x1C,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PPP_LCP_MAGIC_NUMBER      = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x1D,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PPP_LCP_MAGIC_NUMBER      = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x1D,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PPP_DESTINATION_MAC       = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x1E,6)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PPP_DESTINATION_MAC       = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x1E,6)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PPP_SESSION_ID            = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x24,2)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PPP_SESSION_ID            = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x24,2)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PPP_MAXIMUM_SEGMENT_SIZE  = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x26,2)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PPP_MAXIMUM_SEGMENT_SIZE  = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x26,2)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_UNREACHABLE_IP            = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x28,4)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_UNREACHABLE_PORT          = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x2C,2)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__SET_PHY_CONFIG                = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x2E,1)
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_PHY_CONFIG                = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x2E,1)
+
+	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_CHIP_VERSION              = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x39,1)
 }zrtos_vfs_module_w5500_ioctl_t;
+
+#undef ZRTOS_VFS_MODULE_W5500_IOCTL__GET
+#undef ZRTOS_VFS_MODULE_W5500_IOCTL__SET
 
 typedef struct _zrtos_vfs_module_w5500_inode_t{
 	zrtos_vfs_fd_t fd;
 }zrtos_vfs_module_w5500_inode_t;
+
+zrtos_error_t zrtos_vfs_module_w5500__spi_transfer_uint8(
+	 zrtos_vfs_fd_t fd
+	,uint16_t addr
+	,uint8_t ctl
+	,uint8_t *val
+){
+	return zrtos_vfs_fd__spi_transfer(
+		 fd
+		,3
+		,&addr
+		,sizeof(addr)
+		,&ctl
+		,sizeof(ctl)
+		,val
+		,sizeof(*val)
+	);
+}
+
+zrtos_error_t zrtos_vfs_module_w5500__spi_transfer_uint16(
+	 zrtos_vfs_fd_t fd
+	,uint16_t addr
+	,uint8_t ctl
+	,uint16_t *val
+){
+	return zrtos_vfs_fd__spi_transfer(
+		 fd
+		,3
+		,&addr
+		,sizeof(addr)
+		,&ctl
+		,sizeof(ctl)
+		,val
+		,sizeof(*val)
+	);
+}
 
 zrtos_error_t zrtos_vfs_module_w5500__reset(
 	zrtos_vfs_fd_t fd
@@ -114,7 +216,66 @@ zrtos_error_t zrtos_vfs_module_w5500__on_umount(zrtos_vfs_dentry_t *thiz){
 	return ZRTOS_ERROR__SUCCESS;
 }
 
-ZRTOS_ASSERT__STATIC(sizeof(int) >= sizeof(uint32_t));
+ZRTOS_ASSERT__STATIC(sizeof(int) >= sizeof(uint16_t));
+
+zrtos_error_t zrtos_vfs_module_w5500__on_ioctl_helper(
+	 zrtos_vfs_fd_t fd
+	,char *path
+	,int request
+	,va_list args
+	,uint8_t ctl_bsb
+	,bool (*validate)(uint16_t addr,size_t length)
+){
+	zrtos_error_t ret;
+	uint16_t req = ZRTOS_CAST__REINTERPRET(
+		 int
+		,request
+	);
+	uint16_t addr;
+	uint8_t ctl;
+	size_t length;
+	void *value = zrtos_va__arg_ptr(
+		 args
+		,void*
+	);
+	size_t value_length = zrtos_va__arg_ptr(
+		 args
+		,size_t
+	);
+
+	length = req & 0xF;
+	req >>= 4;
+	ctl = req & 0xF | ctl_bsb;
+	req >>= 4;
+	addr = zrtos_types__htobe16(req);
+
+	//@todo verify endianness
+	if(length == value_length
+	&& validate(addr,length)
+	){
+		ret = zrtos_vfs_fd__spi_transfer(
+			 fd
+			,3
+			,&addr
+			,sizeof(addr)
+			,&ctl
+			,sizeof(ctl)
+			,value
+			,value_length
+		);
+	}else{
+		ret = ZRTOS_ERROR__INVAL;
+	}
+
+	return ret;
+}
+
+bool zrtos_vfs_module_w5500__on_ioctl_helper_validate_addr(uint16_t addr,size_t length){
+	return (
+		   (addr + length < 0x2F)
+		|| (addr == 0x39 && length == 1)
+	);
+}
 
 zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 	 zrtos_vfs_file_t *thiz
@@ -126,92 +287,14 @@ zrtos_error_t zrtos_vfs_module_w5500__on_ioctl(
 		 zrtos_vfs_module_w5500_inode_t*
 		,zrtos_vfs_file__get_inode_data(thiz)
 	);
-	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
-	uint32_t req = ZRTOS_CAST__REINTERPRET(
-		 zrtos_vfs_module_w5500_ioctl_t
-		,request
-	);
-	uint16_t addr = zrtos_types__htobe16(req >> 8);
-	uint8_t ctl = req & 0xFF;
-	void *value;
-	size_t value_length = 0;
-	union{
-		zrtos_vfs_module_network_ip4_t *ip;
-		zrtos_vfs_module_network_mac_t *mac;
-		zrtos_vfs_module_network_subnet_mask_t *subnet_mask;
-		uint8_t rtr;
-		uint16_t rcr;
-	}data;
-
-	switch(ZRTOS_CAST__REINTERPRET(
-		 zrtos_vfs_module_w5500_ioctl_t
-		,request
-	)){
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_GATEWAY_IP:
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_GATEWAY_IP:
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_IP_ADDRESS:
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_IP_ADDRESS:
-		 	data.ip = zrtos_va__arg_ptr(
-				 args
-				,zrtos_vfs_module_network_ip4_t*
-			);
-			value = data.ip;
-			value_length = sizeof(data.ip[0]);
-		break;
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_SUBNET_MASK:
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_SUBNET_MASK:
-			data.subnet_mask = zrtos_va__arg_ptr(
-				 args
-				,zrtos_vfs_module_network_subnet_mask_t*
-			);
-			value = data.subnet_mask;
-			value_length = sizeof(data.subnet_mask[0]);
-		break;
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_MAC_ADDRESS:
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__GET_MAC_ADDRESS:
-			data.mac = zrtos_va__arg_ptr(
-				 args
-				,zrtos_vfs_module_network_mac_t*
-			);
-			value = data.mac;
-			value_length = sizeof(data.mac[0]);
-		break;
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRANSMISSION_TIME:
-			data.rtr = zrtos_va__arg(
-				 args
-				,uint8_t
-			);
-			value = &data.rtr;
-			value_length = sizeof(data.rtr);
-		break;
-		case ZRTOS_VFS_MODULE_W5500_IOCTL__SET_RETRANSMISSION_COUNT:
-			data.rcr = zrtos_va__arg(
-				 args
-				,uint16_t
-			);
-			value = &data.rcr;
-			value_length = sizeof(data.rcr);
-		break;
-		default:
-			ret = ZRTOS_ERROR__INVAL;
-			goto L_OUT;
-		break;
-	}
-	
-	//@todo verify endianness
-	ret = zrtos_vfs_fd__spi_transfer(
+	return zrtos_vfs_module_w5500__on_ioctl_helper(
 		 inode_data->fd
-		,3
-		,&addr
-		,sizeof(addr)
-		,&ctl
-		,sizeof(ctl)
-		,value
-		,value_length
+		,path
+		,request
+		,args
+		,0
+		,zrtos_vfs_module_w5500_socket__on_ioctl_helper_validate_addr
 	);
-
-L_OUT:
-	return ret;
 }
 
 ZRTOS_VFS_PLUGIN__INIT(w5500,

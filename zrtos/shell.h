@@ -13,7 +13,7 @@ extern "C" {
 
 #include <zrtos/zrtos.h>
 #include <zrtos/types.h>
-#include <zrtos/mem.h>
+#include <zrtos/str.h>
 
 #ifndef ZRTOS_SHELL__CFG_LINE_BUFFER_LENGTH
 #define ZRTOS_SHELL__CFG_LINE_BUFFER_LENGTH 80
