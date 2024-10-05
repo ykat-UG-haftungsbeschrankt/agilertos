@@ -67,15 +67,18 @@ zrtos_error_t zrtos_vfs_module_shell__parse_line(
 	,char *line
 ){
 	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	const char str_st[] = " \t";
+	const char str_rn[] = "\r\n";
+	const char str_stnr[] = " \t\r\n";
 	size_t pos = 0;
 	char *arg;
 	size_t offset;
 
-	line += zrtos_str__spn(line," \t\r\n");
-	offset = zrtos_str__cspn(line,"\r\n");
+	line += zrtos_str__spn(line,str_stnr);
+	offset = zrtos_str__cspn(line,str_rn);
 	if(offset){
-		line[offset] = 0;
-		while((arg = zrtos_str__tok_r(line," \t", &line))){
+		line[offset-1] = 0;
+		while((arg = zrtos_str__tok_r(line,str_st, &line))){
 			if(pos < ZRTOS_VFS_MODULE_SHELL__CFG_MAX_ARG_COUNT){
 				argv[pos++] = arg;
 				continue;
@@ -132,6 +135,11 @@ zrtos_error_t zrtos_vfs_module_shell__run(
 
 typedef struct _zrtos_vfs_module_shell_file_t{
 	zrtos_vfs_module_shell_t shell;
+	char                     *line;
+	size_t                   line_pos;
+	size_t                   line_length;
+	zrtos_error_t            last_error;
+	bool                     overflow_error;
 }zrtos_vfs_module_shell_file_t;
 
 zrtos_error_t zrtos_vfs_module_shell__on_read(
@@ -148,14 +156,22 @@ zrtos_error_t zrtos_vfs_module_shell__on_read(
 			thiz
 		)
 	);
-	zrtos_error_t ret = zrtos_vfs_fd__can_read(
-		mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDOUT]
-	);
-	if(zrtos_error__is_error(ret)){
-		ret = zrtos_vfs_fd__can_read(
-			mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDERR]
+	zrtos_error_t ret;
+	zrtos_vfs_module_shell_fd_t fd = ZRTOS_VFS_MODULE_SHELL_FD__STDOUT;
+	size_t l = 1;
+
+	do{
+		ret = zrtos_vfs_fd__read(
+			 mod->shell.files.fd[fd]
+			,path
+			,buf
+			,len
+			,offset
+			,out
 		);
-	}
+		fd = ZRTOS_VFS_MODULE_SHELL_FD__STDERR;
+	}while(zrtos_error__is_error(ret) && l--);
+
 	return ret;
 }
 
@@ -167,23 +183,56 @@ zrtos_error_t zrtos_vfs_module_shell__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
+	zrtos_error_t ret;
 	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
 		 zrtos_vfs_module_shell_file_t *
 		,zrtos_vfs_file__get_data(
 			thiz
 		)
 	);
-	zrtos_error_t ret = zrtos_vfs_fd__write(
-		 mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDIN]
-		,path
-		,buf
-		,len
-		,offset
-		,out
-	);
-	if(zrtos_error__is_success(ret)){
+	size_t free_space = mod->line_length - mod->line_pos;
+	char *buffer = ZRTOS_CAST(char*,buf);
+	size_t written = 0;
 
+	char *str = zrtos_str__nchr(buffer,len,'\n');
+	if(str){
+		size_t line_length = str - buffer;
+		if(mod->overflow_error){
+			mod->overflow_error = false;
+			written = line_length;
+			ret = ZRTOS_ERROR__ILSEQ;
+		}else if(line_length < free_space){
+			zrtos_mem__cpy(
+				 &mod->line[mod->line_pos]
+				,buffer
+				,line_length
+			);
+			mod->last_error = ret = zrtos_vfs_module_shell__run(
+				 &mod->shell
+				,mod->line
+			);
+			mod->line_pos = 0;
+		}else{
+			goto L_ERROR;
+		}
+	}else if(len < free_space){
+		zrtos_mem__cpy(
+			 &mod->line[mod->line_pos]
+			,buffer
+			,len
+		);
+		mod->line_pos += len;
+		written = len;
+		ret = ZRTOS_ERROR__SUCCESS;
+	}else{
+L_ERROR:
+		mod->overflow_error = true;
+		mod->line_pos = 0;
+		written = len;
+		ret = ZRTOS_ERROR__ILSEQ;
 	}
+
+	*out  = written;
 	return ret;
 }
 
@@ -210,15 +259,15 @@ zrtos_error_t zrtos_vfs_module_shell__on_can_read(
 zrtos_error_t zrtos_vfs_module_shell__on_can_write(
 	 zrtos_vfs_file_t *thiz
 ){
+	/*
 	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
 		 zrtos_vfs_module_shell_file_t *
 		,zrtos_vfs_file__get_data(
 			thiz
 		)
 	);
-	return zrtos_vfs_fd__can_write(
-		mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDIN]
-	);
+	*/
+	return ZRTOS_ERROR__SUCCESS;
 }
 
 ZRTOS_VFS_PLUGIN__INIT(shell,

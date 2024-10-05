@@ -24,6 +24,20 @@ typedef struct _zrtos_str__vsnprintf_cb_args_t{
 	size_t ret;
 }zrtos_str__vsnprintf_cb_args_t;
 
+
+
+char *zrtos_str__nchr(char *str,size_t len,char needle){
+	char *tmp = str+1;
+	char c;
+	while((c = *str++) && c != needle && len--){
+		continue;
+	}
+	return c == needle
+	     ? zrtos_types__ptr_get_byte_distance(tmp,str)
+	     : 0
+	;
+}
+
 size_t zrtos_str__len(char *str){
 	char *tmp = str+1;
 	while(*str++){}
@@ -240,7 +254,21 @@ size_t zrtos_str__cspn(const char *s1,const char *s2){
 	}
 	/* NOTREACHED */
 }
+/*
+size_t zrtos_str__ncspn(const char *s1,const char *s2,size_t len){
+	const char *p = s1, *spanp;
+	char c;
 
+	while(len--){
+		spanp = s2;
+		do{
+			if(*p++ == (c = *spanp++)){
+				return (p - 1 - s1);
+			}
+		}while(c);
+	}
+}
+*/
 /* Parse S into tokens separated by characters in DELIM.
    If S is NULL, the saved pointer in SAVE_PTR is used as
    the next starting point.  For example:
