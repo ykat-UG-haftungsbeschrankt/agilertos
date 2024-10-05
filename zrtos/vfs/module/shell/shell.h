@@ -130,6 +130,10 @@ zrtos_error_t zrtos_vfs_module_shell__run(
 	return ret;
 }
 
+typedef struct _zrtos_vfs_module_shell_file_t{
+	zrtos_vfs_module_shell_t shell;
+}zrtos_vfs_module_shell_file_t;
+
 zrtos_error_t zrtos_vfs_module_shell__on_read(
 	 zrtos_vfs_file_t *thiz
 	,char *path
@@ -138,15 +142,21 @@ zrtos_error_t zrtos_vfs_module_shell__on_read(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	return zrtos_vfs_module_sram__rw(
-		 thiz
-		,path
-		,buf
-		,len
-		,offset
-		,out
-		,false
+	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_shell_file_t *
+		,zrtos_vfs_file__get_data(
+			thiz
+		)
 	);
+	zrtos_error_t ret = zrtos_vfs_fd__can_read(
+		mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDOUT]
+	);
+	if(zrtos_error__is_error(ret)){
+		ret = zrtos_vfs_fd__can_read(
+			mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDERR]
+		);
+	}
+	return ret;
 }
 
 zrtos_error_t zrtos_vfs_module_shell__on_write(
@@ -157,14 +167,57 @@ zrtos_error_t zrtos_vfs_module_shell__on_write(
 	,zrtos_vfs_offset_t offset
 	,size_t *out
 ){
-	return zrtos_vfs_module_sram__rw(
-		 thiz
+	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_shell_file_t *
+		,zrtos_vfs_file__get_data(
+			thiz
+		)
+	);
+	zrtos_error_t ret = zrtos_vfs_fd__write(
+		 mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDIN]
 		,path
 		,buf
 		,len
 		,offset
 		,out
-		,true
+	);
+	if(zrtos_error__is_success(ret)){
+
+	}
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_shell__on_can_read(
+	 zrtos_vfs_file_t *thiz
+){
+	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_shell_file_t *
+		,zrtos_vfs_file__get_data(
+			thiz
+		)
+	);
+	zrtos_error_t ret = zrtos_vfs_fd__can_read(
+		mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDOUT]
+	);
+	if(zrtos_error__is_error(ret)){
+		ret = zrtos_vfs_fd__can_read(
+			mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDERR]
+		);
+	}
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_shell__on_can_write(
+	 zrtos_vfs_file_t *thiz
+){
+	zrtos_vfs_module_shell_file_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_shell_file_t *
+		,zrtos_vfs_file__get_data(
+			thiz
+		)
+	);
+	return zrtos_vfs_fd__can_write(
+		mod->shell.files.fd[ZRTOS_VFS_MODULE_SHELL_FD__STDIN]
 	);
 }
 
@@ -175,8 +228,8 @@ ZRTOS_VFS_PLUGIN__INIT(shell,
 	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT()
 	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_shell__on_read)
 	ZRTOS_VFS_PLUGIN__5_ON_WRITE(zrtos_vfs_module_shell__on_write)
-	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ_DEFAULT()
-	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ(zrtos_vfs_module_shell__on_can_read)
+	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE(zrtos_vfs_module_shell__on_can_write)
 	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
 	ZRTOS_VFS_PLUGIN__9_ON_IOCTL_DEFAULT()
 );
