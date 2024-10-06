@@ -224,6 +224,44 @@ size_t zrtos_mem__from_hex(void *dest,char *src,size_t len){
 	return zrtos_types__ptr_get_byte_distance(tmp_dest,dest);
 }
 
+zrtos_error_t zrtos_mem__cpy_address_range(
+	 void *start_addr
+	,void *end_addr
+	,uint8_t *buf
+	,size_t len
+	,size_t offset
+	,size_t *out
+	,bool is_write_op
+){
+	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
+
+	if(zrtos_types__ptr_is_valid_address_range(
+		 start_addr
+		,end_addr
+		,offset
+		,&len
+	)){
+		uint8_t *start_ptr = ZRTOS_CAST(
+			 uint8_t*
+			,zrtos_types__ptr_add(
+				 start_addr
+				,offset
+			)
+		);
+
+		*out = len;
+
+		if(is_write_op){
+			ZRTOS_TYPES__SWAP(buf,start_ptr);
+		}
+
+		zrtos_mem__cpy(buf,start_ptr,len);
+
+		ret = ZRTOS_ERROR__SUCCESS;
+	}
+
+	return ret;
+}
 
 #ifdef __cplusplus
 }

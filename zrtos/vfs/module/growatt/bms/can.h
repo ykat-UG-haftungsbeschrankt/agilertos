@@ -1,0 +1,339 @@
+/*
+ * Copyright (c) 2024 ykat UG (haftungsbeschraenkt) - All Rights Reserved
+ *
+ * Permission for non-commercial use is hereby granted,
+ * free of charge, without warranty of any kind.
+ */
+#ifndef ZRTOS_VFS_MODULE_GROWATT_BMS_CAN_H
+#define ZRTOS_VFS_MODULE_GROWATT_BMS_CAN_H
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+#include <zrtos/vfs_module.h>
+#include <zrtos/mem.h>
+
+typedef struct{
+	uint8_t data[11*8];
+}zrtos_vfs_module_growatt_bms_can_data_t;
+
+typedef struct _zrtos_vfs_module_growatt_bms_can_inode_t{
+	zrtos_vfs_module_growatt_bms_can_data_t data;
+}zrtos_vfs_module_growatt_bms_can_inode_t;
+
+#define ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(addr,offset,len)\
+	(((addr-0x300) << 8) | (offset << 4) | len << 1 | 0)
+
+#define ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(addr,offset,len)\
+	(((addr-0x300) << 8) | (offset << 4) | len << 1 | 1)
+
+typedef enum{
+	 ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_BATTERY_CHARGE_VOLTAGE    = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x311,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CHARGE_CURRENT_LIMIT      = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x311,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_DISCHARGE_CURRENT_LIMIT   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x311,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_STATUS                    = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x311,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_BITFIELD_1                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_BITFIELD_2                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,1,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_BITFIELD_3                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_BITFIELD_4                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,3,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_PACK_NUMBER               = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,4,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_X                         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,5,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_TOTAL_CELL_NUMBER         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x312,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_VOLTAGE                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x313,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_TOTAL_CURRENT             = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x313,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_MAX_TEMPERATURE      = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x313,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_SOC                       = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x313,6,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_SOH                       = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x313,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_GAUGE_RM                  = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x314,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_GAUGE_FCC                 = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x314,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_DELTA_V                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x314,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CYCLE_COUNT               = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x314,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_1_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x315,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_2_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x315,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_3_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x315,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_4_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x315,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_5_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x316,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_6_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x316,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_7_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x316,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_8_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x316,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_9_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x317,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_10_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x317,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_11_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x317,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_12_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x317,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_13_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x318,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_14_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x318,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_15_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x318,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_CELL_16_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x318,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_REQUEST                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_MAX_CELL_VOLTAGE          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,1,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_MIN_CELL_VOLTAGE          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,3,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_MAX_CELL_VOLTAGE_NUMBER   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,5,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_MIN_CELL_VOLTAGE_NUMBER   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,6,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_PROTECT_PACK_ID           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x319,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_MANUFACTURER_NAME         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x320,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_HARDWARE_VERSION          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x320,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_SOFTWARE_VERSION          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x320,3,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_DATE_TIME                 = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x320,4,4)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_UPDATE_STATUS             = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x321,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_UPDATE_SCHEDULE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x321,1,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_PROGRAMMING_ID            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x321,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET_UPDATE_SUCCESSFUL_COUNT   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET(0x321,3,1)
+
+
+
+
+ 	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_BATTERY_CHARGE_VOLTAGE    = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x311,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CHARGE_CURRENT_LIMIT      = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x311,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_DISCHARGE_CURRENT_LIMIT   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x311,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_STATUS                    = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x311,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_BITFIELD_1                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_BITFIELD_2                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,1,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_BITFIELD_3                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_BITFIELD_4                = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,3,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_PACK_NUMBER               = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,4,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_X                         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,5,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_TOTAL_CELL_NUMBER         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x312,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_VOLTAGE                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x313,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_TOTAL_CURRENT             = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x313,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_MAX_TEMPERATURE      = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x313,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_SOC                       = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x313,6,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_SOH                       = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x313,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_GAUGE_RM                  = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x314,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_GAUGE_FCC                 = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x314,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_DELTA_V                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x314,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CYCLE_COUNT               = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x314,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_1_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x315,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_2_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x315,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_3_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x315,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_4_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x315,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_5_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x316,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_6_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x316,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_7_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x316,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_8_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x316,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_9_VOLTAGE            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x317,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_10_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x317,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_11_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x317,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_12_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x317,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_13_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x318,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_14_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x318,2,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_15_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x318,4,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_CELL_16_VOLTAGE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x318,6,2)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_REQUEST                   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_MAX_CELL_VOLTAGE          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,1,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_MIN_CELL_VOLTAGE          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,3,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_MAX_CELL_VOLTAGE_NUMBER   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,5,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_MIN_CELL_VOLTAGE_NUMBER   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,6,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_PROTECT_PACK_ID           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x319,7,1)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_MANUFACTURER_NAME         = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x320,0,2)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_HARDWARE_VERSION          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x320,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_SOFTWARE_VERSION          = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x320,3,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_DATE_TIME                 = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x320,4,4)
+
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_UPDATE_STATUS             = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x321,0,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_UPDATE_SCHEDULE           = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x321,1,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_PROGRAMMING_ID            = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x321,2,1)
+	,ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET_UPDATE_SUCCESSFUL_COUNT   = ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET(0x321,3,1)
+}zrtos_vfs_module_growatt_bms_can_address_t;
+
+#undef ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__GET
+#undef ZRTOS_VFS_MODULE_GROWATT_BMS_CAN__SET
+
+size_t zrtos_vfs_module_growatt_bms_can_address__get_addr(zrtos_vfs_module_growatt_bms_can_address_t thiz){
+	return (thiz >> 8) + 0x300;
+}
+
+size_t zrtos_vfs_module_growatt_bms_can_address__get_offset(zrtos_vfs_module_growatt_bms_can_address_t thiz){
+	return (thiz >> 4) & 0xF;
+}
+
+size_t zrtos_vfs_module_growatt_bms_can_address__get_length(zrtos_vfs_module_growatt_bms_can_address_t thiz){
+	return (thiz >> 1) & 0xF;
+}
+
+bool zrtos_vfs_module_growatt_bms_can_address__is_write_op(zrtos_vfs_module_growatt_bms_can_address_t thiz){
+	return (thiz & 0x1) > 0;
+}
+
+size_t zrtos_vfs_module_growatt_bms_can_data__get_offset(zrtos_vfs_module_growatt_bms_can_address_t thiz){
+	size_t addr = zrtos_vfs_module_growatt_bms_can_address__get_addr(thiz) - 0x300;
+	if(addr > 0x20){
+		addr = 0x19 + (addr - 0x20);
+	}
+	return ((addr - 0x11) * 8) + zrtos_vfs_module_growatt_bms_can_address__get_offset(thiz);
+}
+
+zrtos_error_t zrtos_vfs_module_growatt_bms_can__rw(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,void *buf
+	,size_t len
+	,zrtos_vfs_offset_t offset
+	,size_t *out
+	,bool is_write_op
+){
+	zrtos_error_t ret;
+	zrtos_vfs_module_growatt_bms_can_inode_t *mod = ZRTOS_CAST(
+		 zrtos_vfs_module_growatt_bms_can_inode_t *
+		,zrtos_vfs_file__get_inode_data(
+			thiz
+		)
+	);
+
+	if(offset <= ZRTOS_TYPES__SIZE_MAX
+	&& offset >= 0x311){
+		size_t addr = offset - 0x300;
+		if(addr > 0x20){
+			addr = 0x19 + (addr - 0x20);
+		}
+		addr = ((addr - 0x11) * 8);
+
+		ret = zrtos_mem__cpy_address_range(
+			 mod->data.data
+			,zrtos_types__ptr_add(
+				 mod->data.data
+				,ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(mod->data.data)
+			)
+			,ZRTOS_CAST(uint8_t *,buf)
+			,len
+			,(size_t)offset
+			,out
+			,is_write_op
+		);
+	}else{
+		ret = ZRTOS_ERROR__INVAL;
+	}
+
+	return ret;
+}
+
+zrtos_error_t zrtos_vfs_module_growatt_bms_can__on_read(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,void *buf
+	,size_t len
+	,zrtos_vfs_offset_t offset
+	,size_t *out
+){
+	return zrtos_vfs_module_growatt_bms_can__rw(
+		 thiz
+		,path
+		,buf
+		,len
+		,offset
+		,out
+		,false
+	);
+}
+
+zrtos_error_t zrtos_vfs_module_growatt_bms_can__on_write(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,void *buf
+	,size_t len
+	,zrtos_vfs_offset_t offset
+	,size_t *out
+){
+	return zrtos_vfs_module_growatt_bms_can__rw(
+		 thiz
+		,path
+		,buf
+		,len
+		,offset
+		,out
+		,true
+	);
+}
+
+zrtos_error_t zrtos_vfs_module_growatt_bms_can__on_ioctl(
+	 zrtos_vfs_file_t *thiz
+	,char *path
+	,int request
+	,va_list args
+){
+	zrtos_vfs_module_growatt_bms_can_inode_t *inode_data = ZRTOS_CAST(
+		 zrtos_vfs_module_growatt_bms_can_inode_t*
+		,zrtos_vfs_file__get_inode_data(thiz)
+	);
+	zrtos_error_t ret = ZRTOS_ERROR__SUCCESS;
+	ZRTOS_ASSERT__STATIC(sizeof(int) >= sizeof(zrtos_vfs_module_growatt_bms_can_address_t));
+	zrtos_vfs_module_growatt_bms_can_address_t req = ZRTOS_CAST__REINTERPRET(
+		 zrtos_vfs_module_growatt_bms_can_address_t
+		,request
+	);
+	size_t offset = zrtos_vfs_module_growatt_bms_can_data__get_offset(req);
+	size_t length = zrtos_vfs_module_growatt_bms_can_address__get_length(req);
+	bool is_write_op = zrtos_vfs_module_growatt_bms_can_address__is_write_op(req);
+	void *value = zrtos_va__arg_ptr(
+		 args
+		,void*
+	);
+	size_t value_length = zrtos_va__arg(
+		 args
+		,size_t
+	);
+
+	if(zrtos_types__ptr_is_valid_address_range(
+		 inode_data->data.data
+		,zrtos_types__ptr_add(
+			 inode_data->data.data
+			,ZRTOS_TYPES__GET_STATIC_ARRAY_LENGTH(inode_data->data.data)
+		)
+		,offset
+		,&value_length
+	)
+	&& length == value_length
+	){
+		void *data = zrtos_types__ptr_add(
+			 inode_data->data.data
+			,offset
+		);
+
+		if(is_write_op){
+			ZRTOS_TYPES__SWAP(value,data);
+		}
+
+		zrtos_mem__cpy(value,data,length);
+	}else{
+		ret = ZRTOS_ERROR__INVAL;
+	}
+
+	return ret;
+}
+
+ZRTOS_VFS_PLUGIN__INIT(growatt_bms_can,
+	ZRTOS_VFS_PLUGIN__0_ON_OPEN_DEFAULT()
+	ZRTOS_VFS_PLUGIN__1_ON_CLOSE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__2_ON_MOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__3_ON_UMOUNT_DEFAULT()
+	ZRTOS_VFS_PLUGIN__4_ON_READ(zrtos_vfs_module_growatt_bms_can__on_read)
+	ZRTOS_VFS_PLUGIN__5_ON_WRITE(zrtos_vfs_module_growatt_bms_can__on_write)
+	ZRTOS_VFS_PLUGIN__6_ON_CAN_READ_DEFAULT()
+	ZRTOS_VFS_PLUGIN__7_ON_CAN_WRITE_DEFAULT()
+	ZRTOS_VFS_PLUGIN__8_ON_SEEK_DEFAULT()
+	ZRTOS_VFS_PLUGIN__9_ON_IOCTL(zrtos_vfs_module_growatt_bms_can__on_ioctl)
+);
+
+#ifdef __cplusplus
+}
+#endif
+#endif

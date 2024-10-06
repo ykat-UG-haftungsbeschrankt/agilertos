@@ -51,7 +51,7 @@ extern "C" {
 #define ZRTOS_VFS_MODULE_W5500_IOCTL__SET(addr,len)\
 	((addr << 8) | (0x01 << 6) | len)
 
-typedef struct _zrtos_vfs_module_w5500_ioctl_t{
+typedef enum{
 	 ZRTOS_VFS_MODULE_W5500_IOCTL__SET_MODE                      = ZRTOS_VFS_MODULE_W5500_IOCTL__SET(0x00,1)
 	,ZRTOS_VFS_MODULE_W5500_IOCTL__GET_MODE                      = ZRTOS_VFS_MODULE_W5500_IOCTL__GET(0x00,1)
 

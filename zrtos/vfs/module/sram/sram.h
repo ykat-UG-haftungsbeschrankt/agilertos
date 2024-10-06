@@ -28,47 +28,28 @@ zrtos_error_t zrtos_vfs_module_sram__rw(
 	,size_t *out
 	,bool is_write_op
 ){
-	zrtos_error_t ret = ZRTOS_ERROR__FAULT;
+	zrtos_error_t ret;
 	zrtos_vfs_module_sram_inode_t *mod = ZRTOS_CAST(
 		 zrtos_vfs_module_sram_inode_t *
 		,zrtos_vfs_file__get_inode_data(
 			thiz
 		)
 	);
-	size_t start_offset = (size_t)offset;
-	uint8_t *data_ptr = ZRTOS_CAST(uint8_t *,buf);
 
-	if(offset > ZRTOS_TYPES__SIZE_MAX){
-		ret = ZRTOS_ERROR__INVAL;
-		goto L_OUT;
-	}
-
-	if(zrtos_types__ptr_is_valid_address_range(
-		 mod->start_addr
-		,mod->end_addr
-		,start_offset
-		,&len
-	)){
-		uint8_t *start_ptr = ZRTOS_CAST(
-			 uint8_t*
-			,zrtos_types__ptr_add(
-				 mod->start_addr
-				,start_offset
-			)
+	if(offset <= ZRTOS_TYPES__SIZE_MAX){
+		ret = zrtos_mem__cpy_address_range(
+			 mod->start_addr
+			,mod->end_addr
+			,ZRTOS_CAST(uint8_t *,buf)
+			,len
+			,(size_t)offset
+			,out
+			,is_write_op
 		);
-
-		*out = len;
-
-		if(is_write_op){
-			ZRTOS_TYPES__SWAP(data_ptr,start_ptr);
-		}
-
-		zrtos_mem__cpy(data_ptr,start_ptr,len);
-
-		ret = ZRTOS_ERROR__SUCCESS;
+	}else{
+		ret = ZRTOS_ERROR__INVAL;
 	}
 
-L_OUT:
 	return ret;
 }
 
