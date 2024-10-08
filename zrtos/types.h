@@ -208,7 +208,7 @@ size_t zrtos_types__uint8_to_hex(uint8_t *dest,uint8_t src){
   (((value)-(in_min))*((out_max)-(out_min))/((in_max)-(in_min))+(out_min))
 
 uint16_t zrtos_types__uint16_bswap(uint16_t x){
-	return ((__uint16_t) ((((x) >> 8) & 0xff) | (((x) & 0xff) << 8)));
+	return ((uint16_t) ((((x) >> 8) & 0xff) | (((x) & 0xff) << 8)));
 }
 
 uint32_t zrtos_types__uint32_bswap(uint32_t x){

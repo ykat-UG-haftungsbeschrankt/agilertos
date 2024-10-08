@@ -13,6 +13,7 @@ extern "C" {
 
 #include <zrtos/bitfield.h>
 #include <zrtos/vfs_file.h>
+#include <zrtos/va.h>
 
 typedef struct _zrtos_vfs_fd_t{
 	size_t fd;
@@ -122,12 +123,12 @@ zrtos_error_t zrtos_vfs_fd__spi_transfer(
 	zrtos_va_t args2;
 	size_t outlen;
 
-	zrtos_va__start(len,args1);
+	zrtos_va__start(args1,len);
 	zrtos_va__copy(args2,args1);
 
 	while(len--){
-		zrtos_va__arg_ptr(args2,void*);
-		l += zrtos_va__arg(args2,size_t);
+		zrtos_va__arg_ptr(args1,void*);
+		l += zrtos_va__arg(args1,size_t);
 	}
 
 	ll = l;
@@ -142,8 +143,8 @@ zrtos_error_t zrtos_vfs_fd__spi_transfer(
 	);
 
 	while(zrtos_error__is_success(ret) && len--){
-		void *buffer = zrtos_va__arg_ptr(args,void*);
-		size_t length = zrtos_va__arg(args,size_t);
+		void *buffer = zrtos_va__arg_ptr(args2,void*);
+		size_t length = zrtos_va__arg(args2,size_t);
 		ret = zrtos_vfs_fd__read(
 			 fd
 			,(char*)""
